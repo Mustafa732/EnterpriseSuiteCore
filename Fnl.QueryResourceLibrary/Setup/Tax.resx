@@ -1,0 +1,359 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Query_SelectAll_WithPaging_WithOtherTables" xml:space="preserve">
+    <value>SELECT AR_SET_Tax.CompanyID, AR_SET_Tax.PeriodID, AR_SET_Tax.TaxID, AR_SET_Tax.TaxName, AR_SET_Tax.Description, AR_SET_Tax.TaxTypeID, SET_TaxType.TaxTypeName, 
+    AR_SET_Tax.TaxRate, AR_SET_Tax.TaxRecoveryRate, AR_SET_Tax.TaxRecoverRuleID, SET_TaxRecoverRule.TaxRecoverRuleName, AR_SET_Tax.TaxCCID, 
+    GL_CodeCombinationDetail.Description AS CCDescription, AR_SET_Tax.OffSetTaxCCID, GL_CodeCombinationDetail_1.Description AS OffSetDescription, 
+    AR_SET_Tax.StartDate, AR_SET_Tax.InActiveDate, AR_SET_Tax.EnabledFlag, AR_SET_Tax.Status, AR_SET_Tax.CreatedBy, AR_SET_Tax.CreateDate, AR_SET_Tax.UpdatedBy, 
+    AR_SET_Tax.UpdateDate, AR_SET_Tax.CreatedByValue, AR_SET_Tax.UpdatedByValue, 
+    ROW_NUMBER() Over (Order by AR_SET_Tax.CompanyID, AR_SET_Tax.PeriodID, AR_SET_Tax.TaxID) as 'Row' 
+FROM AR_SET_Tax 
+    INNER JOIN SET_TaxType ON AR_SET_Tax.TaxTypeID = SET_TaxType.TaxTypeID 
+    LEFT JOIN SET_TaxRecoverRule ON AR_SET_Tax.TaxRecoverRuleID = SET_TaxRecoverRule.TaxRecoverRuleID 
+    LEFT JOIN GL_CodeCombinationDetail ON 
+    --AR_SET_Tax.CompanyID = GL_CodeCombinationDetail.CompanyID AND 
+    AR_SET_Tax.TaxCCID = GL_CodeCombinationDetail.CodeCombinationID 
+    LEFT JOIN GL_CodeCombinationDetail AS GL_CodeCombinationDetail_1 ON 
+        AR_SET_Tax.OffSetTaxCCID = GL_CodeCombinationDetail_1.CodeCombinationID</value>
+  </data>
+  <data name="TMS_CountAttendenceReport" xml:space="preserve">
+    <value>Select  CompanyID,
+        PersonID,
+        EmployeeCode,
+        FullName,
+        DesignationName,
+        DepartmentName,
+        ShiftName,
+		Month_Name,
+        --sum(CountLeave) as Days_Leave,
+        sum(CountPresent) as CountPresent,
+        --sum(CountLeave) + sum(CountPresent) + sum(CountAbsent) as NoofDay,
+        --sum(CountInLate) as Days_Late,
+        --sum(CountOutEarly) as Days_Early,
+		(sELECT DATEDIFF(day, @FromDate, @ToDate)) NoofDay
+        
+        from (
+	        SELECT distinct 
+					fintab.TheDate,
+					convert(varchar(2),TheDate,106)as NewDate,
+					case when fintab.IsHoliday = 1 then fintab.DayDescription 
+						 else datename(dw,fintab.TheDate) end as Day_Name,
+					fintab.CompanyID,
+					fintab.PersonID,
+					EmployeeCode,
+					FullName,
+					DesignationName,
+					DepartmentName,
+					ShiftName,
+					datename(month,fintab.TheDate)  Month_Name,
+					--case when max(LeavesCount)&gt;0 then 'L' 
+					--else
+					--    case 
+					--    when fintab.IsHoliday = 1 then 'P'
+					--    when MIN(TMSTimeIN) is not null then 'P'
+					--    when MAX(TMSTimeOUT) is not null then 'P'
+					--    else 'A' end
+					--end 
+					--as Status,
+
+					--case when count(LR.LeaverequestID) &gt; 0 then 
+					--	case when MAX(PT.[Abbreviation]) is not null then MAX(PT.[Abbreviation]) else 'L' end
+					--else
+					--	case 
+					--	when fintab.IsHoliday = 1 and fintab.Description = 'Sunday' and MIN(TMSTimeIN) is null and MAX(TMSTimeOUT) is null then 'W/O'
+					--	when fintab.Reason != '' then 'G.H'	    	       
+					--	when MIN(TMSTimeIN) is not null then 'P'
+					--	when MAX(TMSTimeOUT) is not null then 'P'
+					--	else
+					--	'A'
+					--	end
+					--end as [Status],
+
+
+					--max(LeavesCount) as CountLeave,
+             
+					case
+						when fintab.IsHoliday = 1 then 1 else
+						case when MIN(TMSTimeIN) is not null then 1 when MAX(TMSTimeOUT) is not null then 1 else 0 end 
+					end as CountPresent,
+					--case 
+					--	when fintab.IsHoliday = 1 then 0 else
+					--	Case when (MIN(TMSTimeIN) is null AND MAX(TMSTimeOUT) is null) --AND max(fintab.LeavesCount)=0 
+					--	then 1 else 0 end
+					--end as CountAbsent,
+
+					
+
+					case when MIN(TMSTimeIN) &gt; STimeIN then 1 else 0 end CountInLate,
+					case when MAX(TMSTimeOUT) &lt; STimeOUT then 1 else 0 end CountOutEarly
+
+						 from (
+						   
+							SELECT SET_DateTime.Reason, SET_DateTime.Description,EP.FK_SectionID,EP.FK_LocationID,SET_DateTime.TheDate,EP.JoiningDate,
+							EP.CompanyID,EP.PersonID,EP.EmployeeCode,EP.FullName,EP.FatherName,ED.DesignationName AS DesignationName,DP.DepartmentName AS DepartmentName,
+							SET_DateTime.[Description] as DayDescription,
+							ETMS1.CHECKTIME as TMSTimeIN,ETMS1.CHECKTIME as TMSTimeOUT,SS.[Description] as ShiftName,ETMS1.SENSORID as IsHoliday,
+							--(Select case when count(LR.LeaveRequestID) &gt;0 then 1 else 0 end	        
+							--		 from HRMS_LeaveRequest LR where 
+							--				LR.CompanyID = EP.CompanyID and LR.FK_PersonID = EP.PersonID
+							--				and LR.FromDate &lt;= ETMS1.CHECKTIME and LR.ToDate &gt;= ETMS2.CHECKTIME
+							--				and LR.[Status]=1 and LR.[IsApproved]=1) as LeavesCount,
+
+							--case when ETMS1.[ManagementCode]='0' AND ETMS1.[TerminalNo]='0' AND ETMS1.[RawData]='M' then '*' else '' end DataTypeIN,
+							--case when ETMS2.[ManagementCode]='0' AND ETMS2.[TerminalNo]='0' AND ETMS2.[RawData]='M' then '*' else '' end DataTypeOUT,
+
+							CONVERT(datetime,
+									CONVERT(varchar(2), DATEPART(mm, SET_DateTime.TheDate)) + '-' + 
+									CONVERT(varchar(2), DATEPART(dd, SET_DateTime.TheDate)) + '-' + 
+									CONVERT(varchar(4), DATEPART(year, SET_DateTime.TheDate)) + ' ' + CONVERT(varchar(100),SS.[TimeIN],114) 
+								,101) as ShiftTimeIN,
+							CONVERT(datetime,
+								CONVERT(varchar(2), DATEPART(mm, SET_DateTime.TheDate)) + '-' + 
+								CONVERT(varchar(2), DATEPART(dd, SET_DateTime.TheDate)) + '-' + 
+								CONVERT(varchar(4), DATEPART(year, SET_DateTime.TheDate)) + ' ' + CONVERT(varchar(100),SS.[TimeOUT],114) 
+							,101) as ShiftTimeOUT,
+
+							--CONVERT(datetime,
+							--        CONVERT(varchar(2), DATEPART(mm, SET_DateTime.TheDate)) + '-' + 
+							--        CONVERT(varchar(2), DATEPART(dd, SET_DateTime.TheDate)) + '-' + 
+							--        CONVERT(varchar(4), DATEPART(year, SET_DateTime.TheDate)) + ' ' + CONVERT(varchar(100),SS.[TimeIN],114) 
+							--    ,101) as STimeIN,
+							--CONVERT(datetime,
+							--    CONVERT(varchar(2), DATEPART(mm, SET_DateTime.TheDate)) + '-' + 
+							--    CONVERT(varchar(2), DATEPART(dd, SET_DateTime.TheDate)) + '-' + 
+							--    CONVERT(varchar(4), DATEPART(year, SET_DateTime.TheDate)) + ' ' + CONVERT(varchar(100),SS.[TimeOUT],114) 
+							--,101) as STimeOUT,
+
+							CONVERT(datetime,
+									CONVERT(varchar(2), DATEPART(mm, SET_DateTime.TheDate)) + '-' + 
+									CONVERT(varchar(2), DATEPART(dd, SET_DateTime.TheDate)) + '-' + 
+									CONVERT(varchar(4), DATEPART(year, SET_DateTime.TheDate)) + ' ' + CONVERT(varchar(100),SS.[TimeINGrace],114) 
+								,101) as STimeIN,
+							CONVERT(datetime,
+								CONVERT(varchar(2), DATEPART(mm, SET_DateTime.TheDate)) + '-' + 
+								CONVERT(varchar(2), DATEPART(dd, SET_DateTime.TheDate)) + '-' + 
+								CONVERT(varchar(4), DATEPART(year, SET_DateTime.TheDate)) + ' ' + CONVERT(varchar(100),SS.[TimeOUTGrace],114) 
+							,101) as STimeOUT
+
+							--ETMS1.TerminalNo
+
+							from SET_DateTime 
+
+							inner join HRMS_Set_Employee EP on (EP.CompanyID = @CompanyID OR @CompanyID is null)
+
+							and EP.Status=1 and EP.IsActive = 1
+							left JOIN SET_Designation ED ON ED.DesignationID = EP.FK_JobDesignationID AND ED.IsActive = 1 AND ED.Status = 1   
+							left JOIN SET_Department DP ON DP.DepartmentID = EP.FK_DepartmentID AND DP.IsActive = 1 AND DP.Status = 1 
+					        
+							left JOIN HRMS_EmployeeShift ES on ( ES.FromDate &lt;= SET_DateTime.TheDate AND ES.ToDate &gt;= SET_DateTime.TheDate) and ES.PersonID = EP.PersonID and ES.Status=1
+							left JOIN HRMS_Set_Shift SS on SS.ShiftID = ES.ShiftID and SS.Status=1
+
+							left JOIN HRMS_TMS_Status TMS1 on TMS1.StatusID=1 and TMS1.Status=1 -- Min
+							left JOIN HRMS_TMS_Status TMS2 on TMS2.StatusID=2 and TMS2.Status=1 -- Max
+
+							--left join HRMS_TMSData ETMS1 on ETMS1.CompanyID = EP.CompanyID and ETMS1.PersonID = EP.PersonID and ETMS1.StatusCode=TMS1.StatusCode and
+							left join Hrms_CheckInOut ETMS1 on cast(ETMS1.USERID as Varchar(10)) = EP.EmployeeCode and
+							CONVERT(datetime,
+								CONVERT(varchar(2), DATEPART(mm, ETMS1.CHECKTIME)) + '-' + 
+								CONVERT(varchar(2), DATEPART(dd, ETMS1.CHECKTIME)) + '-' + 
+								CONVERT(varchar(4), DATEPART(year, ETMS1.CHECKTIME)) 
+							,101)
+							 = SET_DateTime.TheDate
+
+							--left join HRMS_TMSData ETMS2 on ETMS2.CompanyID = EP.CompanyID and ETMS2.PersonID = EP.PersonID and ETMS2.StatusCode=TMS2.StatusCode and
+							left join Hrms_CheckInOut ETMS2 on cast(ETMS2.USERID as Varchar(10)) = EP.EmployeeCode and
+							CONVERT(datetime,
+								CONVERT(varchar(2), DATEPART(mm, ETMS2.CHECKTIME)) + '-' + 
+								CONVERT(varchar(2), DATEPART(dd, ETMS2.CHECKTIME)) + '-' + 
+								CONVERT(varchar(4), DATEPART(year, ETMS2.CHECKTIME))
+							,101) 
+							= SET_DateTime.TheDate
+							where --SET_DateTime.TheDate &gt;= @FromDate and SET_DateTime.TheDate &lt;= @ToDate 
+							ETMS2.CHECKTIME BETWEEN @FromDate AND @ToDate
+	                               {0}
+								   {1}
+	                            
+							) as fintab
+                 
+             
+                
+                
+		left join HRMS_LeaveRequest LR on 
+        LR.CompanyID = fintab.CompanyID and LR.FK_PersonID = fintab.PersonID
+        and LR.FromDate &lt;= fintab.TheDate and LR.ToDate &gt;= fintab.TheDate and LR.[Status]=1 and LR.[IsApproved]=1
+
+        left join HRMS_PayrollType PT on 
+        PT.PayrollTypeID=LR.FK_PayrollTypeID and PT.PayrollTypeCode=LR.FK_PayrollTypeCode and PT.[Status]=1
+     
+        left join Set_Section on Set_Section.SectionID =  fintab.FK_SectionID
+        and Set_Section.Status =1 
+        
+        left join SET_Location on SET_Location.LocationID =  fintab.FK_LocationID
+        and SET_Location.Status =1 
+                
+		
+		
+                group by 
+							TheDate,
+							fintab.CompanyID,
+							fintab.PersonID,
+							EmployeeCode,
+							FullName,
+							DesignationName,
+							DepartmentName,
+							IsHoliday,
+							fintab.DayDescription,
+							ShiftName,
+							STimeIN,
+							STimeOUT,
+							--fintab.TerminalNo,
+							fintab.JoiningDate,
+							fintab.Description ,
+							fintab.Reason
+
+        
+	        ) TAB
+	
+	        Group by 
+						CompanyID,
+						PersonID,
+						EmployeeCode,
+						FullName,
+						DesignationName,
+						DepartmentName,
+						ShiftName,
+						Month_Name
+	        Order by EmployeeCode</value>
+  </data>
+  <data name="TMS_Sheikhoo" xml:space="preserve">
+    <value>select Hrms_CheckInOut.USERID as PersonID, hrms_set_employee.FullName, Hrms_CheckInOut.CHECKTIME as TMSDateTime, Hrms_CheckInOut.Memoinfo as MachineIP,
+Hrms_CheckInOut.WorkCode as MachinePort, Hrms_CheckInOut.SENSORID as MachineNumber 
+from Hrms_CheckInOut
+	inner join hrms_set_employee on Hrms_set_employee.EmployeeCode =cast(Hrms_CheckInOut.USERID as Varchar(10))
+	        and hrms_set_employee.Status = 1
+where Cast(Hrms_CheckInOut.CHECKTIME as Date) between @FromDate and @ToDate
+      and hrms_set_employee.CompanyID in (@CompanyID)
+	  and hrms_set_employee.Status= 1
+	  and hrms_set_employee.IsActive = 1
+{0}
+{1}
+	order by Hrms_CheckInOut.CHECKTIME desc</value>
+  </data>
+</root>

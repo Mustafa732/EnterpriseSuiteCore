@@ -1,0 +1,214 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Query_GetRequisitionMRPRecordByItemID" xml:space="preserve">
+    <value>declare @ProductQuantity int
+set @ProductQuantity = @Quantity
+select [TransactionDetailID],[SerialNo],CategoryID,ItemCategoryID,CategoryName,ItemID,[ItemDescription],Item,TransactionUOMID,
+ABS(TransactionQuantity) as TransactionQuantity,OldItemPrice,CurrentStock,LastConsumption,LastPurchasePrice,EstimatedPOItemPrice,Amount,TransactionCost,CostCenterID,
+IncurredOnID,PrimaryQuantity,ReasonLookup,DistributionAccountCOA,EncumbranceAccountCOA,EncumbranceAmount,CurrencyConversionRate,
+CurrencyConversionType,QuantityAdjusted,EmployeeCode,DepartmentID,ReceivingDocument,TransferTransactionLookup,SourceCode,SourceLineID,
+VendorLotNumber,ShipmentNumber,WayBillAirBill,FreightCode,NoofContainers,ValueChange,PercentageChange,ProjectID,ReservationLookup,
+CustomerID,InvoiceFlag,PriorCost,SourceHeaderID,CostCenterName,UOMName,CustomerName,IncurredDescription,CurrencyID,Description,
+CurrencyName,ProjectName,Remarks,Action from
+(
+SELECT 
+-1 as [TransactionDetailID],
+-1 as [SerialNo],
+AS_RecipeDetail.ItemCategory as CategoryID,
+AS_RecipeDetail.ItemCategory as ItemCategoryID,
+INV_SET_Category.CategoryName as CategoryName,
+AS_RecipeDetail.ItemID,
+INV_Item.Description as [ItemDescription],
+INV_Item.Description as Item,
+1 as [TransactionUOMID],
+( 
+        select IsNull(Sum(Case when Set_DocumentType.TransactionImpact = 'No Impact' then 0 else INV_StockTransactionDetail.TransactionQuantity END), 0) 
+                As SumOfQuantityInStock 
+        from INV_StockTransactionDetail
+			Inner Join INV_StockTransactionHeader On INV_StockTransactionHeader.StockTransactionID = INV_StockTransactionDetail.StockTransactionID 
+                AND INV_StockTransactionHeader.CompanyID = INV_StockTransactionDetail.CompanyID 
+                And INV_StockTransactionDetail.PeriodID = INV_StockTransactionHeader.PeriodID
+			Inner Join SET_DocumentType On SET_DocumentType.DocumentTypeID = INV_StockTransactionHeader.DocumentTypeID 
+                And SET_DocumentType.CompanyID = INV_StockTransactionHeader.CompanyID And Set_DocumentType.PeriodID = INV_StockTransactionHeader.PeriodID 
+            where INV_StockTransactionDetail.ItemID = INV_Item.ItemID And INV_StockTransactionDetail.CompanyID = 1
+                And INV_StockTransactionDetail.PeriodID = 1 And INV_StockTransactionDetail.Status = 1 And SET_DocumentType.TransactionImpact &lt;&gt; 'No Impact' 
+    ) - (Quantity * @ProductQuantity) as [TransactionQuantity],
+-- empty column
+0 as OldItemPrice,
+0 as CurrentStock,
+0 as LastConsumption,
+0 as LastPurchasePrice,
+0 as EstimatedPOItemPrice,
+0 as Amount,
+0 as TransactionCost,
+0 as CostCenterID,
+0 as IncurredOnID,
+0 as PrimaryQuantity,
+'' as ReasonLookup,
+'' as DistributionAccountCOA,
+'' as EncumbranceAccountCOA,
+'' as EncumbranceAmount,
+'' as CurrencyConversionRate,
+'' as CurrencyConversionType,
+'' as QuantityAdjusted,
+'' as EmployeeCode,
+'' as DepartmentID,
+'' as ReceivingDocument,
+'' as TransferTransactionLookup,
+'' as SourceCode,
+'' as SourceLineID,
+'' as VendorLotNumber,
+'' as ShipmentNumber,
+'' as WayBillAirBill,
+'' as FreightCode,
+'' as NoofContainers,
+'' as ValueChange,
+'' as PercentageChange,
+'' as ProjectID,
+'' as ReservationLookup,
+'' as CustomerID,
+'false' as InvoiceFlag,
+0 as PriorCost,
+'' as SourceHeaderID,
+'' as CostCenterName,
+'' as UOMName,
+'' as CustomerName,
+'' as IncurredDescription,
+'' as CurrencyID,
+'' as Description,
+'' as CurrencyName,
+'' as ProjectName,
+'' as Remarks,
+'Add' as Action
+From AS_RecipeDetail
+inner join AS_RecipeHeader on AS_RecipeHeader.RecipeID = AS_RecipeDetail.RecipeID
+AND AS_RecipeHeader.CompanyID = AS_RecipeDetail.CompanyID
+inner join INV_Item on INV_Item.ItemID = AS_RecipeDetail.ItemID
+--And INV_Item.CompanyID = AS_RecipeDetail.CompanyID
+inner join INV_SET_Category on INV_SET_Category.CategoryID = AS_RecipeDetail.ItemCategory
+--and INV_SET_Category.CompanyID = AS_RecipeDetail.CompanyID
+inner join SET_ItemCatalog on SET_ItemCatalog.ItemCatalogID = INV_Item.ItemCatalogGroupID
+and SET_ItemCatalog.IsActive = 1 and SET_ItemCatalog.Status = 1
+Where  AS_RecipeDetail.CompanyID = @CompanyID
+and AS_RecipeHeader.itemID = @ItemID
+) fintab
+where fintab.[TransactionQuantity] &lt;0</value>
+  </data>
+</root>

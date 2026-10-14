@@ -1,0 +1,611 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Query_GatePassEntryReport" xml:space="preserve">
+    <value>select ROW_NUMBER () OVER(ORDER BY Gate_outwardheader.Gate_OutwardHeaderID DESC) AS Row,
+ Gate_outwardheader.DocumentTypeID, set_DocumentType.DocumentType, 
+    Gate_outwardheader.DocumentNo, Gate_outwardheader.DocumentDate, INV_Item.Description AS Item, 
+	set_location.locationname AS Location, 
+    Case When Gate_outwardheader.SupplierID is null then Gate_outwardheader.SupplierName else AR_Set_customer.CustomerName end AS Supplier, 
+	INV_Item.ListPricePerUnit as Unit,
+	Gate_outwardheader.VehicalNo,
+	 Gate_outwarddetail.TransactionQuantity as Quantity, 
+	 Gate_outwarddetail.Reason,
+    (INV_Item.ListPricePerUnit * Gate_outwarddetail.TransactionQuantity) As Amount, INV_ITEM.InventoryItemStatusCode AS PartNo, 
+    IncRude_Item.Description as IncurredOn, Gate_outwardheader.Comments as Remarks, Gate_outwarddetail.ReferenceNo as Reference, 
+    case when set_DocumentType.TransactionImpact ='Negative' then 'OUT' when set_DocumentType.TransactionImpact ='Positive' then 'IN' 
+        when set_DocumentType.TransactionImpact ='No Impact' then '' else set_DocumentType.TransactionImpact end Status, 
+    SET_OperatingUnit.LogoImage ,SET_UnitofMeasure.UOMName
+	, Case Gate_outwardheader.StatusCode 
+    When 1 then 'Approved' 
+    When 5 then 'In Process' 
+    When 12 Then 'Released for Approve' 
+    When 13 Then 'Partially Approved' 
+    When 14 Then 'Discuss' 
+    When 15 Then 'Cancelled' 
+    When 16 Then 'Reversed' End As DocumentStatus
+from Gate_outwardheader 
+    inner join set_DocumentType on set_DocumentType.DocumentTypeID = Gate_outwardheader.DocumentTypeID and set_DocumentType.CompanyID = Gate_outwardheader.CompanyID 
+        and set_DocumentType.PeriodID = Gate_outwardheader.PeriodID 
+    inner join Gate_outwarddetail on Gate_outwarddetail.Gate_OutwardHeaderID = Gate_outwardheader.Gate_OutwardHeaderID 
+        and Gate_outwarddetail.companyID = Gate_outwardheader.companyID and Gate_outwarddetail.PeriodID = Gate_outwardheader.PeriodID 
+    inner join INV_Item on INV_Item.ItemID = Gate_outwarddetail.itemID --and INV_Item.companyID = Gate_outwardheader.companyID 
+    inner join set_location on set_location.locationID = Gate_outwardheader.locationID 
+    Left join AR_Set_customer on AR_Set_customer.CustomerID = Gate_outwardheader.SupplierID --and AR_Set_customer.companyID = Gate_outwardheader.companyID 
+        and AR_Set_customer.PeriodID = Gate_outwardheader.PeriodID 
+    left join inv_StockTransactionDetail on inv_StockTransactionDetail.StockTransactionID = Gate_outwarddetail.SourceHeaderID 
+        and inv_StockTransactionDetail.TransactionDetailID = Gate_outwarddetail.SourceLineID 
+    left join INV_Item IncRude_Item on IncRude_Item.ItemID = Gate_OutwardHeader.IncurredOnID 
+    --and IncRude_Item.companyID = Gate_outwardheader.companyID 
+    Inner Join SET_Company ON SET_Company.CompanyId = Gate_outwardheader.CompanyID 
+    Inner Join SET_OperatingUnit ON SET_OperatingUnit.OperatingUnitId = SET_Company.OperatingUnitId   Left JOIn SET_UnitofMeasure On SET_UnitofMeasure.UOMID = Gate_outwarddetail.TransactionUOMID
+	--inner Join INV_StockTransactionHeader ON INV_StockTransactionHeader.DocumentNo = Gate_OutwardHeader.DocumentNo
+	--AND INV_StockTransactionHeader.DocumentTypeID = Gate_OutwardHeader.DocumentTypeID
+	--AND INV_StockTransactionHeader.CompanyID = Gate_OutwardHeader.CompanyID
+	--and INV_StockTransactionHeader.BusinessPartnerID = Gate_OutwardHeader.SupplierID
+	--AND INV_StockTransactionHeader.PeriodID = Gate_OutwardHeader.PeriodID
+	--AND INV_StockTransactionHeader.Status = 1
+where Gate_outwardheader.CompanyID = @CompanyID and Gate_outwardheader.PeriodID = @PeriodID AND Gate_outwardheader.FiscalID = @CurrentFiscalID
+    {0}</value>
+  </data>
+  <data name="Query_GetDataforDetailByGONNO" xml:space="preserve">
+    <value>Select distinct  0 as SerialNo, 0 as Gate_OutwardDetailID ,0 as Gate_OutwardHeaderID ,Gate_OutwardDetail.ItemID
+,Gate_OutwardDetail.TransactionUOMID
+
+,isnull((Gate_OutwardDetail.TransactionQuantity - isnull(Tab.TransactionQuantity,0) ),0) as  TransactionQuantity	
+
+ 
+,Gate_OutwardHeader.Gate_OutwardHeaderID as SourceHeaderID,Gate_OutwardDetail.Gate_OutwardDetailID as SourceLineID
+,Gate_OutwardHeader.DocumentTypeID as SourceDocumentTypeID ,Gate_OutwardDetail.SourceDocumentNo,Gate_OutwardDetail.ReferenceNo ,INV_Item.Description
+ ,SET_UnitofMeasure.UOMName, INV_Item.ListPricePerUnit ,Gate_OutwardDetail.CompanyID , Gate_OutwardDetail.PeriodID ,'Add' as Action
+from Gate_OutwardDetail
+Inner Join Gate_OutwardHeader on Gate_OutwardHeader.Gate_OutwardHeaderID = Gate_OutwardDetail.Gate_OutwardHeaderID
+Left Join INV_Item on INV_Item.ItemID = Gate_OutwardDetail.ItemID
+Left Join SET_UnitofMeasure on SET_UnitofMeasure.UOMID = Gate_OutwardDetail.TransactionUOMID
+Left Join (
+Select Sum(Gate_OutwardDetail.TransactionQuantity)  as TransactionQuantity
+ ,Gate_OutwardDetail.SourceHeaderID 
+-- ,Gate_OutwardDetail.Gate_OutwardDetailID 
+ ,Gate_OutwardDetail.SourceLineID
+ from Gate_OutwardDetail 
+ Inner Join Gate_OutwardHeader on Gate_OutwardHeader.Gate_OutwardHeaderID = Gate_OutwardDetail.Gate_OutwardHeaderID
+ Where Gate_OutwardDetail.Status =1 
+    And Gate_OutwardDetail.SourceHeaderID = @DocumentNo
+
+Group by  Gate_OutwardDetail.SourceLineID, Gate_OutwardDetail.SourceHeaderID 
+) as Tab on Tab.SourceHeaderID = Gate_OutwardDetail.Gate_OutwardHeaderID  
+     And Gate_OutwardDetail.Gate_OutwardDetailID = Tab.SourceLineID
+Where Gate_OutwardHeader.Gate_OutwardHeaderID = @DocumentNo
+And isnull((Gate_OutwardDetail.TransactionQuantity - isnull(Tab.TransactionQuantity,0) ),0) &lt;&gt; 0
+And Gate_OutwardHeader.Status =1 
+And Gate_OutwardDetail.Status =1 
+And Gate_OutwardDetail.Status =1  
+
+Order By Gate_OutwardDetail.Gate_OutwardDetailID</value>
+  </data>
+  <data name="Query_GetDataForItemIssuanceGatePassReport" xml:space="preserve">
+    <value>Select DocumentNo, ItemCode , ItemID ,Description ,DocumentDate ,ABS(SUM(IssuanceQty)) as IssuanceQty ,ABS(Sum(ReturnQty)) as ReturnQty
+,UOMname,CostCenterName,Comments
+from 
+(
+	Select INV_StockTransactionHEader.DocumentNo, INV_ITEm.InventoryItemStatusCode as ItemCode,INV_ITem.ItemID,INV_ITem.Description,INV_StockTransactionHEader.DocumentDate
+	,SUM(INV_StockTransactionDetail.TransactionQuantity) as IssuanceQty, 0 as ReturnQty
+	,Set_unitOFMeasure.UOMname,Set_CostCenter.CostCenterName,INV_StockTransactionHEader.Comments
+	from INV_StockTransactionHEader 
+	inner join INV_StockTransactionDetail on INV_StockTransactionDetail.StockTransactionID = INV_StockTransactionHEader.StockTransactionID
+	and INV_StockTransactionDetail.CompanyID = INV_StockTransactionHEader.CompanyID
+	and INV_StockTransactionDetail.PeriodID = INV_StockTransactionHEader.PeriodID
+
+	inner join INV_ITEM on INV_ITEM.ItemID = INV_StockTransactionDetail.ItemID
+	--and INV_StockTransactionDetail.CompanyID = INV_ITEM.CompanyID
+
+	left join Set_unitOFMeasure on Set_unitOFMeasure.UOMID = INV_StockTransactionDetail.TransactionUOMID
+	left join Set_costCenter on Set_CostCenter.CostCenterID = INV_StockTransactionHEader.CostCenterID
+
+	where INV_StockTransactionHEader.CompanyID = @CompanyID  
+	And INV_StockTransactionHEader.periodID = @PeriodID
+	And INV_StockTransactionHEader.Status = 1  
+	And INV_StockTransactionDetail.Status = 1  
+	And INV_StockTransactionHeader.DocumentTypeID =(Select DocumentTypeID from Set_DocumentType Where DocumentType ='OpenReturnableGON')
+
+   {0}
+
+		group by INV_StockTransactionHEader.DocumentNo,INV_ITEm.InventoryItemStatusCode,INV_ITem.Description,INV_ITem.ItemID,
+		INV_StockTransactionHEader.DocumentDate,Set_unitOFMeasure.UOMname,Set_CostCenter.CostCenterName,INV_StockTransactionHEader.Comments
+
+
+
+Union All 
+
+
+
+	Select INV_StockTransactionHEader.DocumentNo, INV_ITEm.InventoryItemStatusCode as ItemCode,INV_ITem.ItemID,INV_ITem.Description,INV_StockTransactionHEader.DocumentDate
+	, 0 as IssuanceQty,SUM(INV_StockTransactionDetail.TransactionQuantity) as ReturnQty 
+	,Set_unitOFMeasure.UOMname,Set_CostCenter.CostCenterName,INV_StockTransactionHEader.Comments
+	from INV_StockTransactionHEader 
+	inner join INV_StockTransactionDetail on INV_StockTransactionDetail.StockTransactionID = INV_StockTransactionHEader.StockTransactionID
+	and INV_StockTransactionDetail.CompanyID = INV_StockTransactionHEader.CompanyID
+	and INV_StockTransactionDetail.PeriodID = INV_StockTransactionHEader.PeriodID
+	inner join INV_ITEM on INV_ITEM.ItemID = INV_StockTransactionDetail.ItemID
+	--and INV_StockTransactionDetail.CompanyID = INV_ITEM.CompanyID
+
+	left join Set_unitOFMeasure on Set_unitOFMeasure.UOMID = INV_StockTransactionDetail.TransactionUOMID
+	left join Set_costCenter on Set_CostCenter.CostCenterID = INV_StockTransactionHEader.CostCenterID
+
+
+	where INV_StockTransactionHEader.CompanyID = @CompanyID  
+	And INV_StockTransactionHEader.periodID = @PeriodID
+	And INV_StockTransactionHEader.Status = 1  
+	And INV_StockTransactionDetail.Status = 1  
+	And INV_StockTransactionHeader.DocumentTypeID =(Select DocumentTypeID from Set_DocumentType Where DocumentType ='OpenReturnableGIN')
+
+	{0}
+
+	group by INV_StockTransactionHEader.DocumentNo,INV_ITEm.InventoryItemStatusCode,INV_ITem.Description,INV_ITem.ItemID,
+	INV_StockTransactionHEader.DocumentDate,Set_unitOFMeasure.UOMname,Set_CostCenter.CostCenterName,INV_StockTransactionHEader.Comments
+
+
+) as Tab
+
+Group By  ItemID, DocumentNo, ItemCode ,Description ,DocumentDate ,UOMname,CostCenterName,Comments
+
+order by Tab.DocumentDate asc</value>
+  </data>
+  <data name="Query_InvGatePassEntryReport" xml:space="preserve">
+    <value>select ROW_NUMBER () OVER(ORDER BY Gate_outwardheader.Gate_OutwardHeaderID DESC) AS Row, Gate_outwardheader.DocumentTypeID, set_DocumentType.DocumentType, 
+    Gate_outwardheader.DocumentNo, Gate_outwardheader.DocumentDate, INV_Item.Description AS Item, set_location.locationname AS Location, 
+    AR_Set_customer.CustomerName AS Supplier, INV_Item.ListPricePerUnit as Unit, Gate_outwarddetail.TransactionQuantity as Quantity, 
+    (INV_Item.ListPricePerUnit * Gate_outwarddetail.TransactionQuantity) As Amount, INV_ITEM.InventoryItemStatusCode AS PartNo, 
+    IncRude_Item.Description as IncurredOn, Gate_outwardheader.Comments as Remarks, Gate_outwarddetail.ReferenceNo as Reference, 
+    case when set_DocumentType.TransactionImpact ='Negative' then 'OUT' when set_DocumentType.TransactionImpact ='Positive' then 'IN' 
+        when set_DocumentType.TransactionImpact ='No Impact' then '' else set_DocumentType.TransactionImpact end Status, 
+    SET_OperatingUnit.LogoImage ,SET_UnitofMeasure.UOMName
+from Gate_outwardheader 
+    inner join set_DocumentType on set_DocumentType.DocumentTypeID = Gate_outwardheader.DocumentTypeID and set_DocumentType.CompanyID = Gate_outwardheader.CompanyID 
+        and set_DocumentType.PeriodID = Gate_outwardheader.PeriodID 
+    inner join Gate_outwarddetail on Gate_outwarddetail.Gate_OutwardHeaderID = Gate_outwardheader.Gate_OutwardHeaderID 
+        and Gate_outwarddetail.companyID = Gate_outwardheader.companyID and Gate_outwarddetail.PeriodID = Gate_outwardheader.PeriodID 
+    inner join INV_Item on INV_Item.ItemID = Gate_outwarddetail.itemID --and INV_Item.companyID = Gate_outwardheader.companyID 
+    inner join set_location on set_location.locationID = Gate_outwardheader.locationID 
+    inner join AR_Set_customer on AR_Set_customer.CustomerID = Gate_outwardheader.SupplierID and AR_Set_customer.companyID = Gate_outwardheader.companyID 
+        and AR_Set_customer.PeriodID = Gate_outwardheader.PeriodID 
+    left join inv_StockTransactionDetail on inv_StockTransactionDetail.StockTransactionID = Gate_outwarddetail.SourceHeaderID 
+        and inv_StockTransactionDetail.TransactionDetailID = Gate_outwarddetail.SourceLineID 
+    left join INV_Item IncRude_Item on IncRude_Item.ItemID = Gate_OutwardHeader.IncurredOnID 
+    --and IncRude_Item.companyID = Gate_outwardheader.companyID 
+    Inner Join SET_Company ON SET_Company.CompanyId = Gate_outwardheader.CompanyID 
+    Inner Join SET_OperatingUnit ON SET_OperatingUnit.OperatingUnitId = SET_Company.OperatingUnitId    INNER JOIN  SET_UnitofMeasure On SET_UnitofMeasure.UOMID = Gate_outwarddetail.TransactionUOMID
+where Gate_outwardheader.CompanyID = @CompanyID and Gate_outwardheader.PeriodID = @PeriodID 
+    {0}</value>
+  </data>
+  <data name="Query_GateINReport" xml:space="preserve">
+    <value>Select ROW_NUMBER () OVER(ORDER BY SAL_GateIn.GateInID DESC) AS Row,
+   SAL_GateIn.DocumentTypeID,set_DocumentType.DocumentType,
+   SAL_GateIn.GateInNo as DocumentNo, SAL_GateIn.GateInDate as DocumentDate, SAL_GateIn.ItemName as Item, 
+   SAL_GateIn.CustomerName as Supplier, SAL_GateIn.Quantity , SAL_GateIn.RRNo as Reference,
+   SAL_GateIn.VehicleNo , SAL_GateIn.CNICNO as CNIC , SAL_GateIn.DriverMobileNo as DrMobileNO, SAL_GateIn.DriverName,
+     SAL_GateIn.LICNo,
+	  case when set_DocumentType.TransactionImpact ='Negative' then 'OUT' when set_DocumentType.TransactionImpact ='Positive' then 'IN' 
+        when set_DocumentType.TransactionImpact ='No Impact' then '' else set_DocumentType.TransactionImpact end Status, 
+		SET_OperatingUnit.LogoImage ,SET_UnitofMeasure.UOMName ,
+
+ Case SAL_GateIn.StatusCode 
+    When 1 then 'Approved' 
+    When 5 then 'In Process' 
+    When 12 Then 'Released for Approve' 
+    When 13 Then 'Partially Approved' 
+    When 14 Then 'Discuss' 
+    When 15 Then 'Cancelled' 
+    When 16 Then 'Reversed' End As DocumentStatus
+
+from SAL_GateIn
+
+    inner join set_DocumentType on set_DocumentType.DocumentTypeID = SAL_GateIn.DocumentTypeID 
+	     and set_DocumentType.CompanyID = SAL_GateIn.CompanyID 
+        and set_DocumentType.PeriodID = SAL_GateIn.PeriodID 
+
+		Inner Join SET_Company ON SET_Company.CompanyId = SAL_GateIn.CompanyID 
+		Inner Join SET_OperatingUnit ON SET_OperatingUnit.OperatingUnitId = SET_Company.OperatingUnitId 
+	  Left JOIn SET_UnitofMeasure On SET_UnitofMeasure.UOMID = SAL_GateIn.UOMID
+
+where SAL_GateIn.CompanyID = @CompanyID and SAL_GateIn.PeriodID = @PeriodID AND SAL_GateIn.CurrentFiscalID = @CurrentFiscalID
+    {0}</value>
+  </data>
+  <data name="Query_SelectAll_Searching_ForApproveNew" xml:space="preserve">
+    <value>SELECT DISTINCT Gate_OutwardHeader.Gate_OutwardHeaderID,
+	Gate_OutwardHeader.CompanyID, 
+	Gate_OutwardHeader.PeriodID, 
+	Gate_OutwardHeader.Status,
+	Gate_OutwardHeader.DocumentTypeID,
+	SET_DocumentType.DocumentType,
+	Gate_OutwardHeader.DocumentNo,
+	Gate_OutwardHeader.DocumentDate, 
+	
+	Gate_OutwardHeader.SupplierID, 
+	case when [Gate_OutwardHeader].SupplierID is null then [Gate_OutwardHeader].SupplierName else [AR_SET_Customer].[CustomerName] end as VendorName,
+	Gate_OutwardHeader.StatusCode,
+	SET_DocumentApprove.ApprovalStatus,
+    SET_UserApprovalAmount.ApprovalOperator,
+    SET_ApprovalAuthority.UserID AS UserID,
+    SET_Authority.AuthorityLevel
+FROM Gate_OutwardHeader 
+INNER JOIN SET_DocumentType ON SET_DocumentType.CompanyID = Gate_OutwardHeader.CompanyID AND SET_DocumentType.PeriodID = Gate_OutwardHeader.PeriodID 
+	AND SET_DocumentType.DocumentTypeID = Gate_OutwardHeader.DocumentTypeID 
+INNER JOIN AR_InvoiceDetail ON AR_InvoiceDetail.InvoiceHeaderID = Gate_OutwardHeader.Gate_OutwardHeaderID 
+	AND AR_InvoiceDetail.CompanyID = Gate_OutwardHeader.CompanyID AND AR_InvoiceDetail.PeriodID = Gate_OutwardHeader.PeriodID 
+INNER JOIN INV_Item ON INV_Item.ItemID = AR_InvoiceDetail.ItemID --AND INV_Item.CompanyID = Gate_OutwardHeader.CompanyID 
+Left JOIN AR_SET_Customer on Gate_OutwardHeader.SupplierID = AR_SET_Customer.CustomerID AND Gate_OutwardHeader.CompanyID = AR_SET_Customer.CompanyID 
+	AND Gate_OutwardHeader.PeriodID = AR_SET_Customer.PeriodID AND AR_SET_Customer.Status = 1
+INNER JOIN SET_DocumentApprove ON SET_DocumentApprove.CompanyID = Gate_OutwardHeader.CompanyID
+	AND SET_DocumentApprove.PeriodID = Gate_OutwardHeader.PeriodID AND SET_DocumentApprove.DocumentTypeID = Gate_OutwardHeader.DocumentTypeID
+	AND SET_DocumentApprove.DocumentNo = Gate_OutwardHeader.DocumentNo 
+	AND SET_DocumentApprove.CreateDate = (SELECT MAX(CreateDate) FROM SET_DocumentApprove WHERE CompanyID = Gate_OutwardHeader.CompanyID
+		AND PeriodID = Gate_OutwardHeader.PeriodID AND DocumentTypeID = Gate_OutwardHeader.DocumentTypeID 
+		AND DocumentNo = Gate_OutwardHeader.DocumentNo)
+INNER JOIN SET_UserApprovalAmount ON SET_UserApprovalAmount.CompanyID = Gate_OutwardHeader.CompanyID 
+	AND SET_UserApprovalAmount.PeriodID = Gate_OutwardHeader.PeriodID AND SET_UserApprovalAmount.Status = 1
+	AND (SET_UserApprovalAmount.DocumentTypeID = Gate_OutwardHeader.DocumentTypeID OR SET_UserApprovalAmount.DocumentTypeID IS NULL)
+	AND (1 = (CASE WHEN SET_UserApprovalAmount.EffectiveDateTo IS NULL 
+						AND CAST(CONVERT(VARCHAR(10), GETDATE(), 110) AS DATETIME) &gt;= SET_UserApprovalAmount.EffectiveDateFrom THEN 1
+				   WHEN SET_UserApprovalAmount.EffectiveDateTo IS NOT NULL 
+						AND CAST(CONVERT(VARCHAR(10), GETDATE(), 110) AS DATETIME) BETWEEN SET_UserApprovalAmount.EffectiveDateFrom 
+						AND SET_UserApprovalAmount.EffectiveDateTo THEN 1
+				   ELSE 0 END))
+	AND (1 = (CASE WHEN SET_UserApprovalAmount.AmountTo IS NULL AND (SELECT ih.TotalAmount FROM Gate_OutwardHeader ih 
+											WHERE ih.CompanyID = Gate_OutwardHeader.CompanyID 
+												AND ih.PeriodID = Gate_OutwardHeader.PeriodID 
+												AND ih.Gate_OutwardHeaderID = Gate_OutwardHeader.Gate_OutwardHeaderID) &gt;= SET_UserApprovalAmount.AmountFrom THEN 1
+				   WHEN SET_UserApprovalAmount.AmountTo IS NOT NULL AND (SELECT ih.TotalAmount FROM Gate_OutwardHeader ih 
+													WHERE ih.CompanyID = Gate_OutwardHeader.CompanyID 
+														AND ih.PeriodID = Gate_OutwardHeader.PeriodID 
+														AND ih.Gate_OutwardHeaderID = Gate_OutwardHeader.Gate_OutwardHeaderID) BETWEEN SET_UserApprovalAmount.AmountFrom 
+                                                            AND SET_UserApprovalAmount.AmountTo THEN 1
+				   ELSE 0 END))
+INNER JOIN SET_ApprovalAuthority ON SET_ApprovalAuthority.ApprovalAuthorityID = SET_UserApprovalAmount.ApprovalAuthorityID 
+	AND SET_ApprovalAuthority.CompanyID = SET_UserApprovalAmount.CompanyID AND SET_ApprovalAuthority.PeriodID = SET_UserApprovalAmount.PeriodID 
+	AND SET_ApprovalAuthority.Status = 1
+INNER JOIN SET_Authority ON SET_Authority.AuthorityID = SET_ApprovalAuthority.AuthorityID 
+	AND SET_Authority.CompanyID = SET_ApprovalAuthority.CompanyID AND SET_Authority.PeriodID = SET_ApprovalAuthority.PeriodID 
+	AND SET_Authority.Status = 1
+
+    inner join Set_PeriodCustom on  
+ Gate_OutwardHeader.DocumentDate between Set_PeriodCustom.StartDate and Set_PeriodCustom.EndDate 
+and Set_PeriodCustom.Status = 1 and SET_PeriodCustom.FiscalID = @CurrentFiscalID</value>
+  </data>
+  <data name="Query_SelectAll_Searching_WithPaging_ForApproveNew" xml:space="preserve">
+    <value>SELECT *, ROW_NUMBER() OVER (ORDER BY Gate_OutwardHeader.Gate_OutwardHeaderID) AS 'Row' 
+FROM
+	(
+		SELECT DISTINCT InvHeader_Outer.Gate_OutwardHeaderID,
+		InvHeader_Outer.CompanyID, 
+		InvHeader_Outer.PeriodID, 
+		InvHeader_Outer.Status,
+		InvHeader_Outer.DocumentTypeID,
+		SET_DocumentType.DocumentType,
+		InvHeader_Outer.DocumentNo,
+		InvHeader_Outer.DocumentDate, 
+		
+		InvHeader_Outer.SupplierID, 
+		case when [InvHeader_Outer].SupplierID is null then [InvHeader_Outer].SupplierName else [AR_SET_Customer].[CustomerName] end as VendorName,
+		InvHeader_Outer.StatusCode,
+		SET_DocumentApprove.ApprovalStatus,
+		SET_UserApprovalAmount.ApprovalOperator,
+		SET_ApprovalAuthority.UserID AS UserID,
+		SET_Authority.AuthorityLevel
+	FROM Gate_OutwardHeader InvHeader_Outer
+	INNER JOIN SET_DocumentType ON SET_DocumentType.CompanyID = InvHeader_Outer.CompanyID AND SET_DocumentType.PeriodID = InvHeader_Outer.PeriodID 
+		AND SET_DocumentType.DocumentTypeID = InvHeader_Outer.DocumentTypeID 
+        AND SET_DocumentType.DocumentType IN ('NON Returnable GON (GRN)', 'NON Returnable GON (GRN)_SITE', 'OpenReturnableGIN',
+		    'OpenReturnableGIN_SITE', 'OpenReturnableGON', 'OpenReturnableGON_SITE')
+	INNER JOIN Gate_OutwardDetail ON Gate_OutwardDetail.Gate_OutwardHeaderID = InvHeader_Outer.Gate_OutwardHeaderID 
+		AND Gate_OutwardDetail.CompanyID = InvHeader_Outer.CompanyID AND Gate_OutwardDetail.PeriodID = InvHeader_Outer.PeriodID 
+	INNER JOIN INV_Item ON INV_Item.ItemID = Gate_OutwardDetail.ItemID --AND INV_Item.CompanyID = Gate_OutwardDetail.CompanyID 
+	Left JOIN AR_SET_Customer on InvHeader_Outer.SupplierID = AR_SET_Customer.CustomerID AND InvHeader_Outer.CompanyID = AR_SET_Customer.CompanyID 
+		AND InvHeader_Outer.PeriodID = AR_SET_Customer.PeriodID AND AR_SET_Customer.Status = 1
+	INNER JOIN SET_DocumentApprove ON SET_DocumentApprove.CompanyID = InvHeader_Outer.CompanyID
+		AND SET_DocumentApprove.PeriodID = InvHeader_Outer.PeriodID AND SET_DocumentApprove.DocumentTypeID = InvHeader_Outer.DocumentTypeID
+		AND SET_DocumentApprove.DocumentNo = InvHeader_Outer.DocumentNo 
+		AND SET_DocumentApprove.CreateDate = (SELECT MAX(CreateDate) FROM SET_DocumentApprove WHERE CompanyID = InvHeader_Outer.CompanyID
+			AND PeriodID = InvHeader_Outer.PeriodID AND DocumentTypeID = InvHeader_Outer.DocumentTypeID 
+			AND DocumentNo = InvHeader_Outer.DocumentNo)
+	INNER JOIN SET_UserApprovalAmount ON SET_UserApprovalAmount.CompanyID = InvHeader_Outer.CompanyID 
+		AND SET_UserApprovalAmount.PeriodID = InvHeader_Outer.PeriodID AND SET_UserApprovalAmount.Status = 1
+		AND (SET_UserApprovalAmount.DocumentTypeID = InvHeader_Outer.DocumentTypeID OR SET_UserApprovalAmount.DocumentTypeID IS NULL)
+		AND (1 = (CASE WHEN SET_UserApprovalAmount.EffectiveDateTo IS NULL 
+							AND CAST(CONVERT(VARCHAR(10), GETDATE(), 110) AS DATETIME) &gt;= SET_UserApprovalAmount.EffectiveDateFrom THEN 1
+					   WHEN SET_UserApprovalAmount.EffectiveDateTo IS NOT NULL 
+							AND CAST(CONVERT(VARCHAR(10), GETDATE(), 110) AS DATETIME) BETWEEN SET_UserApprovalAmount.EffectiveDateFrom 
+							AND SET_UserApprovalAmount.EffectiveDateTo THEN 1
+					   ELSE 0 END))
+		AND (1 = (CASE WHEN SET_UserApprovalAmount.AmountTo IS NULL AND (SELECT ih.TotalAmount FROM Gate_OutwardHeader ih 
+												WHERE ih.CompanyID = InvHeader_Outer.CompanyID 
+													AND ih.PeriodID = InvHeader_Outer.PeriodID 
+													AND ih.Gate_OutwardHeaderID = InvHeader_Outer.Gate_OutwardHeaderID) &gt;= SET_UserApprovalAmount.AmountFrom THEN 1
+					   WHEN SET_UserApprovalAmount.AmountTo IS NOT NULL AND (SELECT ih.TotalAmount FROM Gate_OutwardHeader ih 
+														WHERE ih.CompanyID = InvHeader_Outer.CompanyID 
+															AND ih.PeriodID = InvHeader_Outer.PeriodID 
+															AND ih.Gate_OutwardHeaderID = InvHeader_Outer.Gate_OutwardHeaderID) BETWEEN SET_UserApprovalAmount.AmountFrom 
+																AND SET_UserApprovalAmount.AmountTo THEN 1
+					   ELSE 0 END))
+	INNER JOIN SET_ApprovalAuthority ON SET_ApprovalAuthority.ApprovalAuthorityID = SET_UserApprovalAmount.ApprovalAuthorityID 
+		AND SET_ApprovalAuthority.CompanyID = SET_UserApprovalAmount.CompanyID AND SET_ApprovalAuthority.PeriodID = SET_UserApprovalAmount.PeriodID 
+		AND SET_ApprovalAuthority.Status = 1
+	INNER JOIN SET_Authority ON SET_Authority.AuthorityID = SET_ApprovalAuthority.AuthorityID 
+		AND SET_Authority.CompanyID = SET_ApprovalAuthority.CompanyID AND SET_Authority.PeriodID = SET_ApprovalAuthority.PeriodID 
+		AND SET_Authority.Status = 1
+	
+
+    inner join Set_PeriodCustom on  
+ InvHeader_Outer.DocumentDate between Set_PeriodCustom.StartDate and Set_PeriodCustom.EndDate 
+and Set_PeriodCustom.Status = 1 and SET_PeriodCustom.FiscalID = @CurrentFiscalID
+
+
+	) Gate_OutwardHeader</value>
+  </data>
+  <data name="Query_SelectAll_WithoutPaging_ForGateEntryNew" xml:space="preserve">
+    <value>[Gate_OutwardHeader].[CompanyID],
+    [Gate_OutwardHeader].[PeriodID],
+    [Gate_OutwardHeader].[Gate_OutwardHeaderID],
+    [Gate_OutwardHeader].[DocumentTypeID],
+    [Gate_OutwardHeader].[DocumentNo],
+    [Gate_OutwardHeader].[DocumentDate],
+    [Gate_OutwardHeader].[Comments],
+    [Gate_OutwardHeader].[CostCenterID],
+    [Gate_OutwardHeader].[LocationID],
+    [Gate_OutwardHeader].[StatusCode],
+    [Gate_OutwardHeader].[TotalAmount],
+    [Gate_OutwardHeader].[SupplierID],
+    case when [Gate_OutwardHeader].SupplierID is null then [Gate_OutwardHeader].SupplierName else [AR_SET_Customer].[CustomerName] end as VendorName,
+    [Gate_OutwardHeader].[SourceHeaderID],
+    [Gate_OutwardHeader].[Status],
+    [Gate_OutwardHeader].[CreatedBy],
+    [Gate_OutwardHeader].[CreateDate],
+    [Gate_OutwardHeader].[CreatedByValue],
+    [Gate_OutwardHeader].[UpdatedBy],
+    [Gate_OutwardHeader].[UpdateDate],
+    [Gate_OutwardHeader].[UpdatedByValue],
+    [SET_DocumentType]. [DocumentType] 
+    FROM [Gate_OutwardHeader]
+
+    inner join AR_SET_Customer on Gate_OutwardHeader.SupplierID = AR_SET_Customer.CustomerID AND Gate_OutwardHeader.CompanyID = AR_SET_Customer.CompanyID 
+    AND Gate_OutwardHeader.PeriodID = AR_SET_Customer.PeriodID AND AR_SET_Customer.Status = 1
+    inner join SET_DocumentType on SET_DocumentType.DocumentTypeID = Gate_OutwardHeader.DocumentTypeID AND SET_DocumentType.CompanyID = Gate_OutwardHeader.CompanyID
+    AND SET_DocumentType.PeriodID =Gate_OutwardHeader.PeriodID 
+    AND SET_DocumentType.DocumentType IN ('NON Returnable GON (GRN)', 'NON Returnable GON (GRN)_SITE', 'OpenReturnableGIN',
+		    'OpenReturnableGIN_SITE', 'OpenReturnableGON', 'OpenReturnableGON_SITE')
+inner join Set_PeriodCustom on  
+[Gate_OutwardHeader].[DocumentDate], between Set_PeriodCustom.StartDate and Set_PeriodCustom.EndDate 
+and Set_PeriodCustom.Status = 1 and SET_PeriodCustom.FiscalID = @CurrentFiscalID</value>
+  </data>
+  <data name="Query_SelectAll_WithPaging_ForGateEntryNew" xml:space="preserve">
+    <value>SELECT [Gate_OutwardHeader].[CompanyID],
+    [Gate_OutwardHeader].[PeriodID],
+    [Gate_OutwardHeader].[Gate_OutwardHeaderID],
+    [Gate_OutwardHeader].[DocumentTypeID],
+    [Gate_OutwardHeader].[DocumentNo],
+    [Gate_OutwardHeader].[DocumentDate],
+    [Gate_OutwardHeader].[Comments],
+    [Gate_OutwardHeader].[CostCenterID],
+    [Gate_OutwardHeader].[LocationID],
+    [Gate_OutwardHeader].[StatusCode],
+    [Gate_OutwardHeader].[TotalAmount],
+    [Gate_OutwardHeader].[SupplierID],
+    case when [Gate_OutwardHeader].SupplierID is null then [Gate_OutwardHeader].SupplierName else [AR_SET_Customer].[CustomerName] end as VendorName,
+    [Gate_OutwardHeader].[SourceHeaderID],
+    [Gate_OutwardHeader].[Status],
+    [Gate_OutwardHeader].[CreatedBy],
+    [Gate_OutwardHeader].[CreateDate],
+    [Gate_OutwardHeader].[CreatedByValue],
+    [Gate_OutwardHeader].[UpdatedBy],
+    [Gate_OutwardHeader].[UpdateDate],
+    [SET_DocumentType]. [DocumentType], 
+    [Gate_OutwardHeader].[UpdatedByValue],
+    Set_PeriodCustom.PeriodSetName,
+    INV_StockTransactionHeader.StockTransactionID, 
+	ROW_NUMBER() Over (Order by [Gate_OutwardHeader].[CompanyID], [Gate_OutwardHeader].[Gate_OutwardHeaderID], [Gate_OutwardHeader].[PeriodID]) as 'Row'
+
+    FROM [Gate_OutwardHeader]
+
+        LEFT join AR_SET_Customer on Gate_OutwardHeader.SupplierID = AR_SET_Customer.CustomerID 
+        AND Gate_OutwardHeader.PeriodID = AR_SET_Customer.PeriodID AND AR_SET_Customer.Status = 1
+        LEFT join INV_StockTransactionHeader on INV_StockTransactionHeader.CompanyId=[Gate_OutwardHeader].CompanyID
+        AND INV_StockTransactionHeader.PeriodID=[Gate_OutwardHeader].PeriodID
+        AND INV_StockTransactionHeader.DocumentTypeID=[Gate_OutwardHeader].DocumentTypeID
+        AND INV_StockTransactionHeader.DocumentNo=[Gate_OutwardHeader].DocumentNO
+        inner join SET_DocumentType on SET_DocumentType.DocumentTypeID = Gate_OutwardHeader.DocumentTypeID AND SET_DocumentType.CompanyID = Gate_OutwardHeader.CompanyID
+        AND SET_DocumentType.PeriodID =Gate_OutwardHeader.PeriodID
+        AND SET_DocumentType.DocumentType IN ('NON Returnable GON (GRN)', 'NON Returnable GON (GRN)_SITE', 'OpenReturnableGIN',
+		    'OpenReturnableGIN_SITE', 'OpenReturnableGON', 'OpenReturnableGON_SITE')
+
+        --left join Set_PeriodCustom on [Gate_OutwardHeader].DocumentDate between Set_PeriodCustom.StartDate and Set_PeriodCustom.EndDate
+        --and Set_PeriodCustom.Status=1 
+
+    inner join Set_PeriodCustom on  
+  [Gate_OutwardHeader].[DocumentDate] between Set_PeriodCustom.StartDate and Set_PeriodCustom.EndDate 
+and Set_PeriodCustom.Status = 1 and SET_PeriodCustom.FiscalID = @CurrentFiscalID
+and INV_StockTransactionHeader.FiscalID = SET_PeriodCustom.FiscalID</value>
+  </data>
+  <data name="Query_GateDataForEntryReport" xml:space="preserve">
+    <value>select ROW_NUMBER () OVER(ORDER BY Gate_outwardheader.Gate_OutwardHeaderID DESC) AS Row, Gate_outwardheader.DocumentTypeID, set_DocumentType.DocumentType, 
+    Gate_OutwardHeader.DocumentNo as TokenNo,Gate_outwardheader.DocumentNo, Gate_outwardheader.DocumentDate, INV_Item.Description AS Item, set_location.locationname AS Location, 
+    AR_Set_customer.CustomerName AS Supplier, INV_Item.ListPricePerUnit as Unit, Gate_outwarddetail.TransactionQuantity as Quantity, 
+    (INV_Item.ListPricePerUnit * Gate_outwarddetail.TransactionQuantity) As Amount, INV_ITEM.InventoryItemStatusCode AS PartNo, 
+    IncRude_Item.Description as IncurredOn, Gate_outwardheader.Comments as Remarks, Gate_outwarddetail.ReferenceNo as Reference, 
+    case when set_DocumentType.TransactionImpact ='Negative' then 'OUT' when set_DocumentType.TransactionImpact ='Positive' then 'IN' 
+        when set_DocumentType.TransactionImpact ='No Impact' then '' else set_DocumentType.TransactionImpact end Status, 
+    SET_OperatingUnit.LogoImage ,SET_UnitofMeasure.UOMName, Gate_outwardheader.ExpectedDate, 
+	--Fabrics_InventoryTokenHeader.DriverName
+	'' as DriverName
+from Gate_outwardheader 
+    inner join set_DocumentType on set_DocumentType.DocumentTypeID = Gate_outwardheader.DocumentTypeID and set_DocumentType.CompanyID = Gate_outwardheader.CompanyID 
+        and set_DocumentType.PeriodID = Gate_outwardheader.PeriodID 
+    inner join Gate_outwarddetail on Gate_outwarddetail.Gate_OutwardHeaderID = Gate_outwardheader.Gate_OutwardHeaderID 
+        and Gate_outwarddetail.companyID = Gate_outwardheader.companyID and Gate_outwarddetail.PeriodID = Gate_outwardheader.PeriodID 
+    inner join INV_Item on INV_Item.ItemID = Gate_outwarddetail.itemID and INV_Item.companyID = Gate_outwardheader.companyID 
+    inner join set_location on set_location.locationID = Gate_outwardheader.locationID 
+    inner join AR_Set_customer on AR_Set_customer.CustomerID = Gate_outwardheader.SupplierID and AR_Set_customer.companyID = Gate_outwardheader.companyID 
+        and AR_Set_customer.PeriodID = Gate_outwardheader.PeriodID 
+    left join inv_StockTransactionDetail on inv_StockTransactionDetail.StockTransactionID = Gate_outwarddetail.SourceHeaderID 
+        and inv_StockTransactionDetail.TransactionDetailID = Gate_outwarddetail.SourceLineID 
+    left join INV_Item IncRude_Item on IncRude_Item.ItemID = Gate_OutwardHeader.IncurredOnID and IncRude_Item.companyID = Gate_outwardheader.companyID 
+    Inner Join SET_Company ON SET_Company.CompanyId = Gate_outwardheader.CompanyID 
+    Inner Join SET_OperatingUnit ON SET_OperatingUnit.OperatingUnitId = SET_Company.OperatingUnitId   Left JOIn SET_UnitofMeasure On SET_UnitofMeasure.UOMID = Gate_outwarddetail.TransactionUOMID
+	--left Join Fabrics_InventoryTokenHeader on Fabrics_InventoryTokenHeader.TokenNo = Gate_outwardheader.TokenNo
+	--      and Fabrics_InventoryTokenHeader.CustomerID = Gate_outwardheader.SupplierID
+	--	  and Fabrics_InventoryTokenHeader.CompanyID = Gate_outwardheader.CompanyID
+	--	  and Fabrics_InventoryTokenHeader.PeriodID = Gate_outwardheader.PeriodID
+	--	  and Fabrics_InventoryTokenHeader.Status = 1
+
+where Gate_outwardheader.CompanyID = @CompanyID and Gate_outwardheader.PeriodID = @PeriodID 
+    {0}</value>
+  </data>
+  <data name="Query_GetData_byKey_BarcodeNew" xml:space="preserve">
+    <value>SELECT (CASE LEN([SAL_GateIn].GateInNo)
+                          WHEN 1
+                          THEN '00000000000'
+                               + CAST([SAL_GateIn].GateInNo AS VARCHAR)
+                          WHEN 2
+                          THEN '0000000000'
+                               + CAST([SAL_GateIn].GateInNo AS VARCHAR)
+                          WHEN 3
+                          THEN '000000000'
+                               + CAST([SAL_GateIn].GateInNo AS VARCHAR)
+                          WHEN 4
+                          THEN '00000000'
+                               + CAST([SAL_GateIn].GateInNo AS VARCHAR)
+                          WHEN 5
+                          THEN '0000000'
+                               + CAST([SAL_GateIn].GateInNo AS VARCHAR)
+                          ELSE CAST([SAL_GateIn].GateInNo AS VARCHAR)
+                        END ) as Barcode, 
+                        STUFF((
+                                SELECT DISTINCT ', ' + DOH.DeliveryOrderNo
+                                FROM dbo.SAL_GateInDetail GID2
+                                INNER JOIN dbo.SAL_DeliveryOrderHeader DOH 
+                                    ON DOH.CompanyID = GID2.CompanyID 
+                                    AND DOH.PeriodID = GID2.PeriodID 
+                                    AND DOH.DeliveryOrderID = GID2.DeliveryOrderID
+                                WHERE 
+                                    GID2.CompanyID = [SAL_GateIn].CompanyID
+                                    AND GID2.PeriodID = [SAL_GateIn].PeriodID
+                                    AND GID2.GateInID = [SAL_GateIn].GateInID
+                                FOR XML PATH(''), TYPE
+                            ).value('.', 'NVARCHAR(MAX)'), 1, 2, '') AS DeliveryOrders, * FROM [SAL_GateIn] WHERE [CompanyID] = @CompanyID and [GateInNo] = @GateInID and [PeriodID] = @PeriodID and [CurrentFiscalID] = @CurrentFiscalID and [DocumentTypeID] = @DocumentTypeID</value>
+  </data>
+</root>

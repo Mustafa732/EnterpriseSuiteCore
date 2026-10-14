@@ -1,0 +1,192 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Query_getDataFromBankFacility" xml:space="preserve">
+    <value>Select Set_BankFacility.BankFacilityID, Set_BankFacility.BankFacilityName as FacilityName,
+Set_BankFacility.StartDate,Set_BankFacility.EndDate, Set_BankFacility.BankName as BankBranchName, Set_BankFacility.AccountNo, 
+Set_BankFacility.LimitName, Set_BankFacility.LoanType, Set_BankFacility.Markup, Set_BankFacility.GracePeriod, Set_BankFacility.Funded,
+Set_BankFacility.NonFunded, Set_BankFacilityDetail.FromDate as MarkUpFromDate, Set_BankFacilityDetail.ToDate as MarkUpToDate,
+Set_BankFacility.Amount as AmountLimit , Set_BankFacilityDetail.InterestRate, AR_SET_BankAccount.BankAccountNumber
+ from Set_BankFacility
+
+ Inner JOin Set_BankFacilityDetail on Set_BankFacilityDetail.BankFacilityHeaderID = Set_BankFacility.BankFacilityID
+  and Set_BankFacilityDetail.CompanyID = Set_BankFacility.CompanyID
+  AND Set_BankFacilityDetail.PeriodID = Set_BankFacility.PeriodID
+  AND Set_BankFacilityDetail.Status = 1
+
+ Inner join AR_SET_BankAccount on 
+      AR_SET_BankAccount.CompanyID= Set_BankFacility.CompanyID
+	  and AR_SET_BankAccount.PeriodID = Set_BankFacility.PeriodID
+	  and AR_SET_BankAccount.BankAccountID = Set_BankFacility.BankID
+	  and  AR_SET_BankAccount.Status = 1
+
+	
+	Where Set_BankFacility.Status = 1
+	AND Set_BankFacility.CompanyID = @CompanyID
+	AND Set_BankFacility.PeriodID = @PeriodID
+	--AND (Set_BankFacility.BankFacilityName = @BankFacilityName or @BankFacilityName is null)
+		AND (Set_BankFacility.StartDate &gt; @FromDate or @FromDate is null)
+		--AND (Set_BankFacility.EndDate &lt; @ToDate or @ToDate is null)</value>
+  </data>
+  <data name="Query_getDataFromBankGurantee" xml:space="preserve">
+    <value>Select Set_BankGuarantee.BankGuaranteeID, Set_BankGuarantee.BankName, Set_BankGuarantee.AccountNo, 
+	Set_BankGuarantee.StartDate, Set_BankGuarantee.EndDate, Set_BankGuarantee.Amount ,
+	Set_BankGuarantee.Charges as BankCharges,
+	Set_BankGuaranteeDetail.BankGuaranteeDetailID, 
+	Set_BankGuaranteeDetail.BusinessPartnerID,
+	Set_BankGuaranteeDetail.BusinessPartnerName, Set_BankGuaranteeDetail.Amount as GuranteeAmount,
+	Set_BankGuaranteeDetail.FromDate, Set_BankGuaranteeDetail.ToDate  
+ from Set_BankGuarantee
+		Inner Join Set_BankGuaranteeDetail on Set_BankGuaranteeDetail.BankGuaranteeHeaderID = Set_BankGuarantee.BankGuaranteeID
+		AND Set_BankGuaranteeDetail.CompanyID = Set_BankGuarantee.CompanyID
+		AND Set_BankGuaranteeDetail.PeriodID = Set_BankGuarantee.PeriodID
+		AND Set_BankGuaranteeDetail.Status=1
+		     INNER JOIN SET_Company ON SET_Company.CompanyId=Set_BankGuarantee.CompanyID
+ AND SET_Company.Status=1
+ INNER JOIN SET_OperatingUnit On SET_OperatingUnit.OperatingUnitId=SET_Company.OperatingUnitId AND SET_OperatingUnit.Status=1
+ INNER JOIN SET_Business On SET_Business.BusinessId=SET_Company.BusinessId and SET_Business.IsActive=1
+ Where Set_BankGuarantee.Status = 1 And 
+ Set_BankGuarantee.CompanyID = @CompanyID And 
+ Set_BankGuarantee.PeriodID = @PeriodID
+And (Set_BankGuarantee.StartDate &gt; @FromDate or @FromDate is null)
+And (Set_BankGuarantee.EndDate &lt; @ToDate or @ToDate is null)</value>
+  </data>
+  <data name="Query_getDataFromPledgeBag" xml:space="preserve">
+    <value>Select IMP_PledgeBags.DocumentNo , IMP_PledgeBags.DocumentDate as PledgeDate, IMP_PledgeBags.BankName as BankBranchName,
+	IMP_PledgeBags.AccountNo, IMP_PledgeBags.PledgeBags,IMP_PledgeBags.MarketValuePerBag As MarketRate,
+	 IMP_PledgeBags.TotalMarketValue as MarketPledgeAmount,
+	IMP_PledgeBags.TotalMarketValueByBank As BankPledgeAmount ,
+	IMP_UnPledgeBags.DocumentNo as DePledgeBagDocNo,IMP_UnPledgeBags .DocumentDate as DepledgeDate,
+	isnull(IMP_UnPledgeBags.UnPledgeBags,0) as DePledgeBags,IMP_UnPledgeBags.TotalMarketValue as DePledgeBagAmount
+	
+
+	from IMP_PledgeBags
+
+	Left Join IMP_UnPledgeBags On IMP_UnPledgeBags.PledgeBagsId = IMP_PledgeBags.PledgeBagsID
+	AND IMP_UnPledgeBags.CompanyID = IMP_PledgeBags.CompanyID
+	AND IMP_UnPledgeBags.PeriodID = IMP_PledgeBags.PeriodID
+	AND IMP_UnPledgeBags.Status = 1
+
+	Where IMP_PledgeBags.Status = 1
+	AND IMP_PledgeBags.CompanyID = 1
+	AND IMP_PledgeBags.PeriodID = 1
+	AND IMP_PledgeBags.DocumentDate Between @FromDate And @ToDate
+	AND (IMP_PledgeBags.DocumentNo = @PBNO Or @PBNO is Null)</value>
+  </data>
+</root>

@@ -1,0 +1,556 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Query_DetailAdditionsFixedAssets" xml:space="preserve">
+    <value>select distinct FA_SET_AssetType.AssetTypeName, INV_Item.Description as ItemDescription,AP_PurchaseOrderDetail.Quantity, AP_PurchaseOrderDetail.NetAmount
+from INV_Item
+inner join FA_SET_AssetType on FA_SET_AssetType.AssetTypeID = INV_Item.EquipmentTypeID
+inner join FA_AssetInformation on FA_AssetInformation.ItemID = INV_Item.ItemID
+inner join AP_PurchaseOrderDetail on AP_PurchaseOrderDetail.POHeaderID = FA_AssetInformation.POHeaderID
+and AP_PurchaseOrderDetail.PODetailID = FA_AssetInformation.PODetailID
+and AP_PurchaseOrderDetail.CompanyID = FA_AssetInformation.CompanyID
+inner join AP_PurchaseOrderHeader on AP_PurchaseOrderHeader.POHeaderID = AP_PurchaseOrderDetail.POHeaderID
+and AP_PurchaseOrderHeader.CompanyID = AP_PurchaseOrderDetail.CompanyID
+and AP_PurchaseOrderHeader.PeriodID = AP_PurchaseOrderDetail.PeriodID
+
+where AP_PurchaseOrderHeader.CompanyID in @CompanyID
+and AP_PurchaseOrderHeader.PeriodID = @PeriodID
+and AP_PurchaseOrderHeader.DocumentDate between @FromDate and @ToDate</value>
+  </data>
+  <data name="Query_DisposalsOfFixedAssets" xml:space="preserve">
+    <value>--Declare @FromDate datetime = '2020-11-01 00:00:00:000'
+--Declare @ToDate datetime = '2021-09-05 00:00:00:000'
+--Declare @CompanyID int = 2
+--Declare @PeriodID int= 1
+
+select t.AssetTypeName as AssetTypeName, t.Description, t.PurchaseDate , t.DocumentDate as SaleDate, SUM(Abs(t.TransactionQuantity)) as Qty, SUM(t.Cost) as Cost, SUM(t.OpeningDepreciation) as OpeningDepreciation
+,sum(t.CurrentDepreciation) as CurrentDepreciation, SUM(t.OpeningDepreciation + t.CurrentDepreciation) as AsAtCost --AccumulatedDepreciation
+,SUM(t.BookValue) as BookValue,SUM(t.Proceeds) as Proceeds,(isnull(SUM(t.Cost),0) - SUM(t.OpeningDepreciation + t.CurrentDepreciation)) as GainAndLoss
+,t.Comments as Remarks 
+from (
+
+select FA_SET_AssetType.AssetTypeName,isnull(FA_AssetInformation.WrittenDownValue,0) as Cost, 0 as OpeningDepreciation
+,isnull(FA_DepreciationProcess.WDV,0) as CurrentDepreciation,Isnull(FA_AssetInformation.WrittenDownValue,0) as BookValue
+,isnull(INV_StockTransactionDetail.TransactionCost,0) as Proceeds,INV_Item.Description,FA_AssetInformation.PurchaseDate,INV_StockTransactionHeader.DocumentDate
+,isnull(INV_StockTransactionDetail.TransactionQuantity,0) as TransactionQuantity,INV_StockTransactionHeader.Comments
+
+from FA_AssetInformation
+INNER JOIN INV_Item ON INV_Item.ItemID = FA_AssetInformation.ItemID 
+INNER JOIN FA_SET_AssetType ON FA_SET_AssetType.AssetTypeID = FA_AssetInformation.AssetTypeID AND FA_SET_AssetType.CompanyID = FA_AssetInformation.CompanyID 
+AND FA_SET_AssetType.Status = 1  
+inner JOIN FA_DepreciationProcess ON FA_DepreciationProcess.AssetIdentityID = FA_AssetInformation.AssetInfoID 
+AND FA_SET_AssetType.CompanyID = FA_DepreciationProcess.CompanyID AND FA_DepreciationProcess.Status = 1 
+
+inner join INV_StockTransactionDetail on INV_StockTransactionDetail.itemid = INV_Item.Itemid
+inner join INV_StockTransactionHeader on INV_StockTransactionHeader.StockTransactionID = INV_StockTransactionDetail.StockTransactionID
+and INV_StockTransactionHeader.CompanyID = INV_StockTransactionDetail.CompanyID
+and INV_StockTransactionHeader.PeriodID = INV_StockTransactionDetail.PeriodID
+inner join SET_DocumentType on SET_DocumentType.DocumentTypeID = INV_StockTransactionHeader.DocumentTypeID
+and SET_DocumentType.CompanyID = INV_StockTransactionHeader.CompanyID
+and SET_DocumentType.MenuID in (select MenuID from ApplicationMenu where MenuPath = '/Sales/Dispatch_frm.aspx')
+
+where FA_DepreciationProcess.CompanyID in @CompanyID and isDisposed = 1
+And (FA_DepreciationProcess.DepreciatedFrom between @FromDate AND @ToDate) 
+)t
+group by t.AssetTypeName,t.Description,t.PurchaseDate,t.DocumentDate,t.TransactionQuantity,t.Comments</value>
+  </data>
+  <data name="Query_FADisposalReport" xml:space="preserve">
+    <value>Select SAL_DispatchHeader.DispatchID, SAL_DispatchHeader.DispatchNo, SAL_DispatchHeader.DispatchDate,SAL_DispatchHeader.DocumentTypeID, AR_SET_Customer.CustomerName, INV_SET_Category.CategoryName, INV_Item.Description,
+(FA_AssetInformation.tagprefix+'-'+FA_AssetInformation.tagnumber) as TagName, SET_Location.LocationName,set_costcenter.CostCenterName
+
+,isnull((Select  SUM(FADP.DepreciationAmount)
+	 from FA_DepreciationProcess FADP
+	 INNER JOIN FA_AssetInformation FAI ON FADP.AssetIdentityID = FAI.AssetInfoID
+	 and FADP.CompanyID= FAI.CompanyID
+	 where  FAI.TagPrefix=FA_AssetInformation.TagPrefix and FAI.TagNumber=FA_AssetInformation.TagNumber 
+	),0) AS DisposValue
+
+From SAL_DispatchHeader 
+  Inner join AR_SET_Customer on AR_SET_Customer.PeriodID = SAL_DispatchHeader.PeriodID --AR_SET_Customer.CompanyID = SAL_DispatchHeader.CompanyID AND 
+            AND AR_SET_Customer.CustomerID = SAL_DispatchHeader.CustomerID 
+        left Join Inv_StockTransactionHeader On Inv_StockTransactionHeader.CompanyID = SAL_DispatchHeader.CompanyID 
+            And Inv_StockTransactionHeader.PeriodID = SAL_DispatchHeader.PeriodID And Inv_StockTransactionHeader.DocumentTypeID = SAL_DispatchHeader.DocumentTypeID 
+            And Inv_StockTransactionHeader.DocumentNo = SAL_DispatchHeader.DispatchNo 
+		And Inv_StockTransactionHeader.FiscalID = SAL_DispatchHeader.FiscalID
+		left Join Inv_StockTransactionDetail On Inv_StockTransactionDetail.CompanyID = Inv_StockTransactionHeader.CompanyID 
+            And Inv_StockTransactionDetail.PeriodID = Inv_StockTransactionHeader.PeriodID 
+            And Inv_StockTransactionDetail.StockTransactionID = Inv_StockTransactionHeader.StockTransactionID 
+		INNER JOIN INV_Item ON INV_Item.ItemID = INV_StockTransactionDetail.ItemID 
+	    --AND INV_Item.CompanyID = INV_StockTransactionDetail.CompanyID 
+    AND INV_Item.Status = 1 
+    INNER JOIN INV_SET_Category ON INV_SET_Category.CategoryID = INV_Item.ItemTypeID --  
+        AND INV_SET_Category.Status = 1 
+		inner JOIN FA_AssetInformation ON FA_AssetInformation.AssetInfoID=INV_StockTransactionDetail.AssetInfoID
+     AND FA_AssetInformation.Status=1
+	 left join SET_Location on SET_Location.LocationID = SAL_DispatchHeader.LocationID
+	 inner join set_costcenter on set_costcenter.costcenterid = SAL_DispatchHeader.CostCentreID
+
+		INNER JOIn SET_Company ON FA_AssetInformation.CompanyID=SET_Company.CompanyId
+        AND SET_Company.Status=1 
+ INNER JOIN SET_CompanyPeriod ON SET_CompanyPeriod.CompanyID=SET_Company.CompanyId
+        AND SET_CompanyPeriod.status=1
+ INNER JOIN SET_Period on SET_Period.PeriodID = SET_CompanyPeriod.PeriodID
+
+Where SAL_DispatchHeader.CompanyID = @CompanyID
+And SAL_DispatchHeader.DispatchDate between @FromDate AND @ToDate  
+{0}</value>
+  </data>
+  <data name="Query_FARegisterDetailReport" xml:space="preserve">
+    <value>{vCTEQuery}
+
+{notInOpening}
+
+
+Select 
+FA_SET_AssetType.AssetTypeName
+,CONVERt(Date,@FromDate,8)as fromdate
+,CONVERt(Date,@ToDate,8) as ToDate
+,Isnull(FA_AssetInformation.TagPrefix,'') + ' ' + FA_AssetInformation.TagNumber  as tagNumber
+,FA_AssetInformation.ItemID 
+,INV_Item.Description as ItemName
+,FA_AssetInformation.StockGRNDate
+,FA_AssetInformation.Rate as AsAtCost
+,FA_AssetInformation.DepreciationRate 
+,0 as Addition
+,FA_DepreciationProcess.WDV
+--,ISnull(FA_AssetInformation.CurrentValue,0) as CurrentDepreciation
+ ,CONVERT(varchar,FA_Set_AssetLife.IntervalValue) + '-' + CONVERT(varchar,FA_Set_AssetLife.PeriodType) as PeriodName
+--,Case When FA_DepreciationProcess.DepreciatedFrom &gt; SET_Period.StartDate  Then FA_DepreciationProcess.DepreciationAmount Else 0 End As  AsAtDepreciation 
+,isnull((Select  SUM(FAI.OpeningDepreciation)
+	 from FA_AssetInformation FAI 
+	 where FAI.Status = 1 AND FAI.TagPrefix=FA_AssetInformation.TagPrefix and FAI.TagNumber=FA_AssetInformation.TagNumber 	 
+	),0) +
+isnull((Select  SUM(FADP.DepreciationAmount)
+	 from FA_DepreciationProcess FADP
+	 INNER JOIN FA_AssetInformation FAI ON FADP.AssetIdentityID = FAI.AssetInfoID
+	 and FADP.CompanyID= FAI.CompanyID AND FADP.Status = 1 AND FAI.Status = 1
+	 where  FAI.TagPrefix=FA_AssetInformation.TagPrefix and FAI.TagNumber=FA_AssetInformation.TagNumber AND ( CAST( FADP.DepreciatedFrom AS Date) &gt;= SET_Period.StartDate ) and  CAST( FADP.DepreciatedFrom AS Date) &lt; @FromDate 
+	),0) AS AsAtDepreciation
+ ,FA_AssetInformation.LastDepreciationDate
+ ,SET_Period.Description
+ ,FA_DepreciationProcess.DepreciatedFrom
+ --,(Case when (select Count(FADP.DepreciationAmount)
+	-- from FA_DepreciationProcess FADP
+	-- INNER JOIN FA_AssetInformation FAI ON FADP.AssetIdentityID = FAI.AssetInfoID
+	-- and FADP.CompanyID= FAI.CompanyID
+	-- where  FAI.TagPrefix=FA_AssetInformation.TagPrefix and FAI.TagNumber=FA_AssetInformation.TagNumber
+	--  and FA_DepreciationProcess.AssetIdentityID=FADP.AssetIdentityID
+	--  AND CAST( FADP.DepreciatedFrom  AS Date) not between SET_Period.StartDate and FA_DepreciationProcess.DepreciatedFrom)&gt; 0
+   --  then FA_DepreciationProcess.DepreciationAmount
+  	-- else 0 END) AS DepreciationAmount
+ ,ISnull(FA_DepreciationProcess.DepreciationAmount,0) as DepreciationAmount
+ ,isnull((Case when FA_AssetInformation.LastDepreciationDate = FA_DepreciationProcess.DepreciatedUpTo then 
+	FA_AssetInformation.isdisposed else 0 end),0) isdisposed
+,isnull(FA_AssetInformation.ParentAssetInfoID,FA_AssetInformation.AssetInfoID)ParentAssetInfoID
+,isnull(FA_AssetInformation.IsChild,0)IsChild,
+--set_costcenter.CostCenterName
+(select  scc.CostCenterName from SET_CostCenter scc where scc.CostCenterID = SET_CostCenter.BSCostCenterID) CostCenterName
+  from
+ FA_AssetInformation
+ INNER JOIN INV_Item ON INV_Item.ItemID = FA_AssetInformation.ItemID --AND INV_Item.CompanyID=FA_AssetInformation.CompanyID 
+ 
+ Left JOIN INV_StockTransactionDetail on FA_AssetInformation.ItemID = INV_StockTransactionDetail.ItemID
+	AND INV_StockTransactionDetail.TransactionDetailID = FA_AssetInformation.StockDetailID
+	AND INV_StockTransactionDetail.StockTransactionID = FA_AssetInformation.StockHeaderID
+	 AND INV_StockTransactionDetail.CompanyID = FA_AssetInformation.CompanyID
+
+ INNER JOIN FA_SET_AssetType ON FA_SET_AssetType.AssetTypeID = FA_AssetInformation.AssetTypeID AND FA_SET_AssetType.CompanyID = FA_AssetInformation.CompanyID 
+        AND FA_SET_AssetType.Status = 1 
+ INNER JOIn SET_Company ON FA_AssetInformation.CompanyID=SET_Company.CompanyId
+        AND SET_Company.Status=1 
+ INNER JOIN SET_CompanyPeriod ON SET_CompanyPeriod.CompanyID=SET_Company.CompanyId
+        AND SET_CompanyPeriod.status=1
+ INNER JOIN SET_Period on SET_Period.PeriodID = SET_CompanyPeriod.PeriodID
+inner JOIN FA_DepreciationProcess ON FA_DepreciationProcess.AssetIdentityID = FA_AssetInformation.AssetInfoID AND FA_SET_AssetType.CompanyID = FA_DepreciationProcess.CompanyID 
+        AND FA_DepreciationProcess.Status = 1 
+		INNER JOIN FA_Set_AssetLife ON FA_Set_AssetLife.AssetLifeID = FA_AssetInformation.ExpectedLifeID AND FA_Set_AssetLife.CompanyID = FA_AssetInformation.CompanyID AND FA_Set_AssetLife.Status = 1
+left join set_costcenter on set_costcenter.costcenterid = FA_AssetInformation.CostCenterID
+WHERE 
+FA_AssetInformation.CompanyID = @CompanyID
+And (FA_DepreciationProcess.DepreciatedFrom between @FromDate AND @ToDate  Or FA_DepreciationProcess.DepreciatedUpTo  between @FromDate AND @ToDate) 
+and FA_AssetInformation.opening is null
+{0}
+GROUP BY FA_AssetInformation.TagPrefix, FA_AssetInformation.TagNumber
+,FA_AssetInformation.ItemID 
+,INV_Item.Description 
+,FA_AssetInformation.AssetInfoID
+,FA_Set_AssetLife.IntervalValue
+,FA_Set_AssetLife.PeriodType
+,FA_DepreciationProcess.DepreciatedFrom
+,FA_DepreciationProcess.WDV
+,FA_AssetInformation.Rate
+,FA_AssetInformation.StockGRNDate 
+,FA_AssetInformation.DepreciationRate
+,FA_DepreciationProcess.PeriodStatusID
+,FA_SET_AssetType.AssetTypeName
+,FA_AssetInformation.LastDepreciationDate
+,FA_AssetInformation.WrittenDownValue
+,FA_DepreciationProcess.DepreciationAmount
+,FA_DepreciationProcess.AssetIdentityID
+,FA_AssetInformation.AssetInfoID
+,FA_DepreciationProcess.DepreciatedUpto
+,FA_AssetInformation.CurrentValue
+,SET_Period.StartDate
+,SET_Period.Description
+,FA_AssetInformation.isdisposed
+,FA_AssetInformation.ParentAssetInfoID
+,FA_AssetInformation.IsChild
+,set_costcenter.CostCenterName
+,SET_CostCenter.BSCostCenterID
+--ORDER BY   FA_AssetInformation.ItemID
+
+{Query_Add_Purchase}</value>
+  </data>
+  <data name="Query_FARegisterDetailReport_SSML" xml:space="preserve">
+    <value>{vCTEQuery}
+
+{notInOpening}
+
+
+Select 
+FA_SET_AssetType.AssetTypeName
+,CONVERt(Date,@FromDate,8)as fromdate
+,CONVERt(Date,@ToDate,8) as ToDate
+,Isnull(FA_AssetInformation.TagPrefix,'') + ' ' + FA_AssetInformation.TagNumber  as tagNumber
+,FA_AssetInformation.ItemID 
+,INV_Item.Description as ItemName
+,FA_AssetInformation.StockGRNDate
+,(Case when (select count(FAI.WrittenDownValue)
+	 from FA_AssetInformation FAI
+	 INNER JOIN FA_DepreciationProcess FADP ON FADP.AssetIdentityID = FAI.AssetInfoID
+	 where  FAI.TagPrefix=FA_AssetInformation.TagPrefix and FAI.TagNumber=FA_AssetInformation.TagNumber AND CAST( FADP.DepreciatedFrom  AS Date) &gt; SET_Period.StartDate and CAST( FADP.DepreciatedFrom  AS Date) &lt; FA_DepreciationProcess.DepreciatedFrom)&gt; 0
+     then FA_AssetInformation.WrittenDownValue
+     	 else 0 END) AS AsAtCost
+,FA_AssetInformation.DepreciationRate 
+,(Case when (Select count(FAI.WrittenDownValue) as Addition
+from FA_AssetInformation FAI
+ INNER JOIN FA_DepreciationProcess FADP ON FADP.AssetIdentityID = FAI.AssetInfoID
+where FAI.TagPrefix=FA_AssetInformation.TagPrefix and FAI.TagNumber=FA_AssetInformation.TagNumber
+ and  CAST(FADP.DepreciatedFrom   AS Date) &gt; SET_Period.StartDate and CAST( FADP.DepreciatedFrom   AS Date) &lt; FA_DepreciationProcess.DepreciatedFrom
+ ) &gt; 0
+ then 0
+ else isnull(FA_AssetInformation.WrittenDownValue,0) end )  as Addition
+,FA_DepreciationProcess.WDV
+--,ISnull(FA_AssetInformation.CurrentValue,0) as CurrentDepreciation
+ ,case FA_DepreciationProcess.PeriodStatusID when 1 then 'Day' when 2 then 'Month' when 3 then 'Quarter' when 4 then 'Year' end as PeriodName
+--,Case When FA_DepreciationProcess.DepreciatedFrom &gt; SET_Period.StartDate  Then FA_DepreciationProcess.DepreciationAmount Else 0 End As  AsAtDepreciation 
+,(isnull((Select  SUM(FADP.DepreciationAmount)
+	 from FA_DepreciationProcess FADP
+	 INNER JOIN FA_AssetInformation FAI ON FADP.AssetIdentityID = FAI.AssetInfoID
+	 and FADP.CompanyID= FAI.CompanyID
+	 where  FAI.TagPrefix=FA_AssetInformation.TagPrefix and FAI.TagNumber=FA_AssetInformation.TagNumber AND ( CAST( FADP.DepreciatedFrom AS Date) &gt;= SET_Period.StartDate ) and  CAST( FADP.DepreciatedFrom AS Date) &lt; FA_DepreciationProcess.DepreciatedFrom 
+	),0) + ISNULL(FA_AssetInformation.OpeningDepreciation,0)) AS AsAtDepreciation
+ ,FA_AssetInformation.LastDepreciationDate
+ ,SET_Period.Description
+ ,FA_DepreciationProcess.DepreciatedFrom
+ --,(Case when (select Count(FADP.DepreciationAmount)
+	-- from FA_DepreciationProcess FADP
+	-- INNER JOIN FA_AssetInformation FAI ON FADP.AssetIdentityID = FAI.AssetInfoID
+	-- and FADP.CompanyID= FAI.CompanyID
+	-- where  FAI.TagPrefix=FA_AssetInformation.TagPrefix and FAI.TagNumber=FA_AssetInformation.TagNumber
+	--  and FA_DepreciationProcess.AssetIdentityID=FADP.AssetIdentityID
+	--  AND CAST( FADP.DepreciatedFrom  AS Date) not between SET_Period.StartDate and FA_DepreciationProcess.DepreciatedFrom)&gt; 0
+   --  then FA_DepreciationProcess.DepreciationAmount
+  	-- else 0 END) AS DepreciationAmount
+ ,ISnull(FA_DepreciationProcess.DepreciationAmount,0) as DepreciationAmount
+ ,isnull((Case when FA_AssetInformation.LastDepreciationDate = FA_DepreciationProcess.DepreciatedUpTo then 
+	FA_AssetInformation.isdisposed else 0 end),0) isdisposed
+,isnull(FA_AssetInformation.ParentAssetInfoID,FA_AssetInformation.AssetInfoID)ParentAssetInfoID
+,isnull(FA_AssetInformation.IsChild,0)IsChild,
+--set_costcenter.CostCenterName
+set_costcenter.CostCenterName as CostCenterName, SET_Location.LocationName
+  from
+ FA_AssetInformation
+ INNER JOIN INV_Item ON INV_Item.ItemID = FA_AssetInformation.ItemID --AND INV_Item.CompanyID=FA_AssetInformation.CompanyID 
+ 
+ Left JOIN INV_StockTransactionDetail on FA_AssetInformation.ItemID = INV_StockTransactionDetail.ItemID
+	AND INV_StockTransactionDetail.TransactionDetailID = FA_AssetInformation.StockDetailID
+	AND INV_StockTransactionDetail.StockTransactionID = FA_AssetInformation.StockHeaderID
+	 AND INV_StockTransactionDetail.CompanyID = FA_AssetInformation.CompanyID
+
+ INNER JOIN FA_SET_AssetType ON FA_SET_AssetType.AssetTypeID = FA_AssetInformation.AssetTypeID AND FA_SET_AssetType.CompanyID = FA_AssetInformation.CompanyID 
+        AND FA_SET_AssetType.Status = 1 
+ INNER JOIn SET_Company ON FA_AssetInformation.CompanyID=SET_Company.CompanyId
+        AND SET_Company.Status=1 
+ INNER JOIN SET_CompanyPeriod ON SET_CompanyPeriod.CompanyID=SET_Company.CompanyId
+        AND SET_CompanyPeriod.status=1
+ INNER JOIN SET_Period on SET_Period.PeriodID = SET_CompanyPeriod.PeriodID
+inner JOIN FA_DepreciationProcess ON FA_DepreciationProcess.AssetIdentityID = FA_AssetInformation.AssetInfoID AND FA_SET_AssetType.CompanyID = FA_DepreciationProcess.CompanyID 
+        AND FA_DepreciationProcess.Status = 1 
+left join set_costcenter on set_costcenter.costcenterid = FA_AssetInformation.CostCenterID
+left join SET_Location on SET_Location.LocationID = FA_DepreciationProcess.LocationID
+WHERE 
+FA_AssetInformation.CompanyID = @CompanyID
+And (FA_DepreciationProcess.DepreciatedFrom between @FromDate AND @ToDate  Or FA_DepreciationProcess.DepreciatedUpTo  between @FromDate AND @ToDate) 
+and FA_AssetInformation.opening is null
+{0}
+GROUP BY FA_AssetInformation.TagPrefix, FA_AssetInformation.TagNumber
+,FA_AssetInformation.ItemID 
+,INV_Item.Description 
+,FA_AssetInformation.AssetInfoID
+,FA_DepreciationProcess.DepreciatedFrom
+,FA_DepreciationProcess.WDV
+,FA_AssetInformation.Rate
+,FA_AssetInformation.StockGRNDate 
+,FA_AssetInformation.DepreciationRate
+,FA_DepreciationProcess.PeriodStatusID
+,FA_SET_AssetType.AssetTypeName
+,FA_AssetInformation.LastDepreciationDate
+,FA_AssetInformation.WrittenDownValue
+,FA_AssetInformation.OpeningDepreciation
+,FA_DepreciationProcess.DepreciationAmount
+,FA_DepreciationProcess.AssetIdentityID
+,FA_AssetInformation.AssetInfoID
+,FA_DepreciationProcess.DepreciatedUpto
+,FA_AssetInformation.CurrentValue
+,SET_Period.StartDate
+,SET_Period.Description
+,FA_AssetInformation.isdisposed
+,FA_AssetInformation.ParentAssetInfoID
+,FA_AssetInformation.IsChild
+,set_costcenter.CostCenterName
+,SET_CostCenter.BSCostCenterID
+,SET_Location.LocationName
+--ORDER BY   FA_AssetInformation.ItemID
+
+{Query_Add_Purchase}</value>
+  </data>
+  <data name="Query_GetData_AreaWiseDetailofLandCorporateFarmsReport" xml:space="preserve">
+    <value>select  INV_Item .Description as item, SET_Location.LocationName,sum(IsNull(FA_AssetInformation.Acre,0)) as Acre
+from FA_AssetInformation
+inner join SET_Location on SET_Location.LocationID =  FA_AssetInformation.LocationID
+inner join  FA_SET_AssetType on FA_SET_AssetType.AssetTypeID = FA_AssetInformation.AssetTypeID
+inner join INV_Item on  INV_Item.ItemID = FA_AssetInformation.ItemID
+
+where FA_AssetInformation.Status = 1
+and FA_AssetInformation.PurchaseDate between @Fromdate and @ToDate
+and FA_SET_AssetType.AssetTypeName = 'Land'
+group by SET_Location.LocationName
+,INV_Item .Description</value>
+  </data>
+  <data name="Query_GetData_AreaWiseDetailofLandReport" xml:space="preserve">
+    <value>select  FA_SET_AssetType.AssetTypeName,SET_OperatingUnit.OperatingUnitName,sum(IsNull(FA_AssetInformation.Acre,0)) as Acre
+from FA_AssetInformation
+inner join SET_OperatingUnit on SET_OperatingUnit.OperatingUnitId =  FA_AssetInformation.CompanyID
+inner join  FA_SET_AssetType on FA_SET_AssetType.AssetTypeID = FA_AssetInformation.AssetTypeID
+where FA_AssetInformation.Status = 1
+and FA_AssetInformation.PurchaseDate between @Fromdate and @ToDate
+group by FA_SET_AssetType.AssetTypeName,SET_OperatingUnit.OperatingUnitName</value>
+  </data>
+  <data name="Query_GetData_ForAssetInformation" xml:space="preserve">
+    <value>select  FA_SET_AssetType.AssetTypeName,SET_OperatingUnit.OperatingUnitName,sum(FA_AssetInformation.Acre) as Acre
+from FA_AssetInformation
+inner join SET_OperatingUnit on SET_OperatingUnit.OperatingUnitId =  FA_AssetInformation.CompanyID
+inner join  FA_SET_AssetType on FA_SET_AssetType.AssetTypeID = FA_AssetInformation.AssetTypeID
+where FA_AssetInformation.Status = 1
+and FA_AssetInformation.PurchaseDate between @Fromdate and @ToDate
+group by FA_SET_AssetType.AssetTypeName,SET_OperatingUnit.OperatingUnitName</value>
+  </data>
+  <data name="Query_SummaryAdditionsToFixedAssets" xml:space="preserve">
+    <value>select FA_SET_AssetType.AssetTypeName, INV_Item.Description as ItemDescription,AP_PurchaseOrderDetail.Quantity, AP_PurchaseOrderDetail.NetAmount
+from INV_Item
+inner join FA_SET_AssetType on FA_SET_AssetType.AssetTypeID = INV_Item.EquipmentTypeID
+inner join FA_AssetInformation on FA_AssetInformation.ItemID = INV_Item.ItemID
+inner join AP_PurchaseOrderDetail on AP_PurchaseOrderDetail.POHeaderID = FA_AssetInformation.POHeaderID
+and AP_PurchaseOrderDetail.PODetailID = FA_AssetInformation.PODetailID
+and AP_PurchaseOrderDetail.CompanyID = FA_AssetInformation.CompanyID
+inner join AP_PurchaseOrderHeader on AP_PurchaseOrderHeader.POHeaderID = AP_PurchaseOrderDetail.POHeaderID
+and AP_PurchaseOrderHeader.CompanyID = AP_PurchaseOrderDetail.CompanyID
+and AP_PurchaseOrderHeader.PeriodID = AP_PurchaseOrderDetail.PeriodID
+
+where AP_PurchaseOrderHeader.CompanyID in @CompanyID
+and AP_PurchaseOrderHeader.PeriodID = @PeriodID
+and AP_PurchaseOrderHeader.DocumentDate &lt;= @ToDate</value>
+  </data>
+  <data name="Query_SummaryOfDisposal" xml:space="preserve">
+    <value>select (AssetTypeName) as AssetTypeName,sum(Cost) as Cost,sum(Quantity) as Quantity,sum(AsAtCost) as AsAtCost,sum(BookValue) as BookValue,sum(Proceeds) as Proceeds,sum(GainAndLoss) as  GainAndLoss from (
+
+select  FA_SET_AssetType.AssetTypeName ,sum(INV_StockTransactionDetail.TransactionCost) as Cost,sum(INV_StockTransactionDetail.TransactionQuantity) as Quantity, 0 as OpeningDepreciation, 0 as CurrentDepreciation
+,0 as AsAtCost,0 as BookValue,0 as Proceeds,0 as GainAndLoss
+from INV_Item
+inner join FA_SET_AssetType on FA_SET_AssetType.AssetTypeID = INV_Item.EquipmentTypeID
+inner join INV_StockTransactionDetail on INV_StockTransactionDetail.itemid = INV_Item.Itemid
+inner join INV_StockTransactionHeader on INV_StockTransactionHeader.StockTransactionID = INV_StockTransactionDetail.StockTransactionID
+and INV_StockTransactionHeader.CompanyID = INV_StockTransactionDetail.CompanyID
+and INV_StockTransactionHeader.PeriodID = INV_StockTransactionDetail.PeriodID
+inner join SET_DocumentType on SET_DocumentType.DocumentTypeID = INV_StockTransactionHeader.DocumentTypeID
+and SET_DocumentType.CompanyID = INV_StockTransactionHeader.CompanyID
+and SET_DocumentType.MenuID in (select MenuID from ApplicationMenu where MenuPath = '/Inventory/Transaction/Stock_frm.aspx')
+where INV_StockTransactionHeader.CompanyID = @CompanyID
+and INV_StockTransactionHeader.PeriodID = @PeriodID
+--and INV_StockTransactionHeader.DocumentDate = 
+group by FA_SET_AssetType.AssetTypeName 
+
+union all 
+
+select FA_SET_AssetType.AssetTypeName,0 as Cost,sum(INV_StockTransactionDetail.TransactionQuantity) as Quantity, isnull(Sum(FA_DepreciationProcess.WDV),0) as OpeningDepreciation, ISnull(sum(FA_AssetInformation.CurrentValue),0) as CurrentDepreciation
+,sum(FA_AssetInformation.WrittenDownValue) as AsAtCost,0 as BookValue,0 as Proceeds,0 as GainAndLoss
+from FA_AssetInformation
+INNER JOIN INV_Item ON INV_Item.ItemID = FA_AssetInformation.ItemID 
+INNER JOIN INV_StockTransactionDetail on FA_AssetInformation.ItemID = INV_StockTransactionDetail.ItemID
+	 AND INV_StockTransactionDetail.CompanyID = FA_AssetInformation.CompanyID
+INNER JOIN FA_SET_AssetType ON FA_SET_AssetType.AssetTypeID = FA_AssetInformation.AssetTypeID AND FA_SET_AssetType.CompanyID = FA_AssetInformation.CompanyID 
+        AND FA_SET_AssetType.Status = 1  
+inner JOIN FA_DepreciationProcess ON FA_DepreciationProcess.AssetIdentityID = FA_AssetInformation.AssetInfoID AND FA_SET_AssetType.CompanyID = FA_DepreciationProcess.CompanyID 
+        AND FA_DepreciationProcess.Status = 1 
+
+where FA_DepreciationProcess.CompanyID = @CompanyID
+ And (FA_DepreciationProcess.DepreciatedFrom between @FromDate AND @ToDate  Or FA_DepreciationProcess.DepreciatedUpTo  between @FromDate AND @ToDate) 
+group by FA_SET_AssetType.AssetTypeName 
+
+) as tab
+group by AssetTypeName</value>
+  </data>
+  <data name="Query_SummaryOfDisposals" xml:space="preserve">
+    <value>--Declare @FromDate datetime = '2020-11-01 00:00:00:000'
+--Declare @ToDate datetime = '2021-09-05 00:00:00:000'
+--Declare @CompanyID int = 1
+--Declare @PeriodID int= 1
+
+select t.AssetTypeName as AssetTypeName , SUM(t.Cost) as Cost, SUM(t.OpeningDepreciation) as OpeningDepreciation
+,sum(t.CurrentDepreciation) as CurrentDepreciation, SUM(t.OpeningDepreciation + t.CurrentDepreciation) as AsAtCost --AccumulatedDepreciation
+,SUM(t.BookValue) as BookValue,SUM(t.Proceeds) as Proceeds,(isnull(SUM(t.Cost),0) - SUM(t.OpeningDepreciation + t.CurrentDepreciation)) as GainAndLoss
+ 
+from (
+
+select FA_SET_AssetType.AssetTypeName,isnull(FA_AssetInformation.WrittenDownValue,0) as Cost, 0 as OpeningDepreciation
+,isnull(FA_DepreciationProcess.WDV,0) as CurrentDepreciation,Isnull(FA_AssetInformation.WrittenDownValue,0) as BookValue
+,isnull(INV_StockTransactionDetail.TransactionCost,0) as Proceeds
+
+from FA_AssetInformation
+INNER JOIN INV_Item ON INV_Item.ItemID = FA_AssetInformation.ItemID 
+INNER JOIN FA_SET_AssetType ON FA_SET_AssetType.AssetTypeID = FA_AssetInformation.AssetTypeID AND FA_SET_AssetType.CompanyID = FA_AssetInformation.CompanyID 
+AND FA_SET_AssetType.Status = 1  
+inner JOIN FA_DepreciationProcess ON FA_DepreciationProcess.AssetIdentityID = FA_AssetInformation.AssetInfoID 
+AND FA_SET_AssetType.CompanyID = FA_DepreciationProcess.CompanyID AND FA_DepreciationProcess.Status = 1 
+
+inner join INV_StockTransactionDetail on INV_StockTransactionDetail.itemid = INV_Item.Itemid
+inner join INV_StockTransactionHeader on INV_StockTransactionHeader.StockTransactionID = INV_StockTransactionDetail.StockTransactionID
+and INV_StockTransactionHeader.CompanyID = INV_StockTransactionDetail.CompanyID
+and INV_StockTransactionHeader.PeriodID = INV_StockTransactionDetail.PeriodID
+inner join SET_DocumentType on SET_DocumentType.DocumentTypeID = INV_StockTransactionHeader.DocumentTypeID
+and SET_DocumentType.CompanyID = INV_StockTransactionHeader.CompanyID
+and SET_DocumentType.MenuID in (select MenuID from ApplicationMenu where MenuPath = '/Sales/Dispatch_frm.aspx')
+
+where FA_DepreciationProcess.CompanyID in @CompanyID and isDisposed = 1
+And (FA_DepreciationProcess.DepreciatedFrom between @FromDate AND @ToDate) 
+)t
+group by t.AssetTypeName</value>
+  </data>
+</root>

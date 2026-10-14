@@ -1,0 +1,2072 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Query_Comparative_Statement_Report" xml:space="preserve">
+    <value>SELECT PUR_EnquiryHeader.DocumentNo AS EnquiryNumber, INV_StockTransactionHeader.DocumentNo AS RequisitionNumber,
+PUR_EnquiryDetail.SerialNo, PUR_EnquiryHeader.CreatedByValue AS PreparedBy,
+PUR_QuotationHeader.DocumentNo AS QuotationNumber,
+PUR_EnquiryDetail.Quantity AS EnquiredQuantity, 
+    PUR_EnquiryDetail.ItemID, INV_Item.Description AS ItemName, 
+PUR_QuotationDetail.OfferedQuantity, 
+PUR_QuotationHeader.SupplierID, 
+(PUR_QuotationDetail.OfferedQuantity) AS QuotedQuantity,
+    AR_SET_Customer.CustomerName AS SupplierName, PUR_QuotationDetail.QuotedPrice, PUR_QuotationDetail.NegotiationPrice1,PUR_QuotationDetail.NegotiationPrice2, 
+(case when (NegotiationPrice1 &gt; 0 and NegotiationPrice1 &lt; NegotiationPrice2) then NegotiationPrice1 else NegotiationPrice2 end *  PUR_QuotationDetail.OfferedQuantity) as Amount,
+PUR_QuotationDetail.Approved, PUR_QuotationDetail.Specs as BrandName,
+    SET_UnitOfMeasure.UOMName  , isnull(PUR_QuotationHeader.GST,0) As GST , isnull(PUR_QuotationHeader.DeliveryPeriod,0) As  DeliveryPeriod, 
+    IsNull(PUR_QuotationHeader.PlaceOfDelivery,0) As PlaceOfDelivery , IsNull(PUR_QuotationHeader.PaymentMode,0) As PaymentMode,
+
+
+(
+Select top 1 AP_PurchaseOrderDetail.UnitPrice
+from AP_PurchaseOrderDetail 
+Inner join AP_PurchaseOrderHeader on AP_PurchaseOrderHeader.POHeaderID = AP_PurchaseOrderDetail.POHeaderID
+And AP_PurchaseOrderHeader.CompanyID = AP_PurchaseOrderDetail.CompanyID
+And AP_PurchaseOrderHeader.PeriodID = AP_PurchaseOrderDetail.PeriodID
+And AP_PurchaseOrderHeader.FiscalID = AP_PurchaseOrderDetail.FiscalID
+And AP_PurchaseOrderHeader.Status = 1
+
+left JOIN PUR_QuotationHeader QH ON QH.CompanyID = [AP_PurchaseOrderHeader].CompanyID 
+        AND QH.PeriodID = [AP_PurchaseOrderHeader].PeriodID AND QH.DocumentNo = [AP_PurchaseOrderHeader].VendorQuoteNumber 
+		AND QH.FiscalID = [AP_PurchaseOrderHeader].FiscalID
+
+left JOIN PUR_EnquiryHeader EH ON EH.CompanyID = QH.CompanyID AND EH.PeriodID = QH.PeriodID 
+        AND EH.EnquiryID = QH.EnquiryHeaderID 
+
+WHere AP_PurchaseOrderDetail.CompanyID = @CompanyID
+and AP_PurchaseOrderDetail.PeriodID = @PeriodID
+and AP_PurchaseOrderDetail.ItemID = PUR_EnquiryDetail.ItemID 
+and isnull(EH.DocumentNo,0)  &lt;&gt; PUR_EnquiryHeader.DocumentNo
+and DocumentNumber  &lt; isnull((
+Select max(DocumentNumber) as DocumentNumber
+from AP_PurchaseOrderDetail 
+Inner join AP_PurchaseOrderHeader on AP_PurchaseOrderHeader.POHeaderID = AP_PurchaseOrderDetail.POHeaderID
+And AP_PurchaseOrderHeader.CompanyID = AP_PurchaseOrderDetail.CompanyID
+And AP_PurchaseOrderHeader.PeriodID = AP_PurchaseOrderDetail.PeriodID
+And AP_PurchaseOrderHeader.FiscalID = AP_PurchaseOrderDetail.FiscalID
+And AP_PurchaseOrderHeader.Status = 1
+
+inner JOIN PUR_QuotationHeader QH ON QH.CompanyID = [AP_PurchaseOrderHeader].CompanyID 
+        AND QH.PeriodID = [AP_PurchaseOrderHeader].PeriodID AND QH.DocumentNo = [AP_PurchaseOrderHeader].VendorQuoteNumber 
+		AND QH.FiscalID = [AP_PurchaseOrderHeader].FiscalID
+
+inner JOIN PUR_EnquiryHeader EH ON EH.CompanyID = QH.CompanyID AND EH.PeriodID = QH.PeriodID 
+        AND EH.EnquiryID = QH.EnquiryHeaderID 
+
+WHere AP_PurchaseOrderDetail.CompanyID = @CompanyID
+and AP_PurchaseOrderDetail.PeriodID = @PeriodID
+and AP_PurchaseOrderDetail.ItemID = PUR_EnquiryDetail.ItemID 
+and EH.DocumentNo  = PUR_EnquiryHeader.DocumentNo
+),99999)
+Order by AP_PurchaseOrderHeader.DocumentDate desc,AP_PurchaseOrderHeader.CreateDate desc
+) as LastPrice,
+
+(
+Select top 1 DocumentNumber
+from AP_PurchaseOrderDetail 
+Inner join AP_PurchaseOrderHeader on AP_PurchaseOrderHeader.POHeaderID = AP_PurchaseOrderDetail.POHeaderID
+And AP_PurchaseOrderHeader.CompanyID = AP_PurchaseOrderDetail.CompanyID
+And AP_PurchaseOrderHeader.PeriodID = AP_PurchaseOrderDetail.PeriodID
+And AP_PurchaseOrderHeader.FiscalID = AP_PurchaseOrderDetail.FiscalID
+And AP_PurchaseOrderHeader.Status = 1
+
+left JOIN PUR_QuotationHeader QH ON QH.CompanyID = [AP_PurchaseOrderHeader].CompanyID 
+        AND QH.PeriodID = [AP_PurchaseOrderHeader].PeriodID AND QH.DocumentNo = [AP_PurchaseOrderHeader].VendorQuoteNumber 
+		AND QH.FiscalID = [AP_PurchaseOrderHeader].FiscalID
+
+left JOIN PUR_EnquiryHeader EH ON EH.CompanyID = QH.CompanyID AND EH.PeriodID = QH.PeriodID 
+        AND EH.EnquiryID = QH.EnquiryHeaderID 
+
+WHere AP_PurchaseOrderDetail.CompanyID = @CompanyID
+and AP_PurchaseOrderDetail.PeriodID = @PeriodID
+and AP_PurchaseOrderDetail.ItemID = PUR_EnquiryDetail.ItemID 
+and isnull(EH.DocumentNo,0) &lt;&gt; PUR_EnquiryHeader.DocumentNo
+and DocumentNumber  &lt; isnull((
+Select max(DocumentNumber) as DocumentNumber
+from AP_PurchaseOrderDetail 
+Inner join AP_PurchaseOrderHeader on AP_PurchaseOrderHeader.POHeaderID = AP_PurchaseOrderDetail.POHeaderID
+And AP_PurchaseOrderHeader.CompanyID = AP_PurchaseOrderDetail.CompanyID
+And AP_PurchaseOrderHeader.PeriodID = AP_PurchaseOrderDetail.PeriodID
+And AP_PurchaseOrderHeader.FiscalID = AP_PurchaseOrderDetail.FiscalID
+And AP_PurchaseOrderHeader.Status = 1
+
+inner JOIN PUR_QuotationHeader QH ON QH.CompanyID = [AP_PurchaseOrderHeader].CompanyID 
+        AND QH.PeriodID = [AP_PurchaseOrderHeader].PeriodID AND QH.DocumentNo = [AP_PurchaseOrderHeader].VendorQuoteNumber 
+		AND QH.FiscalID = [AP_PurchaseOrderHeader].FiscalID
+
+inner JOIN PUR_EnquiryHeader EH ON EH.CompanyID = QH.CompanyID AND EH.PeriodID = QH.PeriodID 
+        AND EH.EnquiryID = QH.EnquiryHeaderID 
+
+WHere AP_PurchaseOrderDetail.CompanyID = @CompanyID
+and AP_PurchaseOrderDetail.PeriodID = @PeriodID
+and AP_PurchaseOrderDetail.ItemID = PUR_EnquiryDetail.ItemID 
+and EH.DocumentNo  = PUR_EnquiryHeader.DocumentNo
+),99999)
+Order by AP_PurchaseOrderHeader.DocumentDate desc,AP_PurchaseOrderHeader.CreateDate desc
+)as LastPO,
+
+(
+Select top 1 DocumentDate
+from AP_PurchaseOrderDetail 
+Inner join AP_PurchaseOrderHeader on AP_PurchaseOrderHeader.POHeaderID = AP_PurchaseOrderDetail.POHeaderID
+And AP_PurchaseOrderHeader.CompanyID = AP_PurchaseOrderDetail.CompanyID
+And AP_PurchaseOrderHeader.PeriodID = AP_PurchaseOrderDetail.PeriodID
+And AP_PurchaseOrderHeader.FiscalID = AP_PurchaseOrderDetail.FiscalID
+And AP_PurchaseOrderHeader.Status = 1
+
+left JOIN PUR_QuotationHeader QH ON QH.CompanyID = [AP_PurchaseOrderHeader].CompanyID 
+        AND QH.PeriodID = [AP_PurchaseOrderHeader].PeriodID AND QH.DocumentNo = [AP_PurchaseOrderHeader].VendorQuoteNumber 
+		AND QH.FiscalID = [AP_PurchaseOrderHeader].FiscalID
+
+left JOIN PUR_EnquiryHeader EH ON EH.CompanyID = QH.CompanyID AND EH.PeriodID = QH.PeriodID 
+        AND EH.EnquiryID = QH.EnquiryHeaderID 
+
+WHere AP_PurchaseOrderDetail.CompanyID = 1
+and AP_PurchaseOrderDetail.PeriodID = 1
+and AP_PurchaseOrderDetail.ItemID = PUR_EnquiryDetail.ItemID 
+and isnull(EH.DocumentNo,0) &lt;&gt; PUR_EnquiryHeader.DocumentNo
+and DocumentNumber  &lt; isnull((
+Select max(DocumentNumber) as DocumentNumber
+from AP_PurchaseOrderDetail 
+Inner join AP_PurchaseOrderHeader on AP_PurchaseOrderHeader.POHeaderID = AP_PurchaseOrderDetail.POHeaderID
+And AP_PurchaseOrderHeader.CompanyID = AP_PurchaseOrderDetail.CompanyID
+And AP_PurchaseOrderHeader.PeriodID = AP_PurchaseOrderDetail.PeriodID
+And AP_PurchaseOrderHeader.FiscalID = AP_PurchaseOrderDetail.FiscalID
+And AP_PurchaseOrderHeader.Status = 1
+
+inner JOIN PUR_QuotationHeader QH ON QH.CompanyID = [AP_PurchaseOrderHeader].CompanyID 
+        AND QH.PeriodID = [AP_PurchaseOrderHeader].PeriodID AND QH.DocumentNo = [AP_PurchaseOrderHeader].VendorQuoteNumber 
+		AND QH.FiscalID = [AP_PurchaseOrderHeader].FiscalID
+
+inner JOIN PUR_EnquiryHeader EH ON EH.CompanyID = QH.CompanyID AND EH.PeriodID = QH.PeriodID 
+        AND EH.EnquiryID = QH.EnquiryHeaderID 
+
+WHere AP_PurchaseOrderDetail.CompanyID = 1
+and AP_PurchaseOrderDetail.PeriodID = 1
+and AP_PurchaseOrderDetail.ItemID = PUR_EnquiryDetail.ItemID 
+and EH.DocumentNo  = PUR_EnquiryHeader.DocumentNo
+),99999)
+Order by AP_PurchaseOrderHeader.DocumentDate desc,AP_PurchaseOrderHeader.CreateDate desc
+) as LastPoDate,
+
+ (select  top 1 CustomerName from AP_PurchaseOrderDetail
+ inner join AP_PurchaseOrderHeader on AP_PurchaseOrderHeader.POHeaderID = AP_PurchaseOrderDetail.POHeaderID
+ and AP_PurchaseOrderHeader.CompanyID = AP_PurchaseOrderDetail.CompanyID
+ and AP_PurchaseOrderHeader.PeriodID = AP_PurchaseOrderDetail.PeriodID
+ and AP_PurchaseOrderHeader.Status = 1
+ inner join AR_SET_Customer on AR_SET_Customer.CustomerID = AP_PurchaseOrderHeader.VendorID
+ where AP_PurchaseOrderDetail.ItemID = PUR_EnquiryDetail.ItemID
+ and AP_PurchaseOrderDetail.CompanyID = @CompanyID
+ and AP_PurchaseOrderDetail.PeriodID = @PeriodID
+ and AP_PurchaseOrderDetail.Status=1 
+ order by AP_PurchaseOrderHeader.CreateDate desc) LastPoSupplier ,
+
+ (select  sum(isnull(TransactionQuantity,0)) * -1 from INV_StockTransactionDetail 
+ inner join INV_StockTransactionHeader on INV_StockTransactionHeader.StockTransactionID = INV_StockTransactionDetail.StockTransactionID
+ and INV_StockTransactionHeader.CompanyID = INV_StockTransactionDetail.CompanyID
+ and INV_StockTransactionHeader.PeriodID = INV_StockTransactionDetail.PeriodID
+ and INV_StockTransactionHeader.Status = 1
+ and INV_StockTransactionHeader.FiscalID = @CurrentFiscalID
+
+ INNER JOIN SET_DocumentType On SET_DocumentType.DocumentTypeID=INV_StockTransactionHeader.DocumentTypeID
+AND  SET_DocumentType.PeriodID=INV_StockTransactionHeader.PeriodID
+AND SET_DocumentType.CompanyID=INV_StockTransactionHeader.CompanyID
+AND SET_DocumentType.MenuID in (Select MenuID from ApplicationMenu where MenuPath='/Inventory/Transaction/Average/StockGIN_frm.aspx' )
+
+ where INV_StockTransactionDetail.ItemID = PUR_EnquiryDetail.ItemID
+ and INV_StockTransactionDetail.CompanyID = @CompanyID
+ and INV_StockTransactionDetail.PeriodID = @PeriodID
+ and INV_StockTransactionDetail.Status=1 
+ 
+ ) Consumption,
+
+ 
+ (select  sum(isnull(TransactionQuantity,0)) * -1 from INV_StockTransactionDetail 
+ inner join INV_StockTransactionHeader on INV_StockTransactionHeader.StockTransactionID = INV_StockTransactionDetail.StockTransactionID
+ and INV_StockTransactionHeader.CompanyID = INV_StockTransactionDetail.CompanyID
+ and INV_StockTransactionHeader.PeriodID = INV_StockTransactionDetail.PeriodID
+ and INV_StockTransactionHeader.Status = 1
+ and INV_StockTransactionHeader.FiscalID = (select Top (1) FiscalId from SET_PeriodCustom where CompanyID = @CompanyID And FiscalId &lt; @CurrentFiscalID ORDER BY FiscalId desc) 
+
+ INNER JOIN SET_DocumentType On SET_DocumentType.DocumentTypeID=INV_StockTransactionHeader.DocumentTypeID
+AND  SET_DocumentType.PeriodID=INV_StockTransactionHeader.PeriodID
+AND SET_DocumentType.CompanyID=INV_StockTransactionHeader.CompanyID
+AND SET_DocumentType.MenuID in (Select MenuID from ApplicationMenu where MenuPath ='/Inventory/Transaction/Average/StockGIN_frm.aspx' )
+
+ where INV_StockTransactionDetail.ItemID = PUR_EnquiryDetail.ItemID
+ and INV_StockTransactionDetail.CompanyID = @CompanyID
+ and INV_StockTransactionDetail.PeriodID = @PeriodID
+ and INV_StockTransactionDetail.Status=1 
+ ) LastYearConsumption,	
+
+ (   select sum(SumOfQuantityInStock ) from (
+select --IsNull(Sum(Case when Set_DocumentType.TransactionImpact = 'No Impact' then 0 else INV_StockTransactionDetail.TransactionQuantity END), 0) As SumOfQuantityInStock 
+case when StkDetail.ImpactID is not null then 
+			case StkDetail.ImpactID  when 1 then abs(SUM(StkDetail.TransactionQuantity)) when 2 then abs(SUM(StkDetail.TransactionQuantity)) *-1 end
+			else  
+			case SET_DocumentType.TransactionImpact  
+			when 'Positive' then abs(SUM(StkDetail.TransactionQuantity)) 
+			when 'Negative' then abs(SUM(StkDetail.TransactionQuantity)) *-1 end
+			 end As SumOfQuantityInStock
+            
+        from INV_StockTransactionDetail StkDetail
+			Inner Join INV_StockTransactionHeader StkHdr On StkHdr.StockTransactionID = StkDetail.StockTransactionID 
+                AND StkHdr.CompanyID = StkDetail.CompanyID 
+                And StkDetail.PeriodID = StkHdr.PeriodID
+			
+				inner JOIN SET_DocumentType ON SET_DocumentType.CompanyID = StkHdr.CompanyID 
+        AND SET_DocumentType.PeriodID = StkHdr.PeriodID AND SET_DocumentType.DocumentTypeID = StkHdr.DocumentTypeID 
+        AND Set_DocumentType.Status = 1 --And SET_DocumentType.TransactionImpact &lt;&gt; 'No Impact' 
+    AND ((SET_DocumentType.DocumentType = 'Stock Adjustment') or (SET_DocumentType.TransactionImpact &lt;&gt; 'No Impact') )   
+
+	LEFT JOIN SET_Location ON SET_Location.LocationID = StkHdr.LocationID 
+	
+    
+    LEFT JOIN SET_Location SL ON SL.LocationID = [StkDetail].LocationID 
+	
+            where StkDetail.ItemID = INV_Item.ItemID And StkDetail.CompanyID = @CompanyID 
+                And StkDetail.PeriodID = 1  And StkDetail.Status = 1 And SET_DocumentType.TransactionImpact &lt;&gt; 'No Impact' 
+				and StkDetail.ItemID = INV_Item.ItemID And StkDetail.CompanyID = @CompanyID
+	And StkDetail.PeriodID = 1  And StkDetail.Status = 1 And StkHdr.Status = 1
+	--AND  (isnull(SET_Location.LocationID,SL.LocationID) = INV_StockTransactionHeader.locationID OR INV_StockTransactionHeader.locationID is null)
+	AND  (isnull(SET_Location.LocationID,SL.LocationID) = isnull(INV_StockTransactionHeader.locationID,INV_StockTransactionDetail.locationID) OR isnull(INV_StockTransactionHeader.locationID,INV_StockTransactionDetail.locationID) is null)   
+AND StkDetail.IsActive = 1  AND StkHdr.StatusCode = 1  AND StkHdr.ReversalID IS NULL
+group by StkDetail.ImpactID,SET_DocumentType.TransactionImpact,StkHdr.DocumentNo,SET_DocumentType.DocumentType 
+)as tab
+    )As CurrentStock,
+
+Set_PeriodCustom.PeriodTypeName CurrentYear,
+(select Top (1) PeriodTypeName from SET_PeriodCustom where CompanyID = @CompanyID And FiscalId &lt; @CurrentFiscalID ORDER BY FiscalId desc) as LastYear,
+
+
+1 As Sort, @IsSuppress AS IsSuppress, --@PreparedBy AS PreparedBy, 
+@PurchaseOfficer AS PurchaseOfficer, @DeputyManagerOfficer AS DeputyManagerOfficer, @Director AS Director
+,PUR_QuotationHeader.Comments ManagerPurchase
+--, @ManagerPurchase AS ManagerPurchase
+FROM PUR_QuotationDetail 
+	INNER JOIN PUR_QuotationHeader ON PUR_QuotationHeader.CompanyID = PUR_QuotationDetail.CompanyID AND PUR_QuotationHeader.PeriodID = PUR_QuotationDetail.PeriodID 
+        AND PUR_QuotationHeader.QuotationID = PUR_QuotationDetail.QuotationHeaderID AND PUR_QuotationHeader.Status = 1 
+    INNER JOIN PUR_EnquiryDetail ON PUR_EnquiryDetail.CompanyID = PUR_QuotationDetail.CompanyID AND PUR_EnquiryDetail.PeriodID = PUR_QuotationDetail.PeriodID 
+        AND PUR_EnquiryDetail.EnquiryHeaderID = PUR_QuotationDetail.EnquiryHeaderID AND PUR_EnquiryDetail.EnquiryDetailID = PUR_QuotationDetail.EnquiryDetailID 
+        AND PUR_EnquiryDetail.Status = 1 
+	INNER JOIN PUR_EnquiryHeader ON PUR_EnquiryHeader.CompanyID = PUR_EnquiryDetail.CompanyID AND PUR_EnquiryHeader.PeriodID = PUR_EnquiryDetail.PeriodID 
+        AND PUR_EnquiryHeader.EnquiryID = PUR_EnquiryDetail.EnquiryHeaderID AND PUR_EnquiryHeader.Status = 1 
+		
+		inner join SET_DocumentType on SET_DocumentType.DocumentTypeID = PUR_EnquiryHeader.DocumentTypeID
+		and SET_DocumentType.CompanyID = PUR_EnquiryHeader.CompanyID
+
+    INNER JOIN INV_StockTransactionHeader ON INV_StockTransactionHeader.StockTransactionID = PUR_EnquiryHeader.FK_Inv_StockTransactionID
+	and INV_StockTransactionHeader.CompanyID = PUR_EnquiryHeader.CompanyID
+	and INV_StockTransactionHeader.PeriodID = PUR_EnquiryHeader.PeriodID
+
+	left join INV_StockTransactionDetail on INV_StockTransactionHeader.StockTransactionID = INV_StockTransactionDetail.StockTransactionID
+	and INV_StockTransactionHeader.CompanyID = INV_StockTransactionDetail.CompanyID
+	and INV_StockTransactionHeader.PeriodID = INV_StockTransactionDetail.PeriodID
+
+	INNER JOIN INV_Item ON INV_Item.ItemID = PUR_EnquiryDetail.ItemID --INV_Item.CompanyID = PUR_QuotationDetail.CompanyID AND 
+	INNER JOIN AR_SET_Customer ON AR_SET_Customer.PeriodID = PUR_QuotationHeader.PeriodID 
+        AND AR_SET_Customer.CustomerID = PUR_QuotationHeader.SupplierID 
+    INNER JOIN SET_UnitOfMeasure ON SET_UnitOfMeasure.UOMID = PUR_EnquiryDetail.ItemUnitID 
+    inner join Set_PeriodCustom on PUR_QuotationHeader.QuotedDate between Set_PeriodCustom.StartDate and Set_PeriodCustom.EndDate 
+and Set_PeriodCustom.Status = 1  and Set_PeriodCustom.FiscalID = @CurrentFiscalID
+WHERE PUR_QuotationDetail.CompanyID = @CompanyID AND PUR_QuotationDetail.Status = 1
+ AND PUR_EnquiryHeader.DocumentNo BETWEEN @RFQNumberFrom AND @RFQNumberTo
+ AND (PUR_EnquiryHeader.DocumentTYpeID = @DocumentTYpeID OR @DocumentTYpeID is Null)
+
+
+
+SELECT 
+PUR_EnquiryHeader.DocumentNo AS EnquiryNumber, 
+'1. Delivery Period:' AS RowsCrossTabb,  
+PUR_QuotationHeader.SupplierID, 
+(
+	Case When PUR_QuotationHeader.DeliveryPeriod Is Null Then
+	''
+	Else Cast(PUR_QuotationHeader.DeliveryPeriod As Varchar) + ' ' + ' Days'
+	End 
+) AS SummaryCrossTab,
+AR_SET_Customer.CustomerName AS SupplierName
+FROM PUR_QuotationHeader 
+	INNER JOIN PUR_QuotationDetail ON PUR_QuotationHeader.CompanyID = PUR_QuotationDetail.CompanyID AND PUR_QuotationHeader.PeriodID = PUR_QuotationDetail.PeriodID 
+        AND PUR_QuotationHeader.QuotationID = PUR_QuotationDetail.QuotationHeaderID AND PUR_QuotationHeader.Status = 1  
+	INNER JOIN AR_SET_Customer ON AR_SET_Customer.PeriodID = PUR_QuotationHeader.PeriodID 
+        AND AR_SET_Customer.CustomerID = PUR_QuotationHeader.SupplierID 
+     INNER JOIN PUR_EnquiryDetail ON PUR_EnquiryDetail.CompanyID = PUR_QuotationDetail.CompanyID AND PUR_EnquiryDetail.PeriodID = PUR_QuotationDetail.PeriodID 
+        AND PUR_EnquiryDetail.EnquiryHeaderID = PUR_QuotationDetail.EnquiryHeaderID AND PUR_EnquiryDetail.EnquiryDetailID = PUR_QuotationDetail.EnquiryDetailID 
+        AND PUR_EnquiryDetail.Status = 1 
+	INNER JOIN PUR_EnquiryHeader ON PUR_EnquiryHeader.CompanyID = PUR_EnquiryDetail.CompanyID AND PUR_EnquiryHeader.PeriodID = PUR_EnquiryDetail.PeriodID 
+        AND PUR_EnquiryHeader.EnquiryID = PUR_EnquiryDetail.EnquiryHeaderID AND PUR_EnquiryHeader.Status = 1 
+		inner join SET_DocumentType on SET_DocumentType.DocumentTypeID = PUR_EnquiryHeader.DocumentTypeID
+		and SET_DocumentType.CompanyID = PUR_EnquiryHeader.CompanyID
+        inner join Set_PeriodCustom on PUR_QuotationHeader.QuotedDate between Set_PeriodCustom.StartDate and Set_PeriodCustom.EndDate 
+and Set_PeriodCustom.Status = 1  and Set_PeriodCustom.FiscalID = @CurrentFiscalID
+WHERE PUR_QuotationHeader.CompanyID = @CompanyID AND PUR_QuotationHeader.Status = 1
+ AND PUR_EnquiryHeader.DocumentNo BETWEEN @RFQNumberFrom AND @RFQNumberTo
+ AND (PUR_EnquiryHeader.DocumentTYpeID = @DocumentTYpeID OR @DocumentTYpeID is Null)
+
+
+
+Union All
+
+
+
+SELECT 
+PUR_EnquiryHeader.DocumentNo AS EnquiryNumber, 
+'2. Payment:' AS RowsCrossTabb,  
+PUR_QuotationHeader.SupplierID, 
+IsNull(PUR_QuotationHeader.PaymentMode,'')  AS SummaryCrossTab,
+AR_SET_Customer.CustomerName AS SupplierName
+FROM PUR_QuotationHeader 
+	INNER JOIN PUR_QuotationDetail ON PUR_QuotationHeader.CompanyID = PUR_QuotationDetail.CompanyID AND PUR_QuotationHeader.PeriodID = PUR_QuotationDetail.PeriodID 
+        AND PUR_QuotationHeader.QuotationID = PUR_QuotationDetail.QuotationHeaderID AND PUR_QuotationHeader.Status = 1  
+	INNER JOIN AR_SET_Customer ON AR_SET_Customer.PeriodID = PUR_QuotationHeader.PeriodID 
+        AND AR_SET_Customer.CustomerID = PUR_QuotationHeader.SupplierID 
+     INNER JOIN PUR_EnquiryDetail ON PUR_EnquiryDetail.CompanyID = PUR_QuotationDetail.CompanyID AND PUR_EnquiryDetail.PeriodID = PUR_QuotationDetail.PeriodID 
+        AND PUR_EnquiryDetail.EnquiryHeaderID = PUR_QuotationDetail.EnquiryHeaderID AND PUR_EnquiryDetail.EnquiryDetailID = PUR_QuotationDetail.EnquiryDetailID 
+        AND PUR_EnquiryDetail.Status = 1 
+	INNER JOIN PUR_EnquiryHeader ON PUR_EnquiryHeader.CompanyID = PUR_EnquiryDetail.CompanyID AND PUR_EnquiryHeader.PeriodID = PUR_EnquiryDetail.PeriodID 
+        AND PUR_EnquiryHeader.EnquiryID = PUR_EnquiryDetail.EnquiryHeaderID AND PUR_EnquiryHeader.Status = 1 
+		inner join SET_DocumentType on SET_DocumentType.DocumentTypeID = PUR_EnquiryHeader.DocumentTypeID
+		and SET_DocumentType.CompanyID = PUR_EnquiryHeader.CompanyID
+        inner join Set_PeriodCustom on PUR_QuotationHeader.QuotedDate between Set_PeriodCustom.StartDate and Set_PeriodCustom.EndDate 
+and Set_PeriodCustom.Status = 1  and Set_PeriodCustom.FiscalID = @CurrentFiscalID
+WHERE PUR_QuotationHeader.CompanyID = @CompanyID AND PUR_QuotationHeader.Status = 1
+ AND PUR_EnquiryHeader.DocumentNo BETWEEN @RFQNumberFrom AND @RFQNumberTo
+ AND (PUR_EnquiryHeader.DocumentTYpeID = @DocumentTYpeID OR @DocumentTYpeID is Null)
+
+
+Union All
+
+SELECT 
+PUR_EnquiryHeader.DocumentNo AS EnquiryNumber, 
+'3. Transportation Charges:' AS RowsCrossTabb, 
+PUR_QuotationHeader.SupplierID, 
+IsNull(PUR_QuotationHeader.PlaceOfDelivery,'')  AS SummaryCrossTab,
+AR_SET_Customer.CustomerName AS SupplierName
+FROM PUR_QuotationHeader 
+	INNER JOIN PUR_QuotationDetail ON PUR_QuotationHeader.CompanyID = PUR_QuotationDetail.CompanyID AND PUR_QuotationHeader.PeriodID = PUR_QuotationDetail.PeriodID 
+        AND PUR_QuotationHeader.QuotationID = PUR_QuotationDetail.QuotationHeaderID AND PUR_QuotationHeader.Status = 1  
+	INNER JOIN AR_SET_Customer ON AR_SET_Customer.PeriodID = PUR_QuotationHeader.PeriodID 
+        AND AR_SET_Customer.CustomerID = PUR_QuotationHeader.SupplierID 
+     INNER JOIN PUR_EnquiryDetail ON PUR_EnquiryDetail.CompanyID = PUR_QuotationDetail.CompanyID AND PUR_EnquiryDetail.PeriodID = PUR_QuotationDetail.PeriodID 
+        AND PUR_EnquiryDetail.EnquiryHeaderID = PUR_QuotationDetail.EnquiryHeaderID AND PUR_EnquiryDetail.EnquiryDetailID = PUR_QuotationDetail.EnquiryDetailID 
+        AND PUR_EnquiryDetail.Status = 1 
+	INNER JOIN PUR_EnquiryHeader ON PUR_EnquiryHeader.CompanyID = PUR_EnquiryDetail.CompanyID AND PUR_EnquiryHeader.PeriodID = PUR_EnquiryDetail.PeriodID 
+        AND PUR_EnquiryHeader.EnquiryID = PUR_EnquiryDetail.EnquiryHeaderID AND PUR_EnquiryHeader.Status = 1 
+		inner join SET_DocumentType on SET_DocumentType.DocumentTypeID = PUR_EnquiryHeader.DocumentTypeID
+		and SET_DocumentType.CompanyID = PUR_EnquiryHeader.CompanyID
+        inner join Set_PeriodCustom on PUR_QuotationHeader.QuotedDate between Set_PeriodCustom.StartDate and Set_PeriodCustom.EndDate 
+and Set_PeriodCustom.Status = 1  and Set_PeriodCustom.FiscalID = @CurrentFiscalID
+WHERE PUR_QuotationHeader.CompanyID = @CompanyID AND PUR_QuotationHeader.Status = 1
+ AND PUR_EnquiryHeader.DocumentNo BETWEEN @RFQNumberFrom AND @RFQNumberTo
+ AND (PUR_EnquiryHeader.DocumentTYpeID = @DocumentTYpeID OR @DocumentTYpeID is Null)
+
+Union All
+
+SELECT 
+PUR_EnquiryHeader.DocumentNo AS EnquiryNumber, 
+'4. Comments:' AS RowsCrossTabb, 
+PUR_QuotationHeader.SupplierID, 
+IsNull(PUR_EnquiryHeader.Comments,'')  AS SummaryCrossTab,
+AR_SET_Customer.CustomerName AS SupplierName
+FROM PUR_QuotationHeader 
+	INNER JOIN PUR_QuotationDetail ON PUR_QuotationHeader.CompanyID = PUR_QuotationDetail.CompanyID AND PUR_QuotationHeader.PeriodID = PUR_QuotationDetail.PeriodID 
+        AND PUR_QuotationHeader.QuotationID = PUR_QuotationDetail.QuotationHeaderID AND PUR_QuotationHeader.Status = 1  
+	INNER JOIN AR_SET_Customer ON AR_SET_Customer.PeriodID = PUR_QuotationHeader.PeriodID 
+        AND AR_SET_Customer.CustomerID = PUR_QuotationHeader.SupplierID 
+     INNER JOIN PUR_EnquiryDetail ON PUR_EnquiryDetail.CompanyID = PUR_QuotationDetail.CompanyID AND PUR_EnquiryDetail.PeriodID = PUR_QuotationDetail.PeriodID 
+        AND PUR_EnquiryDetail.EnquiryHeaderID = PUR_QuotationDetail.EnquiryHeaderID AND PUR_EnquiryDetail.EnquiryDetailID = PUR_QuotationDetail.EnquiryDetailID 
+        AND PUR_EnquiryDetail.Status = 1 
+	INNER JOIN PUR_EnquiryHeader ON PUR_EnquiryHeader.CompanyID = PUR_EnquiryDetail.CompanyID AND PUR_EnquiryHeader.PeriodID = PUR_EnquiryDetail.PeriodID 
+        AND PUR_EnquiryHeader.EnquiryID = PUR_EnquiryDetail.EnquiryHeaderID AND PUR_EnquiryHeader.Status = 1 
+		inner join SET_DocumentType on SET_DocumentType.DocumentTypeID = PUR_EnquiryHeader.DocumentTypeID
+		and SET_DocumentType.CompanyID = PUR_EnquiryHeader.CompanyID
+        inner join Set_PeriodCustom on PUR_QuotationHeader.QuotedDate between Set_PeriodCustom.StartDate and Set_PeriodCustom.EndDate 
+and Set_PeriodCustom.Status = 1  and Set_PeriodCustom.FiscalID = @CurrentFiscalID
+WHERE PUR_QuotationHeader.CompanyID = @CompanyID AND PUR_QuotationHeader.Status = 1
+ AND PUR_EnquiryHeader.DocumentNo BETWEEN @RFQNumberFrom AND @RFQNumberTo
+ AND (PUR_EnquiryHeader.DocumentTYpeID = @DocumentTYpeID OR @DocumentTYpeID is Null)
+
+
+SELECT 
+PUR_EnquiryHeader.DocumentNo AS EnquiryNumber, 
+'1-Sub Total' AS RowsCrossTabb, 
+PUR_QuotationHeader.SupplierID, 
+SUM((case when (NegotiationPrice1 &gt; 0 and NegotiationPrice1 &lt; NegotiationPrice2) then NegotiationPrice1 else NegotiationPrice2 end *  PUR_QuotationDetail.OfferedQuantity)) as SummaryCrossTab,
+AR_SET_Customer.CustomerName AS SupplierName
+,1 as SortOrder
+FROM PUR_QuotationHeader 
+	INNER JOIN PUR_QuotationDetail ON PUR_QuotationHeader.CompanyID = PUR_QuotationDetail.CompanyID AND PUR_QuotationHeader.PeriodID = PUR_QuotationDetail.PeriodID 
+        AND PUR_QuotationHeader.QuotationID = PUR_QuotationDetail.QuotationHeaderID AND PUR_QuotationDetail.Status = 1  
+	INNER JOIN AR_SET_Customer ON AR_SET_Customer.PeriodID = PUR_QuotationHeader.PeriodID 
+        AND AR_SET_Customer.CustomerID = PUR_QuotationHeader.SupplierID 
+     INNER JOIN PUR_EnquiryDetail ON PUR_EnquiryDetail.CompanyID = PUR_QuotationDetail.CompanyID AND PUR_EnquiryDetail.PeriodID = PUR_QuotationDetail.PeriodID 
+        AND PUR_EnquiryDetail.EnquiryHeaderID = PUR_QuotationDetail.EnquiryHeaderID AND PUR_EnquiryDetail.EnquiryDetailID = PUR_QuotationDetail.EnquiryDetailID 
+        AND PUR_EnquiryDetail.Status = 1 
+	INNER JOIN PUR_EnquiryHeader ON PUR_EnquiryHeader.CompanyID = PUR_EnquiryDetail.CompanyID AND PUR_EnquiryHeader.PeriodID = PUR_EnquiryDetail.PeriodID 
+        AND PUR_EnquiryHeader.EnquiryID = PUR_EnquiryDetail.EnquiryHeaderID AND PUR_EnquiryHeader.Status = 1 
+		inner join SET_DocumentType on SET_DocumentType.DocumentTypeID = PUR_EnquiryHeader.DocumentTypeID
+		and SET_DocumentType.CompanyID = PUR_EnquiryHeader.CompanyID
+        inner join Set_PeriodCustom on PUR_QuotationHeader.QuotedDate between Set_PeriodCustom.StartDate and Set_PeriodCustom.EndDate 
+and Set_PeriodCustom.Status = 1  and Set_PeriodCustom.FiscalID = @CurrentFiscalID
+WHERE PUR_QuotationHeader.CompanyID = @CompanyID AND PUR_QuotationHeader.Status = 1
+  AND PUR_EnquiryHeader.DocumentNo BETWEEN @RFQNumberFrom AND @RFQNumberTo
+  AND (PUR_EnquiryHeader.DocumentTYpeID = @DocumentTYpeID OR @DocumentTYpeID is Null)
+ 
+
+ group by PUR_EnquiryHeader.DocumentNo
+ ,PUR_QuotationHeader.SupplierID,PUR_QuotationHeader.DeliveryPeriod,AR_SET_Customer.CustomerName
+
+ union all
+
+  SELECT 
+PUR_EnquiryHeader.DocumentNo AS EnquiryNumber, 
+case when PUR_QuotationHeader.GST is null then 
+'2-Sale Tax ' 
+else
+'2-Sale Tax (' + convert(varchar ,PUR_QuotationHeader.GST) + '%)' 
+end AS RowsCrossTabb, 
+PUR_QuotationHeader.SupplierID, 
+SUM((case when (NegotiationPrice1 &gt; 0 and NegotiationPrice1 &lt; NegotiationPrice2) then NegotiationPrice1 else NegotiationPrice2 end *  PUR_QuotationDetail.OfferedQuantity)) * ISNULL(GST,0) / 100 as SummaryCrossTab,
+AR_SET_Customer.CustomerName AS SupplierName
+,2 as SortOrder
+FROM PUR_QuotationHeader 
+	INNER JOIN PUR_QuotationDetail ON PUR_QuotationHeader.CompanyID = PUR_QuotationDetail.CompanyID AND PUR_QuotationHeader.PeriodID = PUR_QuotationDetail.PeriodID 
+        AND PUR_QuotationHeader.QuotationID = PUR_QuotationDetail.QuotationHeaderID AND PUR_QuotationDetail.Status = 1  
+	INNER JOIN AR_SET_Customer ON AR_SET_Customer.PeriodID = PUR_QuotationHeader.PeriodID 
+        AND AR_SET_Customer.CustomerID = PUR_QuotationHeader.SupplierID 
+     INNER JOIN PUR_EnquiryDetail ON PUR_EnquiryDetail.CompanyID = PUR_QuotationDetail.CompanyID AND PUR_EnquiryDetail.PeriodID = PUR_QuotationDetail.PeriodID 
+        AND PUR_EnquiryDetail.EnquiryHeaderID = PUR_QuotationDetail.EnquiryHeaderID AND PUR_EnquiryDetail.EnquiryDetailID = PUR_QuotationDetail.EnquiryDetailID 
+        AND PUR_EnquiryDetail.Status = 1 
+	INNER JOIN PUR_EnquiryHeader ON PUR_EnquiryHeader.CompanyID = PUR_EnquiryDetail.CompanyID AND PUR_EnquiryHeader.PeriodID = PUR_EnquiryDetail.PeriodID 
+        AND PUR_EnquiryHeader.EnquiryID = PUR_EnquiryDetail.EnquiryHeaderID AND PUR_EnquiryHeader.Status = 1 
+		inner join SET_DocumentType on SET_DocumentType.DocumentTypeID = PUR_EnquiryHeader.DocumentTypeID
+		and SET_DocumentType.CompanyID = PUR_EnquiryHeader.CompanyID
+        inner join Set_PeriodCustom on PUR_QuotationHeader.QuotedDate between Set_PeriodCustom.StartDate and Set_PeriodCustom.EndDate 
+and Set_PeriodCustom.Status = 1  and Set_PeriodCustom.FiscalID = @CurrentFiscalID
+WHERE PUR_QuotationHeader.CompanyID = @CompanyID AND PUR_QuotationHeader.Status = 1
+  AND PUR_EnquiryHeader.DocumentNo BETWEEN @RFQNumberFrom AND @RFQNumberTo
+  AND (PUR_EnquiryHeader.DocumentTYpeID = @DocumentTYpeID OR @DocumentTYpeID is Null)
+ 
+
+ group by PUR_EnquiryHeader.DocumentNo
+ ,PUR_QuotationHeader.SupplierID,PUR_QuotationHeader.DeliveryPeriod,AR_SET_Customer.CustomerName,PUR_QuotationHeader.GST
+
+  union all
+
+  SELECT 
+PUR_EnquiryHeader.DocumentNo AS EnquiryNumber, 
+'3-Grand Total' AS RowsCrossTabb, 
+PUR_QuotationHeader.SupplierID, 
+SUM((case when (NegotiationPrice1 &gt; 0 and NegotiationPrice1 &lt; NegotiationPrice2) then NegotiationPrice1 else NegotiationPrice2 end *  PUR_QuotationDetail.OfferedQuantity)) * ISNULL(GST,0) / 100 
++
+SUM(((case when (NegotiationPrice1 &gt; 0 and NegotiationPrice1 &lt; NegotiationPrice2) then NegotiationPrice1 else NegotiationPrice2 end) *  PUR_QuotationDetail.OfferedQuantity))
+as SummaryCrossTab,
+AR_SET_Customer.CustomerName AS SupplierName
+,3 as SortOrder
+FROM PUR_QuotationHeader 
+	INNER JOIN PUR_QuotationDetail ON PUR_QuotationHeader.CompanyID = PUR_QuotationDetail.CompanyID AND PUR_QuotationHeader.PeriodID = PUR_QuotationDetail.PeriodID 
+        AND PUR_QuotationHeader.QuotationID = PUR_QuotationDetail.QuotationHeaderID AND PUR_QuotationDetail.Status = 1  
+	INNER JOIN AR_SET_Customer ON AR_SET_Customer.PeriodID = PUR_QuotationHeader.PeriodID 
+        AND AR_SET_Customer.CustomerID = PUR_QuotationHeader.SupplierID 
+     INNER JOIN PUR_EnquiryDetail ON PUR_EnquiryDetail.CompanyID = PUR_QuotationDetail.CompanyID AND PUR_EnquiryDetail.PeriodID = PUR_QuotationDetail.PeriodID 
+        AND PUR_EnquiryDetail.EnquiryHeaderID = PUR_QuotationDetail.EnquiryHeaderID AND PUR_EnquiryDetail.EnquiryDetailID = PUR_QuotationDetail.EnquiryDetailID 
+        AND PUR_EnquiryDetail.Status = 1 
+	INNER JOIN PUR_EnquiryHeader ON PUR_EnquiryHeader.CompanyID = PUR_EnquiryDetail.CompanyID AND PUR_EnquiryHeader.PeriodID = PUR_EnquiryDetail.PeriodID 
+        AND PUR_EnquiryHeader.EnquiryID = PUR_EnquiryDetail.EnquiryHeaderID AND PUR_EnquiryHeader.Status = 1 
+		inner join SET_DocumentType on SET_DocumentType.DocumentTypeID = PUR_EnquiryHeader.DocumentTypeID
+		and SET_DocumentType.CompanyID = PUR_EnquiryHeader.CompanyID
+        inner join Set_PeriodCustom on PUR_QuotationHeader.QuotedDate between Set_PeriodCustom.StartDate and Set_PeriodCustom.EndDate 
+and Set_PeriodCustom.Status = 1  and Set_PeriodCustom.FiscalID = @CurrentFiscalID
+WHERE PUR_QuotationHeader.CompanyID = @CompanyID AND PUR_QuotationHeader.Status = 1
+  AND PUR_EnquiryHeader.DocumentNo BETWEEN @RFQNumberFrom AND @RFQNumberTo
+  AND (PUR_EnquiryHeader.DocumentTYpeID = @DocumentTYpeID OR @DocumentTYpeID is Null)
+ 
+
+ group by PUR_EnquiryHeader.DocumentNo
+ ,PUR_QuotationHeader.SupplierID,PUR_QuotationHeader.DeliveryPeriod,AR_SET_Customer.CustomerName,PUR_QuotationHeader.GST</value>
+  </data>
+  <data name="Query_Comparative_Statement_ReportDateWise" xml:space="preserve">
+    <value>SELECT PUR_EnquiryHeader.DocumentNo AS EnquiryNumber, INV_StockTransactionHeader.DocumentNo AS RequisitionNumber,
+PUR_EnquiryDetail.SerialNo, PUR_EnquiryHeader.CreatedByValue AS PreparedBy,
+PUR_QuotationHeader.DocumentNo AS QuotationNumber,
+PUR_EnquiryDetail.Quantity AS EnquiredQuantity, 
+    PUR_EnquiryDetail.ItemID, INV_Item.Description AS ItemName, 
+PUR_QuotationDetail.OfferedQuantity, 
+PUR_QuotationHeader.SupplierID, 
+(PUR_QuotationDetail.OfferedQuantity) AS QuotedQuantity,
+    AR_SET_Customer.CustomerName AS SupplierName, PUR_QuotationDetail.QuotedPrice, PUR_QuotationDetail.NegotiationPrice1,PUR_QuotationDetail.NegotiationPrice2, 
+(case when (NegotiationPrice1 &gt; 0 and NegotiationPrice1 &lt; NegotiationPrice2) then NegotiationPrice1 else NegotiationPrice2 end *  PUR_QuotationDetail.OfferedQuantity) as Amount,
+PUR_QuotationDetail.Approved, PUR_QuotationDetail.Specs as BrandName,
+    SET_UnitOfMeasure.UOMName  , isnull(PUR_QuotationHeader.GST,0) As GST , isnull(PUR_QuotationHeader.DeliveryPeriod,0) As  DeliveryPeriod, 
+    IsNull(PUR_QuotationHeader.PlaceOfDelivery,0) As PlaceOfDelivery , IsNull(PUR_QuotationHeader.PaymentMode,0) As PaymentMode,
+
+
+
+(
+Select top 1 DocumentNumber
+from AP_PurchaseOrderDetail 
+Inner join AP_PurchaseOrderHeader on AP_PurchaseOrderHeader.POHeaderID = AP_PurchaseOrderDetail.POHeaderID
+And AP_PurchaseOrderHeader.CompanyID = AP_PurchaseOrderDetail.CompanyID
+And AP_PurchaseOrderHeader.PeriodID = AP_PurchaseOrderDetail.PeriodID
+And AP_PurchaseOrderHeader.FiscalID = AP_PurchaseOrderDetail.FiscalID
+And AP_PurchaseOrderHeader.Status = 1
+
+left JOIN PUR_QuotationHeader QH ON QH.CompanyID = [AP_PurchaseOrderHeader].CompanyID 
+        AND QH.PeriodID = [AP_PurchaseOrderHeader].PeriodID AND QH.DocumentNo = [AP_PurchaseOrderHeader].VendorQuoteNumber 
+		AND QH.FiscalID = [AP_PurchaseOrderHeader].FiscalID
+
+left JOIN PUR_EnquiryHeader EH ON EH.CompanyID = QH.CompanyID AND EH.PeriodID = QH.PeriodID 
+        AND EH.EnquiryID = QH.EnquiryHeaderID 
+
+WHere AP_PurchaseOrderDetail.CompanyID = @CompanyID
+and AP_PurchaseOrderDetail.PeriodID = @PeriodID
+and AP_PurchaseOrderDetail.ItemID = PUR_EnquiryDetail.ItemID 
+and isnull(EH.DocumentNo,0) &lt;&gt; PUR_EnquiryHeader.DocumentNo
+and DocumentNumber  &lt; isnull((
+Select max(DocumentNumber) as DocumentNumber
+from AP_PurchaseOrderDetail 
+Inner join AP_PurchaseOrderHeader on AP_PurchaseOrderHeader.POHeaderID = AP_PurchaseOrderDetail.POHeaderID
+And AP_PurchaseOrderHeader.CompanyID = AP_PurchaseOrderDetail.CompanyID
+And AP_PurchaseOrderHeader.PeriodID = AP_PurchaseOrderDetail.PeriodID
+And AP_PurchaseOrderHeader.FiscalID = AP_PurchaseOrderDetail.FiscalID
+And AP_PurchaseOrderHeader.Status = 1
+
+inner JOIN PUR_QuotationHeader QH ON QH.CompanyID = [AP_PurchaseOrderHeader].CompanyID 
+        AND QH.PeriodID = [AP_PurchaseOrderHeader].PeriodID AND QH.DocumentNo = [AP_PurchaseOrderHeader].VendorQuoteNumber 
+		AND QH.FiscalID = [AP_PurchaseOrderHeader].FiscalID
+
+inner JOIN PUR_EnquiryHeader EH ON EH.CompanyID = QH.CompanyID AND EH.PeriodID = QH.PeriodID 
+        AND EH.EnquiryID = QH.EnquiryHeaderID 
+
+WHere AP_PurchaseOrderDetail.CompanyID = @CompanyID
+and AP_PurchaseOrderDetail.PeriodID = @PeriodID
+and AP_PurchaseOrderDetail.ItemID = PUR_EnquiryDetail.ItemID 
+and EH.DocumentNo  = PUR_EnquiryHeader.DocumentNo
+),99999)
+Order by AP_PurchaseOrderHeader.DocumentDate desc,AP_PurchaseOrderHeader.CreateDate desc
+)as LastPO,
+
+(
+Select top 1 AP_PurchaseOrderDetail.UnitPrice
+from AP_PurchaseOrderDetail 
+Inner join AP_PurchaseOrderHeader on AP_PurchaseOrderHeader.POHeaderID = AP_PurchaseOrderDetail.POHeaderID
+And AP_PurchaseOrderHeader.CompanyID = AP_PurchaseOrderDetail.CompanyID
+And AP_PurchaseOrderHeader.PeriodID = AP_PurchaseOrderDetail.PeriodID
+And AP_PurchaseOrderHeader.FiscalID = AP_PurchaseOrderDetail.FiscalID
+And AP_PurchaseOrderHeader.Status = 1
+
+left JOIN PUR_QuotationHeader QH ON QH.CompanyID = [AP_PurchaseOrderHeader].CompanyID 
+        AND QH.PeriodID = [AP_PurchaseOrderHeader].PeriodID AND QH.DocumentNo = [AP_PurchaseOrderHeader].VendorQuoteNumber 
+		AND QH.FiscalID = [AP_PurchaseOrderHeader].FiscalID
+
+left JOIN PUR_EnquiryHeader EH ON EH.CompanyID = QH.CompanyID AND EH.PeriodID = QH.PeriodID 
+        AND EH.EnquiryID = QH.EnquiryHeaderID 
+
+WHere AP_PurchaseOrderDetail.CompanyID = @CompanyID
+and AP_PurchaseOrderDetail.PeriodID = @PeriodID
+and AP_PurchaseOrderDetail.ItemID = PUR_EnquiryDetail.ItemID 
+and isnull(EH.DocumentNo,0)  &lt;&gt; PUR_EnquiryHeader.DocumentNo
+and DocumentNumber  &lt; isnull((
+Select max(DocumentNumber) as DocumentNumber
+from AP_PurchaseOrderDetail 
+Inner join AP_PurchaseOrderHeader on AP_PurchaseOrderHeader.POHeaderID = AP_PurchaseOrderDetail.POHeaderID
+And AP_PurchaseOrderHeader.CompanyID = AP_PurchaseOrderDetail.CompanyID
+And AP_PurchaseOrderHeader.PeriodID = AP_PurchaseOrderDetail.PeriodID
+And AP_PurchaseOrderHeader.FiscalID = AP_PurchaseOrderDetail.FiscalID
+And AP_PurchaseOrderHeader.Status = 1
+
+inner JOIN PUR_QuotationHeader QH ON QH.CompanyID = [AP_PurchaseOrderHeader].CompanyID 
+        AND QH.PeriodID = [AP_PurchaseOrderHeader].PeriodID AND QH.DocumentNo = [AP_PurchaseOrderHeader].VendorQuoteNumber 
+		AND QH.FiscalID = [AP_PurchaseOrderHeader].FiscalID
+
+inner JOIN PUR_EnquiryHeader EH ON EH.CompanyID = QH.CompanyID AND EH.PeriodID = QH.PeriodID 
+        AND EH.EnquiryID = QH.EnquiryHeaderID 
+
+WHere AP_PurchaseOrderDetail.CompanyID = @CompanyID
+and AP_PurchaseOrderDetail.PeriodID = @PeriodID
+and AP_PurchaseOrderDetail.ItemID = PUR_EnquiryDetail.ItemID 
+and EH.DocumentNo  = PUR_EnquiryHeader.DocumentNo
+),99999)
+Order by AP_PurchaseOrderHeader.DocumentDate desc,AP_PurchaseOrderHeader.CreateDate desc
+) as LastPrice,
+
+(
+Select top 1 DocumentDate
+from AP_PurchaseOrderDetail 
+Inner join AP_PurchaseOrderHeader on AP_PurchaseOrderHeader.POHeaderID = AP_PurchaseOrderDetail.POHeaderID
+And AP_PurchaseOrderHeader.CompanyID = AP_PurchaseOrderDetail.CompanyID
+And AP_PurchaseOrderHeader.PeriodID = AP_PurchaseOrderDetail.PeriodID
+And AP_PurchaseOrderHeader.FiscalID = AP_PurchaseOrderDetail.FiscalID
+And AP_PurchaseOrderHeader.Status = 1
+
+left JOIN PUR_QuotationHeader QH ON QH.CompanyID = [AP_PurchaseOrderHeader].CompanyID 
+        AND QH.PeriodID = [AP_PurchaseOrderHeader].PeriodID AND QH.DocumentNo = [AP_PurchaseOrderHeader].VendorQuoteNumber 
+		AND QH.FiscalID = [AP_PurchaseOrderHeader].FiscalID
+
+left JOIN PUR_EnquiryHeader EH ON EH.CompanyID = QH.CompanyID AND EH.PeriodID = QH.PeriodID 
+        AND EH.EnquiryID = QH.EnquiryHeaderID 
+
+WHere AP_PurchaseOrderDetail.CompanyID = 1
+and AP_PurchaseOrderDetail.PeriodID = 1
+and AP_PurchaseOrderDetail.ItemID = PUR_EnquiryDetail.ItemID 
+and isnull(EH.DocumentNo,0) &lt;&gt; PUR_EnquiryHeader.DocumentNo
+and DocumentNumber  &lt; isnull((
+Select max(DocumentNumber) as DocumentNumber
+from AP_PurchaseOrderDetail 
+Inner join AP_PurchaseOrderHeader on AP_PurchaseOrderHeader.POHeaderID = AP_PurchaseOrderDetail.POHeaderID
+And AP_PurchaseOrderHeader.CompanyID = AP_PurchaseOrderDetail.CompanyID
+And AP_PurchaseOrderHeader.PeriodID = AP_PurchaseOrderDetail.PeriodID
+And AP_PurchaseOrderHeader.FiscalID = AP_PurchaseOrderDetail.FiscalID
+And AP_PurchaseOrderHeader.Status = 1
+
+inner JOIN PUR_QuotationHeader QH ON QH.CompanyID = [AP_PurchaseOrderHeader].CompanyID 
+        AND QH.PeriodID = [AP_PurchaseOrderHeader].PeriodID AND QH.DocumentNo = [AP_PurchaseOrderHeader].VendorQuoteNumber 
+		AND QH.FiscalID = [AP_PurchaseOrderHeader].FiscalID
+
+inner JOIN PUR_EnquiryHeader EH ON EH.CompanyID = QH.CompanyID AND EH.PeriodID = QH.PeriodID 
+        AND EH.EnquiryID = QH.EnquiryHeaderID 
+
+WHere AP_PurchaseOrderDetail.CompanyID = 1
+and AP_PurchaseOrderDetail.PeriodID = 1
+and AP_PurchaseOrderDetail.ItemID = PUR_EnquiryDetail.ItemID 
+and EH.DocumentNo  = PUR_EnquiryHeader.DocumentNo
+),99999)
+Order by AP_PurchaseOrderHeader.DocumentDate desc,AP_PurchaseOrderHeader.CreateDate desc
+) as LastPoDate,
+
+--(Select top 1 
+-- isnull(min(AP_PurchaseOrderHeader.DocumentDate) over (order by CAST(DocumentNumber as Int) asc rows between 1 preceding and 1 
+--preceding), AP_PurchaseOrderHeader.DocumentDate)  as DocumentDate
+--from AP_PurchaseOrderDetail 
+--Inner join AP_PurchaseOrderHeader on AP_PurchaseOrderHeader.POHeaderID = AP_PurchaseOrderDetail.POHeaderID
+--And AP_PurchaseOrderHeader.CompanyID = AP_PurchaseOrderDetail.CompanyID
+--And AP_PurchaseOrderHeader.PeriodID = AP_PurchaseOrderDetail.PeriodID
+--And AP_PurchaseOrderHeader.FiscalID = AP_PurchaseOrderDetail.FiscalID
+--And AP_PurchaseOrderHeader.Status = 1
+--left join AR_SET_Customer on AP_PurchaseOrderHeader.VendorID = AR_SET_Customer.CustomerID
+--And AP_PurchaseOrderHeader.CompanyID = AR_SET_Customer.CompanyID
+--And AP_PurchaseOrderHeader.PeriodID = AR_SET_Customer.PeriodID
+--WHere AP_PurchaseOrderDetail.CompanyID = @CompanyID
+--and AP_PurchaseOrderDetail.PeriodID = @PeriodID
+--and AP_PurchaseOrderDetail.ItemID = PUR_EnquiryDetail.ItemID 
+----and AP_PurchaseOrderDetail.FiscalID = @CurrentFiscalID
+--and AP_PurchaseOrderHeader.DocumentDate &lt;= @DocumentDate 
+--Order by CAST(AP_PurchaseOrderHeader.DocumentNumber as int) desc
+----and AR_SET_Customer.CustomerID = PUR_QuotationHeader.SupplierID
+--) as LastPoDate,
+
+ (select  top 1 CustomerName from AP_PurchaseOrderDetail
+ inner join AP_PurchaseOrderHeader on AP_PurchaseOrderHeader.POHeaderID = AP_PurchaseOrderDetail.POHeaderID
+ and AP_PurchaseOrderHeader.CompanyID = AP_PurchaseOrderDetail.CompanyID
+ and AP_PurchaseOrderHeader.PeriodID = AP_PurchaseOrderDetail.PeriodID
+ and AP_PurchaseOrderHeader.Status = 1
+ inner join AR_SET_Customer on AR_SET_Customer.CustomerID = AP_PurchaseOrderHeader.VendorID
+ where AP_PurchaseOrderDetail.ItemID = PUR_EnquiryDetail.ItemID
+ and AP_PurchaseOrderDetail.CompanyID = @CompanyID
+ and AP_PurchaseOrderDetail.PeriodID = @PeriodID
+ and AP_PurchaseOrderDetail.Status=1 
+ order by AP_PurchaseOrderHeader.CreateDate desc) LastPoSupplier ,
+
+ (select  sum(isnull(TransactionQuantity,0)) * -1 from INV_StockTransactionDetail 
+ inner join INV_StockTransactionHeader on INV_StockTransactionHeader.StockTransactionID = INV_StockTransactionDetail.StockTransactionID
+ and INV_StockTransactionHeader.CompanyID = INV_StockTransactionDetail.CompanyID
+ and INV_StockTransactionHeader.PeriodID = INV_StockTransactionDetail.PeriodID
+ and INV_StockTransactionHeader.Status = 1
+ and INV_StockTransactionHeader.FiscalID = @CurrentFiscalID
+
+ INNER JOIN SET_DocumentType On SET_DocumentType.DocumentTypeID=INV_StockTransactionHeader.DocumentTypeID
+AND  SET_DocumentType.PeriodID=INV_StockTransactionHeader.PeriodID
+AND SET_DocumentType.CompanyID=INV_StockTransactionHeader.CompanyID
+AND SET_DocumentType.MenuID in (Select MenuID from ApplicationMenu where MenuPath='/Inventory/Transaction/Average/StockGIN_frm.aspx' )
+
+ where INV_StockTransactionDetail.ItemID = PUR_EnquiryDetail.ItemID
+ and INV_StockTransactionDetail.CompanyID = @CompanyID
+ and INV_StockTransactionDetail.PeriodID = @PeriodID
+ and INV_StockTransactionDetail.Status=1 
+ 
+ ) Consumption,
+
+ 
+ (select  sum(isnull(TransactionQuantity,0)) * -1 from INV_StockTransactionDetail 
+ inner join INV_StockTransactionHeader on INV_StockTransactionHeader.StockTransactionID = INV_StockTransactionDetail.StockTransactionID
+ and INV_StockTransactionHeader.CompanyID = INV_StockTransactionDetail.CompanyID
+ and INV_StockTransactionHeader.PeriodID = INV_StockTransactionDetail.PeriodID
+ and INV_StockTransactionHeader.Status = 1
+ and INV_StockTransactionHeader.FiscalID = (select Top (1) FiscalId from SET_PeriodCustom where CompanyID = @CompanyID And FiscalId &lt; @CurrentFiscalID ORDER BY FiscalId desc) 
+
+ INNER JOIN SET_DocumentType On SET_DocumentType.DocumentTypeID=INV_StockTransactionHeader.DocumentTypeID
+AND  SET_DocumentType.PeriodID=INV_StockTransactionHeader.PeriodID
+AND SET_DocumentType.CompanyID=INV_StockTransactionHeader.CompanyID
+AND SET_DocumentType.MenuID in (Select MenuID from ApplicationMenu where MenuPath ='/Inventory/Transaction/Average/StockGIN_frm.aspx' )
+
+ where INV_StockTransactionDetail.ItemID = PUR_EnquiryDetail.ItemID
+ and INV_StockTransactionDetail.CompanyID = @CompanyID
+ and INV_StockTransactionDetail.PeriodID = @PeriodID
+ and INV_StockTransactionDetail.Status=1 
+ ) LastYearConsumption,	
+
+ (   select sum(SumOfQuantityInStock ) from (
+select --IsNull(Sum(Case when Set_DocumentType.TransactionImpact = 'No Impact' then 0 else INV_StockTransactionDetail.TransactionQuantity END), 0) As SumOfQuantityInStock 
+case when StkDetail.ImpactID is not null then 
+			case StkDetail.ImpactID  when 1 then abs(SUM(StkDetail.TransactionQuantity)) when 2 then abs(SUM(StkDetail.TransactionQuantity)) *-1 end
+			else  
+			case SET_DocumentType.TransactionImpact  
+			when 'Positive' then abs(SUM(StkDetail.TransactionQuantity)) 
+			when 'Negative' then abs(SUM(StkDetail.TransactionQuantity)) *-1 end
+			 end As SumOfQuantityInStock
+            
+        from INV_StockTransactionDetail StkDetail
+			Inner Join INV_StockTransactionHeader StkHdr On StkHdr.StockTransactionID = StkDetail.StockTransactionID 
+                AND StkHdr.CompanyID = StkDetail.CompanyID 
+                And StkDetail.PeriodID = StkHdr.PeriodID
+			
+				inner JOIN SET_DocumentType ON SET_DocumentType.CompanyID = StkHdr.CompanyID 
+        AND SET_DocumentType.PeriodID = StkHdr.PeriodID AND SET_DocumentType.DocumentTypeID = StkHdr.DocumentTypeID 
+        AND Set_DocumentType.Status = 1 --And SET_DocumentType.TransactionImpact &lt;&gt; 'No Impact' 
+    AND ((SET_DocumentType.DocumentType = 'Stock Adjustment') or (SET_DocumentType.TransactionImpact &lt;&gt; 'No Impact') )   
+
+	LEFT JOIN SET_Location ON SET_Location.LocationID = StkHdr.LocationID 
+	
+    
+    LEFT JOIN SET_Location SL ON SL.LocationID = [StkDetail].LocationID 
+	
+            where StkDetail.ItemID = INV_Item.ItemID And StkDetail.CompanyID = @CompanyID 
+                And StkDetail.PeriodID = 1  And StkDetail.Status = 1 And SET_DocumentType.TransactionImpact &lt;&gt; 'No Impact' 
+				and StkDetail.ItemID = INV_Item.ItemID And StkDetail.CompanyID = @CompanyID
+	And StkDetail.PeriodID = 1  And StkDetail.Status = 1 And StkHdr.Status = 1
+	--AND  (isnull(SET_Location.LocationID,SL.LocationID) = INV_StockTransactionHeader.locationID OR INV_StockTransactionHeader.locationID is null)
+	AND  (isnull(SET_Location.LocationID,SL.LocationID) = isnull(INV_StockTransactionHeader.locationID,INV_StockTransactionDetail.locationID) OR isnull(INV_StockTransactionHeader.locationID,INV_StockTransactionDetail.locationID) is null)   
+AND StkDetail.IsActive = 1  AND StkHdr.StatusCode = 1  AND StkHdr.ReversalID IS NULL
+group by StkDetail.ImpactID,SET_DocumentType.TransactionImpact,StkHdr.DocumentNo,SET_DocumentType.DocumentType 
+)as tab
+    )As CurrentStock,
+
+Set_PeriodCustom.PeriodTypeName CurrentYear,
+(select Top (1) PeriodTypeName from SET_PeriodCustom where CompanyID = @CompanyID And FiscalId &lt; @CurrentFiscalID ORDER BY FiscalId desc) as LastYear,
+
+
+1 As Sort, @IsSuppress AS IsSuppress, --@PreparedBy AS PreparedBy, 
+@PurchaseOfficer AS PurchaseOfficer, @DeputyManagerOfficer AS DeputyManagerOfficer, @Director AS Director
+,PUR_QuotationHeader.Comments ManagerPurchase
+--, @ManagerPurchase AS ManagerPurchase
+FROM PUR_QuotationDetail 
+	INNER JOIN PUR_QuotationHeader ON PUR_QuotationHeader.CompanyID = PUR_QuotationDetail.CompanyID AND PUR_QuotationHeader.PeriodID = PUR_QuotationDetail.PeriodID 
+        AND PUR_QuotationHeader.QuotationID = PUR_QuotationDetail.QuotationHeaderID AND PUR_QuotationHeader.Status = 1 
+    INNER JOIN PUR_EnquiryDetail ON PUR_EnquiryDetail.CompanyID = PUR_QuotationDetail.CompanyID AND PUR_EnquiryDetail.PeriodID = PUR_QuotationDetail.PeriodID 
+        AND PUR_EnquiryDetail.EnquiryHeaderID = PUR_QuotationDetail.EnquiryHeaderID AND PUR_EnquiryDetail.EnquiryDetailID = PUR_QuotationDetail.EnquiryDetailID 
+        AND PUR_EnquiryDetail.Status = 1 
+	INNER JOIN PUR_EnquiryHeader ON PUR_EnquiryHeader.CompanyID = PUR_EnquiryDetail.CompanyID AND PUR_EnquiryHeader.PeriodID = PUR_EnquiryDetail.PeriodID 
+        AND PUR_EnquiryHeader.EnquiryID = PUR_EnquiryDetail.EnquiryHeaderID AND PUR_EnquiryHeader.Status = 1 
+		
+		inner join SET_DocumentType on SET_DocumentType.DocumentTypeID = PUR_EnquiryHeader.DocumentTypeID
+		and SET_DocumentType.CompanyID = PUR_EnquiryHeader.CompanyID
+
+    INNER JOIN INV_StockTransactionHeader ON INV_StockTransactionHeader.StockTransactionID = PUR_EnquiryHeader.FK_Inv_StockTransactionID
+	and INV_StockTransactionHeader.CompanyID = PUR_EnquiryHeader.CompanyID
+	and INV_StockTransactionHeader.PeriodID = PUR_EnquiryHeader.PeriodID
+
+	left join INV_StockTransactionDetail on INV_StockTransactionHeader.StockTransactionID = INV_StockTransactionDetail.StockTransactionID
+	and INV_StockTransactionHeader.CompanyID = INV_StockTransactionDetail.CompanyID
+	and INV_StockTransactionHeader.PeriodID = INV_StockTransactionDetail.PeriodID
+
+	INNER JOIN INV_Item ON INV_Item.ItemID = PUR_EnquiryDetail.ItemID --INV_Item.CompanyID = PUR_QuotationDetail.CompanyID AND 
+	INNER JOIN AR_SET_Customer ON AR_SET_Customer.PeriodID = PUR_QuotationHeader.PeriodID 
+        AND AR_SET_Customer.CustomerID = PUR_QuotationHeader.SupplierID 
+    INNER JOIN SET_UnitOfMeasure ON SET_UnitOfMeasure.UOMID = PUR_EnquiryDetail.ItemUnitID 
+    inner join Set_PeriodCustom on PUR_QuotationHeader.QuotedDate between Set_PeriodCustom.StartDate and Set_PeriodCustom.EndDate 
+and Set_PeriodCustom.Status = 1  and Set_PeriodCustom.FiscalID = @CurrentFiscalID
+    Inner Join AP_PurchaseOrderHeader as tbl_PO on tbl_PO.DocumentNumber = @CurrDocNo
+	      and tbl_PO.CompanyID = @CompanyID
+		  and tbl_PO.PeriodID = @PeriodID
+		  and tbl_PO.Status = 1
+WHERE PUR_QuotationDetail.CompanyID = @CompanyID AND PUR_QuotationDetail.Status = 1
+{AdditionalParameters}
+{0}
+
+
+SELECT 
+PUR_EnquiryHeader.DocumentNo AS EnquiryNumber, 
+'1. Delivery Period:' AS RowsCrossTabb,  
+PUR_QuotationHeader.SupplierID, 
+(
+	Case When PUR_QuotationHeader.DeliveryPeriod Is Null Then
+	''
+	Else Cast(PUR_QuotationHeader.DeliveryPeriod As Varchar) + ' ' + ' Days'
+	End 
+) AS SummaryCrossTab,
+AR_SET_Customer.CustomerName AS SupplierName
+FROM PUR_QuotationHeader 
+	INNER JOIN PUR_QuotationDetail ON PUR_QuotationHeader.CompanyID = PUR_QuotationDetail.CompanyID AND PUR_QuotationHeader.PeriodID = PUR_QuotationDetail.PeriodID 
+        AND PUR_QuotationHeader.QuotationID = PUR_QuotationDetail.QuotationHeaderID AND PUR_QuotationHeader.Status = 1  
+	INNER JOIN AR_SET_Customer ON AR_SET_Customer.PeriodID = PUR_QuotationHeader.PeriodID 
+        AND AR_SET_Customer.CustomerID = PUR_QuotationHeader.SupplierID 
+     INNER JOIN PUR_EnquiryDetail ON PUR_EnquiryDetail.CompanyID = PUR_QuotationDetail.CompanyID AND PUR_EnquiryDetail.PeriodID = PUR_QuotationDetail.PeriodID 
+        AND PUR_EnquiryDetail.EnquiryHeaderID = PUR_QuotationDetail.EnquiryHeaderID AND PUR_EnquiryDetail.EnquiryDetailID = PUR_QuotationDetail.EnquiryDetailID 
+        AND PUR_EnquiryDetail.Status = 1 
+	INNER JOIN PUR_EnquiryHeader ON PUR_EnquiryHeader.CompanyID = PUR_EnquiryDetail.CompanyID AND PUR_EnquiryHeader.PeriodID = PUR_EnquiryDetail.PeriodID 
+        AND PUR_EnquiryHeader.EnquiryID = PUR_EnquiryDetail.EnquiryHeaderID AND PUR_EnquiryHeader.Status = 1 
+		inner join SET_DocumentType on SET_DocumentType.DocumentTypeID = PUR_EnquiryHeader.DocumentTypeID
+		and SET_DocumentType.CompanyID = PUR_EnquiryHeader.CompanyID
+        inner join Set_PeriodCustom on PUR_QuotationHeader.QuotedDate between Set_PeriodCustom.StartDate and Set_PeriodCustom.EndDate 
+and Set_PeriodCustom.Status = 1  and Set_PeriodCustom.FiscalID = @CurrentFiscalID
+WHERE PUR_QuotationHeader.CompanyID = @CompanyID AND PUR_QuotationHeader.Status = 1
+{AdditionalParameters}
+{0}
+
+
+
+Union All
+
+
+
+SELECT 
+PUR_EnquiryHeader.DocumentNo AS EnquiryNumber, 
+'2. Payment:' AS RowsCrossTabb,  
+PUR_QuotationHeader.SupplierID, 
+IsNull(PUR_QuotationHeader.PaymentMode,'')  AS SummaryCrossTab,
+AR_SET_Customer.CustomerName AS SupplierName
+FROM PUR_QuotationHeader 
+	INNER JOIN PUR_QuotationDetail ON PUR_QuotationHeader.CompanyID = PUR_QuotationDetail.CompanyID AND PUR_QuotationHeader.PeriodID = PUR_QuotationDetail.PeriodID 
+        AND PUR_QuotationHeader.QuotationID = PUR_QuotationDetail.QuotationHeaderID AND PUR_QuotationHeader.Status = 1  
+	INNER JOIN AR_SET_Customer ON AR_SET_Customer.PeriodID = PUR_QuotationHeader.PeriodID 
+        AND AR_SET_Customer.CustomerID = PUR_QuotationHeader.SupplierID 
+     INNER JOIN PUR_EnquiryDetail ON PUR_EnquiryDetail.CompanyID = PUR_QuotationDetail.CompanyID AND PUR_EnquiryDetail.PeriodID = PUR_QuotationDetail.PeriodID 
+        AND PUR_EnquiryDetail.EnquiryHeaderID = PUR_QuotationDetail.EnquiryHeaderID AND PUR_EnquiryDetail.EnquiryDetailID = PUR_QuotationDetail.EnquiryDetailID 
+        AND PUR_EnquiryDetail.Status = 1 
+	INNER JOIN PUR_EnquiryHeader ON PUR_EnquiryHeader.CompanyID = PUR_EnquiryDetail.CompanyID AND PUR_EnquiryHeader.PeriodID = PUR_EnquiryDetail.PeriodID 
+        AND PUR_EnquiryHeader.EnquiryID = PUR_EnquiryDetail.EnquiryHeaderID AND PUR_EnquiryHeader.Status = 1 
+		inner join SET_DocumentType on SET_DocumentType.DocumentTypeID = PUR_EnquiryHeader.DocumentTypeID
+		and SET_DocumentType.CompanyID = PUR_EnquiryHeader.CompanyID
+        inner join Set_PeriodCustom on PUR_QuotationHeader.QuotedDate between Set_PeriodCustom.StartDate and Set_PeriodCustom.EndDate 
+and Set_PeriodCustom.Status = 1  and Set_PeriodCustom.FiscalID = @CurrentFiscalID
+WHERE PUR_QuotationHeader.CompanyID = @CompanyID AND PUR_QuotationHeader.Status = 1
+{AdditionalParameters}
+{0}
+
+Union All
+
+
+
+SELECT 
+PUR_EnquiryHeader.DocumentNo AS EnquiryNumber, 
+'3. Transportation Charges:' AS RowsCrossTabb, 
+PUR_QuotationHeader.SupplierID, 
+IsNull(PUR_QuotationHeader.PlaceOfDelivery,'')  AS SummaryCrossTab,
+AR_SET_Customer.CustomerName AS SupplierName
+FROM PUR_QuotationHeader 
+	INNER JOIN PUR_QuotationDetail ON PUR_QuotationHeader.CompanyID = PUR_QuotationDetail.CompanyID AND PUR_QuotationHeader.PeriodID = PUR_QuotationDetail.PeriodID 
+        AND PUR_QuotationHeader.QuotationID = PUR_QuotationDetail.QuotationHeaderID AND PUR_QuotationHeader.Status = 1  
+	INNER JOIN AR_SET_Customer ON AR_SET_Customer.PeriodID = PUR_QuotationHeader.PeriodID 
+        AND AR_SET_Customer.CustomerID = PUR_QuotationHeader.SupplierID 
+     INNER JOIN PUR_EnquiryDetail ON PUR_EnquiryDetail.CompanyID = PUR_QuotationDetail.CompanyID AND PUR_EnquiryDetail.PeriodID = PUR_QuotationDetail.PeriodID 
+        AND PUR_EnquiryDetail.EnquiryHeaderID = PUR_QuotationDetail.EnquiryHeaderID AND PUR_EnquiryDetail.EnquiryDetailID = PUR_QuotationDetail.EnquiryDetailID 
+        AND PUR_EnquiryDetail.Status = 1 
+	INNER JOIN PUR_EnquiryHeader ON PUR_EnquiryHeader.CompanyID = PUR_EnquiryDetail.CompanyID AND PUR_EnquiryHeader.PeriodID = PUR_EnquiryDetail.PeriodID 
+        AND PUR_EnquiryHeader.EnquiryID = PUR_EnquiryDetail.EnquiryHeaderID AND PUR_EnquiryHeader.Status = 1 
+		inner join SET_DocumentType on SET_DocumentType.DocumentTypeID = PUR_EnquiryHeader.DocumentTypeID
+		and SET_DocumentType.CompanyID = PUR_EnquiryHeader.CompanyID
+        inner join Set_PeriodCustom on PUR_QuotationHeader.QuotedDate between Set_PeriodCustom.StartDate and Set_PeriodCustom.EndDate 
+and Set_PeriodCustom.Status = 1  and Set_PeriodCustom.FiscalID = @CurrentFiscalID
+WHERE PUR_QuotationHeader.CompanyID = @CompanyID AND PUR_QuotationHeader.Status = 1
+{AdditionalParameters}
+{0}
+ 
+
+
+SELECT 
+PUR_EnquiryHeader.DocumentNo AS EnquiryNumber, 
+'1-Sub Total' AS RowsCrossTabb, 
+PUR_QuotationHeader.SupplierID, 
+SUM((case when (NegotiationPrice1 &gt; 0 and NegotiationPrice1 &lt; NegotiationPrice2) then NegotiationPrice1 else NegotiationPrice2 end *  PUR_QuotationDetail.OfferedQuantity)) as SummaryCrossTab,
+AR_SET_Customer.CustomerName AS SupplierName
+,1 as SortOrder
+FROM PUR_QuotationHeader 
+	INNER JOIN PUR_QuotationDetail ON PUR_QuotationHeader.CompanyID = PUR_QuotationDetail.CompanyID AND PUR_QuotationHeader.PeriodID = PUR_QuotationDetail.PeriodID 
+        AND PUR_QuotationHeader.QuotationID = PUR_QuotationDetail.QuotationHeaderID AND PUR_QuotationDetail.Status = 1  
+	INNER JOIN AR_SET_Customer ON AR_SET_Customer.PeriodID = PUR_QuotationHeader.PeriodID 
+        AND AR_SET_Customer.CustomerID = PUR_QuotationHeader.SupplierID 
+     INNER JOIN PUR_EnquiryDetail ON PUR_EnquiryDetail.CompanyID = PUR_QuotationDetail.CompanyID AND PUR_EnquiryDetail.PeriodID = PUR_QuotationDetail.PeriodID 
+        AND PUR_EnquiryDetail.EnquiryHeaderID = PUR_QuotationDetail.EnquiryHeaderID AND PUR_EnquiryDetail.EnquiryDetailID = PUR_QuotationDetail.EnquiryDetailID 
+        AND PUR_EnquiryDetail.Status = 1 
+	INNER JOIN PUR_EnquiryHeader ON PUR_EnquiryHeader.CompanyID = PUR_EnquiryDetail.CompanyID AND PUR_EnquiryHeader.PeriodID = PUR_EnquiryDetail.PeriodID 
+        AND PUR_EnquiryHeader.EnquiryID = PUR_EnquiryDetail.EnquiryHeaderID AND PUR_EnquiryHeader.Status = 1 
+		inner join SET_DocumentType on SET_DocumentType.DocumentTypeID = PUR_EnquiryHeader.DocumentTypeID
+		and SET_DocumentType.CompanyID = PUR_EnquiryHeader.CompanyID
+        inner join Set_PeriodCustom on PUR_QuotationHeader.QuotedDate between Set_PeriodCustom.StartDate and Set_PeriodCustom.EndDate 
+and Set_PeriodCustom.Status = 1  and Set_PeriodCustom.FiscalID = @CurrentFiscalID
+WHERE PUR_QuotationHeader.CompanyID = @CompanyID AND PUR_QuotationHeader.Status = 1
+ {AdditionalParameters}
+ {0}
+
+ group by PUR_EnquiryHeader.DocumentNo
+ ,PUR_QuotationHeader.SupplierID,PUR_QuotationHeader.DeliveryPeriod,AR_SET_Customer.CustomerName
+
+ union all
+
+  SELECT 
+PUR_EnquiryHeader.DocumentNo AS EnquiryNumber, 
+case when PUR_QuotationHeader.GST is null then 
+'2-Sale Tax ' 
+else
+'2-Sale Tax (' + convert(varchar ,PUR_QuotationHeader.GST) + '%)' 
+end AS RowsCrossTabb, 
+PUR_QuotationHeader.SupplierID, 
+SUM((case when (NegotiationPrice1 &gt; 0 and NegotiationPrice1 &lt; NegotiationPrice2) then NegotiationPrice1 else NegotiationPrice2 end *  PUR_QuotationDetail.OfferedQuantity)) * ISNULL(GST,0) / 100 as SummaryCrossTab,
+AR_SET_Customer.CustomerName AS SupplierName
+,2 as SortOrder
+FROM PUR_QuotationHeader 
+	INNER JOIN PUR_QuotationDetail ON PUR_QuotationHeader.CompanyID = PUR_QuotationDetail.CompanyID AND PUR_QuotationHeader.PeriodID = PUR_QuotationDetail.PeriodID 
+        AND PUR_QuotationHeader.QuotationID = PUR_QuotationDetail.QuotationHeaderID AND PUR_QuotationDetail.Status = 1  
+	INNER JOIN AR_SET_Customer ON AR_SET_Customer.PeriodID = PUR_QuotationHeader.PeriodID 
+        AND AR_SET_Customer.CustomerID = PUR_QuotationHeader.SupplierID 
+     INNER JOIN PUR_EnquiryDetail ON PUR_EnquiryDetail.CompanyID = PUR_QuotationDetail.CompanyID AND PUR_EnquiryDetail.PeriodID = PUR_QuotationDetail.PeriodID 
+        AND PUR_EnquiryDetail.EnquiryHeaderID = PUR_QuotationDetail.EnquiryHeaderID AND PUR_EnquiryDetail.EnquiryDetailID = PUR_QuotationDetail.EnquiryDetailID 
+        AND PUR_EnquiryDetail.Status = 1 
+	INNER JOIN PUR_EnquiryHeader ON PUR_EnquiryHeader.CompanyID = PUR_EnquiryDetail.CompanyID AND PUR_EnquiryHeader.PeriodID = PUR_EnquiryDetail.PeriodID 
+        AND PUR_EnquiryHeader.EnquiryID = PUR_EnquiryDetail.EnquiryHeaderID AND PUR_EnquiryHeader.Status = 1 
+		inner join SET_DocumentType on SET_DocumentType.DocumentTypeID = PUR_EnquiryHeader.DocumentTypeID
+		and SET_DocumentType.CompanyID = PUR_EnquiryHeader.CompanyID
+        inner join Set_PeriodCustom on PUR_QuotationHeader.QuotedDate between Set_PeriodCustom.StartDate and Set_PeriodCustom.EndDate 
+and Set_PeriodCustom.Status = 1  and Set_PeriodCustom.FiscalID = @CurrentFiscalID
+WHERE PUR_QuotationHeader.CompanyID = @CompanyID AND PUR_QuotationHeader.Status = 1
+ {AdditionalParameters}
+ {0}
+
+ group by PUR_EnquiryHeader.DocumentNo
+ ,PUR_QuotationHeader.SupplierID,PUR_QuotationHeader.DeliveryPeriod,AR_SET_Customer.CustomerName,PUR_QuotationHeader.GST
+
+  union all
+
+  SELECT 
+PUR_EnquiryHeader.DocumentNo AS EnquiryNumber, 
+'3-Grand Total' AS RowsCrossTabb, 
+PUR_QuotationHeader.SupplierID, 
+SUM((case when (NegotiationPrice1 &gt; 0 and NegotiationPrice1 &lt; NegotiationPrice2) then NegotiationPrice1 else NegotiationPrice2 end *  PUR_QuotationDetail.OfferedQuantity)) * ISNULL(GST,0) / 100 
++
+SUM(((case when (NegotiationPrice1 &gt; 0 and NegotiationPrice1 &lt; NegotiationPrice2) then NegotiationPrice1 else NegotiationPrice2 end) *  PUR_QuotationDetail.OfferedQuantity))
+as SummaryCrossTab,
+AR_SET_Customer.CustomerName AS SupplierName
+,3 as SortOrder
+FROM PUR_QuotationHeader 
+	INNER JOIN PUR_QuotationDetail ON PUR_QuotationHeader.CompanyID = PUR_QuotationDetail.CompanyID AND PUR_QuotationHeader.PeriodID = PUR_QuotationDetail.PeriodID 
+        AND PUR_QuotationHeader.QuotationID = PUR_QuotationDetail.QuotationHeaderID AND PUR_QuotationDetail.Status = 1  
+	INNER JOIN AR_SET_Customer ON AR_SET_Customer.PeriodID = PUR_QuotationHeader.PeriodID 
+        AND AR_SET_Customer.CustomerID = PUR_QuotationHeader.SupplierID 
+     INNER JOIN PUR_EnquiryDetail ON PUR_EnquiryDetail.CompanyID = PUR_QuotationDetail.CompanyID AND PUR_EnquiryDetail.PeriodID = PUR_QuotationDetail.PeriodID 
+        AND PUR_EnquiryDetail.EnquiryHeaderID = PUR_QuotationDetail.EnquiryHeaderID AND PUR_EnquiryDetail.EnquiryDetailID = PUR_QuotationDetail.EnquiryDetailID 
+        AND PUR_EnquiryDetail.Status = 1 
+	INNER JOIN PUR_EnquiryHeader ON PUR_EnquiryHeader.CompanyID = PUR_EnquiryDetail.CompanyID AND PUR_EnquiryHeader.PeriodID = PUR_EnquiryDetail.PeriodID 
+        AND PUR_EnquiryHeader.EnquiryID = PUR_EnquiryDetail.EnquiryHeaderID AND PUR_EnquiryHeader.Status = 1 
+		inner join SET_DocumentType on SET_DocumentType.DocumentTypeID = PUR_EnquiryHeader.DocumentTypeID
+		and SET_DocumentType.CompanyID = PUR_EnquiryHeader.CompanyID
+        inner join Set_PeriodCustom on PUR_QuotationHeader.QuotedDate between Set_PeriodCustom.StartDate and Set_PeriodCustom.EndDate 
+and Set_PeriodCustom.Status = 1  and Set_PeriodCustom.FiscalID = @CurrentFiscalID
+WHERE PUR_QuotationHeader.CompanyID = @CompanyID AND PUR_QuotationHeader.Status = 1
+ {AdditionalParameters}
+ {0}
+
+ group by PUR_EnquiryHeader.DocumentNo
+ ,PUR_QuotationHeader.SupplierID,PUR_QuotationHeader.DeliveryPeriod,AR_SET_Customer.CustomerName,PUR_QuotationHeader.GST</value>
+  </data>
+  <data name="Query_Comparative_Statement_ReportNew" xml:space="preserve">
+    <value>SELECT PUR_EnquiryHeader.DocumentNo AS EnquiryNumber, INV_StockTransactionHeader.DocumentNo AS RequisitionNumber,
+PUR_EnquiryDetail.SerialNo, PUR_EnquiryHeader.CreatedByValue AS PreparedBy,
+PUR_QuotationHeader.DocumentNo AS QuotationNumber,
+PUR_EnquiryDetail.Quantity AS EnquiredQuantity, 
+    PUR_EnquiryDetail.ItemID, INV_Item.Description AS ItemName, 
+PUR_QuotationDetail.OfferedQuantity, 
+PUR_QuotationHeader.SupplierID, 
+(PUR_QuotationDetail.OfferedQuantity) AS QuotedQuantity,
+    AR_SET_Customer.CustomerName AS SupplierName, PUR_QuotationDetail.QuotedPrice, PUR_QuotationDetail.NegotiationPrice1,PUR_QuotationDetail.NegotiationPrice2, 
+(case when (NegotiationPrice1 &gt; 0 and NegotiationPrice1 &lt; NegotiationPrice2) then NegotiationPrice1 else NegotiationPrice2 end *  PUR_QuotationDetail.OfferedQuantity) as Amount,
+PUR_QuotationDetail.Approved, PUR_QuotationDetail.Specs as BrandName,
+    SET_UnitOfMeasure.UOMName  , isnull(PUR_QuotationHeader.GST,0) As GST , isnull(PUR_QuotationHeader.DeliveryPeriod,0) As  DeliveryPeriod, 
+    IsNull(PUR_QuotationHeader.PlaceOfDelivery,0) As PlaceOfDelivery , IsNull(PUR_QuotationHeader.PaymentMode,0) As PaymentMode,
+
+
+(
+Select top 1 AP_PurchaseOrderDetail.UnitPrice
+from AP_PurchaseOrderDetail 
+Inner join AP_PurchaseOrderHeader on AP_PurchaseOrderHeader.POHeaderID = AP_PurchaseOrderDetail.POHeaderID
+And AP_PurchaseOrderHeader.CompanyID = AP_PurchaseOrderDetail.CompanyID
+And AP_PurchaseOrderHeader.PeriodID = AP_PurchaseOrderDetail.PeriodID
+And AP_PurchaseOrderHeader.FiscalID = AP_PurchaseOrderDetail.FiscalID
+And AP_PurchaseOrderHeader.Status = 1
+
+left JOIN PUR_QuotationHeader QH ON QH.CompanyID = [AP_PurchaseOrderHeader].CompanyID 
+        AND QH.PeriodID = [AP_PurchaseOrderHeader].PeriodID AND QH.DocumentNo = [AP_PurchaseOrderHeader].VendorQuoteNumber 
+		AND QH.FiscalID = [AP_PurchaseOrderHeader].FiscalID
+
+left JOIN PUR_EnquiryHeader EH ON EH.CompanyID = QH.CompanyID AND EH.PeriodID = QH.PeriodID 
+        AND EH.EnquiryID = QH.EnquiryHeaderID 
+
+WHere AP_PurchaseOrderDetail.CompanyID = @CompanyID
+and AP_PurchaseOrderDetail.PeriodID = @PeriodID
+and AP_PurchaseOrderDetail.ItemID = PUR_EnquiryDetail.ItemID 
+and isnull(EH.DocumentNo,0)  &lt;&gt; PUR_EnquiryHeader.DocumentNo
+and DocumentNumber  &lt; isnull((
+Select max(DocumentNumber) as DocumentNumber
+from AP_PurchaseOrderDetail 
+Inner join AP_PurchaseOrderHeader on AP_PurchaseOrderHeader.POHeaderID = AP_PurchaseOrderDetail.POHeaderID
+And AP_PurchaseOrderHeader.CompanyID = AP_PurchaseOrderDetail.CompanyID
+And AP_PurchaseOrderHeader.PeriodID = AP_PurchaseOrderDetail.PeriodID
+And AP_PurchaseOrderHeader.FiscalID = AP_PurchaseOrderDetail.FiscalID
+And AP_PurchaseOrderHeader.Status = 1
+
+inner JOIN PUR_QuotationHeader QH ON QH.CompanyID = [AP_PurchaseOrderHeader].CompanyID 
+        AND QH.PeriodID = [AP_PurchaseOrderHeader].PeriodID AND QH.DocumentNo = [AP_PurchaseOrderHeader].VendorQuoteNumber 
+		AND QH.FiscalID = [AP_PurchaseOrderHeader].FiscalID
+
+inner JOIN PUR_EnquiryHeader EH ON EH.CompanyID = QH.CompanyID AND EH.PeriodID = QH.PeriodID 
+        AND EH.EnquiryID = QH.EnquiryHeaderID 
+
+WHere AP_PurchaseOrderDetail.CompanyID = @CompanyID
+and AP_PurchaseOrderDetail.PeriodID = @PeriodID
+and AP_PurchaseOrderDetail.ItemID = PUR_EnquiryDetail.ItemID 
+and EH.DocumentNo  = PUR_EnquiryHeader.DocumentNo
+),99999)
+Order by AP_PurchaseOrderHeader.DocumentDate desc,AP_PurchaseOrderHeader.CreateDate desc
+) as LastPrice,
+
+(
+Select top 1 DocumentNumber
+from AP_PurchaseOrderDetail 
+Inner join AP_PurchaseOrderHeader on AP_PurchaseOrderHeader.POHeaderID = AP_PurchaseOrderDetail.POHeaderID
+And AP_PurchaseOrderHeader.CompanyID = AP_PurchaseOrderDetail.CompanyID
+And AP_PurchaseOrderHeader.PeriodID = AP_PurchaseOrderDetail.PeriodID
+And AP_PurchaseOrderHeader.FiscalID = AP_PurchaseOrderDetail.FiscalID
+And AP_PurchaseOrderHeader.Status = 1
+
+left JOIN PUR_QuotationHeader QH ON QH.CompanyID = [AP_PurchaseOrderHeader].CompanyID 
+        AND QH.PeriodID = [AP_PurchaseOrderHeader].PeriodID AND QH.DocumentNo = [AP_PurchaseOrderHeader].VendorQuoteNumber 
+		AND QH.FiscalID = [AP_PurchaseOrderHeader].FiscalID
+
+left JOIN PUR_EnquiryHeader EH ON EH.CompanyID = QH.CompanyID AND EH.PeriodID = QH.PeriodID 
+        AND EH.EnquiryID = QH.EnquiryHeaderID 
+
+WHere AP_PurchaseOrderDetail.CompanyID = @CompanyID
+and AP_PurchaseOrderDetail.PeriodID = @PeriodID
+and AP_PurchaseOrderDetail.ItemID = PUR_EnquiryDetail.ItemID 
+and isnull(EH.DocumentNo,0) &lt;&gt; PUR_EnquiryHeader.DocumentNo
+and DocumentNumber  &lt; isnull((
+Select max(DocumentNumber) as DocumentNumber
+from AP_PurchaseOrderDetail 
+Inner join AP_PurchaseOrderHeader on AP_PurchaseOrderHeader.POHeaderID = AP_PurchaseOrderDetail.POHeaderID
+And AP_PurchaseOrderHeader.CompanyID = AP_PurchaseOrderDetail.CompanyID
+And AP_PurchaseOrderHeader.PeriodID = AP_PurchaseOrderDetail.PeriodID
+And AP_PurchaseOrderHeader.FiscalID = AP_PurchaseOrderDetail.FiscalID
+And AP_PurchaseOrderHeader.Status = 1
+
+inner JOIN PUR_QuotationHeader QH ON QH.CompanyID = [AP_PurchaseOrderHeader].CompanyID 
+        AND QH.PeriodID = [AP_PurchaseOrderHeader].PeriodID AND QH.DocumentNo = [AP_PurchaseOrderHeader].VendorQuoteNumber 
+		AND QH.FiscalID = [AP_PurchaseOrderHeader].FiscalID
+
+inner JOIN PUR_EnquiryHeader EH ON EH.CompanyID = QH.CompanyID AND EH.PeriodID = QH.PeriodID 
+        AND EH.EnquiryID = QH.EnquiryHeaderID 
+
+WHere AP_PurchaseOrderDetail.CompanyID = @CompanyID
+and AP_PurchaseOrderDetail.PeriodID = @PeriodID
+and AP_PurchaseOrderDetail.ItemID = PUR_EnquiryDetail.ItemID 
+and EH.DocumentNo  = PUR_EnquiryHeader.DocumentNo
+),99999)
+Order by AP_PurchaseOrderHeader.DocumentDate desc,AP_PurchaseOrderHeader.CreateDate desc
+)as LastPO,
+
+(
+Select top 1 DocumentDate
+from AP_PurchaseOrderDetail 
+Inner join AP_PurchaseOrderHeader on AP_PurchaseOrderHeader.POHeaderID = AP_PurchaseOrderDetail.POHeaderID
+And AP_PurchaseOrderHeader.CompanyID = AP_PurchaseOrderDetail.CompanyID
+And AP_PurchaseOrderHeader.PeriodID = AP_PurchaseOrderDetail.PeriodID
+And AP_PurchaseOrderHeader.FiscalID = AP_PurchaseOrderDetail.FiscalID
+And AP_PurchaseOrderHeader.Status = 1
+
+left JOIN PUR_QuotationHeader QH ON QH.CompanyID = [AP_PurchaseOrderHeader].CompanyID 
+        AND QH.PeriodID = [AP_PurchaseOrderHeader].PeriodID AND QH.DocumentNo = [AP_PurchaseOrderHeader].VendorQuoteNumber 
+		AND QH.FiscalID = [AP_PurchaseOrderHeader].FiscalID
+
+left JOIN PUR_EnquiryHeader EH ON EH.CompanyID = QH.CompanyID AND EH.PeriodID = QH.PeriodID 
+        AND EH.EnquiryID = QH.EnquiryHeaderID 
+
+WHere AP_PurchaseOrderDetail.CompanyID = 1
+and AP_PurchaseOrderDetail.PeriodID = 1
+and AP_PurchaseOrderDetail.ItemID = PUR_EnquiryDetail.ItemID 
+and isnull(EH.DocumentNo,0) &lt;&gt; PUR_EnquiryHeader.DocumentNo
+and DocumentNumber  &lt; isnull((
+Select max(DocumentNumber) as DocumentNumber
+from AP_PurchaseOrderDetail 
+Inner join AP_PurchaseOrderHeader on AP_PurchaseOrderHeader.POHeaderID = AP_PurchaseOrderDetail.POHeaderID
+And AP_PurchaseOrderHeader.CompanyID = AP_PurchaseOrderDetail.CompanyID
+And AP_PurchaseOrderHeader.PeriodID = AP_PurchaseOrderDetail.PeriodID
+And AP_PurchaseOrderHeader.FiscalID = AP_PurchaseOrderDetail.FiscalID
+And AP_PurchaseOrderHeader.Status = 1
+
+inner JOIN PUR_QuotationHeader QH ON QH.CompanyID = [AP_PurchaseOrderHeader].CompanyID 
+        AND QH.PeriodID = [AP_PurchaseOrderHeader].PeriodID AND QH.DocumentNo = [AP_PurchaseOrderHeader].VendorQuoteNumber 
+		AND QH.FiscalID = [AP_PurchaseOrderHeader].FiscalID
+
+inner JOIN PUR_EnquiryHeader EH ON EH.CompanyID = QH.CompanyID AND EH.PeriodID = QH.PeriodID 
+        AND EH.EnquiryID = QH.EnquiryHeaderID 
+
+WHere AP_PurchaseOrderDetail.CompanyID = 1
+and AP_PurchaseOrderDetail.PeriodID = 1
+and AP_PurchaseOrderDetail.ItemID = PUR_EnquiryDetail.ItemID 
+and EH.DocumentNo  = PUR_EnquiryHeader.DocumentNo
+),99999)
+Order by AP_PurchaseOrderHeader.DocumentDate desc,AP_PurchaseOrderHeader.CreateDate desc
+) as LastPoDate,
+
+ (select  top 1 CustomerName from AP_PurchaseOrderDetail
+ inner join AP_PurchaseOrderHeader on AP_PurchaseOrderHeader.POHeaderID = AP_PurchaseOrderDetail.POHeaderID
+ and AP_PurchaseOrderHeader.CompanyID = AP_PurchaseOrderDetail.CompanyID
+ and AP_PurchaseOrderHeader.PeriodID = AP_PurchaseOrderDetail.PeriodID
+ and AP_PurchaseOrderHeader.Status = 1
+ inner join AR_SET_Customer on AR_SET_Customer.CustomerID = AP_PurchaseOrderHeader.VendorID
+ where AP_PurchaseOrderDetail.ItemID = PUR_EnquiryDetail.ItemID
+ and AP_PurchaseOrderDetail.CompanyID = @CompanyID
+ and AP_PurchaseOrderDetail.PeriodID = @PeriodID
+ and AP_PurchaseOrderDetail.Status=1 
+ order by AP_PurchaseOrderHeader.CreateDate desc) LastPoSupplier ,
+
+ (select  sum(isnull(TransactionQuantity,0)) * -1 from INV_StockTransactionDetail 
+ inner join INV_StockTransactionHeader on INV_StockTransactionHeader.StockTransactionID = INV_StockTransactionDetail.StockTransactionID
+ and INV_StockTransactionHeader.CompanyID = INV_StockTransactionDetail.CompanyID
+ and INV_StockTransactionHeader.PeriodID = INV_StockTransactionDetail.PeriodID
+ and INV_StockTransactionHeader.Status = 1
+ and INV_StockTransactionHeader.FiscalID = @CurrentFiscalID
+
+ INNER JOIN SET_DocumentType On SET_DocumentType.DocumentTypeID=INV_StockTransactionHeader.DocumentTypeID
+AND  SET_DocumentType.PeriodID=INV_StockTransactionHeader.PeriodID
+AND SET_DocumentType.CompanyID=INV_StockTransactionHeader.CompanyID
+AND SET_DocumentType.MenuID in (Select MenuID from ApplicationMenu where MenuPath='/Inventory/Transaction/Average/StockGIN_frm.aspx' )
+
+ where INV_StockTransactionDetail.ItemID = PUR_EnquiryDetail.ItemID
+ and INV_StockTransactionDetail.CompanyID = @CompanyID
+ and INV_StockTransactionDetail.PeriodID = @PeriodID
+ and INV_StockTransactionDetail.Status=1 
+ 
+ ) Consumption,
+
+ 
+ (select  sum(isnull(TransactionQuantity,0)) * -1 from INV_StockTransactionDetail 
+ inner join INV_StockTransactionHeader on INV_StockTransactionHeader.StockTransactionID = INV_StockTransactionDetail.StockTransactionID
+ and INV_StockTransactionHeader.CompanyID = INV_StockTransactionDetail.CompanyID
+ and INV_StockTransactionHeader.PeriodID = INV_StockTransactionDetail.PeriodID
+ and INV_StockTransactionHeader.Status = 1
+ and INV_StockTransactionHeader.FiscalID = (select Top (1) FiscalId from SET_PeriodCustom where CompanyID = @CompanyID And FiscalId &lt; @CurrentFiscalID ORDER BY FiscalId desc) 
+
+ INNER JOIN SET_DocumentType On SET_DocumentType.DocumentTypeID=INV_StockTransactionHeader.DocumentTypeID
+AND  SET_DocumentType.PeriodID=INV_StockTransactionHeader.PeriodID
+AND SET_DocumentType.CompanyID=INV_StockTransactionHeader.CompanyID
+AND SET_DocumentType.MenuID in (Select MenuID from ApplicationMenu where MenuPath ='/Inventory/Transaction/Average/StockGIN_frm.aspx' )
+
+ where INV_StockTransactionDetail.ItemID = PUR_EnquiryDetail.ItemID
+ and INV_StockTransactionDetail.CompanyID = @CompanyID
+ and INV_StockTransactionDetail.PeriodID = @PeriodID
+ and INV_StockTransactionDetail.Status=1 
+ ) LastYearConsumption,	
+
+ (   select sum(SumOfQuantityInStock ) from (
+select --IsNull(Sum(Case when Set_DocumentType.TransactionImpact = 'No Impact' then 0 else INV_StockTransactionDetail.TransactionQuantity END), 0) As SumOfQuantityInStock 
+case when StkDetail.ImpactID is not null then 
+			case StkDetail.ImpactID  when 1 then abs(SUM(StkDetail.TransactionQuantity)) when 2 then abs(SUM(StkDetail.TransactionQuantity)) *-1 end
+			else  
+			case SET_DocumentType.TransactionImpact  
+			when 'Positive' then abs(SUM(StkDetail.TransactionQuantity)) 
+			when 'Negative' then abs(SUM(StkDetail.TransactionQuantity)) *-1 end
+			 end As SumOfQuantityInStock
+            
+        from INV_StockTransactionDetail StkDetail
+			Inner Join INV_StockTransactionHeader StkHdr On StkHdr.StockTransactionID = StkDetail.StockTransactionID 
+                AND StkHdr.CompanyID = StkDetail.CompanyID 
+                And StkDetail.PeriodID = StkHdr.PeriodID
+			
+				inner JOIN SET_DocumentType ON SET_DocumentType.CompanyID = StkHdr.CompanyID 
+        AND SET_DocumentType.PeriodID = StkHdr.PeriodID AND SET_DocumentType.DocumentTypeID = StkHdr.DocumentTypeID 
+        AND Set_DocumentType.Status = 1 --And SET_DocumentType.TransactionImpact &lt;&gt; 'No Impact' 
+    AND ((SET_DocumentType.DocumentType = 'Stock Adjustment') or (SET_DocumentType.TransactionImpact &lt;&gt; 'No Impact') )   
+
+	LEFT JOIN SET_Location ON SET_Location.LocationID = StkHdr.LocationID 
+	
+    
+    LEFT JOIN SET_Location SL ON SL.LocationID = [StkDetail].LocationID 
+	
+            where StkDetail.ItemID = INV_Item.ItemID And StkDetail.CompanyID = @CompanyID 
+                And StkDetail.PeriodID = 1  And StkDetail.Status = 1 And SET_DocumentType.TransactionImpact &lt;&gt; 'No Impact' 
+				and StkDetail.ItemID = INV_Item.ItemID And StkDetail.CompanyID = @CompanyID
+	And StkDetail.PeriodID = 1  And StkDetail.Status = 1 And StkHdr.Status = 1
+	--AND  (isnull(SET_Location.LocationID,SL.LocationID) = INV_StockTransactionHeader.locationID OR INV_StockTransactionHeader.locationID is null)
+	AND  (isnull(SET_Location.LocationID,SL.LocationID) = isnull(INV_StockTransactionHeader.locationID,INV_StockTransactionDetail.locationID) OR isnull(INV_StockTransactionHeader.locationID,INV_StockTransactionDetail.locationID) is null)   
+AND StkDetail.IsActive = 1  AND StkHdr.StatusCode = 1  AND StkHdr.ReversalID IS NULL
+group by StkDetail.ImpactID,SET_DocumentType.TransactionImpact,StkHdr.DocumentNo,SET_DocumentType.DocumentType 
+)as tab
+    )As CurrentStock,
+
+Set_PeriodCustom.PeriodTypeName CurrentYear,
+(select Top (1) PeriodTypeName from SET_PeriodCustom where CompanyID = @CompanyID And FiscalId &lt; @CurrentFiscalID ORDER BY FiscalId desc) as LastYear,
+
+
+1 As Sort, @IsSuppress AS IsSuppress, --@PreparedBy AS PreparedBy, 
+@PurchaseOfficer AS PurchaseOfficer, @DeputyManagerOfficer AS DeputyManagerOfficer, @Director AS Director
+,PUR_QuotationHeader.Comments ManagerPurchase
+--, @ManagerPurchase AS ManagerPurchase
+FROM PUR_QuotationDetail 
+	INNER JOIN PUR_QuotationHeader ON PUR_QuotationHeader.CompanyID = PUR_QuotationDetail.CompanyID AND PUR_QuotationHeader.PeriodID = PUR_QuotationDetail.PeriodID 
+        AND PUR_QuotationHeader.QuotationID = PUR_QuotationDetail.QuotationHeaderID AND PUR_QuotationHeader.Status = 1 
+    INNER JOIN PUR_EnquiryDetail ON PUR_EnquiryDetail.CompanyID = PUR_QuotationDetail.CompanyID AND PUR_EnquiryDetail.PeriodID = PUR_QuotationDetail.PeriodID 
+        AND PUR_EnquiryDetail.EnquiryHeaderID = PUR_QuotationDetail.EnquiryHeaderID AND PUR_EnquiryDetail.EnquiryDetailID = PUR_QuotationDetail.EnquiryDetailID 
+        AND PUR_EnquiryDetail.Status = 1 
+	INNER JOIN PUR_EnquiryHeader ON PUR_EnquiryHeader.CompanyID = PUR_EnquiryDetail.CompanyID AND PUR_EnquiryHeader.PeriodID = PUR_EnquiryDetail.PeriodID 
+        AND PUR_EnquiryHeader.EnquiryID = PUR_EnquiryDetail.EnquiryHeaderID AND PUR_EnquiryHeader.Status = 1 
+		
+		inner join SET_DocumentType on SET_DocumentType.DocumentTypeID = PUR_EnquiryHeader.DocumentTypeID
+		and SET_DocumentType.CompanyID = PUR_EnquiryHeader.CompanyID
+
+    INNER JOIN INV_StockTransactionHeader ON INV_StockTransactionHeader.StockTransactionID = PUR_EnquiryHeader.FK_Inv_StockTransactionID
+	and INV_StockTransactionHeader.CompanyID = PUR_EnquiryHeader.CompanyID
+	and INV_StockTransactionHeader.PeriodID = PUR_EnquiryHeader.PeriodID
+
+	left join INV_StockTransactionDetail on INV_StockTransactionHeader.StockTransactionID = INV_StockTransactionDetail.StockTransactionID
+	and INV_StockTransactionHeader.CompanyID = INV_StockTransactionDetail.CompanyID
+	and INV_StockTransactionHeader.PeriodID = INV_StockTransactionDetail.PeriodID
+
+	INNER JOIN INV_Item ON INV_Item.ItemID = PUR_EnquiryDetail.ItemID --INV_Item.CompanyID = PUR_QuotationDetail.CompanyID AND 
+	INNER JOIN AR_SET_Customer ON AR_SET_Customer.PeriodID = PUR_QuotationHeader.PeriodID 
+        AND AR_SET_Customer.CustomerID = PUR_QuotationHeader.SupplierID 
+    INNER JOIN SET_UnitOfMeasure ON SET_UnitOfMeasure.UOMID = PUR_EnquiryDetail.ItemUnitID 
+    inner join Set_PeriodCustom on PUR_QuotationHeader.QuotedDate between Set_PeriodCustom.StartDate and Set_PeriodCustom.EndDate 
+and Set_PeriodCustom.Status = 1  and Set_PeriodCustom.FiscalID = @CurrentFiscalID
+WHERE PUR_QuotationDetail.CompanyID = @CompanyID AND PUR_QuotationDetail.Status = 1
+ AND PUR_EnquiryHeader.DocumentNo BETWEEN @RFQNumberFrom AND @RFQNumberTo
+ AND (PUR_EnquiryHeader.DocumentTYpeID = @DocumentTYpeID OR @DocumentTYpeID is Null)
+
+
+
+SELECT 
+PUR_EnquiryHeader.DocumentNo AS EnquiryNumber, 
+'1. Delivery Period:' AS RowsCrossTabb,  
+PUR_QuotationHeader.SupplierID, 
+(
+	Case When PUR_QuotationHeader.DeliveryPeriod Is Null Then
+	''
+	Else Cast(PUR_QuotationHeader.DeliveryPeriod As Varchar) + ' ' + ' Days'
+	End 
+) AS SummaryCrossTab,
+AR_SET_Customer.CustomerName AS SupplierName
+FROM PUR_QuotationHeader 
+	INNER JOIN PUR_QuotationDetail ON PUR_QuotationHeader.CompanyID = PUR_QuotationDetail.CompanyID AND PUR_QuotationHeader.PeriodID = PUR_QuotationDetail.PeriodID 
+        AND PUR_QuotationHeader.QuotationID = PUR_QuotationDetail.QuotationHeaderID AND PUR_QuotationHeader.Status = 1  
+	INNER JOIN AR_SET_Customer ON AR_SET_Customer.PeriodID = PUR_QuotationHeader.PeriodID 
+        AND AR_SET_Customer.CustomerID = PUR_QuotationHeader.SupplierID 
+     INNER JOIN PUR_EnquiryDetail ON PUR_EnquiryDetail.CompanyID = PUR_QuotationDetail.CompanyID AND PUR_EnquiryDetail.PeriodID = PUR_QuotationDetail.PeriodID 
+        AND PUR_EnquiryDetail.EnquiryHeaderID = PUR_QuotationDetail.EnquiryHeaderID AND PUR_EnquiryDetail.EnquiryDetailID = PUR_QuotationDetail.EnquiryDetailID 
+        AND PUR_EnquiryDetail.Status = 1 
+	INNER JOIN PUR_EnquiryHeader ON PUR_EnquiryHeader.CompanyID = PUR_EnquiryDetail.CompanyID AND PUR_EnquiryHeader.PeriodID = PUR_EnquiryDetail.PeriodID 
+        AND PUR_EnquiryHeader.EnquiryID = PUR_EnquiryDetail.EnquiryHeaderID AND PUR_EnquiryHeader.Status = 1 
+		inner join SET_DocumentType on SET_DocumentType.DocumentTypeID = PUR_EnquiryHeader.DocumentTypeID
+		and SET_DocumentType.CompanyID = PUR_EnquiryHeader.CompanyID
+        inner join Set_PeriodCustom on PUR_QuotationHeader.QuotedDate between Set_PeriodCustom.StartDate and Set_PeriodCustom.EndDate 
+and Set_PeriodCustom.Status = 1  and Set_PeriodCustom.FiscalID = @CurrentFiscalID
+WHERE PUR_QuotationHeader.CompanyID = @CompanyID AND PUR_QuotationHeader.Status = 1
+ AND PUR_EnquiryHeader.DocumentNo BETWEEN @RFQNumberFrom AND @RFQNumberTo
+ AND (PUR_EnquiryHeader.DocumentTYpeID = @DocumentTYpeID OR @DocumentTYpeID is Null)
+
+
+
+Union All
+
+
+
+SELECT 
+PUR_EnquiryHeader.DocumentNo AS EnquiryNumber, 
+'2. Payment:' AS RowsCrossTabb,  
+PUR_QuotationHeader.SupplierID, 
+IsNull(PUR_QuotationHeader.PaymentMode,'')  AS SummaryCrossTab,
+AR_SET_Customer.CustomerName AS SupplierName
+FROM PUR_QuotationHeader 
+	INNER JOIN PUR_QuotationDetail ON PUR_QuotationHeader.CompanyID = PUR_QuotationDetail.CompanyID AND PUR_QuotationHeader.PeriodID = PUR_QuotationDetail.PeriodID 
+        AND PUR_QuotationHeader.QuotationID = PUR_QuotationDetail.QuotationHeaderID AND PUR_QuotationHeader.Status = 1  
+	INNER JOIN AR_SET_Customer ON AR_SET_Customer.PeriodID = PUR_QuotationHeader.PeriodID 
+        AND AR_SET_Customer.CustomerID = PUR_QuotationHeader.SupplierID 
+     INNER JOIN PUR_EnquiryDetail ON PUR_EnquiryDetail.CompanyID = PUR_QuotationDetail.CompanyID AND PUR_EnquiryDetail.PeriodID = PUR_QuotationDetail.PeriodID 
+        AND PUR_EnquiryDetail.EnquiryHeaderID = PUR_QuotationDetail.EnquiryHeaderID AND PUR_EnquiryDetail.EnquiryDetailID = PUR_QuotationDetail.EnquiryDetailID 
+        AND PUR_EnquiryDetail.Status = 1 
+	INNER JOIN PUR_EnquiryHeader ON PUR_EnquiryHeader.CompanyID = PUR_EnquiryDetail.CompanyID AND PUR_EnquiryHeader.PeriodID = PUR_EnquiryDetail.PeriodID 
+        AND PUR_EnquiryHeader.EnquiryID = PUR_EnquiryDetail.EnquiryHeaderID AND PUR_EnquiryHeader.Status = 1 
+		inner join SET_DocumentType on SET_DocumentType.DocumentTypeID = PUR_EnquiryHeader.DocumentTypeID
+		and SET_DocumentType.CompanyID = PUR_EnquiryHeader.CompanyID
+        inner join Set_PeriodCustom on PUR_QuotationHeader.QuotedDate between Set_PeriodCustom.StartDate and Set_PeriodCustom.EndDate 
+and Set_PeriodCustom.Status = 1  and Set_PeriodCustom.FiscalID = @CurrentFiscalID
+WHERE PUR_QuotationHeader.CompanyID = @CompanyID AND PUR_QuotationHeader.Status = 1
+ AND PUR_EnquiryHeader.DocumentNo BETWEEN @RFQNumberFrom AND @RFQNumberTo
+ AND (PUR_EnquiryHeader.DocumentTYpeID = @DocumentTYpeID OR @DocumentTYpeID is Null)
+
+
+Union All
+
+SELECT 
+PUR_EnquiryHeader.DocumentNo AS EnquiryNumber, 
+'3. Transportation Charges:' AS RowsCrossTabb, 
+PUR_QuotationHeader.SupplierID, 
+IsNull(PUR_QuotationHeader.PlaceOfDelivery,'')  AS SummaryCrossTab,
+AR_SET_Customer.CustomerName AS SupplierName
+FROM PUR_QuotationHeader 
+	INNER JOIN PUR_QuotationDetail ON PUR_QuotationHeader.CompanyID = PUR_QuotationDetail.CompanyID AND PUR_QuotationHeader.PeriodID = PUR_QuotationDetail.PeriodID 
+        AND PUR_QuotationHeader.QuotationID = PUR_QuotationDetail.QuotationHeaderID AND PUR_QuotationHeader.Status = 1  
+	INNER JOIN AR_SET_Customer ON AR_SET_Customer.PeriodID = PUR_QuotationHeader.PeriodID 
+        AND AR_SET_Customer.CustomerID = PUR_QuotationHeader.SupplierID 
+     INNER JOIN PUR_EnquiryDetail ON PUR_EnquiryDetail.CompanyID = PUR_QuotationDetail.CompanyID AND PUR_EnquiryDetail.PeriodID = PUR_QuotationDetail.PeriodID 
+        AND PUR_EnquiryDetail.EnquiryHeaderID = PUR_QuotationDetail.EnquiryHeaderID AND PUR_EnquiryDetail.EnquiryDetailID = PUR_QuotationDetail.EnquiryDetailID 
+        AND PUR_EnquiryDetail.Status = 1 
+	INNER JOIN PUR_EnquiryHeader ON PUR_EnquiryHeader.CompanyID = PUR_EnquiryDetail.CompanyID AND PUR_EnquiryHeader.PeriodID = PUR_EnquiryDetail.PeriodID 
+        AND PUR_EnquiryHeader.EnquiryID = PUR_EnquiryDetail.EnquiryHeaderID AND PUR_EnquiryHeader.Status = 1 
+		inner join SET_DocumentType on SET_DocumentType.DocumentTypeID = PUR_EnquiryHeader.DocumentTypeID
+		and SET_DocumentType.CompanyID = PUR_EnquiryHeader.CompanyID
+        inner join Set_PeriodCustom on PUR_QuotationHeader.QuotedDate between Set_PeriodCustom.StartDate and Set_PeriodCustom.EndDate 
+and Set_PeriodCustom.Status = 1  and Set_PeriodCustom.FiscalID = @CurrentFiscalID
+WHERE PUR_QuotationHeader.CompanyID = @CompanyID AND PUR_QuotationHeader.Status = 1
+ AND PUR_EnquiryHeader.DocumentNo BETWEEN @RFQNumberFrom AND @RFQNumberTo
+ AND (PUR_EnquiryHeader.DocumentTYpeID = @DocumentTYpeID OR @DocumentTYpeID is Null)
+
+Union All
+
+SELECT 
+PUR_EnquiryHeader.DocumentNo AS EnquiryNumber, 
+'4. Comments:' AS RowsCrossTabb, 
+PUR_QuotationHeader.SupplierID, 
+IsNull(PUR_EnquiryHeader.Comments,'')  AS SummaryCrossTab,
+AR_SET_Customer.CustomerName AS SupplierName
+FROM PUR_QuotationHeader 
+	INNER JOIN PUR_QuotationDetail ON PUR_QuotationHeader.CompanyID = PUR_QuotationDetail.CompanyID AND PUR_QuotationHeader.PeriodID = PUR_QuotationDetail.PeriodID 
+        AND PUR_QuotationHeader.QuotationID = PUR_QuotationDetail.QuotationHeaderID AND PUR_QuotationHeader.Status = 1  
+	INNER JOIN AR_SET_Customer ON AR_SET_Customer.PeriodID = PUR_QuotationHeader.PeriodID 
+        AND AR_SET_Customer.CustomerID = PUR_QuotationHeader.SupplierID 
+     INNER JOIN PUR_EnquiryDetail ON PUR_EnquiryDetail.CompanyID = PUR_QuotationDetail.CompanyID AND PUR_EnquiryDetail.PeriodID = PUR_QuotationDetail.PeriodID 
+        AND PUR_EnquiryDetail.EnquiryHeaderID = PUR_QuotationDetail.EnquiryHeaderID AND PUR_EnquiryDetail.EnquiryDetailID = PUR_QuotationDetail.EnquiryDetailID 
+        AND PUR_EnquiryDetail.Status = 1 
+	INNER JOIN PUR_EnquiryHeader ON PUR_EnquiryHeader.CompanyID = PUR_EnquiryDetail.CompanyID AND PUR_EnquiryHeader.PeriodID = PUR_EnquiryDetail.PeriodID 
+        AND PUR_EnquiryHeader.EnquiryID = PUR_EnquiryDetail.EnquiryHeaderID AND PUR_EnquiryHeader.Status = 1 
+		inner join SET_DocumentType on SET_DocumentType.DocumentTypeID = PUR_EnquiryHeader.DocumentTypeID
+		and SET_DocumentType.CompanyID = PUR_EnquiryHeader.CompanyID
+        inner join Set_PeriodCustom on PUR_QuotationHeader.QuotedDate between Set_PeriodCustom.StartDate and Set_PeriodCustom.EndDate 
+and Set_PeriodCustom.Status = 1  and Set_PeriodCustom.FiscalID = @CurrentFiscalID
+WHERE PUR_QuotationHeader.CompanyID = @CompanyID AND PUR_QuotationHeader.Status = 1
+ AND PUR_EnquiryHeader.DocumentNo BETWEEN @RFQNumberFrom AND @RFQNumberTo
+ AND (PUR_EnquiryHeader.DocumentTYpeID = @DocumentTYpeID OR @DocumentTYpeID is Null)
+
+
+SELECT 
+PUR_EnquiryHeader.DocumentNo AS EnquiryNumber, 
+'1-Sub Total' AS RowsCrossTabb, 
+PUR_QuotationHeader.SupplierID, 
+SUM((case when (NegotiationPrice1 &gt; 0 and NegotiationPrice1 &lt; NegotiationPrice2) then NegotiationPrice1 else NegotiationPrice2 end *  PUR_QuotationDetail.OfferedQuantity)) as SummaryCrossTab,
+AR_SET_Customer.CustomerName AS SupplierName
+,1 as SortOrder
+FROM PUR_QuotationHeader 
+	INNER JOIN PUR_QuotationDetail ON PUR_QuotationHeader.CompanyID = PUR_QuotationDetail.CompanyID AND PUR_QuotationHeader.PeriodID = PUR_QuotationDetail.PeriodID 
+        AND PUR_QuotationHeader.QuotationID = PUR_QuotationDetail.QuotationHeaderID AND PUR_QuotationDetail.Status = 1  
+	INNER JOIN AR_SET_Customer ON AR_SET_Customer.PeriodID = PUR_QuotationHeader.PeriodID 
+        AND AR_SET_Customer.CustomerID = PUR_QuotationHeader.SupplierID 
+     INNER JOIN PUR_EnquiryDetail ON PUR_EnquiryDetail.CompanyID = PUR_QuotationDetail.CompanyID AND PUR_EnquiryDetail.PeriodID = PUR_QuotationDetail.PeriodID 
+        AND PUR_EnquiryDetail.EnquiryHeaderID = PUR_QuotationDetail.EnquiryHeaderID AND PUR_EnquiryDetail.EnquiryDetailID = PUR_QuotationDetail.EnquiryDetailID 
+        AND PUR_EnquiryDetail.Status = 1 
+	INNER JOIN PUR_EnquiryHeader ON PUR_EnquiryHeader.CompanyID = PUR_EnquiryDetail.CompanyID AND PUR_EnquiryHeader.PeriodID = PUR_EnquiryDetail.PeriodID 
+        AND PUR_EnquiryHeader.EnquiryID = PUR_EnquiryDetail.EnquiryHeaderID AND PUR_EnquiryHeader.Status = 1 
+		inner join SET_DocumentType on SET_DocumentType.DocumentTypeID = PUR_EnquiryHeader.DocumentTypeID
+		and SET_DocumentType.CompanyID = PUR_EnquiryHeader.CompanyID
+        inner join Set_PeriodCustom on PUR_QuotationHeader.QuotedDate between Set_PeriodCustom.StartDate and Set_PeriodCustom.EndDate 
+and Set_PeriodCustom.Status = 1  and Set_PeriodCustom.FiscalID = @CurrentFiscalID
+WHERE PUR_QuotationHeader.CompanyID = @CompanyID AND PUR_QuotationHeader.Status = 1
+  AND PUR_EnquiryHeader.DocumentNo BETWEEN @RFQNumberFrom AND @RFQNumberTo
+  AND (PUR_EnquiryHeader.DocumentTYpeID = @DocumentTYpeID OR @DocumentTYpeID is Null)
+ 
+
+ group by PUR_EnquiryHeader.DocumentNo
+ ,PUR_QuotationHeader.SupplierID,PUR_QuotationHeader.DeliveryPeriod,AR_SET_Customer.CustomerName
+
+ union all
+
+  SELECT 
+PUR_EnquiryHeader.DocumentNo AS EnquiryNumber, 
+case when PUR_QuotationHeader.GST is null then 
+'2-Sale Tax ' 
+else
+'2-Sale Tax (' + convert(varchar ,PUR_QuotationHeader.GST) + '%)' 
+end AS RowsCrossTabb, 
+PUR_QuotationHeader.SupplierID, 
+SUM((case when (NegotiationPrice1 &gt; 0 and NegotiationPrice1 &lt; NegotiationPrice2) then NegotiationPrice1 else NegotiationPrice2 end *  PUR_QuotationDetail.OfferedQuantity)) * ISNULL(GST,0) / 100 as SummaryCrossTab,
+AR_SET_Customer.CustomerName AS SupplierName
+,2 as SortOrder
+FROM PUR_QuotationHeader 
+	INNER JOIN PUR_QuotationDetail ON PUR_QuotationHeader.CompanyID = PUR_QuotationDetail.CompanyID AND PUR_QuotationHeader.PeriodID = PUR_QuotationDetail.PeriodID 
+        AND PUR_QuotationHeader.QuotationID = PUR_QuotationDetail.QuotationHeaderID AND PUR_QuotationDetail.Status = 1  
+	INNER JOIN AR_SET_Customer ON AR_SET_Customer.PeriodID = PUR_QuotationHeader.PeriodID 
+        AND AR_SET_Customer.CustomerID = PUR_QuotationHeader.SupplierID 
+     INNER JOIN PUR_EnquiryDetail ON PUR_EnquiryDetail.CompanyID = PUR_QuotationDetail.CompanyID AND PUR_EnquiryDetail.PeriodID = PUR_QuotationDetail.PeriodID 
+        AND PUR_EnquiryDetail.EnquiryHeaderID = PUR_QuotationDetail.EnquiryHeaderID AND PUR_EnquiryDetail.EnquiryDetailID = PUR_QuotationDetail.EnquiryDetailID 
+        AND PUR_EnquiryDetail.Status = 1 
+	INNER JOIN PUR_EnquiryHeader ON PUR_EnquiryHeader.CompanyID = PUR_EnquiryDetail.CompanyID AND PUR_EnquiryHeader.PeriodID = PUR_EnquiryDetail.PeriodID 
+        AND PUR_EnquiryHeader.EnquiryID = PUR_EnquiryDetail.EnquiryHeaderID AND PUR_EnquiryHeader.Status = 1 
+		inner join SET_DocumentType on SET_DocumentType.DocumentTypeID = PUR_EnquiryHeader.DocumentTypeID
+		and SET_DocumentType.CompanyID = PUR_EnquiryHeader.CompanyID
+        inner join Set_PeriodCustom on PUR_QuotationHeader.QuotedDate between Set_PeriodCustom.StartDate and Set_PeriodCustom.EndDate 
+and Set_PeriodCustom.Status = 1  and Set_PeriodCustom.FiscalID = @CurrentFiscalID
+WHERE PUR_QuotationHeader.CompanyID = @CompanyID AND PUR_QuotationHeader.Status = 1
+  AND PUR_EnquiryHeader.DocumentNo BETWEEN @RFQNumberFrom AND @RFQNumberTo
+  AND (PUR_EnquiryHeader.DocumentTYpeID = @DocumentTYpeID OR @DocumentTYpeID is Null)
+ 
+
+ group by PUR_EnquiryHeader.DocumentNo
+ ,PUR_QuotationHeader.SupplierID,PUR_QuotationHeader.DeliveryPeriod,AR_SET_Customer.CustomerName,PUR_QuotationHeader.GST
+
+  union all
+
+  SELECT 
+PUR_EnquiryHeader.DocumentNo AS EnquiryNumber, 
+'3-Grand Total' AS RowsCrossTabb, 
+PUR_QuotationHeader.SupplierID, 
+SUM((case when (NegotiationPrice1 &gt; 0 and NegotiationPrice1 &lt; NegotiationPrice2) then NegotiationPrice1 else NegotiationPrice2 end *  PUR_QuotationDetail.OfferedQuantity)) * ISNULL(GST,0) / 100 
++
+SUM(((case when (NegotiationPrice1 &gt; 0 and NegotiationPrice1 &lt; NegotiationPrice2) then NegotiationPrice1 else NegotiationPrice2 end) *  PUR_QuotationDetail.OfferedQuantity))
+as SummaryCrossTab,
+AR_SET_Customer.CustomerName AS SupplierName
+,3 as SortOrder
+FROM PUR_QuotationHeader 
+	INNER JOIN PUR_QuotationDetail ON PUR_QuotationHeader.CompanyID = PUR_QuotationDetail.CompanyID AND PUR_QuotationHeader.PeriodID = PUR_QuotationDetail.PeriodID 
+        AND PUR_QuotationHeader.QuotationID = PUR_QuotationDetail.QuotationHeaderID AND PUR_QuotationDetail.Status = 1  
+	INNER JOIN AR_SET_Customer ON AR_SET_Customer.PeriodID = PUR_QuotationHeader.PeriodID 
+        AND AR_SET_Customer.CustomerID = PUR_QuotationHeader.SupplierID 
+     INNER JOIN PUR_EnquiryDetail ON PUR_EnquiryDetail.CompanyID = PUR_QuotationDetail.CompanyID AND PUR_EnquiryDetail.PeriodID = PUR_QuotationDetail.PeriodID 
+        AND PUR_EnquiryDetail.EnquiryHeaderID = PUR_QuotationDetail.EnquiryHeaderID AND PUR_EnquiryDetail.EnquiryDetailID = PUR_QuotationDetail.EnquiryDetailID 
+        AND PUR_EnquiryDetail.Status = 1 
+	INNER JOIN PUR_EnquiryHeader ON PUR_EnquiryHeader.CompanyID = PUR_EnquiryDetail.CompanyID AND PUR_EnquiryHeader.PeriodID = PUR_EnquiryDetail.PeriodID 
+        AND PUR_EnquiryHeader.EnquiryID = PUR_EnquiryDetail.EnquiryHeaderID AND PUR_EnquiryHeader.Status = 1 
+		inner join SET_DocumentType on SET_DocumentType.DocumentTypeID = PUR_EnquiryHeader.DocumentTypeID
+		and SET_DocumentType.CompanyID = PUR_EnquiryHeader.CompanyID
+        inner join Set_PeriodCustom on PUR_QuotationHeader.QuotedDate between Set_PeriodCustom.StartDate and Set_PeriodCustom.EndDate 
+and Set_PeriodCustom.Status = 1  and Set_PeriodCustom.FiscalID = @CurrentFiscalID
+WHERE PUR_QuotationHeader.CompanyID = @CompanyID AND PUR_QuotationHeader.Status = 1
+  AND PUR_EnquiryHeader.DocumentNo BETWEEN @RFQNumberFrom AND @RFQNumberTo
+  AND (PUR_EnquiryHeader.DocumentTYpeID = @DocumentTYpeID OR @DocumentTYpeID is Null)
+ 
+
+ group by PUR_EnquiryHeader.DocumentNo
+ ,PUR_QuotationHeader.SupplierID,PUR_QuotationHeader.DeliveryPeriod,AR_SET_Customer.CustomerName,PUR_QuotationHeader.GST</value>
+  </data>
+  <data name="Query_Get_AllData" xml:space="preserve">
+    <value>SELECT distinct EnquiryID ,DocumentNo,EnquiryDate,ReferenceNumber,RequisitionNo
+ FROM (
+SELECT DISTINCT PUR_EnquiryHeader.EnquiryID, PUR_EnquiryHeader.DocumentNo, PUR_EnquiryHeader.EnquiryDate, PUR_EnquiryHeader.ReferenceNumber,
+ISNULL(
+        (
+            SELECT  STUFF(
+		    (
+                SELECT distinct  ', ' + convert(varchar,Pur_EnquiryRequisition.DocumentNo)
+                FROM Pur_EnquiryRequisition 
+                WHERE EN.EnquiryID = Pur_EnquiryRequisition.EnquiryHeaderID 
+				and EN.FiscalID = Pur_EnquiryRequisition.FiscalID 							
+				and EN.Status = 1
+				 FOR XML PATH(''), TYPE
+           ).value('.', 'varchar(max)'), 1, 2, '') AS RequisitionNo
+            FROM PUR_EnquiryHeader EN 
+           where EN.EnquiryID = PUR_EnquiryHeader.EnquiryID and EN.CompanyID = PUR_EnquiryHeader.CompanyID and EN.PeriodID = PUR_EnquiryHeader.PeriodID
+        ), '') as RequisitionNo 
+		
+FROM PUR_EnquiryHeader 
+inner join PUR_EnquiryDetail on PUR_EnquiryDetail.EnquiryHeaderID = PUR_EnquiryHeader.EnquiryID
+and [PUR_EnquiryDetail].CompanyID = PUR_EnquiryHeader.CompanyID
+
+INNER JOIN [PUR_EnquirySupplier] ON [PUR_EnquirySupplier].[EnquiryDetailID] = [PUR_EnquiryDetail].[EnquiryDetailID] 
+        AND [PUR_EnquirySupplier].[EnquiryHeaderID] = [PUR_EnquiryDetail].[EnquiryHeaderID] AND [PUR_EnquirySupplier].[ItemID] = [PUR_EnquiryDetail].[ItemID] 
+        AND [PUR_EnquirySupplier].[CompanyID] = [PUR_EnquiryDetail].[CompanyID] 
+		AND [PUR_EnquirySupplier].[PeriodID] = [PUR_EnquiryDetail].[PeriodID] 
+		AND [PUR_EnquirySupplier].FiscalID = [PUR_EnquiryDetail].FiscalID
+
+left join PUR_QuotationHeader on PUR_QuotationHeader.EnquiryHeaderID = [PUR_EnquiryDetail].EnquiryHeaderID
+	and PUR_QuotationHeader.CompanyID = [PUR_EnquiryDetail].CompanyID
+	--and PUR_QuotationHeader.SupplierID = [PUR_EnquirySupplier].SupplierID
+	and PUR_QuotationHeader.PeriodID = [PUR_EnquiryDetail].PeriodID
+	
+left join PUR_QuotationDetail on PUR_QuotationDetail.EnquiryHeaderID = [PUR_EnquiryDetail].EnquiryHeaderID
+	and PUR_QuotationDetail.EnquiryDetailID = [PUR_EnquiryDetail].EnquiryDetailID
+	and PUR_QuotationDetail.CompanyID = [PUR_EnquiryDetail].CompanyID
+	and PUR_QuotationDetail.Status = 1
+	and PUR_QuotationDetail.QuotationHeaderID = PUR_QuotationHeader.QuotationID
+	and PUR_QuotationDetail.PeriodID = [PUR_EnquiryDetail].PeriodID
+    
+
+    LEFT JOIN AP_PurchaseOrderDetail ON isnull(AP_PurchaseOrderDetail.FromHeaderID,0) = PUR_QuotationDetail.QuotationHeaderID 
+        AND isnull(AP_PurchaseOrderDetail.FromDetailID,0) = PUR_QuotationDetail.QuotationDetailID AND AP_PurchaseOrderDetail.CompanyID = PUR_QuotationDetail.CompanyID 
+        AND AP_PurchaseOrderDetail.PeriodID = PUR_QuotationDetail.PeriodID AND AP_PurchaseOrderDetail.Status = 1 
+     LEFT JOIN Pur_EnquiryRequisition On Pur_EnquiryRequisition.EnquiryHeaderID= PUR_EnquiryHeader.EnquiryID
+    and Pur_EnquiryRequisition.EnquiryDetailID = PUR_EnquiryDetail.EnquiryDetailID
+	     and Pur_EnquiryRequisition.FiscalID = PUR_EnquiryHeader.FiscalID
+
+
+WHERE PUR_EnquiryHeader.CompanyID = @CompanyID AND PUR_EnquiryHeader.PeriodID = @PeriodID
+AND PUR_EnquiryHeader.Status = 1 AND PUR_EnquiryHeader.StatusCode = 1  
+{0} 
+
+		
+) as tab</value>
+  </data>
+  <data name="Query_Quotation_SelectAll_WithPaging_RSM" xml:space="preserve">
+    <value>SELECT (select distinct ISNULL(stuff(( select distinct ',' + convert(varchar(10),u.StockHeaderID) from Pur_EnquiryRequisition u
+        where u.EnquiryHeaderID = EnquiryHeaderID and u.COmpanyID = COmpanyID and CompanyID = PUR_QuotationHeader.CompanyID and EnquiryHeaderID = [PUR_QuotationHeader].EnquiryHeaderID
+        for xml path('')
+    ),1,1,''),'') as ReqNO
+from Pur_EnquiryRequisition
+group by EnquiryHeaderID) AS FK_Inv_StockTransactionID, [PUR_QuotationHeader].[CompanyID], [PUR_QuotationHeader].[PeriodID], [QuotationID], [PUR_QuotationHeader].[EnquiryHeaderID], [PUR_QuotationHeader].[DocumentNo], [PUR_EnquiryHeader].[DocumentNo] AS RFQNo,[PUR_QuotationHeader].[SupplierID], (select distinct ISNULL(stuff(( select distinct ',' + convert(varchar(10),u.DocumentNo) from Pur_EnquiryRequisition u
+        where u.EnquiryHeaderID = EnquiryHeaderID and u.COmpanyID = COmpanyID and CompanyID = PUR_QuotationHeader.CompanyID and EnquiryHeaderID = [PUR_QuotationHeader].EnquiryHeaderID
+        for xml path('')
+    ),1,1,''),'') as ReqNO
+from Pur_EnquiryRequisition
+group by EnquiryHeaderID) AS StockRequisitionNo, AR_SET_Customer.CustomerID, AR_SET_Customer.CustomerName ,SET_DocumentType.DocumentType , SET_DocumentType.DocumentTypeID, 
+[PUR_QuotationHeader].[ReferenceNumber],(SELECT 
+    CASE 
+        -- If there is no PO linked to this quotation
+        WHEN (SELECT COUNT(*) 
+              FROM AP_PurchaseOrderHeader poh
+              WHERE poh.FromHeaderID IN (
+                  SELECT pqh.QuotationID 
+                  FROM PUR_QuotationHeader pqh
+                  WHERE pqh.EnquiryHeaderID = PUR_QuotationHeader.EnquiryHeaderID
+                        AND pqh.CompanyID = PUR_QuotationHeader.CompanyID
+                        AND pqh.PeriodID = PUR_QuotationHeader.PeriodID
+              )) = 0 
+        THEN 
+            (SELECT MAX(CASE WHEN pqd.Approved = 1 THEN 'Approved' ELSE 'Pending' END) 
+             FROM PUR_QuotationDetail pqd
+             WHERE pqd.CompanyID = PUR_QuotationHeader.CompanyID
+                   AND pqd.PeriodID = PUR_QuotationHeader.PeriodID
+                   AND pqd.QuotationHeaderID = PUR_QuotationHeader.QuotationID)
+        
+        -- If there is at least one PO linked to this quotation
+        WHEN (SELECT COUNT(*) 
+              FROM AP_PurchaseOrderHeader poh
+              WHERE poh.FromHeaderID IN (
+                  SELECT pqh.QuotationID 
+                  FROM PUR_QuotationHeader pqh
+                  WHERE pqh.EnquiryHeaderID = PUR_QuotationHeader.EnquiryHeaderID
+                        AND pqh.CompanyID = PUR_QuotationHeader.CompanyID
+                        AND pqh.PeriodID = PUR_QuotationHeader.PeriodID
+              )) &gt; 0
+        THEN 
+            CASE 
+                -- If the PO is fully created for this quotation
+                WHEN (SELECT SUM(pod.Quantity)
+                      FROM AP_PurchaseOrderDetail pod
+                      INNER JOIN AP_PurchaseOrderHeader poh 
+                      ON poh.POHeaderID = pod.POHeaderID
+                      WHERE poh.FromHeaderID = PUR_QuotationHeader.QuotationID
+                      GROUP BY poh.FromHeaderID) =
+                     (SELECT MAX(pqd.OfferedQuantity)
+                      FROM PUR_QuotationDetail pqd
+                      WHERE pqd.QuotationHeaderID = PUR_QuotationHeader.QuotationID) 
+                THEN 'Approved'
+                
+                -- If another quotation under the same EnquiryHeaderID has a PO
+                WHEN EXISTS (
+                    SELECT 1
+                    FROM AP_PurchaseOrderHeader poh
+                    WHERE poh.FromHeaderID IN (
+                        SELECT pqh.QuotationID 
+                        FROM PUR_QuotationHeader pqh
+                        WHERE pqh.EnquiryHeaderID = PUR_QuotationHeader.EnquiryHeaderID
+                              AND pqh.QuotationID = PUR_QuotationHeader.QuotationID
+                              AND pqh.CompanyID = PUR_QuotationHeader.CompanyID
+                              AND pqh.PeriodID = PUR_QuotationHeader.PeriodID
+                    ) 
+                    AND poh.FromHeaderID &lt;&gt; PUR_QuotationHeader.QuotationID
+
+					AND (SELECT TOP 1 PUR_QuotationDetail.Approved FROM dbo.PUR_QuotationDetail 
+					WHERE 1 = 1 
+					AND PUR_QuotationDetail.QuotationHeaderID = PUR_QuotationHeader.QuotationID					
+					AND PUR_QuotationDetail.CompanyID = PUR_QuotationHeader.CompanyID
+					AND PUR_QuotationDetail.PeriodID = PUR_QuotationHeader.PeriodID) = 0
+					
+                )
+                THEN 'Closed'
+                
+                ELSE 
+                    (SELECT MAX(CASE WHEN pqd.Approved = 1 THEN 'Approved' ELSE 'Pending' END)
+                     FROM PUR_QuotationDetail pqd
+                     WHERE pqd.CompanyID = PUR_QuotationHeader.CompanyID
+                           AND pqd.PeriodID = PUR_QuotationHeader.PeriodID
+                           AND pqd.QuotationHeaderID = PUR_QuotationHeader.QuotationID)
+            END
+        
+        ELSE 
+            (SELECT MAX(CASE WHEN pqd.Approved = 1 THEN 'Approved' ELSE 'Pending' END) 
+             FROM PUR_QuotationDetail pqd
+             WHERE pqd.CompanyID = PUR_QuotationHeader.CompanyID
+                   AND pqd.PeriodID = PUR_QuotationHeader.PeriodID
+                   AND pqd.QuotationHeaderID = PUR_QuotationHeader.QuotationID)
+    END ) AS ApprovalStatus, [QuotedDate], [PUR_QuotationHeader].[DeliveryDate], [PUR_QuotationHeader].[CostCenterID], [PUR_QuotationHeader].[IsPurchased], [PUR_QuotationHeader].[Status], [PUR_QuotationHeader].[CreatedBy],
+[PUR_QuotationHeader].[CreateDate], [PUR_EnquiryHeader].[EnquiryDate], [PUR_QuotationHeader].[CreatedByValue], [PUR_QuotationHeader].[UpdatedBy], [PUR_QuotationHeader].[UpdateDate], [PUR_QuotationHeader].[UpdatedByValue],
+Set_PeriodCustom.PeriodSetName,[QuotedDate] as DocumentDate,[PUR_QuotationHeader].Comments,[PUR_QuotationHeader].ImageFile,
+ ROW_NUMBER() OVER (ORDER BY [PUR_QuotationHeader].CompanyID, [PUR_QuotationHeader].PeriodID, CAST(PARSENAME(REPLACE([PUR_QuotationHeader].[DocumentNo], '-', '.'), 2) AS INT) DESC, CAST(PARSENAME(REPLACE([PUR_QuotationHeader].[DocumentNo], '-', '.'), 1) AS INT) DESC) AS 'Row'
+  FROM [PUR_QuotationHeader] 
+inner join Set_PeriodCustom on  [PUR_QuotationHeader].QuotedDate between Set_PeriodCustom.StartDate and Set_PeriodCustom.EndDate 
+and Set_PeriodCustom.Status = 1 and Set_PeriodCustom.FiscalId = @CurrentFiscalID
+INNER JOIN PUR_EnquiryHeader ON PUR_EnquiryHeader.CompanyID = [PUR_QuotationHeader].CompanyID AND PUR_EnquiryHeader.EnquiryID = [PUR_QuotationHeader].EnquiryHeaderID AND PUR_EnquiryHeader.Status = 1
+LEFT JOIN dbo.AR_SET_Customer ON AR_SET_Customer.CompanyID = PUR_QuotationHeader.CompanyID AND AR_SET_Customer.CustomerID = PUR_QuotationHeader.SupplierID
+LEFT JOIN SET_DocumentType ON PUR_EnquiryHeader.DocumentTypeID = SET_DocumentType.DocumentTypeID
+LEFT JOIN dbo.INV_StockTransactionHeader ON INV_StockTransactionHeader.CompanyID = PUR_EnquiryHeader.CompanyID AND INV_StockTransactionHeader.PeriodID = PUR_EnquiryHeader.PeriodID AND INV_StockTransactionHeader.StockTransactionID = PUR_EnquiryHeader.FK_Inv_StockTransactionID</value>
+  </data>
+  <data name="Query_Quotation_WithoutPaging_RSM" xml:space="preserve">
+    <value>SELECT (select distinct ISNULL(stuff(( select distinct ',' + convert(varchar(10),u.StockHeaderID) from Pur_EnquiryRequisition u
+        where u.EnquiryHeaderID = EnquiryHeaderID and u.COmpanyID = COmpanyID and CompanyID = [PUR_QuotationHeader].CompanyID and EnquiryHeaderID = [PUR_QuotationHeader].EnquiryHeaderID
+        for xml path('')
+    ),1,1,''),'') as ReqNO
+from Pur_EnquiryRequisition
+group by EnquiryHeaderID) AS FK_Inv_StockTransactionID, [PUR_QuotationHeader].[CompanyID], [PUR_QuotationHeader].[PeriodID], [QuotationID], [PUR_QuotationHeader].[EnquiryHeaderID], [PUR_QuotationHeader].[DocumentNo], [PUR_EnquiryHeader].[DocumentNo] AS RFQNo,[PUR_QuotationHeader].[SupplierID], (select distinct ISNULL(stuff(( select distinct ',' + convert(varchar(10),u.DocumentNo) from Pur_EnquiryRequisition u
+        where u.EnquiryHeaderID = EnquiryHeaderID and u.COmpanyID = COmpanyID and CompanyID = [PUR_QuotationHeader].CompanyID and EnquiryHeaderID = [PUR_QuotationHeader].EnquiryHeaderID
+        for xml path('')
+    ),1,1,''),'') as ReqNO
+from Pur_EnquiryRequisition
+group by EnquiryHeaderID) AS StockRequisitionNo, AR_SET_Customer.CustomerID, AR_SET_Customer.CustomerName, SET_DocumentType.DocumentType, SET_DocumentType.DocumentTypeID, 
+[PUR_QuotationHeader].[ReferenceNumber],(SELECT 
+    CASE 
+        -- If there is no PO linked to this quotation
+        WHEN (SELECT COUNT(*) 
+              FROM AP_PurchaseOrderHeader poh
+              WHERE poh.FromHeaderID IN (
+                  SELECT pqh.QuotationID 
+                  FROM PUR_QuotationHeader pqh
+                  WHERE pqh.EnquiryHeaderID = PUR_QuotationHeader.EnquiryHeaderID
+                        AND pqh.CompanyID = PUR_QuotationHeader.CompanyID
+                        AND pqh.PeriodID = PUR_QuotationHeader.PeriodID
+              )) = 0 
+        THEN 
+            (SELECT MAX(CASE WHEN pqd.Approved = 1 THEN 'Approved' ELSE 'Pending' END) 
+             FROM PUR_QuotationDetail pqd
+             WHERE pqd.CompanyID = PUR_QuotationHeader.CompanyID
+                   AND pqd.PeriodID = PUR_QuotationHeader.PeriodID
+                   AND pqd.QuotationHeaderID = PUR_QuotationHeader.QuotationID)
+        
+        -- If there is at least one PO linked to this quotation
+        WHEN (SELECT COUNT(*) 
+              FROM AP_PurchaseOrderHeader poh
+              WHERE poh.FromHeaderID IN (
+                  SELECT pqh.QuotationID 
+                  FROM PUR_QuotationHeader pqh
+                  WHERE pqh.EnquiryHeaderID = PUR_QuotationHeader.EnquiryHeaderID
+                        AND pqh.CompanyID = PUR_QuotationHeader.CompanyID
+                        AND pqh.PeriodID = PUR_QuotationHeader.PeriodID
+              )) &gt; 0
+        THEN 
+            CASE 
+                -- If the PO is fully created for this quotation
+                WHEN (SELECT SUM(pod.Quantity)
+                      FROM AP_PurchaseOrderDetail pod
+                      INNER JOIN AP_PurchaseOrderHeader poh 
+                      ON poh.POHeaderID = pod.POHeaderID
+                      WHERE poh.FromHeaderID = PUR_QuotationHeader.QuotationID
+                      GROUP BY poh.FromHeaderID) =
+                     (SELECT MAX(pqd.OfferedQuantity)
+                      FROM PUR_QuotationDetail pqd
+                      WHERE pqd.QuotationHeaderID = PUR_QuotationHeader.QuotationID) 
+                THEN 'Approved'
+                
+                -- If another quotation under the same EnquiryHeaderID has a PO
+                WHEN EXISTS (
+                    SELECT 1
+                    FROM AP_PurchaseOrderHeader poh
+                    WHERE poh.FromHeaderID IN (
+                        SELECT pqh.QuotationID 
+                        FROM PUR_QuotationHeader pqh
+                        WHERE pqh.EnquiryHeaderID = PUR_QuotationHeader.EnquiryHeaderID
+                              AND pqh.QuotationID = PUR_QuotationHeader.QuotationID
+                              AND pqh.CompanyID = PUR_QuotationHeader.CompanyID
+                              AND pqh.PeriodID = PUR_QuotationHeader.PeriodID
+                    ) 
+                    AND poh.FromHeaderID &lt;&gt; PUR_QuotationHeader.QuotationID
+
+					AND (SELECT TOP 1 PUR_QuotationDetail.Approved FROM dbo.PUR_QuotationDetail 
+					WHERE 1 = 1 
+					AND PUR_QuotationDetail.QuotationHeaderID = PUR_QuotationHeader.QuotationID					
+					AND PUR_QuotationDetail.CompanyID = PUR_QuotationHeader.CompanyID
+					AND PUR_QuotationDetail.PeriodID = PUR_QuotationHeader.PeriodID) = 0
+					
+                )
+                THEN 'Closed'
+                
+                ELSE 
+                    (SELECT MAX(CASE WHEN pqd.Approved = 1 THEN 'Approved' ELSE 'Pending' END)
+                     FROM PUR_QuotationDetail pqd
+                     WHERE pqd.CompanyID = PUR_QuotationHeader.CompanyID
+                           AND pqd.PeriodID = PUR_QuotationHeader.PeriodID
+                           AND pqd.QuotationHeaderID = PUR_QuotationHeader.QuotationID)
+            END
+        
+        ELSE 
+            (SELECT MAX(CASE WHEN pqd.Approved = 1 THEN 'Approved' ELSE 'Pending' END) 
+             FROM PUR_QuotationDetail pqd
+             WHERE pqd.CompanyID = PUR_QuotationHeader.CompanyID
+                   AND pqd.PeriodID = PUR_QuotationHeader.PeriodID
+                   AND pqd.QuotationHeaderID = PUR_QuotationHeader.QuotationID)
+    END ) AS ApprovalStatus, [QuotedDate], [PUR_QuotationHeader].[DeliveryDate], [PUR_QuotationHeader].[CostCenterID], [PUR_QuotationHeader].[IsPurchased], [PUR_QuotationHeader].[Status], [PUR_QuotationHeader].[CreatedBy],[PUR_QuotationHeader].Comments,[PUR_QuotationHeader].ImageFile,
+[PUR_QuotationHeader].[CreateDate], [PUR_EnquiryHeader].[EnquiryDate], [PUR_QuotationHeader].[CreatedByValue],[PUR_QuotationHeader].[UpdatedBy], [PUR_QuotationHeader].[UpdateDate], [PUR_QuotationHeader].[UpdatedByValue],
+Set_PeriodCustom.PeriodSetName,[QuotedDate] as DocumentDate FROM [PUR_QuotationHeader] 
+Left join Set_PeriodCustom on  [PUR_QuotationHeader].QuotedDate between Set_PeriodCustom.StartDate and Set_PeriodCustom.EndDate 
+and Set_PeriodCustom.Status = 1 
+INNER JOIN PUR_EnquiryHeader ON PUR_EnquiryHeader.CompanyID = [PUR_QuotationHeader].CompanyID AND PUR_EnquiryHeader.EnquiryID = [PUR_QuotationHeader].EnquiryHeaderID AND PUR_EnquiryHeader.Status = 1
+LEFT JOIN dbo.AR_SET_Customer ON AR_SET_Customer.CompanyID = PUR_QuotationHeader.CompanyID AND AR_SET_Customer.CustomerID = PUR_QuotationHeader.SupplierID
+LEFT JOIN SET_DocumentType ON PUR_EnquiryHeader.DocumentTypeID = SET_DocumentType.DocumentTypeID
+LEFT JOIN dbo.INV_StockTransactionHeader ON INV_StockTransactionHeader.CompanyID = PUR_EnquiryHeader.CompanyID AND INV_StockTransactionHeader.PeriodID = PUR_EnquiryHeader.PeriodID AND INV_StockTransactionHeader.StockTransactionID = PUR_EnquiryHeader.FK_Inv_StockTransactionID</value>
+  </data>
+  <data name="Query_RFQReport" xml:space="preserve">
+    <value>select distinct (convert(varchar(24), [PUR_EnquiryHeader].[CompanyId]) + convert(varchar(24), [PUR_EnquiryHeader].[PeriodID]) 
+        + convert(varchar(24), [PUR_EnquiryHeader].[DocumentNo]) + convert(varchar(24), [PUR_EnquiryHeader].[EnquiryID]) 
+        + convert(varchar(24), [PUR_EnquirySupplier].[SupplierID])) as [GRPUnique], 
+    [SET_DocumentType].[DocumentType], [PUR_EnquiryHeader].[DocumentNo], [PUR_EnquiryHeader].[DueDate], [PUR_EnquiryHeader].[ReferenceNumber], 
+    [PUR_EnquiryHeader].[EnquiryDate], [PUR_EnquiryHeader].[DeliveryDate], [PUR_EnquiryDetail].[Quantity], [INV_Item].[Description], [INV_Item].InventoryItemStatusCode AS ItemCode, [SET_UnitOfMeasure].[UOMName], 
+    [AR_SET_Customer].[CustomerName] as [SupplierName], [AR_SET_Customer].[AddressLine1] as [SupplierAddress], [AR_SET_Customer].[ZipCode] as [SupplierZipCode], 
+    [AR_SET_Customer].[ContactNumber] as [SupplierPhone], [AR_SET_Customer].[STRNNumber] as [SupplierGST], [CitySupp].[CityName] as [SupplierCity], 
+    [SET_Business].[BusinessName] + ' - ' + [SET_OperatingUnit].[OperatingUnitName] AS [CompanyName], [SET_OperatingUnit].[AddressLine1] AS [CompanyAddressLine1], 
+    [SET_OperatingUnit].[AddressLine2] AS [CompanyAddressLine2], [SET_OperatingUnit].[AddressLine3] AS [CompanyAddressLine3], 
+    [SET_OperatingUnit].[ZipCode] AS [CompanyZipCode], [CityComp].[CityName] AS [CompanyCity], [SET_OperatingUnit].[PhoneNumber] AS [CompanyPhone], 
+    [SET_OperatingUnit].[FaxNumber] AS [CompanyFax], [SET_OperatingUnit].[NTNNumber] AS [CompanyNTN], [SET_OperatingUnit].[SalesTaxNumber] AS [CompanyGST], 
+    [SET_OperatingUnit].Logoimage as LogoImage, [SET_Currency].[CurrencySign], 
+    ISNULL
+    (
+        (select LookupDetail.EnumeratedDescription from LookupDetail where LookUpDetailID = [PUR_EnquiryHeader].StatusCode and LookupHeaderID = 5), 
+    '') as DocumentStatus,ap_purchaseOrderDetail.unitPrice,
+	(select top 1 DocumentNo from Pur_EnquiryRequisition
+		where Pur_EnquiryRequisition.EnquiryHeaderID= PUR_EnquiryHeader.EnquiryID
+		and Pur_EnquiryRequisition.CompanyID= PUR_EnquiryHeader.CompanyID
+		and Pur_EnquiryRequisition.FiscalID= PUR_EnquiryHeader.FiscalID
+		
+		) as RequisitionNo
+from [PUR_EnquiryHeader] 
+    inner join [SET_DocumentType] on [SET_DocumentType].[DocumentTypeID] = [PUR_EnquiryHeader].[DocumentTypeID] 
+        and [SET_DocumentType].[CompanyID] = [PUR_EnquiryHeader].[CompanyID] 
+		and [SET_DocumentType].[PeriodID] = [PUR_EnquiryHeader].[PeriodID]
+		
+
+    inner join [PUR_EnquiryDetail] on [PUR_EnquiryDetail].[EnquiryHeaderID] = [PUR_EnquiryHeader].[EnquiryID] 
+        and [PUR_EnquiryDetail].[CompanyID] = [PUR_EnquiryHeader].[CompanyID] 
+		and [PUR_EnquiryDetail].[PeriodID] = [PUR_EnquiryHeader].[PeriodID] 
+		and [PUR_EnquiryDetail].[FiscalID] = [PUR_EnquiryHeader].[FiscalID] 
+
+    inner join [PUR_EnquirySupplier] on [PUR_EnquirySupplier].[EnquiryDetailID] = [PUR_EnquiryDetail].[EnquiryDetailID]		
+        and [PUR_EnquirySupplier].[EnquiryHeaderID] = [PUR_EnquiryDetail].[EnquiryHeaderID] and [PUR_EnquirySupplier].[CompanyID] = [PUR_EnquiryDetail].[CompanyID] 
+        and [PUR_EnquirySupplier].[PeriodID] = [PUR_EnquiryDetail].[PeriodID] 
+		and [PUR_EnquirySupplier].[FiscalID] = [PUR_EnquiryDetail].[FiscalID] 
+
+    inner join [INV_Item] on [INV_Item].[ItemID] = [PUR_EnquirySupplier].[ItemID]
+    --and [INV_Item].[CompanyID] = [PUR_EnquirySupplier].[CompanyID] 
+    inner join [SET_UnitOfMeasure] on [SET_UnitOfMeasure].[UOMID] = [INV_Item].[PrimaryUOMCode] 
+
+    Inner Join [SET_Company] ON [SET_Company].[CompanyId] = [PUR_EnquiryHeader].[CompanyID] 
+    Inner Join [SET_OperatingUnit] ON [SET_OperatingUnit].[OperatingUnitId] = [SET_Company].[OperatingUnitId]
+	 
+    Inner Join [SET_Business] ON [SET_Business].[BusinessId] = [SET_Company].[BusinessId] 
+
+    Inner Join [SET_Currency] ON [SET_Currency].[CurrencyID] = [SET_OperatingUnit].[BaseCurrencyID] 
+
+    inner join [AR_SET_Customer] on [AR_SET_Customer].[CustomerID] = [PUR_EnquirySupplier].[SupplierID] 
+       -- and [PUR_EnquiryHeader].[CompanyID] = [AR_SET_Customer].[CompanyID] 
+        and [PUR_EnquiryHeader].[PeriodID] = [AR_SET_Customer].[PeriodID] 
+    Left Join [SET_City] AS [CitySupp] ON [CitySupp].[CityID] = [AR_SET_Customer].[CityID] 
+    Left Join [SET_City] AS [CityComp] ON [CityComp].[CityID] = [SET_OperatingUnit].[CityID] 
+
+    left join  PUR_QuotationDetail on PUR_QuotationDetail.EnquiryHeaderID = [PUR_EnquiryHeader].EnquiryID
+	and PUR_QuotationDetail.QuotationDetailID = [PUR_EnquiryDetail].EnquiryDetailID
+	and PUR_QuotationDetail.FiscalID = [PUR_EnquiryDetail].FiscalID 
+
+	left join ap_purchaseOrderDetail on ap_purchaseOrderDetail.FromHeaderID = PUR_QuotationDetail.EnquiryHeaderID
+	and ap_purchaseOrderDetail.FromDetailID = PUR_QuotationDetail.QuotationDetailID
+	and ap_purchaseOrderDetail.CompanyID = PUR_QuotationDetail.CompanyID 
+	
+    inner join Set_PeriodCustom on PUR_EnquiryHeader.EnquiryDate between Set_PeriodCustom.StartDate and Set_PeriodCustom.EndDate 
+    and Set_PeriodCustom.Status = 1  and Set_PeriodCustom.FiscalID = @CurrentFiscalID
+
+where [PUR_EnquiryHeader].[CompanyID] = @CompanyID and [PUR_EnquiryHeader].[PeriodID] = @PeriodID  {0} 
+order by [DocumentNo], [GRPUnique] ASC</value>
+  </data>
+  <data name="Query_SelectAll_ForApproveDetail" xml:space="preserve">
+    <value>SELECT DISTINCT PUR_EnquiryHeader.EnquiryID, PUR_EnquiryHeader.CompanyID, PUR_EnquiryHeader.PeriodID, PUR_EnquiryHeader.Status, PUR_EnquiryHeader.DocumentTypeID, 
+    PUR_EnquiryHeader.DocumentNo, PUR_EnquiryHeader.EnquiryDate, PUR_EnquiryHeader.StatusCode, SET_DocumentApprove.ApprovalStatus, 
+    SET_UserApprovalAmount.ApprovalOperator, SET_ApprovalAuthority.UserID AS UserID, SET_Authority.AuthorityLevel 
+FROM PUR_EnquiryHeader 
+    INNER JOIN SET_DocumentApprove ON SET_DocumentApprove.CompanyID = PUR_EnquiryHeader.CompanyID AND SET_DocumentApprove.PeriodID = PUR_EnquiryHeader.PeriodID 
+        AND SET_DocumentApprove.Status = 1 AND SET_DocumentApprove.DocumentTypeID = PUR_EnquiryHeader.DocumentTypeID 
+        AND SET_DocumentApprove.DocumentNo = PUR_EnquiryHeader.DocumentNo 
+INNER JOIN SET_UserApprovalAmount ON SET_UserApprovalAmount.CompanyID = PUR_EnquiryHeader.CompanyID 
+	AND SET_UserApprovalAmount.PeriodID = PUR_EnquiryHeader.PeriodID AND SET_UserApprovalAmount.Status = 1
+	AND (SET_UserApprovalAmount.DocumentTypeID = PUR_EnquiryHeader.DocumentTypeID OR SET_UserApprovalAmount.DocumentTypeID IS NULL)
+    AND (SET_UserApprovalAmount.UserID IS NULL OR SET_UserApprovalAmount.UserID = 
+        (
+		    Select top 1 CreatedBy From Set_DocumentApprove 
+			Where Set_DocumentApprove.CompanyID = PUR_EnquiryHeader.CompanyID And Set_DocumentApprove.PeriodID = PUR_EnquiryHeader.PeriodID 
+                And Set_DocumentApprove.DocumentTypeID = PUR_EnquiryHeader.DocumentTypeID And Set_DocumentApprove.DocumentNo = PUR_EnquiryHeader.DocumentNo 
+				Order By CreateDate desc
+        )) 
+	AND (1 = (CASE WHEN SET_UserApprovalAmount.EffectiveDateTo IS NULL 
+						AND CAST(CONVERT(VARCHAR(10), GETDATE(), 110) AS DATETIME) &gt;= SET_UserApprovalAmount.EffectiveDateFrom THEN 1
+				   WHEN SET_UserApprovalAmount.EffectiveDateTo IS NOT NULL 
+						AND CAST(CONVERT(VARCHAR(10), GETDATE(), 110) AS DATETIME) BETWEEN SET_UserApprovalAmount.EffectiveDateFrom 
+						AND SET_UserApprovalAmount.EffectiveDateTo THEN 1
+				   ELSE 0 END))
+	AND (1 = (CASE WHEN SET_UserApprovalAmount.AmountTo IS NULL AND (SELECT eh.TotalAmount FROM PUR_EnquiryHeader eh 
+											WHERE eh.CompanyID = PUR_EnquiryHeader.CompanyID 
+												AND eh.PeriodID = PUR_EnquiryHeader.PeriodID 
+												AND eh.EnquiryID = PUR_EnquiryHeader.EnquiryID) &gt;= SET_UserApprovalAmount.AmountFrom THEN 1
+				   WHEN SET_UserApprovalAmount.AmountTo IS NOT NULL AND (SELECT eh.TotalAmount FROM PUR_EnquiryHeader eh 
+													WHERE eh.CompanyID = PUR_EnquiryHeader.CompanyID 
+														AND eh.PeriodID = PUR_EnquiryHeader.PeriodID 
+														AND eh.EnquiryID = PUR_EnquiryHeader.EnquiryID) BETWEEN SET_UserApprovalAmount.AmountFrom 
+                                                            AND SET_UserApprovalAmount.AmountTo THEN 1
+				   ELSE 0 END))
+INNER JOIN SET_ApprovalAuthority ON SET_ApprovalAuthority.ApprovalAuthorityID = SET_UserApprovalAmount.ApprovalAuthorityID 
+	AND SET_ApprovalAuthority.CompanyID = SET_UserApprovalAmount.CompanyID AND SET_ApprovalAuthority.PeriodID = SET_UserApprovalAmount.PeriodID 
+	AND SET_ApprovalAuthority.Status = 1
+INNER JOIN SET_Authority ON SET_Authority.AuthorityID = SET_ApprovalAuthority.AuthorityID 
+	AND SET_Authority.CompanyID = SET_ApprovalAuthority.CompanyID AND SET_Authority.PeriodID = SET_ApprovalAuthority.PeriodID 
+	AND SET_Authority.Status = 1
+WHERE 
+    PUR_EnquiryHeader.Status = 1 AND PUR_EnquiryHeader.PeriodID = @PeriodID 
+    AND PUR_EnquiryHeader.CompanyID = @CompanyID AND PUR_EnquiryHeader.EnquiryID = @EnquiryID AND PUR_EnquiryHeader.DocumentTypeID = @DocumentTypeID 
+    AND PUR_EnquiryHeader.DocumentNo = @DocumentNo</value>
+  </data>
+  <data name="Query_SelectAll_Searching_WithPaging_ForApprove" xml:space="preserve">
+    <value>SELECT *, ROW_NUMBER() OVER (ORDER BY tbl_EH.DocumentNo) AS 'Row'  
+FROM (
+		SELECT DISTINCT PUR_EnquiryHeader.CompanyID
+			,PUR_EnquiryHeader.PeriodID
+			,PUR_EnquiryHeader.EnquiryID
+			,PUR_EnquiryHeader.DocumentTypeID
+			,SET_DocumentType.DocumentType
+			,PUR_EnquiryHeader.DocumentNo
+			,PUR_EnquiryHeader.DueDate
+			,PUR_EnquiryHeader.ReferenceNumber
+			,PUR_EnquiryHeader.EnquiryDate
+			,PUR_EnquiryHeader.DeliveryDate
+			,PUR_EnquiryHeader.AllQuotationsReceived
+			,PUR_EnquiryHeader.Status
+			,PUR_EnquiryHeader.CreatedBy
+			,PUR_EnquiryHeader.CreateDate
+			,PUR_EnquiryHeader.CreatedByValue
+			,PUR_EnquiryHeader.UpdatedBy
+			,PUR_EnquiryHeader.UpdateDate
+			,PUR_EnquiryHeader.UpdatedByValue
+			,PUR_EnquiryHeader.StatusCode
+			,PUR_EnquiryHeader.TotalAmount
+			,SET_DocumentApprove.ApprovalStatus
+			,Set_documentPendingApprove.ApprovalOperator
+			,Set_documentPendingApprove.ApprovalUserID AS UserID
+			--,SET_Authority.AuthorityLevel
+            ,inv_StockTransactionheader.DocumentNo as RequisitionNo
+            ,Set_PeriodCustom.PeriodSetName
+		FROM PUR_EnquiryHeader
+        left join inv_StockTransactionheader on inv_StockTransactionheader.StockTransactionID = PUR_EnquiryHeader.FK_Inv_StockTransactionID
+			and inv_StockTransactionheader.CompanyID = PUR_EnquiryHeader.CompanyID
+			and inv_StockTransactionheader.PeriodID = PUR_EnquiryHeader.PeriodID
+		LEFT JOIN SET_DocumentType ON PUR_EnquiryHeader.DocumentTypeID = SET_DocumentType.DocumentTypeID
+		INNER JOIN PUR_EnquiryDetail ON PUR_EnquiryDetail.EnquiryHeaderID = PUR_EnquiryHeader.EnquiryID 
+			AND PUR_EnquiryDetail.CompanyID = PUR_EnquiryHeader.CompanyID AND PUR_EnquiryDetail.PeriodID = PUR_EnquiryHeader.PeriodID 
+			AND PUR_EnquiryDetail.Status = 1
+		INNER JOIN SET_DocumentApprove ON SET_DocumentApprove.CompanyID = PUR_EnquiryHeader.CompanyID
+			AND SET_DocumentApprove.PeriodID = PUR_EnquiryHeader.PeriodID AND SET_DocumentApprove.Status =1 
+AND SET_DocumentApprove.DocumentTypeID = PUR_EnquiryHeader.DocumentTypeID
+			AND SET_DocumentApprove.DocumentNo = PUR_EnquiryHeader.DocumentNo 
+			AND SET_DocumentApprove.CreateDate = (SELECT MAX(CreateDate) FROM SET_DocumentApprove WHERE CompanyID = PUR_EnquiryHeader.CompanyID
+				AND PeriodID = PUR_EnquiryHeader.PeriodID AND DocumentTypeID = PUR_EnquiryHeader.DocumentTypeID 
+				AND DocumentNo = PUR_EnquiryHeader.DocumentNo)
+				
+			inner join Set_documentPendingApprove on Set_documentPendingApprove.DocumentApproveID = SET_DocumentApprove.DocumentApproveID
+            and Set_documentPendingApprove.companyID = SET_DocumentApprove.companyID
+            and Set_documentPendingApprove.PeriodID = SET_DocumentApprove.PeriodID                                                        
+				
+		INNER JOIN SET_UserApprovalAmount ON SET_UserApprovalAmount.CompanyID = PUR_EnquiryHeader.CompanyID 
+			AND SET_UserApprovalAmount.PeriodID = PUR_EnquiryHeader.PeriodID AND SET_UserApprovalAmount.Status = 1
+			AND (SET_UserApprovalAmount.DocumentTypeID = PUR_EnquiryHeader.DocumentTypeID OR SET_UserApprovalAmount.DocumentTypeID IS NULL)
+			AND (1 = (CASE WHEN SET_UserApprovalAmount.EffectiveDateTo IS NULL 
+								AND CAST(CONVERT(VARCHAR(10), GETDATE(), 110) AS DATETIME) &gt;= SET_UserApprovalAmount.EffectiveDateFrom THEN 1
+						   WHEN SET_UserApprovalAmount.EffectiveDateTo IS NOT NULL 
+								AND CAST(CONVERT(VARCHAR(10), GETDATE(), 110) AS DATETIME) BETWEEN SET_UserApprovalAmount.EffectiveDateFrom 
+								AND SET_UserApprovalAmount.EffectiveDateTo THEN 1
+						   ELSE 0 END))
+			AND (1 = (CASE WHEN SET_UserApprovalAmount.AmountTo IS NULL AND (SELECT eh.TotalAmount FROM PUR_EnquiryHeader eh 
+													WHERE eh.CompanyID = PUR_EnquiryHeader.CompanyID 
+														AND eh.PeriodID = PUR_EnquiryHeader.PeriodID 
+														AND eh.EnquiryID = PUR_EnquiryHeader.EnquiryID) &gt;= SET_UserApprovalAmount.AmountFrom THEN 1
+						   WHEN SET_UserApprovalAmount.AmountTo IS NOT NULL AND (SELECT eh.TotalAmount FROM PUR_EnquiryHeader eh 
+															WHERE eh.CompanyID = PUR_EnquiryHeader.CompanyID 
+																AND eh.PeriodID = PUR_EnquiryHeader.PeriodID 
+																AND eh.EnquiryID = PUR_EnquiryHeader.EnquiryID) BETWEEN SET_UserApprovalAmount.AmountFrom 
+																	AND SET_UserApprovalAmount.AmountTo THEN 1
+						   ELSE 0 END))
+
+        LEFT join UsersInRoles on UsersInRoles.RoleId = SET_UserApprovalAmount.RoleId
+			and UsersInRoles.CompanyID = SET_UserApprovalAmount.CompanyID
+
+        inner join Set_PeriodCustom on  
+        PUR_EnquiryHeader.EnquiryDate between Set_PeriodCustom.StartDate and Set_PeriodCustom.EndDate 
+        and Set_PeriodCustom.Status = 1 and SET_PeriodCustom.FiscalID = @CurrentFiscalID
+
+		{AdditionalParameters}
+
+		) AS tbl_EH</value>
+  </data>
+  <data name="Query_Select_DataByKey_ForApprove" xml:space="preserve">
+    <value>SELECT PUR_EnquiryHeader.EnquiryID, PUR_EnquiryHeader.CompanyID, PUR_EnquiryHeader.PeriodID, PUR_EnquiryHeader.Status, SET_UserApprovalAmount.ApprovalOperator, 
+    SET_ApprovalAuthority.UserID AS UserID, SET_Authority.AuthorityLevel 
+   ,SET_UserApprovalAmount.ApprovalAmountID 
+    ,SET_UserApprovalAmount.ApprovalAuthorityID 
+FROM PUR_EnquiryHeader
+INNER JOIN SET_UserApprovalAmount ON SET_UserApprovalAmount.CompanyID = PUR_EnquiryHeader.CompanyID 
+	AND SET_UserApprovalAmount.PeriodID = PUR_EnquiryHeader.PeriodID AND SET_UserApprovalAmount.Status = 1
+	AND (SET_UserApprovalAmount.DocumentTypeID = PUR_EnquiryHeader.DocumentTypeID OR SET_UserApprovalAmount.DocumentTypeID IS NULL)
+    AND (SET_UserApprovalAmount.UserID IS NULL OR SET_UserApprovalAmount.UserID = Pur_EnquiryHeader.CreatedBy) 
+	AND (1 = (CASE WHEN SET_UserApprovalAmount.EffectiveDateTo IS NULL 
+						AND CAST(CONVERT(VARCHAR(10), GETDATE(), 110) AS DATETIME) &gt;= SET_UserApprovalAmount.EffectiveDateFrom THEN 1
+				   WHEN SET_UserApprovalAmount.EffectiveDateTo IS NOT NULL 
+						AND CAST(CONVERT(VARCHAR(10), GETDATE(), 110) AS DATETIME) BETWEEN SET_UserApprovalAmount.EffectiveDateFrom 
+						AND SET_UserApprovalAmount.EffectiveDateTo THEN 1
+				   ELSE 0 END))
+	AND (1 = (CASE WHEN SET_UserApprovalAmount.AmountTo IS NULL AND (SELECT eh.TotalAmount FROM PUR_EnquiryHeader eh 
+											WHERE eh.CompanyID = PUR_EnquiryHeader.CompanyID 
+												AND eh.PeriodID = PUR_EnquiryHeader.PeriodID 
+												AND eh.EnquiryID = PUR_EnquiryHeader.EnquiryID) &gt;= SET_UserApprovalAmount.AmountFrom THEN 1
+				   WHEN SET_UserApprovalAmount.AmountTo IS NOT NULL AND (SELECT eh.TotalAmount FROM PUR_EnquiryHeader eh 
+													WHERE eh.CompanyID = PUR_EnquiryHeader.CompanyID 
+														AND eh.PeriodID = PUR_EnquiryHeader.PeriodID 
+														AND eh.EnquiryID = PUR_EnquiryHeader.EnquiryID) BETWEEN SET_UserApprovalAmount.AmountFrom 
+                                                            AND SET_UserApprovalAmount.AmountTo THEN 1
+				   ELSE 0 END))
+INNER JOIN SET_ApprovalAuthority ON SET_ApprovalAuthority.ApprovalAuthorityID = SET_UserApprovalAmount.ApprovalAuthorityID 
+	AND SET_ApprovalAuthority.CompanyID = SET_UserApprovalAmount.CompanyID AND SET_ApprovalAuthority.PeriodID = SET_UserApprovalAmount.PeriodID 
+	AND SET_ApprovalAuthority.Status = 1
+INNER JOIN SET_Authority ON SET_Authority.AuthorityID = SET_ApprovalAuthority.AuthorityID 
+	AND SET_Authority.CompanyID = SET_ApprovalAuthority.CompanyID AND SET_Authority.PeriodID = SET_ApprovalAuthority.PeriodID 
+	AND SET_Authority.Status = 1
+
+INNER JOIN aspnet_UsersInRoles On aspnet_UsersInRoles.UserID = PUR_EnquiryHeader.CreatedBy 
+And (aspnet_UsersInRoles.RoleID = SET_UserApprovalAmount.RoleID or SET_UserApprovalAmount.RoleID is null)
+
+WHERE --SET_UserApprovalAmount.ApprovalOperator = 'AND' AND
+    PUR_EnquiryHeader.Status = 1 AND PUR_EnquiryHeader.PeriodID = @PeriodID 
+    AND PUR_EnquiryHeader.CompanyID = @CompanyID AND PUR_EnquiryHeader.EnquiryID = @EnquiryID AND PUR_EnquiryHeader.DocumentTypeID = @DocumentTypeID 
+    AND PUR_EnquiryHeader.DocumentNo = @DocumentNo</value>
+  </data>
+</root>

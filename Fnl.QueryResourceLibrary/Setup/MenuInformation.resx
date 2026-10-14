@@ -1,0 +1,3117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ABCStockConsumption" xml:space="preserve">
+    <value>170</value>
+  </data>
+  <data name="ABCStockConsumption1" xml:space="preserve">
+    <value>170</value>
+  </data>
+  <data name="AbsentAndLateSummary" xml:space="preserve">
+    <value>250</value>
+  </data>
+  <data name="AbsenteesReport" xml:space="preserve">
+    <value>250</value>
+  </data>
+  <data name="AccountLedger" xml:space="preserve">
+    <value>130</value>
+  </data>
+  <data name="AccountLedger_2" xml:space="preserve">
+    <value>130</value>
+  </data>
+  <data name="AccountPolicy" xml:space="preserve">
+    <value>210</value>
+  </data>
+  <data name="AccountsTrial" xml:space="preserve">
+    <value>130</value>
+  </data>
+  <data name="Account_Code_Assignment" xml:space="preserve">
+    <value>130</value>
+  </data>
+  <data name="AdditionalPayment_frm" xml:space="preserve">
+    <value>250</value>
+  </data>
+  <data name="Admin_ClosingGL_frm" xml:space="preserve">
+    <value>130</value>
+  </data>
+  <data name="Admin_Operations_frm" xml:space="preserve">
+    <value>20</value>
+  </data>
+  <data name="AdvancePaidRecoveredAndBalanceReportCarriage" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="AdvancePaymentReceipt_HSM" xml:space="preserve">
+    <value>160</value>
+  </data>
+  <data name="AdvancePaymentReport" xml:space="preserve">
+    <value>180</value>
+  </data>
+  <data name="AdvanceSugarPayment" xml:space="preserve">
+    <value>160</value>
+  </data>
+  <data name="AgeAnalyisofDebtors" xml:space="preserve">
+    <value>160</value>
+  </data>
+  <data name="AgingAnalysisClosingBalanceDetail" xml:space="preserve">
+    <value>160</value>
+  </data>
+  <data name="AgingAnalysisClosingBalanceSummary" xml:space="preserve">
+    <value>160</value>
+  </data>
+  <data name="AgingVendorReport" xml:space="preserve">
+    <value>150</value>
+  </data>
+  <data name="AgingVendorReport1" xml:space="preserve">
+    <value>150</value>
+  </data>
+  <data name="AllowancesPayRollVarienceReport" xml:space="preserve">
+    <value>250</value>
+  </data>
+  <data name="Allowance_frm" xml:space="preserve">
+    <value>60</value>
+  </data>
+  <data name="Allowance_frm1" xml:space="preserve">
+    <value>60</value>
+  </data>
+  <data name="AnnualBonus_frm" xml:space="preserve">
+    <value>250</value>
+  </data>
+  <data name="APBillWise" xml:space="preserve">
+    <value>150</value>
+  </data>
+  <data name="ApplicationParameters" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="AppraisalOfficers" xml:space="preserve">
+    <value>220</value>
+  </data>
+  <data name="AppraisalSanction" xml:space="preserve">
+    <value>220</value>
+  </data>
+  <data name="Appraisal_frm" xml:space="preserve">
+    <value>220</value>
+  </data>
+  <data name="Appraisal_frm1" xml:space="preserve">
+    <value>220</value>
+  </data>
+  <data name="ApprovalAuthority" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="ApprovalGroup" xml:space="preserve">
+    <value>20</value>
+  </data>
+  <data name="ApprovedStrength_frm" xml:space="preserve">
+    <value>260</value>
+  </data>
+  <data name="APRAdjustment" xml:space="preserve">
+    <value>160</value>
+  </data>
+  <data name="APVendorwise" xml:space="preserve">
+    <value>150</value>
+  </data>
+  <data name="ARBillWise" xml:space="preserve">
+    <value>160</value>
+  </data>
+  <data name="AssetCost" xml:space="preserve">
+    <value>210</value>
+  </data>
+  <data name="AssetDepreciation_frm" xml:space="preserve">
+    <value>210</value>
+  </data>
+  <data name="AssetDisposal_frm" xml:space="preserve">
+    <value>210</value>
+  </data>
+  <data name="AssetIdentity_frm" xml:space="preserve">
+    <value>210</value>
+  </data>
+  <data name="AssetProcess_frm" xml:space="preserve">
+    <value>210</value>
+  </data>
+  <data name="AssetsAdditionReport" xml:space="preserve">
+    <value>210</value>
+  </data>
+  <data name="AssetTransaction_frm" xml:space="preserve">
+    <value>210</value>
+  </data>
+  <data name="AssetTransfer_frm" xml:space="preserve">
+    <value>210</value>
+  </data>
+  <data name="AssetType_frm" xml:space="preserve">
+    <value>210</value>
+  </data>
+  <data name="AssignCOA" xml:space="preserve">
+    <value>30</value>
+  </data>
+  <data name="AssignMenusToRole" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="AttendanceRegister" xml:space="preserve">
+    <value>250</value>
+  </data>
+  <data name="AttendanceRegister1" xml:space="preserve">
+    <value>250</value>
+  </data>
+  <data name="AttendanceSheet" xml:space="preserve">
+    <value>250</value>
+  </data>
+  <data name="AttendanceSheetCountWise" xml:space="preserve">
+    <value>250</value>
+  </data>
+  <data name="AttendanceSheetCountWiseTwo" xml:space="preserve">
+    <value>250</value>
+  </data>
+  <data name="AuditLogReport" xml:space="preserve">
+    <value>310</value>
+  </data>
+  <data name="AuditTrailReport" xml:space="preserve">
+    <value>130</value>
+  </data>
+  <data name="AutoEntryGeneratingDocument" xml:space="preserve">
+    <value>30</value>
+  </data>
+  <data name="AverageCostReport" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="BalanceSheet" xml:space="preserve">
+    <value>130</value>
+  </data>
+  <data name="BalanceSheet1" xml:space="preserve">
+    <value>130</value>
+  </data>
+  <data name="BankAccountReport" xml:space="preserve">
+    <value>40</value>
+  </data>
+  <data name="BankBranchWiseCenterList" xml:space="preserve">
+    <value>40</value>
+  </data>
+  <data name="BankChequeAllotment" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="BankFacility" xml:space="preserve">
+    <value>140</value>
+  </data>
+  <data name="BankFacility_frm" xml:space="preserve">
+    <value>140</value>
+  </data>
+  <data name="BankGuarntees_frm" xml:space="preserve">
+    <value>140</value>
+  </data>
+  <data name="BankGuranteeReport" xml:space="preserve">
+    <value>140</value>
+  </data>
+  <data name="BankPaymentScroll" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="BankPaymentScroll1" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="BankPosition" xml:space="preserve">
+    <value>130</value>
+  </data>
+  <data name="BankReconciliation" xml:space="preserve">
+    <value>360</value>
+  </data>
+  <data name="BankReconciliationReport" xml:space="preserve">
+    <value>130</value>
+  </data>
+  <data name="BankReconciliationReport2" xml:space="preserve">
+    <value>130</value>
+  </data>
+  <data name="BankScroll" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="BankScrollReversal" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="BankStatus" xml:space="preserve">
+    <value>130</value>
+  </data>
+  <data name="BankStatus1" xml:space="preserve">
+    <value>130</value>
+  </data>
+  <data name="Bank_frm" xml:space="preserve">
+    <value>40</value>
+  </data>
+  <data name="Bank_frm1" xml:space="preserve">
+    <value>40</value>
+  </data>
+  <data name="BatchWiseExpiryDate" xml:space="preserve">
+    <value>190</value>
+  </data>
+  <data name="Batch_frm" xml:space="preserve">
+    <value>30</value>
+  </data>
+  <data name="BelowMinimumLevelStock" xml:space="preserve">
+    <value>170</value>
+  </data>
+  <data name="BelowMinimumLevelStock1" xml:space="preserve">
+    <value>170</value>
+  </data>
+  <data name="BiltyTpt" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="BiltyTPTLedger" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="BiltyTPTMarking" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="BiltyTptPayment" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="BiltyTPTPaymentScroll" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="BiltyTPTRateWS" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="BiltyTPTSlip" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="BlockTokens" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="BMRBudget_frm" xml:space="preserve">
+    <value>120</value>
+  </data>
+  <data name="BMRBudget_frm1" xml:space="preserve">
+    <value>120</value>
+  </data>
+  <data name="BonusBankAdvice" xml:space="preserve">
+    <value>250</value>
+  </data>
+  <data name="BonusCashAdviceReport" xml:space="preserve">
+    <value>250</value>
+  </data>
+  <data name="BrixPercentageSlab_frm" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="BudgetAllocation" xml:space="preserve">
+    <value>120</value>
+  </data>
+  <data name="BudgetReAppropriation_frm" xml:space="preserve">
+    <value>120</value>
+  </data>
+  <data name="BusinessList" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="BusinessPartnerGLDetail" xml:space="preserve">
+    <value>160</value>
+  </data>
+  <data name="BusinessPartnerGLDetail1" xml:space="preserve">
+    <value>160</value>
+  </data>
+  <data name="BusinessPartnerGLEmployeeWise" xml:space="preserve">
+    <value>160</value>
+  </data>
+  <data name="BusinessPartnerGLSummaryEmployeeWise" xml:space="preserve">
+    <value>160</value>
+  </data>
+  <data name="BusinessPartners" xml:space="preserve">
+    <value>50</value>
+  </data>
+  <data name="BusinessPartnerStatus" xml:space="preserve">
+    <value>50</value>
+  </data>
+  <data name="BusinessPartnerStatusAging" xml:space="preserve">
+    <value>160</value>
+  </data>
+  <data name="BusinessPartnersTypes" xml:space="preserve">
+    <value>50</value>
+  </data>
+  <data name="BusinessPartnerTrialBalance" xml:space="preserve">
+    <value>160</value>
+  </data>
+  <data name="BusinessPartnerTrialBalance1" xml:space="preserve">
+    <value>160</value>
+  </data>
+  <data name="BusinessPartnerTrialBalanceEmployeeWise" xml:space="preserve">
+    <value>160</value>
+  </data>
+  <data name="BusinessUnit_frm" xml:space="preserve">
+    <value>20</value>
+  </data>
+  <data name="Cancel_Transactions" xml:space="preserve">
+    <value>310</value>
+  </data>
+  <data name="CandidateProcessesReport" xml:space="preserve">
+    <value>260</value>
+  </data>
+  <data name="CandidateProcess_frm" xml:space="preserve">
+    <value>260</value>
+  </data>
+  <data name="Candidate_frm" xml:space="preserve">
+    <value>260</value>
+  </data>
+  <data name="CaneAveragePriceSummary" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="CaneCarriageBill" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="CaneCarriageContractorFinalSummary" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="CaneChequePrintingSlip" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="CaneCrushingAndProductionReport" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="CaneLoadingBill" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="CanePayment" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="CanePurchaseJournal" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="CanePurchaseSheetDepot" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="CaneRateProcess" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="CaneRateReport" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="CaneReceipt" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="CaneReceiptInquiry" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="CaneReconciliation" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="CaneScrollPaymentVoucher" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="CaneScrollPayment_frm" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="CaneScrollPayment_frm1" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="CaneUnLoadingBill" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="CaneUnLoadingBill1" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="Cane_GroupSupplyCircleWiseReport" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="Cane_GroupSupplyCircleWiseReportRateDifference" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="Cane_GroupSupplyGrowerWiseReport" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="Cane_GroupSupplySummaryReport" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="CarraigeContractorSummary" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="CarriageContractorLedger" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="CarriageContractorLedgerSummary_AN2019" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="CarriageContractorPayableProcess" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="CarriageContractorReport" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="CarrierCleaning_frm" xml:space="preserve">
+    <value>30</value>
+  </data>
+  <data name="CashExpenseLedgerDetail" xml:space="preserve">
+    <value>310</value>
+  </data>
+  <data name="CashExpenseLedger_HSM" xml:space="preserve">
+    <value>310</value>
+  </data>
+  <data name="CashPayment" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="CashPaymentScroll" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="Center" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="CenterList" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="ChangePassword" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="ChangePassword1" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="ChartOfAccount" xml:space="preserve">
+    <value>130</value>
+  </data>
+  <data name="ChartOfAccountAssignment" xml:space="preserve">
+    <value>130</value>
+  </data>
+  <data name="ChartofAccountCode_frm" xml:space="preserve">
+    <value>130</value>
+  </data>
+  <data name="ChartOfAccountID_frm" xml:space="preserve">
+    <value>130</value>
+  </data>
+  <data name="ChequePrintingSlip" xml:space="preserve">
+    <value>150</value>
+  </data>
+  <data name="Circle" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="CircledehFirstSecondSurveySummary" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="CircleList" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="CircleWiseAndDateWiseIndentIssuedSummary" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="CircleWiseVehicleArrivalReport" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="CIS_Business_Partner_Opening_SOP" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="ClaimInvoices" xml:space="preserve">
+    <value>150</value>
+  </data>
+  <data name="ClaimUnClaimreport" xml:space="preserve">
+    <value>180</value>
+  </data>
+  <data name="ClearReportsSessions" xml:space="preserve">
+    <value>30</value>
+  </data>
+  <data name="ClosingStockReport" xml:space="preserve">
+    <value>170</value>
+  </data>
+  <data name="ClosingStockReport1" xml:space="preserve">
+    <value>170</value>
+  </data>
+  <data name="CollectionPoint" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="ColumnarGLReportMonthWise" xml:space="preserve">
+    <value>130</value>
+  </data>
+  <data name="ColumnarGLReportMonthWise1" xml:space="preserve">
+    <value>130</value>
+  </data>
+  <data name="CompanyListReport" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="ComparativeStatement" xml:space="preserve">
+    <value>180</value>
+  </data>
+  <data name="ComparativeStatement1" xml:space="preserve">
+    <value>130</value>
+  </data>
+  <data name="ConsolBalanceSheet" xml:space="preserve">
+    <value>130</value>
+  </data>
+  <data name="ConsolidateSalesStatement" xml:space="preserve">
+    <value>190</value>
+  </data>
+  <data name="ConsolidateSalesStatement1" xml:space="preserve">
+    <value>190</value>
+  </data>
+  <data name="ConsolidateSalesStatementDetailReport" xml:space="preserve">
+    <value>190</value>
+  </data>
+  <data name="ConsolidateSalesStatementDetailReport1" xml:space="preserve">
+    <value>190</value>
+  </data>
+  <data name="ConsolidateSugarSalesContractDetail" xml:space="preserve">
+    <value>190</value>
+  </data>
+  <data name="ConsolidateSugarSalesStatementDetail" xml:space="preserve">
+    <value>190</value>
+  </data>
+  <data name="ConsolidateSugarSalesStatementDetail1" xml:space="preserve">
+    <value>190</value>
+  </data>
+  <data name="ConsolProfitAndLoss" xml:space="preserve">
+    <value>130</value>
+  </data>
+  <data name="ConsolTrialBalance" xml:space="preserve">
+    <value>130</value>
+  </data>
+  <data name="Consumption" xml:space="preserve">
+    <value>170</value>
+  </data>
+  <data name="Consumption1" xml:space="preserve">
+    <value>170</value>
+  </data>
+  <data name="ConsumptionSummaryReport" xml:space="preserve">
+    <value>170</value>
+  </data>
+  <data name="ConsumptionSummaryReport1" xml:space="preserve">
+    <value>170</value>
+  </data>
+  <data name="ContainerTransportationandUnloading_frm" xml:space="preserve">
+    <value>80</value>
+  </data>
+  <data name="Container_Size" xml:space="preserve">
+    <value>80</value>
+  </data>
+  <data name="Contractor" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="ContractorAdvanceAndSecurity" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="ContractorAdvanceAndSecurityBalance" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="ContractorBankAdviceReport" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="ContractorVehicle" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="Contribution_frm" xml:space="preserve">
+    <value>60</value>
+  </data>
+  <data name="Contribution_frm1" xml:space="preserve">
+    <value>60</value>
+  </data>
+  <data name="Cost" xml:space="preserve">
+    <value>210</value>
+  </data>
+  <data name="CostCenterLedger" xml:space="preserve">
+    <value>170</value>
+  </data>
+  <data name="CostCenterLedger1" xml:space="preserve">
+    <value>170</value>
+  </data>
+  <data name="CostCenterReport" xml:space="preserve">
+    <value>30</value>
+  </data>
+  <data name="CostCenter_frm" xml:space="preserve">
+    <value>30</value>
+  </data>
+  <data name="CountryReport" xml:space="preserve">
+    <value>30</value>
+  </data>
+  <data name="Country_frm" xml:space="preserve">
+    <value>30</value>
+  </data>
+  <data name="Country_frm1" xml:space="preserve">
+    <value>30</value>
+  </data>
+  <data name="CPR" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="CPREdit" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="CPREdit1" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="CPRPaymentRateDifference" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="CPRRateProcess" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="CPRReportViewer" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="CPRReportViewer1" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="CPRSummary" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="CreateRole" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="CreateUser" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="CreditMemoReport" xml:space="preserve">
+    <value>160</value>
+  </data>
+  <data name="CropWiseSurveySummary" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="CrushingBrixAnalysisReport" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="CurrencyRates" xml:space="preserve">
+    <value>30</value>
+  </data>
+  <data name="CurrencyReport" xml:space="preserve">
+    <value>30</value>
+  </data>
+  <data name="CustomClearing_frm" xml:space="preserve">
+    <value>200</value>
+  </data>
+  <data name="CustomerAgingReport" xml:space="preserve">
+    <value>160</value>
+  </data>
+  <data name="CustomerAgingReport1" xml:space="preserve">
+    <value>160</value>
+  </data>
+  <data name="CustomerCategoryWiseTax_frm" xml:space="preserve">
+    <value>50</value>
+  </data>
+  <data name="CustomerHistoryReport" xml:space="preserve">
+    <value>160</value>
+  </data>
+  <data name="CustomerSaleOrderDetailReport" xml:space="preserve">
+    <value>160</value>
+  </data>
+  <data name="CustomerStatement" xml:space="preserve">
+    <value>160</value>
+  </data>
+  <data name="CustomerStatus" xml:space="preserve">
+    <value>160</value>
+  </data>
+  <data name="CustomerTrailBalance" xml:space="preserve">
+    <value>160</value>
+  </data>
+  <data name="CWIPReport" xml:space="preserve">
+    <value>170</value>
+  </data>
+  <data name="DailyAttendanceRegister" xml:space="preserve">
+    <value>250</value>
+  </data>
+  <data name="DailyBankPosition" xml:space="preserve">
+    <value>160</value>
+  </data>
+  <data name="DailyBankPosition1" xml:space="preserve">
+    <value>160</value>
+  </data>
+  <data name="DailyCanePurchaseSectorAndGrowerWise" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="DailyCanePurchaseSectorAndGrowerWise1" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="DailyCanePurchaseSectorWise" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="DailyCashPosition" xml:space="preserve">
+    <value>160</value>
+  </data>
+  <data name="DailyCollectionDetailBankWise" xml:space="preserve">
+    <value>160</value>
+  </data>
+  <data name="DailyCollectionDetailBankWise1" xml:space="preserve">
+    <value>160</value>
+  </data>
+  <data name="DailyCollectionDetailBankWise2" xml:space="preserve">
+    <value>160</value>
+  </data>
+  <data name="DailyCollectionDetailBankWise3" xml:space="preserve">
+    <value>160</value>
+  </data>
+  <data name="DailyCollectionDetailBankWiseBroker" xml:space="preserve">
+    <value>160</value>
+  </data>
+  <data name="DailyCrushingHau" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="DailyIssueReport" xml:space="preserve">
+    <value>170</value>
+  </data>
+  <data name="DailyIssueReport1" xml:space="preserve">
+    <value>170</value>
+  </data>
+  <data name="DailyIssueReport2" xml:space="preserve">
+    <value>170</value>
+  </data>
+  <data name="DailyManufacturingFiguresEntry" xml:space="preserve">
+    <value>300</value>
+  </data>
+  <data name="DailyManufacturingReport" xml:space="preserve">
+    <value>300</value>
+  </data>
+  <data name="DailyManufacturingReportWithCrop" xml:space="preserve">
+    <value>300</value>
+  </data>
+  <data name="DailyManufacturingReportWithSeason" xml:space="preserve">
+    <value>300</value>
+  </data>
+  <data name="DailyMISReport" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="DailyMorningReport" xml:space="preserve">
+    <value>300</value>
+  </data>
+  <data name="DailyProductionSaleStockPosition" xml:space="preserve">
+    <value>190</value>
+  </data>
+  <data name="DailyProductionSaleStockPositionCO2" xml:space="preserve">
+    <value>190</value>
+  </data>
+  <data name="DailyRawSugar_frm" xml:space="preserve">
+    <value>300</value>
+  </data>
+  <data name="DailyReading" xml:space="preserve">
+    <value>300</value>
+  </data>
+  <data name="DailyReadingReport" xml:space="preserve">
+    <value>300</value>
+  </data>
+  <data name="DailySaleCollectionDetailFaxWise" xml:space="preserve">
+    <value>300</value>
+  </data>
+  <data name="DailyStoppagefrm" xml:space="preserve">
+    <value>300</value>
+  </data>
+  <data name="DailyTechnicalReport" xml:space="preserve">
+    <value>300</value>
+  </data>
+  <data name="DailyVehiclePosition" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="Dashboard" xml:space="preserve">
+    <value>110</value>
+  </data>
+  <data name="Dashboard1" xml:space="preserve">
+    <value>110</value>
+  </data>
+  <data name="DashboardAKT" xml:space="preserve">
+    <value>110</value>
+  </data>
+  <data name="DashboardOLD" xml:space="preserve">
+    <value>110</value>
+  </data>
+  <data name="DashboardWeekly" xml:space="preserve">
+    <value>110</value>
+  </data>
+  <data name="DashboardWeekly1" xml:space="preserve">
+    <value>110</value>
+  </data>
+  <data name="DashboardYearly" xml:space="preserve">
+    <value>110</value>
+  </data>
+  <data name="DateWiseLiftingReport" xml:space="preserve">
+    <value>300</value>
+  </data>
+  <data name="DayWiseSugarRecieptSummary" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="DbGateInSugar" xml:space="preserve">
+    <value>110</value>
+  </data>
+  <data name="Deduction_frm" xml:space="preserve">
+    <value>60</value>
+  </data>
+  <data name="Deduction_frm1" xml:space="preserve">
+    <value>60</value>
+  </data>
+  <data name="DeleteTokenList" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="DeliveryChallanForDispatch_HSM" xml:space="preserve">
+    <value>190</value>
+  </data>
+  <data name="DeliveryChallanForDispatch_HSM1" xml:space="preserve">
+    <value>190</value>
+  </data>
+  <data name="DeliveryContract_frm" xml:space="preserve">
+    <value>190</value>
+  </data>
+  <data name="DeliveryOrder" xml:space="preserve">
+    <value>190</value>
+  </data>
+  <data name="DeliveryOrderRegister" xml:space="preserve">
+    <value>190</value>
+  </data>
+  <data name="DeliveryOrderReportCustomerWise" xml:space="preserve">
+    <value>190</value>
+  </data>
+  <data name="DeliveryOrderStatusChange_frm" xml:space="preserve">
+    <value>190</value>
+  </data>
+  <data name="DeliveryOrderSugar" xml:space="preserve">
+    <value>190</value>
+  </data>
+  <data name="DeliveryOrder_HSM" xml:space="preserve">
+    <value>190</value>
+  </data>
+  <data name="DeliveryReportCustomerWise" xml:space="preserve">
+    <value>190</value>
+  </data>
+  <data name="DeliveryReportCustomerWise1" xml:space="preserve">
+    <value>190</value>
+  </data>
+  <data name="DemandStatus" xml:space="preserve">
+    <value>170</value>
+  </data>
+  <data name="DemandStatus_Vehicle" xml:space="preserve">
+    <value>170</value>
+  </data>
+  <data name="DemandStatus_Vehicle1" xml:space="preserve">
+    <value>170</value>
+  </data>
+  <data name="Department" xml:space="preserve">
+    <value>30</value>
+  </data>
+  <data name="DepartmentBudgetAllocation" xml:space="preserve">
+    <value>120</value>
+  </data>
+  <data name="Department_frm" xml:space="preserve">
+    <value>30</value>
+  </data>
+  <data name="DepotCPR" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="DepotTptPayment" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="DepotTPTScroll" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="DepotTPTSlip" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="DepreciationPosting" xml:space="preserve">
+    <value>210</value>
+  </data>
+  <data name="DepreciationPosting1" xml:space="preserve">
+    <value>210</value>
+  </data>
+  <data name="DepreciationReport" xml:space="preserve">
+    <value>210</value>
+  </data>
+  <data name="Designation_frm" xml:space="preserve">
+    <value>30</value>
+  </data>
+  <data name="DetailAuditorReport" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="DetailOfDevelopmentCess" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="DetailTrialBalanceReportGroupWise" xml:space="preserve">
+    <value>130</value>
+  </data>
+  <data name="DetailTrialBalanceReport_Department" xml:space="preserve">
+    <value>130</value>
+  </data>
+  <data name="DevelopmentCessReport" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="DialyCPCrushed" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="DirectInvoice" xml:space="preserve">
+    <value>160</value>
+  </data>
+  <data name="DirectInvoice1" xml:space="preserve">
+    <value>160</value>
+  </data>
+  <data name="DirectInvoicePayment" xml:space="preserve">
+    <value>150</value>
+  </data>
+  <data name="DirectLCExpense_frm" xml:space="preserve">
+    <value>200</value>
+  </data>
+  <data name="DispatchAdviceCO2" xml:space="preserve">
+    <value>190</value>
+  </data>
+  <data name="DispatchAdviceEthanol" xml:space="preserve">
+    <value>190</value>
+  </data>
+  <data name="DispatchDetailReport" xml:space="preserve">
+    <value>190</value>
+  </data>
+  <data name="DispatchDetailReport_HSM" xml:space="preserve">
+    <value>190</value>
+  </data>
+  <data name="DispatchDetailReport_LotWise" xml:space="preserve">
+    <value>190</value>
+  </data>
+  <data name="DispatchNote" xml:space="preserve">
+    <value>190</value>
+  </data>
+  <data name="DispatchOld_frm" xml:space="preserve">
+    <value>190</value>
+  </data>
+  <data name="DispatchreportCustomerWise_HSM" xml:space="preserve">
+    <value>190</value>
+  </data>
+  <data name="DispatchreportCustomerWise_HSM1" xml:space="preserve">
+    <value>190</value>
+  </data>
+  <data name="DispatchreportCustomerWise_HSM2" xml:space="preserve">
+    <value>190</value>
+  </data>
+  <data name="DispatchReturn" xml:space="preserve">
+    <value>190</value>
+  </data>
+  <data name="DispatchReturnReport" xml:space="preserve">
+    <value>190</value>
+  </data>
+  <data name="DispatchVehicle1" xml:space="preserve">
+    <value>190</value>
+  </data>
+  <data name="Dispatch_frm" xml:space="preserve">
+    <value>190</value>
+  </data>
+  <data name="Dispatch_New_frm" xml:space="preserve">
+    <value>190</value>
+  </data>
+  <data name="District" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="DistrictList" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="DistrictModeWiseSupplySummary" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="DistrictModeWiseSupplySummary1" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="DistrictName" xml:space="preserve">
+    <value>30</value>
+  </data>
+  <data name="DistrictWiseSupply" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="Division" xml:space="preserve">
+    <value>60</value>
+  </data>
+  <data name="DivisionList" xml:space="preserve">
+    <value>30</value>
+  </data>
+  <data name="DI_SaleInvoiceTrd" xml:space="preserve">
+    <value>160</value>
+  </data>
+  <data name="DocumentTypeUserAssignment" xml:space="preserve">
+    <value>30</value>
+  </data>
+  <data name="DOUpdate_frm" xml:space="preserve">
+    <value>190</value>
+  </data>
+  <data name="EmpExpenseType_frm" xml:space="preserve">
+    <value>30</value>
+  </data>
+  <data name="EmployeeAttendanceList" xml:space="preserve">
+    <value>250</value>
+  </data>
+  <data name="EmployeeAttendance_frm" xml:space="preserve">
+    <value>270</value>
+  </data>
+  <data name="EmployeeAttendance_frm1" xml:space="preserve">
+    <value>250</value>
+  </data>
+  <data name="EmployeeBankAdvice" xml:space="preserve">
+    <value>250</value>
+  </data>
+  <data name="EmployeeBankAdviceReport" xml:space="preserve">
+    <value>250</value>
+  </data>
+  <data name="EmployeeBonus" xml:space="preserve">
+    <value>250</value>
+  </data>
+  <data name="EmployeeBonusPosting_frm" xml:space="preserve">
+    <value>250</value>
+  </data>
+  <data name="EmployeeBonusReportSummary" xml:space="preserve">
+    <value>250</value>
+  </data>
+  <data name="EmployeeBonusReport_HSM" xml:space="preserve">
+    <value>250</value>
+  </data>
+  <data name="EmployeeBonusSlip" xml:space="preserve">
+    <value>250</value>
+  </data>
+  <data name="EmployeeCashAdviceReport" xml:space="preserve">
+    <value>250</value>
+  </data>
+  <data name="EmployeeDetailWithDeduction" xml:space="preserve">
+    <value>250</value>
+  </data>
+  <data name="EmployeeDevelopmentPlan" xml:space="preserve">
+    <value>280</value>
+  </data>
+  <data name="EmployeeEarningCardReport" xml:space="preserve">
+    <value>250</value>
+  </data>
+  <data name="EmployeeEducation" xml:space="preserve">
+    <value>230</value>
+  </data>
+  <data name="EmployeeEOBI" xml:space="preserve">
+    <value>250</value>
+  </data>
+  <data name="EmployeeExperience" xml:space="preserve">
+    <value>230</value>
+  </data>
+  <data name="EmployeeExperience1" xml:space="preserve">
+    <value>230</value>
+  </data>
+  <data name="EmployeeIncrementHistoryReport" xml:space="preserve">
+    <value>250</value>
+  </data>
+  <data name="EmployeeIncrementNew_frm" xml:space="preserve">
+    <value>250</value>
+  </data>
+  <data name="EmployeeIncrement_Allowancewise_Frm" xml:space="preserve">
+    <value>250</value>
+  </data>
+  <data name="EmployeeIncrement_Allowancewise_Frm1" xml:space="preserve">
+    <value>250</value>
+  </data>
+  <data name="EmployeeIncrement_Frm" xml:space="preserve">
+    <value>250</value>
+  </data>
+  <data name="EmployeeInEmployement_frm" xml:space="preserve">
+    <value>250</value>
+  </data>
+  <data name="EmployeeInformationDetail" xml:space="preserve">
+    <value>250</value>
+  </data>
+  <data name="EmployeeLeaveAdjustmentReport" xml:space="preserve">
+    <value>250</value>
+  </data>
+  <data name="EmployeeLeaveAdjustmentReport1" xml:space="preserve">
+    <value>250</value>
+  </data>
+  <data name="EmployeeLeaveRequest_frm" xml:space="preserve">
+    <value>270</value>
+  </data>
+  <data name="EmployeeLeaveRequest_frm1" xml:space="preserve">
+    <value>270</value>
+  </data>
+  <data name="EmployeeLoanRegister" xml:space="preserve">
+    <value>250</value>
+  </data>
+  <data name="EmployeeLoanRegisterMonthWise" xml:space="preserve">
+    <value>250</value>
+  </data>
+  <data name="EmployeeLoanSummary" xml:space="preserve">
+    <value>250</value>
+  </data>
+  <data name="EmployeeMonthlyDeductionReport" xml:space="preserve">
+    <value>250</value>
+  </data>
+  <data name="EmployeeOverTimePost_frm" xml:space="preserve">
+    <value>250</value>
+  </data>
+  <data name="EmployeePayment" xml:space="preserve">
+    <value>250</value>
+  </data>
+  <data name="EmployeePayrollOneTime_frm" xml:space="preserve">
+    <value>250</value>
+  </data>
+  <data name="EmployeePayrollOneTime_frm1" xml:space="preserve">
+    <value>250</value>
+  </data>
+  <data name="EmployeePayroll_frm" xml:space="preserve">
+    <value>250</value>
+  </data>
+  <data name="EmployeePayroll_frm1" xml:space="preserve">
+    <value>250</value>
+  </data>
+  <data name="EmployeePFReport" xml:space="preserve">
+    <value>250</value>
+  </data>
+  <data name="EmployeePFStatementReport" xml:space="preserve">
+    <value>250</value>
+  </data>
+  <data name="EmployeeRecord" xml:space="preserve">
+    <value>250</value>
+  </data>
+  <data name="EmployeeRelativeInformation" xml:space="preserve">
+    <value>230</value>
+  </data>
+  <data name="EmployeeRelatives_frm" xml:space="preserve">
+    <value>230</value>
+  </data>
+  <data name="EmployeeSalaryDelete_frm" xml:space="preserve">
+    <value>250</value>
+  </data>
+  <data name="EmployeeSalaryPost_frm" xml:space="preserve">
+    <value>250</value>
+  </data>
+  <data name="EmployeeSalaryReport" xml:space="preserve">
+    <value>250</value>
+  </data>
+  <data name="EmployeeSalaryReportOneHSM" xml:space="preserve">
+    <value>250</value>
+  </data>
+  <data name="EmployeeSalaryReportTwo" xml:space="preserve">
+    <value>250</value>
+  </data>
+  <data name="EmployeeSalarySheetDepartmentWiseReport" xml:space="preserve">
+    <value>250</value>
+  </data>
+  <data name="EmployeeSalarySheetReport" xml:space="preserve">
+    <value>250</value>
+  </data>
+  <data name="EmployeeSalary_frm" xml:space="preserve">
+    <value>250</value>
+  </data>
+  <data name="EmployeeSalary_frm1" xml:space="preserve">
+    <value>250</value>
+  </data>
+  <data name="EmployeeSeperationCheckList" xml:space="preserve">
+    <value>250</value>
+  </data>
+  <data name="EmployeeSeperationReport" xml:space="preserve">
+    <value>250</value>
+  </data>
+  <data name="EmployeeSESIReport" xml:space="preserve">
+    <value>250</value>
+  </data>
+  <data name="EmployeeStatus" xml:space="preserve">
+    <value>250</value>
+  </data>
+  <data name="EmployeeStatusReport" xml:space="preserve">
+    <value>250</value>
+  </data>
+  <data name="EmployeeTimeSheetStatusReport" xml:space="preserve">
+    <value>250</value>
+  </data>
+  <data name="EmployeeTrainingfrm" xml:space="preserve">
+    <value>280</value>
+  </data>
+  <data name="EmployeeTrainingReport" xml:space="preserve">
+    <value>280</value>
+  </data>
+  <data name="EmployeeTransferPosting" xml:space="preserve">
+    <value>230</value>
+  </data>
+  <data name="EmployeeTravel" xml:space="preserve">
+    <value>230</value>
+  </data>
+  <data name="EmployeeTravel1" xml:space="preserve">
+    <value>230</value>
+  </data>
+  <data name="EmployeeTravelReport" xml:space="preserve">
+    <value>230</value>
+  </data>
+  <data name="EmployeeType_frm" xml:space="preserve">
+    <value>60</value>
+  </data>
+  <data name="EmployeeYearlyLedger" xml:space="preserve">
+    <value>250</value>
+  </data>
+  <data name="Employee_Info" xml:space="preserve">
+    <value>250</value>
+  </data>
+  <data name="Employee_Info1" xml:space="preserve">
+    <value>250</value>
+  </data>
+  <data name="EmpTimeSheetWithLeavesReport" xml:space="preserve">
+    <value>270</value>
+  </data>
+  <data name="EOBIdetailreport" xml:space="preserve">
+    <value>250</value>
+  </data>
+  <data name="EstimatedAmountReport" xml:space="preserve">
+    <value>140</value>
+  </data>
+  <data name="ExcessWeightApproval_frm" xml:space="preserve">
+    <value>190</value>
+  </data>
+  <data name="ExecuteScripts" xml:space="preserve">
+    <value>30</value>
+  </data>
+  <data name="ExpenseAccount" xml:space="preserve">
+    <value>130</value>
+  </data>
+  <data name="ExtractChartOfAccount" xml:space="preserve">
+    <value>130</value>
+  </data>
+  <data name="Fabrics_ExpenseType" xml:space="preserve">
+    <value>80</value>
+  </data>
+  <data name="FALease_frm" xml:space="preserve">
+    <value>210</value>
+  </data>
+  <data name="FARegisterDetailReport" xml:space="preserve">
+    <value>210</value>
+  </data>
+  <data name="FARegisterDetailReportIntangible" xml:space="preserve">
+    <value>210</value>
+  </data>
+  <data name="FARegisterReport" xml:space="preserve">
+    <value>210</value>
+  </data>
+  <data name="FARegisterWithMonthlyBalances" xml:space="preserve">
+    <value>210</value>
+  </data>
+  <data name="FastMovingItems" xml:space="preserve">
+    <value>170</value>
+  </data>
+  <data name="FastMovingItems1" xml:space="preserve">
+    <value>170</value>
+  </data>
+  <data name="FATransactionHistoryReport" xml:space="preserve">
+    <value>170</value>
+  </data>
+  <data name="FA_Period" xml:space="preserve">
+    <value>210</value>
+  </data>
+  <data name="FinalMarketCommittee" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="FinalSeasonReport" xml:space="preserve">
+    <value>300</value>
+  </data>
+  <data name="financialDashboard" xml:space="preserve">
+    <value>110</value>
+  </data>
+  <data name="Financial_frm" xml:space="preserve">
+    <value>130</value>
+  </data>
+  <data name="FinishedGoods" xml:space="preserve">
+    <value>190</value>
+  </data>
+  <data name="FinishGoodsDocument" xml:space="preserve">
+    <value>170</value>
+  </data>
+  <data name="FinishGoodsReport" xml:space="preserve">
+    <value>190</value>
+  </data>
+  <data name="FinishGoodsReport1" xml:space="preserve">
+    <value>190</value>
+  </data>
+  <data name="FinishGoodsReport2" xml:space="preserve">
+    <value>190</value>
+  </data>
+  <data name="FinishGoodsReportShiftWise" xml:space="preserve">
+    <value>190</value>
+  </data>
+  <data name="FinishGoodsReportShiftWise1" xml:space="preserve">
+    <value>190</value>
+  </data>
+  <data name="FinishGoodsSummary" xml:space="preserve">
+    <value>190</value>
+  </data>
+  <data name="FinishGoodsSummary_LotWise" xml:space="preserve">
+    <value>190</value>
+  </data>
+  <data name="FinishGoods_Inprocess_frm" xml:space="preserve">
+    <value>190</value>
+  </data>
+  <data name="FirstWeight" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="FirstWeight1" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="FornightlyReport" xml:space="preserve">
+    <value>300</value>
+  </data>
+  <data name="frmBudgetAllocation" xml:space="preserve">
+    <value>120</value>
+  </data>
+  <data name="frmBudgetAllocation1" xml:space="preserve">
+    <value>120</value>
+  </data>
+  <data name="frm_BudgetAppropriation" xml:space="preserve">
+    <value>120</value>
+  </data>
+  <data name="GateEntry" xml:space="preserve">
+    <value>190</value>
+  </data>
+  <data name="GateEntry_Detail" xml:space="preserve">
+    <value>190</value>
+  </data>
+  <data name="GateInForm" xml:space="preserve">
+    <value>190</value>
+  </data>
+  <data name="GateOutward_frm" xml:space="preserve">
+    <value>170</value>
+  </data>
+  <data name="GatePassCO2_Ethanol" xml:space="preserve">
+    <value>190</value>
+  </data>
+  <data name="GatePassDetail" xml:space="preserve">
+    <value>190</value>
+  </data>
+  <data name="GatePassEthanol" xml:space="preserve">
+    <value>190</value>
+  </data>
+  <data name="GatePassMBSM_HSM" xml:space="preserve">
+    <value>190</value>
+  </data>
+  <data name="GatePassSugarM" xml:space="preserve">
+    <value>190</value>
+  </data>
+  <data name="GatePass_Inprocess_frm" xml:space="preserve">
+    <value>190</value>
+  </data>
+  <data name="GazettedHolidaysReport" xml:space="preserve">
+    <value>250</value>
+  </data>
+  <data name="GD_Assessment_New_frm" xml:space="preserve">
+    <value>200</value>
+  </data>
+  <data name="GLLogReport" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="GL_DocumentSequence_frm" xml:space="preserve">
+    <value>30</value>
+  </data>
+  <data name="GL_Transaction_frm" xml:space="preserve">
+    <value>130</value>
+  </data>
+  <data name="GoDownWiseReport" xml:space="preserve">
+    <value>190</value>
+  </data>
+  <data name="GoodsIssueDetailReport" xml:space="preserve">
+    <value>170</value>
+  </data>
+  <data name="GoodsIssueNoteReport" xml:space="preserve">
+    <value>170</value>
+  </data>
+  <data name="GoodsIssueSummaryReport" xml:space="preserve">
+    <value>170</value>
+  </data>
+  <data name="GoodsReceiptStatement" xml:space="preserve">
+    <value>170</value>
+  </data>
+  <data name="GoodsReceiveNoteSku" xml:space="preserve">
+    <value>170</value>
+  </data>
+  <data name="GoodsReceiveNoteSummaryReport" xml:space="preserve">
+    <value>170</value>
+  </data>
+  <data name="GoodsReceiveNote_AutoM" xml:space="preserve">
+    <value>170</value>
+  </data>
+  <data name="GoodsReceiveNote_Or" xml:space="preserve">
+    <value>170</value>
+  </data>
+  <data name="GoodsReceiveNote_Or1" xml:space="preserve">
+    <value>170</value>
+  </data>
+  <data name="GoodsReceiveWithDollarRate" xml:space="preserve">
+    <value>170</value>
+  </data>
+  <data name="GradeList" xml:space="preserve">
+    <value>250</value>
+  </data>
+  <data name="GradeWiseEmoluments_frm" xml:space="preserve">
+    <value>250</value>
+  </data>
+  <data name="GradeWiseEmoluments_frm1" xml:space="preserve">
+    <value>250</value>
+  </data>
+  <data name="GradeWiseEmoluments_frm2" xml:space="preserve">
+    <value>250</value>
+  </data>
+  <data name="GradeWiseLeave_frm" xml:space="preserve">
+    <value>250</value>
+  </data>
+  <data name="GradeWiseLeave_frm1" xml:space="preserve">
+    <value>250</value>
+  </data>
+  <data name="GradeWiseLoan_Frm" xml:space="preserve">
+    <value>250</value>
+  </data>
+  <data name="GradeWiseLoan_frm1" xml:space="preserve">
+    <value>250</value>
+  </data>
+  <data name="GradeWisePayroll" xml:space="preserve">
+    <value>250</value>
+  </data>
+  <data name="Grade_frm" xml:space="preserve">
+    <value>60</value>
+  </data>
+  <data name="Grade_frm1" xml:space="preserve">
+    <value>60</value>
+  </data>
+  <data name="GRNWisePurchase_HSM" xml:space="preserve">
+    <value>170</value>
+  </data>
+  <data name="GRNWisePurchase_HSM1" xml:space="preserve">
+    <value>170</value>
+  </data>
+  <data name="GrossWeightDeduction" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="GrossWeightNew_Frm" xml:space="preserve">
+    <value>190</value>
+  </data>
+  <data name="GrossWeight_Frm" xml:space="preserve">
+    <value>190</value>
+  </data>
+  <data name="Grower" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="GrowerBankAdviceReport" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="GrowerBankScroll" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="GrowerCaneComparisonReport" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="GrowerCaneComparisonReport1" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="GrowerCertificateTwo" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="GrowerCrushingAndPaymentMonthly" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="GrowerGroup" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="GrowerLedgerCard" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="GrowerLedgerWithCircle" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="GrowerLedger_BS2017" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="GrowerList" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="GrowerListWithGrowerGroup" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="GrowerPayableReport" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="GrowerPayment" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="GrowerPaymentModeChange" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="GrowerRateCheckList" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="GrowerRateDiffrenceBankAdviceReport" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="GrowersLedger" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="GrowersPaymentSummary" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="GrowersPaymentSummary2017BS" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="GrowersPaymentSummaryWithLoanDeduction" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="GrowersSupplyDetail" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="GrowersSupplyDetail1" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="GrowerWiseAcrgeSurveyList" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="GrowerWiseAndDateWiseIndentIssuedSummary" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="GrowerWiseLoan" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="GrowerWiseSurveySummary" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="GrowerWiseVehicleArrival" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="HaulageGroup" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="HaulageType" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="Holidays" xml:space="preserve">
+    <value>250</value>
+  </data>
+  <data name="HRMS_Shift" xml:space="preserve">
+    <value>250</value>
+  </data>
+  <data name="HRMS_Shift1" xml:space="preserve">
+    <value>250</value>
+  </data>
+  <data name="HRMS_ShiftTwo" xml:space="preserve">
+    <value>250</value>
+  </data>
+  <data name="HSMExportSaleRegister" xml:space="preserve">
+    <value>190</value>
+  </data>
+  <data name="HS_Code_frm" xml:space="preserve">
+    <value>80</value>
+  </data>
+  <data name="IdleCostProcess" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="Import" xml:space="preserve">
+    <value>200</value>
+  </data>
+  <data name="ImportContract" xml:space="preserve">
+    <value>200</value>
+  </data>
+  <data name="ImportDocumentReport" xml:space="preserve">
+    <value>200</value>
+  </data>
+  <data name="ImportDocument_frm" xml:space="preserve">
+    <value>200</value>
+  </data>
+  <data name="IncomeTaxCertificate" xml:space="preserve">
+    <value>250</value>
+  </data>
+  <data name="IncomeTaxCertificateHSM" xml:space="preserve">
+    <value>250</value>
+  </data>
+  <data name="IncomeTaxDedMonthWise" xml:space="preserve">
+    <value>250</value>
+  </data>
+  <data name="IncomeTaxEntry_frm" xml:space="preserve">
+    <value>250</value>
+  </data>
+  <data name="IncoTerm" xml:space="preserve">
+    <value>30</value>
+  </data>
+  <data name="IncurredOnLedger" xml:space="preserve">
+    <value>170</value>
+  </data>
+  <data name="Indent" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="IndentBook" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="IndentReport" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="IndentSlip" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="InProcessDocuments" xml:space="preserve">
+    <value>30</value>
+  </data>
+  <data name="InspectionReport" xml:space="preserve">
+    <value>170</value>
+  </data>
+  <data name="InterviewSummary" xml:space="preserve">
+    <value>260</value>
+  </data>
+  <data name="InventoryInOut" xml:space="preserve">
+    <value>170</value>
+  </data>
+  <data name="InventoryInOutReport" xml:space="preserve">
+    <value>170</value>
+  </data>
+  <data name="InventoryInOut_Inprocess_frm" xml:space="preserve">
+    <value>170</value>
+  </data>
+  <data name="InventoryInOut_Store" xml:space="preserve">
+    <value>170</value>
+  </data>
+  <data name="InvoiceReturn" xml:space="preserve">
+    <value>160</value>
+  </data>
+  <data name="Invoice_Transaction_frm" xml:space="preserve">
+    <value>150</value>
+  </data>
+  <data name="INV_Open_GoodsReceiveNote" xml:space="preserve">
+    <value>170</value>
+  </data>
+  <data name="IPCameraReport" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="IssueTransactionWise" xml:space="preserve">
+    <value>170</value>
+  </data>
+  <data name="IssueTransactionWise1" xml:space="preserve">
+    <value>170</value>
+  </data>
+  <data name="ItemAgainstGRN" xml:space="preserve">
+    <value>170</value>
+  </data>
+  <data name="ItemCategory" xml:space="preserve">
+    <value>170</value>
+  </data>
+  <data name="ItemCategory_frm" xml:space="preserve">
+    <value>70</value>
+  </data>
+  <data name="ItemIssuanceReportWithBatch" xml:space="preserve">
+    <value>170</value>
+  </data>
+  <data name="ItemIssuingList" xml:space="preserve">
+    <value>170</value>
+  </data>
+  <data name="ItemListPrice" xml:space="preserve">
+    <value>170</value>
+  </data>
+  <data name="ItemListPrice1" xml:space="preserve">
+    <value>170</value>
+  </data>
+  <data name="ItemMaster" xml:space="preserve">
+    <value>170</value>
+  </data>
+  <data name="ItemStockStatusAccountCodeWise" xml:space="preserve">
+    <value>170</value>
+  </data>
+  <data name="ItemStockStatusDepartmentWise" xml:space="preserve">
+    <value>170</value>
+  </data>
+  <data name="ItemTransaction" xml:space="preserve">
+    <value>170</value>
+  </data>
+  <data name="ItemTransferRreport" xml:space="preserve">
+    <value>170</value>
+  </data>
+  <data name="ItemWisePurchaseDetail" xml:space="preserve">
+    <value>170</value>
+  </data>
+  <data name="Item_frm" xml:space="preserve">
+    <value>70</value>
+  </data>
+  <data name="JobCategoryList" xml:space="preserve">
+    <value>170</value>
+  </data>
+  <data name="JobCategory_frm" xml:space="preserve">
+    <value>250</value>
+  </data>
+  <data name="JobCategory_frm1" xml:space="preserve">
+    <value>250</value>
+  </data>
+  <data name="JobDescriptionReport" xml:space="preserve">
+    <value>170</value>
+  </data>
+  <data name="JobDesignationList" xml:space="preserve">
+    <value>170</value>
+  </data>
+  <data name="JobDesignation_frm" xml:space="preserve">
+    <value>250</value>
+  </data>
+  <data name="JobDesignation_frm1" xml:space="preserve">
+    <value>250</value>
+  </data>
+  <data name="JobReport" xml:space="preserve">
+    <value>170</value>
+  </data>
+  <data name="JobRequisition" xml:space="preserve">
+    <value>170</value>
+  </data>
+  <data name="LabParameter" xml:space="preserve">
+    <value>300</value>
+  </data>
+  <data name="LabProduction_frm" xml:space="preserve">
+    <value>300</value>
+  </data>
+  <data name="Lab_ClauseFrm" xml:space="preserve">
+    <value>300</value>
+  </data>
+  <data name="LandedCostDetail" xml:space="preserve">
+    <value>200</value>
+  </data>
+  <data name="LateInReport" xml:space="preserve">
+    <value>270</value>
+  </data>
+  <data name="LCRetirement_frm" xml:space="preserve">
+    <value>200</value>
+  </data>
+  <data name="LeavesReport" xml:space="preserve">
+    <value>240</value>
+  </data>
+  <data name="LeavesUpdateProcess" xml:space="preserve">
+    <value>240</value>
+  </data>
+  <data name="Leave_frm" xml:space="preserve">
+    <value>250</value>
+  </data>
+  <data name="Leave_frm1" xml:space="preserve">
+    <value>250</value>
+  </data>
+  <data name="LedgerTransactionList" xml:space="preserve">
+    <value>130</value>
+  </data>
+  <data name="LetterOfCreditReport" xml:space="preserve">
+    <value>200</value>
+  </data>
+  <data name="LetterOfCredit_frm" xml:space="preserve">
+    <value>200</value>
+  </data>
+  <data name="LiftingPositionReport" xml:space="preserve">
+    <value>190</value>
+  </data>
+  <data name="LiftingUnliftingReport" xml:space="preserve">
+    <value>190</value>
+  </data>
+  <data name="ListOfOtherInformationReport" xml:space="preserve">
+    <value>310</value>
+  </data>
+  <data name="LoadingContractorDetail" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="LoadingContractorFinalSummary" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="LoadingContractorInDepot" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="LoadingContractorPayableProcess" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="LoadingLabourAttendance" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="LoadingPoint_Frm" xml:space="preserve">
+    <value>190</value>
+  </data>
+  <data name="Loan" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="LoanAdjustment" xml:space="preserve">
+    <value>250</value>
+  </data>
+  <data name="LoanAndRecoveryRegister" xml:space="preserve">
+    <value>250</value>
+  </data>
+  <data name="LoanContractfrm" xml:space="preserve">
+    <value>250</value>
+  </data>
+  <data name="LoanContractfrm1" xml:space="preserve">
+    <value>250</value>
+  </data>
+  <data name="LoanPaymentList" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="LoanRecovery" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="LoanRegisterGrowerWise" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="LoanRegisterGrowerWiseDetail" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="LoanRegisterSummary" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="LoanType" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="Loan_frm" xml:space="preserve">
+    <value>250</value>
+  </data>
+  <data name="Loan_frm1" xml:space="preserve">
+    <value>250</value>
+  </data>
+  <data name="Locations" xml:space="preserve">
+    <value>30</value>
+  </data>
+  <data name="Location_frm" xml:space="preserve">
+    <value>30</value>
+  </data>
+  <data name="LPManualAccepted" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="ManualIndent" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="MarketCommitte" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="MaterialConsumptionReport" xml:space="preserve">
+    <value>170</value>
+  </data>
+  <data name="MaterialConsumptionReport1" xml:space="preserve">
+    <value>170</value>
+  </data>
+  <data name="MaterialControllSheet" xml:space="preserve">
+    <value>170</value>
+  </data>
+  <data name="MaximumLevelStock" xml:space="preserve">
+    <value>170</value>
+  </data>
+  <data name="MaximumLevelStock1" xml:space="preserve">
+    <value>170</value>
+  </data>
+  <data name="MenuManager" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="MenuToRole" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="MISBusinessPartner" xml:space="preserve">
+    <value>50</value>
+  </data>
+  <data name="MonthlyDeduction" xml:space="preserve">
+    <value>250</value>
+  </data>
+  <data name="MonthlyDeduction1" xml:space="preserve">
+    <value>250</value>
+  </data>
+  <data name="MonthlyDeduction2" xml:space="preserve">
+    <value>250</value>
+  </data>
+  <data name="MonthlyDeduction3" xml:space="preserve">
+    <value>250</value>
+  </data>
+  <data name="MonthlyDeduction4" xml:space="preserve">
+    <value>250</value>
+  </data>
+  <data name="MonthlyDeduction5" xml:space="preserve">
+    <value>250</value>
+  </data>
+  <data name="MonthlyDeduction6" xml:space="preserve">
+    <value>250</value>
+  </data>
+  <data name="MonthlyDeduction7" xml:space="preserve">
+    <value>250</value>
+  </data>
+  <data name="MonthlyDeduction8" xml:space="preserve">
+    <value>250</value>
+  </data>
+  <data name="MonthlyDeductionUpd" xml:space="preserve">
+    <value>250</value>
+  </data>
+  <data name="MonthlyIncomeTaxFBR" xml:space="preserve">
+    <value>250</value>
+  </data>
+  <data name="MonthlyManufacturingReport" xml:space="preserve">
+    <value>300</value>
+  </data>
+  <data name="MonthWiseConsumptionReport" xml:space="preserve">
+    <value>170</value>
+  </data>
+  <data name="NetPayableReport" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="NewSaleRegisterCustomerBilledToWise" xml:space="preserve">
+    <value>190</value>
+  </data>
+  <data name="NewSaleRegisterCustomerBilledToWiseSugar" xml:space="preserve">
+    <value>190</value>
+  </data>
+  <data name="NewSaleRegisterCustomerBilledToWise_Scrap" xml:space="preserve">
+    <value>190</value>
+  </data>
+  <data name="NewSugarTaxInvoice" xml:space="preserve">
+    <value>190</value>
+  </data>
+  <data name="NewSugarTaxInvoice1_Ethanol" xml:space="preserve">
+    <value>160</value>
+  </data>
+  <data name="NewSugarTaxInvoice1_Ethanol1" xml:space="preserve">
+    <value>160</value>
+  </data>
+  <data name="NewSugarTaxInvoice1_Ethanol_HSM" xml:space="preserve">
+    <value>160</value>
+  </data>
+  <data name="NewSugarTaxInvoice1_HSM" xml:space="preserve">
+    <value>160</value>
+  </data>
+  <data name="NewSugarTaxInvoice_Ethanol" xml:space="preserve">
+    <value>160</value>
+  </data>
+  <data name="NewSugarTaxInvoice_HSM" xml:space="preserve">
+    <value>160</value>
+  </data>
+  <data name="NonFinancialAllowance_frm" xml:space="preserve">
+    <value>250</value>
+  </data>
+  <data name="NonMovingItems" xml:space="preserve">
+    <value>170</value>
+  </data>
+  <data name="NonMovingItems1" xml:space="preserve">
+    <value>170</value>
+  </data>
+  <data name="OneTimeAllowanceAndDeductionReport" xml:space="preserve">
+    <value>250</value>
+  </data>
+  <data name="OnlineCrushing" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="OnlineCrushingDashboard" xml:space="preserve">
+    <value>110</value>
+  </data>
+  <data name="OpeningInfo" xml:space="preserve">
+    <value>250</value>
+  </data>
+  <data name="OpeningInfo1" xml:space="preserve">
+    <value>250</value>
+  </data>
+  <data name="OperatingUnitReport" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="OperatingUnit_frm" xml:space="preserve">
+    <value>20</value>
+  </data>
+  <data name="OperationTimes_frm" xml:space="preserve">
+    <value>300</value>
+  </data>
+  <data name="OrganoGram" xml:space="preserve">
+    <value>260</value>
+  </data>
+  <data name="OverTimeRegister" xml:space="preserve">
+    <value>250</value>
+  </data>
+  <data name="OvertimeReport" xml:space="preserve">
+    <value>250</value>
+  </data>
+  <data name="OverTime_frm" xml:space="preserve">
+    <value>250</value>
+  </data>
+  <data name="OverTime_frm1" xml:space="preserve">
+    <value>250</value>
+  </data>
+  <data name="PackingList_frm" xml:space="preserve">
+    <value>200</value>
+  </data>
+  <data name="Paidunpaid" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="PartialBankAdviceReport" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="PartialBankAdviceReport1" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="PartialScroll" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="PayableAgingReport" xml:space="preserve">
+    <value>150</value>
+  </data>
+  <data name="Payment" xml:space="preserve">
+    <value>150</value>
+  </data>
+  <data name="PaymentReceipt" xml:space="preserve">
+    <value>150</value>
+  </data>
+  <data name="PaymentReceipt1" xml:space="preserve">
+    <value>150</value>
+  </data>
+  <data name="PaymentSlipNo" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="PaymentSlipp" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="PaymentStopAndRelease" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="PayrollType" xml:space="preserve">
+    <value>250</value>
+  </data>
+  <data name="PayRollVarienceReport" xml:space="preserve">
+    <value>250</value>
+  </data>
+  <data name="PendingApproval" xml:space="preserve">
+    <value>130</value>
+  </data>
+  <data name="PendingDeliveryOrderAsOff" xml:space="preserve">
+    <value>190</value>
+  </data>
+  <data name="PendingDispatchReport" xml:space="preserve">
+    <value>190</value>
+  </data>
+  <data name="PendingDispatchReportAsOff" xml:space="preserve">
+    <value>190</value>
+  </data>
+  <data name="PendingGRNAsOf" xml:space="preserve">
+    <value>170</value>
+  </data>
+  <data name="PendingGRNforSuppliersBills" xml:space="preserve">
+    <value>170</value>
+  </data>
+  <data name="PendingGRNforSuppliersBills1" xml:space="preserve">
+    <value>170</value>
+  </data>
+  <data name="PendingGRNforSuppliersBills2" xml:space="preserve">
+    <value>170</value>
+  </data>
+  <data name="PendingSalesOrderList" xml:space="preserve">
+    <value>190</value>
+  </data>
+  <data name="PendingSalesOrderListAsOff" xml:space="preserve">
+    <value>190</value>
+  </data>
+  <data name="PendingSalesOrderListCustomerWise" xml:space="preserve">
+    <value>190</value>
+  </data>
+  <data name="PendingStorePurchaseRequisition" xml:space="preserve">
+    <value>170</value>
+  </data>
+  <data name="PendingStorePurchaseRequisition1" xml:space="preserve">
+    <value>170</value>
+  </data>
+  <data name="PendingStorePurchaseRequisition2" xml:space="preserve">
+    <value>170</value>
+  </data>
+  <data name="PendingTokenList" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="PerformerInvoice" xml:space="preserve">
+    <value>190</value>
+  </data>
+  <data name="PeriodInformationReport" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="PledgeBagsReport" xml:space="preserve">
+    <value>140</value>
+  </data>
+  <data name="PledgeBags_frm" xml:space="preserve">
+    <value>200</value>
+  </data>
+  <data name="POBook" xml:space="preserve">
+    <value>180</value>
+  </data>
+  <data name="POOutstanding" xml:space="preserve">
+    <value>180</value>
+  </data>
+  <data name="POOutstandingAsOff" xml:space="preserve">
+    <value>180</value>
+  </data>
+  <data name="PositionProcessesReport" xml:space="preserve">
+    <value>260</value>
+  </data>
+  <data name="PositionProcessesReport1" xml:space="preserve">
+    <value>260</value>
+  </data>
+  <data name="PositionProcess_frm" xml:space="preserve">
+    <value>260</value>
+  </data>
+  <data name="PositionRequirement_frm" xml:space="preserve">
+    <value>260</value>
+  </data>
+  <data name="Position_frm" xml:space="preserve">
+    <value>260</value>
+  </data>
+  <data name="PO_Services" xml:space="preserve">
+    <value>180</value>
+  </data>
+  <data name="PrepareAnnualBonus_frm" xml:space="preserve">
+    <value>250</value>
+  </data>
+  <data name="PrepareAnnualBonus_frm1" xml:space="preserve">
+    <value>250</value>
+  </data>
+  <data name="PRNReportBatchWise" xml:space="preserve">
+    <value>170</value>
+  </data>
+  <data name="PRNReportBatchWiseMatricTon" xml:space="preserve">
+    <value>170</value>
+  </data>
+  <data name="ProcessCandidatesReport" xml:space="preserve">
+    <value>260</value>
+  </data>
+  <data name="ProcessCandidatesReport1" xml:space="preserve">
+    <value>260</value>
+  </data>
+  <data name="ProcessPositionsReport" xml:space="preserve">
+    <value>260</value>
+  </data>
+  <data name="ProcessPositionsReport1" xml:space="preserve">
+    <value>260</value>
+  </data>
+  <data name="ProcurementTracking" xml:space="preserve">
+    <value>260</value>
+  </data>
+  <data name="ProcurementTracking1" xml:space="preserve">
+    <value>260</value>
+  </data>
+  <data name="ProfitAndLossAccount" xml:space="preserve">
+    <value>130</value>
+  </data>
+  <data name="ProfitAndLossAccount1" xml:space="preserve">
+    <value>130</value>
+  </data>
+  <data name="ProfitAndLossAccount2" xml:space="preserve">
+    <value>130</value>
+  </data>
+  <data name="ProfitAndLossDetail" xml:space="preserve">
+    <value>130</value>
+  </data>
+  <data name="PromotionReport" xml:space="preserve">
+    <value>220</value>
+  </data>
+  <data name="PurchaseBookSupplierWise" xml:space="preserve">
+    <value>180</value>
+  </data>
+  <data name="PurchaseInvoice" xml:space="preserve">
+    <value>150</value>
+  </data>
+  <data name="PurchaseInvoice1" xml:space="preserve">
+    <value>150</value>
+  </data>
+  <data name="PurchaseOrderHSM" xml:space="preserve">
+    <value>180</value>
+  </data>
+  <data name="PurchaseOrderSku" xml:space="preserve">
+    <value>180</value>
+  </data>
+  <data name="PurchaseOrderStatus" xml:space="preserve">
+    <value>180</value>
+  </data>
+  <data name="PurchaseOrderStatus1" xml:space="preserve">
+    <value>180</value>
+  </data>
+  <data name="PurchaseOrderStatus_frm" xml:space="preserve">
+    <value>180</value>
+  </data>
+  <data name="PurchaseOrderSummary" xml:space="preserve">
+    <value>180</value>
+  </data>
+  <data name="PurchaseOrder_frm" xml:space="preserve">
+    <value>180</value>
+  </data>
+  <data name="PurchaseOrder_Ori" xml:space="preserve">
+    <value>180</value>
+  </data>
+  <data name="PurchaseRegisterSugarUnit" xml:space="preserve">
+    <value>180</value>
+  </data>
+  <data name="PurchaseRegisterSugarUnit1" xml:space="preserve">
+    <value>180</value>
+  </data>
+  <data name="PurchaseRegisterSummary" xml:space="preserve">
+    <value>180</value>
+  </data>
+  <data name="PurchaseReturn" xml:space="preserve">
+    <value>180</value>
+  </data>
+  <data name="PurchaseTracking" xml:space="preserve">
+    <value>180</value>
+  </data>
+  <data name="Quality_frm" xml:space="preserve">
+    <value>30</value>
+  </data>
+  <data name="Quotation_frm" xml:space="preserve">
+    <value>180</value>
+  </data>
+  <data name="Rack_form" xml:space="preserve">
+    <value>30</value>
+  </data>
+  <data name="Rack_form1" xml:space="preserve">
+    <value>30</value>
+  </data>
+  <data name="Rate" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="RateCategory" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="RateDiffrenceBankScroll" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="RateType" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="RawSugarAnalysisReport" xml:space="preserve">
+    <value>300</value>
+  </data>
+  <data name="Receipt" xml:space="preserve">
+    <value>160</value>
+  </data>
+  <data name="ReceiptCollectionDetail" xml:space="preserve">
+    <value>160</value>
+  </data>
+  <data name="ReceiptReport" xml:space="preserve">
+    <value>160</value>
+  </data>
+  <data name="ReceiptReport1" xml:space="preserve">
+    <value>160</value>
+  </data>
+  <data name="Receipt_Transaction_frm" xml:space="preserve">
+    <value>160</value>
+  </data>
+  <data name="RecoveryAnalysis" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="RecruitmentProcess_frm" xml:space="preserve">
+    <value>260</value>
+  </data>
+  <data name="RelatedPartyInformation_frm" xml:space="preserve">
+    <value>50</value>
+  </data>
+  <data name="ReportDisplay" xml:space="preserve">
+    <value>310</value>
+  </data>
+  <data name="ReportDisplay1" xml:space="preserve">
+    <value>310</value>
+  </data>
+  <data name="RequestForQuotation" xml:space="preserve">
+    <value>180</value>
+  </data>
+  <data name="RequisitionAssignmenttoRFQ" xml:space="preserve">
+    <value>180</value>
+  </data>
+  <data name="RequisitionStatusTrackingDetailReport" xml:space="preserve">
+    <value>170</value>
+  </data>
+  <data name="RequisitionStatusTrackingReport" xml:space="preserve">
+    <value>170</value>
+  </data>
+  <data name="RequisitionStatusTrackingReport1" xml:space="preserve">
+    <value>170</value>
+  </data>
+  <data name="RequisitionSummary" xml:space="preserve">
+    <value>170</value>
+  </data>
+  <data name="Retirement_frm" xml:space="preserve">
+    <value>210</value>
+  </data>
+  <data name="Reversal_frm" xml:space="preserve">
+    <value>130</value>
+  </data>
+  <data name="RFQStatusChange_frm" xml:space="preserve">
+    <value>180</value>
+  </data>
+  <data name="RFQ_frm" xml:space="preserve">
+    <value>180</value>
+  </data>
+  <data name="RG4ShiftWise" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="Route" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="RouteList" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="RouteWiseBankBranchList" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="RouteWiseCenterList" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="RTProcess_frm" xml:space="preserve">
+    <value>300</value>
+  </data>
+  <data name="SaftyItemsStock" xml:space="preserve">
+    <value>170</value>
+  </data>
+  <data name="SalaryBreakUp" xml:space="preserve">
+    <value>250</value>
+  </data>
+  <data name="SaleCommission" xml:space="preserve">
+    <value>190</value>
+  </data>
+  <data name="SaleContractSummary" xml:space="preserve">
+    <value>190</value>
+  </data>
+  <data name="SaleDetailReportWithCNIC" xml:space="preserve">
+    <value>190</value>
+  </data>
+  <data name="SaleInvoiceTrd" xml:space="preserve">
+    <value>190</value>
+  </data>
+  <data name="SaleknockoffReport" xml:space="preserve">
+    <value>190</value>
+  </data>
+  <data name="SaleRegCustomerBilledToWiseSugar_Adjusted" xml:space="preserve">
+    <value>190</value>
+  </data>
+  <data name="SaleRegCustomerBilledToWiseSugar_Adjusted1" xml:space="preserve">
+    <value>190</value>
+  </data>
+  <data name="SaleRegCustomerBilledToWiseSugar_NonAdjust" xml:space="preserve">
+    <value>160</value>
+  </data>
+  <data name="SaleRegCustomerwise" xml:space="preserve">
+    <value>190</value>
+  </data>
+  <data name="SaleRegisterCustomerBilledToWise" xml:space="preserve">
+    <value>190</value>
+  </data>
+  <data name="SaleRegisterCustomerBilledToWiseSugar" xml:space="preserve">
+    <value>190</value>
+  </data>
+  <data name="SaleRegisterCustomerBilledToWise_Molasses" xml:space="preserve">
+    <value>190</value>
+  </data>
+  <data name="SaleRegisterSugarAnnexAdjusted" xml:space="preserve">
+    <value>190</value>
+  </data>
+  <data name="SaleRegisterSugarAnnexAdjusted1" xml:space="preserve">
+    <value>190</value>
+  </data>
+  <data name="SaleRegItemwise" xml:space="preserve">
+    <value>190</value>
+  </data>
+  <data name="SalesContract_frm" xml:space="preserve">
+    <value>200</value>
+  </data>
+  <data name="SalesContract_frm1" xml:space="preserve">
+    <value>190</value>
+  </data>
+  <data name="SalesInvoice" xml:space="preserve">
+    <value>190</value>
+  </data>
+  <data name="SalesInvoice1" xml:space="preserve">
+    <value>190</value>
+  </data>
+  <data name="SalesInvoice_SOExport" xml:space="preserve">
+    <value>190</value>
+  </data>
+  <data name="SalesOrder" xml:space="preserve">
+    <value>190</value>
+  </data>
+  <data name="SalesOrderReportCustomerWise" xml:space="preserve">
+    <value>190</value>
+  </data>
+  <data name="SalesOrderStatus_frm" xml:space="preserve">
+    <value>190</value>
+  </data>
+  <data name="SalesRegister" xml:space="preserve">
+    <value>190</value>
+  </data>
+  <data name="SalesReportContractWise" xml:space="preserve">
+    <value>190</value>
+  </data>
+  <data name="SalesTaxInvoice" xml:space="preserve">
+    <value>190</value>
+  </data>
+  <data name="SalesTaxInvoiceCancellationReport" xml:space="preserve">
+    <value>190</value>
+  </data>
+  <data name="SalesTaxInvoiceStatusAgainstPayment" xml:space="preserve">
+    <value>190</value>
+  </data>
+  <data name="Sales_InvoiceDelete_frm" xml:space="preserve">
+    <value>160</value>
+  </data>
+  <data name="Sales_InvoiceProcess_frm" xml:space="preserve">
+    <value>160</value>
+  </data>
+  <data name="Sales_InvoiceProcess_frm_HB" xml:space="preserve">
+    <value>160</value>
+  </data>
+  <data name="Sales_Invoice_frm" xml:space="preserve">
+    <value>160</value>
+  </data>
+  <data name="Sales_Tax_Parameters" xml:space="preserve">
+    <value>190</value>
+  </data>
+  <data name="SaleTaxInvoiceSummary" xml:space="preserve">
+    <value>190</value>
+  </data>
+  <data name="ScrollPayment" xml:space="preserve">
+    <value>250</value>
+  </data>
+  <data name="ScrollPaymentBonus" xml:space="preserve">
+    <value>250</value>
+  </data>
+  <data name="ScrollPaymentOvertime" xml:space="preserve">
+    <value>250</value>
+  </data>
+  <data name="SeasonPaymentDetail" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="SeasonPaymentProcessReport" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="SeasonPaymentProcessReport1" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="SecondWeight" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="SecondWeight1" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="Section" xml:space="preserve">
+    <value>60</value>
+  </data>
+  <data name="SectionList" xml:space="preserve">
+    <value>60</value>
+  </data>
+  <data name="SectorWiseAverageCostReport" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="SectorWiseAverageCostReport1" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="SectorWiseAverageRates" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="SectorWiseAverageRates1" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="SectorWiseAverageRates2" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="SectorWiseCaneArrivalReport" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="SectorWiseSupplySummary" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="SectorWiseSupplySummary1" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="SectorWiseSupplySurveyReport" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="SectorWiseSupplySurveyWithoutCostOfCane" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="SecurityDeductionAndRefundableReport" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="SegmentWiseTrialBalance" xml:space="preserve">
+    <value>130</value>
+  </data>
+  <data name="SegmentWiseTrialBalance1" xml:space="preserve">
+    <value>130</value>
+  </data>
+  <data name="ServiceRegister" xml:space="preserve">
+    <value>190</value>
+  </data>
+  <data name="SETCurrency_frm" xml:space="preserve">
+    <value>20</value>
+  </data>
+  <data name="SET_ApprovalAuthority_frm" xml:space="preserve">
+    <value>20</value>
+  </data>
+  <data name="Set_Area_frm" xml:space="preserve">
+    <value>20</value>
+  </data>
+  <data name="SET_Authority_frm" xml:space="preserve">
+    <value>20</value>
+  </data>
+  <data name="Set_Bank_frm" xml:space="preserve">
+    <value>40</value>
+  </data>
+  <data name="Set_BAShiftExpTransfer_frm" xml:space="preserve">
+    <value>310</value>
+  </data>
+  <data name="Set_BP_TaxExemption_frm" xml:space="preserve">
+    <value>50</value>
+  </data>
+  <data name="Set_BP_TaxExemption_frm1" xml:space="preserve">
+    <value>50</value>
+  </data>
+  <data name="Set_BP_TaxExemption_frm2" xml:space="preserve">
+    <value>50</value>
+  </data>
+  <data name="Set_CarFinancingScheme_frm" xml:space="preserve">
+    <value>140</value>
+  </data>
+  <data name="SET_Customer_frm" xml:space="preserve">
+    <value>50</value>
+  </data>
+  <data name="SET_Customer_frm1" xml:space="preserve">
+    <value>50</value>
+  </data>
+  <data name="Set_ElectricityConsumption_frm" xml:space="preserve">
+    <value>140</value>
+  </data>
+  <data name="Set_GeneratorsConsumptionTransaction_frm" xml:space="preserve">
+    <value>140</value>
+  </data>
+  <data name="SET_ItemCatalog_frm" xml:space="preserve">
+    <value>70</value>
+  </data>
+  <data name="SET_ItemCatalog_frm1" xml:space="preserve">
+    <value>70</value>
+  </data>
+  <data name="Set_Job_frm" xml:space="preserve">
+    <value>30</value>
+  </data>
+  <data name="SET_LimeSlaker_frm" xml:space="preserve">
+    <value>310</value>
+  </data>
+  <data name="Set_MessTransaction_frm" xml:space="preserve">
+    <value>310</value>
+  </data>
+  <data name="Set_Parameter_WHSTSCode" xml:space="preserve">
+    <value>100</value>
+  </data>
+  <data name="Set_Parameter_WHSTSExemptionCode" xml:space="preserve">
+    <value>100</value>
+  </data>
+  <data name="Set_Parameter_WHTSCode" xml:space="preserve">
+    <value>100</value>
+  </data>
+  <data name="Set_Parameter_WHTSExemptionCode" xml:space="preserve">
+    <value>100</value>
+  </data>
+  <data name="SET_Period_frm" xml:space="preserve">
+    <value>20</value>
+  </data>
+  <data name="Set_StaffFacilites_frm" xml:space="preserve">
+    <value>30</value>
+  </data>
+  <data name="SET_Tax_frm" xml:space="preserve">
+    <value>320</value>
+  </data>
+  <data name="Shift" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="ShiftAndVehicleWiseSummary" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="ShiftWiseTokenSummary" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="ShipmentCosting" xml:space="preserve">
+    <value>200</value>
+  </data>
+  <data name="SingleGrowersPaymentBill" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="SlowMovingItems" xml:space="preserve">
+    <value>170</value>
+  </data>
+  <data name="SlowMovingItems1" xml:space="preserve">
+    <value>170</value>
+  </data>
+  <data name="Stock" xml:space="preserve">
+    <value>170</value>
+  </data>
+  <data name="Stock1" xml:space="preserve">
+    <value>170</value>
+  </data>
+  <data name="StockCardRuleStockCardRule223" xml:space="preserve">
+    <value>170</value>
+  </data>
+  <data name="StockGINStatusChange_frm" xml:space="preserve">
+    <value>170</value>
+  </data>
+  <data name="StockGIN_frm" xml:space="preserve">
+    <value>170</value>
+  </data>
+  <data name="StockGRNStatusChange_frm" xml:space="preserve">
+    <value>170</value>
+  </data>
+  <data name="StockInventoryItemWiseMovement" xml:space="preserve">
+    <value>170</value>
+  </data>
+  <data name="StockInventoryMovement" xml:space="preserve">
+    <value>170</value>
+  </data>
+  <data name="StockLedger" xml:space="preserve">
+    <value>170</value>
+  </data>
+  <data name="StockLedger2" xml:space="preserve">
+    <value>170</value>
+  </data>
+  <data name="StockLedgerSummary" xml:space="preserve">
+    <value>170</value>
+  </data>
+  <data name="StockLedgerWithDocumentType" xml:space="preserve">
+    <value>170</value>
+  </data>
+  <data name="StockLedgerWithOutAmount" xml:space="preserve">
+    <value>170</value>
+  </data>
+  <data name="StockLedgerWithRack" xml:space="preserve">
+    <value>170</value>
+  </data>
+  <data name="StockMovementSummary" xml:space="preserve">
+    <value>170</value>
+  </data>
+  <data name="StockMovementSummary1" xml:space="preserve">
+    <value>170</value>
+  </data>
+  <data name="StockRequisitionClose_frm" xml:space="preserve">
+    <value>170</value>
+  </data>
+  <data name="StockRequisitionClose_frm1" xml:space="preserve">
+    <value>170</value>
+  </data>
+  <data name="StockRequisitionClose_frm2" xml:space="preserve">
+    <value>170</value>
+  </data>
+  <data name="StockRequisitionStatus" xml:space="preserve">
+    <value>170</value>
+  </data>
+  <data name="StockRequisitionStatus1" xml:space="preserve">
+    <value>170</value>
+  </data>
+  <data name="StockRequisitionStatus2" xml:space="preserve">
+    <value>170</value>
+  </data>
+  <data name="StockRequisitionStatus3" xml:space="preserve">
+    <value>170</value>
+  </data>
+  <data name="StockRequisitionStatus4" xml:space="preserve">
+    <value>170</value>
+  </data>
+  <data name="StockRequisitionStatusChange_frm" xml:space="preserve">
+    <value>170</value>
+  </data>
+  <data name="StockRequistionReportHSM" xml:space="preserve">
+    <value>170</value>
+  </data>
+  <data name="StockRequistionReportHSM1" xml:space="preserve">
+    <value>170</value>
+  </data>
+  <data name="StockRequistionReportHSMNew" xml:space="preserve">
+    <value>170</value>
+  </data>
+  <data name="StockRequistion_frm" xml:space="preserve">
+    <value>170</value>
+  </data>
+  <data name="StockReturn" xml:space="preserve">
+    <value>170</value>
+  </data>
+  <data name="StockReturnReport" xml:space="preserve">
+    <value>170</value>
+  </data>
+  <data name="StockReturn_Inprocess_frm" xml:space="preserve">
+    <value>170</value>
+  </data>
+  <data name="StockTransferNote" xml:space="preserve">
+    <value>170</value>
+  </data>
+  <data name="StockVerificationStatements" xml:space="preserve">
+    <value>170</value>
+  </data>
+  <data name="StockVerificationStatements1" xml:space="preserve">
+    <value>170</value>
+  </data>
+  <data name="Stock_frm" xml:space="preserve">
+    <value>170</value>
+  </data>
+  <data name="StoppagesAndReason_frm" xml:space="preserve">
+    <value>300</value>
+  </data>
+  <data name="StoreConsumptionAnalysis" xml:space="preserve">
+    <value>170</value>
+  </data>
+  <data name="StoreItemsSummary" xml:space="preserve">
+    <value>170</value>
+  </data>
+  <data name="StoreMovementDetail" xml:space="preserve">
+    <value>170</value>
+  </data>
+  <data name="StoreMovementSummary" xml:space="preserve">
+    <value>170</value>
+  </data>
+  <data name="StoreRecevingReport" xml:space="preserve">
+    <value>170</value>
+  </data>
+  <data name="StrenghtAndSalaryReport" xml:space="preserve">
+    <value>250</value>
+  </data>
+  <data name="SubDivision" xml:space="preserve">
+    <value>60</value>
+  </data>
+  <data name="SubDivisionList" xml:space="preserve">
+    <value>250</value>
+  </data>
+  <data name="SubLedgerReport" xml:space="preserve">
+    <value>310</value>
+  </data>
+  <data name="SubZone" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="SugarCaneCostSheet" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="SugarCostOfCane" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="SugarProductionDispatchReport" xml:space="preserve">
+    <value>190</value>
+  </data>
+  <data name="SugarSale" xml:space="preserve">
+    <value>190</value>
+  </data>
+  <data name="SugarSaleBaggas" xml:space="preserve">
+    <value>190</value>
+  </data>
+  <data name="SugarSaleCO2" xml:space="preserve">
+    <value>190</value>
+  </data>
+  <data name="SugarSaleEthanol" xml:space="preserve">
+    <value>190</value>
+  </data>
+  <data name="SugarSeasonSalesReport" xml:space="preserve">
+    <value>190</value>
+  </data>
+  <data name="SugarTaxInvoice" xml:space="preserve">
+    <value>190</value>
+  </data>
+  <data name="SugarTaxInvoice1" xml:space="preserve">
+    <value>190</value>
+  </data>
+  <data name="SupplierSaleWithHoldingTax" xml:space="preserve">
+    <value>180</value>
+  </data>
+  <data name="SupplierWiseSaleTaxReport" xml:space="preserve">
+    <value>180</value>
+  </data>
+  <data name="SupplierWithHoldingTax" xml:space="preserve">
+    <value>180</value>
+  </data>
+  <data name="SupplyAgainstSurveyCircledehAndVarietyReport" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="survey" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="SurveyDetailList" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="SurveyHeader" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="SurveyList" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="SurveySummary" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="TandomAndTripplerSummary" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="TareWeight" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="TareWeight_Frm" xml:space="preserve">
+    <value>190</value>
+  </data>
+  <data name="Tax" xml:space="preserve">
+    <value>180</value>
+  </data>
+  <data name="TaxCardType_frm" xml:space="preserve">
+    <value>320</value>
+  </data>
+  <data name="TaxInvoice_CO2" xml:space="preserve">
+    <value>190</value>
+  </data>
+  <data name="TaxInvoice_SKU" xml:space="preserve">
+    <value>190</value>
+  </data>
+  <data name="TaxInvoice_SKU1" xml:space="preserve">
+    <value>190</value>
+  </data>
+  <data name="TaxInvoice_Trading" xml:space="preserve">
+    <value>190</value>
+  </data>
+  <data name="Tehsil" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="TehsilList" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="TenderDepositMaturityDate" xml:space="preserve">
+    <value>310</value>
+  </data>
+  <data name="TermSetup" xml:space="preserve">
+    <value>30</value>
+  </data>
+  <data name="TMSManual" xml:space="preserve">
+    <value>270</value>
+  </data>
+  <data name="TMSMonthEndSummary" xml:space="preserve">
+    <value>270</value>
+  </data>
+  <data name="TMSTimeSheet" xml:space="preserve">
+    <value>270</value>
+  </data>
+  <data name="TMSTimeSheet1" xml:space="preserve">
+    <value>270</value>
+  </data>
+  <data name="TMS_DataUploadfrm" xml:space="preserve">
+    <value>270</value>
+  </data>
+  <data name="Token" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="TokenBaseArrival" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="TokenInternalReport" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="TokenList" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="TokenListVehicleWise" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="TokenSlip" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="TokenSummaryCircleWise" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="TPTEdit" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="TrainingNeedAnalysis" xml:space="preserve">
+    <value>280</value>
+  </data>
+  <data name="TransactionVoucherPrinting" xml:space="preserve">
+    <value>130</value>
+  </data>
+  <data name="TransactionVoucherPrintingTwo" xml:space="preserve">
+    <value>130</value>
+  </data>
+  <data name="TransferHistory_frm" xml:space="preserve">
+    <value>210</value>
+  </data>
+  <data name="TransferIn_frm" xml:space="preserve">
+    <value>170</value>
+  </data>
+  <data name="TransferOut_frm" xml:space="preserve">
+    <value>170</value>
+  </data>
+  <data name="TransferOut_frm1" xml:space="preserve">
+    <value>170</value>
+  </data>
+  <data name="TrashAnalysis" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="TrialBalanceReport" xml:space="preserve">
+    <value>130</value>
+  </data>
+  <data name="TrialBalanceYearToDateReport" xml:space="preserve">
+    <value>130</value>
+  </data>
+  <data name="TrialBalanceYearToDateReport1" xml:space="preserve">
+    <value>130</value>
+  </data>
+  <data name="UndertakingReport" xml:space="preserve">
+    <value>310</value>
+  </data>
+  <data name="UnitOfMeasurements" xml:space="preserve">
+    <value>170</value>
+  </data>
+  <data name="UnloadingContractor" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="UnloadingContractor1" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="UnloadingContractorAttendence" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="UnloadingContractorHoliday" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="UnloadingContractorPayableProcess" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="UnloadingContractorSummary" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="UnlockFormState" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="UnPledgeBags_frm" xml:space="preserve">
+    <value>200</value>
+  </data>
+  <data name="UserDocForApproval" xml:space="preserve">
+    <value>310</value>
+  </data>
+  <data name="UserInformation" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="UserLogs_frm" xml:space="preserve">
+    <value>310</value>
+  </data>
+  <data name="User_Information" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="VarietyDetail" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="VarietySummaryReport" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="VehicleCancellation_frm" xml:space="preserve">
+    <value>190</value>
+  </data>
+  <data name="VehicleGatePass" xml:space="preserve">
+    <value>190</value>
+  </data>
+  <data name="VendorStatement" xml:space="preserve">
+    <value>150</value>
+  </data>
+  <data name="Village" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="VIPGrower" xml:space="preserve">
+    <value>330</value>
+  </data>
+  <data name="WeightAssessment_frm" xml:space="preserve">
+    <value>200</value>
+  </data>
+  <data name="WeightDeductionReport" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="WeightmentReg" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="Weightment_Register_AN2019" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="WTCardPritingFW" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="WTCardPritingSW" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="WTCardPritingSW_BS2017" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="YearlyAttendanceRegister" xml:space="preserve">
+    <value>250</value>
+  </data>
+  <data name="YearWiseVarianceReport" xml:space="preserve">
+    <value>250</value>
+  </data>
+  <data name="YearWiseVarianceReport1" xml:space="preserve">
+    <value>250</value>
+  </data>
+  <data name="Zone" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="ZoneCircleWiseSurveyList" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="ZoneList" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="ZoneSectorWiseAvgCostReport" xml:space="preserve">
+    <value>290</value>
+  </data>
+  <data name="_frm" xml:space="preserve">
+    <value>30</value>
+  </data>
+</root>

@@ -1,0 +1,1680 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Query_HasChildRecordsFiscal" xml:space="preserve">
+    <value>Declare @IsFixedAssetOn varchar(5);
+Select @IsFixedAssetOn = FieldValue1 From Set_Parameter Where FieldName = 'IsFixedAsset';
+
+
+Declare @IsVehicleFlagOn varchar(5);
+Select @IsVehicleFlagOn = FieldValue1 From Set_Parameter Where FieldName = 'IsVehicle'
+
+Declare @StartDate DateTime , @EndDate DateTime;
+Select @StartDate = StartDate from SET_PeriodCustom where FiscalId = @CurrentFiscalID
+Select @EndDate = EndDate from SET_PeriodCustom where FiscalId = @CurrentFiscalID
+
+if(@IsFixedAssetOn = 'true')
+Begin
+    SELECT IsNull(SUM(tbl.DocumentNo), 0)DocumentNo, isnull(sum(tbl.HasRangeDefined), 0) HasRangeDefined, tbl.FromNo, tbl.ToNo
+    FROM 
+    (
+	    select case when COUNT(DocumentTypeID) &gt; 0 then 1 else 0 end HasRangeDefined, FromNo, ToNo, 0 DocumentNo
+	    from SET_DocumentSequence
+        where DocumentTypeID = @DocumentTypeID and CompanyID = @CompanyID and PeriodID = @PeriodID and [Status] = 1 AND IsActive = @IsActive 
+        group by  FromNo,ToNo
+    
+        union all
+    
+        select 0 HasRangeDefined, 0 FromNo, 0 ToNo, MAX(MaxDocumentNo.DocumentNo) as DocumentNo From
+        (
+		    select ISNULL (MAX(DocumentNo),0)+1 as DocumentNo
+		    FROM GL_TransactionHeader
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID and DocumentDate between @StartDate and @EndDate
+    
+		    union all
+    
+		    Select IsNull(MAX(DocumentNo), 0) + 1 as DocumentNo
+		    FROM PUR_EnquiryHeader
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID and EnquiryDate between @StartDate and @EndDate
+
+		    union all
+    
+		    select ISNULL (MAX(CAST(DocumentNumber AS INT)),0)+1 as DocumentNo
+		    FROM AP_PurchaseOrderHeader
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and TypeCode = @DocumentTypeID  and DocumentDate between @StartDate and @EndDate
+
+		    union all
+    
+		    select ISNULL (MAX(DocumentNo),0)+1 as DocumentNo
+		    FROM INV_StockTransactionHeader
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID and DocumentDate between @StartDate and @EndDate
+
+		    union all
+    
+		    Select IsNull(MAX(CAST(InvoiceNumber AS bigint)), 0) + 1 as DocumentNo
+		    FROM AR_InvoiceHeader
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and InvoiceType = @DocumentTypeID and InvoiceDate between @StartDate and @EndDate
+
+		    union all
+    
+		    Select IsNull(MAX(DocumentNo), 0) + 1 as DocumentNo
+		    FROM AR_ReceiptTransactionHeader
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID And DocumentTypeID = @DocumentTypeID and DocumentDate between @StartDate and @EndDate
+
+		    union all
+    
+		    select ISNULL (MAX(CAST(ContractNo AS INT)),0)+1 as DocumentNo
+		    FROM SAL_OrderHeader
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and SaleContractTypeID = @DocumentTypeID and ContractDate between @StartDate and @EndDate
+
+			union all
+    
+		    select ISNULL (MAX(CAST(AnnualBudgetNo AS INT)),0)+1 as DocumentNo
+		    FROM AnnualBudget_Header
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and AnnualBudgetTypeID = @DocumentTypeID and AnnualBudgetDate between @StartDate and @EndDate
+
+			union all
+    
+		    select ISNULL (MAX(CAST(ContractNo AS INT)),0)+1 as DocumentNo
+		    FROM SAL_ContractHeader
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and SaleContractTypeID = @DocumentTypeID and ContractDate between @StartDate and @EndDate
+
+		    union all
+    
+		    select ISNULL (MAX(CAST(DeliveryOrderNo AS INT)),0)+1 as DocumentNo
+		    FROM SAL_DeliveryOrderHeader
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID and DODate between @StartDate and @EndDate
+
+			 union all
+    
+		    select ISNULL (MAX(CAST(DeliveryContractNo AS INT)),0)+1 as DocumentNo
+		    FROM SAL_DeliveryContractHeader
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID and DODate between @StartDate and @EndDate
+
+		    union all
+    
+		    select ISNULL (MAX(CAST(DispatchNo AS INT)),0)+1 as DocumentNo
+		    FROM SAL_DispatchHeader
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID and DispatchDate between @StartDate and @EndDate
+
+		    union all
+    
+		    select ISNULL (MAX(CAST(InvoiceNumber AS INT)),0)+1 as DocumentNo
+		    FROM SAL_InvoiceHeader
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and InvoiceType = @DocumentTypeID and InvoiceDate between @StartDate and @EndDate
+
+		    union all
+    
+		    Select IsNull(MAX(DocumentNo), 0) + 1 as DocumentNo
+		    FROM AP_PaymentHeader
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID and DocumentDate between @StartDate and @EndDate
+		
+            union all
+    
+		    Select IsNull(MAX(DocumentNo), 0) + 1 as DocumentNo
+		    FROM Gate_OutwardHeader
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID and DocumentDate between @StartDate and @EndDate
+
+		    union all
+
+		    Select IsNull(MAX(DocumentNo), 0) + 1 as DocumentNo
+		    FROM FA_AssetTransfer
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID and DocumentDate between @StartDate and @EndDate
+
+            union all
+
+		    Select IsNull(MAX(DocumentNo), 0) + 1 as DocumentNo
+		    FROM SAL_ReverseHeader
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID and CreateDate between @StartDate and @EndDate
+
+            union all
+
+            Select IsNull(MAX(DocumentNo), 0) + 1 as DocumentNo
+		    FROM FA_DepreciationProcess
+		    where CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID and FAUpTo between @StartDate and @EndDate
+           union all
+
+           select ISNULL (MAX(CAST(DocumentNo AS INT)),0)+1 as DocumentNo
+		    FROM INV_ItemsPriceHistory
+		    where  CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID
+
+				UNION ALL
+			select ISNULL (MAX(CAST(DocumentNo AS INT)),0)+1 as DocumentNo
+		    FROM [Fabrics_WastageHeader]
+		    where  CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID
+
+
+        ) MaxDocumentNo
+    ) tbl
+    group by tbl.FromNo, tbl.ToNo, tbl.DocumentNo
+    order by tbl.DocumentNo Desc
+End
+Else if(@IsVehicleFlagOn = 'true')
+Begin
+    SELECT IsNull(SUM(tbl.DocumentNo), 0)DocumentNo, isnull(sum(tbl.HasRangeDefined), 0) HasRangeDefined, tbl.FromNo, tbl.ToNo
+    FROM 
+    (
+	    select case when COUNT(DocumentTypeID) &gt; 0 then 1 else 0 end HasRangeDefined, FromNo, ToNo, 0 DocumentNo
+	    from SET_DocumentSequence
+        where DocumentTypeID = @DocumentTypeID and CompanyID = @CompanyID and PeriodID = @PeriodID and [Status] = 1 AND IsActive = @IsActive 
+        group by  FromNo,ToNo
+    
+        union all
+    
+        select 0 HasRangeDefined, 0 FromNo, 0 ToNo, MAX(MaxDocumentNo.DocumentNo) as DocumentNo From
+        (
+		    select ISNULL (MAX(DocumentNo),0)+1 as DocumentNo
+		    FROM GL_TransactionHeader
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID  and DocumentDate between @StartDate and @EndDate
+    
+		    union all
+    
+		    Select IsNull(MAX(DocumentNo), 0) + 1 as DocumentNo
+		    FROM PUR_EnquiryHeader
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID  and EnquiryDate between @StartDate and @EndDate
+
+		    union all
+    
+		    select ISNULL (MAX(CAST(DocumentNumber AS INT)),0)+1 as DocumentNo
+		    FROM AP_PurchaseOrderHeader
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and TypeCode = @DocumentTypeID  and DocumentDate between @StartDate and @EndDate
+
+		    union all
+    
+		    select ISNULL (MAX(DocumentNo),0)+1 as DocumentNo
+		    FROM INV_StockTransactionHeader
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID  and DocumentDate between @StartDate and @EndDate
+
+		    union all
+    
+		    Select IsNull(MAX(CAST(InvoiceNumber AS bigint)), 0) + 1 as DocumentNo
+		    FROM AR_InvoiceHeader
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and InvoiceType = @DocumentTypeID  and InvoiceDate between @StartDate and @EndDate
+
+		    union all
+    
+		    Select IsNull(MAX(DocumentNo), 0) + 1 as DocumentNo
+		    FROM AR_ReceiptTransactionHeader
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID And DocumentTypeID = @DocumentTypeID  and DocumentDate between @StartDate and @EndDate
+
+		    union all
+    
+		    select ISNULL (MAX(CAST(ContractNo AS INT)),0)+1 as DocumentNo
+		    FROM SAL_OrderHeader
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and SaleContractTypeID = @DocumentTypeID  and ContractDate between @StartDate and @EndDate
+
+			Union all
+
+		  select ISNULL (MAX(CAST(AnnualBudgetNo AS INT)),0)+1 as DocumentNo
+		    FROM AnnualBudget_Header
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and AnnualBudgetTypeID = @DocumentTypeID and AnnualBudgetDate between @StartDate and @EndDate
+
+			union all
+
+			select ISNULL (MAX(CAST(ContractNo AS INT)),0)+1 as DocumentNo
+		    FROM SAL_ContractHeader
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and SaleContractTypeID = @DocumentTypeID  and ContractDate between @StartDate and @EndDate
+
+		    union all
+    
+		    select ISNULL (MAX(CAST(DeliveryOrderNo AS INT)),0)+1 as DocumentNo
+		    FROM SAL_DeliveryOrderHeader
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID  and DODate between @StartDate and @EndDate
+
+			union all
+    
+		    select ISNULL (MAX(CAST(DeliveryContractNo AS INT)),0)+1 as DocumentNo
+		    FROM SAL_DeliveryContractHeader
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID  and DODate between @StartDate and @EndDate
+
+		    union all
+    
+		    select ISNULL (MAX(CAST(DispatchNo AS INT)),0)+1 as DocumentNo
+		    FROM SAL_DispatchHeader
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID  and DispatchDate between @StartDate and @EndDate
+
+		    union all
+    
+		    select ISNULL (MAX(CAST(InvoiceNumber AS INT)),0)+1 as DocumentNo
+		    FROM SAL_InvoiceHeader
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and InvoiceType = @DocumentTypeID  and InvoiceDate between @StartDate and @EndDate
+
+		    union all
+    
+		    Select IsNull(MAX(DocumentNo), 0) + 1 as DocumentNo
+		    FROM AP_PaymentHeader
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID  and DocumentDate between @StartDate and @EndDate
+
+            union all
+    
+		    Select IsNull(MAX(DocumentNo), 0) + 1 as DocumentNo
+		    FROM Gate_OutwardHeader
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID  and DocumentDate between @StartDate and @EndDate
+
+            union all
+
+		    Select IsNull(MAX(DocumentNo), 0) + 1 as DocumentNo
+		    FROM SAL_ReverseHeader
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID  --and DocumentDate between @StartDate and @EndDate
+
+            union all 
+		    
+		    Select IsNull(MAX(DocumentNo), 0) + 1 as DocumentNo
+		    FROM AP_ProductionJobCardHeader
+		    where ComapnyID = @CompanyID and DocumentTypeID = @DocumentTypeID  and DocumentDate between @StartDate and @EndDate
+
+            union all 
+
+            Select IsNull(MAX(DocumentNo), 0) + 1 as DocumentNo
+	        from AS_InspectionHeader
+	        where CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID  and DocumentDate between @StartDate and @EndDate
+
+
+            union all 
+		    
+		    Select IsNull(MAX(DocumentNo), 0) + 1 as DocumentNo
+		    FROM MRPHeader
+		    where CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID  and DocumentDate between @StartDate and @EndDate
+            union all
+
+           select ISNULL (MAX(CAST(DocumentNo AS INT)),0)+1 as DocumentNo
+		    FROM INV_ItemsPriceHistory
+		    where  CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID  and DocumentDate between @StartDate and @EndDate
+			
+				UNION ALL
+			select ISNULL (MAX(CAST(DocumentNo AS INT)),0)+1 as DocumentNo
+		    FROM [Fabrics_WastageHeader]
+		    where  CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID
+
+        ) MaxDocumentNo
+    ) tbl
+    group by tbl.FromNo, tbl.ToNo, tbl.DocumentNo
+    order by DocumentNo Desc
+End 
+Else
+Begin
+    SELECT IsNull(SUM(tbl.DocumentNo), 0)DocumentNo, isnull(sum(tbl.HasRangeDefined), 0) HasRangeDefined, tbl.FromNo, tbl.ToNo
+    FROM 
+    (
+	    select case when COUNT(DocumentTypeID) &gt; 0 then 1 else 0 end HasRangeDefined, FromNo, ToNo, 0 DocumentNo
+	    from SET_DocumentSequence
+        where DocumentTypeID = @DocumentTypeID and CompanyID = @CompanyID and PeriodID = @PeriodID and [Status] = 1 AND IsActive = @IsActive 
+        group by  FromNo,ToNo
+    
+        union all
+    
+        select 0 HasRangeDefined, 0 FromNo, 0 ToNo, MAX(MaxDocumentNo.DocumentNo) as DocumentNo From
+        (
+		    select ISNULL (MAX(DocumentNo),0)+1 as DocumentNo
+		    FROM GL_TransactionHeader
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID  and DocumentDate between @StartDate and @EndDate
+    
+			union all
+    
+		    select ISNULL (MAX(CAST(DocumentNo AS INT)),0)+1 as DocumentNo
+		    FROM Operations_ContractMaster
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID  and DocumentDate between @StartDate and @EndDate
+
+			union all
+    
+		    select ISNULL (MAX(CAST(DocumentNo AS INT)),0)+1 as DocumentNo
+		    FROM Operations_WorkOrderMaster
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID  and DocumentDate between @StartDate and @EndDate
+
+		    union all
+    
+		    Select IsNull(MAX(DocumentNo), 0) + 1 as DocumentNo
+		    FROM PUR_EnquiryHeader
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID  and EnquiryDate between @StartDate and @EndDate
+
+		    union all
+    
+		    select ISNULL (MAX(CAST(DocumentNumber AS INT)),0)+1 as DocumentNo
+		    FROM AP_PurchaseOrderHeader
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and TypeCode = @DocumentTypeID  and DocumentDate between @StartDate and @EndDate
+
+		    union all
+    
+		    select ISNULL (MAX(DocumentNo),0)+1 as DocumentNo
+		    FROM INV_StockTransactionHeader
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID  and DocumentDate between @StartDate and @EndDate
+
+		    union all
+    
+		    Select IsNull(MAX(CAST(InvoiceNumber AS bigint)), 0) + 1 as DocumentNo
+		    FROM AR_InvoiceHeader
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and InvoiceType = @DocumentTypeID  and InvoiceDate between @StartDate and @EndDate
+
+		    union all
+    
+		    Select IsNull(MAX(DocumentNo), 0) + 1 as DocumentNo
+		    FROM AR_ReceiptTransactionHeader
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID And DocumentTypeID = @DocumentTypeID  and DocumentDate between @StartDate and @EndDate
+
+		    union all
+    
+		    select ISNULL (MAX(CAST(ContractNo AS INT)),0)+1 as DocumentNo
+		    FROM SAL_OrderHeader
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and SaleContractTypeID = @DocumentTypeID  and ContractDate between @StartDate and @EndDate
+
+			Union all
+
+		   select ISNULL (MAX(CAST(AnnualBudgetNo AS INT)),0)+1 as DocumentNo
+		    FROM AnnualBudget_Header
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and AnnualBudgetTypeID = @DocumentTypeID and AnnualBudgetDate between @StartDate and @EndDate
+
+			 union all
+    
+		    select ISNULL (MAX(CAST(ContractNo AS INT)),0)+1 as DocumentNo
+		    FROM SAL_ContractHeader
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and SaleContractTypeID = @DocumentTypeID  and ContractDate between @StartDate and @EndDate
+
+		    union all
+    
+		    select ISNULL (MAX(CAST(DeliveryOrderNo AS INT)),0)+1 as DocumentNo
+		    FROM SAL_DeliveryOrderHeader
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID  and DODate between @StartDate and @EndDate
+
+			  union all
+    
+		    select ISNULL (MAX(CAST(DeliveryContractNo AS INT)),0)+1 as DocumentNo
+		    FROM SAL_DeliveryContractHeader
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID  and DODate between @StartDate and @EndDate
+
+		    union all
+    
+		    select ISNULL (MAX(CAST(DispatchNo AS INT)),0)+1 as DocumentNo
+		    FROM SAL_DispatchHeader
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID  and DispatchDate between @StartDate and @EndDate
+
+		    union all
+    
+		    select ISNULL (MAX(CAST(InvoiceNumber AS INT)),0)+1 as DocumentNo
+		    FROM SAL_InvoiceHeader
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and InvoiceType = @DocumentTypeID  and InvoiceDate between @StartDate and @EndDate
+
+		    union all
+    
+		    Select IsNull(MAX(DocumentNo), 0) + 1 as DocumentNo
+		    FROM AP_PaymentHeader
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID  and DocumentDate between @StartDate and @EndDate
+
+            union all
+    
+		    Select IsNull(MAX(DocumentNo), 0) + 1 as DocumentNo
+		    FROM Gate_OutwardHeader
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID  and DocumentDate between @StartDate and @EndDate
+
+            union all
+
+		    Select IsNull(MAX(DocumentNo), 0) + 1 as DocumentNo
+		    FROM SAL_ReverseHeader
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID  and CreateDate between @StartDate and @EndDate
+             union all
+			 
+			 select ISNULL (MAX(CAST(DocumentNumber AS INT)),0)+1 as DocumentNo
+		    FROM AP_SaleContractHeader
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and TypeCode = @DocumentTypeID  and DocumentDate between @StartDate and @EndDate
+
+		    union all
+    
+           select ISNULL (MAX(CAST(DocumentNo AS INT)),0)+1 as DocumentNo
+		    FROM INV_ItemsPriceHistory
+		    where  CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID  --and DocumentDate between @StartDate and @EndDate
+
+			union all
+    
+		    select ISNULL (MAX(CAST(DocumentNo AS INT)),0)+1 as DocumentNo
+		    FROM Operations_CalibrationCrimpingMaster
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID  and DocumentDate between @StartDate and @EndDate
+
+			union all
+    
+		    select ISNULL (MAX(CAST(DocumentNo AS INT)),0)+1 as DocumentNo
+		    FROM Operations_CalibrationMicrometerMaster
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID  and DocumentDate between @StartDate and @EndDate
+
+					union all
+    
+		    select ISNULL (MAX(CAST(DocumentNo AS INT)),0)+1 as DocumentNo
+		    FROM Operations_CalibrationTorqueMaster
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID  and DocumentDate between @StartDate and @EndDate
+
+					union all
+    
+		    select ISNULL (MAX(CAST(DocumentNo AS INT)),0)+1 as DocumentNo
+		    FROM Operations_CasingTallyMaster
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID  and DocumentDate between @StartDate and @EndDate
+
+					union all
+    
+		    select ISNULL (MAX(CAST(DocumentNo AS INT)),0)+1 as DocumentNo
+		    FROM Operations_DecadeResistorBoxMaster
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID  and DocumentDate between @StartDate and @EndDate
+
+			union all
+    
+		    select ISNULL (MAX(CAST(DocumentNo AS INT)),0)+1 as DocumentNo
+		    FROM Operations_EddyCurrentInspectionMaster
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID  and DocumentDate between @StartDate and @EndDate
+
+						union all
+    
+		    select ISNULL (MAX(CAST(DocumentNo AS INT)),0)+1 as DocumentNo
+		    FROM Operations_HeavyWeightDrillPipeInspectionMaster
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID  and DocumentDate between @StartDate and @EndDate
+
+						union all
+    
+		    select ISNULL (MAX(CAST(DocumentNo AS INT)),0)+1 as DocumentNo
+		    FROM Operations_InspectionMaster
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID  and DocumentDate between @StartDate and @EndDate
+
+						union all
+    
+		    select ISNULL (MAX(CAST(DocumentNo AS INT)),0)+1 as DocumentNo
+		    FROM Operations_LiquidPenetrantMaster
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID  and DocumentDate between @StartDate and @EndDate
+
+						union all
+    
+		    select ISNULL (MAX(CAST(DocumentNo AS INT)),0)+1 as DocumentNo
+		    FROM Operations_MagneticParticleMaster
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID  and DocumentDate between @StartDate and @EndDate
+
+						union all
+    
+		    select ISNULL (MAX(CAST(DocumentNo AS INT)),0)+1 as DocumentNo
+		    FROM Operations_NearBitStabilizerInspectionMaster
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID  and DocumentDate between @StartDate and @EndDate
+
+						union all
+    
+		    select ISNULL (MAX(CAST(DocumentNo AS INT)),0)+1 as DocumentNo
+		    FROM Operations_PressureWitnessTestMaster
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID  and DocumentDate between @StartDate and @EndDate
+
+						union all
+    
+		    select ISNULL (MAX(CAST(DocumentNo AS INT)),0)+1 as DocumentNo
+		    FROM Operations_PRVCalibrationMaster
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID  and DocumentDate between @StartDate and @EndDate
+
+						union all
+    
+		    select ISNULL (MAX(CAST(DocumentNo AS INT)),0)+1 as DocumentNo
+		    FROM Operations_PTIScopeTallyInspectionMaster
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID  and DocumentDate between @StartDate and @EndDate
+
+						union all
+    
+		    select ISNULL (MAX(CAST(DocumentNo AS INT)),0)+1 as DocumentNo
+		    FROM Operations_SleevesCalibrationMaster
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID  and DocumentDate between @StartDate and @EndDate
+
+						union all
+    
+		    select ISNULL (MAX(CAST(DocumentNo AS INT)),0)+1 as DocumentNo
+		    FROM Operations_StringStablizerInspectionMaster
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID  and DocumentDate between @StartDate and @EndDate
+
+						union all
+    
+		    select ISNULL (MAX(CAST(DocumentNo AS INT)),0)+1 as DocumentNo
+		    FROM Operations_ToolsInspectionBXBMaster
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID  and DocumentDate between @StartDate and @EndDate
+
+						union all
+    
+		    select ISNULL (MAX(CAST(DocumentNo AS INT)),0)+1 as DocumentNo
+		    FROM Operations_ToolsInspectionMaster
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID  and DocumentDate between @StartDate and @EndDate
+
+						union all
+    
+		    select ISNULL (MAX(CAST(DocumentNo AS INT)),0)+1 as DocumentNo
+		    FROM Operations_ToolsInspectionPXPMaster
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID  and DocumentDate between @StartDate and @EndDate
+
+						union all
+    
+		    select ISNULL (MAX(CAST(DocumentNo AS INT)),0)+1 as DocumentNo
+		    FROM Operations_TubingInspectionTallyMaster
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID  and DocumentDate between @StartDate and @EndDate
+
+						union all
+    
+		    select ISNULL (MAX(CAST(DocumentNo AS INT)),0)+1 as DocumentNo
+		    FROM Operations_UltrasonicInspectionMaster
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID  and DocumentDate between @StartDate and @EndDate
+
+						union all
+    
+		    select ISNULL (MAX(CAST(DocumentNo AS INT)),0)+1 as DocumentNo
+		    FROM Operations_VisualInspectionOfThreadsMaster
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID  and DocumentDate between @StartDate and @EndDate
+
+			union all
+
+			select ISNULL (MAX(CAST(DocumentNo AS INT)),0)+1 as DocumentNo
+		    FROM Operations_CalibrationPressureMaster
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID  and DocumentDate between @StartDate and @EndDate
+
+			union all
+
+			select ISNULL (MAX(CAST(DocumentNo AS INT)),0)+1 as DocumentNo
+		    FROM Operations_CalibrationTemperatureMaster
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID  and DocumentDate between @StartDate and @EndDate
+
+			union all
+
+			select ISNULL (MAX(CAST(DocumentNo AS INT)),0)+1 as DocumentNo
+		    FROM Operations_CalibrationLoadCellMaster
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID  and DocumentDate between @StartDate and @EndDate
+
+			union all
+
+			select ISNULL (MAX(CAST(DocumentNo AS INT)),0)+1 as DocumentNo
+		    FROM Operations_CalibrationStatorMaster
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID  and DocumentDate between @StartDate and @EndDate
+
+			
+			union all
+
+			select ISNULL (MAX(CAST(DocumentNo AS INT)),0)+1 as DocumentNo
+		    FROM Operations_CalibrationClampMaster
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID  and DocumentDate between @StartDate and @EndDate
+
+					union all
+
+			select ISNULL (MAX(CAST(DocumentNo AS INT)),0)+1 as DocumentNo
+		    FROM Operations_UltrasonicWallThicknessMaster
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID  and DocumentDate between @StartDate and @EndDate
+
+				UNION ALL
+			select ISNULL (MAX(CAST(DocumentNo AS INT)),0)+1 as DocumentNo
+		    FROM [Fabrics_WastageHeader]
+		    where  CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID
+
+			union all
+
+					select ISNULL (MAX(CAST(DocumentNo AS INT)),0)+1 as DocumentNo
+		    FROM Operations_ConsumptionMaster
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID  and DocumentDate between @StartDate and @EndDate
+
+
+        ) MaxDocumentNo
+    ) tbl
+    group by tbl.FromNo, tbl.ToNo, tbl.DocumentNo
+    order by DocumentNo Desc
+End</value>
+  </data>
+  <data name="Query_HasChildRecordsFiscalForPF" xml:space="preserve">
+    <value>Declare @IsFixedAssetOn varchar(5);
+Select @IsFixedAssetOn = FieldValue1 From Set_Parameter Where FieldName = 'IsFixedAsset';
+
+
+Declare @IsVehicleFlagOn varchar(5);
+Select @IsVehicleFlagOn = FieldValue1 From Set_Parameter Where FieldName = 'IsVehicle'
+
+Declare @StartDate DateTime , @EndDate DateTime;
+Select @StartDate = StartDate from {0}.dbo.SET_PeriodCustom where FiscalId = @CurrentFiscalID
+Select @EndDate = EndDate from {0}.dbo.SET_PeriodCustom where FiscalId = @CurrentFiscalID
+
+if(@IsFixedAssetOn = 'true')
+Begin
+    SELECT IsNull(SUM(tbl.DocumentNo), 0)DocumentNo, isnull(sum(tbl.HasRangeDefined), 0) HasRangeDefined, tbl.FromNo, tbl.ToNo
+    FROM 
+    (
+	    select case when COUNT(DocumentTypeID) &gt; 0 then 1 else 0 end HasRangeDefined, FromNo, ToNo, 0 DocumentNo
+	    from {0}.dbo.SET_DocumentSequence
+        where DocumentTypeID = @DocumentTypeID and CompanyID = @CompanyID and PeriodID = @PeriodID and [Status] = 1 AND IsActive = @IsActive 
+        group by  FromNo,ToNo
+    
+        union all
+    
+        select 0 HasRangeDefined, 0 FromNo, 0 ToNo, MAX(MaxDocumentNo.DocumentNo) as DocumentNo From
+        (
+		    select ISNULL (MAX(DocumentNo),0)+1 as DocumentNo
+		    FROM {0}.dbo.GL_TransactionHeader
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID and DocumentDate between @StartDate and @EndDate
+    
+		    union all
+    
+		    Select IsNull(MAX(DocumentNo), 0) + 1 as DocumentNo
+		    FROM {0}.dbo.PUR_EnquiryHeader
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID and EnquiryDate between @StartDate and @EndDate
+
+		    union all
+    
+		    select ISNULL (MAX(CAST(DocumentNumber AS INT)),0)+1 as DocumentNo
+		    FROM {0}.dbo.AP_PurchaseOrderHeader
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and TypeCode = @DocumentTypeID  and DocumentDate between @StartDate and @EndDate
+
+		    union all
+    
+		    select ISNULL (MAX(DocumentNo),0)+1 as DocumentNo
+		    FROM {0}.dbo.INV_StockTransactionHeader
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID and DocumentDate between @StartDate and @EndDate
+
+		    union all
+    
+		    Select IsNull(MAX(CAST(InvoiceNumber AS INT)), 0) + 1 as DocumentNo
+		    FROM {0}.dbo.AR_InvoiceHeader
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and InvoiceType = @DocumentTypeID and InvoiceDate between @StartDate and @EndDate
+
+		    union all
+    
+		    Select IsNull(MAX(DocumentNo), 0) + 1 as DocumentNo
+		    FROM {0}.dbo.AR_ReceiptTransactionHeader
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID And DocumentTypeID = @DocumentTypeID and DocumentDate between @StartDate and @EndDate
+
+		    union all
+    
+		    select ISNULL (MAX(CAST(ContractNo AS INT)),0)+1 as DocumentNo
+		    FROM {0}.dbo.SAL_OrderHeader
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and SaleContractTypeID = @DocumentTypeID and ContractDate between @StartDate and @EndDate
+
+			union all
+    
+		    select ISNULL (MAX(CAST(AnnualBudgetNo AS INT)),0)+1 as DocumentNo
+		    FROM {0}.dbo.AnnualBudget_Header
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and AnnualBudgetTypeID = @DocumentTypeID and AnnualBudgetDate between @StartDate and @EndDate
+
+			union all
+    
+		    select ISNULL (MAX(CAST(ContractNo AS INT)),0)+1 as DocumentNo
+		    FROM {0}.dbo.SAL_ContractHeader
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and SaleContractTypeID = @DocumentTypeID and ContractDate between @StartDate and @EndDate
+
+		    union all
+    
+		    select ISNULL (MAX(CAST(DeliveryOrderNo AS INT)),0)+1 as DocumentNo
+		    FROM {0}.dbo.SAL_DeliveryOrderHeader
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID and DODate between @StartDate and @EndDate
+
+			 union all
+    
+		    select ISNULL (MAX(CAST(DeliveryContractNo AS INT)),0)+1 as DocumentNo
+		    FROM {0}.dbo.SAL_DeliveryContractHeader
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID and DODate between @StartDate and @EndDate
+
+		    union all
+    
+		    select ISNULL (MAX(CAST(DispatchNo AS INT)),0)+1 as DocumentNo
+		    FROM {0}.dbo.SAL_DispatchHeader
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID and DispatchDate between @StartDate and @EndDate
+
+		    union all
+    
+		    select ISNULL (MAX(CAST(InvoiceNumber AS INT)),0)+1 as DocumentNo
+		    FROM {0}.dbo.SAL_InvoiceHeader
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and InvoiceType = @DocumentTypeID and InvoiceDate between @StartDate and @EndDate
+
+		    union all
+    
+		    Select IsNull(MAX(DocumentNo), 0) + 1 as DocumentNo
+		    FROM {0}.dbo.AP_PaymentHeader
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID and DocumentDate between @StartDate and @EndDate
+		
+            union all
+    
+		    Select IsNull(MAX(DocumentNo), 0) + 1 as DocumentNo
+		    FROM {0}.dbo.Gate_OutwardHeader
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID and DocumentDate between @StartDate and @EndDate
+
+		    union all
+
+		    Select IsNull(MAX(DocumentNo), 0) + 1 as DocumentNo
+		    FROM {0}.dbo.FA_AssetTransfer
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID and DocumentDate between @StartDate and @EndDate
+
+            union all
+
+		    Select IsNull(MAX(DocumentNo), 0) + 1 as DocumentNo
+		    FROM {0}.dbo.SAL_ReverseHeader
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID and CreateDate between @StartDate and @EndDate
+
+            union all
+
+            Select IsNull(MAX(DocumentNo), 0) + 1 as DocumentNo
+		    FROM {0}.dbo.FA_DepreciationProcess
+		    where CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID and FAUpTo between @StartDate and @EndDate
+           union all
+
+           select ISNULL (MAX(CAST(DocumentNo AS INT)),0)+1 as DocumentNo
+		    FROM {0}.dbo.INV_ItemsPriceHistory
+		    where  CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID
+
+				UNION ALL
+			select ISNULL (MAX(CAST(DocumentNo AS INT)),0)+1 as DocumentNo
+		    FROM {0}.dbo.[Fabrics_WastageHeader]
+		    where  CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID
+
+
+        ) MaxDocumentNo
+    ) tbl
+    group by tbl.FromNo, tbl.ToNo, tbl.DocumentNo
+    order by tbl.DocumentNo Desc
+End
+Else if(@IsVehicleFlagOn = 'true')
+Begin
+    SELECT IsNull(SUM(tbl.DocumentNo), 0)DocumentNo, isnull(sum(tbl.HasRangeDefined), 0) HasRangeDefined, tbl.FromNo, tbl.ToNo
+    FROM 
+    (
+	    select case when COUNT(DocumentTypeID) &gt; 0 then 1 else 0 end HasRangeDefined, FromNo, ToNo, 0 DocumentNo
+	    from {0}.dbo.SET_DocumentSequence
+        where DocumentTypeID = @DocumentTypeID and CompanyID = @CompanyID and PeriodID = @PeriodID and [Status] = 1 AND IsActive = @IsActive 
+        group by  FromNo,ToNo
+    
+        union all
+    
+        select 0 HasRangeDefined, 0 FromNo, 0 ToNo, MAX(MaxDocumentNo.DocumentNo) as DocumentNo From
+        (
+		    select ISNULL (MAX(DocumentNo),0)+1 as DocumentNo
+		    FROM {0}.dbo.GL_TransactionHeader
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID  and DocumentDate between @StartDate and @EndDate
+    
+		    union all
+    
+		    Select IsNull(MAX(DocumentNo), 0) + 1 as DocumentNo
+		    FROM {0}.dbo.PUR_EnquiryHeader
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID  and EnquiryDate between @StartDate and @EndDate
+
+		    union all
+    
+		    select ISNULL (MAX(CAST(DocumentNumber AS INT)),0)+1 as DocumentNo
+		    FROM {0}.dbo.AP_PurchaseOrderHeader
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and TypeCode = @DocumentTypeID  and DocumentDate between @StartDate and @EndDate
+
+		    union all
+    
+		    select ISNULL (MAX(DocumentNo),0)+1 as DocumentNo
+		    FROM {0}.dbo.INV_StockTransactionHeader
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID  and DocumentDate between @StartDate and @EndDate
+
+		    union all
+    
+		    Select IsNull(MAX(CAST(InvoiceNumber AS INT)), 0) + 1 as DocumentNo
+		    FROM {0}.dbo.AR_InvoiceHeader
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and InvoiceType = @DocumentTypeID  and InvoiceDate between @StartDate and @EndDate
+
+		    union all
+    
+		    Select IsNull(MAX(DocumentNo), 0) + 1 as DocumentNo
+		    FROM {0}.dbo.AR_ReceiptTransactionHeader
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID And DocumentTypeID = @DocumentTypeID  and DocumentDate between @StartDate and @EndDate
+
+		    union all
+    
+		    select ISNULL (MAX(CAST(ContractNo AS INT)),0)+1 as DocumentNo
+		    FROM {0}.dbo.SAL_OrderHeader
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and SaleContractTypeID = @DocumentTypeID  and ContractDate between @StartDate and @EndDate
+
+			Union all
+
+		  select ISNULL (MAX(CAST(AnnualBudgetNo AS INT)),0)+1 as DocumentNo
+		    FROM {0}.dbo.AnnualBudget_Header
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and AnnualBudgetTypeID = @DocumentTypeID and AnnualBudgetDate between @StartDate and @EndDate
+
+			union all
+
+			select ISNULL (MAX(CAST(ContractNo AS INT)),0)+1 as DocumentNo
+		    FROM {0}.dbo.SAL_ContractHeader
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and SaleContractTypeID = @DocumentTypeID  and ContractDate between @StartDate and @EndDate
+
+		    union all
+    
+		    select ISNULL (MAX(CAST(DeliveryOrderNo AS INT)),0)+1 as DocumentNo
+		    FROM {0}.dbo.SAL_DeliveryOrderHeader
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID  and DODate between @StartDate and @EndDate
+
+			union all
+    
+		    select ISNULL (MAX(CAST(DeliveryContractNo AS INT)),0)+1 as DocumentNo
+		    FROM {0}.dbo.SAL_DeliveryContractHeader
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID  and DODate between @StartDate and @EndDate
+
+		    union all
+    
+		    select ISNULL (MAX(CAST(DispatchNo AS INT)),0)+1 as DocumentNo
+		    FROM {0}.dbo.SAL_DispatchHeader
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID  and DispatchDate between @StartDate and @EndDate
+
+		    union all
+    
+		    select ISNULL (MAX(CAST(InvoiceNumber AS INT)),0)+1 as DocumentNo
+		    FROM {0}.dbo.SAL_InvoiceHeader
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and InvoiceType = @DocumentTypeID  and InvoiceDate between @StartDate and @EndDate
+
+		    union all
+    
+		    Select IsNull(MAX(DocumentNo), 0) + 1 as DocumentNo
+		    FROM {0}.dbo.AP_PaymentHeader
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID  and DocumentDate between @StartDate and @EndDate
+
+            union all
+    
+		    Select IsNull(MAX(DocumentNo), 0) + 1 as DocumentNo
+		    FROM {0}.dbo.Gate_OutwardHeader
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID  and DocumentDate between @StartDate and @EndDate
+
+            union all
+
+		    Select IsNull(MAX(DocumentNo), 0) + 1 as DocumentNo
+		    FROM {0}.dbo.SAL_ReverseHeader
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID  --and DocumentDate between @StartDate and @EndDate
+
+            union all 
+		    
+		    Select IsNull(MAX(DocumentNo), 0) + 1 as DocumentNo
+		    FROM {0}.dbo.AP_ProductionJobCardHeader
+		    where ComapnyID = @CompanyID and DocumentTypeID = @DocumentTypeID  and DocumentDate between @StartDate and @EndDate
+
+            union all 
+
+            Select IsNull(MAX(DocumentNo), 0) + 1 as DocumentNo
+	        from {0}.dbo.AS_InspectionHeader
+	        where CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID  and DocumentDate between @StartDate and @EndDate
+
+
+            union all 
+		    
+		    Select IsNull(MAX(DocumentNo), 0) + 1 as DocumentNo
+		    FROM {0}.dbo.MRPHeader
+		    where CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID  and DocumentDate between @StartDate and @EndDate
+            union all
+
+           select ISNULL (MAX(CAST(DocumentNo AS INT)),0)+1 as DocumentNo
+		    FROM {0}.dbo.INV_ItemsPriceHistory
+		    where  CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID  and DocumentDate between @StartDate and @EndDate
+			
+				UNION ALL
+			select ISNULL (MAX(CAST(DocumentNo AS INT)),0)+1 as DocumentNo
+		    FROM {0}.dbo.[Fabrics_WastageHeader]
+		    where  CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID
+
+        ) MaxDocumentNo
+    ) tbl
+    group by tbl.FromNo, tbl.ToNo, tbl.DocumentNo
+    order by DocumentNo Desc
+End 
+Else
+Begin
+    SELECT IsNull(SUM(tbl.DocumentNo), 0)DocumentNo, isnull(sum(tbl.HasRangeDefined), 0) HasRangeDefined, tbl.FromNo, tbl.ToNo
+    FROM 
+    (
+	    select case when COUNT(DocumentTypeID) &gt; 0 then 1 else 0 end HasRangeDefined, FromNo, ToNo, 0 DocumentNo
+	    from {0}.dbo.SET_DocumentSequence
+        where DocumentTypeID = @DocumentTypeID and CompanyID = @CompanyID and PeriodID = @PeriodID and [Status] = 1 AND IsActive = @IsActive 
+        group by  FromNo,ToNo
+    
+        union all
+    
+        select 0 HasRangeDefined, 0 FromNo, 0 ToNo, MAX(MaxDocumentNo.DocumentNo) as DocumentNo From
+        (
+		    select ISNULL (MAX(DocumentNo),0)+1 as DocumentNo
+		    FROM {0}.dbo.GL_TransactionHeader
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID  and DocumentDate between @StartDate and @EndDate
+    
+			union all
+    
+		    select ISNULL (MAX(CAST(DocumentNo AS INT)),0)+1 as DocumentNo
+		    FROM {0}.dbo.Operations_ContractMaster
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID  and DocumentDate between @StartDate and @EndDate
+
+			union all
+    
+		    select ISNULL (MAX(CAST(DocumentNo AS INT)),0)+1 as DocumentNo
+		    FROM {0}.dbo.Operations_WorkOrderMaster
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID  and DocumentDate between @StartDate and @EndDate
+
+		    union all
+    
+		    Select IsNull(MAX(DocumentNo), 0) + 1 as DocumentNo
+		    FROM {0}.dbo.PUR_EnquiryHeader
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID  and EnquiryDate between @StartDate and @EndDate
+
+		    union all
+    
+		    select ISNULL (MAX(CAST(DocumentNumber AS INT)),0)+1 as DocumentNo
+		    FROM {0}.dbo.AP_PurchaseOrderHeader
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and TypeCode = @DocumentTypeID  and DocumentDate between @StartDate and @EndDate
+
+		    union all
+    
+		    select ISNULL (MAX(DocumentNo),0)+1 as DocumentNo
+		    FROM {0}.dbo.INV_StockTransactionHeader
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID  and DocumentDate between @StartDate and @EndDate
+
+		    union all
+    
+		    Select IsNull(MAX(CAST(InvoiceNumber AS INT)), 0) + 1 as DocumentNo
+		    FROM {0}.dbo.AR_InvoiceHeader
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and InvoiceType = @DocumentTypeID  and InvoiceDate between @StartDate and @EndDate
+
+		    union all
+    
+		    Select IsNull(MAX(DocumentNo), 0) + 1 as DocumentNo
+		    FROM {0}.dbo.AR_ReceiptTransactionHeader
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID And DocumentTypeID = @DocumentTypeID  and DocumentDate between @StartDate and @EndDate
+
+		    union all
+    
+		    select ISNULL (MAX(CAST(ContractNo AS INT)),0)+1 as DocumentNo
+		    FROM {0}.dbo.SAL_OrderHeader
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and SaleContractTypeID = @DocumentTypeID  and ContractDate between @StartDate and @EndDate
+
+			Union all
+
+		   select ISNULL (MAX(CAST(AnnualBudgetNo AS INT)),0)+1 as DocumentNo
+		    FROM {0}.dbo.AnnualBudget_Header
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and AnnualBudgetTypeID = @DocumentTypeID and AnnualBudgetDate between @StartDate and @EndDate
+
+			 union all
+    
+		    select ISNULL (MAX(CAST(ContractNo AS INT)),0)+1 as DocumentNo
+		    FROM {0}.dbo.SAL_ContractHeader
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and SaleContractTypeID = @DocumentTypeID  and ContractDate between @StartDate and @EndDate
+
+		    union all
+    
+		    select ISNULL (MAX(CAST(DeliveryOrderNo AS INT)),0)+1 as DocumentNo
+		    FROM {0}.dbo.SAL_DeliveryOrderHeader
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID  and DODate between @StartDate and @EndDate
+
+			  union all
+    
+		    select ISNULL (MAX(CAST(DeliveryContractNo AS INT)),0)+1 as DocumentNo
+		    FROM {0}.dbo.SAL_DeliveryContractHeader
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID  and DODate between @StartDate and @EndDate
+
+		    union all
+    
+		    select ISNULL (MAX(CAST(DispatchNo AS INT)),0)+1 as DocumentNo
+		    FROM {0}.dbo.SAL_DispatchHeader
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID  and DispatchDate between @StartDate and @EndDate
+
+		    union all
+    
+		    select ISNULL (MAX(CAST(InvoiceNumber AS INT)),0)+1 as DocumentNo
+		    FROM {0}.dbo.SAL_InvoiceHeader
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and InvoiceType = @DocumentTypeID  and InvoiceDate between @StartDate and @EndDate
+
+		    union all
+    
+		    Select IsNull(MAX(DocumentNo), 0) + 1 as DocumentNo
+		    FROM {0}.dbo.AP_PaymentHeader
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID  and DocumentDate between @StartDate and @EndDate
+
+            union all
+    
+		    Select IsNull(MAX(DocumentNo), 0) + 1 as DocumentNo
+		    FROM {0}.dbo.Gate_OutwardHeader
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID  and DocumentDate between @StartDate and @EndDate
+
+            union all
+
+		    Select IsNull(MAX(DocumentNo), 0) + 1 as DocumentNo
+		    FROM {0}.dbo.SAL_ReverseHeader
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID  and CreateDate between @StartDate and @EndDate
+             union all
+			 
+			 select ISNULL (MAX(CAST(DocumentNumber AS INT)),0)+1 as DocumentNo
+		    FROM {0}.dbo.AP_SaleContractHeader
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and TypeCode = @DocumentTypeID  and DocumentDate between @StartDate and @EndDate
+
+		    union all
+    
+           select ISNULL (MAX(CAST(DocumentNo AS INT)),0)+1 as DocumentNo
+		    FROM {0}.dbo.INV_ItemsPriceHistory
+		    where  CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID  --and DocumentDate between @StartDate and @EndDate
+
+			union all
+    
+		    select ISNULL (MAX(CAST(DocumentNo AS INT)),0)+1 as DocumentNo
+		    FROM {0}.dbo.Operations_CalibrationCrimpingMaster
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID  and DocumentDate between @StartDate and @EndDate
+
+			union all
+    
+		    select ISNULL (MAX(CAST(DocumentNo AS INT)),0)+1 as DocumentNo
+		    FROM {0}.dbo.Operations_CalibrationMicrometerMaster
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID  and DocumentDate between @StartDate and @EndDate
+
+					union all
+    
+		    select ISNULL (MAX(CAST(DocumentNo AS INT)),0)+1 as DocumentNo
+		    FROM {0}.dbo.Operations_CalibrationTorqueMaster
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID  and DocumentDate between @StartDate and @EndDate
+
+					union all
+    
+		    select ISNULL (MAX(CAST(DocumentNo AS INT)),0)+1 as DocumentNo
+		    FROM {0}.dbo.Operations_CasingTallyMaster
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID  and DocumentDate between @StartDate and @EndDate
+
+					union all
+    
+		    select ISNULL (MAX(CAST(DocumentNo AS INT)),0)+1 as DocumentNo
+		    FROM {0}.dbo.Operations_DecadeResistorBoxMaster
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID  and DocumentDate between @StartDate and @EndDate
+
+			union all
+    
+		    select ISNULL (MAX(CAST(DocumentNo AS INT)),0)+1 as DocumentNo
+		    FROM {0}.dbo.Operations_EddyCurrentInspectionMaster
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID  and DocumentDate between @StartDate and @EndDate
+
+						union all
+    
+		    select ISNULL (MAX(CAST(DocumentNo AS INT)),0)+1 as DocumentNo
+		    FROM {0}.dbo.Operations_HeavyWeightDrillPipeInspectionMaster
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID  and DocumentDate between @StartDate and @EndDate
+
+						union all
+    
+		    select ISNULL (MAX(CAST(DocumentNo AS INT)),0)+1 as DocumentNo
+		    FROM {0}.dbo.Operations_InspectionMaster
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID  and DocumentDate between @StartDate and @EndDate
+
+						union all
+    
+		    select ISNULL (MAX(CAST(DocumentNo AS INT)),0)+1 as DocumentNo
+		    FROM {0}.dbo.Operations_LiquidPenetrantMaster
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID  and DocumentDate between @StartDate and @EndDate
+
+						union all
+    
+		    select ISNULL (MAX(CAST(DocumentNo AS INT)),0)+1 as DocumentNo
+		    FROM {0}.dbo.Operations_MagneticParticleMaster
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID  and DocumentDate between @StartDate and @EndDate
+
+						union all
+    
+		    select ISNULL (MAX(CAST(DocumentNo AS INT)),0)+1 as DocumentNo
+		    FROM {0}.dbo.Operations_NearBitStabilizerInspectionMaster
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID  and DocumentDate between @StartDate and @EndDate
+
+						union all
+    
+		    select ISNULL (MAX(CAST(DocumentNo AS INT)),0)+1 as DocumentNo
+		    FROM {0}.dbo.Operations_PressureWitnessTestMaster
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID  and DocumentDate between @StartDate and @EndDate
+
+						union all
+    
+		    select ISNULL (MAX(CAST(DocumentNo AS INT)),0)+1 as DocumentNo
+		    FROM {0}.dbo.Operations_PRVCalibrationMaster
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID  and DocumentDate between @StartDate and @EndDate
+
+						union all
+    
+		    select ISNULL (MAX(CAST(DocumentNo AS INT)),0)+1 as DocumentNo
+		    FROM {0}.dbo.Operations_PTIScopeTallyInspectionMaster
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID  and DocumentDate between @StartDate and @EndDate
+
+						union all
+    
+		    select ISNULL (MAX(CAST(DocumentNo AS INT)),0)+1 as DocumentNo
+		    FROM {0}.dbo.Operations_SleevesCalibrationMaster
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID  and DocumentDate between @StartDate and @EndDate
+
+						union all
+    
+		    select ISNULL (MAX(CAST(DocumentNo AS INT)),0)+1 as DocumentNo
+		    FROM {0}.dbo.Operations_StringStablizerInspectionMaster
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID  and DocumentDate between @StartDate and @EndDate
+
+						union all
+    
+		    select ISNULL (MAX(CAST(DocumentNo AS INT)),0)+1 as DocumentNo
+		    FROM {0}.dbo.Operations_ToolsInspectionBXBMaster
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID  and DocumentDate between @StartDate and @EndDate
+
+						union all
+    
+		    select ISNULL (MAX(CAST(DocumentNo AS INT)),0)+1 as DocumentNo
+		    FROM {0}.dbo.Operations_ToolsInspectionMaster
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID  and DocumentDate between @StartDate and @EndDate
+
+						union all
+    
+		    select ISNULL (MAX(CAST(DocumentNo AS INT)),0)+1 as DocumentNo
+		    FROM {0}.dbo.Operations_ToolsInspectionPXPMaster
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID  and DocumentDate between @StartDate and @EndDate
+
+						union all
+    
+		    select ISNULL (MAX(CAST(DocumentNo AS INT)),0)+1 as DocumentNo
+		    FROM {0}.dbo.Operations_TubingInspectionTallyMaster
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID  and DocumentDate between @StartDate and @EndDate
+
+						union all
+    
+		    select ISNULL (MAX(CAST(DocumentNo AS INT)),0)+1 as DocumentNo
+		    FROM {0}.dbo.Operations_UltrasonicInspectionMaster
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID  and DocumentDate between @StartDate and @EndDate
+
+						union all
+    
+		    select ISNULL (MAX(CAST(DocumentNo AS INT)),0)+1 as DocumentNo
+		    FROM {0}.dbo.Operations_VisualInspectionOfThreadsMaster
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID  and DocumentDate between @StartDate and @EndDate
+
+			union all
+
+			select ISNULL (MAX(CAST(DocumentNo AS INT)),0)+1 as DocumentNo
+		    FROM {0}.dbo.Operations_CalibrationPressureMaster
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID  and DocumentDate between @StartDate and @EndDate
+
+			union all
+
+			select ISNULL (MAX(CAST(DocumentNo AS INT)),0)+1 as DocumentNo
+		    FROM {0}.dbo.Operations_CalibrationTemperatureMaster
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID  and DocumentDate between @StartDate and @EndDate
+
+			union all
+
+			select ISNULL (MAX(CAST(DocumentNo AS INT)),0)+1 as DocumentNo
+		    FROM {0}.dbo.Operations_CalibrationLoadCellMaster
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID  and DocumentDate between @StartDate and @EndDate
+
+			union all
+
+			select ISNULL (MAX(CAST(DocumentNo AS INT)),0)+1 as DocumentNo
+		    FROM {0}.dbo.Operations_CalibrationStatorMaster
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID  and DocumentDate between @StartDate and @EndDate
+
+			
+			union all
+
+			select ISNULL (MAX(CAST(DocumentNo AS INT)),0)+1 as DocumentNo
+		    FROM {0}.dbo.Operations_CalibrationClampMaster
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID  and DocumentDate between @StartDate and @EndDate
+
+					union all
+
+			select ISNULL (MAX(CAST(DocumentNo AS INT)),0)+1 as DocumentNo
+		    FROM {0}.dbo.Operations_UltrasonicWallThicknessMaster
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID  and DocumentDate between @StartDate and @EndDate
+
+				UNION ALL
+			select ISNULL (MAX(CAST(DocumentNo AS INT)),0)+1 as DocumentNo
+		    FROM {0}.dbo.[Fabrics_WastageHeader]
+		    where  CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID
+
+			union all
+
+					select ISNULL (MAX(CAST(DocumentNo AS INT)),0)+1 as DocumentNo
+		    FROM {0}.dbo.Operations_ConsumptionMaster
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID  and DocumentDate between @StartDate and @EndDate
+
+
+        ) MaxDocumentNo
+    ) tbl
+    group by tbl.FromNo, tbl.ToNo, tbl.DocumentNo
+    order by DocumentNo Desc
+End</value>
+  </data>
+  <data name="Query_HasChildRecordsForPF" xml:space="preserve">
+    <value>Declare @IsFixedAssetOn varchar(5);
+Select @IsFixedAssetOn = FieldValue1 From Set_Parameter Where FieldName = 'IsFixedAsset';
+
+
+Declare @IsVehicleFlagOn varchar(5);
+Select @IsVehicleFlagOn = FieldValue1 From Set_Parameter Where FieldName = 'IsVehicle'
+
+if(@IsFixedAssetOn = 'true')
+Begin
+    SELECT IsNull(SUM(tbl.DocumentNo), 0)DocumentNo, isnull(sum(tbl.HasRangeDefined), 0) HasRangeDefined, tbl.FromNo, tbl.ToNo
+    FROM 
+    (
+	    select case when COUNT(DocumentTypeID) &gt; 0 then 1 else 0 end HasRangeDefined, FromNo, ToNo, 0 DocumentNo
+	    from {0}.dbo.SET_DocumentSequence
+        where DocumentTypeID = @DocumentTypeID and CompanyID = @CompanyID and PeriodID = @PeriodID and [Status] = 1 AND IsActive = @IsActive 
+        group by  FromNo,ToNo
+    
+        union all
+    
+        select 0 HasRangeDefined, 0 FromNo, 0 ToNo, MAX(MaxDocumentNo.DocumentNo) as DocumentNo From
+        (
+		    select ISNULL (MAX(DocumentNo),0)+1 as DocumentNo
+		    FROM {0}.dbo.GL_TransactionHeader
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID
+    
+		    union all
+    
+		    Select IsNull(MAX(DocumentNo), 0) + 1 as DocumentNo
+		    FROM {0}.dbo.PUR_EnquiryHeader
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID
+
+		    union all
+    
+		    select ISNULL (MAX(CAST(DocumentNumber AS INT)),0)+1 as DocumentNo
+		    FROM {0}.dbo.AP_PurchaseOrderHeader
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and TypeCode = @DocumentTypeID
+
+		    union all
+    
+		    select ISNULL (MAX(DocumentNo),0)+1 as DocumentNo
+		    FROM {0}.dbo.INV_StockTransactionHeader
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID
+
+		    union all
+    
+		    Select IsNull(MAX(CAST(InvoiceNumber AS INT)), 0) + 1 as DocumentNo
+		    FROM {0}.dbo.AR_InvoiceHeader
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and InvoiceType = @DocumentTypeID
+
+		    union all
+    
+		    Select IsNull(MAX(DocumentNo), 0) + 1 as DocumentNo
+		    FROM {0}.dbo.AR_ReceiptTransactionHeader
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID And DocumentTypeID = @DocumentTypeID
+
+		    union all
+    
+		    select ISNULL (MAX(CAST(ContractNo AS INT)),0)+1 as DocumentNo
+		    FROM {0}.dbo.SAL_OrderHeader
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and SaleContractTypeID = @DocumentTypeID
+
+		    union all
+    
+		    select ISNULL (MAX(CAST(DeliveryOrderNo AS INT)),0)+1 as DocumentNo
+		    FROM {0}.dbo.SAL_DeliveryOrderHeader
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID
+
+		    union all
+    
+		    select ISNULL (MAX(CAST(DispatchNo AS INT)),0)+1 as DocumentNo
+		    FROM {0}.dbo.SAL_DispatchHeader
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID
+
+		    union all
+    
+		    select ISNULL (MAX(CAST(InvoiceNumber AS INT)),0)+1 as DocumentNo
+		    FROM {0}.dbo.SAL_InvoiceHeader
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and InvoiceType = @DocumentTypeID
+
+		    union all
+    
+		    Select IsNull(MAX(DocumentNo), 0) + 1 as DocumentNo
+		    FROM {0}.dbo.AP_PaymentHeader
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID
+		
+            union all
+    
+		    Select IsNull(MAX(DocumentNo), 0) + 1 as DocumentNo
+		    FROM {0}.dbo.Gate_OutwardHeader
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID
+
+		    union all
+
+		    Select IsNull(MAX(DocumentNo), 0) + 1 as DocumentNo
+		    FROM {0}.dbo.FA_AssetTransfer
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID
+
+            union all
+
+		    Select IsNull(MAX(DocumentNo), 0) + 1 as DocumentNo
+		    FROM {0}.dbo.SAL_ReverseHeader
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID
+
+            union all
+
+            Select IsNull(MAX(DocumentNo), 0) + 1 as DocumentNo
+		    FROM {0}.dbo.FA_DepreciationProcess
+		    where CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID
+           union all
+
+           select ISNULL (MAX(CAST(DocumentNo AS INT)),0)+1 as DocumentNo
+		    FROM {0}.dbo.INV_ItemsPriceHistory
+		    where  CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID
+        ) MaxDocumentNo
+    ) tbl
+    group by tbl.FromNo, tbl.ToNo, tbl.DocumentNo
+    order by tbl.DocumentNo Desc
+End
+Else if(@IsVehicleFlagOn = 'true')
+Begin
+    SELECT IsNull(SUM(tbl.DocumentNo), 0)DocumentNo, isnull(sum(tbl.HasRangeDefined), 0) HasRangeDefined, tbl.FromNo, tbl.ToNo
+    FROM 
+    (
+	    select case when COUNT(DocumentTypeID) &gt; 0 then 1 else 0 end HasRangeDefined, FromNo, ToNo, 0 DocumentNo
+	    from {0}.dbo.SET_DocumentSequence
+        where DocumentTypeID = @DocumentTypeID and CompanyID = @CompanyID and PeriodID = @PeriodID and [Status] = 1 AND IsActive = @IsActive 
+        group by  FromNo,ToNo
+    
+        union all
+    
+        select 0 HasRangeDefined, 0 FromNo, 0 ToNo, MAX(MaxDocumentNo.DocumentNo) as DocumentNo From
+        (
+		    select ISNULL (MAX(DocumentNo),0)+1 as DocumentNo
+		    FROM {0}.dbo.GL_TransactionHeader
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID
+    
+		    union all
+    
+		    Select IsNull(MAX(DocumentNo), 0) + 1 as DocumentNo
+		    FROM {0}.dbo.PUR_EnquiryHeader
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID
+
+		    union all
+    
+		    select ISNULL (MAX(CAST(DocumentNumber AS INT)),0)+1 as DocumentNo
+		    FROM {0}.dbo.AP_PurchaseOrderHeader
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and TypeCode = @DocumentTypeID
+
+		    union all
+    
+		    select ISNULL (MAX(DocumentNo),0)+1 as DocumentNo
+		    FROM {0}.dbo.INV_StockTransactionHeader
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID
+
+		    union all
+    
+		    Select IsNull(MAX(CAST(InvoiceNumber AS INT)), 0) + 1 as DocumentNo
+		    FROM {0}.dbo.AR_InvoiceHeader
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and InvoiceType = @DocumentTypeID
+
+		    union all
+    
+		    Select IsNull(MAX(DocumentNo), 0) + 1 as DocumentNo
+		    FROM {0}.dbo.AR_ReceiptTransactionHeader
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID And DocumentTypeID = @DocumentTypeID
+
+		    union all
+    
+		    select ISNULL (MAX(CAST(ContractNo AS INT)),0)+1 as DocumentNo
+		    FROM {0}.dbo.SAL_OrderHeader
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and SaleContractTypeID = @DocumentTypeID
+
+		    union all
+    
+		    select ISNULL (MAX(CAST(DeliveryOrderNo AS INT)),0)+1 as DocumentNo
+		    FROM {0}.dbo.SAL_DeliveryOrderHeader
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID
+
+		    union all
+    
+		    select ISNULL (MAX(CAST(DispatchNo AS INT)),0)+1 as DocumentNo
+		    FROM {0}.dbo.SAL_DispatchHeader
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID
+
+		    union all
+    
+		    select ISNULL (MAX(CAST(InvoiceNumber AS INT)),0)+1 as DocumentNo
+		    FROM {0}.dbo.SAL_InvoiceHeader
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and InvoiceType = @DocumentTypeID
+
+		    union all
+    
+		    Select IsNull(MAX(DocumentNo), 0) + 1 as DocumentNo
+		    FROM {0}.dbo.AP_PaymentHeader
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID
+
+            union all
+    
+		    Select IsNull(MAX(DocumentNo), 0) + 1 as DocumentNo
+		    FROM {0}.dbo.Gate_OutwardHeader
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID
+
+            union all
+
+		    Select IsNull(MAX(DocumentNo), 0) + 1 as DocumentNo
+		    FROM {0}.dbo.SAL_ReverseHeader
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID
+
+            union all 
+		    
+		    Select IsNull(MAX(DocumentNo), 0) + 1 as DocumentNo
+		    FROM {0}.dbo.AP_ProductionJobCardHeader
+		    where ComapnyID = @CompanyID and DocumentTypeID = @DocumentTypeID
+
+            union all 
+
+            Select IsNull(MAX(DocumentNo), 0) + 1 as DocumentNo
+	        from {0}.dbo.AS_InspectionHeader
+	        where CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID
+
+
+            union all 
+		    
+		    Select IsNull(MAX(DocumentNo), 0) + 1 as DocumentNo
+		    FROM {0}.dbo.MRPHeader
+		    where CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID
+            union all
+
+           select ISNULL (MAX(CAST(DocumentNo AS INT)),0)+1 as DocumentNo
+		    FROM {0}.dbo.INV_ItemsPriceHistory
+		    where  CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID
+
+        ) MaxDocumentNo
+    ) tbl
+    group by tbl.FromNo, tbl.ToNo, tbl.DocumentNo
+    order by DocumentNo Desc
+End 
+Else
+Begin
+    SELECT IsNull(SUM(tbl.DocumentNo), 0)DocumentNo, isnull(sum(tbl.HasRangeDefined), 0) HasRangeDefined, tbl.FromNo, tbl.ToNo
+    FROM 
+    (
+	    select case when COUNT(DocumentTypeID) &gt; 0 then 1 else 0 end HasRangeDefined, FromNo, ToNo, 0 DocumentNo
+	    from {0}.dbo.SET_DocumentSequence
+        where DocumentTypeID = @DocumentTypeID and CompanyID = @CompanyID and PeriodID = @PeriodID and [Status] = 1 AND IsActive = @IsActive 
+        group by  FromNo,ToNo
+    
+        union all
+    
+        select 0 HasRangeDefined, 0 FromNo, 0 ToNo, MAX(MaxDocumentNo.DocumentNo) as DocumentNo From
+        (
+		    select ISNULL (MAX(DocumentNo),0)+1 as DocumentNo
+		    FROM {0}.dbo.GL_TransactionHeader
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID
+    
+		    union all
+    
+		    Select IsNull(MAX(DocumentNo), 0) + 1 as DocumentNo
+		    FROM {0}.dbo.PUR_EnquiryHeader
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID
+
+		    union all
+    
+		    select ISNULL (MAX(CAST(DocumentNumber AS INT)),0)+1 as DocumentNo
+		    FROM {0}.dbo.AP_PurchaseOrderHeader
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and TypeCode = @DocumentTypeID
+
+		    union all
+    
+		    select ISNULL (MAX(DocumentNo),0)+1 as DocumentNo
+		    FROM {0}.dbo.INV_StockTransactionHeader
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID
+
+		    union all
+    
+		    Select IsNull(MAX(CAST(InvoiceNumber AS INT)), 0) + 1 as DocumentNo
+		    FROM {0}.dbo.AR_InvoiceHeader
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and InvoiceType = @DocumentTypeID
+
+		    union all
+    
+		    Select IsNull(MAX(DocumentNo), 0) + 1 as DocumentNo
+		    FROM {0}.dbo.AR_ReceiptTransactionHeader
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID And DocumentTypeID = @DocumentTypeID
+
+		    union all
+    
+		    select ISNULL (MAX(CAST(ContractNo AS INT)),0)+1 as DocumentNo
+		    FROM {0}.dbo.SAL_OrderHeader
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and SaleContractTypeID = @DocumentTypeID
+
+		    union all
+    
+		    select ISNULL (MAX(CAST(DeliveryOrderNo AS INT)),0)+1 as DocumentNo
+		    FROM {0}.dbo.SAL_DeliveryOrderHeader
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID
+
+		    union all
+    
+		    select ISNULL (MAX(CAST(DispatchNo AS INT)),0)+1 as DocumentNo
+		    FROM {0}.dbo.SAL_DispatchHeader
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID
+
+		    union all
+    
+		    select ISNULL (MAX(CAST(InvoiceNumber AS INT)),0)+1 as DocumentNo
+		    FROM {0}.dbo.SAL_InvoiceHeader
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and InvoiceType = @DocumentTypeID
+
+		    union all
+    
+		    Select IsNull(MAX(DocumentNo), 0) + 1 as DocumentNo
+		    FROM {0}.dbo.AP_PaymentHeader
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID
+
+            union all
+    
+		    Select IsNull(MAX(DocumentNo), 0) + 1 as DocumentNo
+		    FROM {0}.dbo.Gate_OutwardHeader
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID
+
+            union all
+
+		    Select IsNull(MAX(DocumentNo), 0) + 1 as DocumentNo
+		    FROM {0}.dbo.SAL_ReverseHeader
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID
+             union all
+
+select ISNULL (MAX(CAST(DocumentNumber AS INT)),0)+1 as DocumentNo
+		    FROM {0}.dbo.AP_SaleContractHeader
+		    where PeriodID = @PeriodID and CompanyID = @CompanyID and TypeCode = @DocumentTypeID
+
+		    union all
+    
+           select ISNULL (MAX(CAST(DocumentNo AS INT)),0)+1 as DocumentNo
+		    FROM {0}.dbo.INV_ItemsPriceHistory
+		    where  CompanyID = @CompanyID and DocumentTypeID = @DocumentTypeID
+        ) MaxDocumentNo
+    ) tbl
+    group by tbl.FromNo, tbl.ToNo, tbl.DocumentNo
+    order by DocumentNo Desc
+End</value>
+  </data>
+</root>

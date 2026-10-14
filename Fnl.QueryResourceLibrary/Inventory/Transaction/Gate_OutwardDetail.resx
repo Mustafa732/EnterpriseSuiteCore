@@ -1,0 +1,191 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Query_GetDataForGateEntry" xml:space="preserve">
+    <value>Select 
+
+        [Gate_OutwardDetail].CompanyID,
+		[Gate_OutwardDetail].PeriodID,
+		
+		[Gate_OutwardHeader].DocumentTypeID,
+        [Gate_OutwardDetail].[Gate_OutwardDetailID],
+        [Gate_OutwardDetail].[Gate_OutwardHeaderID],
+        INV_Item.ItemID,
+        [INV_Item].[Description] ,
+        INV_Item.ListPricePerUnit,
+        [Gate_OutwardDetail].TransactionUOMID,
+        [SET_UnitofMeasure].[UOMName],
+        [Gate_OutwardDetail].[TransactionQuantity],
+        '' AS [Action],
+        INV_StockTransactionDetail.StockTransactionID,
+		INV_StockTransactionDetail.SourceLineID,
+		INV_StockTransactionDetail.SerialNo
+        from [Gate_OutwardDetail]
+        inner join INV_Item on INV_Item.ItemID = [Gate_OutwardDetail].ItemID --and INV_Item.CompanyID=[Gate_OutwardDetail].CompanyID
+        INNER JOIN [SET_UnitofMeasure] ON [SET_UnitofMeasure].[UOMID] = [Gate_OutwardDetail].TransactionUOMID AND [SET_UnitofMeasure].[Status] = 1
+        inner join [Gate_OutwardHeader] on [Gate_OutwardHeader].Gate_OutwardHeaderID = Gate_OutwardDetail.gate_OutwardHeaderID
+			and [Gate_OutwardHeader].CompanyID = Gate_OutwardDetail.CompanyID
+			and [Gate_OutwardHeader].PeriodID = Gate_OutwardDetail.PeriodID
+        INNER JOIN INV_StockTransactionDetail ON INV_StockTransactionDetail.SourceHeaderID = [Gate_OutwardDetail].[Gate_OutwardHeaderID]
+AND INV_StockTransactionDetail.SourceLineID = [Gate_OutwardDetail].[Gate_OutwardDetailID]
+		and INV_StockTransactionDetail.CompanyID = Gate_OutwardDetail.CompanyID
+			and INV_StockTransactionDetail.PeriodID = Gate_OutwardDetail.PeriodID
+
+        Where Gate_OutwardDetail.CompanyID = @CompanyID and Gate_OutwardDetail.PeriodID = @PeriodID and [Gate_OutwardDetail].Status = 1
+    AND Gate_OutwardDetail.Gate_OutwardHeaderID = @Gate_OutwardHeaderID</value>
+  </data>
+  <data name="Query_GetDataForPRNReport" xml:space="preserve">
+    <value>Select INV_Item.Description ItemDescription, INV_Item.ItemID, INV_StockTransactionDetail.TransactionQuantity TransactionQuantity, 
+    ((INV_StockTransactionDetail.TransactionQuantity * 50) / 1000) TransactionQuantityMT, 
+    INV_StockTransactionHeader.BatchID, 
+    Set_Batch.Description BatchDescription, 
+    INV_StockTransactionHeader.DocumentDate, 
+    isnull([INV_StockTransactionDetail].QualityID,0) as QualityID, 
+    ISNULL(SET_Quality.QualityName, 'Unknown') as QualityName, 
+    'OnDate' [Type] 
+From INV_StockTransactionHeader 
+    inner JOIN INV_StockTransactionDetail on INV_StockTransactionHeader.StockTransactionID = INV_StockTransactionDetail.StockTransactionID 
+        AND INV_StockTransactionHeader.CompanyID = INV_StockTransactionDetail.CompanyID AND INV_StockTransactionHeader.PeriodID = INV_StockTransactionDetail.PeriodID 
+     inner JOIN SET_Batch on Set_Batch.BatchID = INV_StockTransactionHeader.BatchID --AND Set_Batch.CompanyID = INV_StockTransactionHeader.CompanyID 
+        AND Set_Batch.PeriodID = INV_StockTransactionHeader.PeriodID 
+    JOIN INV_Item on INV_Item.ItemID = INV_StockTransactionDetail.ItemID 
+    LEFT JOIN [SET_Quality] ON [SET_Quality].[QualityID] = [INV_StockTransactionDetail].[QualityID]
+Where INV_StockTransactionHeader.CompanyID = @CompanyID AND INV_StockTransactionHeader.PeriodID = @PeriodID 
+    AND (INV_StockTransactionDetail.ItemID = @ItemID OR @ItemID Is NULL) AND (INV_StockTransactionHeader.BatchID = @BatchID OR @BatchID Is Null) 
+    AND INV_StockTransactionHeader.DocumentTypeID in 
+    (
+        select DocumentTypeID from Set_DocumentType where menuID in 
+        (
+            SELECT [MenuID] FROM ApplicationMenu WHERE MenuPath = @MenuPath
+        ) 
+            AND CompanyID = @CompanyID AND PeriodID = @PeriodID AND Status = 1 AND IsActive =  1
+    )
+    --AND [INV_StockTransactionDetail].[QualityID] = @QualityID 
+    {0} 
+GROUP BY INV_Item.Description, 
+    INV_Item.ItemID, 
+    INV_StockTransactionHeader.BatchID, 
+    Set_Batch.Description, 
+    INV_StockTransactionDetail.TransactionQuantity, 
+    [INV_StockTransactionDetail].QualityID, 
+    SET_Quality.QualityName, 
+    INV_StockTransactionHeader.DocumentDate 
+Order By INV_StockTransactionHeader.DocumentDate</value>
+  </data>
+</root>

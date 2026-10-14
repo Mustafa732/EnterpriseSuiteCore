@@ -1,0 +1,1204 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="GetMonthlyQuantity" xml:space="preserve">
+    <value>--Declare @periodID int
+--set @periodID=1
+
+--Declare @companyID int
+--set @companyID=1
+
+--Declare @FiscalID int
+--set @FiscalID=1
+
+--Declare @StartDate datetime
+--set @StartDate ='2018-10-01 00:00:00.000'
+
+--Declare @EndDate datetime
+--set @EndDate='2019-07-22 00:00:00.000'
+
+--Declare @ProductName Varchar(50)
+--set @ProductName='Molasses'
+
+
+
+
+Select t.ItemDescription as Description ,CAST(Year(t.InvoiceDate) AS VARCHAR(4)) + '-' + Format(t.InvoiceDate,'MMMM') as InvoiceDate
+ , ISNULL(SUM(t.QuantityInvoiced),0) as Quantity 
+--,REPLACE(CONVERT(VARCHAR,CONVERT(MONEY,Round(ISNULL(SUM(t.QuantityInvoiced),0),0)),1), '.00','') as Quantity
+ from (
+Select ARS.CustomerName As BilledtoName, ARS.AddressLine1 AS BilledtoAddress, ARS.ZipCode As BilledtoZipCode, ARS.PhoneNumber AS BilledtoPhone, 
+    SC.CityName As BilledtoCity, SAL_InvoiceDetail.InvoiceHeaderID, SET_Business.BusinessName + ' - ' + SET_OperatingUnit.OperatingUnitName AS CompanyName, 
+    SET_OperatingUnit.AddressLine1 AS CompanyAddressLine1, SET_OperatingUnit.AddressLine2 AS CompanyAddressLine2, 
+    SET_OperatingUnit.AddressLine3 AS CompanyAddressLine3, SET_OperatingUnit.ZipCode AS CompanyZipCode, CityComp.CityName AS CompanyCity, 
+    SET_OperatingUnit.PhoneNumber AS CompanyPhone, SET_OperatingUnit.Logoimage, SET_OperatingUnit.FaxNumber AS CompanyFax, SAL_InvoiceHeader.InvoiceDate, 
+    SET_DocumentType.DocumentType AS InvoiceType, 
+	(Case  DocumentTypesGroup.GroupName when 'Head Office-KHI' then 
+         'K'+'SI' +'-'+ substring(convert(varchar(20),year(SAL_InvoiceHeader.InvoiceDate)),3,2) + '000' +convert(varchar(24),SAL_InvoiceHeader.InvoiceNumber)
+          when null
+          then '-' +' '+'SI' +'-'+ substring(convert(varchar(20),year(SAL_InvoiceHeader.InvoiceDate)),3,2) + '000' +convert(varchar(24),SAL_InvoiceHeader.InvoiceNumber)
+          else  SUBSTRING(GroupName,1,1)+'SI' +'-'+ substring(convert(varchar(20),year(SAL_InvoiceHeader.InvoiceDate)),3,2) + '000' +convert(varchar(24),SAL_InvoiceHeader.InvoiceNumber)
+          end  ) as InvoiceNumber, INV_StockTransactionHeader.DocumentNo AS DispatchNo, 
+    INV_StockTransactionDetail.SourceCode AS DeliveryOrderNo, SAL_OrderHeader.ContractNo,DocumentTypesGroup.GroupName, 
+   AR_SET_Customer.CustomerName,AR_SET_Customer.NTNNumber,
+   (case when SAL_InvoiceHeader.InvoicedTo is null then AR_SET_Customer.CustomerName else SAL_InvoiceHeader.InvoicedTo end) as InvoicedDescription, 
+    AR_SET_Customer.AddressLine1 AS CustomerAddress, AR_SET_Customer.ZipCode AS CustomerZipCode, CityCust.CityName AS CustomerCity, 
+    AR_SET_Customer.PhoneNumber AS CustomerPhone, SET_Term.Description AS Terms, INV_Item.Description As ItemDescription, SET_UnitOfMeasure.UOMName, 
+    SAL_InvoiceDetail.QuantityInvoiced, Sal_InvoiceHeader.Description As InvoiceComments, Sal_InvoiceHeader.InvoicedTo, 
+     --Case When IsNull(SAL_InvoiceDetail.Inclusive, 0) = 0 Then SAL_InvoiceDetail.UnitPrice 
+    --    Else SAL_InvoiceDetail.GrossAmount / SAL_InvoiceDetail.QuantityInvoiced End As UnitPrice, 
+      --SAL_OrderDetail.Rate as UnitPrice, 
+	  SAL_InvoiceDetail.UnitPrice as UnitPrice,
+    SAL_InvoiceDetail.TaxAmount, SET_Currency.CurrencySign, SAL_InvoiceDetail.ExciseDutyAmount, SAL_InvoiceDetail.FEDAmount, 
+    ISNULL((select LookupDetail.EnumeratedDescription from LookupDetail where LookUpDetailID = SAL_InvoiceHeader.StatusCode and LookupHeaderID = 5), '') 
+        as DocumentStatus , INV_Item.InventoryItemStatusCode as ItemCode, SAL_InvoiceHeader.Billedtoid AS BilledTo, SAL_InvoiceDetail.DiscountAmountTaken as Discount
+        ,SAL_OrderHeader.referenceno as CustomerRefNo 
+				, SAL_InvoiceDetail.WithHolding,
+		--SAL_InvoiceDetail.TaxAmount,
+		--SAL_InvoiceDetail.ExciseDutyAmount,
+		--SAL_InvoiceDetail.FEDAmount,
+		 ([SAL_InvoiceDetail].QuantityInvoiced * ISNULL(SAL_OrderDetail.T_Rate,0) ) as ExclusiveSalesTaxAmount
+		, ([SAL_InvoiceDetail].QuantityInvoiced * [SAL_OrderDetail].T_Rate / 100) * SAL_InvoiceDetail.TaxAmount as SaleTaxAmount
+		, ([SAL_InvoiceDetail].QuantityInvoiced * SAL_OrderDetail.T_Rate / 100) * SAL_InvoiceDetail.ExciseDutyAmount as ExciseDutyActualAmount
+		, ([SAL_InvoiceDetail].QuantityInvoiced * [SAL_OrderDetail].T_Rate / 100) * SAL_InvoiceDetail.FEDAmount as FEDTaxAmount
+, (([SAL_InvoiceDetail].QuantityInvoiced * INV_Item.UnitWeight * SAL_OrderDetail.PricePerKG) * ( [SAL_InvoiceDetail].WithHolding )) / (100 + [SAL_InvoiceDetail].WithHolding) as WithHoldingAmount
+    ,SAL_OrderHeader.BrokerID,
+Brokername.CustomerName as DealerName,
+[SAL_OrderHeader].ContractDate as SaleOrderDate
+,(([SAL_InvoiceDetail].QuantityInvoiced * INV_Item.UnitWeight) * [SAL_OrderDetail].PriceperKG) As AmountReceivable
+,([SAL_InvoiceDetail].QuantityInvoiced * ISNULL(SAL_OrderDetail.T_Rate,0) ) as ActualInvoiceAmount
+,SAL_OrderHeader.DTRENo,
+SAL_OrderHeader.DTREDate
+    From SAL_InvoiceDetail 
+	Inner Join SAL_InvoiceHeader ON SAL_InvoiceHeader.CompanyID = SAL_InvoiceDetail.CompanyID And SAL_InvoiceHeader.PeriodID = SAL_InvoiceDetail.PeriodID 
+        And SAL_InvoiceHeader.InvoiceID = SAL_InvoiceDetail.InvoiceHeaderID And SAL_InvoiceHeader.Status = 1 
+    LEFT JOIN INV_StockTransactionDetail ON INV_StockTransactionDetail.CompanyID = SAL_InvoiceDetail.CompanyID 
+        AND INV_StockTransactionDetail.PeriodID = SAL_InvoiceDetail.PeriodID AND INV_StockTransactionDetail.StockTransactionID = SAL_InvoiceDetail.StockHeaderID 
+        AND INV_StockTransactionDetail.TransactionDetailID = SAL_InvoiceDetail.StockDetailID AND INV_StockTransactionDetail.Status = 1 
+    LEFT JOIN INV_StockTransactionHeader ON INV_StockTransactionHeader.CompanyID = INV_StockTransactionDetail.CompanyID 
+        AND INV_StockTransactionHeader.PeriodID = INV_StockTransactionDetail.PeriodID 
+        AND INV_StockTransactionHeader.StockTransactionID = INV_StockTransactionDetail.StockTransactionID AND INV_StockTransactionHeader.Status = 1 
+	LEFT JOIN SAL_DeliveryOrderDetail ON SAL_DeliveryOrderDetail.CompanyID = INV_StockTransactionDetail.CompanyID 
+        AND SAL_DeliveryOrderDetail.PeriodID = INV_StockTransactionDetail.PeriodID AND SAL_DeliveryOrderDetail.DOHeaderID = INV_StockTransactionDetail.SourceHeaderID 
+        AND SAL_DeliveryOrderDetail.DODetailID = INV_StockTransactionDetail.SourceLineID AND SAL_DeliveryOrderDetail.Status = 1 
+	LEFT JOIN SAL_OrderHeader ON SAL_OrderHeader.CompanyID = SAL_DeliveryOrderDetail.CompanyID AND SAL_OrderHeader.PeriodID = SAL_DeliveryOrderDetail.PeriodID 
+        AND SAL_OrderHeader.OrderID = SAL_DeliveryOrderDetail.SalesOrderHeaderID AND SAL_OrderHeader.Status = 1 
+    LEFT JOIN SAL_OrderDetail ON SAL_OrderDetail.CompanyID = SAL_DeliveryOrderDetail.CompanyID
+      AND SAL_OrderDetail.OrderID = SAL_DeliveryOrderDetail.SalesOrderHeaderID
+     AND SAL_OrderDetail.OrderDetailID = SAL_DeliveryOrderDetail.SalesOrderDetailID
+    AND SAL_OrderDetail.PeriodID = SAL_DeliveryOrderDetail.PeriodID
+     AND SAL_OrderDetail.Status=1
+	Inner Join SET_Company ON SET_Company.CompanyId = SAL_InvoiceDetail.CompanyID 
+	Inner Join SET_Business ON SET_Business.BusinessId = SET_Company.BusinessId 
+	Inner Join SET_OperatingUnit ON SET_OperatingUnit.OperatingUnitId = SET_Company.OperatingUnitId 
+	Inner Join SET_DocumentType ON SET_DocumentType.CompanyID = SAL_InvoiceHeader.CompanyID And SET_DocumentType.PeriodID = SAL_InvoiceHeader.PeriodID 
+        AND SET_DocumentType.DocumentTypeID = SAL_InvoiceHeader.InvoiceType 
+    Left Join DocumentTypesGroup On DocumentTypesGroup.GroupID = Set_DocumentType.GroupID 
+    --DocumentTypesGroup.CompanyID = Set_DocumentType.CompanyID And 
+	INNER Join AR_SET_Customer ON AR_SET_Customer.PeriodID = SAL_InvoiceHeader.PeriodID --AR_SET_Customer.CompanyID = SAL_InvoiceHeader.CompanyID And 
+        And AR_SET_Customer.CustomerID = SAL_InvoiceHeader.CustomerID 
+				         left JOIN AR_SET_Customer Brokername ON Brokername.CustomerID = SAL_OrderHeader.BrokerID 
+   AND AR_SET_Customer.PeriodID = SAL_OrderHeader.PeriodID 
+	Inner Join INV_Item ON INV_Item.ItemID = SAL_InvoiceDetail.ItemID 
+	Inner Join SET_Currency ON SET_Currency.CurrencyID = SAL_InvoiceHeader.InvoiceCurrencyID 
+	Left Join SET_City AS CityCust ON CityCust.CityID = AR_SET_Customer.CityID 
+	Left Join SET_City AS CityComp ON CityComp.CityID = SET_OperatingUnit.CityID 
+	Left Join SET_Term ON SET_Term.TermID = SAL_InvoiceHeader.TermsID 
+	Left Join SET_UnitOfMeasure ON SAL_InvoiceDetail.ItemUnitID = SET_UnitOfMeasure.UOMID 
+    Left Join AR_SET_Customer ARS ON ARS.CompanyID = SAL_InvoiceHeader.CompanyID And ARS.PeriodID = SAL_InvoiceHeader.PeriodID 
+	    And ARS.CustomerID = SAL_InvoiceHeader.billedtoid 
+    Left Join SET_City AS SC ON SC.CityID = ARS.CityID 
+    inner join Set_PeriodCustom on INV_StockTransactionHeader.DocumentDate between Set_PeriodCustom.StartDate and Set_PeriodCustom.EndDate 
+and Set_PeriodCustom.Status = 1  and Set_PeriodCustom.FiscalID = @FiscalID
+where SAL_InvoiceDetail.CompanyID = @CompanyID And SAL_InvoiceDetail.PeriodID = @PeriodID And SAL_InvoiceDetail.Status = 1 
+  --And (SAL_InvoiceHeader.InvoiceNumber = @InvoiceNoFrom or @InvoiceNoFrom is null) 
+  -- And (SAL_InvoiceHeader.InvoiceNumber = @InvoiceNoTo or @InvoiceNoTo is null)
+  -- And (SAL_OrderHeader.BrokerID = @BrokerID or @BrokerID is null) 
+   --AND SAL_InvoiceHeader.InvoiceType = 101 
+   --AND SAL_InvoiceHeader.InvoiceDate between @StartDate and @EndDate 
+      AND SAL_InvoiceHeader.InvoiceDate &gt;= @StartDate and SAL_InvoiceHeader.InvoiceDate &lt;= @EndDate 
+   -- Order bY CustomerName,SAL_InvoiceHeader.InvoiceDate, SAL_InvoiceHeader.InvoiceNumber
+   )t
+   where t.ItemDescription like @ProductName   
+   GROUP BY  t.ItemDescription , CAST(Year(t.InvoiceDate) AS VARCHAR(4)) + '-' + Format(t.InvoiceDate,'MMMM') 
+    ,YEAR(t.InvoiceDate) , MONTH(t.InvoiceDate)
+   order by  YEAR(t.InvoiceDate) DESC, MONTH(t.InvoiceDate) DESC
+   --CAST(Year(t.InvoiceDate) AS VARCHAR(4)) + '-' + Format(t.InvoiceDate,'MMMM')   desc
+
+
+
+
+   --------------------Total Quantity ------------------------
+
+   
+
+Select t.ItemDescription as Description ,  ISNULL(SUM(t.QuantityInvoiced),0) as Quantity 
+ from (
+Select ARS.CustomerName As BilledtoName, ARS.AddressLine1 AS BilledtoAddress, ARS.ZipCode As BilledtoZipCode, ARS.PhoneNumber AS BilledtoPhone, 
+    SC.CityName As BilledtoCity, SAL_InvoiceDetail.InvoiceHeaderID, SET_Business.BusinessName + ' - ' + SET_OperatingUnit.OperatingUnitName AS CompanyName, 
+    SET_OperatingUnit.AddressLine1 AS CompanyAddressLine1, SET_OperatingUnit.AddressLine2 AS CompanyAddressLine2, 
+    SET_OperatingUnit.AddressLine3 AS CompanyAddressLine3, SET_OperatingUnit.ZipCode AS CompanyZipCode, CityComp.CityName AS CompanyCity, 
+    SET_OperatingUnit.PhoneNumber AS CompanyPhone, SET_OperatingUnit.Logoimage, SET_OperatingUnit.FaxNumber AS CompanyFax, SAL_InvoiceHeader.InvoiceDate, 
+    SET_DocumentType.DocumentType AS InvoiceType, 
+	(Case  DocumentTypesGroup.GroupName when 'Head Office-KHI' then 
+         'K'+'SI' +'-'+ substring(convert(varchar(20),year(SAL_InvoiceHeader.InvoiceDate)),3,2) + '000' +convert(varchar(24),SAL_InvoiceHeader.InvoiceNumber)
+          when null
+          then '-' +' '+'SI' +'-'+ substring(convert(varchar(20),year(SAL_InvoiceHeader.InvoiceDate)),3,2) + '000' +convert(varchar(24),SAL_InvoiceHeader.InvoiceNumber)
+          else  SUBSTRING(GroupName,1,1)+'SI' +'-'+ substring(convert(varchar(20),year(SAL_InvoiceHeader.InvoiceDate)),3,2) + '000' +convert(varchar(24),SAL_InvoiceHeader.InvoiceNumber)
+          end  ) as InvoiceNumber, INV_StockTransactionHeader.DocumentNo AS DispatchNo, 
+    INV_StockTransactionDetail.SourceCode AS DeliveryOrderNo, SAL_OrderHeader.ContractNo,DocumentTypesGroup.GroupName, 
+   AR_SET_Customer.CustomerName,AR_SET_Customer.NTNNumber,
+   (case when SAL_InvoiceHeader.InvoicedTo is null then AR_SET_Customer.CustomerName else SAL_InvoiceHeader.InvoicedTo end) as InvoicedDescription, 
+    AR_SET_Customer.AddressLine1 AS CustomerAddress, AR_SET_Customer.ZipCode AS CustomerZipCode, CityCust.CityName AS CustomerCity, 
+    AR_SET_Customer.PhoneNumber AS CustomerPhone, SET_Term.Description AS Terms, INV_Item.Description As ItemDescription, SET_UnitOfMeasure.UOMName, 
+    SAL_InvoiceDetail.QuantityInvoiced, Sal_InvoiceHeader.Description As InvoiceComments, Sal_InvoiceHeader.InvoicedTo, 
+     --Case When IsNull(SAL_InvoiceDetail.Inclusive, 0) = 0 Then SAL_InvoiceDetail.UnitPrice 
+    --    Else SAL_InvoiceDetail.GrossAmount / SAL_InvoiceDetail.QuantityInvoiced End As UnitPrice, 
+      --SAL_OrderDetail.Rate as UnitPrice, 
+	  SAL_InvoiceDetail.UnitPrice as UnitPrice,
+    SAL_InvoiceDetail.TaxAmount, SET_Currency.CurrencySign, SAL_InvoiceDetail.ExciseDutyAmount, SAL_InvoiceDetail.FEDAmount, 
+    ISNULL((select LookupDetail.EnumeratedDescription from LookupDetail where LookUpDetailID = SAL_InvoiceHeader.StatusCode and LookupHeaderID = 5), '') 
+        as DocumentStatus , INV_Item.InventoryItemStatusCode as ItemCode, SAL_InvoiceHeader.Billedtoid AS BilledTo, SAL_InvoiceDetail.DiscountAmountTaken as Discount
+        ,SAL_OrderHeader.referenceno as CustomerRefNo 
+				, SAL_InvoiceDetail.WithHolding,
+		--SAL_InvoiceDetail.TaxAmount,
+		--SAL_InvoiceDetail.ExciseDutyAmount,
+		--SAL_InvoiceDetail.FEDAmount,
+		 ([SAL_InvoiceDetail].QuantityInvoiced * ISNULL(SAL_OrderDetail.T_Rate,0) ) as ExclusiveSalesTaxAmount
+		, ([SAL_InvoiceDetail].QuantityInvoiced * [SAL_OrderDetail].T_Rate / 100) * SAL_InvoiceDetail.TaxAmount as SaleTaxAmount
+		, ([SAL_InvoiceDetail].QuantityInvoiced * SAL_OrderDetail.T_Rate / 100) * SAL_InvoiceDetail.ExciseDutyAmount as ExciseDutyActualAmount
+		, ([SAL_InvoiceDetail].QuantityInvoiced * [SAL_OrderDetail].T_Rate / 100) * SAL_InvoiceDetail.FEDAmount as FEDTaxAmount
+, (([SAL_InvoiceDetail].QuantityInvoiced * INV_Item.UnitWeight * SAL_OrderDetail.PricePerKG) * ( [SAL_InvoiceDetail].WithHolding )) / (100 + [SAL_InvoiceDetail].WithHolding) as WithHoldingAmount
+    ,SAL_OrderHeader.BrokerID,
+Brokername.CustomerName as DealerName,
+[SAL_OrderHeader].ContractDate as SaleOrderDate
+,(([SAL_InvoiceDetail].QuantityInvoiced * INV_Item.UnitWeight) * [SAL_OrderDetail].PriceperKG) As AmountReceivable
+,([SAL_InvoiceDetail].QuantityInvoiced * ISNULL(SAL_OrderDetail.T_Rate,0) ) as ActualInvoiceAmount
+,SAL_OrderHeader.DTRENo,
+SAL_OrderHeader.DTREDate
+    From SAL_InvoiceDetail 
+	Inner Join SAL_InvoiceHeader ON SAL_InvoiceHeader.CompanyID = SAL_InvoiceDetail.CompanyID And SAL_InvoiceHeader.PeriodID = SAL_InvoiceDetail.PeriodID 
+        And SAL_InvoiceHeader.InvoiceID = SAL_InvoiceDetail.InvoiceHeaderID And SAL_InvoiceHeader.Status = 1 
+    LEFT JOIN INV_StockTransactionDetail ON INV_StockTransactionDetail.CompanyID = SAL_InvoiceDetail.CompanyID 
+        AND INV_StockTransactionDetail.PeriodID = SAL_InvoiceDetail.PeriodID AND INV_StockTransactionDetail.StockTransactionID = SAL_InvoiceDetail.StockHeaderID 
+        AND INV_StockTransactionDetail.TransactionDetailID = SAL_InvoiceDetail.StockDetailID AND INV_StockTransactionDetail.Status = 1 
+    LEFT JOIN INV_StockTransactionHeader ON INV_StockTransactionHeader.CompanyID = INV_StockTransactionDetail.CompanyID 
+        AND INV_StockTransactionHeader.PeriodID = INV_StockTransactionDetail.PeriodID 
+        AND INV_StockTransactionHeader.StockTransactionID = INV_StockTransactionDetail.StockTransactionID AND INV_StockTransactionHeader.Status = 1 
+	LEFT JOIN SAL_DeliveryOrderDetail ON SAL_DeliveryOrderDetail.CompanyID = INV_StockTransactionDetail.CompanyID 
+        AND SAL_DeliveryOrderDetail.PeriodID = INV_StockTransactionDetail.PeriodID AND SAL_DeliveryOrderDetail.DOHeaderID = INV_StockTransactionDetail.SourceHeaderID 
+        AND SAL_DeliveryOrderDetail.DODetailID = INV_StockTransactionDetail.SourceLineID AND SAL_DeliveryOrderDetail.Status = 1 
+	LEFT JOIN SAL_OrderHeader ON SAL_OrderHeader.CompanyID = SAL_DeliveryOrderDetail.CompanyID AND SAL_OrderHeader.PeriodID = SAL_DeliveryOrderDetail.PeriodID 
+        AND SAL_OrderHeader.OrderID = SAL_DeliveryOrderDetail.SalesOrderHeaderID AND SAL_OrderHeader.Status = 1 
+    LEFT JOIN SAL_OrderDetail ON SAL_OrderDetail.CompanyID = SAL_DeliveryOrderDetail.CompanyID
+      AND SAL_OrderDetail.OrderID = SAL_DeliveryOrderDetail.SalesOrderHeaderID
+     AND SAL_OrderDetail.OrderDetailID = SAL_DeliveryOrderDetail.SalesOrderDetailID
+    AND SAL_OrderDetail.PeriodID = SAL_DeliveryOrderDetail.PeriodID
+     AND SAL_OrderDetail.Status=1
+	Inner Join SET_Company ON SET_Company.CompanyId = SAL_InvoiceDetail.CompanyID 
+	Inner Join SET_Business ON SET_Business.BusinessId = SET_Company.BusinessId 
+	Inner Join SET_OperatingUnit ON SET_OperatingUnit.OperatingUnitId = SET_Company.OperatingUnitId 
+	Inner Join SET_DocumentType ON SET_DocumentType.CompanyID = SAL_InvoiceHeader.CompanyID And SET_DocumentType.PeriodID = SAL_InvoiceHeader.PeriodID 
+        AND SET_DocumentType.DocumentTypeID = SAL_InvoiceHeader.InvoiceType 
+    Left Join DocumentTypesGroup On DocumentTypesGroup.GroupID = Set_DocumentType.GroupID 
+    --DocumentTypesGroup.CompanyID = Set_DocumentType.CompanyID And 
+	INNER Join AR_SET_Customer ON AR_SET_Customer.PeriodID = SAL_InvoiceHeader.PeriodID --AR_SET_Customer.CompanyID = SAL_InvoiceHeader.CompanyID And 
+        And AR_SET_Customer.CustomerID = SAL_InvoiceHeader.CustomerID 
+				         left JOIN AR_SET_Customer Brokername ON Brokername.CustomerID = SAL_OrderHeader.BrokerID 
+   AND AR_SET_Customer.PeriodID = SAL_OrderHeader.PeriodID 
+	Inner Join INV_Item ON INV_Item.ItemID = SAL_InvoiceDetail.ItemID 
+	Inner Join SET_Currency ON SET_Currency.CurrencyID = SAL_InvoiceHeader.InvoiceCurrencyID 
+	Left Join SET_City AS CityCust ON CityCust.CityID = AR_SET_Customer.CityID 
+	Left Join SET_City AS CityComp ON CityComp.CityID = SET_OperatingUnit.CityID 
+	Left Join SET_Term ON SET_Term.TermID = SAL_InvoiceHeader.TermsID 
+	Left Join SET_UnitOfMeasure ON SAL_InvoiceDetail.ItemUnitID = SET_UnitOfMeasure.UOMID 
+    Left Join AR_SET_Customer ARS ON ARS.CompanyID = SAL_InvoiceHeader.CompanyID And ARS.PeriodID = SAL_InvoiceHeader.PeriodID 
+	    And ARS.CustomerID = SAL_InvoiceHeader.billedtoid 
+    Left Join SET_City AS SC ON SC.CityID = ARS.CityID 
+    inner join Set_PeriodCustom on INV_StockTransactionHeader.DocumentDate between Set_PeriodCustom.StartDate and Set_PeriodCustom.EndDate 
+and Set_PeriodCustom.Status = 1  and Set_PeriodCustom.FiscalID = @FiscalID
+where SAL_InvoiceDetail.CompanyID = @CompanyID And SAL_InvoiceDetail.PeriodID = @PeriodID And SAL_InvoiceDetail.Status = 1 
+  --And (SAL_InvoiceHeader.InvoiceNumber = @InvoiceNoFrom or @InvoiceNoFrom is null) 
+  -- And (SAL_InvoiceHeader.InvoiceNumber = @InvoiceNoTo or @InvoiceNoTo is null)
+  -- And (SAL_OrderHeader.BrokerID = @BrokerID or @BrokerID is null) 
+   --AND SAL_InvoiceHeader.InvoiceType = 101 
+   --AND SAL_InvoiceHeader.InvoiceDate between @StartDate and @EndDate 
+      AND SAL_InvoiceHeader.InvoiceDate &gt;= @StartDate and SAL_InvoiceHeader.InvoiceDate &lt;= @EndDate 
+   -- Order bY CustomerName,SAL_InvoiceHeader.InvoiceDate, SAL_InvoiceHeader.InvoiceNumber
+   )t
+   where t.ItemDescription like @ProductName   
+   GROUP BY  t.ItemDescription</value>
+  </data>
+  <data name="GetTotalAmount" xml:space="preserve">
+    <value>--Declare @periodID int
+--set @periodID=1
+
+--Declare @companyID int
+--set @companyID=1
+
+--Declare @FiscalID int
+--set @FiscalID=1
+
+--Declare @StartDate datetime
+--set @StartDate ='2018-07-01 00:00:00.000'
+
+--Declare @EndDate datetime
+--set @EndDate='2019-07-25 00:00:00.000'
+
+Select (case when t.ItemDescription like 'Bagasse' then 'Bagasse (MT)'
+when t.ItemDescription like 'Molasses' then 'Molasses (MT)'
+when t.ItemDescription like 'MUD' then 'MUD (MT)'
+when t.ItemDescription like 'SCRAP MATERIAL IN NOS' then 'SCRAP MATERIAL (NOS)'
+when t.ItemDescription like 'White Refine Sugar' then 'White Refine Sugar (BAGS)'
+else t.ItemDescription end) as Description ,
+(Case when isnull(Sum(t.AmountReceivable),0) != 0 then isnull(Sum(t.AmountReceivable),0) / 1000 else 0 end)  as Amount 
+from (
+Select ARS.CustomerName As BilledtoName, ARS.AddressLine1 AS BilledtoAddress, ARS.ZipCode As BilledtoZipCode, ARS.PhoneNumber AS BilledtoPhone, 
+    SC.CityName As BilledtoCity, SAL_InvoiceDetail.InvoiceHeaderID, SET_Business.BusinessName + ' - ' + SET_OperatingUnit.OperatingUnitName AS CompanyName, 
+    SET_OperatingUnit.AddressLine1 AS CompanyAddressLine1, SET_OperatingUnit.AddressLine2 AS CompanyAddressLine2, 
+    SET_OperatingUnit.AddressLine3 AS CompanyAddressLine3, SET_OperatingUnit.ZipCode AS CompanyZipCode, CityComp.CityName AS CompanyCity, 
+    SET_OperatingUnit.PhoneNumber AS CompanyPhone, SET_OperatingUnit.Logoimage, SET_OperatingUnit.FaxNumber AS CompanyFax, SAL_InvoiceHeader.InvoiceDate, 
+    SET_DocumentType.DocumentType AS InvoiceType, 
+	(Case  DocumentTypesGroup.GroupName when 'Head Office-KHI' then 
+         'K'+'SI' +'-'+ substring(convert(varchar(20),year(SAL_InvoiceHeader.InvoiceDate)),3,2) + '000' +convert(varchar(24),SAL_InvoiceHeader.InvoiceNumber)
+          when null
+          then '-' +' '+'SI' +'-'+ substring(convert(varchar(20),year(SAL_InvoiceHeader.InvoiceDate)),3,2) + '000' +convert(varchar(24),SAL_InvoiceHeader.InvoiceNumber)
+          else  SUBSTRING(GroupName,1,1)+'SI' +'-'+ substring(convert(varchar(20),year(SAL_InvoiceHeader.InvoiceDate)),3,2) + '000' +convert(varchar(24),SAL_InvoiceHeader.InvoiceNumber)
+          end  ) as InvoiceNumber, INV_StockTransactionHeader.DocumentNo AS DispatchNo, 
+    INV_StockTransactionDetail.SourceCode AS DeliveryOrderNo, SAL_OrderHeader.ContractNo,DocumentTypesGroup.GroupName, 
+   AR_SET_Customer.CustomerName,AR_SET_Customer.NTNNumber,
+   (case when SAL_InvoiceHeader.InvoicedTo is null then AR_SET_Customer.CustomerName else SAL_InvoiceHeader.InvoicedTo end) as InvoicedDescription, 
+    AR_SET_Customer.AddressLine1 AS CustomerAddress, AR_SET_Customer.ZipCode AS CustomerZipCode, CityCust.CityName AS CustomerCity, 
+    AR_SET_Customer.PhoneNumber AS CustomerPhone, SET_Term.Description AS Terms, INV_Item.Description As ItemDescription, SET_UnitOfMeasure.UOMName, 
+    SAL_InvoiceDetail.QuantityInvoiced, Sal_InvoiceHeader.Description As InvoiceComments, Sal_InvoiceHeader.InvoicedTo, 
+     --Case When IsNull(SAL_InvoiceDetail.Inclusive, 0) = 0 Then SAL_InvoiceDetail.UnitPrice 
+    --    Else SAL_InvoiceDetail.GrossAmount / SAL_InvoiceDetail.QuantityInvoiced End As UnitPrice, 
+      --SAL_OrderDetail.Rate as UnitPrice, 
+	  SAL_InvoiceDetail.UnitPrice as UnitPrice,
+    SAL_InvoiceDetail.TaxAmount, SET_Currency.CurrencySign, SAL_InvoiceDetail.ExciseDutyAmount, SAL_InvoiceDetail.FEDAmount, 
+    ISNULL((select LookupDetail.EnumeratedDescription from LookupDetail where LookUpDetailID = SAL_InvoiceHeader.StatusCode and LookupHeaderID = 5), '') 
+        as DocumentStatus , INV_Item.InventoryItemStatusCode as ItemCode, SAL_InvoiceHeader.Billedtoid AS BilledTo, SAL_InvoiceDetail.DiscountAmountTaken as Discount
+        ,SAL_OrderHeader.referenceno as CustomerRefNo 
+				, SAL_InvoiceDetail.WithHolding,
+		--SAL_InvoiceDetail.TaxAmount,
+		--SAL_InvoiceDetail.ExciseDutyAmount,
+		--SAL_InvoiceDetail.FEDAmount,
+		 ([SAL_InvoiceDetail].QuantityInvoiced * ISNULL(SAL_OrderDetail.T_Rate,0) ) as ExclusiveSalesTaxAmount
+		, ([SAL_InvoiceDetail].QuantityInvoiced * [SAL_OrderDetail].T_Rate / 100) * SAL_InvoiceDetail.TaxAmount as SaleTaxAmount
+		, ([SAL_InvoiceDetail].QuantityInvoiced * SAL_OrderDetail.T_Rate / 100) * SAL_InvoiceDetail.ExciseDutyAmount as ExciseDutyActualAmount
+		, ([SAL_InvoiceDetail].QuantityInvoiced * [SAL_OrderDetail].T_Rate / 100) * SAL_InvoiceDetail.FEDAmount as FEDTaxAmount
+, (([SAL_InvoiceDetail].QuantityInvoiced * INV_Item.UnitWeight * SAL_OrderDetail.PricePerKG) * ( [SAL_InvoiceDetail].WithHolding )) / (100 + [SAL_InvoiceDetail].WithHolding) as WithHoldingAmount
+    ,SAL_OrderHeader.BrokerID,
+Brokername.CustomerName as DealerName,
+[SAL_OrderHeader].ContractDate as SaleOrderDate
+,(([SAL_InvoiceDetail].QuantityInvoiced * INV_Item.UnitWeight) * [SAL_OrderDetail].PriceperKG) As AmountReceivable
+,([SAL_InvoiceDetail].QuantityInvoiced * ISNULL(SAL_OrderDetail.T_Rate,0) ) as ActualInvoiceAmount
+,SAL_OrderHeader.DTRENo,
+SAL_OrderHeader.DTREDate
+    From SAL_InvoiceDetail 
+	Inner Join SAL_InvoiceHeader ON SAL_InvoiceHeader.CompanyID = SAL_InvoiceDetail.CompanyID And SAL_InvoiceHeader.PeriodID = SAL_InvoiceDetail.PeriodID 
+        And SAL_InvoiceHeader.InvoiceID = SAL_InvoiceDetail.InvoiceHeaderID And SAL_InvoiceHeader.Status = 1 
+    LEFT JOIN INV_StockTransactionDetail ON INV_StockTransactionDetail.CompanyID = SAL_InvoiceDetail.CompanyID 
+        AND INV_StockTransactionDetail.PeriodID = SAL_InvoiceDetail.PeriodID AND INV_StockTransactionDetail.StockTransactionID = SAL_InvoiceDetail.StockHeaderID 
+        AND INV_StockTransactionDetail.TransactionDetailID = SAL_InvoiceDetail.StockDetailID AND INV_StockTransactionDetail.Status = 1 
+    LEFT JOIN INV_StockTransactionHeader ON INV_StockTransactionHeader.CompanyID = INV_StockTransactionDetail.CompanyID 
+        AND INV_StockTransactionHeader.PeriodID = INV_StockTransactionDetail.PeriodID 
+        AND INV_StockTransactionHeader.StockTransactionID = INV_StockTransactionDetail.StockTransactionID AND INV_StockTransactionHeader.Status = 1 
+	LEFT JOIN SAL_DeliveryOrderDetail ON SAL_DeliveryOrderDetail.CompanyID = INV_StockTransactionDetail.CompanyID 
+        AND SAL_DeliveryOrderDetail.PeriodID = INV_StockTransactionDetail.PeriodID AND SAL_DeliveryOrderDetail.DOHeaderID = INV_StockTransactionDetail.SourceHeaderID 
+        AND SAL_DeliveryOrderDetail.DODetailID = INV_StockTransactionDetail.SourceLineID AND SAL_DeliveryOrderDetail.Status = 1 
+	LEFT JOIN SAL_OrderHeader ON SAL_OrderHeader.CompanyID = SAL_DeliveryOrderDetail.CompanyID AND SAL_OrderHeader.PeriodID = SAL_DeliveryOrderDetail.PeriodID 
+        AND SAL_OrderHeader.OrderID = SAL_DeliveryOrderDetail.SalesOrderHeaderID AND SAL_OrderHeader.Status = 1 
+    LEFT JOIN SAL_OrderDetail ON SAL_OrderDetail.CompanyID = SAL_DeliveryOrderDetail.CompanyID
+      AND SAL_OrderDetail.OrderID = SAL_DeliveryOrderDetail.SalesOrderHeaderID
+     AND SAL_OrderDetail.OrderDetailID = SAL_DeliveryOrderDetail.SalesOrderDetailID
+    AND SAL_OrderDetail.PeriodID = SAL_DeliveryOrderDetail.PeriodID
+     AND SAL_OrderDetail.Status=1
+	Inner Join SET_Company ON SET_Company.CompanyId = SAL_InvoiceDetail.CompanyID 
+	Inner Join SET_Business ON SET_Business.BusinessId = SET_Company.BusinessId 
+	Inner Join SET_OperatingUnit ON SET_OperatingUnit.OperatingUnitId = SET_Company.OperatingUnitId 
+	Inner Join SET_DocumentType ON SET_DocumentType.CompanyID = SAL_InvoiceHeader.CompanyID And SET_DocumentType.PeriodID = SAL_InvoiceHeader.PeriodID 
+        AND SET_DocumentType.DocumentTypeID = SAL_InvoiceHeader.InvoiceType 
+    Left Join DocumentTypesGroup On DocumentTypesGroup.GroupID = Set_DocumentType.GroupID 
+    --DocumentTypesGroup.CompanyID = Set_DocumentType.CompanyID And 
+	INNER Join AR_SET_Customer ON AR_SET_Customer.PeriodID = SAL_InvoiceHeader.PeriodID --AR_SET_Customer.CompanyID = SAL_InvoiceHeader.CompanyID And 
+        And AR_SET_Customer.CustomerID = SAL_InvoiceHeader.CustomerID 
+				         left JOIN AR_SET_Customer Brokername ON Brokername.CustomerID = SAL_OrderHeader.BrokerID 
+   AND AR_SET_Customer.PeriodID = SAL_OrderHeader.PeriodID 
+	Inner Join INV_Item ON INV_Item.ItemID = SAL_InvoiceDetail.ItemID 
+	Inner Join SET_Currency ON SET_Currency.CurrencyID = SAL_InvoiceHeader.InvoiceCurrencyID 
+	Left Join SET_City AS CityCust ON CityCust.CityID = AR_SET_Customer.CityID 
+	Left Join SET_City AS CityComp ON CityComp.CityID = SET_OperatingUnit.CityID 
+	Left Join SET_Term ON SET_Term.TermID = SAL_InvoiceHeader.TermsID 
+	Left Join SET_UnitOfMeasure ON SAL_InvoiceDetail.ItemUnitID = SET_UnitOfMeasure.UOMID 
+    Left Join AR_SET_Customer ARS ON ARS.CompanyID = SAL_InvoiceHeader.CompanyID And ARS.PeriodID = SAL_InvoiceHeader.PeriodID 
+	    And ARS.CustomerID = SAL_InvoiceHeader.billedtoid 
+    Left Join SET_City AS SC ON SC.CityID = ARS.CityID 
+    inner join Set_PeriodCustom on INV_StockTransactionHeader.DocumentDate between Set_PeriodCustom.StartDate and Set_PeriodCustom.EndDate 
+and Set_PeriodCustom.Status = 1  and Set_PeriodCustom.FiscalID = @FiscalID
+where SAL_InvoiceDetail.CompanyID = @CompanyID And SAL_InvoiceDetail.PeriodID = @PeriodID And SAL_InvoiceDetail.Status = 1 
+  --And (SAL_InvoiceHeader.InvoiceNumber = @InvoiceNoFrom or @InvoiceNoFrom is null) 
+  -- And (SAL_InvoiceHeader.InvoiceNumber = @InvoiceNoTo or @InvoiceNoTo is null)
+  -- And (SAL_OrderHeader.BrokerID = @BrokerID or @BrokerID is null) 
+   --AND SAL_InvoiceHeader.InvoiceType = 101 
+   AND SAL_InvoiceHeader.InvoiceDate between @StartDate and @EndDate 
+   -- Order bY CustomerName,SAL_InvoiceHeader.InvoiceDate, SAL_InvoiceHeader.InvoiceNumber
+   )t
+   group by t.ItemDescription</value>
+  </data>
+  <data name="GetTotalDispatchAndSaleOrderQuantity" xml:space="preserve">
+    <value>-- Declare @PeriodID int
+--set @PeriodID=1
+
+--Declare @CompanyID int
+--set @CompanyID=1
+
+--Declare @FiscalID int
+--set @FiscalID=1
+
+--Declare @StartDate datetime
+--set @StartDate ='2018-07-01 00:00:00.000'
+
+--Declare @EndDate datetime
+--set @EndDate='2019-07-25 00:00:00.000'
+
+--drop table #DispatchQty
+--drop table #SaleOrderQty
+
+select distinct (case when tab.DocumentType like 'Dispatch - Bagasse' then 'Bagasse (MT)'
+when tab.DocumentType like 'Dispatch - Molasses' then 'Molasses (MT)'
+when tab.DocumentType like 'Dispatch - Mud' then 'MUD (MT)'
+when tab.DocumentType like 'Dispatch - Scrap' then 'SCRAP MATERIAL (NOS)'
+when tab.DocumentType like 'Dispatch - Sugar' then 'White Refine Sugar (BAGS)'
+else tab.DocumentType end) as Description , 
+--REPLACE(CONVERT(VARCHAR,CONVERT(MONEY,Round((Case when isnull(Sum(tab.Sal_OrderQuantity),0) != 0 then isnull(Sum(tab.Sal_OrderQuantity),0) / 1000 else 0 end),0)),1), '.00','')
+isnull(Sum(tab.Dispatch_TransactionQuantity),0)
+as DispatchQuantity 
+into #DispatchQty
+from
+(
+
+
+Select Convert(int, SAL_DispatchHeader.DispatchNo) As DispatchNo, SAL_DispatchHeader.DocumentTypeID, SET_DocumentType.DocumentType, AR_SET_Customer.CustomerName, 
+
+    SAL_DispatchHeader.DispatchDate, AR_SET_Customer.CustomerID, 
+	SAL_DispatchHeader.VehicleNo, SAL_DispatchHeader.BiltyNo,
+
+    --SAL_DispatchHeader.TotalAmount, 
+
+	(Case When SAL_DispatchHeader.ReturnID is not null then 
+		
+		-- -SAL_DispatchHeader.TotalAmount
+    
+            -INV_StockTransactionDetail.amount
+
+		else
+		SAL_DispatchHeader.TotalAmount
+			end
+		) as TotalAmount,
+
+    --ABS(INV_StockTransactionDetail.TransactionQuantity) as Dispatch_TransactionQuantity, 
+
+    (Case When SAL_DispatchHeader.ReturnID is not null then 
+     -ABS(INV_StockTransactionDetail.TransactionQuantity)    
+     else
+     ABS(INV_StockTransactionDetail.TransactionQuantity)    
+	end
+    
+    ) as Dispatch_TransactionQuantity,
+    --(SAL_DispatchHeader.TotalAmount * isnull(SAL_OrderDetail.FEDAmount, 0)) / (100 + isnull(SAL_OrderDetail.FEDAmount, 0)) as SAL_FEDAmount, 
+    (
+    Case When SAL_DispatchHeader.ReturnID is not null then
+        -(INV_StockTransactionDetail.amount * isnull(SAL_OrderDetail.FEDAmount, 0)) / (100 + isnull(SAL_OrderDetail.FEDAmount, 0)) 
+    else
+        (SAL_DispatchHeader.TotalAmount * isnull(SAL_OrderDetail.FEDAmount, 0)) / (100 + isnull(SAL_OrderDetail.FEDAmount, 0)) 
+    end
+    ) as SAL_FEDAmount,
+    --SAL_OrderDetail.GrossAmount as SalGrosssAmount, 
+
+    (Case When SAL_DispatchHeader.ReturnID is not null then
+		-(SAL_OrderDetail.GrossAmount)
+	else
+		SAL_OrderDetail.GrossAmount 
+	end) as SalGrosssAmount ,
+    --SAL_OrderDetail.NetAmount as SalNetAmount, 
+    (Case When SAL_DispatchHeader.ReturnID is not null then
+    -SAL_OrderDetail.NetAmount 
+    else
+    SAL_OrderDetail.NetAmount 
+    end)
+    as SalNetAmount, 
+    --isnull(SAL_OrderDetail.FEDAmount, 0) as SAL_FedRate ,
+    (Case When SAL_DispatchHeader.ReturnID is not null then
+		-isnull(SAL_OrderDetail.FEDAmount, 0) 
+		else
+		isnull(SAL_OrderDetail.FEDAmount, 0)
+		end )
+    as SAL_FedRate ,
+    INV_StockTransactionDetail.SourceCode, 
+     DocumentTypesGroup.GroupName,
+    Case Sal_DispatchHeader.StatusCode When 1 then 'Approved' When 5 then 'In Process' When 12 Then 'Released for Approve' When 13 Then 'Partially Approved' 
+    When 14 Then 'Discuss' When 15 Then 'Cancelled' When 16 Then 'Reversed' End As DocumentStatus ,SAL_OrderHeader.TotalAmount as GrandTotal
+    from SAL_DispatchHeader 
+    
+    inner join AR_SET_Customer on --AR_SET_Customer.CompanyID = SAL_DispatchHeader.CompanyID And 
+AR_SET_Customer.PeriodID = SAL_DispatchHeader.PeriodID 
+        And AR_SET_Customer.CustomerID= SAL_DispatchHeader.CustomerID and AR_SET_Customer.Status = 1 
+    INNER JOIN INV_StockTransactionHeader StockHeader ON StockHeader.DocumentTypeID = SAL_DispatchHeader.DocumentTypeID 
+        AND StockHeader.DocumentNo = SAL_DispatchHeader.DispatchNo AND StockHeader.CompanyID = SAL_DispatchHeader.CompanyID 
+        AND StockHeader.PeriodID = SAL_DispatchHeader.PeriodID AND StockHeader.Status = 1 
+    INNER JOIN INV_StockTransactionDetail ON INV_StockTransactionDetail.StockTransactionID = StockHeader.StockTransactionID 
+        AND INV_StockTransactionDetail.CompanyID = StockHeader.CompanyID AND INV_StockTransactionDetail.PeriodID = StockHeader.PeriodID 
+        AND INV_StockTransactionDetail.Status = 1 
+    Left JOIN Sal_DeliveryOrderDetail on Sal_DeliveryOrderDetail.DOHeaderID = INV_StockTransactionDetail.SourceHeaderID 
+        And Sal_DeliveryOrderDetail.DODetailID = INV_StockTransactionDetail.SourceLineID AND Sal_DeliveryOrderDetail.CompanyID = INV_StockTransactionDetail.CompanyID 
+        AND Sal_DeliveryOrderDetail.PeriodID = INV_StockTransactionDetail.PeriodID 
+    left join SAL_OrderDetail On SAL_DeliveryOrderDetail.CompanyID = SAL_OrderDetail.CompanyID And SAL_DeliveryOrderDetail.PeriodID = SAL_OrderDetail.PeriodID 
+        And SAL_DeliveryOrderDetail.SalesOrderHeaderID = SAL_OrderDetail.OrderID And SAL_DeliveryOrderDetail.SalesOrderDetailID = SAL_OrderDetail.OrderDetailID 
+    left Join SAL_OrderHeader ON SAL_OrderHeader.OrderID = SAL_OrderDetail.OrderId AND SAL_OrderHeader.CompanyID = SAL_OrderDetail.CompanyID 
+        AND SAL_OrderHeader.PeriodID = SAL_OrderDetail.PeriodID AND SAL_OrderHeader.Status = 1 
+    inner join SET_DocumentType on SET_DocumentType.DocumentTypeID = SAL_DispatchHeader.DocumentTypeID and SET_DocumentType.CompanyID = SAL_DispatchHeader.CompanyID 
+        and SET_DocumentType.PeriodID = SAL_DispatchHeader.PeriodID and SET_DocumentType.status = 1 
+   LEFT Join DocumentTypesGroup On DocumentTypesGroup.GroupID = Set_DocumentType.GroupID 
+--DocumentTypesGroup.CompanyID = Set_DocumentType.CompanyID And 
+inner join Set_PeriodCustom on SAL_DispatchHeader.DispatchDate between Set_PeriodCustom.StartDate and Set_PeriodCustom.EndDate 
+and Set_PeriodCustom.Status = 1  and Set_PeriodCustom.FiscalID = @FiscalID
+where SAL_DispatchHeader.CompanyID = @CompanyID And	SAL_DispatchHeader.PeriodID = @PeriodID 
+     And SAL_DispatchHeader.DispatchDate between @StartDate and @EndDate 
+	 --AND SAL_DispatchHeader.DocumentTypeID = 155 
+	 AND SAL_DispatchHeader.StatusCode = 1
+
+	 )tab
+ --Where tab.Balance &gt; 0 
+ group by tab.DocumentType
+
+
+--------------------------------------
+
+select distinct (case when tab.DocumentType like 'Sale Order - Bagasse' then 'Bagasse (MT)'
+when tab.DocumentType like 'Sale Order - Molasses' then 'Molasses (MT)'
+when tab.DocumentType like 'Sale Order - Mud' then 'MUD (MT)'
+when tab.DocumentType like 'Sale Order - Scrap' then 'SCRAP MATERIAL (NOS)'
+when tab.DocumentType like 'Sale Order - Sugar' then 'White Refine Sugar (BAGS)'
+else tab.DocumentType end) as Description , 
+--REPLACE(CONVERT(VARCHAR,CONVERT(MONEY,Round((Case when isnull(Sum(tab.Sal_OrderQuantity),0) != 0 then isnull(Sum(tab.Sal_OrderQuantity),0) / 1000 else 0 end),0)),1), '.00','')
+isnull(Sum(tab.Quantity),0)
+as SaleOrderQuantity 
+into #SaleOrderQty
+from
+(
+Select Fintab.CustomerID,Fintab.CustomerName,
+ Fintab.BrokerID , Fintab.BrokerName,
+ fintab.DocumentType,
+  Fintab.SaleContractTypeID, Fintab.CompanyID, Fintab.PeriodID , 
+  Sum(Fintab.Quantity) as Quantity,
+   Avg(Fintab.PricePerKG) as AvgPricePerKG
+  ,Fintab.ItemID, Fintab.UnitWeight
+, sum(NetAmount) as Amount
+   from (
+Select SAL_OrderHeader.CustomerID,AR_SET_Customer.CustomerName as CustomerName,
+ AR_SET_Customer.BrokerID , Set_Broker.CustomerName as BrokerName, SET_DocumentType.DocumentType,
+  SaleContractTypeID, SAL_OrderHeader.CompanyID, SAL_OrderHeader.PeriodID , 
+  SAL_OrderDetail.Quantity, SAL_OrderDetail.PricePerKG
+  ,SAL_OrderDetail.ItemID, INV_Item.UnitWeight
+  , SAL_OrderDetail.NetAmount 
+    from SAL_OrderHeader
+
+	inner Join SAL_OrderDetail  on SAL_OrderDetail.OrderID = SAL_OrderHeader.OrderID
+	And SAL_OrderDetail.CompanyID = SAL_OrderHeader.CompanyID
+	And SAL_OrderDetail.PeriodID = SAL_OrderHeader.PeriodID
+	And SAL_OrderDetail.Status=1
+
+	Inner Join INV_Item On INV_Item.ItemID=  SAL_OrderDetail.ItemID
+	AND INV_Item.CompanyID=  SAL_OrderDetail.CompanyID
+	AND INV_Item.Status=1
+	Inner Join SET_DocumentType on  SET_DocumentType.DocumentTypeID= SAL_OrderHeader.SaleContractTypeID
+	AND SET_DocumentType.CompanyID= SAL_OrderHeader.CompanyID
+	AND SET_DocumentType.PeriodID= SAL_OrderHeader.PeriodID
+	And SET_DocumentType.Status=1
+	
+	Inner Join AR_SET_Customer on AR_SET_Customer.CustomerID =  SAL_OrderHeader.CustomerID
+	AND AR_SET_Customer.CompanyID =  SAL_OrderHeader.CompanyID
+	AND AR_SET_Customer.PeriodID =  SAL_OrderHeader.PeriodID
+	And AR_SET_Customer.Status=1
+
+	Left Join AR_SET_Customer Set_Broker on Set_Broker.CustomerID=SAL_OrderHeader.BrokerID  
+	AND Set_Broker.CompanyID =  SAL_OrderHeader.CompanyID
+	AND Set_Broker.PeriodID =  SAL_OrderHeader.PeriodID
+	And Set_Broker.Status=1
+
+
+	Where SAL_OrderHeader.Status=1 
+	AND SAL_OrderHeader.StatusCode=1
+	And SAL_OrderHeader.CompanyID= @CompanyID
+	And SAL_OrderHeader.PeriodID= @PeriodID
+	And SAL_OrderHeader.FiscalID= @FiscalID
+	 and Cast(SAL_OrderHeader.ContractDate as Date) between @StartDate and @EndDate
+	 -- And [SAL_OrderHeader].SaleContractTypeID =158
+	)Fintab
+	Group By  
+	Fintab.CustomerID,Fintab.CustomerName,
+ Fintab.BrokerID , Fintab.BrokerName,
+ fintab.DocumentType,
+  Fintab.SaleContractTypeID, Fintab.CompanyID, Fintab.PeriodID , 
+  Fintab.ItemID, Fintab.UnitWeight
+)tab
+ --Where tab.Balance &gt; 0 
+ group by tab.DocumentType,tab.ItemID
+
+
+ select #SaleOrderQty.Description as Description 
+ ,#SaleOrderQty.SaleOrderQuantity as SaleOrderQuantity 
+ ,#DispatchQty.DispatchQuantity  as DispatchQuantity 
+  from #SaleOrderQty inner join #DispatchQty on #DispatchQty.Description = #SaleOrderQty.Description</value>
+  </data>
+  <data name="GetTotalQuantity" xml:space="preserve">
+    <value>--Declare @periodID int
+--set @periodID=1
+
+--Declare @companyID int
+--set @companyID=1
+
+--Declare @FiscalID int
+--set @FiscalID=1
+
+--Declare @StartDate datetime
+--set @StartDate ='2018-07-01 00:00:00.000'
+
+--Declare @EndDate datetime
+--set @EndDate='2019-07-25 00:00:00.000'
+
+Select (case when t.ItemDescription like 'Bagasse' then 'Bagasse (MT)'
+when t.ItemDescription like 'Molasses' then 'Molasses (MT)'
+when t.ItemDescription like 'MUD' then 'MUD (MT)'
+when t.ItemDescription like 'SCRAP MATERIAL IN NOS' then 'SCRAP MATERIAL (NOS)'
+when t.ItemDescription like 'White Refine Sugar' then 'White Refine Sugar (BAGS)'
+else t.ItemDescription end) as Description , ISNULL(SUM(t.QuantityInvoiced),0) as Quantity  from (
+Select ARS.CustomerName As BilledtoName, ARS.AddressLine1 AS BilledtoAddress, ARS.ZipCode As BilledtoZipCode, ARS.PhoneNumber AS BilledtoPhone, 
+    SC.CityName As BilledtoCity, SAL_InvoiceDetail.InvoiceHeaderID, SET_Business.BusinessName + ' - ' + SET_OperatingUnit.OperatingUnitName AS CompanyName, 
+    SET_OperatingUnit.AddressLine1 AS CompanyAddressLine1, SET_OperatingUnit.AddressLine2 AS CompanyAddressLine2, 
+    SET_OperatingUnit.AddressLine3 AS CompanyAddressLine3, SET_OperatingUnit.ZipCode AS CompanyZipCode, CityComp.CityName AS CompanyCity, 
+    SET_OperatingUnit.PhoneNumber AS CompanyPhone, SET_OperatingUnit.Logoimage, SET_OperatingUnit.FaxNumber AS CompanyFax, SAL_InvoiceHeader.InvoiceDate, 
+    SET_DocumentType.DocumentType AS InvoiceType, 
+	(Case  DocumentTypesGroup.GroupName when 'Head Office-KHI' then 
+         'K'+'SI' +'-'+ substring(convert(varchar(20),year(SAL_InvoiceHeader.InvoiceDate)),3,2) + '000' +convert(varchar(24),SAL_InvoiceHeader.InvoiceNumber)
+          when null
+          then '-' +' '+'SI' +'-'+ substring(convert(varchar(20),year(SAL_InvoiceHeader.InvoiceDate)),3,2) + '000' +convert(varchar(24),SAL_InvoiceHeader.InvoiceNumber)
+          else  SUBSTRING(GroupName,1,1)+'SI' +'-'+ substring(convert(varchar(20),year(SAL_InvoiceHeader.InvoiceDate)),3,2) + '000' +convert(varchar(24),SAL_InvoiceHeader.InvoiceNumber)
+          end  ) as InvoiceNumber, INV_StockTransactionHeader.DocumentNo AS DispatchNo, 
+    INV_StockTransactionDetail.SourceCode AS DeliveryOrderNo, SAL_OrderHeader.ContractNo,DocumentTypesGroup.GroupName, 
+   AR_SET_Customer.CustomerName,AR_SET_Customer.NTNNumber,
+   (case when SAL_InvoiceHeader.InvoicedTo is null then AR_SET_Customer.CustomerName else SAL_InvoiceHeader.InvoicedTo end) as InvoicedDescription, 
+    AR_SET_Customer.AddressLine1 AS CustomerAddress, AR_SET_Customer.ZipCode AS CustomerZipCode, CityCust.CityName AS CustomerCity, 
+    AR_SET_Customer.PhoneNumber AS CustomerPhone, SET_Term.Description AS Terms, INV_Item.Description As ItemDescription, SET_UnitOfMeasure.UOMName, 
+    SAL_InvoiceDetail.QuantityInvoiced, Sal_InvoiceHeader.Description As InvoiceComments, Sal_InvoiceHeader.InvoicedTo, 
+     --Case When IsNull(SAL_InvoiceDetail.Inclusive, 0) = 0 Then SAL_InvoiceDetail.UnitPrice 
+    --    Else SAL_InvoiceDetail.GrossAmount / SAL_InvoiceDetail.QuantityInvoiced End As UnitPrice, 
+      --SAL_OrderDetail.Rate as UnitPrice, 
+	  SAL_InvoiceDetail.UnitPrice as UnitPrice,
+    SAL_InvoiceDetail.TaxAmount, SET_Currency.CurrencySign, SAL_InvoiceDetail.ExciseDutyAmount, SAL_InvoiceDetail.FEDAmount, 
+    ISNULL((select LookupDetail.EnumeratedDescription from LookupDetail where LookUpDetailID = SAL_InvoiceHeader.StatusCode and LookupHeaderID = 5), '') 
+        as DocumentStatus , INV_Item.InventoryItemStatusCode as ItemCode, SAL_InvoiceHeader.Billedtoid AS BilledTo, SAL_InvoiceDetail.DiscountAmountTaken as Discount
+        ,SAL_OrderHeader.referenceno as CustomerRefNo 
+				, SAL_InvoiceDetail.WithHolding,
+		--SAL_InvoiceDetail.TaxAmount,
+		--SAL_InvoiceDetail.ExciseDutyAmount,
+		--SAL_InvoiceDetail.FEDAmount,
+		 ([SAL_InvoiceDetail].QuantityInvoiced * ISNULL(SAL_OrderDetail.T_Rate,0) ) as ExclusiveSalesTaxAmount
+		, ([SAL_InvoiceDetail].QuantityInvoiced * [SAL_OrderDetail].T_Rate / 100) * SAL_InvoiceDetail.TaxAmount as SaleTaxAmount
+		, ([SAL_InvoiceDetail].QuantityInvoiced * SAL_OrderDetail.T_Rate / 100) * SAL_InvoiceDetail.ExciseDutyAmount as ExciseDutyActualAmount
+		, ([SAL_InvoiceDetail].QuantityInvoiced * [SAL_OrderDetail].T_Rate / 100) * SAL_InvoiceDetail.FEDAmount as FEDTaxAmount
+, (([SAL_InvoiceDetail].QuantityInvoiced * INV_Item.UnitWeight * SAL_OrderDetail.PricePerKG) * ( [SAL_InvoiceDetail].WithHolding )) / (100 + [SAL_InvoiceDetail].WithHolding) as WithHoldingAmount
+    ,SAL_OrderHeader.BrokerID,
+Brokername.CustomerName as DealerName,
+[SAL_OrderHeader].ContractDate as SaleOrderDate
+,(([SAL_InvoiceDetail].QuantityInvoiced * INV_Item.UnitWeight) * [SAL_OrderDetail].PriceperKG) As AmountReceivable
+,([SAL_InvoiceDetail].QuantityInvoiced * ISNULL(SAL_OrderDetail.T_Rate,0) ) as ActualInvoiceAmount
+,SAL_OrderHeader.DTRENo,
+SAL_OrderHeader.DTREDate
+    From SAL_InvoiceDetail 
+	Inner Join SAL_InvoiceHeader ON SAL_InvoiceHeader.CompanyID = SAL_InvoiceDetail.CompanyID And SAL_InvoiceHeader.PeriodID = SAL_InvoiceDetail.PeriodID 
+        And SAL_InvoiceHeader.InvoiceID = SAL_InvoiceDetail.InvoiceHeaderID And SAL_InvoiceHeader.Status = 1 
+    LEFT JOIN INV_StockTransactionDetail ON INV_StockTransactionDetail.CompanyID = SAL_InvoiceDetail.CompanyID 
+        AND INV_StockTransactionDetail.PeriodID = SAL_InvoiceDetail.PeriodID AND INV_StockTransactionDetail.StockTransactionID = SAL_InvoiceDetail.StockHeaderID 
+        AND INV_StockTransactionDetail.TransactionDetailID = SAL_InvoiceDetail.StockDetailID AND INV_StockTransactionDetail.Status = 1 
+    LEFT JOIN INV_StockTransactionHeader ON INV_StockTransactionHeader.CompanyID = INV_StockTransactionDetail.CompanyID 
+        AND INV_StockTransactionHeader.PeriodID = INV_StockTransactionDetail.PeriodID 
+        AND INV_StockTransactionHeader.StockTransactionID = INV_StockTransactionDetail.StockTransactionID AND INV_StockTransactionHeader.Status = 1 
+	LEFT JOIN SAL_DeliveryOrderDetail ON SAL_DeliveryOrderDetail.CompanyID = INV_StockTransactionDetail.CompanyID 
+        AND SAL_DeliveryOrderDetail.PeriodID = INV_StockTransactionDetail.PeriodID AND SAL_DeliveryOrderDetail.DOHeaderID = INV_StockTransactionDetail.SourceHeaderID 
+        AND SAL_DeliveryOrderDetail.DODetailID = INV_StockTransactionDetail.SourceLineID AND SAL_DeliveryOrderDetail.Status = 1 
+	LEFT JOIN SAL_OrderHeader ON SAL_OrderHeader.CompanyID = SAL_DeliveryOrderDetail.CompanyID AND SAL_OrderHeader.PeriodID = SAL_DeliveryOrderDetail.PeriodID 
+        AND SAL_OrderHeader.OrderID = SAL_DeliveryOrderDetail.SalesOrderHeaderID AND SAL_OrderHeader.Status = 1 
+    LEFT JOIN SAL_OrderDetail ON SAL_OrderDetail.CompanyID = SAL_DeliveryOrderDetail.CompanyID
+      AND SAL_OrderDetail.OrderID = SAL_DeliveryOrderDetail.SalesOrderHeaderID
+     AND SAL_OrderDetail.OrderDetailID = SAL_DeliveryOrderDetail.SalesOrderDetailID
+    AND SAL_OrderDetail.PeriodID = SAL_DeliveryOrderDetail.PeriodID
+     AND SAL_OrderDetail.Status=1
+	Inner Join SET_Company ON SET_Company.CompanyId = SAL_InvoiceDetail.CompanyID 
+	Inner Join SET_Business ON SET_Business.BusinessId = SET_Company.BusinessId 
+	Inner Join SET_OperatingUnit ON SET_OperatingUnit.OperatingUnitId = SET_Company.OperatingUnitId 
+	Inner Join SET_DocumentType ON SET_DocumentType.CompanyID = SAL_InvoiceHeader.CompanyID And SET_DocumentType.PeriodID = SAL_InvoiceHeader.PeriodID 
+        AND SET_DocumentType.DocumentTypeID = SAL_InvoiceHeader.InvoiceType 
+    Left Join DocumentTypesGroup On DocumentTypesGroup.GroupID = Set_DocumentType.GroupID 
+    --DocumentTypesGroup.CompanyID = Set_DocumentType.CompanyID And 
+	INNER Join AR_SET_Customer ON AR_SET_Customer.PeriodID = SAL_InvoiceHeader.PeriodID --AR_SET_Customer.CompanyID = SAL_InvoiceHeader.CompanyID And 
+        And AR_SET_Customer.CustomerID = SAL_InvoiceHeader.CustomerID 
+				         left JOIN AR_SET_Customer Brokername ON Brokername.CustomerID = SAL_OrderHeader.BrokerID 
+   AND AR_SET_Customer.PeriodID = SAL_OrderHeader.PeriodID 
+	Inner Join INV_Item ON INV_Item.ItemID = SAL_InvoiceDetail.ItemID 
+	Inner Join SET_Currency ON SET_Currency.CurrencyID = SAL_InvoiceHeader.InvoiceCurrencyID 
+	Left Join SET_City AS CityCust ON CityCust.CityID = AR_SET_Customer.CityID 
+	Left Join SET_City AS CityComp ON CityComp.CityID = SET_OperatingUnit.CityID 
+	Left Join SET_Term ON SET_Term.TermID = SAL_InvoiceHeader.TermsID 
+	Left Join SET_UnitOfMeasure ON SAL_InvoiceDetail.ItemUnitID = SET_UnitOfMeasure.UOMID 
+    Left Join AR_SET_Customer ARS ON ARS.CompanyID = SAL_InvoiceHeader.CompanyID And ARS.PeriodID = SAL_InvoiceHeader.PeriodID 
+	    And ARS.CustomerID = SAL_InvoiceHeader.billedtoid 
+    Left Join SET_City AS SC ON SC.CityID = ARS.CityID 
+    inner join Set_PeriodCustom on INV_StockTransactionHeader.DocumentDate between Set_PeriodCustom.StartDate and Set_PeriodCustom.EndDate 
+and Set_PeriodCustom.Status = 1  and Set_PeriodCustom.FiscalID = @FiscalID
+where SAL_InvoiceDetail.CompanyID = @CompanyID And SAL_InvoiceDetail.PeriodID = @PeriodID And SAL_InvoiceDetail.Status = 1 
+  --And (SAL_InvoiceHeader.InvoiceNumber = @InvoiceNoFrom or @InvoiceNoFrom is null) 
+  -- And (SAL_InvoiceHeader.InvoiceNumber = @InvoiceNoTo or @InvoiceNoTo is null)
+  -- And (SAL_OrderHeader.BrokerID = @BrokerID or @BrokerID is null) 
+   --AND SAL_InvoiceHeader.InvoiceType = 101 
+   AND SAL_InvoiceHeader.InvoiceDate between @StartDate and @EndDate 
+   -- Order bY CustomerName,SAL_InvoiceHeader.InvoiceDate, SAL_InvoiceHeader.InvoiceNumber
+   )t
+   group by t.ItemDescription</value>
+  </data>
+  <data name="GetTotalStockAndPendingSaleOrderQuantity" xml:space="preserve">
+    <value>--Declare @PeriodID int
+--set @PeriodID=1
+
+--Declare @CompanyID int
+--set @CompanyID=1
+
+--Declare @FiscalID int
+--set @FiscalID=1
+
+--Declare @StartDate datetime
+--set @StartDate ='2018-07-01 00:00:00.000'
+
+--Declare @EndDate datetime
+--set @EndDate='2019-07-26 00:00:00.000'
+
+
+select distinct  (case when tab.Description like 'Bagasse' then 'Bagasse (MT)'
+when tab.Description like 'Molasses' then 'Molasses (MT)'
+when tab.Description like 'MUD' then 'MUD (MT)'
+when tab.Description like 'SCRAP MATERIAL IN NOS' then 'SCRAP MATERIAL (NOS)'
+when tab.Description like 'White Refine Sugar' then 'White Refine Sugar (BAGS)'
+else tab.Description end) as Description , 
+--REPLACE(CONVERT(VARCHAR,CONVERT(MONEY,Round((Case when isnull(Sum(tab.Balance),0) != 0 then isnull(Sum(tab.Balance),0) / 1000 else 0 end),0)),1), '.00','')
+ isnull(Sum(tab.Balance),0)
+as SaleOrderQuantity 
+,(select 
+--REPLACE(CONVERT(VARCHAR,CONVERT(MONEY,Round((Case when isnull(Sum(TransactionQuantity),0) != 0 then isnull(Sum(TransactionQuantity),0) / 1000 else 0 end),0)),1), '.00','')
+isnull(Sum(TransactionQuantity),0)
+as TransactionQuatity  from INV_StockTransactionDetail
+inner join INV_StockTransactionHeader on INV_StockTransactionHeader.StockTransactionID = INV_StockTransactionDetail.StockTransactionID
+where  INV_StockTransactionHeader.Status = 1 and INV_StockTransactionDetail.Status = 1
+and INV_StockTransactionHeader.DocumentDate between @StartDate and @EndDate
+and INV_StockTransactionDetail.ItemID = tab.ItemID
+and INV_StockTransactionHeader.StatusCode = 1 and INV_StockTransactionHeader.CompanyID = @CompanyID and INV_StockTransactionHeader.PeriodID = @PeriodID and INV_StockTransactionHeader.FiscalID = @FiscalID
+) as TransactionQuatity 
+
+ from 
+(
+Select INV_Item.ItemID, AR_SET_Customer.CustomerName, AR_SET_Customer.CustomerID,SAL_DispatchHeader.DispatchNo,SAL_DispatchHeader.DispatchDate,
+INV_SET_Category.CategoryName,INV_Item.Description,INV_Item.InventoryItemStatusCode,Abs(INV_StockTransactionDetail.TransactionQuantity) AS Quantity,
+SAL_DeliveryOrderDetail.Quantity AS BaseQuantity,isnull(SAL_DeliveryOrderDetail.Quantity - ABS(ISNULL(INV_StockTransactionDetail.TransactionQuantity, 0)), 0) as Balance, DocumentTypesGroup.GroupName
+,case SAL_DispatchHeader.statusCode when 1 then 'Approved' when 5 then 'Invoice' else '' end as DispatchStatus
+From SAL_DispatchHeader
+
+INNER JOIN AR_SET_Customer on AR_SET_Customer.CustomerID=SAL_DispatchHeader.customerID 
+--and AR_SET_Customer.CompanyID = SAL_DispatchHeader.CompanyID 
+and AR_SET_Customer.PeriodID = SAL_DispatchHeader.PeriodID and AR_SET_Customer.Status = 1
+
+INNER JOIN [INV_StockTransactionHeader] ON [INV_StockTransactionHeader].[DocumentTypeID] = [SAL_DispatchHeader].[DocumentTypeID] AND [INV_StockTransactionHeader].[DocumentNo] = [SAL_DispatchHeader].[DispatchNo] AND [INV_StockTransactionHeader].[CompanyID] = [SAL_DispatchHeader].[CompanyID] AND [INV_StockTransactionHeader].[PeriodID] = [SAL_DispatchHeader].[PeriodID] AND [INV_StockTransactionHeader].[Status] = 1
+
+INNER JOIN [INV_StockTransactionDetail] ON [INV_StockTransactionDetail].[StockTransactionID] = [INV_StockTransactionHeader].[StockTransactionID] AND  [INV_StockTransactionDetail].[CompanyID] = [INV_StockTransactionHeader].[CompanyID] AND [INV_StockTransactionDetail].[PeriodID] = [INV_StockTransactionHeader].[PeriodID] AND [INV_StockTransactionDetail].[Status] = 1
+
+INNER JOIN [SAL_DeliveryOrderDetail] ON [SAL_DeliveryOrderDetail].[DODetailID] = [INV_StockTransactionDetail].[SourceLineID] AND [SAL_DeliveryOrderDetail].[DOHeaderID] = [INV_StockTransactionDetail].[SourceHeaderID] AND [SAL_DeliveryOrderDetail].[CompanyID] = [INV_StockTransactionDetail].[CompanyID] AND [SAL_DeliveryOrderDetail].[PeriodID] = [INV_StockTransactionDetail].[PeriodID] AND [SAL_DeliveryOrderDetail].[Status] = 1
+
+INNER JOIN [SAL_DeliveryOrderHeader] ON [SAL_DeliveryOrderHeader].[DeliveryOrderID] = [SAL_DeliveryOrderDetail].[DOHeaderID] AND [SAL_DeliveryOrderHeader].[CompanyID] = [SAL_DeliveryOrderDetail].[CompanyID] AND [SAL_DeliveryOrderHeader].[PeriodID] = [SAL_DeliveryOrderDetail].[PeriodID] AND [SAL_DeliveryOrderHeader].[Status] = 1
+
+INNER JOIN [SAL_OrderDetail] ON [SAL_OrderDetail].[OrderDetailID] = [SAL_DeliveryOrderDetail].[SalesOrderDetailID] AND [SAL_OrderDetail].[OrderID] = [SAL_DeliveryOrderDetail].[SalesOrderHeaderID] AND [SAL_OrderDetail].[CompanyID] = [SAL_DeliveryOrderDetail].[CompanyID] AND [SAL_OrderDetail].[PeriodID] = [SAL_DeliveryOrderDetail].[PeriodID] AND [SAL_OrderDetail].[Status] = 1
+
+INNER JOIN [INV_SET_Category] ON [INV_SET_Category].[CategoryID] = [SAL_OrderDetail].[ItemCategoryID] 
+--AND [INV_SET_Category].[CompanyID] = [SAL_OrderDetail].[CompanyID] 
+AND [INV_SET_Category].[Status] = 1
+
+INNER JOIN [INV_Item] ON [INV_Item].[ItemID] = [SAL_OrderDetail].[ItemID] 
+--AND [INV_Item].[CompanyID] = [SAL_OrderDetail].[CompanyID] 
+AND [INV_Item].[Status] = 1
+
+INNER JOIN [SET_UnitofMeasure] ON [SET_UnitofMeasure].[UOMID] = [SAL_OrderDetail].[ItemUnitID] AND [SET_UnitofMeasure].[Status] = 1
+ inner join SET_DocumentType on SET_DocumentType.DocumentTypeID = SAL_DispatchHeader.DocumentTypeID and SET_DocumentType.CompanyID = SAL_DispatchHeader.CompanyID 
+        and SET_DocumentType.PeriodID = SAL_DispatchHeader.PeriodID and SET_DocumentType.status = 1 
+   LEFT Join DocumentTypesGroup On DocumentTypesGroup.GroupID = Set_DocumentType.GroupID
+--DocumentTypesGroup.CompanyID = Set_DocumentType.CompanyID And  
+inner join Set_PeriodCustom on SAL_DispatchHeader.DispatchDate  between @StartDate and @EndDate --between Set_PeriodCustom.StartDate and Set_PeriodCustom.EndDate 
+and Set_PeriodCustom.Status = 1  and Set_PeriodCustom.FiscalID = @FiscalID
+   where SAL_DispatchHeader.CompanyID = @CompanyID and SAL_DispatchHeader.PeriodID = @PeriodID 
+   AND SAL_DispatchHeader.statusCode = 1 
+  -- AND SAL_DispatchHeader.DocumentTypeID = 155          
+)tab
+ Where tab.Balance &gt; 0 
+ group by tab.Description,tab.ItemID</value>
+  </data>
+  <data name="GetWeeklyQuantity" xml:space="preserve">
+    <value>--Declare @periodID int
+--set @periodID=1
+
+--Declare @companyID int
+--set @companyID=1
+
+--Declare @FiscalID int
+--set @FiscalID=1
+
+--Declare @StartDate datetime
+--set @StartDate ='2019-03-12 00:00:00.000'
+
+--Declare @EndDate datetime
+--set @EndDate='2019-03-19 00:00:00.000'
+
+--Declare @ProductName Varchar(50)
+--set @ProductName='Bagasse'
+
+Select t.ItemDescription as Description ,convert(Date,t.InvoiceDate) as InvoiceDate , ISNULL(SUM(t.QuantityInvoiced),0) as Quantity  from (
+Select ARS.CustomerName As BilledtoName, ARS.AddressLine1 AS BilledtoAddress, ARS.ZipCode As BilledtoZipCode, ARS.PhoneNumber AS BilledtoPhone, 
+    SC.CityName As BilledtoCity, SAL_InvoiceDetail.InvoiceHeaderID, SET_Business.BusinessName + ' - ' + SET_OperatingUnit.OperatingUnitName AS CompanyName, 
+    SET_OperatingUnit.AddressLine1 AS CompanyAddressLine1, SET_OperatingUnit.AddressLine2 AS CompanyAddressLine2, 
+    SET_OperatingUnit.AddressLine3 AS CompanyAddressLine3, SET_OperatingUnit.ZipCode AS CompanyZipCode, CityComp.CityName AS CompanyCity, 
+    SET_OperatingUnit.PhoneNumber AS CompanyPhone, SET_OperatingUnit.Logoimage, SET_OperatingUnit.FaxNumber AS CompanyFax, SAL_InvoiceHeader.InvoiceDate, 
+    SET_DocumentType.DocumentType AS InvoiceType, 
+	(Case  DocumentTypesGroup.GroupName when 'Head Office-KHI' then 
+         'K'+'SI' +'-'+ substring(convert(varchar(20),year(SAL_InvoiceHeader.InvoiceDate)),3,2) + '000' +convert(varchar(24),SAL_InvoiceHeader.InvoiceNumber)
+          when null
+          then '-' +' '+'SI' +'-'+ substring(convert(varchar(20),year(SAL_InvoiceHeader.InvoiceDate)),3,2) + '000' +convert(varchar(24),SAL_InvoiceHeader.InvoiceNumber)
+          else  SUBSTRING(GroupName,1,1)+'SI' +'-'+ substring(convert(varchar(20),year(SAL_InvoiceHeader.InvoiceDate)),3,2) + '000' +convert(varchar(24),SAL_InvoiceHeader.InvoiceNumber)
+          end  ) as InvoiceNumber, INV_StockTransactionHeader.DocumentNo AS DispatchNo, 
+    INV_StockTransactionDetail.SourceCode AS DeliveryOrderNo, SAL_OrderHeader.ContractNo,DocumentTypesGroup.GroupName, 
+   AR_SET_Customer.CustomerName,AR_SET_Customer.NTNNumber,
+   (case when SAL_InvoiceHeader.InvoicedTo is null then AR_SET_Customer.CustomerName else SAL_InvoiceHeader.InvoicedTo end) as InvoicedDescription, 
+    AR_SET_Customer.AddressLine1 AS CustomerAddress, AR_SET_Customer.ZipCode AS CustomerZipCode, CityCust.CityName AS CustomerCity, 
+    AR_SET_Customer.PhoneNumber AS CustomerPhone, SET_Term.Description AS Terms, INV_Item.Description As ItemDescription, SET_UnitOfMeasure.UOMName, 
+    SAL_InvoiceDetail.QuantityInvoiced, Sal_InvoiceHeader.Description As InvoiceComments, Sal_InvoiceHeader.InvoicedTo, 
+     --Case When IsNull(SAL_InvoiceDetail.Inclusive, 0) = 0 Then SAL_InvoiceDetail.UnitPrice 
+    --    Else SAL_InvoiceDetail.GrossAmount / SAL_InvoiceDetail.QuantityInvoiced End As UnitPrice, 
+      --SAL_OrderDetail.Rate as UnitPrice, 
+	  SAL_InvoiceDetail.UnitPrice as UnitPrice,
+    SAL_InvoiceDetail.TaxAmount, SET_Currency.CurrencySign, SAL_InvoiceDetail.ExciseDutyAmount, SAL_InvoiceDetail.FEDAmount, 
+    ISNULL((select LookupDetail.EnumeratedDescription from LookupDetail where LookUpDetailID = SAL_InvoiceHeader.StatusCode and LookupHeaderID = 5), '') 
+        as DocumentStatus , INV_Item.InventoryItemStatusCode as ItemCode, SAL_InvoiceHeader.Billedtoid AS BilledTo, SAL_InvoiceDetail.DiscountAmountTaken as Discount
+        ,SAL_OrderHeader.referenceno as CustomerRefNo 
+				, SAL_InvoiceDetail.WithHolding,
+		--SAL_InvoiceDetail.TaxAmount,
+		--SAL_InvoiceDetail.ExciseDutyAmount,
+		--SAL_InvoiceDetail.FEDAmount,
+		 ([SAL_InvoiceDetail].QuantityInvoiced * ISNULL(SAL_OrderDetail.T_Rate,0) ) as ExclusiveSalesTaxAmount
+		, ([SAL_InvoiceDetail].QuantityInvoiced * [SAL_OrderDetail].T_Rate / 100) * SAL_InvoiceDetail.TaxAmount as SaleTaxAmount
+		, ([SAL_InvoiceDetail].QuantityInvoiced * SAL_OrderDetail.T_Rate / 100) * SAL_InvoiceDetail.ExciseDutyAmount as ExciseDutyActualAmount
+		, ([SAL_InvoiceDetail].QuantityInvoiced * [SAL_OrderDetail].T_Rate / 100) * SAL_InvoiceDetail.FEDAmount as FEDTaxAmount
+, (([SAL_InvoiceDetail].QuantityInvoiced * INV_Item.UnitWeight * SAL_OrderDetail.PricePerKG) * ( [SAL_InvoiceDetail].WithHolding )) / (100 + [SAL_InvoiceDetail].WithHolding) as WithHoldingAmount
+    ,SAL_OrderHeader.BrokerID,
+Brokername.CustomerName as DealerName,
+[SAL_OrderHeader].ContractDate as SaleOrderDate
+,(([SAL_InvoiceDetail].QuantityInvoiced * INV_Item.UnitWeight) * [SAL_OrderDetail].PriceperKG) As AmountReceivable
+,([SAL_InvoiceDetail].QuantityInvoiced * ISNULL(SAL_OrderDetail.T_Rate,0) ) as ActualInvoiceAmount
+,SAL_OrderHeader.DTRENo,
+SAL_OrderHeader.DTREDate
+    From SAL_InvoiceDetail 
+	Inner Join SAL_InvoiceHeader ON SAL_InvoiceHeader.CompanyID = SAL_InvoiceDetail.CompanyID And SAL_InvoiceHeader.PeriodID = SAL_InvoiceDetail.PeriodID 
+        And SAL_InvoiceHeader.InvoiceID = SAL_InvoiceDetail.InvoiceHeaderID And SAL_InvoiceHeader.Status = 1 
+    LEFT JOIN INV_StockTransactionDetail ON INV_StockTransactionDetail.CompanyID = SAL_InvoiceDetail.CompanyID 
+        AND INV_StockTransactionDetail.PeriodID = SAL_InvoiceDetail.PeriodID AND INV_StockTransactionDetail.StockTransactionID = SAL_InvoiceDetail.StockHeaderID 
+        AND INV_StockTransactionDetail.TransactionDetailID = SAL_InvoiceDetail.StockDetailID AND INV_StockTransactionDetail.Status = 1 
+    LEFT JOIN INV_StockTransactionHeader ON INV_StockTransactionHeader.CompanyID = INV_StockTransactionDetail.CompanyID 
+        AND INV_StockTransactionHeader.PeriodID = INV_StockTransactionDetail.PeriodID 
+        AND INV_StockTransactionHeader.StockTransactionID = INV_StockTransactionDetail.StockTransactionID AND INV_StockTransactionHeader.Status = 1 
+	LEFT JOIN SAL_DeliveryOrderDetail ON SAL_DeliveryOrderDetail.CompanyID = INV_StockTransactionDetail.CompanyID 
+        AND SAL_DeliveryOrderDetail.PeriodID = INV_StockTransactionDetail.PeriodID AND SAL_DeliveryOrderDetail.DOHeaderID = INV_StockTransactionDetail.SourceHeaderID 
+        AND SAL_DeliveryOrderDetail.DODetailID = INV_StockTransactionDetail.SourceLineID AND SAL_DeliveryOrderDetail.Status = 1 
+	LEFT JOIN SAL_OrderHeader ON SAL_OrderHeader.CompanyID = SAL_DeliveryOrderDetail.CompanyID AND SAL_OrderHeader.PeriodID = SAL_DeliveryOrderDetail.PeriodID 
+        AND SAL_OrderHeader.OrderID = SAL_DeliveryOrderDetail.SalesOrderHeaderID AND SAL_OrderHeader.Status = 1 
+    LEFT JOIN SAL_OrderDetail ON SAL_OrderDetail.CompanyID = SAL_DeliveryOrderDetail.CompanyID
+      AND SAL_OrderDetail.OrderID = SAL_DeliveryOrderDetail.SalesOrderHeaderID
+     AND SAL_OrderDetail.OrderDetailID = SAL_DeliveryOrderDetail.SalesOrderDetailID
+    AND SAL_OrderDetail.PeriodID = SAL_DeliveryOrderDetail.PeriodID
+     AND SAL_OrderDetail.Status=1
+	Inner Join SET_Company ON SET_Company.CompanyId = SAL_InvoiceDetail.CompanyID 
+	Inner Join SET_Business ON SET_Business.BusinessId = SET_Company.BusinessId 
+	Inner Join SET_OperatingUnit ON SET_OperatingUnit.OperatingUnitId = SET_Company.OperatingUnitId 
+	Inner Join SET_DocumentType ON SET_DocumentType.CompanyID = SAL_InvoiceHeader.CompanyID And SET_DocumentType.PeriodID = SAL_InvoiceHeader.PeriodID 
+        AND SET_DocumentType.DocumentTypeID = SAL_InvoiceHeader.InvoiceType 
+    Left Join DocumentTypesGroup On DocumentTypesGroup.GroupID = Set_DocumentType.GroupID 
+    --DocumentTypesGroup.CompanyID = Set_DocumentType.CompanyID And 
+	INNER Join AR_SET_Customer ON AR_SET_Customer.PeriodID = SAL_InvoiceHeader.PeriodID --AR_SET_Customer.CompanyID = SAL_InvoiceHeader.CompanyID And 
+        And AR_SET_Customer.CustomerID = SAL_InvoiceHeader.CustomerID 
+				         left JOIN AR_SET_Customer Brokername ON Brokername.CustomerID = SAL_OrderHeader.BrokerID 
+   AND AR_SET_Customer.PeriodID = SAL_OrderHeader.PeriodID 
+	Inner Join INV_Item ON INV_Item.ItemID = SAL_InvoiceDetail.ItemID 
+	Inner Join SET_Currency ON SET_Currency.CurrencyID = SAL_InvoiceHeader.InvoiceCurrencyID 
+	Left Join SET_City AS CityCust ON CityCust.CityID = AR_SET_Customer.CityID 
+	Left Join SET_City AS CityComp ON CityComp.CityID = SET_OperatingUnit.CityID 
+	Left Join SET_Term ON SET_Term.TermID = SAL_InvoiceHeader.TermsID 
+	Left Join SET_UnitOfMeasure ON SAL_InvoiceDetail.ItemUnitID = SET_UnitOfMeasure.UOMID 
+    Left Join AR_SET_Customer ARS ON ARS.CompanyID = SAL_InvoiceHeader.CompanyID And ARS.PeriodID = SAL_InvoiceHeader.PeriodID 
+	    And ARS.CustomerID = SAL_InvoiceHeader.billedtoid 
+    Left Join SET_City AS SC ON SC.CityID = ARS.CityID 
+    inner join Set_PeriodCustom on INV_StockTransactionHeader.DocumentDate between Set_PeriodCustom.StartDate and Set_PeriodCustom.EndDate 
+and Set_PeriodCustom.Status = 1  and Set_PeriodCustom.FiscalID = @FiscalID
+where SAL_InvoiceDetail.CompanyID IN @CompanyID And SAL_InvoiceDetail.PeriodID = @PeriodID And SAL_InvoiceDetail.Status = 1 
+  --And (SAL_InvoiceHeader.InvoiceNumber = @InvoiceNoFrom or @InvoiceNoFrom is null) 
+  -- And (SAL_InvoiceHeader.InvoiceNumber = @InvoiceNoTo or @InvoiceNoTo is null)
+  -- And (SAL_OrderHeader.BrokerID = @BrokerID or @BrokerID is null) 
+   --AND SAL_InvoiceHeader.InvoiceType = 101 
+   --AND SAL_InvoiceHeader.InvoiceDate between @StartDate and @EndDate 
+      AND SAL_InvoiceHeader.InvoiceDate &gt; @StartDate and SAL_InvoiceHeader.InvoiceDate &lt;= @EndDate 
+   -- Order bY CustomerName,SAL_InvoiceHeader.InvoiceDate, SAL_InvoiceHeader.InvoiceNumber
+   )t
+   where t.ItemDescription like @ProductName   
+   group by t.ItemDescription,t.InvoiceDate
+   order by t.InvoiceDate Desc
+
+
+   --------------------Weekly Total-----------------
+
+   
+Select t.ItemDescription as Description ,ISNULL(SUM(t.QuantityInvoiced),0) as Quantity  from (
+Select ARS.CustomerName As BilledtoName, ARS.AddressLine1 AS BilledtoAddress, ARS.ZipCode As BilledtoZipCode, ARS.PhoneNumber AS BilledtoPhone, 
+    SC.CityName As BilledtoCity, SAL_InvoiceDetail.InvoiceHeaderID, SET_Business.BusinessName + ' - ' + SET_OperatingUnit.OperatingUnitName AS CompanyName, 
+    SET_OperatingUnit.AddressLine1 AS CompanyAddressLine1, SET_OperatingUnit.AddressLine2 AS CompanyAddressLine2, 
+    SET_OperatingUnit.AddressLine3 AS CompanyAddressLine3, SET_OperatingUnit.ZipCode AS CompanyZipCode, CityComp.CityName AS CompanyCity, 
+    SET_OperatingUnit.PhoneNumber AS CompanyPhone, SET_OperatingUnit.Logoimage, SET_OperatingUnit.FaxNumber AS CompanyFax, SAL_InvoiceHeader.InvoiceDate, 
+    SET_DocumentType.DocumentType AS InvoiceType, 
+	(Case  DocumentTypesGroup.GroupName when 'Head Office-KHI' then 
+         'K'+'SI' +'-'+ substring(convert(varchar(20),year(SAL_InvoiceHeader.InvoiceDate)),3,2) + '000' +convert(varchar(24),SAL_InvoiceHeader.InvoiceNumber)
+          when null
+          then '-' +' '+'SI' +'-'+ substring(convert(varchar(20),year(SAL_InvoiceHeader.InvoiceDate)),3,2) + '000' +convert(varchar(24),SAL_InvoiceHeader.InvoiceNumber)
+          else  SUBSTRING(GroupName,1,1)+'SI' +'-'+ substring(convert(varchar(20),year(SAL_InvoiceHeader.InvoiceDate)),3,2) + '000' +convert(varchar(24),SAL_InvoiceHeader.InvoiceNumber)
+          end  ) as InvoiceNumber, INV_StockTransactionHeader.DocumentNo AS DispatchNo, 
+    INV_StockTransactionDetail.SourceCode AS DeliveryOrderNo, SAL_OrderHeader.ContractNo,DocumentTypesGroup.GroupName, 
+   AR_SET_Customer.CustomerName,AR_SET_Customer.NTNNumber,
+   (case when SAL_InvoiceHeader.InvoicedTo is null then AR_SET_Customer.CustomerName else SAL_InvoiceHeader.InvoicedTo end) as InvoicedDescription, 
+    AR_SET_Customer.AddressLine1 AS CustomerAddress, AR_SET_Customer.ZipCode AS CustomerZipCode, CityCust.CityName AS CustomerCity, 
+    AR_SET_Customer.PhoneNumber AS CustomerPhone, SET_Term.Description AS Terms, INV_Item.Description As ItemDescription, SET_UnitOfMeasure.UOMName, 
+    SAL_InvoiceDetail.QuantityInvoiced, Sal_InvoiceHeader.Description As InvoiceComments, Sal_InvoiceHeader.InvoicedTo, 
+     --Case When IsNull(SAL_InvoiceDetail.Inclusive, 0) = 0 Then SAL_InvoiceDetail.UnitPrice 
+    --    Else SAL_InvoiceDetail.GrossAmount / SAL_InvoiceDetail.QuantityInvoiced End As UnitPrice, 
+      --SAL_OrderDetail.Rate as UnitPrice, 
+	  SAL_InvoiceDetail.UnitPrice as UnitPrice,
+    SAL_InvoiceDetail.TaxAmount, SET_Currency.CurrencySign, SAL_InvoiceDetail.ExciseDutyAmount, SAL_InvoiceDetail.FEDAmount, 
+    ISNULL((select LookupDetail.EnumeratedDescription from LookupDetail where LookUpDetailID = SAL_InvoiceHeader.StatusCode and LookupHeaderID = 5), '') 
+        as DocumentStatus , INV_Item.InventoryItemStatusCode as ItemCode, SAL_InvoiceHeader.Billedtoid AS BilledTo, SAL_InvoiceDetail.DiscountAmountTaken as Discount
+        ,SAL_OrderHeader.referenceno as CustomerRefNo 
+				, SAL_InvoiceDetail.WithHolding,
+		--SAL_InvoiceDetail.TaxAmount,
+		--SAL_InvoiceDetail.ExciseDutyAmount,
+		--SAL_InvoiceDetail.FEDAmount,
+		 ([SAL_InvoiceDetail].QuantityInvoiced * ISNULL(SAL_OrderDetail.T_Rate,0) ) as ExclusiveSalesTaxAmount
+		, ([SAL_InvoiceDetail].QuantityInvoiced * [SAL_OrderDetail].T_Rate / 100) * SAL_InvoiceDetail.TaxAmount as SaleTaxAmount
+		, ([SAL_InvoiceDetail].QuantityInvoiced * SAL_OrderDetail.T_Rate / 100) * SAL_InvoiceDetail.ExciseDutyAmount as ExciseDutyActualAmount
+		, ([SAL_InvoiceDetail].QuantityInvoiced * [SAL_OrderDetail].T_Rate / 100) * SAL_InvoiceDetail.FEDAmount as FEDTaxAmount
+, (([SAL_InvoiceDetail].QuantityInvoiced * INV_Item.UnitWeight * SAL_OrderDetail.PricePerKG) * ( [SAL_InvoiceDetail].WithHolding )) / (100 + [SAL_InvoiceDetail].WithHolding) as WithHoldingAmount
+    ,SAL_OrderHeader.BrokerID,
+Brokername.CustomerName as DealerName,
+[SAL_OrderHeader].ContractDate as SaleOrderDate
+,(([SAL_InvoiceDetail].QuantityInvoiced * INV_Item.UnitWeight) * [SAL_OrderDetail].PriceperKG) As AmountReceivable
+,([SAL_InvoiceDetail].QuantityInvoiced * ISNULL(SAL_OrderDetail.T_Rate,0) ) as ActualInvoiceAmount
+,SAL_OrderHeader.DTRENo,
+SAL_OrderHeader.DTREDate
+    From SAL_InvoiceDetail 
+	Inner Join SAL_InvoiceHeader ON SAL_InvoiceHeader.CompanyID = SAL_InvoiceDetail.CompanyID And SAL_InvoiceHeader.PeriodID = SAL_InvoiceDetail.PeriodID 
+        And SAL_InvoiceHeader.InvoiceID = SAL_InvoiceDetail.InvoiceHeaderID And SAL_InvoiceHeader.Status = 1 
+    LEFT JOIN INV_StockTransactionDetail ON INV_StockTransactionDetail.CompanyID = SAL_InvoiceDetail.CompanyID 
+        AND INV_StockTransactionDetail.PeriodID = SAL_InvoiceDetail.PeriodID AND INV_StockTransactionDetail.StockTransactionID = SAL_InvoiceDetail.StockHeaderID 
+        AND INV_StockTransactionDetail.TransactionDetailID = SAL_InvoiceDetail.StockDetailID AND INV_StockTransactionDetail.Status = 1 
+    LEFT JOIN INV_StockTransactionHeader ON INV_StockTransactionHeader.CompanyID = INV_StockTransactionDetail.CompanyID 
+        AND INV_StockTransactionHeader.PeriodID = INV_StockTransactionDetail.PeriodID 
+        AND INV_StockTransactionHeader.StockTransactionID = INV_StockTransactionDetail.StockTransactionID AND INV_StockTransactionHeader.Status = 1 
+	LEFT JOIN SAL_DeliveryOrderDetail ON SAL_DeliveryOrderDetail.CompanyID = INV_StockTransactionDetail.CompanyID 
+        AND SAL_DeliveryOrderDetail.PeriodID = INV_StockTransactionDetail.PeriodID AND SAL_DeliveryOrderDetail.DOHeaderID = INV_StockTransactionDetail.SourceHeaderID 
+        AND SAL_DeliveryOrderDetail.DODetailID = INV_StockTransactionDetail.SourceLineID AND SAL_DeliveryOrderDetail.Status = 1 
+	LEFT JOIN SAL_OrderHeader ON SAL_OrderHeader.CompanyID = SAL_DeliveryOrderDetail.CompanyID AND SAL_OrderHeader.PeriodID = SAL_DeliveryOrderDetail.PeriodID 
+        AND SAL_OrderHeader.OrderID = SAL_DeliveryOrderDetail.SalesOrderHeaderID AND SAL_OrderHeader.Status = 1 
+    LEFT JOIN SAL_OrderDetail ON SAL_OrderDetail.CompanyID = SAL_DeliveryOrderDetail.CompanyID
+      AND SAL_OrderDetail.OrderID = SAL_DeliveryOrderDetail.SalesOrderHeaderID
+     AND SAL_OrderDetail.OrderDetailID = SAL_DeliveryOrderDetail.SalesOrderDetailID
+    AND SAL_OrderDetail.PeriodID = SAL_DeliveryOrderDetail.PeriodID
+     AND SAL_OrderDetail.Status=1
+	Inner Join SET_Company ON SET_Company.CompanyId = SAL_InvoiceDetail.CompanyID 
+	Inner Join SET_Business ON SET_Business.BusinessId = SET_Company.BusinessId 
+	Inner Join SET_OperatingUnit ON SET_OperatingUnit.OperatingUnitId = SET_Company.OperatingUnitId 
+	Inner Join SET_DocumentType ON SET_DocumentType.CompanyID = SAL_InvoiceHeader.CompanyID And SET_DocumentType.PeriodID = SAL_InvoiceHeader.PeriodID 
+        AND SET_DocumentType.DocumentTypeID = SAL_InvoiceHeader.InvoiceType 
+    Left Join DocumentTypesGroup On DocumentTypesGroup.GroupID = Set_DocumentType.GroupID 
+    --DocumentTypesGroup.CompanyID = Set_DocumentType.CompanyID And 
+	INNER Join AR_SET_Customer ON AR_SET_Customer.PeriodID = SAL_InvoiceHeader.PeriodID --AR_SET_Customer.CompanyID = SAL_InvoiceHeader.CompanyID And 
+        And AR_SET_Customer.CustomerID = SAL_InvoiceHeader.CustomerID 
+				         left JOIN AR_SET_Customer Brokername ON Brokername.CustomerID = SAL_OrderHeader.BrokerID 
+   AND AR_SET_Customer.PeriodID = SAL_OrderHeader.PeriodID 
+	Inner Join INV_Item ON INV_Item.ItemID = SAL_InvoiceDetail.ItemID 
+	Inner Join SET_Currency ON SET_Currency.CurrencyID = SAL_InvoiceHeader.InvoiceCurrencyID 
+	Left Join SET_City AS CityCust ON CityCust.CityID = AR_SET_Customer.CityID 
+	Left Join SET_City AS CityComp ON CityComp.CityID = SET_OperatingUnit.CityID 
+	Left Join SET_Term ON SET_Term.TermID = SAL_InvoiceHeader.TermsID 
+	Left Join SET_UnitOfMeasure ON SAL_InvoiceDetail.ItemUnitID = SET_UnitOfMeasure.UOMID 
+    Left Join AR_SET_Customer ARS ON ARS.CompanyID = SAL_InvoiceHeader.CompanyID And ARS.PeriodID = SAL_InvoiceHeader.PeriodID 
+	    And ARS.CustomerID = SAL_InvoiceHeader.billedtoid 
+    Left Join SET_City AS SC ON SC.CityID = ARS.CityID 
+    inner join Set_PeriodCustom on INV_StockTransactionHeader.DocumentDate between Set_PeriodCustom.StartDate and Set_PeriodCustom.EndDate 
+and Set_PeriodCustom.Status = 1  and Set_PeriodCustom.FiscalID = @FiscalID
+where SAL_InvoiceDetail.CompanyID IN @CompanyID And SAL_InvoiceDetail.PeriodID = @PeriodID And SAL_InvoiceDetail.Status = 1 
+  --And (SAL_InvoiceHeader.InvoiceNumber = @InvoiceNoFrom or @InvoiceNoFrom is null) 
+  -- And (SAL_InvoiceHeader.InvoiceNumber = @InvoiceNoTo or @InvoiceNoTo is null)
+  -- And (SAL_OrderHeader.BrokerID = @BrokerID or @BrokerID is null) 
+   --AND SAL_InvoiceHeader.InvoiceType = 101 
+   --AND SAL_InvoiceHeader.InvoiceDate between @StartDate and @EndDate 
+      AND SAL_InvoiceHeader.InvoiceDate &gt; @StartDate and SAL_InvoiceHeader.InvoiceDate &lt;= @EndDate 
+   -- Order bY CustomerName,SAL_InvoiceHeader.InvoiceDate, SAL_InvoiceHeader.InvoiceNumber
+   )t
+   where t.ItemDescription like @ProductName   
+   group by t.ItemDescription</value>
+  </data>
+  <data name="GetYearlyRates" xml:space="preserve">
+    <value>--Declare @periodID int
+--set @periodID=1
+
+--Declare @companyID int
+--set @companyID=1
+
+--Declare @FiscalID int
+--set @FiscalID=1
+
+--Declare @StartDate datetime
+--set @StartDate ='2018-10-01 00:00:00.000'
+
+--Declare @EndDate datetime
+--set @EndDate='2019-07-22 00:00:00.000'
+
+--Declare @ProductName Varchar(50)
+--set @ProductName='White Refine Sugar'
+
+
+
+
+Select distinct t.ItemDescription as Description , Max(t.UnitPrice) as UnitPrice, t.InvoiceDate
+from (
+Select ARS.CustomerName As BilledtoName, ARS.AddressLine1 AS BilledtoAddress, ARS.ZipCode As BilledtoZipCode, ARS.PhoneNumber AS BilledtoPhone, 
+    SC.CityName As BilledtoCity, SAL_InvoiceDetail.InvoiceHeaderID, SET_Business.BusinessName + ' - ' + SET_OperatingUnit.OperatingUnitName AS CompanyName, 
+    SET_OperatingUnit.AddressLine1 AS CompanyAddressLine1, SET_OperatingUnit.AddressLine2 AS CompanyAddressLine2, 
+    SET_OperatingUnit.AddressLine3 AS CompanyAddressLine3, SET_OperatingUnit.ZipCode AS CompanyZipCode, CityComp.CityName AS CompanyCity, 
+    SET_OperatingUnit.PhoneNumber AS CompanyPhone, SET_OperatingUnit.Logoimage, SET_OperatingUnit.FaxNumber AS CompanyFax, SAL_InvoiceHeader.InvoiceDate, 
+    SET_DocumentType.DocumentType AS InvoiceType, 
+	(Case  DocumentTypesGroup.GroupName when 'Head Office-KHI' then 
+         'K'+'SI' +'-'+ substring(convert(varchar(20),year(SAL_InvoiceHeader.InvoiceDate)),3,2) + '000' +convert(varchar(24),SAL_InvoiceHeader.InvoiceNumber)
+          when null
+          then '-' +' '+'SI' +'-'+ substring(convert(varchar(20),year(SAL_InvoiceHeader.InvoiceDate)),3,2) + '000' +convert(varchar(24),SAL_InvoiceHeader.InvoiceNumber)
+          else  SUBSTRING(GroupName,1,1)+'SI' +'-'+ substring(convert(varchar(20),year(SAL_InvoiceHeader.InvoiceDate)),3,2) + '000' +convert(varchar(24),SAL_InvoiceHeader.InvoiceNumber)
+          end  ) as InvoiceNumber, INV_StockTransactionHeader.DocumentNo AS DispatchNo, 
+    INV_StockTransactionDetail.SourceCode AS DeliveryOrderNo, SAL_OrderHeader.ContractNo,DocumentTypesGroup.GroupName, 
+   AR_SET_Customer.CustomerName,AR_SET_Customer.NTNNumber,
+   (case when SAL_InvoiceHeader.InvoicedTo is null then AR_SET_Customer.CustomerName else SAL_InvoiceHeader.InvoicedTo end) as InvoicedDescription, 
+    AR_SET_Customer.AddressLine1 AS CustomerAddress, AR_SET_Customer.ZipCode AS CustomerZipCode, CityCust.CityName AS CustomerCity, 
+    AR_SET_Customer.PhoneNumber AS CustomerPhone, SET_Term.Description AS Terms, INV_Item.Description As ItemDescription, SET_UnitOfMeasure.UOMName, 
+    SAL_InvoiceDetail.QuantityInvoiced, Sal_InvoiceHeader.Description As InvoiceComments, Sal_InvoiceHeader.InvoicedTo, 
+     --Case When IsNull(SAL_InvoiceDetail.Inclusive, 0) = 0 Then SAL_InvoiceDetail.UnitPrice 
+    --    Else SAL_InvoiceDetail.GrossAmount / SAL_InvoiceDetail.QuantityInvoiced End As UnitPrice, 
+      --SAL_OrderDetail.Rate as UnitPrice, 
+	  SAL_InvoiceDetail.UnitPrice as UnitPrice,
+    SAL_InvoiceDetail.TaxAmount, SET_Currency.CurrencySign, SAL_InvoiceDetail.ExciseDutyAmount, SAL_InvoiceDetail.FEDAmount, 
+    ISNULL((select LookupDetail.EnumeratedDescription from LookupDetail where LookUpDetailID = SAL_InvoiceHeader.StatusCode and LookupHeaderID = 5), '') 
+        as DocumentStatus , INV_Item.InventoryItemStatusCode as ItemCode, SAL_InvoiceHeader.Billedtoid AS BilledTo, SAL_InvoiceDetail.DiscountAmountTaken as Discount
+        ,SAL_OrderHeader.referenceno as CustomerRefNo 
+				, SAL_InvoiceDetail.WithHolding,
+		--SAL_InvoiceDetail.TaxAmount,
+		--SAL_InvoiceDetail.ExciseDutyAmount,
+		--SAL_InvoiceDetail.FEDAmount,
+		 ([SAL_InvoiceDetail].QuantityInvoiced * ISNULL(SAL_OrderDetail.T_Rate,0) ) as ExclusiveSalesTaxAmount
+		, ([SAL_InvoiceDetail].QuantityInvoiced * [SAL_OrderDetail].T_Rate / 100) * SAL_InvoiceDetail.TaxAmount as SaleTaxAmount
+		, ([SAL_InvoiceDetail].QuantityInvoiced * SAL_OrderDetail.T_Rate / 100) * SAL_InvoiceDetail.ExciseDutyAmount as ExciseDutyActualAmount
+		, ([SAL_InvoiceDetail].QuantityInvoiced * [SAL_OrderDetail].T_Rate / 100) * SAL_InvoiceDetail.FEDAmount as FEDTaxAmount
+, (([SAL_InvoiceDetail].QuantityInvoiced * INV_Item.UnitWeight * SAL_OrderDetail.PricePerKG) * ( [SAL_InvoiceDetail].WithHolding )) / (100 + [SAL_InvoiceDetail].WithHolding) as WithHoldingAmount
+    ,SAL_OrderHeader.BrokerID,
+Brokername.CustomerName as DealerName,
+[SAL_OrderHeader].ContractDate as SaleOrderDate
+,(([SAL_InvoiceDetail].QuantityInvoiced * INV_Item.UnitWeight) * [SAL_OrderDetail].PriceperKG) As AmountReceivable
+,([SAL_InvoiceDetail].QuantityInvoiced * ISNULL(SAL_OrderDetail.T_Rate,0) ) as ActualInvoiceAmount
+,SAL_OrderHeader.DTRENo,
+SAL_OrderHeader.DTREDate
+    From SAL_InvoiceDetail 
+	Inner Join SAL_InvoiceHeader ON SAL_InvoiceHeader.CompanyID = SAL_InvoiceDetail.CompanyID And SAL_InvoiceHeader.PeriodID = SAL_InvoiceDetail.PeriodID 
+        And SAL_InvoiceHeader.InvoiceID = SAL_InvoiceDetail.InvoiceHeaderID And SAL_InvoiceHeader.Status = 1 
+    LEFT JOIN INV_StockTransactionDetail ON INV_StockTransactionDetail.CompanyID = SAL_InvoiceDetail.CompanyID 
+        AND INV_StockTransactionDetail.PeriodID = SAL_InvoiceDetail.PeriodID AND INV_StockTransactionDetail.StockTransactionID = SAL_InvoiceDetail.StockHeaderID 
+        AND INV_StockTransactionDetail.TransactionDetailID = SAL_InvoiceDetail.StockDetailID AND INV_StockTransactionDetail.Status = 1 
+    LEFT JOIN INV_StockTransactionHeader ON INV_StockTransactionHeader.CompanyID = INV_StockTransactionDetail.CompanyID 
+        AND INV_StockTransactionHeader.PeriodID = INV_StockTransactionDetail.PeriodID 
+        AND INV_StockTransactionHeader.StockTransactionID = INV_StockTransactionDetail.StockTransactionID AND INV_StockTransactionHeader.Status = 1 
+	LEFT JOIN SAL_DeliveryOrderDetail ON SAL_DeliveryOrderDetail.CompanyID = INV_StockTransactionDetail.CompanyID 
+        AND SAL_DeliveryOrderDetail.PeriodID = INV_StockTransactionDetail.PeriodID AND SAL_DeliveryOrderDetail.DOHeaderID = INV_StockTransactionDetail.SourceHeaderID 
+        AND SAL_DeliveryOrderDetail.DODetailID = INV_StockTransactionDetail.SourceLineID AND SAL_DeliveryOrderDetail.Status = 1 
+	LEFT JOIN SAL_OrderHeader ON SAL_OrderHeader.CompanyID = SAL_DeliveryOrderDetail.CompanyID AND SAL_OrderHeader.PeriodID = SAL_DeliveryOrderDetail.PeriodID 
+        AND SAL_OrderHeader.OrderID = SAL_DeliveryOrderDetail.SalesOrderHeaderID AND SAL_OrderHeader.Status = 1 
+    LEFT JOIN SAL_OrderDetail ON SAL_OrderDetail.CompanyID = SAL_DeliveryOrderDetail.CompanyID
+      AND SAL_OrderDetail.OrderID = SAL_DeliveryOrderDetail.SalesOrderHeaderID
+     AND SAL_OrderDetail.OrderDetailID = SAL_DeliveryOrderDetail.SalesOrderDetailID
+    AND SAL_OrderDetail.PeriodID = SAL_DeliveryOrderDetail.PeriodID
+     AND SAL_OrderDetail.Status=1
+	Inner Join SET_Company ON SET_Company.CompanyId = SAL_InvoiceDetail.CompanyID 
+	Inner Join SET_Business ON SET_Business.BusinessId = SET_Company.BusinessId 
+	Inner Join SET_OperatingUnit ON SET_OperatingUnit.OperatingUnitId = SET_Company.OperatingUnitId 
+	Inner Join SET_DocumentType ON SET_DocumentType.CompanyID = SAL_InvoiceHeader.CompanyID And SET_DocumentType.PeriodID = SAL_InvoiceHeader.PeriodID 
+        AND SET_DocumentType.DocumentTypeID = SAL_InvoiceHeader.InvoiceType 
+    Left Join DocumentTypesGroup On DocumentTypesGroup.GroupID = Set_DocumentType.GroupID 
+    --DocumentTypesGroup.CompanyID = Set_DocumentType.CompanyID And 
+	INNER Join AR_SET_Customer ON AR_SET_Customer.PeriodID = SAL_InvoiceHeader.PeriodID --AR_SET_Customer.CompanyID = SAL_InvoiceHeader.CompanyID And 
+        And AR_SET_Customer.CustomerID = SAL_InvoiceHeader.CustomerID 
+				         left JOIN AR_SET_Customer Brokername ON Brokername.CustomerID = SAL_OrderHeader.BrokerID 
+   AND AR_SET_Customer.PeriodID = SAL_OrderHeader.PeriodID 
+	Inner Join INV_Item ON INV_Item.ItemID = SAL_InvoiceDetail.ItemID 
+	Inner Join SET_Currency ON SET_Currency.CurrencyID = SAL_InvoiceHeader.InvoiceCurrencyID 
+	Left Join SET_City AS CityCust ON CityCust.CityID = AR_SET_Customer.CityID 
+	Left Join SET_City AS CityComp ON CityComp.CityID = SET_OperatingUnit.CityID 
+	Left Join SET_Term ON SET_Term.TermID = SAL_InvoiceHeader.TermsID 
+	Left Join SET_UnitOfMeasure ON SAL_InvoiceDetail.ItemUnitID = SET_UnitOfMeasure.UOMID 
+    Left Join AR_SET_Customer ARS ON ARS.CompanyID = SAL_InvoiceHeader.CompanyID And ARS.PeriodID = SAL_InvoiceHeader.PeriodID 
+	    And ARS.CustomerID = SAL_InvoiceHeader.billedtoid 
+    Left Join SET_City AS SC ON SC.CityID = ARS.CityID 
+    inner join Set_PeriodCustom on INV_StockTransactionHeader.DocumentDate between Set_PeriodCustom.StartDate and Set_PeriodCustom.EndDate 
+and Set_PeriodCustom.Status = 1  and Set_PeriodCustom.FiscalID = @FiscalID
+where SAL_InvoiceDetail.CompanyID = @CompanyID And SAL_InvoiceDetail.PeriodID = @PeriodID And SAL_InvoiceDetail.Status = 1 
+  --And (SAL_InvoiceHeader.InvoiceNumber = @InvoiceNoFrom or @InvoiceNoFrom is null) 
+  -- And (SAL_InvoiceHeader.InvoiceNumber = @InvoiceNoTo or @InvoiceNoTo is null)
+  -- And (SAL_OrderHeader.BrokerID = @BrokerID or @BrokerID is null) 
+   --AND SAL_InvoiceHeader.InvoiceType = 101 
+   --AND SAL_InvoiceHeader.InvoiceDate between @StartDate and @EndDate 
+      AND SAL_InvoiceHeader.InvoiceDate &gt;= @StartDate and SAL_InvoiceHeader.InvoiceDate &lt;= @EndDate 
+   -- Order bY CustomerName,SAL_InvoiceHeader.InvoiceDate, SAL_InvoiceHeader.InvoiceNumber
+
+   )t
+   where t.ItemDescription like @ProductName   
+   GROUP BY t.ItemDescription , t.InvoiceDate
+   order by t.InvoiceDate desc</value>
+  </data>
+</root>

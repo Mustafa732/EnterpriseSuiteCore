@@ -1,0 +1,210 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Query_WorkOrderCreationReport" xml:space="preserve">
+    <value>select WorkOrderCreation_Header.WOC_HeaderID,
+SET_DocumentType.DocumentType 
+,WorkOrderCreation_Header.DocumentNo
+ , convert ( varchar(15),WorkOrderCreation_Header.DocumentDate ,106 ) DocumentDate
+,WorkOrderCreation_Header.CustomerOrderNo
+ , convert ( varchar (15),WorkOrderCreation_Header.CustomerOrderDate,106) CustomerOrderDate
+,AR_SET_Customer.CustomerName
+,AR_SET_Customer.FaxNumber
+,AR_SET_Customer.PhoneNumber
+,WorkOrderCreation_Header.ReferenceNo
+,WorkOrderCreation_Header.Quantity as HeaderQty
+,WorkOrderCreation_Header.Rate  as HeaderRate
+,WorkOrderCreation_Header.OtherInstruction as HeaderInstruction
+,INV_Item.Description 
+,INV_SET_Category.CategoryName
+,SET_City.CityName +', '+ AR_SET_Customer.ZipCode +', '+ AR_SET_Customer.ExtensionNumber as CustomerAddress
+,WorkOrderCreation_Detail.OtherInstruction  ,set_operatingunit.AddressLine1
+,set_operatingunit.AddressLine2
+,set_operatingunit.AddressLine3  ,HeaderItem.Description as HeaderItem
+, HeaderItem.ItemID as HeaderItemID
+,WorkOrderCreation_Header.Weave
+,WorkOrderCreation_Header.BottomStitch
+,WorkOrderCreation_Header.Packing
+,WorkOrderCreation_Header.UVStablize
+,WorkOrderCreation_Header.Denier
+,WorkOrderCreation_Header.DispatchPlace
+,WorkOrderCreation_Header.ContactPersonName
+,WorkOrderCreation_Header.ContactPersonNo
+,WorkOrderCreation_Header.Length as HeaderLength,
+WorkOrderCreation_Header.Width as HeaderWidth,
+WorkOrderCreation_Header.Color as HeaderColor,
+WorkOrderCreation_Header.Weight as HeaderWeight
+,INV_Item.Color,
+INV_Item.Width,
+INV_Item.Length,
+WorkOrderCreation_Detail.Type,
+WorkOrderCreation_Detail.Width as DetailWidth,
+WorkOrderCreation_Detail.Length as DetailLength,
+WorkOrderCreation_Detail.Weight as DetailWeight,
+WorkOrderCreation_Detail.Side,
+WorkOrderCreation_Detail.Color as DetailColor,
+WorkOrderCreation_Detail.Stereo,
+WorkOrderCreation_Detail.Colors as DetailColors,
+WorkOrderCreation_Detail.Samples,WorkOrderCreation_Detail.Apperance
+,WorkOrderCreation_Detail.Thickness
+,WorkOrderCreation_Detail.SeamMargin 
+ from WorkOrderCreation_Header 
+inner join  WorkOrderCreation_Detail on  WorkOrderCreation_Detail.WOC_HeaderID  =  WorkOrderCreation_Header.WOC_HeaderID  
+and WorkOrderCreation_Detail.CompanyID=  WorkOrderCreation_Header.CompanyID 
+and WorkOrderCreation_Detail.Status = 1 
+and WorkOrderCreation_Header.Status = 1 left join INV_Item HeaderItem on HeaderItem.ItemID = WorkOrderCreation_Header.ItemID
+--and HeaderItem.CompanyID = WorkOrderCreation_Header.CompanyID
+and HeaderItem.status = 1
+
+ left join   AR_SET_Customer on  AR_SET_Customer.CustomerID  =  WorkOrderCreation_Header.CustomerID 
+ and AR_SET_Customer.CompanyID=  WorkOrderCreation_Header.CompanyID 
+ and AR_SET_Customer.Status = 1
+
+   inner join SET_DocumentType on SET_DocumentType.DocumentTypeID =  WorkOrderCreation_Header.DocumentTypeID
+   and SET_DocumentType.CompanyID =  WorkOrderCreation_Header.CompanyID
+   and SET_DocumentType.Status = 1
+   
+   inner join   INV_Item on  INV_Item.ItemID  =   WorkOrderCreation_Detail.ItemID 
+  -- and INV_Item.CompanyID = WorkOrderCreation_Detail.CompanyID
+   and INV_Item.Status = 1 
+   
+   inner join  Inv_set_category  on  Inv_set_category.CategoryID=   WorkOrderCreation_Detail.CategoryID
+   --and Inv_set_category.CompanyID = WorkOrderCreation_Detail.CompanyID
+   and INV_Item.Status = 1  
+   inner join SET_Company on SET_Company.CompanyID = WorkOrderCreation_Header.CompanyID
+   and SET_Company.Status =1 
+   
+   inner join set_operatingunit on set_operatingunit.OperatingUnitId = SET_Company.OperatingUnitId
+   and set_operatingunit.status = 1  
+   
+   left join  SET_City on SET_City.CityID =  AR_SET_Customer.CityID 
+   and SET_City.Status = 1
+   where WorkOrderCreation_Header.CompanyID = @CompanyID
+   {0}
+   ------------------
+ select WorkOrderCreation_Header.DocumentNo,WorkOrder_DeliverySchedule.DateMonth,WorkOrder_DeliverySchedule.Quantity
+ from WorkOrderCreation_Header
+
+inner join WorkOrder_DeliverySchedule on WorkOrder_DeliverySchedule.WOC_HeaderID = WorkOrderCreation_Header.WOC_HeaderID
+and WorkOrder_DeliverySchedule.CompanyID = WorkOrderCreation_Header.CompanyID
+and WorkOrder_DeliverySchedule.Status = 1
+and WorkOrderCreation_Header.CompanyID = @CompanyID
+{0}</value>
+  </data>
+</root>

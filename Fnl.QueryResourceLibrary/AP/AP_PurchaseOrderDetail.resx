@@ -1,0 +1,1561 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="QueryForPO_Invoice" xml:space="preserve">
+    <value>SELECT * from 
+(
+    Select distinct AP_PurchaseOrderHeader.Subjects,AP_PurchaseOrderHeader.FreightTermsCode,
+	   Case AP_PurchaseOrderHeader.FreightTermsCode 
+        When 1 then 'Delivered'  
+        When 2 Then 'ExMill' End As FreightTerms ,AP_PurchaseOrderHeader.TermsAndConditions,
+	    AP_PurchaseOrderHeader.AdvanceAmountPercentage, AP_PurchaseOrderHeader.DeliveryPeriod as DeliveryPeriod1, AP_PurchaseOrderDetail.POHeaderID, 
+        AP_PurchaseOrderHeader.CancelFlag, AP_PurchaseOrderDetail.PODetailID, RTRIM(LTRIM(INV_Item.Description)) as Description, 
+        RTRIM(LTRIM(INV_SET_Category.CategoryName)) as CategoryName, IsNull(AP_PurchaseOrderDetail.ItemDescription, INV_Item.Description) As ItemDescription, 
+        INV_Item.InventoryItemStatusCode, SET_UnitOfMeasure.UOMName, case AP_PurchaseOrderHeader.RateType when 1 then 'DemandDraft' when 2 then 'Ready' 
+            when 3 then 'TelegraphicTransfer' when 4 then 'Cash' else null end as PaymentMode, 
+        PUR_EnquiryHeader.DeliveryDate as DeliveryPeriod, PUR_QuotationHeader.PlaceOfDelivery, AP_PurchaseOrderDetail.Quantity, AP_PurchaseOrderDetail.UnitPrice, 
+        AP_PurchaseOrderHeader.DocumentDate, SET_DocumentType.DocumentType AS POType, AP_PurchaseOrderHeader.DocumentNumber, 
+        PUR_QuotationHeader.DocumentNo AS QuotationNumber, Convert(Varchar(10), PUR_QuotationHeader.QuotedDate, 103) AS QuotationDate, 
+        AP_PurchaseOrderHeader.ClosedDate, 
+		
+		Isnull(shiplocation.Description , '') as ShipToLocation, Isnull(Billlocation.Description  , '') as BillToLocation, 
+
+
+		case when AP_PurchaseOrderHeader.FreightTermsCode = 1 then 'CF' when AP_PurchaseOrderHeader.FreightTermsCode = 2 then 'FOB' else ' ' end as ShippingTerms, 
+        FOBLookup.EnumeratedDescription as FOB, ShipLookup.EnumeratedDescription AS ShipVia, SET_Term.Description AS Terms, AP_PurchaseOrderHeader.Comments, 
+        IsNull(AR_SET_Tax.TaxRate, 0) As TaxRate, AR_SET_Customer.CustomerName, AR_SET_Customer.AddressLine1 AS VendorAddress, 
+        AR_SET_Customer.ZipCode AS VendorZipCode, CitySupp.CityName AS VendorCity, AR_SET_Customer.PhoneNumber AS VendorPhone, 
+        AR_SET_Customer.ContactNumber as VenerContactNumber, AR_SET_Customer.NTNNumber as VenderNTNNumber, AR_SET_Customer.STRNNumber as VenderSalesTaxNumber, 
+        SET_Business.BusinessName + ' - ' + SET_OperatingUnit.OperatingUnitName AS CompanyName, SET_OperatingUnit.AddressLine1 AS CompanyAddressLine1, 
+        SET_OperatingUnit.AddressLine2 AS CompanyAddressLine2, SET_OperatingUnit.AddressLine3 AS CompanyAddressLine3, SET_OperatingUnit.ZipCode AS CompanyZipCode, 
+        CityComp.CityName AS CompanyCity, SET_OperatingUnit.PhoneNumber AS CompanyPhone, SET_OperatingUnit.FaxNumber AS CompanyFax, 
+        '' as LogoImage, isnull(SET_OperatingUnit.NTNNumber, SET_Business.NTNNumber) as CompanyNTNNumber, 
+        isnull(SET_OperatingUnit.SalesTaxNumber, SET_Business.SalesTaxNumber) as CompanySalesTaxNumber, SET_Currency.CurrencySign, 
+        SET_Currency.CurrencyName as CurrencySignature, ISNULL(AP_PurchaseOrderDetail.NoteToVendor, '') as NoteToVendor, 
+        ISNULL(AP_PurchaseOrderHeader.NoteToVendor, '') as NoteToVendorHeader, 
+        ISNULL((select LookupDetail.EnumeratedDescription from LookupDetail where LookUpDetailID = AP_PurchaseOrderHeader.StatusCode and LookupHeaderID = 5), '') as 
+            DocumentStatus, 
+        Case When INV_StockTransactionHeader.DocumentNo IS NULL Then AP_PurchaseOrderRequisition.DocumentNo Else INV_StockTransactionHeader.DocumentNo End as ReqNO, 
+        STUFF(
+        (
+            SELECT distinct ',' + convert(varchar(24), POR.DocumentNo) FROM AP_PurchaseOrderRequisition AS POR 
+            where AP_PurchaseOrderHeader.POHeaderID = POR.POHeaderID AND AP_PurchaseOrderHeader.CompanyID = POR.CompanyID 
+                AND AP_PurchaseOrderHeader.PeriodID = POR.PeriodID 
+				AND AP_PurchaseOrderHeader.FiscalID = POR.FiscalID
+            FOR XML PATH(''), TYPE
+        ).value('.', 'varchar(max)'), 1, 2, '') as ReqNOPO, 
+        ISNULL(AP_PurchaseOrderHeader.otherTax, 0) AS otherTax, ISNULL(AP_PurchaseOrderHeader.FreightAmount, 0) AS FreightAmount, 
+        AP_PurchaseOrderDetail.QtyRcvTolerance, AP_PurchaseOrderDetail.TaxAmount 
+ ,(Case  DocumentTypesGroup.GroupName when 'Head Office-KHI' then 
+         'K'+'PO' +'-'+ substring(convert(varchar(20),year(AP_PurchaseOrderHeader.DocumentDate)),3,2) + '000' +convert(varchar(24),AP_PurchaseOrderHeader.DocumentNumber)
+          when null
+          then '--' +' '+'PO' +'-'+ substring(convert(varchar(20),year(AP_PurchaseOrderHeader.DocumentDate)),3,2) + '000' +convert(varchar(24),AP_PurchaseOrderHeader.DocumentNumber)
+          else  SUBSTRING(GroupName,1,1)+'PO' +'-'+ substring(convert(varchar(20),year(AP_PurchaseOrderHeader.DocumentDate)),3,2) + '000' +convert(varchar(24),AP_PurchaseOrderHeader.DocumentNumber) end  ) as PONumber,
+        DocumentTypesGroup.Comments as BranchAddress,AP_PurchaseOrderHeader.Rate
+,SET_Designation .DesignationName,UsersDetail.FullName as Username, 
+isnull((AP_PurchaseOrderHeader.UpdatedByValue),AP_PurchaseOrderHeader.CreatedByValue) as PreparedBy
+
+	,Case when AP_PurchaseOrderHeader.StatusCode=1 OR AP_PurchaseOrderHeader.StatusCode=13 then (
+		select top 1 CreatedByValue from SET_DocumentApprove 
+        where Set_DocumentApprove.DocumentTypeID = AP_PurchaseOrderHeader.TypeCode 
+    and Set_DocumentApprove.DocumentNo = AP_PurchaseOrderHeader.DocumentNumber
+    and Set_DocumentApprove.FiscalID = AP_PurchaseOrderHeader.FiscalID
+	and Set_DocumentApprove.CompanyID = AP_PurchaseOrderHeader.CompanyID 
+	and Set_DocumentApprove.ApprovalStatus = 'PartiallyApproved'
+    order by DocumentApproveID desc)
+        Else isnull((AP_PurchaseOrderHeader.UpdatedByValue),AP_PurchaseOrderHeader.CreatedByValue) End as ApprovedBy,
+
+		Case when AP_PurchaseOrderHeader.StatusCode=1 then (
+        select top 1 CreatedByValue from SET_DocumentApprove 
+        where Set_DocumentApprove.DocumentTypeID = AP_PurchaseOrderHeader.TypeCode 
+    and Set_DocumentApprove.DocumentNo = AP_PurchaseOrderHeader.DocumentNumber
+    and Set_DocumentApprove.FiscalID = AP_PurchaseOrderHeader.FiscalID
+	and Set_DocumentApprove.CompanyID = AP_PurchaseOrderHeader.CompanyID
+    order by DocumentApproveID desc)
+        Else isnull((AP_PurchaseOrderHeader.UpdatedByValue),AP_PurchaseOrderHeader.CreatedByValue) End as AuthorizedBy
+
+,AP_PurchaseOrderDetail.SerialNo ,AP_PurchaseOrderHeader.OnNetAmount, AP_PurchaseOrderHeader.PODueDate , AP_PurchaseOrderHeader.NoteToReceiver, Set_PeriodCustom.PeriodSetName
+,'Purchase Copy' as ReportType,1 as ReportNo,tbl_Department.DepartmentName as DepartmentName2, tbl_CostCenter.CostCenterName as CostCenterName2,
+ SET_Department.DepartmentName,Set_CostCenter.CostCenterName,ReqType.DocumentType AS ReqType
+,isnull(AP_PurchaseOrderDetail.DiscountAmount,0) as DiscountAmount
+,AR_SET_Bank.BankName,AR_SET_Customer.AccountNumber as  BankAccountName
+,PUR_QuotationDetail.Specs
+From AP_PurchaseOrderDetail
+	Inner Join AP_PurchaseOrderHeader ON AP_PurchaseOrderHeader.CompanyID = AP_PurchaseOrderDetail.CompanyID 
+        And AP_PurchaseOrderHeader.PeriodID = AP_PurchaseOrderDetail.PeriodID And AP_PurchaseOrderHeader.POHeaderID = AP_PurchaseOrderDetail.POHeaderID 
+        And AP_PurchaseOrderHeader.Status = 1 And AP_PurchaseOrderHeader.IsActive = 1 
+    Left Join AP_PurchaseOrderRequisition On AP_PurchaseOrderRequisition.CompanyID = AP_PurchaseOrderDetail.CompanyID 
+		And AP_PurchaseOrderRequisition.PeriodID = AP_PurchaseOrderDetail.PeriodID And AP_PurchaseOrderRequisition.POHeaderID = AP_PurchaseOrderDetail.POHeaderID 
+		And AP_PurchaseOrderRequisition.PODetailID = AP_PurchaseOrderDetail.PODetailID 
+	Inner Join INV_Item ON INV_Item.ItemID = AP_PurchaseOrderDetail.ItemID 
+    Inner Join INV_SET_Category On INV_SET_Category.CategoryID = INV_Item.ItemTypeID 
+--  
+    INNER JOIN SET_DocumentType ON SET_DocumentType.CompanyID = AP_PurchaseOrderHeader.CompanyID AND SET_DocumentType.PeriodID = AP_PurchaseOrderHeader.PeriodID 
+		AND SET_DocumentType.DocumentTypeID = AP_PurchaseOrderHeader.TypeCode AND isnull(SET_DocumentType.IsHide, 0) &lt;&gt; 1 
+    Left Join SET_UnitOfMeasure ON AP_PurchaseOrderDetail.ItemUOMID = SET_UnitOfMeasure.UOMID 
+	Inner Join SET_Company ON SET_Company.CompanyId = AP_PurchaseOrderDetail.CompanyID 
+	Inner Join SET_OperatingUnit ON SET_OperatingUnit.OperatingUnitId = SET_Company.OperatingUnitId 
+	Inner Join SET_Business ON SET_Business.BusinessId = SET_Company.BusinessId 
+    Inner Join SET_Currency ON SET_Currency.CurrencyID = AP_PurchaseOrderHeader.CurrencyID 
+	Left Join LookupDetail AS FOBLookup ON FOBLookup.LookupHeaderID = 7 And FOBLookup.LookupDetailID = AP_PurchaseOrderHeader.FOBCode 
+	Left Join LookupDetail AS ShipLookup ON ShipLookup.LookupHeaderID = 10 And ShipLookup.LookupDetailID = AP_PurchaseOrderHeader.ShipViaCode 
+	Left Join SET_Term ON SET_Term.TermID = AP_PurchaseOrderHeader.TermsID 
+	Left Join AR_SET_Tax ON AR_SET_Tax.PeriodID = AP_PurchaseOrderDetail.PeriodID --AR_SET_Tax.CompanyID = AP_PurchaseOrderDetail.CompanyID And 
+        And AR_SET_Tax.TaxID = AP_PurchaseOrderDetail.TaxID 
+	Left Join AR_SET_Customer ON AR_SET_Customer.PeriodID = AP_PurchaseOrderHeader.PeriodID 
+        --AR_SET_Customer.CompanyID = AP_PurchaseOrderHeader.CompanyID 
+        And AR_SET_Customer.CustomerID = AP_PurchaseOrderHeader.VendorID 
+
+		left join AR_SET_Bank on AR_SET_Bank.BankID = AR_SET_Customer.FK_BankID
+		left join AR_SET_BankAccount on AR_SET_BankAccount.BankAccountID = AR_SET_Customer.FK_BankAccountID
+
+	Left Join SET_City AS CitySupp ON CitySupp.CityID = AR_SET_Customer.CityID 
+	Left Join SET_City AS CityComp ON CityComp.CityID = SET_OperatingUnit.CityID 
+    left join PUR_QuotationHeader ON PUR_QuotationHeader.DocumentNo = AP_PurchaseOrderHeader.VendorQuoteNumber 
+        and PUR_QuotationHeader.CompanyID = AP_PurchaseOrderHeader.CompanyID and PUR_QuotationHeader.PeriodID = AP_PurchaseOrderHeader.PeriodID 
+        and PUR_QuotationHeader.FiscalID = @CurrentFiscalID and PUR_QuotationHeader.Status = 1 
+		left JOIN PUR_QuotationDetail ON PUR_QuotationDetail.CompanyID = PUR_QuotationHeader.CompanyID 
+		AND PUR_QuotationDetail.PeriodID = PUR_QuotationHeader.PeriodID
+        AND [PUR_QuotationDetail].QuotationHeaderID  = PUR_QuotationHeader.QuotationID 
+		AND [PUR_QuotationDetail].QuotationHeaderID  = AP_PurchaseOrderDetail.FromHeaderID
+		AND [PUR_QuotationDetail].QuotationDetailID = AP_PurchaseOrderDetail.FromDetailID
+    Left Join PUR_EnquiryHeader ON PUR_EnquiryHeader.EnquiryID = PUR_QuotationHeader.EnquiryHeaderID AND PUR_EnquiryHeader.CompanyID = PUR_QuotationHeader.CompanyID 
+        AND  PUR_EnquiryHeader.PeriodID = PUR_QuotationHeader.PeriodID 
+  LEFT JOIN  DocumentTypesGroup On DocumentTypesGroup.GroupID = Set_DocumentType.GroupID 
+--DocumentTypesGroup.CompanyID = Set_DocumentType.CompanyID And 
+    --Left Join INV_StockTransactionHeader ON INV_StockTransactionHeader.StockTransactionID = AP_PurchaseOrderHeader.StockRequisitionID 
+    --    AND INV_StockTransactionHeader.CompanyID = AP_PurchaseOrderHeader.CompanyID AND INV_StockTransactionHeader.PeriodID = AP_PurchaseOrderHeader.PeriodID 
+
+	Left Join INV_StockTransactionHeader ON INV_StockTransactionHeader.StockTransactionID = AP_PurchaseOrderRequisition.RequisitionHeaderID 
+        AND INV_StockTransactionHeader.CompanyID = AP_PurchaseOrderRequisition.CompanyID AND INV_StockTransactionHeader.PeriodID = AP_PurchaseOrderRequisition.PeriodID
+		--AND INV_StockTransactionHeader.FiscalID = AP_PurchaseOrderRequisition.FiscalID
+		AND INV_StockTransactionHeader.Status = 1
+
+	--LEFT JOIN [INV_StockTransactionHeader] as tbl_StkHdr ON tbl_StkHdr.[StockTransactionID] = [AP_PurchaseOrderHeader].[StockRequisitionID]
+	--	AND tbl_StkHdr.[CompanyID] = [AP_PurchaseOrderHeader].[CompanyID]
+	--	AND tbl_StkHdr.[PeriodID] = [AP_PurchaseOrderHeader].[PeriodID]
+	--	And tbl_StkHdr.Status = 1
+        
+inner join aspnet_Users on aspnet_Users.UserId = AP_PurchaseOrderHeader.CreatedBy
+left join UsersDetail on UsersDetail.UserID = aspnet_Users.UserId
+left join SET_Designation on SET_Designation.DesignationID = UsersDetail.DesignationID
+inner join Set_PeriodCustom on AP_PurchaseOrderHeader.DocumentDate between Set_PeriodCustom.StartDate and Set_PeriodCustom.EndDate 
+and Set_PeriodCustom.Status = 1  and Set_PeriodCustom.FiscalID = @CurrentFiscalID        
+        		
+left Join SET_DocumentApprove on  SET_DocumentApprove.DocumentNo=AP_PurchaseOrderHeader.DocumentNumber
+AND SET_DocumentApprove.DocumentTypeID=AP_PurchaseOrderHeader.TypeCode
+AND SET_DocumentApprove.CompanyID=AP_PurchaseOrderHeader.CompanyID
+AND SET_DocumentApprove.ApprovalStatus='Approved'
+
+Left Join SET_Department On SET_Department.DepartmentID = INV_StockTransactionHeader.DepartmentID
+And SET_Department.Status = 1 And SET_Department.IsActive = 1
+
+left Join SET_Department as tbl_Department on tbl_Department.DepartmentID = INV_StockTransactionHeader.DepartmentID
+     and tbl_Department.Status = 1 and tbl_Department.IsActive = 1
+
+Left Join Set_CostCenter On Set_CostCenter.CostCenterID = INV_StockTransactionHeader.CostCenterID
+And SET_CostCenter.Status = 1
+
+left Join SET_CostCenter as tbl_CostCenter on tbl_CostCenter.CostCenterID = INV_StockTransactionHeader.CostCenterID
+     And tbl_CostCenter.Status = 1
+
+Left Join SET_DocumentType ReqType On ReqType.DocumentTypeID = AP_PurchaseOrderRequisition.DocumentTypeID
+and ReqType.PeriodID = AP_PurchaseOrderRequisition.PeriodID
+and ReqType.CompanyID = AP_PurchaseOrderRequisition.CompanyID
+and ReqType.Status = 1
+
+left join SET_Location AS shiplocation on shiplocation.LocationID  = AP_PurchaseOrderHeader.ShipToLocationID 
+left join SET_Location AS Billlocation on Billlocation.LocationID  = AP_PurchaseOrderHeader.BillToLocationID 
+
+where AP_PurchaseOrderDetail.CompanyID = @CompanyID And AP_PurchaseOrderDetail.PeriodID = @PeriodID And AP_PurchaseOrderDetail.Status = 1 
+    And AP_PurchaseOrderDetail.IsActive = 1 And AP_PurchaseOrderHeader.DocumentNumber Between @PONumberFrom And @PONumberTo 
+    {0}
+
+union all
+
+Select distinct AP_PurchaseOrderHeader.Subjects,AP_PurchaseOrderHeader.FreightTermsCode,
+       Case AP_PurchaseOrderHeader.FreightTermsCode 
+        When 1 then 'Delivered'  
+        When 2 Then 'ExMill' End As FreightTerms ,AP_PurchaseOrderHeader.TermsAndConditions,
+        AP_PurchaseOrderHeader.AdvanceAmountPercentage, AP_PurchaseOrderHeader.DeliveryPeriod as DeliveryPeriod1, AP_PurchaseOrderDetail.POHeaderID, 
+        AP_PurchaseOrderHeader.CancelFlag, AP_PurchaseOrderDetail.PODetailID, RTRIM(LTRIM(INV_Item.Description)) as Description, 
+        RTRIM(LTRIM(INV_SET_Category.CategoryName)) as CategoryName, IsNull(AP_PurchaseOrderDetail.ItemDescription, INV_Item.Description) As ItemDescription, 
+        INV_Item.InventoryItemStatusCode, SET_UnitOfMeasure.UOMName, case AP_PurchaseOrderHeader.RateType when 1 then 'DemandDraft' when 2 then 'Ready' 
+            when 3 then 'TelegraphicTransfer' when 4 then 'Cash' else null end as PaymentMode, 
+        PUR_EnquiryHeader.DeliveryDate as DeliveryPeriod, PUR_QuotationHeader.PlaceOfDelivery, AP_PurchaseOrderDetail.Quantity, AP_PurchaseOrderDetail.UnitPrice, 
+        AP_PurchaseOrderHeader.DocumentDate, SET_DocumentType.DocumentType AS POType, AP_PurchaseOrderHeader.DocumentNumber, 
+        PUR_QuotationHeader.DocumentNo AS QuotationNumber, Convert(Varchar(10), PUR_QuotationHeader.QuotedDate, 103) AS QuotationDate, 
+        AP_PurchaseOrderHeader.ClosedDate, 
+		Isnull(shiplocation.Description , '') as ShipToLocation, Isnull(Billlocation.Description  , '') as BillToLocation, 
+		case when AP_PurchaseOrderHeader.FreightTermsCode = 1 then 'CF' when AP_PurchaseOrderHeader.FreightTermsCode = 2 then 'FOB' else ' ' end as ShippingTerms, 
+        FOBLookup.EnumeratedDescription as FOB, ShipLookup.EnumeratedDescription AS ShipVia, SET_Term.Description AS Terms, AP_PurchaseOrderHeader.Comments, 
+        IsNull(AR_SET_Tax.TaxRate, 0) As TaxRate, AR_SET_Customer.CustomerName, AR_SET_Customer.AddressLine1 AS VendorAddress, 
+        AR_SET_Customer.ZipCode AS VendorZipCode, CitySupp.CityName AS VendorCity, AR_SET_Customer.PhoneNumber AS VendorPhone, 
+        AR_SET_Customer.ContactNumber as VenerContactNumber, AR_SET_Customer.NTNNumber as VenderNTNNumber, AR_SET_Customer.STRNNumber as VenderSalesTaxNumber, 
+        SET_Business.BusinessName + ' - ' + SET_OperatingUnit.OperatingUnitName AS CompanyName, SET_OperatingUnit.AddressLine1 AS CompanyAddressLine1, 
+        SET_OperatingUnit.AddressLine2 AS CompanyAddressLine2, SET_OperatingUnit.AddressLine3 AS CompanyAddressLine3, SET_OperatingUnit.ZipCode AS CompanyZipCode, 
+        CityComp.CityName AS CompanyCity, SET_OperatingUnit.PhoneNumber AS CompanyPhone, SET_OperatingUnit.FaxNumber AS CompanyFax, 
+        '' as LogoImage, isnull(SET_OperatingUnit.NTNNumber, SET_Business.NTNNumber) as CompanyNTNNumber, 
+        isnull(SET_OperatingUnit.SalesTaxNumber, SET_Business.SalesTaxNumber) as CompanySalesTaxNumber, SET_Currency.CurrencySign, 
+        SET_Currency.CurrencyName as CurrencySignature, ISNULL(AP_PurchaseOrderDetail.NoteToVendor, '') as NoteToVendor, 
+        ISNULL(AP_PurchaseOrderHeader.NoteToVendor, '') as NoteToVendorHeader, 
+        ISNULL((select LookupDetail.EnumeratedDescription from LookupDetail where LookUpDetailID = AP_PurchaseOrderHeader.StatusCode and LookupHeaderID = 5), '') as 
+            DocumentStatus, 
+        Case When INV_StockTransactionHeader.DocumentNo IS NULL Then AP_PurchaseOrderRequisition.DocumentNo Else INV_StockTransactionHeader.DocumentNo End as ReqNO, 
+        STUFF(
+        (
+            SELECT distinct ',' + convert(varchar(24), POR.DocumentNo) FROM AP_PurchaseOrderRequisition AS POR 
+            where AP_PurchaseOrderHeader.POHeaderID = POR.POHeaderID AND AP_PurchaseOrderHeader.CompanyID = POR.CompanyID 
+                AND AP_PurchaseOrderHeader.PeriodID = POR.PeriodID 
+				AND AP_PurchaseOrderHeader.FiscalID = POR.FiscalID
+            FOR XML PATH(''), TYPE
+        ).value('.', 'varchar(max)'), 1, 2, '') as ReqNOPO, 
+        ISNULL(AP_PurchaseOrderHeader.otherTax, 0) AS otherTax, ISNULL(AP_PurchaseOrderHeader.FreightAmount, 0) AS FreightAmount, 
+        AP_PurchaseOrderDetail.QtyRcvTolerance, AP_PurchaseOrderDetail.TaxAmount 
+ ,(Case  DocumentTypesGroup.GroupName when 'Head Office-KHI' then 
+         'K'+'PO' +'-'+ substring(convert(varchar(20),year(AP_PurchaseOrderHeader.DocumentDate)),3,2) + '000' +convert(varchar(24),AP_PurchaseOrderHeader.DocumentNumber)
+          when null
+          then '--' +' '+'PO' +'-'+ substring(convert(varchar(20),year(AP_PurchaseOrderHeader.DocumentDate)),3,2) + '000' +convert(varchar(24),AP_PurchaseOrderHeader.DocumentNumber)
+          else  SUBSTRING(GroupName,1,1)+'PO' +'-'+ substring(convert(varchar(20),year(AP_PurchaseOrderHeader.DocumentDate)),3,2) + '000' +convert(varchar(24),AP_PurchaseOrderHeader.DocumentNumber) end  ) as PONumber,
+        DocumentTypesGroup.Comments as BranchAddress,AP_PurchaseOrderHeader.Rate
+,SET_Designation .DesignationName,UsersDetail.FullName as Username, 
+isnull((AP_PurchaseOrderHeader.UpdatedByValue),AP_PurchaseOrderHeader.CreatedByValue) as PreparedBy
+
+	,Case when AP_PurchaseOrderHeader.StatusCode=1 OR AP_PurchaseOrderHeader.StatusCode=13 then (
+		select top 1 CreatedByValue from SET_DocumentApprove 
+        where Set_DocumentApprove.DocumentTypeID = AP_PurchaseOrderHeader.TypeCode 
+    and Set_DocumentApprove.DocumentNo = AP_PurchaseOrderHeader.DocumentNumber
+    and Set_DocumentApprove.FiscalID = AP_PurchaseOrderHeader.FiscalID
+	and Set_DocumentApprove.CompanyID = AP_PurchaseOrderHeader.CompanyID 
+	and Set_DocumentApprove.ApprovalStatus = 'PartiallyApproved'
+    order by DocumentApproveID desc)
+        Else isnull((AP_PurchaseOrderHeader.UpdatedByValue),AP_PurchaseOrderHeader.CreatedByValue) End as ApprovedBy,
+		
+		
+		Case when AP_PurchaseOrderHeader.StatusCode=1 then (
+        select top 1 CreatedByValue from SET_DocumentApprove 
+        where Set_DocumentApprove.DocumentTypeID = AP_PurchaseOrderHeader.TypeCode 
+    and Set_DocumentApprove.DocumentNo = AP_PurchaseOrderHeader.DocumentNumber
+    and Set_DocumentApprove.FiscalID = AP_PurchaseOrderHeader.FiscalID
+	and Set_DocumentApprove.CompanyID = AP_PurchaseOrderHeader.CompanyID
+    order by DocumentApproveID desc)
+        Else isnull((AP_PurchaseOrderHeader.UpdatedByValue),AP_PurchaseOrderHeader.CreatedByValue) End as AuthorizedBy
+
+		 
+,AP_PurchaseOrderDetail.SerialNo ,AP_PurchaseOrderHeader.OnNetAmount, AP_PurchaseOrderHeader.PODueDate , AP_PurchaseOrderHeader.NoteToReceiver, Set_PeriodCustom.PeriodSetName
+,'Accounts Copy' as ReportType,2 as ReportNo,tbl_Department.DepartmentName as DepartmentName2, tbl_CostCenter.CostCenterName as CostCenterName2,
+ SET_Department.DepartmentName,Set_CostCenter.CostCenterName,ReqType.DocumentType AS ReqType
+,isnull(AP_PurchaseOrderDetail.DiscountAmount,0) as DiscountAmount
+,AR_SET_Bank.BankName,AR_SET_Customer.AccountNumber as  BankAccountName
+,PUR_QuotationDetail.Specs
+From AP_PurchaseOrderDetail
+	Inner Join AP_PurchaseOrderHeader ON AP_PurchaseOrderHeader.CompanyID = AP_PurchaseOrderDetail.CompanyID 
+        And AP_PurchaseOrderHeader.PeriodID = AP_PurchaseOrderDetail.PeriodID And AP_PurchaseOrderHeader.POHeaderID = AP_PurchaseOrderDetail.POHeaderID 
+        And AP_PurchaseOrderHeader.Status = 1 And AP_PurchaseOrderHeader.IsActive = 1 
+    Left Join AP_PurchaseOrderRequisition On AP_PurchaseOrderRequisition.CompanyID = AP_PurchaseOrderDetail.CompanyID 
+		And AP_PurchaseOrderRequisition.PeriodID = AP_PurchaseOrderDetail.PeriodID And AP_PurchaseOrderRequisition.POHeaderID = AP_PurchaseOrderDetail.POHeaderID 
+		And AP_PurchaseOrderRequisition.PODetailID = AP_PurchaseOrderDetail.PODetailID 
+	Inner Join INV_Item ON INV_Item.ItemID = AP_PurchaseOrderDetail.ItemID 
+    Inner Join INV_SET_Category On INV_SET_Category.CategoryID = INV_Item.ItemTypeID 
+--  
+    INNER JOIN SET_DocumentType ON SET_DocumentType.CompanyID = AP_PurchaseOrderHeader.CompanyID AND SET_DocumentType.PeriodID = AP_PurchaseOrderHeader.PeriodID 
+		AND SET_DocumentType.DocumentTypeID = AP_PurchaseOrderHeader.TypeCode AND isnull(SET_DocumentType.IsHide, 0) &lt;&gt; 1 
+    Left Join SET_UnitOfMeasure ON AP_PurchaseOrderDetail.ItemUOMID = SET_UnitOfMeasure.UOMID 
+	Inner Join SET_Company ON SET_Company.CompanyId = AP_PurchaseOrderDetail.CompanyID 
+	Inner Join SET_OperatingUnit ON SET_OperatingUnit.OperatingUnitId = SET_Company.OperatingUnitId 
+	Inner Join SET_Business ON SET_Business.BusinessId = SET_Company.BusinessId 
+    Inner Join SET_Currency ON SET_Currency.CurrencyID = AP_PurchaseOrderHeader.CurrencyID 
+	Left Join LookupDetail AS FOBLookup ON FOBLookup.LookupHeaderID = 7 And FOBLookup.LookupDetailID = AP_PurchaseOrderHeader.FOBCode 
+	Left Join LookupDetail AS ShipLookup ON ShipLookup.LookupHeaderID = 10 And ShipLookup.LookupDetailID = AP_PurchaseOrderHeader.ShipViaCode 
+	Left Join SET_Term ON SET_Term.TermID = AP_PurchaseOrderHeader.TermsID 
+	Left Join AR_SET_Tax ON AR_SET_Tax.PeriodID = AP_PurchaseOrderDetail.PeriodID --AR_SET_Tax.CompanyID = AP_PurchaseOrderDetail.CompanyID And 
+        And AR_SET_Tax.TaxID = AP_PurchaseOrderDetail.TaxID 
+	Left Join AR_SET_Customer ON AR_SET_Customer.PeriodID = AP_PurchaseOrderHeader.PeriodID 
+        --AR_SET_Customer.CompanyID = AP_PurchaseOrderHeader.CompanyID 
+        And AR_SET_Customer.CustomerID = AP_PurchaseOrderHeader.VendorID 
+
+		left join AR_SET_Bank on AR_SET_Bank.BankID = AR_SET_Customer.FK_BankID
+		left join AR_SET_BankAccount on AR_SET_BankAccount.BankAccountID = AR_SET_Customer.FK_BankAccountID
+
+	Left Join SET_City AS CitySupp ON CitySupp.CityID = AR_SET_Customer.CityID 
+	Left Join SET_City AS CityComp ON CityComp.CityID = SET_OperatingUnit.CityID 
+    left join PUR_QuotationHeader ON PUR_QuotationHeader.DocumentNo = AP_PurchaseOrderHeader.VendorQuoteNumber 
+        and PUR_QuotationHeader.CompanyID = AP_PurchaseOrderHeader.CompanyID and PUR_QuotationHeader.PeriodID = AP_PurchaseOrderHeader.PeriodID 
+        and PUR_QuotationHeader.FiscalID = @CurrentFiscalID and PUR_QuotationHeader.Status = 1 
+		left JOIN PUR_QuotationDetail ON PUR_QuotationDetail.CompanyID = PUR_QuotationHeader.CompanyID 
+		AND PUR_QuotationDetail.PeriodID = PUR_QuotationHeader.PeriodID
+        AND [PUR_QuotationDetail].QuotationHeaderID  = PUR_QuotationHeader.QuotationID 
+		AND [PUR_QuotationDetail].QuotationHeaderID  = AP_PurchaseOrderDetail.FromHeaderID
+		AND [PUR_QuotationDetail].QuotationDetailID = AP_PurchaseOrderDetail.FromDetailID
+    Left Join PUR_EnquiryHeader ON PUR_EnquiryHeader.EnquiryID = PUR_QuotationHeader.EnquiryHeaderID AND PUR_EnquiryHeader.CompanyID = PUR_QuotationHeader.CompanyID 
+        AND  PUR_EnquiryHeader.PeriodID = PUR_QuotationHeader.PeriodID 
+  LEFT JOIN  DocumentTypesGroup On DocumentTypesGroup.GroupID = Set_DocumentType.GroupID 
+--DocumentTypesGroup.CompanyID = Set_DocumentType.CompanyID And 
+    --Left Join INV_StockTransactionHeader ON INV_StockTransactionHeader.StockTransactionID = AP_PurchaseOrderHeader.StockRequisitionID 
+    --    AND INV_StockTransactionHeader.CompanyID = AP_PurchaseOrderHeader.CompanyID AND INV_StockTransactionHeader.PeriodID = AP_PurchaseOrderHeader.PeriodID
+	
+	Left Join INV_StockTransactionHeader ON INV_StockTransactionHeader.StockTransactionID = AP_PurchaseOrderRequisition.RequisitionHeaderID 
+        AND INV_StockTransactionHeader.CompanyID = AP_PurchaseOrderRequisition.CompanyID AND INV_StockTransactionHeader.PeriodID = AP_PurchaseOrderRequisition.PeriodID
+		--AND INV_StockTransactionHeader.FiscalID = AP_PurchaseOrderRequisition.FiscalID
+		AND INV_StockTransactionHeader.Status = 1 
+
+  --  LEFT JOIN [INV_StockTransactionHeader] as tbl_StkHdr ON tbl_StkHdr.[StockTransactionID] = [AP_PurchaseOrderHeader].[StockRequisitionID]
+		--AND tbl_StkHdr.[CompanyID] = [AP_PurchaseOrderHeader].[CompanyID]
+		--AND tbl_StkHdr.[PeriodID] = [AP_PurchaseOrderHeader].[PeriodID]
+		--And tbl_StkHdr.Status = 1
+        
+inner join aspnet_Users on aspnet_Users.UserId = AP_PurchaseOrderHeader.CreatedBy
+left join UsersDetail on UsersDetail.UserID = aspnet_Users.UserId
+left join SET_Designation on SET_Designation.DesignationID = UsersDetail.DesignationID
+inner join Set_PeriodCustom on AP_PurchaseOrderHeader.DocumentDate between Set_PeriodCustom.StartDate and Set_PeriodCustom.EndDate 
+and Set_PeriodCustom.Status = 1  and Set_PeriodCustom.FiscalID = @CurrentFiscalID        
+        		left Join SET_DocumentApprove on  SET_DocumentApprove.DocumentNo=AP_PurchaseOrderHeader.DocumentNumber
+		AND SET_DocumentApprove.DocumentTypeID=AP_PurchaseOrderHeader.TypeCode
+		AND SET_DocumentApprove.CompanyID=AP_PurchaseOrderHeader.CompanyID
+AND SET_DocumentApprove.ApprovalStatus='Approved'
+
+Left Join SET_Department On SET_Department.DepartmentID = INV_StockTransactionHeader.DepartmentID
+And SET_Department.Status = 1 And SET_Department.IsActive = 1
+
+left Join SET_Department as tbl_Department on tbl_Department.DepartmentID = INV_StockTransactionHeader.DepartmentID
+     and tbl_Department.Status = 1 and tbl_Department.IsActive = 1
+
+Left Join Set_CostCenter On Set_CostCenter.CostCenterID = INV_StockTransactionHeader.CostCenterID
+And SET_CostCenter.Status = 1
+
+left Join SET_CostCenter as tbl_CostCenter on tbl_CostCenter.CostCenterID = INV_StockTransactionHeader.CostCenterID
+     And tbl_CostCenter.Status = 1
+
+Left Join SET_DocumentType ReqType On ReqType.DocumentTypeID = AP_PurchaseOrderRequisition.DocumentTypeID
+and ReqType.PeriodID = AP_PurchaseOrderRequisition.PeriodID
+and ReqType.CompanyID = AP_PurchaseOrderRequisition.CompanyID
+and ReqType.Status = 1
+
+
+left join SET_Location AS shiplocation on shiplocation.LocationID  = AP_PurchaseOrderHeader.ShipToLocationID 
+left join SET_Location AS Billlocation on Billlocation.LocationID  = AP_PurchaseOrderHeader.BillToLocationID 
+
+where AP_PurchaseOrderDetail.CompanyID = @CompanyID And AP_PurchaseOrderDetail.PeriodID = @PeriodID And AP_PurchaseOrderDetail.Status = 1 
+    And AP_PurchaseOrderDetail.IsActive = 1 And AP_PurchaseOrderHeader.DocumentNumber Between @PONumberFrom And @PONumberTo 
+    {0}
+
+union all
+
+Select distinct AP_PurchaseOrderHeader.Subjects,AP_PurchaseOrderHeader.FreightTermsCode,
+       Case AP_PurchaseOrderHeader.FreightTermsCode 
+        When 1 then 'Delivered'  
+        When 2 Then 'ExMill' End As FreightTerms ,AP_PurchaseOrderHeader.TermsAndConditions,
+        AP_PurchaseOrderHeader.AdvanceAmountPercentage, AP_PurchaseOrderHeader.DeliveryPeriod as DeliveryPeriod1, AP_PurchaseOrderDetail.POHeaderID, 
+        AP_PurchaseOrderHeader.CancelFlag, AP_PurchaseOrderDetail.PODetailID, RTRIM(LTRIM(INV_Item.Description)) as Description, 
+        RTRIM(LTRIM(INV_SET_Category.CategoryName)) as CategoryName, IsNull(AP_PurchaseOrderDetail.ItemDescription, INV_Item.Description) As ItemDescription, 
+        INV_Item.InventoryItemStatusCode, SET_UnitOfMeasure.UOMName, case AP_PurchaseOrderHeader.RateType when 1 then 'DemandDraft' when 2 then 'Ready' 
+            when 3 then 'TelegraphicTransfer' when 4 then 'Cash' else null end as PaymentMode, 
+        PUR_EnquiryHeader.DeliveryDate as DeliveryPeriod, PUR_QuotationHeader.PlaceOfDelivery, AP_PurchaseOrderDetail.Quantity, AP_PurchaseOrderDetail.UnitPrice, 
+        AP_PurchaseOrderHeader.DocumentDate, SET_DocumentType.DocumentType AS POType, AP_PurchaseOrderHeader.DocumentNumber, 
+        PUR_QuotationHeader.DocumentNo AS QuotationNumber, Convert(Varchar(10), PUR_QuotationHeader.QuotedDate, 103) AS QuotationDate, 
+        AP_PurchaseOrderHeader.ClosedDate,
+		Isnull(shiplocation.Description , '') as ShipToLocation, Isnull(Billlocation.Description  , '') as BillToLocation, 
+		case when AP_PurchaseOrderHeader.FreightTermsCode = 1 then 'CF' when AP_PurchaseOrderHeader.FreightTermsCode = 2 then 'FOB' else ' ' end as ShippingTerms, 
+        FOBLookup.EnumeratedDescription as FOB, ShipLookup.EnumeratedDescription AS ShipVia, SET_Term.Description AS Terms, AP_PurchaseOrderHeader.Comments, 
+        IsNull(AR_SET_Tax.TaxRate, 0) As TaxRate, AR_SET_Customer.CustomerName, AR_SET_Customer.AddressLine1 AS VendorAddress, 
+        AR_SET_Customer.ZipCode AS VendorZipCode, CitySupp.CityName AS VendorCity, AR_SET_Customer.PhoneNumber AS VendorPhone, 
+        AR_SET_Customer.ContactNumber as VenerContactNumber, AR_SET_Customer.NTNNumber as VenderNTNNumber, AR_SET_Customer.STRNNumber as VenderSalesTaxNumber, 
+        SET_Business.BusinessName + ' - ' + SET_OperatingUnit.OperatingUnitName AS CompanyName, SET_OperatingUnit.AddressLine1 AS CompanyAddressLine1, 
+        SET_OperatingUnit.AddressLine2 AS CompanyAddressLine2, SET_OperatingUnit.AddressLine3 AS CompanyAddressLine3, SET_OperatingUnit.ZipCode AS CompanyZipCode, 
+        CityComp.CityName AS CompanyCity, SET_OperatingUnit.PhoneNumber AS CompanyPhone, SET_OperatingUnit.FaxNumber AS CompanyFax, 
+        '' as LogoImage, isnull(SET_OperatingUnit.NTNNumber, SET_Business.NTNNumber) as CompanyNTNNumber, 
+        isnull(SET_OperatingUnit.SalesTaxNumber, SET_Business.SalesTaxNumber) as CompanySalesTaxNumber, SET_Currency.CurrencySign, 
+        SET_Currency.CurrencyName as CurrencySignature, ISNULL(AP_PurchaseOrderDetail.NoteToVendor, '') as NoteToVendor, 
+        ISNULL(AP_PurchaseOrderHeader.NoteToVendor, '') as NoteToVendorHeader, 
+        ISNULL((select LookupDetail.EnumeratedDescription from LookupDetail where LookUpDetailID = AP_PurchaseOrderHeader.StatusCode and LookupHeaderID = 5), '') as 
+            DocumentStatus, 
+        Case When INV_StockTransactionHeader.DocumentNo IS NULL Then AP_PurchaseOrderRequisition.DocumentNo Else INV_StockTransactionHeader.DocumentNo End as ReqNO, 
+        STUFF(
+        (
+            SELECT distinct ',' + convert(varchar(24), POR.DocumentNo) FROM AP_PurchaseOrderRequisition AS POR 
+            where AP_PurchaseOrderHeader.POHeaderID = POR.POHeaderID AND AP_PurchaseOrderHeader.CompanyID = POR.CompanyID 
+                AND AP_PurchaseOrderHeader.PeriodID = POR.PeriodID 
+				AND AP_PurchaseOrderHeader.FiscalID = POR.FiscalID
+            FOR XML PATH(''), TYPE
+        ).value('.', 'varchar(max)'), 1, 2, '') as ReqNOPO, 
+        ISNULL(AP_PurchaseOrderHeader.otherTax, 0) AS otherTax, ISNULL(AP_PurchaseOrderHeader.FreightAmount, 0) AS FreightAmount, 
+        AP_PurchaseOrderDetail.QtyRcvTolerance, AP_PurchaseOrderDetail.TaxAmount 
+ ,(Case  DocumentTypesGroup.GroupName when 'Head Office-KHI' then 
+         'K'+'PO' +'-'+ substring(convert(varchar(20),year(AP_PurchaseOrderHeader.DocumentDate)),3,2) + '000' +convert(varchar(24),AP_PurchaseOrderHeader.DocumentNumber)
+          when null
+          then '--' +' '+'PO' +'-'+ substring(convert(varchar(20),year(AP_PurchaseOrderHeader.DocumentDate)),3,2) + '000' +convert(varchar(24),AP_PurchaseOrderHeader.DocumentNumber)
+          else  SUBSTRING(GroupName,1,1)+'PO' +'-'+ substring(convert(varchar(20),year(AP_PurchaseOrderHeader.DocumentDate)),3,2) + '000' +convert(varchar(24),AP_PurchaseOrderHeader.DocumentNumber) end  ) as PONumber,
+        DocumentTypesGroup.Comments as BranchAddress,AP_PurchaseOrderHeader.Rate
+,SET_Designation .DesignationName,UsersDetail.FullName as Username, 
+isnull((AP_PurchaseOrderHeader.UpdatedByValue),AP_PurchaseOrderHeader.CreatedByValue) as PreparedBy
+
+	,Case when AP_PurchaseOrderHeader.StatusCode=1 OR AP_PurchaseOrderHeader.StatusCode=13 then (
+		select top 1 CreatedByValue from SET_DocumentApprove 
+        where Set_DocumentApprove.DocumentTypeID = AP_PurchaseOrderHeader.TypeCode 
+    and Set_DocumentApprove.DocumentNo = AP_PurchaseOrderHeader.DocumentNumber
+    and Set_DocumentApprove.FiscalID = AP_PurchaseOrderHeader.FiscalID
+	and Set_DocumentApprove.CompanyID = AP_PurchaseOrderHeader.CompanyID 
+	and Set_DocumentApprove.ApprovalStatus = 'PartiallyApproved'
+    order by DocumentApproveID desc)
+        Else isnull((AP_PurchaseOrderHeader.UpdatedByValue),AP_PurchaseOrderHeader.CreatedByValue) End as ApprovedBy,
+		
+			
+		Case when AP_PurchaseOrderHeader.StatusCode=1 then (
+        select top 1 CreatedByValue from SET_DocumentApprove 
+        where Set_DocumentApprove.DocumentTypeID = AP_PurchaseOrderHeader.TypeCode 
+    and Set_DocumentApprove.DocumentNo = AP_PurchaseOrderHeader.DocumentNumber
+    and Set_DocumentApprove.FiscalID = AP_PurchaseOrderHeader.FiscalID
+	and Set_DocumentApprove.CompanyID = AP_PurchaseOrderHeader.CompanyID
+    order by DocumentApproveID desc)
+        Else isnull((AP_PurchaseOrderHeader.UpdatedByValue),AP_PurchaseOrderHeader.CreatedByValue) End as AuthorizedBy
+		
+		 
+,AP_PurchaseOrderDetail.SerialNo ,AP_PurchaseOrderHeader.OnNetAmount, AP_PurchaseOrderHeader.PODueDate , AP_PurchaseOrderHeader.NoteToReceiver, Set_PeriodCustom.PeriodSetName
+,'Payment Copy' as ReportType,3 as ReportNo,tbl_Department.DepartmentName as DepartmentName2, tbl_CostCenter.CostCenterName as CostCenterName2,
+ SET_Department.DepartmentName,Set_CostCenter.CostCenterName,ReqType.DocumentType AS ReqType
+,isnull(AP_PurchaseOrderDetail.DiscountAmount,0) as DiscountAmount
+,AR_SET_Bank.BankName,AR_SET_Customer.AccountNumber as  BankAccountName
+,PUR_QuotationDetail.Specs
+From AP_PurchaseOrderDetail
+	Inner Join AP_PurchaseOrderHeader ON AP_PurchaseOrderHeader.CompanyID = AP_PurchaseOrderDetail.CompanyID 
+        And AP_PurchaseOrderHeader.PeriodID = AP_PurchaseOrderDetail.PeriodID And AP_PurchaseOrderHeader.POHeaderID = AP_PurchaseOrderDetail.POHeaderID 
+        And AP_PurchaseOrderHeader.Status = 1 And AP_PurchaseOrderHeader.IsActive = 1 
+    Left Join AP_PurchaseOrderRequisition On AP_PurchaseOrderRequisition.CompanyID = AP_PurchaseOrderDetail.CompanyID 
+		And AP_PurchaseOrderRequisition.PeriodID = AP_PurchaseOrderDetail.PeriodID And AP_PurchaseOrderRequisition.POHeaderID = AP_PurchaseOrderDetail.POHeaderID 
+		And AP_PurchaseOrderRequisition.PODetailID = AP_PurchaseOrderDetail.PODetailID 
+	Inner Join INV_Item ON INV_Item.ItemID = AP_PurchaseOrderDetail.ItemID 
+    Inner Join INV_SET_Category On INV_SET_Category.CategoryID = INV_Item.ItemTypeID 
+--  
+    INNER JOIN SET_DocumentType ON SET_DocumentType.CompanyID = AP_PurchaseOrderHeader.CompanyID AND SET_DocumentType.PeriodID = AP_PurchaseOrderHeader.PeriodID 
+		AND SET_DocumentType.DocumentTypeID = AP_PurchaseOrderHeader.TypeCode AND isnull(SET_DocumentType.IsHide, 0) &lt;&gt; 1 
+    Left Join SET_UnitOfMeasure ON AP_PurchaseOrderDetail.ItemUOMID = SET_UnitOfMeasure.UOMID 
+	Inner Join SET_Company ON SET_Company.CompanyId = AP_PurchaseOrderDetail.CompanyID 
+	Inner Join SET_OperatingUnit ON SET_OperatingUnit.OperatingUnitId = SET_Company.OperatingUnitId 
+	Inner Join SET_Business ON SET_Business.BusinessId = SET_Company.BusinessId 
+    Inner Join SET_Currency ON SET_Currency.CurrencyID = AP_PurchaseOrderHeader.CurrencyID 
+	Left Join LookupDetail AS FOBLookup ON FOBLookup.LookupHeaderID = 7 And FOBLookup.LookupDetailID = AP_PurchaseOrderHeader.FOBCode 
+	Left Join LookupDetail AS ShipLookup ON ShipLookup.LookupHeaderID = 10 And ShipLookup.LookupDetailID = AP_PurchaseOrderHeader.ShipViaCode 
+	Left Join SET_Term ON SET_Term.TermID = AP_PurchaseOrderHeader.TermsID 
+	Left Join AR_SET_Tax ON AR_SET_Tax.PeriodID = AP_PurchaseOrderDetail.PeriodID --AR_SET_Tax.CompanyID = AP_PurchaseOrderDetail.CompanyID And 
+        And AR_SET_Tax.TaxID = AP_PurchaseOrderDetail.TaxID 
+	Left Join AR_SET_Customer ON AR_SET_Customer.PeriodID = AP_PurchaseOrderHeader.PeriodID 
+        --AR_SET_Customer.CompanyID = AP_PurchaseOrderHeader.CompanyID 
+        And AR_SET_Customer.CustomerID = AP_PurchaseOrderHeader.VendorID 
+
+		left join AR_SET_Bank on AR_SET_Bank.BankID = AR_SET_Customer.FK_BankID
+		left join AR_SET_BankAccount on AR_SET_BankAccount.BankAccountID = AR_SET_Customer.FK_BankAccountID
+
+	Left Join SET_City AS CitySupp ON CitySupp.CityID = AR_SET_Customer.CityID 
+	Left Join SET_City AS CityComp ON CityComp.CityID = SET_OperatingUnit.CityID 
+    left join PUR_QuotationHeader ON PUR_QuotationHeader.DocumentNo = AP_PurchaseOrderHeader.VendorQuoteNumber 
+        and PUR_QuotationHeader.CompanyID = AP_PurchaseOrderHeader.CompanyID and PUR_QuotationHeader.PeriodID = AP_PurchaseOrderHeader.PeriodID 
+        and PUR_QuotationHeader.FiscalID = @CurrentFiscalID and PUR_QuotationHeader.Status = 1 
+		left JOIN PUR_QuotationDetail ON PUR_QuotationDetail.CompanyID = PUR_QuotationHeader.CompanyID 
+		AND PUR_QuotationDetail.PeriodID = PUR_QuotationHeader.PeriodID
+        AND [PUR_QuotationDetail].QuotationHeaderID  = PUR_QuotationHeader.QuotationID 
+		AND [PUR_QuotationDetail].QuotationHeaderID  = AP_PurchaseOrderDetail.FromHeaderID
+		AND [PUR_QuotationDetail].QuotationDetailID = AP_PurchaseOrderDetail.FromDetailID
+    Left Join PUR_EnquiryHeader ON PUR_EnquiryHeader.EnquiryID = PUR_QuotationHeader.EnquiryHeaderID AND PUR_EnquiryHeader.CompanyID = PUR_QuotationHeader.CompanyID 
+        AND  PUR_EnquiryHeader.PeriodID = PUR_QuotationHeader.PeriodID 
+  LEFT JOIN  DocumentTypesGroup On DocumentTypesGroup.GroupID = Set_DocumentType.GroupID 
+--DocumentTypesGroup.CompanyID = Set_DocumentType.CompanyID And 
+    --Left Join INV_StockTransactionHeader ON INV_StockTransactionHeader.StockTransactionID = AP_PurchaseOrderHeader.StockRequisitionID 
+    --    AND INV_StockTransactionHeader.CompanyID = AP_PurchaseOrderHeader.CompanyID AND INV_StockTransactionHeader.PeriodID = AP_PurchaseOrderHeader.PeriodID
+	
+	Left Join INV_StockTransactionHeader ON INV_StockTransactionHeader.StockTransactionID = AP_PurchaseOrderRequisition.RequisitionHeaderID 
+        AND INV_StockTransactionHeader.CompanyID = AP_PurchaseOrderRequisition.CompanyID AND INV_StockTransactionHeader.PeriodID = AP_PurchaseOrderRequisition.PeriodID
+		--AND INV_StockTransactionHeader.FiscalID = AP_PurchaseOrderRequisition.FiscalID
+		AND INV_StockTransactionHeader.Status = 1 
+
+	--LEFT JOIN [INV_StockTransactionHeader] as tbl_StkHdr ON tbl_StkHdr.[StockTransactionID] = [AP_PurchaseOrderHeader].[StockRequisitionID]
+	--	AND tbl_StkHdr.[CompanyID] = [AP_PurchaseOrderHeader].[CompanyID]
+	--	AND tbl_StkHdr.[PeriodID] = [AP_PurchaseOrderHeader].[PeriodID]
+	--	And tbl_StkHdr.Status = 1
+        
+inner join aspnet_Users on aspnet_Users.UserId = AP_PurchaseOrderHeader.CreatedBy
+left join UsersDetail on UsersDetail.UserID = aspnet_Users.UserId
+left join SET_Designation on SET_Designation.DesignationID = UsersDetail.DesignationID
+inner join Set_PeriodCustom on AP_PurchaseOrderHeader.DocumentDate between Set_PeriodCustom.StartDate and Set_PeriodCustom.EndDate 
+and Set_PeriodCustom.Status = 1  and Set_PeriodCustom.FiscalID = @CurrentFiscalID        
+        		left Join SET_DocumentApprove on  SET_DocumentApprove.DocumentNo=AP_PurchaseOrderHeader.DocumentNumber
+		AND SET_DocumentApprove.DocumentTypeID=AP_PurchaseOrderHeader.TypeCode
+		AND SET_DocumentApprove.CompanyID=AP_PurchaseOrderHeader.CompanyID
+AND SET_DocumentApprove.ApprovalStatus='Approved'
+
+
+Left Join SET_Department On SET_Department.DepartmentID = INV_StockTransactionHeader.DepartmentID
+And SET_Department.Status = 1 And SET_Department.IsActive = 1
+
+left Join SET_Department as tbl_Department on tbl_Department.DepartmentID = INV_StockTransactionHeader.DepartmentID
+     and tbl_Department.Status = 1 and tbl_Department.IsActive = 1
+
+Left Join Set_CostCenter On Set_CostCenter.CostCenterID = INV_StockTransactionHeader.CostCenterID
+And SET_CostCenter.Status = 1
+
+left Join SET_CostCenter as tbl_CostCenter on tbl_CostCenter.CostCenterID = INV_StockTransactionHeader.CostCenterID
+     And tbl_CostCenter.Status = 1
+
+Left Join SET_DocumentType ReqType On ReqType.DocumentTypeID = AP_PurchaseOrderRequisition.DocumentTypeID
+and ReqType.PeriodID = AP_PurchaseOrderRequisition.PeriodID
+and ReqType.CompanyID = AP_PurchaseOrderRequisition.CompanyID
+and ReqType.Status = 1
+
+left join SET_Location AS shiplocation on shiplocation.LocationID  = AP_PurchaseOrderHeader.ShipToLocationID 
+left join SET_Location AS Billlocation on Billlocation.LocationID  = AP_PurchaseOrderHeader.BillToLocationID 
+
+where AP_PurchaseOrderDetail.CompanyID = @CompanyID And AP_PurchaseOrderDetail.PeriodID = @PeriodID And AP_PurchaseOrderDetail.Status = 1 
+    And AP_PurchaseOrderDetail.IsActive = 1 And AP_PurchaseOrderHeader.DocumentNumber Between @PONumberFrom And @PONumberTo 
+    {0}
+
+) tab
+order by POType,DocumentNumber,ReportNo ,tab.PODetailID asc
+
+
+
+select AP_POPaymentSchedule.POHeaderID,AP_POPaymentSchedule.CompanyID,AP_POPaymentSchedule.PeriodID,AP_POPaymentSchedule.Percentage,AP_POPaymentSchedule.Amount,AP_POPaymentSchedule.Date,AP_POPaymentSchedule.Remarks
+,1 as ReportNo
+from AP_POPaymentSchedule
+inner join AP_PurchaseOrderHeader on AP_PurchaseOrderHeader.POHeaderID = AP_POPaymentSchedule.POHeaderID
+and AP_PurchaseOrderHeader.CompanyID = AP_POPaymentSchedule.CompanyID
+and AP_PurchaseOrderHeader.PeriodID = AP_POPaymentSchedule.PeriodID
+INNER JOIN SET_DocumentType ON SET_DocumentType.CompanyID = AP_PurchaseOrderHeader.CompanyID AND SET_DocumentType.PeriodID = AP_PurchaseOrderHeader.PeriodID 
+		AND SET_DocumentType.DocumentTypeID = AP_PurchaseOrderHeader.TypeCode AND isnull(SET_DocumentType.IsHide, 0) &lt;&gt; 1 
+		Left Join AR_SET_Customer ON AR_SET_Customer.PeriodID = AP_PurchaseOrderHeader.PeriodID 
+        And AR_SET_Customer.CustomerID = AP_PurchaseOrderHeader.VendorID 
+inner join Set_PeriodCustom on AP_PurchaseOrderHeader.DocumentDate between Set_PeriodCustom.StartDate and Set_PeriodCustom.EndDate 
+and Set_PeriodCustom.Status = 1  and Set_PeriodCustom.FiscalID = @CurrentFiscalID        
+where AP_POPaymentSchedule.status = 1 and AP_PurchaseOrderHeader.CompanyID = @CompanyID 
+And AP_PurchaseOrderHeader.DocumentNumber Between @PONumberFrom And @PONumberTo 
+    {0}</value>
+  </data>
+  <data name="QueryForPO_InvoiceSingle" xml:space="preserve">
+    <value>SELECT * from 
+(
+    Select distinct AP_PurchaseOrderHeader.Subjects,AP_PurchaseOrderHeader.FreightTermsCode,
+	   Case AP_PurchaseOrderHeader.FreightTermsCode 
+        When 1 then 'Delivered'  
+        When 2 Then 'ExMill' End As FreightTerms ,AP_PurchaseOrderHeader.TermsAndConditions,
+	    AP_PurchaseOrderHeader.AdvanceAmountPercentage, AP_PurchaseOrderHeader.DeliveryPeriod as DeliveryPeriod1, AP_PurchaseOrderDetail.POHeaderID, 
+        AP_PurchaseOrderHeader.CancelFlag, AP_PurchaseOrderDetail.PODetailID, RTRIM(LTRIM(INV_Item.Description)) as Description, 
+        RTRIM(LTRIM(INV_SET_Category.CategoryName)) as CategoryName, IsNull(AP_PurchaseOrderDetail.ItemDescription, INV_Item.Description) As ItemDescription, 
+        INV_Item.InventoryItemStatusCode, SET_UnitOfMeasure.UOMName, case AP_PurchaseOrderHeader.RateType when 1 then 'DemandDraft' when 2 then 'Ready' 
+            when 3 then 'TelegraphicTransfer' when 4 then 'Cash' else null end as PaymentMode, 
+        PUR_EnquiryHeader.DeliveryDate as DeliveryPeriod, PUR_QuotationHeader.PlaceOfDelivery, AP_PurchaseOrderDetail.Quantity, AP_PurchaseOrderDetail.UnitPrice, 
+        AP_PurchaseOrderHeader.DocumentDate, SET_DocumentType.DocumentType AS POType, AP_PurchaseOrderHeader.DocumentNumber, 
+        PUR_QuotationHeader.DocumentNo AS QuotationNumber, Convert(Varchar(10), PUR_QuotationHeader.QuotedDate, 103) AS QuotationDate, 
+        AP_PurchaseOrderHeader.ClosedDate, 
+		
+		Isnull(shiplocation.Description , '') as ShipToLocation, Isnull(Billlocation.Description  , '') as BillToLocation, 
+
+
+		case when AP_PurchaseOrderHeader.FreightTermsCode = 1 then 'CF' when AP_PurchaseOrderHeader.FreightTermsCode = 2 then 'FOB' else ' ' end as ShippingTerms, 
+        FOBLookup.EnumeratedDescription as FOB, ShipLookup.EnumeratedDescription AS ShipVia, SET_Term.Description AS Terms, AP_PurchaseOrderHeader.Comments, 
+        IsNull(AR_SET_Tax.TaxRate, 0) As TaxRate, AR_SET_Customer.CustomerName, AR_SET_Customer.AddressLine1 AS VendorAddress, 
+        AR_SET_Customer.ZipCode AS VendorZipCode, CitySupp.CityName AS VendorCity, AR_SET_Customer.PhoneNumber AS VendorPhone, 
+        AR_SET_Customer.ContactNumber as VenerContactNumber, AR_SET_Customer.NTNNumber as VenderNTNNumber, AR_SET_Customer.STRNNumber as VenderSalesTaxNumber, 
+        SET_Business.BusinessName + ' - ' + SET_OperatingUnit.OperatingUnitName AS CompanyName, SET_OperatingUnit.AddressLine1 AS CompanyAddressLine1, 
+        SET_OperatingUnit.AddressLine2 AS CompanyAddressLine2, SET_OperatingUnit.AddressLine3 AS CompanyAddressLine3, SET_OperatingUnit.ZipCode AS CompanyZipCode, 
+        CityComp.CityName AS CompanyCity, SET_OperatingUnit.PhoneNumber AS CompanyPhone, SET_OperatingUnit.FaxNumber AS CompanyFax, 
+        '' as LogoImage, isnull(SET_OperatingUnit.NTNNumber, SET_Business.NTNNumber) as CompanyNTNNumber, 
+        isnull(SET_OperatingUnit.SalesTaxNumber, SET_Business.SalesTaxNumber) as CompanySalesTaxNumber, SET_Currency.CurrencySign, 
+        SET_Currency.CurrencyName as CurrencySignature, ISNULL(AP_PurchaseOrderDetail.NoteToVendor, '') as NoteToVendor, 
+        ISNULL(AP_PurchaseOrderHeader.NoteToVendor, '') as NoteToVendorHeader, 
+        ISNULL((select LookupDetail.EnumeratedDescription from LookupDetail where LookUpDetailID = AP_PurchaseOrderHeader.StatusCode and LookupHeaderID = 5), '') as 
+            DocumentStatus, 
+        Case When INV_StockTransactionHeader.DocumentNo IS NULL Then AP_PurchaseOrderRequisition.DocumentNo Else INV_StockTransactionHeader.DocumentNo End as ReqNO, 
+        STUFF(
+        (
+            SELECT distinct ',' + convert(varchar(24), POR.DocumentNo) FROM AP_PurchaseOrderRequisition AS POR 
+            where AP_PurchaseOrderHeader.POHeaderID = POR.POHeaderID AND AP_PurchaseOrderHeader.CompanyID = POR.CompanyID 
+                AND AP_PurchaseOrderHeader.PeriodID = POR.PeriodID 
+				AND AP_PurchaseOrderHeader.FiscalID = POR.FiscalID
+            FOR XML PATH(''), TYPE
+        ).value('.', 'varchar(max)'), 1, 2, '') as ReqNOPO, 
+        ISNULL(AP_PurchaseOrderHeader.otherTax, 0) AS otherTax, ISNULL(AP_PurchaseOrderHeader.FreightAmount, 0) AS FreightAmount, 
+        AP_PurchaseOrderDetail.QtyRcvTolerance, AP_PurchaseOrderDetail.TaxAmount 
+ ,(Case  DocumentTypesGroup.GroupName when 'Head Office-KHI' then 
+         'K'+'PO' +'-'+ substring(convert(varchar(20),year(AP_PurchaseOrderHeader.DocumentDate)),3,2) + '000' +convert(varchar(24),AP_PurchaseOrderHeader.DocumentNumber)
+          when null
+          then '--' +' '+'PO' +'-'+ substring(convert(varchar(20),year(AP_PurchaseOrderHeader.DocumentDate)),3,2) + '000' +convert(varchar(24),AP_PurchaseOrderHeader.DocumentNumber)
+          else  SUBSTRING(GroupName,1,1)+'PO' +'-'+ substring(convert(varchar(20),year(AP_PurchaseOrderHeader.DocumentDate)),3,2) + '000' +convert(varchar(24),AP_PurchaseOrderHeader.DocumentNumber) end  ) as PONumber,
+        DocumentTypesGroup.Comments as BranchAddress,AP_PurchaseOrderHeader.Rate
+,SET_Designation .DesignationName,UsersDetail.FullName as Username, 
+isnull((AP_PurchaseOrderHeader.UpdatedByValue),AP_PurchaseOrderHeader.CreatedByValue) as PreparedBy
+
+	,Case when AP_PurchaseOrderHeader.StatusCode=1 OR AP_PurchaseOrderHeader.StatusCode=13 then (
+		select top 1 CreatedByValue from SET_DocumentApprove 
+        where Set_DocumentApprove.DocumentTypeID = AP_PurchaseOrderHeader.TypeCode 
+    and Set_DocumentApprove.DocumentNo = AP_PurchaseOrderHeader.DocumentNumber
+    and Set_DocumentApprove.FiscalID = AP_PurchaseOrderHeader.FiscalID
+	and Set_DocumentApprove.CompanyID = AP_PurchaseOrderHeader.CompanyID 
+	and Set_DocumentApprove.ApprovalStatus = 'PartiallyApproved'
+    order by DocumentApproveID desc)
+        Else isnull((AP_PurchaseOrderHeader.UpdatedByValue),AP_PurchaseOrderHeader.CreatedByValue) End as ApprovedBy,
+
+		Case when AP_PurchaseOrderHeader.StatusCode=1 then (
+        select top 1 CreatedByValue from SET_DocumentApprove 
+        where Set_DocumentApprove.DocumentTypeID = AP_PurchaseOrderHeader.TypeCode 
+    and Set_DocumentApprove.DocumentNo = AP_PurchaseOrderHeader.DocumentNumber
+    and Set_DocumentApprove.FiscalID = AP_PurchaseOrderHeader.FiscalID
+	and Set_DocumentApprove.CompanyID = AP_PurchaseOrderHeader.CompanyID
+    order by DocumentApproveID desc)
+        Else isnull((AP_PurchaseOrderHeader.UpdatedByValue),AP_PurchaseOrderHeader.CreatedByValue) End as AuthorizedBy
+
+,AP_PurchaseOrderDetail.SerialNo ,AP_PurchaseOrderHeader.OnNetAmount, AP_PurchaseOrderHeader.PODueDate , AP_PurchaseOrderHeader.NoteToReceiver, Set_PeriodCustom.PeriodSetName
+,'Purchase Copy' as ReportType,1 as ReportNo,tbl_Department.DepartmentName as DepartmentName2, tbl_CostCenter.CostCenterName as CostCenterName2,
+ SET_Department.DepartmentName,Set_CostCenter.CostCenterName,ReqType.DocumentType AS ReqType
+,isnull(AP_PurchaseOrderDetail.DiscountAmount,0) as DiscountAmount
+,AR_SET_Bank.BankName,AR_SET_Customer.AccountNumber as  BankAccountName
+,PUR_QuotationDetail.Specs
+From AP_PurchaseOrderDetail
+	Inner Join AP_PurchaseOrderHeader ON AP_PurchaseOrderHeader.CompanyID = AP_PurchaseOrderDetail.CompanyID 
+        And AP_PurchaseOrderHeader.PeriodID = AP_PurchaseOrderDetail.PeriodID And AP_PurchaseOrderHeader.POHeaderID = AP_PurchaseOrderDetail.POHeaderID 
+        And AP_PurchaseOrderHeader.Status = 1 And AP_PurchaseOrderHeader.IsActive = 1 
+    Left Join AP_PurchaseOrderRequisition On AP_PurchaseOrderRequisition.CompanyID = AP_PurchaseOrderDetail.CompanyID 
+		And AP_PurchaseOrderRequisition.PeriodID = AP_PurchaseOrderDetail.PeriodID And AP_PurchaseOrderRequisition.POHeaderID = AP_PurchaseOrderDetail.POHeaderID 
+		And AP_PurchaseOrderRequisition.PODetailID = AP_PurchaseOrderDetail.PODetailID 
+	Inner Join INV_Item ON INV_Item.ItemID = AP_PurchaseOrderDetail.ItemID 
+    Inner Join INV_SET_Category On INV_SET_Category.CategoryID = INV_Item.ItemTypeID 
+--  
+    INNER JOIN SET_DocumentType ON SET_DocumentType.CompanyID = AP_PurchaseOrderHeader.CompanyID AND SET_DocumentType.PeriodID = AP_PurchaseOrderHeader.PeriodID 
+		AND SET_DocumentType.DocumentTypeID = AP_PurchaseOrderHeader.TypeCode AND isnull(SET_DocumentType.IsHide, 0) &lt;&gt; 1 
+    Left Join SET_UnitOfMeasure ON AP_PurchaseOrderDetail.ItemUOMID = SET_UnitOfMeasure.UOMID 
+	Inner Join SET_Company ON SET_Company.CompanyId = AP_PurchaseOrderDetail.CompanyID 
+	Inner Join SET_OperatingUnit ON SET_OperatingUnit.OperatingUnitId = SET_Company.OperatingUnitId 
+	Inner Join SET_Business ON SET_Business.BusinessId = SET_Company.BusinessId 
+    Inner Join SET_Currency ON SET_Currency.CurrencyID = AP_PurchaseOrderHeader.CurrencyID 
+	Left Join LookupDetail AS FOBLookup ON FOBLookup.LookupHeaderID = 7 And FOBLookup.LookupDetailID = AP_PurchaseOrderHeader.FOBCode 
+	Left Join LookupDetail AS ShipLookup ON ShipLookup.LookupHeaderID = 10 And ShipLookup.LookupDetailID = AP_PurchaseOrderHeader.ShipViaCode 
+	Left Join SET_Term ON SET_Term.TermID = AP_PurchaseOrderHeader.TermsID 
+	Left Join AR_SET_Tax ON AR_SET_Tax.PeriodID = AP_PurchaseOrderDetail.PeriodID --AR_SET_Tax.CompanyID = AP_PurchaseOrderDetail.CompanyID And 
+        And AR_SET_Tax.TaxID = AP_PurchaseOrderDetail.TaxID 
+	Left Join AR_SET_Customer ON AR_SET_Customer.PeriodID = AP_PurchaseOrderHeader.PeriodID 
+        --AR_SET_Customer.CompanyID = AP_PurchaseOrderHeader.CompanyID 
+        And AR_SET_Customer.CustomerID = AP_PurchaseOrderHeader.VendorID 
+
+		left join AR_SET_Bank on AR_SET_Bank.BankID = AR_SET_Customer.FK_BankID
+		left join AR_SET_BankAccount on AR_SET_BankAccount.BankAccountID = AR_SET_Customer.FK_BankAccountID
+
+	Left Join SET_City AS CitySupp ON CitySupp.CityID = AR_SET_Customer.CityID 
+	Left Join SET_City AS CityComp ON CityComp.CityID = SET_OperatingUnit.CityID 
+    left join PUR_QuotationHeader ON PUR_QuotationHeader.DocumentNo = AP_PurchaseOrderHeader.VendorQuoteNumber 
+        and PUR_QuotationHeader.CompanyID = AP_PurchaseOrderHeader.CompanyID and PUR_QuotationHeader.PeriodID = AP_PurchaseOrderHeader.PeriodID 
+        and PUR_QuotationHeader.FiscalID = @CurrentFiscalID and PUR_QuotationHeader.Status = 1 
+		left JOIN PUR_QuotationDetail ON PUR_QuotationDetail.CompanyID = PUR_QuotationHeader.CompanyID 
+		AND PUR_QuotationDetail.PeriodID = PUR_QuotationHeader.PeriodID
+        AND [PUR_QuotationDetail].QuotationHeaderID  = PUR_QuotationHeader.QuotationID 
+		AND [PUR_QuotationDetail].QuotationHeaderID  = AP_PurchaseOrderDetail.FromHeaderID
+		AND [PUR_QuotationDetail].QuotationDetailID = AP_PurchaseOrderDetail.FromDetailID
+    Left Join PUR_EnquiryHeader ON PUR_EnquiryHeader.EnquiryID = PUR_QuotationHeader.EnquiryHeaderID AND PUR_EnquiryHeader.CompanyID = PUR_QuotationHeader.CompanyID 
+        AND  PUR_EnquiryHeader.PeriodID = PUR_QuotationHeader.PeriodID 
+  LEFT JOIN  DocumentTypesGroup On DocumentTypesGroup.GroupID = Set_DocumentType.GroupID 
+--DocumentTypesGroup.CompanyID = Set_DocumentType.CompanyID And 
+    --Left Join INV_StockTransactionHeader ON INV_StockTransactionHeader.StockTransactionID = AP_PurchaseOrderHeader.StockRequisitionID 
+    --    AND INV_StockTransactionHeader.CompanyID = AP_PurchaseOrderHeader.CompanyID AND INV_StockTransactionHeader.PeriodID = AP_PurchaseOrderHeader.PeriodID 
+
+	Left Join INV_StockTransactionHeader ON INV_StockTransactionHeader.StockTransactionID = AP_PurchaseOrderRequisition.RequisitionHeaderID 
+        AND INV_StockTransactionHeader.CompanyID = AP_PurchaseOrderRequisition.CompanyID AND INV_StockTransactionHeader.PeriodID = AP_PurchaseOrderRequisition.PeriodID
+		--AND INV_StockTransactionHeader.FiscalID = AP_PurchaseOrderRequisition.FiscalID
+		AND INV_StockTransactionHeader.Status = 1
+
+	--LEFT JOIN [INV_StockTransactionHeader] as tbl_StkHdr ON tbl_StkHdr.[StockTransactionID] = [AP_PurchaseOrderHeader].[StockRequisitionID]
+	--	AND tbl_StkHdr.[CompanyID] = [AP_PurchaseOrderHeader].[CompanyID]
+	--	AND tbl_StkHdr.[PeriodID] = [AP_PurchaseOrderHeader].[PeriodID]
+	--	And tbl_StkHdr.Status = 1
+        
+inner join aspnet_Users on aspnet_Users.UserId = AP_PurchaseOrderHeader.CreatedBy
+left join UsersDetail on UsersDetail.UserID = aspnet_Users.UserId
+left join SET_Designation on SET_Designation.DesignationID = UsersDetail.DesignationID
+inner join Set_PeriodCustom on AP_PurchaseOrderHeader.DocumentDate between Set_PeriodCustom.StartDate and Set_PeriodCustom.EndDate 
+and Set_PeriodCustom.Status = 1  and Set_PeriodCustom.FiscalID = @CurrentFiscalID        
+        		
+left Join SET_DocumentApprove on  SET_DocumentApprove.DocumentNo=AP_PurchaseOrderHeader.DocumentNumber
+AND SET_DocumentApprove.DocumentTypeID=AP_PurchaseOrderHeader.TypeCode
+AND SET_DocumentApprove.CompanyID=AP_PurchaseOrderHeader.CompanyID
+AND SET_DocumentApprove.ApprovalStatus='Approved'
+
+Left Join SET_Department On SET_Department.DepartmentID = INV_StockTransactionHeader.DepartmentID
+And SET_Department.Status = 1 And SET_Department.IsActive = 1
+
+left Join SET_Department as tbl_Department on tbl_Department.DepartmentID = INV_StockTransactionHeader.DepartmentID
+     and tbl_Department.Status = 1 and tbl_Department.IsActive = 1
+
+Left Join Set_CostCenter On Set_CostCenter.CostCenterID = INV_StockTransactionHeader.CostCenterID
+And SET_CostCenter.Status = 1
+
+left Join SET_CostCenter as tbl_CostCenter on tbl_CostCenter.CostCenterID = INV_StockTransactionHeader.CostCenterID
+     And tbl_CostCenter.Status = 1
+
+Left Join SET_DocumentType ReqType On ReqType.DocumentTypeID = AP_PurchaseOrderRequisition.DocumentTypeID
+and ReqType.PeriodID = AP_PurchaseOrderRequisition.PeriodID
+and ReqType.CompanyID = AP_PurchaseOrderRequisition.CompanyID
+and ReqType.Status = 1
+
+left join SET_Location AS shiplocation on shiplocation.LocationID  = AP_PurchaseOrderHeader.ShipToLocationID 
+left join SET_Location AS Billlocation on Billlocation.LocationID  = AP_PurchaseOrderHeader.BillToLocationID 
+
+where AP_PurchaseOrderDetail.CompanyID = @CompanyID And AP_PurchaseOrderDetail.PeriodID = @PeriodID And AP_PurchaseOrderDetail.Status = 1 
+    And AP_PurchaseOrderDetail.IsActive = 1 And AP_PurchaseOrderHeader.DocumentNumber Between @PONumberFrom And @PONumberTo 
+    {0}
+
+
+) tab
+order by POType,DocumentNumber,ReportNo ,tab.PODetailID asc
+
+
+
+select AP_POPaymentSchedule.POHeaderID,AP_POPaymentSchedule.CompanyID,AP_POPaymentSchedule.PeriodID,AP_POPaymentSchedule.Percentage,AP_POPaymentSchedule.Amount,AP_POPaymentSchedule.Date,AP_POPaymentSchedule.Remarks
+,1 as ReportNo
+from AP_POPaymentSchedule
+inner join AP_PurchaseOrderHeader on AP_PurchaseOrderHeader.POHeaderID = AP_POPaymentSchedule.POHeaderID
+and AP_PurchaseOrderHeader.CompanyID = AP_POPaymentSchedule.CompanyID
+and AP_PurchaseOrderHeader.PeriodID = AP_POPaymentSchedule.PeriodID
+INNER JOIN SET_DocumentType ON SET_DocumentType.CompanyID = AP_PurchaseOrderHeader.CompanyID AND SET_DocumentType.PeriodID = AP_PurchaseOrderHeader.PeriodID 
+		AND SET_DocumentType.DocumentTypeID = AP_PurchaseOrderHeader.TypeCode AND isnull(SET_DocumentType.IsHide, 0) &lt;&gt; 1 
+		Left Join AR_SET_Customer ON AR_SET_Customer.PeriodID = AP_PurchaseOrderHeader.PeriodID 
+        And AR_SET_Customer.CustomerID = AP_PurchaseOrderHeader.VendorID 
+inner join Set_PeriodCustom on AP_PurchaseOrderHeader.DocumentDate between Set_PeriodCustom.StartDate and Set_PeriodCustom.EndDate 
+and Set_PeriodCustom.Status = 1  and Set_PeriodCustom.FiscalID = @CurrentFiscalID        
+where AP_POPaymentSchedule.status = 1 and AP_PurchaseOrderHeader.CompanyID = @CompanyID 
+And AP_PurchaseOrderHeader.DocumentNumber Between @PONumberFrom And @PONumberTo 
+    {0}</value>
+  </data>
+  <data name="QueryForPO_Invoice_HSM" xml:space="preserve">
+    <value>SELECT * from 
+(
+    Select distinct AP_PurchaseOrderHeader.Subjects,AP_PurchaseOrderHeader.FreightTermsCode,
+	   Case AP_PurchaseOrderHeader.FreightTermsCode 
+        When 1 then 'Delivered'  
+        When 2 Then 'ExMill' End As FreightTerms ,AP_PurchaseOrderHeader.TermsAndConditions,
+	    AP_PurchaseOrderHeader.AdvanceAmountPercentage, AP_PurchaseOrderHeader.DeliveryPeriod as DeliveryPeriod1, AP_PurchaseOrderDetail.POHeaderID, 
+        AP_PurchaseOrderHeader.CancelFlag, AP_PurchaseOrderDetail.PODetailID, RTRIM(LTRIM(INV_Item.Description)) as Description, 
+        RTRIM(LTRIM(INV_SET_Category.CategoryName)) as CategoryName, IsNull(AP_PurchaseOrderDetail.ItemDescription, INV_Item.Description) As ItemDescription, 
+        INV_Item.InventoryItemStatusCode,INV_Item.ShelfReference, SET_UnitOfMeasure.UOMName, case AP_PurchaseOrderHeader.RateType when 1 then 'DemandDraft' when 2 then 'Ready' 
+            when 3 then 'TelegraphicTransfer' when 4 then 'Cash' else null end as PaymentMode, 
+        PUR_EnquiryHeader.DeliveryDate as DeliveryPeriod, PUR_QuotationHeader.PlaceOfDelivery, AP_PurchaseOrderDetail.Quantity, AP_PurchaseOrderDetail.UnitPrice, 
+        AP_PurchaseOrderHeader.DocumentDate, SET_DocumentType.DocumentType AS POType, AP_PurchaseOrderHeader.DocumentNumber, 
+        PUR_QuotationHeader.DocumentNo AS QuotationNumber, Convert(Varchar(10), PUR_QuotationHeader.QuotedDate, 103) AS QuotationDate, 
+        AP_PurchaseOrderHeader.ClosedDate, Isnull(
+        (
+            Select top 1 (LocationName) from SET_Location inner join AP_PurchaseOrderHeader AS POHeader on POHeader.ShipToLocationID = SET_Location.LocationID 
+			where POHeader.CompanyID = @CompanyID And POHeader.PeriodID = @PeriodID And POHeader.Status = 1 And POHeader.IsActive = 1 
+                And POHeader.DocumentNumber = AP_PurchaseOrderHeader.DocumentNumber And POHeader.TypeCode = AP_PurchaseOrderHeader.TypeCode
+				And POHeader.FiscalID = @CurrentFiscalID
+		 ), '') as ShipToLocation, 
+		Isnull(
+        (
+            Select top 1 LocationName from SET_Location inner join AP_PurchaseOrderHeader AS POHeader on POHeader.BillToLocationID = SET_Location.LocationID 
+			where POHeader.CompanyID = @CompanyID And POHeader.PeriodID = @PeriodID And POHeader.Status = 1 And POHeader.IsActive = 1 
+                And POHeader.DocumentNumber = AP_PurchaseOrderHeader.DocumentNumber And POHeader.TypeCode = AP_PurchaseOrderHeader.TypeCode
+				And POHeader.FiscalID = @CurrentFiscalID
+		), '') as BillToLocation, 
+		case when AP_PurchaseOrderHeader.FreightTermsCode = 1 then 'CF' when AP_PurchaseOrderHeader.FreightTermsCode = 2 then 'FOB' else ' ' end as ShippingTerms, 
+        FOBLookup.EnumeratedDescription as FOB, ShipLookup.EnumeratedDescription AS ShipVia, SET_Term.Description AS Terms, AP_PurchaseOrderHeader.Comments, 
+        IsNull(AR_SET_Tax.TaxRate, 0) As TaxRate, AR_SET_Customer.CustomerName, AR_SET_Customer.AddressLine1 AS VendorAddress, 
+        AR_SET_Customer.ZipCode AS VendorZipCode, CitySupp.CityName AS VendorCity, AR_SET_Customer.PhoneNumber AS VendorPhone, 
+        AR_SET_Customer.ContactNumber as VenerContactNumber, AR_SET_Customer.NTNNumber as VenderNTNNumber, AR_SET_Customer.STRNNumber as VenderSalesTaxNumber, 
+        SET_Business.BusinessName + ' - ' + SET_OperatingUnit.OperatingUnitName AS CompanyName, SET_OperatingUnit.AddressLine1 AS CompanyAddressLine1, 
+        SET_OperatingUnit.AddressLine2 AS CompanyAddressLine2, SET_OperatingUnit.AddressLine3 AS CompanyAddressLine3, SET_OperatingUnit.ZipCode AS CompanyZipCode, 
+        CityComp.CityName AS CompanyCity, SET_OperatingUnit.PhoneNumber AS CompanyPhone, SET_OperatingUnit.FaxNumber AS CompanyFax, 
+        SET_OperatingUnit.Logoimage as LogoImage, isnull(SET_OperatingUnit.NTNNumber, SET_Business.NTNNumber) as CompanyNTNNumber, 
+        isnull(SET_OperatingUnit.SalesTaxNumber, SET_Business.SalesTaxNumber) as CompanySalesTaxNumber, SET_Currency.CurrencySign, 
+        SET_Currency.CurrencyName as CurrencySignature, ISNULL(AP_PurchaseOrderDetail.NoteToVendor, '') as NoteToVendor, 
+        ISNULL(AP_PurchaseOrderHeader.NoteToVendor, '') as NoteToVendorHeader, 
+        ISNULL((select LookupDetail.EnumeratedDescription from LookupDetail where LookUpDetailID = AP_PurchaseOrderHeader.StatusCode and LookupHeaderID = 5), '') as 
+            DocumentStatus, 
+        Case When INV_StockTransactionHeader.DocumentNo IS NULL Then AP_PurchaseOrderRequisition.DocumentNo Else INV_StockTransactionHeader.DocumentNo End as ReqNO, 
+        STUFF(
+        (
+            SELECT distinct ',' + convert(varchar(24), POR.DocumentNo) FROM AP_PurchaseOrderRequisition AS POR 
+            where AP_PurchaseOrderHeader.POHeaderID = POR.POHeaderID AND AP_PurchaseOrderHeader.CompanyID = POR.CompanyID 
+                AND AP_PurchaseOrderHeader.PeriodID = POR.PeriodID 
+            FOR XML PATH(''), TYPE
+        ).value('.', 'varchar(max)'), 1, 2, '') as ReqNOPO, isnull(AP_PurchaseOrderDetail.OtherTaxAmount,0) as otherTax,
+        --ISNULL(AP_PurchaseOrderHeader.otherTax, 0) AS otherTax, 
+		ISNULL(AP_PurchaseOrderHeader.FreightAmount, 0) AS FreightAmount, 
+        AP_PurchaseOrderDetail.QtyRcvTolerance, AP_PurchaseOrderDetail.TaxAmount 
+ ,(Case  DocumentTypesGroup.GroupName when 'Head Office-KHI' then 
+         'K'+'PO' +'-'+ substring(convert(varchar(20),year(AP_PurchaseOrderHeader.DocumentDate)),3,2) + '000' +convert(varchar(24),AP_PurchaseOrderHeader.DocumentNumber)
+          when null
+          then '--' +' '+'PO' +'-'+ substring(convert(varchar(20),year(AP_PurchaseOrderHeader.DocumentDate)),3,2) + '000' +convert(varchar(24),AP_PurchaseOrderHeader.DocumentNumber)
+          else  SUBSTRING(GroupName,1,1)+'PO' +'-'+ substring(convert(varchar(20),year(AP_PurchaseOrderHeader.DocumentDate)),3,2) + '000' +convert(varchar(24),AP_PurchaseOrderHeader.DocumentNumber) end  ) as PONumber,
+        DocumentTypesGroup.Comments as BranchAddress,AP_PurchaseOrderHeader.Rate
+,SET_Designation .DesignationName,UsersDetail.FullName as Username, 
+AP_PurchaseOrderHeader.CreatedByValue as PreparedBy
+	,Case when AP_PurchaseOrderHeader.StatusCode=1 then isnull((
+        select top 1 CreatedByValue from SET_DocumentApprove 
+        where Set_DocumentApprove.DocumentTypeID = AP_PurchaseOrderHeader.TypeCode 
+    and Set_DocumentApprove.DocumentNo = AP_PurchaseOrderHeader.DocumentNumber
+    and Set_DocumentApprove.FiscalID = AP_PurchaseOrderHeader.FiscalID
+    order by DocumentApproveID desc
+        ),isnull(AP_PurchaseOrderHeader.UpdatedByValue,AP_PurchaseOrderHeader.CreatedByValue)) else '' end as ApprovedBy 
+,AP_PurchaseOrderDetail.SerialNo ,AP_PurchaseOrderHeader.OnNetAmount, AP_PurchaseOrderHeader.PODueDate , AP_PurchaseOrderHeader.NoteToReceiver, Set_PeriodCustom.PeriodSetName
+,'' as ReportType,1 as ReportNo, SET_Department.DepartmentName,Set_CostCenter.CostCenterName,ReqType.DocumentType AS ReqType
+,isnull(AP_PurchaseOrderDetail.DiscountAmount,0) as DiscountAmount
+From AP_PurchaseOrderDetail
+	Inner Join AP_PurchaseOrderHeader ON AP_PurchaseOrderHeader.CompanyID = AP_PurchaseOrderDetail.CompanyID 
+        And AP_PurchaseOrderHeader.PeriodID = AP_PurchaseOrderDetail.PeriodID And AP_PurchaseOrderHeader.POHeaderID = AP_PurchaseOrderDetail.POHeaderID 
+        And AP_PurchaseOrderHeader.Status = 1 And AP_PurchaseOrderHeader.IsActive = 1 
+    Left Join AP_PurchaseOrderRequisition On AP_PurchaseOrderRequisition.CompanyID = AP_PurchaseOrderDetail.CompanyID 
+		And AP_PurchaseOrderRequisition.PeriodID = AP_PurchaseOrderDetail.PeriodID And AP_PurchaseOrderRequisition.POHeaderID = AP_PurchaseOrderDetail.POHeaderID 
+		And AP_PurchaseOrderRequisition.PODetailID = AP_PurchaseOrderDetail.PODetailID 
+	Inner Join INV_Item ON INV_Item.ItemID = AP_PurchaseOrderDetail.ItemID 
+    Inner Join INV_SET_Category On INV_SET_Category.CategoryID = INV_Item.ItemTypeID 
+--  
+    INNER JOIN SET_DocumentType ON SET_DocumentType.CompanyID = AP_PurchaseOrderHeader.CompanyID AND SET_DocumentType.PeriodID = AP_PurchaseOrderHeader.PeriodID 
+		AND SET_DocumentType.DocumentTypeID = AP_PurchaseOrderHeader.TypeCode AND isnull(SET_DocumentType.IsHide, 0) &lt;&gt; 1 
+    Left Join SET_UnitOfMeasure ON AP_PurchaseOrderDetail.ItemUOMID = SET_UnitOfMeasure.UOMID 
+	Inner Join SET_Company ON SET_Company.CompanyId = AP_PurchaseOrderDetail.CompanyID 
+	Inner Join SET_OperatingUnit ON SET_OperatingUnit.OperatingUnitId = SET_Company.OperatingUnitId 
+	Inner Join SET_Business ON SET_Business.BusinessId = SET_Company.BusinessId 
+    Inner Join SET_Currency ON SET_Currency.CurrencyID = AP_PurchaseOrderHeader.CurrencyID 
+	Left Join LookupDetail AS FOBLookup ON FOBLookup.LookupHeaderID = 7 And FOBLookup.LookupDetailID = AP_PurchaseOrderHeader.FOBCode 
+	Left Join LookupDetail AS ShipLookup ON ShipLookup.LookupHeaderID = 10 And ShipLookup.LookupDetailID = AP_PurchaseOrderHeader.ShipViaCode 
+	Left Join SET_Term ON SET_Term.TermID = AP_PurchaseOrderHeader.TermsID 
+	Left Join AR_SET_Tax ON AR_SET_Tax.PeriodID = AP_PurchaseOrderDetail.PeriodID --AR_SET_Tax.CompanyID = AP_PurchaseOrderDetail.CompanyID And 
+        And AR_SET_Tax.TaxID = AP_PurchaseOrderDetail.TaxID 
+	Left Join AR_SET_Customer ON AR_SET_Customer.PeriodID = AP_PurchaseOrderHeader.PeriodID 
+        --AR_SET_Customer.CompanyID = AP_PurchaseOrderHeader.CompanyID 
+        And AR_SET_Customer.CustomerID = AP_PurchaseOrderHeader.VendorID 
+	Left Join SET_City AS CitySupp ON CitySupp.CityID = AR_SET_Customer.CityID 
+	Left Join SET_City AS CityComp ON CityComp.CityID = SET_OperatingUnit.CityID 
+    left join PUR_QuotationHeader ON PUR_QuotationHeader.DocumentNo = AP_PurchaseOrderHeader.VendorQuoteNumber 
+        and PUR_QuotationHeader.CompanyID = AP_PurchaseOrderHeader.CompanyID and PUR_QuotationHeader.PeriodID = AP_PurchaseOrderHeader.PeriodID 
+        and PUR_QuotationHeader.SupplierID = AP_PurchaseOrderHeader.VendorID
+        and PUR_QuotationHeader.FiscalID = @CurrentFiscalID and PUR_QuotationHeader.Status = 1 
+        
+    Left Join PUR_EnquiryHeader ON PUR_EnquiryHeader.EnquiryID = PUR_QuotationHeader.EnquiryHeaderID AND PUR_EnquiryHeader.CompanyID = PUR_QuotationHeader.CompanyID 
+        AND  PUR_EnquiryHeader.PeriodID = PUR_QuotationHeader.PeriodID 
+  LEFT JOIN  DocumentTypesGroup On DocumentTypesGroup.GroupID = Set_DocumentType.GroupID 
+--DocumentTypesGroup.CompanyID = Set_DocumentType.CompanyID And 
+    --Left Join INV_StockTransactionHeader ON INV_StockTransactionHeader.StockTransactionID = AP_PurchaseOrderHeader.StockRequisitionID 
+    --    AND INV_StockTransactionHeader.CompanyID = AP_PurchaseOrderHeader.CompanyID AND INV_StockTransactionHeader.PeriodID = AP_PurchaseOrderHeader.PeriodID 
+
+	Left Join INV_StockTransactionHeader ON INV_StockTransactionHeader.StockTransactionID = AP_PurchaseOrderRequisition.RequisitionHeaderID 
+        AND INV_StockTransactionHeader.CompanyID = AP_PurchaseOrderRequisition.CompanyID AND INV_StockTransactionHeader.PeriodID = AP_PurchaseOrderRequisition.PeriodID
+		AND INV_StockTransactionHeader.FiscalID = AP_PurchaseOrderRequisition.FiscalID
+		AND INV_StockTransactionHeader.Status = 1
+        
+inner join aspnet_Users on aspnet_Users.UserId = AP_PurchaseOrderHeader.CreatedBy
+left join UsersDetail on UsersDetail.UserID = aspnet_Users.UserId
+left join SET_Designation on SET_Designation.DesignationID = UsersDetail.DesignationID
+inner join Set_PeriodCustom on AP_PurchaseOrderHeader.DocumentDate between Set_PeriodCustom.StartDate and Set_PeriodCustom.EndDate 
+and Set_PeriodCustom.Status = 1  and Set_PeriodCustom.FiscalID = @CurrentFiscalID        
+        		left Join SET_DocumentApprove on  SET_DocumentApprove.DocumentNo=AP_PurchaseOrderHeader.DocumentNumber
+		AND SET_DocumentApprove.DocumentTypeID=AP_PurchaseOrderHeader.TypeCode
+AND SET_DocumentApprove.ApprovalStatus='Approved'
+Left Join SET_Department On SET_Department.DepartmentID = INV_StockTransactionHeader.DepartmentID
+And SET_Department.Status = 1 And SET_Department.IsActive = 1
+
+Left Join Set_CostCenter On Set_CostCenter.CostCenterID = INV_StockTransactionHeader.CostCenterID
+And SET_CostCenter.Status = 1
+
+Left Join SET_DocumentType ReqType On ReqType.DocumentTypeID = AP_PurchaseOrderRequisition.DocumentTypeID
+and ReqType.PeriodID = AP_PurchaseOrderRequisition.PeriodID
+and ReqType.CompanyID = AP_PurchaseOrderRequisition.CompanyID
+and ReqType.Status = 1
+
+where AP_PurchaseOrderDetail.CompanyID = @CompanyID And AP_PurchaseOrderDetail.PeriodID = @PeriodID And AP_PurchaseOrderDetail.Status = 1 
+    And AP_PurchaseOrderDetail.IsActive = 1 And AP_PurchaseOrderHeader.DocumentNumber Between @PONumberFrom And @PONumberTo 
+    {0}
+
+
+) tab
+order by POType,DocumentNumber,ReportNo ,tab.PODetailID asc</value>
+  </data>
+  <data name="QueryForPO_Invoice_SSM" xml:space="preserve">
+    <value>SELECT * from 
+(
+    Select distinct AP_PurchaseOrderHeader.Subjects,AP_PurchaseOrderHeader.FreightTermsCode,
+	   Case AP_PurchaseOrderHeader.FreightTermsCode 
+        When 1 then 'Delivered'  
+        When 2 Then 'ExMill' End As FreightTerms ,AP_PurchaseOrderHeader.TermsAndConditions,
+	    AP_PurchaseOrderHeader.AdvanceAmountPercentage, AP_PurchaseOrderHeader.DeliveryPeriod as DeliveryPeriod1, AP_PurchaseOrderDetail.POHeaderID, 
+        AP_PurchaseOrderHeader.CancelFlag, AP_PurchaseOrderDetail.PODetailID, RTRIM(LTRIM(INV_Item.Description)) as Description, 
+        RTRIM(LTRIM(INV_SET_Category.CategoryName)) as CategoryName, IsNull(AP_PurchaseOrderDetail.ItemDescription, INV_Item.Description) As ItemDescription, 
+        INV_Item.InventoryItemStatusCode, SET_UnitOfMeasure.UOMName, case AP_PurchaseOrderHeader.RateType when 1 then 'DemandDraft' when 2 then 'Ready' 
+            when 3 then 'TelegraphicTransfer' when 4 then 'Cash' else null end as PaymentMode, 
+        PUR_EnquiryHeader.DeliveryDate as DeliveryPeriod, PUR_QuotationHeader.PlaceOfDelivery, AP_PurchaseOrderDetail.Quantity, AP_PurchaseOrderDetail.UnitPrice, 
+        AP_PurchaseOrderHeader.DocumentDate, SET_DocumentType.DocumentType AS POType, AP_PurchaseOrderHeader.DocumentNumber, 
+        PUR_QuotationHeader.DocumentNo AS QuotationNumber, Convert(Varchar(10), PUR_QuotationHeader.QuotedDate, 103) AS QuotationDate, 
+        AP_PurchaseOrderHeader.ClosedDate, Isnull(
+        (
+            Select top 1 (LocationName) from SET_Location inner join AP_PurchaseOrderHeader AS POHeader on POHeader.ShipToLocationID = SET_Location.LocationID 
+			where POHeader.CompanyID = @CompanyID And POHeader.PeriodID = @PeriodID And POHeader.Status = 1 And POHeader.IsActive = 1 
+                And POHeader.DocumentNumber = AP_PurchaseOrderHeader.DocumentNumber And POHeader.TypeCode = AP_PurchaseOrderHeader.TypeCode
+		 ), '') as ShipToLocation, 
+		Isnull(
+        (
+            Select top 1 LocationName from SET_Location inner join AP_PurchaseOrderHeader AS POHeader on POHeader.BillToLocationID = SET_Location.LocationID 
+			where POHeader.CompanyID = @CompanyID And POHeader.PeriodID = @PeriodID And POHeader.Status = 1 And POHeader.IsActive = 1 
+                And POHeader.DocumentNumber = AP_PurchaseOrderHeader.DocumentNumber And POHeader.TypeCode = AP_PurchaseOrderHeader.TypeCode
+		), '') as BillToLocation, 
+		case when AP_PurchaseOrderHeader.FreightTermsCode = 1 then 'CF' when AP_PurchaseOrderHeader.FreightTermsCode = 2 then 'FOB' else ' ' end as ShippingTerms, 
+        FOBLookup.EnumeratedDescription as FOB, ShipLookup.EnumeratedDescription AS ShipVia, SET_Term.Description AS Terms, AP_PurchaseOrderHeader.Comments, 
+        IsNull(AR_SET_Tax.TaxRate, 0) As TaxRate, AR_SET_Customer.CustomerName, AR_SET_Customer.AddressLine1 AS VendorAddress, 
+        AR_SET_Customer.ZipCode AS VendorZipCode, CitySupp.CityName AS VendorCity, AR_SET_Customer.PhoneNumber AS VendorPhone, 
+        AR_SET_Customer.ContactNumber as VenerContactNumber, AR_SET_Customer.NTNNumber as VenderNTNNumber, AR_SET_Customer.STRNNumber as VenderSalesTaxNumber, 
+        SET_Business.BusinessName + ' - ' + SET_OperatingUnit.OperatingUnitName AS CompanyName, SET_OperatingUnit.AddressLine1 AS CompanyAddressLine1, 
+        SET_OperatingUnit.AddressLine2 AS CompanyAddressLine2, SET_OperatingUnit.AddressLine3 AS CompanyAddressLine3, SET_OperatingUnit.ZipCode AS CompanyZipCode, 
+        CityComp.CityName AS CompanyCity, SET_OperatingUnit.PhoneNumber AS CompanyPhone, SET_OperatingUnit.FaxNumber AS CompanyFax, 
+        SET_OperatingUnit.Logoimage as LogoImage, isnull(SET_OperatingUnit.NTNNumber, SET_Business.NTNNumber) as CompanyNTNNumber, 
+        isnull(SET_OperatingUnit.SalesTaxNumber, SET_Business.SalesTaxNumber) as CompanySalesTaxNumber, SET_Currency.CurrencySign, 
+        SET_Currency.CurrencyName as CurrencySignature, ISNULL(AP_PurchaseOrderDetail.NoteToVendor, '') as NoteToVendor, 
+        ISNULL(AP_PurchaseOrderHeader.NoteToVendor, '') as NoteToVendorHeader, 
+        ISNULL((select LookupDetail.EnumeratedDescription from LookupDetail where LookUpDetailID = AP_PurchaseOrderHeader.StatusCode and LookupHeaderID = 5), '') as 
+            DocumentStatus, 
+        Case When INV_StockTransactionHeader.DocumentNo IS NULL Then AP_PurchaseOrderRequisition.DocumentNo Else INV_StockTransactionHeader.DocumentNo End as ReqNO, 
+        STUFF(
+        (
+            SELECT distinct ',' + convert(varchar(24), POR.DocumentNo) FROM AP_PurchaseOrderRequisition AS POR 
+            where AP_PurchaseOrderHeader.POHeaderID = POR.POHeaderID AND AP_PurchaseOrderHeader.CompanyID = POR.CompanyID 
+                AND AP_PurchaseOrderHeader.PeriodID = POR.PeriodID 
+            FOR XML PATH(''), TYPE
+        ).value('.', 'varchar(max)'), 1, 2, '') as ReqNOPO, 
+        ISNULL(AP_PurchaseOrderHeader.otherTax, 0) AS otherTax, ISNULL(AP_PurchaseOrderHeader.FreightAmount, 0) AS FreightAmount, 
+        AP_PurchaseOrderDetail.QtyRcvTolerance, AP_PurchaseOrderDetail.TaxAmount 
+ ,(Case  DocumentTypesGroup.GroupName when 'Head Office-KHI' then 
+         'K'+'PO' +'-'+ substring(convert(varchar(20),year(AP_PurchaseOrderHeader.DocumentDate)),3,2) + '000' +convert(varchar(24),AP_PurchaseOrderHeader.DocumentNumber)
+          when null
+          then '--' +' '+'PO' +'-'+ substring(convert(varchar(20),year(AP_PurchaseOrderHeader.DocumentDate)),3,2) + '000' +convert(varchar(24),AP_PurchaseOrderHeader.DocumentNumber)
+          else  SUBSTRING(GroupName,1,1)+'PO' +'-'+ substring(convert(varchar(20),year(AP_PurchaseOrderHeader.DocumentDate)),3,2) + '000' +convert(varchar(24),AP_PurchaseOrderHeader.DocumentNumber) end  ) as PONumber,
+        DocumentTypesGroup.Comments as BranchAddress,AP_PurchaseOrderHeader.Rate
+,SET_Designation .DesignationName,UsersDetail.FullName as Username, 
+isnull((AP_PurchaseOrderHeader.UpdatedByValue),AP_PurchaseOrderHeader.CreatedByValue) as PreparedBy
+	,Case when AP_PurchaseOrderHeader.StatusCode=1 then isnull((
+        select top 1 CreatedByValue from SET_DocumentApprove 
+        where Set_DocumentApprove.DocumentTypeID = AP_PurchaseOrderHeader.TypeCode 
+    and Set_DocumentApprove.DocumentNo = AP_PurchaseOrderHeader.DocumentNumber
+    and Set_DocumentApprove.FiscalID = AP_PurchaseOrderHeader.FiscalID
+    order by DocumentApproveID desc
+        ),AP_PurchaseOrderHeader.CreatedByValue) else '' end as ApprovedBy 
+,AP_PurchaseOrderDetail.SerialNo ,AP_PurchaseOrderHeader.OnNetAmount, AP_PurchaseOrderHeader.PODueDate , AP_PurchaseOrderHeader.NoteToReceiver, Set_PeriodCustom.PeriodSetName
+,'' as ReportType,
+--1 as ReportNo
+Dense_RANK()  OVER ( ORDER BY AP_PurchaseOrderHeader.POHeaderID) AS ReportNo
+, SET_Department.DepartmentName,Set_CostCenter.CostCenterName,ReqType.DocumentType AS ReqType
+,isnull(AP_PurchaseOrderDetail.DiscountAmount,0) as DiscountAmount
+From AP_PurchaseOrderDetail
+	Inner Join AP_PurchaseOrderHeader ON AP_PurchaseOrderHeader.CompanyID = AP_PurchaseOrderDetail.CompanyID 
+        And AP_PurchaseOrderHeader.PeriodID = AP_PurchaseOrderDetail.PeriodID And AP_PurchaseOrderHeader.POHeaderID = AP_PurchaseOrderDetail.POHeaderID 
+        And AP_PurchaseOrderHeader.Status = 1 And AP_PurchaseOrderHeader.IsActive = 1 
+    Left Join AP_PurchaseOrderRequisition On AP_PurchaseOrderRequisition.CompanyID = AP_PurchaseOrderDetail.CompanyID 
+		And AP_PurchaseOrderRequisition.PeriodID = AP_PurchaseOrderDetail.PeriodID And AP_PurchaseOrderRequisition.POHeaderID = AP_PurchaseOrderDetail.POHeaderID 
+		And AP_PurchaseOrderRequisition.PODetailID = AP_PurchaseOrderDetail.PODetailID 
+	Inner Join INV_Item ON INV_Item.ItemID = AP_PurchaseOrderDetail.ItemID 
+    Inner Join INV_SET_Category On INV_SET_Category.CategoryID = INV_Item.ItemTypeID 
+--  
+    INNER JOIN SET_DocumentType ON SET_DocumentType.CompanyID = AP_PurchaseOrderHeader.CompanyID AND SET_DocumentType.PeriodID = AP_PurchaseOrderHeader.PeriodID 
+		AND SET_DocumentType.DocumentTypeID = AP_PurchaseOrderHeader.TypeCode AND isnull(SET_DocumentType.IsHide, 0) &lt;&gt; 1 
+    Left Join SET_UnitOfMeasure ON AP_PurchaseOrderDetail.ItemUOMID = SET_UnitOfMeasure.UOMID 
+	Inner Join SET_Company ON SET_Company.CompanyId = AP_PurchaseOrderDetail.CompanyID 
+	Inner Join SET_OperatingUnit ON SET_OperatingUnit.OperatingUnitId = SET_Company.OperatingUnitId 
+	Inner Join SET_Business ON SET_Business.BusinessId = SET_Company.BusinessId 
+    Inner Join SET_Currency ON SET_Currency.CurrencyID = AP_PurchaseOrderHeader.CurrencyID 
+	Left Join LookupDetail AS FOBLookup ON FOBLookup.LookupHeaderID = 7 And FOBLookup.LookupDetailID = AP_PurchaseOrderHeader.FOBCode 
+	Left Join LookupDetail AS ShipLookup ON ShipLookup.LookupHeaderID = 10 And ShipLookup.LookupDetailID = AP_PurchaseOrderHeader.ShipViaCode 
+	Left Join SET_Term ON SET_Term.TermID = AP_PurchaseOrderHeader.TermsID 
+	Left Join AR_SET_Tax ON AR_SET_Tax.PeriodID = AP_PurchaseOrderDetail.PeriodID --AR_SET_Tax.CompanyID = AP_PurchaseOrderDetail.CompanyID And 
+        And AR_SET_Tax.TaxID = AP_PurchaseOrderDetail.TaxID 
+	Left Join AR_SET_Customer ON AR_SET_Customer.PeriodID = AP_PurchaseOrderHeader.PeriodID 
+        --AR_SET_Customer.CompanyID = AP_PurchaseOrderHeader.CompanyID 
+        And AR_SET_Customer.CustomerID = AP_PurchaseOrderHeader.VendorID 
+	Left Join SET_City AS CitySupp ON CitySupp.CityID = AR_SET_Customer.CityID 
+	Left Join SET_City AS CityComp ON CityComp.CityID = SET_OperatingUnit.CityID 
+    left join PUR_QuotationHeader ON PUR_QuotationHeader.DocumentNo = AP_PurchaseOrderHeader.VendorQuoteNumber 
+        and PUR_QuotationHeader.CompanyID = AP_PurchaseOrderHeader.CompanyID and PUR_QuotationHeader.PeriodID = AP_PurchaseOrderHeader.PeriodID 
+        and PUR_QuotationHeader.FiscalID = @CurrentFiscalID and PUR_QuotationHeader.Status = 1 
+    Left Join PUR_EnquiryHeader ON PUR_EnquiryHeader.EnquiryID = PUR_QuotationHeader.EnquiryHeaderID AND PUR_EnquiryHeader.CompanyID = PUR_QuotationHeader.CompanyID 
+        AND  PUR_EnquiryHeader.PeriodID = PUR_QuotationHeader.PeriodID 
+  LEFT JOIN  DocumentTypesGroup On DocumentTypesGroup.GroupID = Set_DocumentType.GroupID 
+--DocumentTypesGroup.CompanyID = Set_DocumentType.CompanyID And 
+    --Left Join INV_StockTransactionHeader ON INV_StockTransactionHeader.StockTransactionID = AP_PurchaseOrderHeader.StockRequisitionID 
+    --    AND INV_StockTransactionHeader.CompanyID = AP_PurchaseOrderHeader.CompanyID AND INV_StockTransactionHeader.PeriodID = AP_PurchaseOrderHeader.PeriodID 
+
+	Left Join INV_StockTransactionHeader ON INV_StockTransactionHeader.StockTransactionID = AP_PurchaseOrderRequisition.RequisitionHeaderID 
+        AND INV_StockTransactionHeader.CompanyID = AP_PurchaseOrderRequisition.CompanyID AND INV_StockTransactionHeader.PeriodID = AP_PurchaseOrderRequisition.PeriodID
+		AND INV_StockTransactionHeader.FiscalID = AP_PurchaseOrderRequisition.FiscalID
+		AND INV_StockTransactionHeader.Status = 1
+        
+inner join aspnet_Users on aspnet_Users.UserId = AP_PurchaseOrderHeader.CreatedBy
+left join UsersDetail on UsersDetail.UserID = aspnet_Users.UserId
+left join SET_Designation on SET_Designation.DesignationID = UsersDetail.DesignationID
+inner join Set_PeriodCustom on AP_PurchaseOrderHeader.DocumentDate between Set_PeriodCustom.StartDate and Set_PeriodCustom.EndDate 
+and Set_PeriodCustom.Status = 1  and Set_PeriodCustom.FiscalID = @CurrentFiscalID        
+        		left Join SET_DocumentApprove on  SET_DocumentApprove.DocumentNo=AP_PurchaseOrderHeader.DocumentNumber
+		AND SET_DocumentApprove.DocumentTypeID=AP_PurchaseOrderHeader.TypeCode
+AND SET_DocumentApprove.ApprovalStatus='Approved'
+Left Join SET_Department On SET_Department.DepartmentID = INV_StockTransactionHeader.DepartmentID
+And SET_Department.Status = 1 And SET_Department.IsActive = 1
+
+Left Join Set_CostCenter On Set_CostCenter.CostCenterID = INV_StockTransactionHeader.CostCenterID
+And SET_CostCenter.Status = 1
+
+Left Join SET_DocumentType ReqType On ReqType.DocumentTypeID = AP_PurchaseOrderRequisition.DocumentTypeID
+and ReqType.PeriodID = AP_PurchaseOrderRequisition.PeriodID
+and ReqType.CompanyID = AP_PurchaseOrderRequisition.CompanyID
+and ReqType.Status = 1
+
+where AP_PurchaseOrderDetail.CompanyID = @CompanyID And AP_PurchaseOrderDetail.PeriodID = @PeriodID And AP_PurchaseOrderDetail.Status = 1 
+    And AP_PurchaseOrderDetail.IsActive = 1 And AP_PurchaseOrderHeader.DocumentNumber Between @PONumberFrom And @PONumberTo 
+    {0}
+
+
+) tab
+order by POType,DocumentNumber,ReportNo ,tab.PODetailID asc</value>
+  </data>
+  <data name="Query_GetImportDocumentDetailForAlImdad" xml:space="preserve">
+    <value>SELECT AP_PurchaseOrderDetail.PODetailID as  TransactionDetailID, AP_PurchaseOrderDetail.SerialNo, INV_SET_Category.CategoryID, 
+    INV_SET_Category.CategoryID as ItemCategoryID, INV_SET_Category.CategoryName, AP_PurchaseOrderDetail.ItemID, Item.Description as ItemDescription, 
+    AP_PurchaseOrderDetail.ItemUOMID as  TransactionUOMID, Abs(AP_PurchaseOrderDetail.QuantityCommitted) AS TransactionQuantity2, 
+    Abs(AP_PurchaseOrderDetail.Quantity) AS TransactionQuantity, 
+    INV_StockTransactionDetail.PrimaryQuantity, INV_StockTransactionDetail.ReasonLookup, 
+    INV_StockTransactionDetail.DistributionAccountCOA, INV_StockTransactionDetail.EncumbranceAccountCOA, INV_StockTransactionDetail.EncumbranceAmount, 
+    INV_StockTransactionDetail.OldItemPrice, INV_StockTransactionDetail.EstimatedPOItemPrice, AP_PurchaseOrderDetail.UnitPrice as TransactionCost, 
+    INV_StockTransactionDetail.CurrencyID, AP_PurchaseOrderHeader.Rate as RaCurrencyConversionRate, INV_StockTransactionDetail.CurrencyConversionType, 
+    INV_StockTransactionDetail.QuantityAdjusted, INV_StockTransactionDetail.EmployeeCode, INV_StockTransactionDetail.DepartmentID, 
+    INV_StockTransactionDetail.ReceivingDocument, INV_StockTransactionDetail.TransferTransactionLookup, INV_StockTransactionDetail.SourceCode, 
+    INV_StockTransactionDetail.SourceLineID, INV_StockTransactionDetail.VendorLotNumber,AP_PurchaseOrderDetail.ContainerNO as ShipmentNumber, 
+    INV_StockTransactionDetail.WayBillAirBill, INV_StockTransactionDetail.FreightCode, INV_StockTransactionDetail.NoofContainers, 
+    INV_StockTransactionDetail.ValueChange, INV_StockTransactionDetail.PercentageChange, INV_StockTransactionDetail.ProjectID, 
+    INV_StockTransactionDetail.ReservationLookup, INV_StockTransactionDetail.CostCenterID, Item.Description, SET_UnitofMeasure.UOMName, SET_Currency.CurrencyName, 
+    SET_CostCenter.CostCenterName, SET_Project.ProjectName, INV_StockTransactionDetail.InvoiceFlag, INV_StockTransactionDetail.PriorCost, 
+    INV_StockTransactionDetail.SourceHeaderID, AR_SET_Customer.CustomerID, AR_SET_Customer.CustomerName, 
+    --  (Case When AP_PurchaseOrderDetail.TransactionCost = 0 Then 
+		--ISNULL(ISNULL(Item.ListPricePerUnit, 0) * (IsNull(AP_PurchaseOrderDetail.TransactionQuantity, 0) * -1), 0) 
+  --  Else AP_PurchaseOrderDetail.TransactionCost * (IsNull(AP_PurchaseOrderDetail.TransactionQuantity, 0) * -1) 
+  --  END) Amount, 
+ -- case when AP_PurchaseOrderHeader.Rate is not null and AP_PurchaseOrderHeader.Rate != 0
+	--then (ISNULL(AP_PurchaseOrderDetail.NetAmount,0) * AP_PurchaseOrderHeader.Rate) else AP_PurchaseOrderDetail.NetAmount
+	--end  as Amount
+	--CASE WHEN ISNULL(AP_PurchaseOrderHeader.Rate ,0) &gt;0 then ISNULL(AP_PurchaseOrderHeader.Rate ,0)* ISNULL(AP_PurchaseOrderDetail.NetAmount,0)
+	-- ELSE ISNULL(AP_PurchaseOrderDetail.NetAmount,0) END as Amount,
+
+	 ISNULL(AP_PurchaseOrderDetail.NetAmount,0) as Amount,
+    AP_PurchaseOrderDetail.CategoryID, INV_StockTransactionDetail.IsDone, INV_StockTransactionDetail.SourceDocumentTypeID, 
+    (
+        select IsNull(Sum(Case when Set_DocumentType.TransactionImpact = 'No Impact' then 0 else INV_StockTransactionDetail.TransactionQuantity END), 0) 
+            As SumOfQuantityInStock 
+        from INV_StockTransactionDetail
+			Inner Join INV_StockTransactionHeader On INV_StockTransactionHeader.StockTransactionID = INV_StockTransactionDetail.StockTransactionID 
+                AND INV_StockTransactionHeader.CompanyID = INV_StockTransactionDetail.CompanyID 
+                And INV_StockTransactionDetail.PeriodID = INV_StockTransactionHeader.PeriodID
+			Inner Join SET_DocumentType On SET_DocumentType.DocumentTypeID = INV_StockTransactionHeader.DocumentTypeID 
+                And SET_DocumentType.CompanyID = INV_StockTransactionHeader.CompanyID And Set_DocumentType.PeriodID = INV_StockTransactionHeader.PeriodID 
+            where AP_PurchaseOrderDetail.ItemID = Item.ItemID And AP_PurchaseOrderDetail.CompanyID = @CompanyID 
+                And AP_PurchaseOrderDetail.PeriodID = @PeriodID And AP_PurchaseOrderDetail.Status = 1 And SET_DocumentType.TransactionImpact &lt;&gt; 'No Impact' 
+    ) + Abs(INV_StockTransactionDetail.TransactionQuantity) As CurrentStock, 
+    (
+        Select Sum(TransactionQuantity) From INV_StockTransactionDetail 
+            Inner Join INV_StockTransactionHeader ON INV_StockTransactionHeader.StockTransactionID = INV_StockTransactionDetail.StockTransactionID 
+				AND INV_StockTransactionHeader.CompanyID = AP_PurchaseOrderDetail.CompanyID 
+				and INV_StockTransactionHeader.PeriodID = AP_PurchaseOrderDetail.PeriodID and INV_StockTransactionHeader.Status = 1 
+				and INV_StockTransactionHeader.StatusCode = 1
+			INNER JOIN SET_DocumentType On SET_DocumentType.CompanyID = INV_StockTransactionHeader.CompanyID 
+				AND SET_DocumentType.PeriodID = INV_StockTransactionHeader.PeriodID AND SET_DocumentType.DocumentTypeID = INV_StockTransactionHeader.DocumentTypeID 
+                AND SET_DocumentType.TransactionImpact = 'Negative' 
+        Where AP_PurchaseOrderDetail.ItemID = Item.ItemID AND AP_PurchaseOrderDetail.Status = 1 
+            AND Cast(AP_PurchaseOrderDetail.CreateDate as Date) Between Cast(DateAdd(yy, -1, GetDate())as Date) AND CAST(GetDate() as Date)
+    ) LastConsumption, 
+    (
+        Select top 1 UnitPrice as LastPrice from AP_PurchaseOrderDetail 
+		    Inner Join AP_PurchaseOrderHeader ON AP_PurchaseOrderHeader.POHeaderID = AP_PurchaseOrderDetail.POHeaderID 
+		        and AP_PurchaseOrderDetail.CompanyID = AP_PurchaseOrderHeader.CompanyID and AP_PurchaseOrderDetail.PeriodID = AP_PurchaseOrderHeader.PeriodID 
+                And AP_PurchaseOrderHeader.Status = 1 
+        Where AP_PurchaseOrderDetail.CompanyID = 1 and AP_PurchaseOrderDetail.PeriodID = 1 and AP_PurchaseOrderDetail.Status = 1 
+            and AP_PurchaseOrderDetail.ItemID = Item.ItemID 
+        Order by AP_PurchaseOrderHeader.DocumentDate desc
+    ) as LastPurchasePrice, 
+    '' [Action], INV_StockTransactionDetail.SourceDocumentTypeID as DocumentTypeID, Item.Description as IncurredDescription, INV_StockTransactionDetail.IncurredOnID, 
+    INV_StockTransactionDetail.IsIncurred, INV_StockTransactionDetail.Remarks, Item.InventoryItemStatusCode, INV_StockTransactionDetail.LocationID, 
+    SET_Location.LocationName as Location, INV_StockTransactionDetail.ImpactID, 
+    case INV_StockTransactionDetail.ImpactID when 1 then 'Positive' when 2 then 'Negative' else null end as Impact, Item.ListPricePerUnit, 
+    isnull(case when AP_PurchaseOrderDetail.UnitPrice=0 then INV_StockTransactionDetail.AverageRate else AP_PurchaseOrderDetail.UnitPrice end,0) TransactionCost
+    ,   isnull(case when AP_PurchaseOrderDetail.UnitPrice=0 then INV_StockTransactionDetail.AverageRate else AP_PurchaseOrderDetail.UnitPrice end,0) as CustomAmount,
+    INV_StockTransactionDetail.NoImpactQty
+    ,INV_StockTransactionDetail.RackID,SET_Rack.RackName
+	,SET_ItemCatalog.ItemCatalogID as CatalogID , SET_ItemCatalog.Description as CatalogName
+	,INV_ItemDetails.ProductType,INV_ItemDetails.ProductStyle,INV_ItemDetails.GoodsType,POQuantity,SupplierDCQuantity,ActualReceivedQuantity,ShortQuantity,RejectedQuantity ,
+	case INV_StockTransactionDetail.ImpactID when 1 then 'Positive' when 2 then 'Negative' else null end as Impact, Item.ListPricePerUnit, 
+    isnull(case when AP_PurchaseOrderDetail.UnitPrice=0 then INV_StockTransactionDetail.AverageRate else AP_PurchaseOrderDetail.UnitPrice end,0) Rate
+	,CustomDuty,OtherCharges,SalesTax as TaxAmount,CurrencyConversionDate,INV_StockTransactionDetail.CurrencyID,ShipmentNumber
+	,0 as TaxPercent,0 as CustomDutyPercent , 0 as OtherChargesPercent,ISNULL(AP_PurchaseOrderDetail.NetAmount,0) as NetAmount
+	
+	
+	 --,   AP_PurchaseOrderDetail.NetAmount as AmountINDollar
+	  ,(Abs(AP_PurchaseOrderDetail.Quantity)*AP_PurchaseOrderDetail.UnitPrice) as AmountINDollar
+
+	 ,FinishingItemID  as FinishItemID ,EndProduct.Description as FinishItemDescription,
+	EndCatalog.ItemCatalogID  as FinishCatalogID,EndCatalog.Description as FinishCatalogName,EndCategory.CategoryID as FinishCategoryID ,EndCategory.CategoryName as FinishCategoryName 
+	,IncomeTax,0 as IncomeTaxPercent,ExpectedQuantity,Item.UnitWeight,INV_StockTransactionDetail.ClearingCharges,0 as CurrentStock
+	,ISNULL(AP_PurchaseOrderHeader.NoofContainers,0) as FreightCharges,ContainerSize
+	,ISNULL(AP_PurchaseOrderDetail.NetAmount,0) as CMTAmount,ISNULL(AP_PurchaseOrderDetail.UnitPrice,0) as CMTRate,INV_StockTransactionDetail.SourceCode as RecipeNo
+	,ISNULL(TransportationCharges,0)TransportationCharges,ISNULL(InternalContainerNo,'') as InternalContNo
+	,AP_PurchaseOrderDetail.PackTypeID
+	,Fabrics_PackType.PackType
+	,AP_PurchaseOrderDetail.NoOfPackages
+	, AP_PurchaseOrderDetail.SecondaryUOMID as UOMID
+	,uom.UOMName AS UnitofMeasure
+	,AP_PurchaseOrderDetail.SecondaryQuantity as Quantity
+	,AP_PurchaseOrderDetail.CBM
+	,AP_PurchaseOrderDetail.SealNo
+	,AP_PurchaseOrderDetail.BaseQuantity
+			,AP_PurchaseOrderDetail.UnitWeight
+	,AP_PurchaseOrderDetail.NoOfPCS
+	,AP_PurchaseOrderDetail.PerPCWt
+
+FROM AP_PurchaseOrderDetail 
+  INNER JOIN AP_PurchaseOrderHeader oN AP_PurchaseOrderHeader.POHeaderID=AP_PurchaseOrderDetail.POHeaderID
+  AND AP_PurchaseOrderHeader.CompanyID=AP_PurchaseOrderDetail.CompanyID
+    AND AP_PurchaseOrderHeader.PeriodID=AP_PurchaseOrderDetail.PeriodID
+	LEFT JOIN INV_StockTransactionDetail ON INV_StockTransactionDetail.SourceHeaderID=AP_PurchaseOrderDetail.POHeaderID
+	AND INV_StockTransactionDetail.SourceDocumentTypeID=AP_PurchaseOrderHeader.TypeCode
+	AND INV_StockTransactionDetail.SourceCode=AP_PurchaseOrderHeader.DocumentNumber
+	AND  INV_StockTransactionDetail.SourceLineID=AP_PurchaseOrderDetail.PODetailID
+    INNER JOIN INV_Item Item ON Item.ItemID = AP_PurchaseOrderDetail.ItemID 
+	--AND Item.CompanyID = AP_PurchaseOrderDetail.CompanyID 
+	left  JOIN INV_ItemDetails ON INV_ItemDetails.ItemID = AP_PurchaseOrderDetail.ItemID AND INV_ItemDetails.CompanyID = AP_PurchaseOrderDetail.CompanyID 
+	left join SET_ItemCatalog on SET_ItemCatalog.ItemCatalogID = Item.ItemCatalogGroupID
+    Left JOIN AR_SET_Customer on AR_SET_Customer.CustomerID = INV_StockTransactionDetail.SupplierID
+       and AR_SET_Customer.CompanyID = AP_PurchaseOrderDetail.CompanyID and AR_SET_Customer.PeriodID = AP_PurchaseOrderDetail.PeriodID 
+    LEFT JOIN INV_SET_Category ON Item.ItemTypeID = INV_SET_Category.CategoryID and Item.CompanyID = INV_SET_Category.CompanyID 
+    LEFT JOIN SET_UnitofMeasure ON SET_UnitofMeasure.UOMID = AP_PurchaseOrderDetail.ItemUOMID 
+    LEFT JOIN SET_Currency ON SET_Currency.CurrencyID = INV_StockTransactionDetail.CurrencyID 
+    LEFT JOIN SET_CostCenter ON SET_CostCenter.CostCenterID = INV_StockTransactionDetail.CostCenterID 
+    LEFT JOIN SET_Project ON SET_Project.ProjectID = INV_StockTransactionDetail.ProjectID 
+    LEFT JOIN FA_AssetIdentity on FA_AssetIdentity.AssetIdentityID = INV_StockTransactionDetail.IncurredOnID 
+        AND FA_AssetIdentity.CompanyID = AP_PurchaseOrderDetail.CompanyID 
+ LEFT join SET_Location on SET_Location.LocationID = INV_StockTransactionDetail.LocationID and SET_Location.Status = 1 
+     Left  JOIN SET_Rack On  SET_Rack.RackID=INV_StockTransactionDetail.RackID
+    AND SET_Rack.Status=1
+	left join INV_Item EndProduct on EndProduct.ItemID = INV_StockTransactionDetail.FinishingItemID
+	left join SET_ItemCatalog EndCatalog on EndCatalog.ItemCatalogID = EndProduct.ItemCatalogGroupID
+	LEFT JOIN INV_SET_Category EndCategory ON EndProduct.ItemTypeID = EndCategory.CategoryID and EndProduct.CompanyID = EndCategory.CompanyID 
+	Left  JOIN Fabrics_PackType On  Fabrics_PackType.PackTypeID=AP_PurchaseOrderDetail.PackTypeID
+    AND Fabrics_PackType.Status=1
+	 Left Join SET_UnitofMeasure uom On uom.UOMID = AP_PurchaseOrderDetail.SecondaryUOMID And uom.Status = 1 
+
+where AP_PurchaseOrderDetail.POHeaderID = @POHeaderID and AP_PurchaseOrderDetail.CompanyID = @CompanyID 
+    and AP_PurchaseOrderDetail.PeriodID = @PeriodID and AP_PurchaseOrderDetail.Status = 1 
+	and (INV_StockTransactionDetail.Status = 1 OR  INV_StockTransactionDetail.Status is null)
+order by AP_PurchaseOrderDetail.POHeaderID asc</value>
+  </data>
+  <data name="Query_GetPoDetail" xml:space="preserve">
+    <value>Select Distinct AP_PurchaseOrderDetail.PODetailID, AP_PurchaseOrderHeader.POHeaderID,AP_PurchaseOrderHeader.LogisticSupplierID,AP_PurchaseOrderDetail.ItemID,INV_Item.Description as ItemDescription, 
+	INV_SET_Category.CategoryID,CategoryName,UOMID,UOMName,Quantity,UnitPrice,SerialNo,AP_PurchaseOrderHeader.DocumentNumber
+	,AP_PurchaseOrderHeader.BLNumber
+	,AP_PurchaseOrderHeader.NoofContainers
+	,AP_PurchaseOrderDetail.ContainerSize
+	,AP_PurchaseOrderHeader.NoofBales 
+	,ImportDocument.GDNumber
+	,NetAmount
+	,SET_ItemCatalog.ItemCatalogID,SET_ItemCatalog.Description as CatalogName,SET_Composition.CompositionName ,ISNULL(CompositionID,0)CompositionID
+	,AP_PurchaseOrderHeader.Rate, AP_PurchaseOrderHeader.RateDate
+from AP_PurchaseOrderDetail
+	inner join AP_PurchaseOrderHeader on AP_PurchaseOrderHeader.POHeaderID = AP_PurchaseOrderDetail.POHeaderID
+	and AP_PurchaseOrderHeader.CompanyID = AP_PurchaseOrderDetail.CompanyID
+	and AP_PurchaseOrderHeader.PeriodID = AP_PurchaseOrderDetail.PeriodID
+	and AP_PurchaseOrderDetail.Status = 1
+
+	LEFT JOIN (Select Distinct INV_StockTransactionDetail.SourceHeaderID,SourceLineID, INV_StockTransactionDetail.SourceCode,INV_StockTransactionHeader.BLNo,
+    INV_StockTransactionHeader.GDNumber,
+	INV_StockTransactionHeader.ProductQuantity,
+	INV_StockTransactionDetail.SourceDocumentTypeID,INV_StockTransactionDetail.FreightCode as ContainerSize,INV_StockTransactionHeader.NoofContainers from INV_StockTransactionHeader
+	inner join INV_StockTransactionDetail on INV_StockTransactionDetail.StockTransactionID = INV_StockTransactionHeader.StockTransactionID
+	AND INV_StockTransactionDetail.CompanyID = INV_StockTransactionHeader.CompanyID
+	AND INV_StockTransactionDetail.PeriodID = INV_StockTransactionHeader.PeriodID
+	AND INV_StockTransactionDetail.Status=1
+	Where INV_StockTransactionHeader.Status=1
+	) ImportDocument ON  ImportDocument.SourceHeaderID = AP_PurchaseOrderHeader.POHeaderID
+	and ImportDocument.SourceCode = DocumentNumber
+	and ImportDocument.SourceDocumentTypeID = TypeCode
+	and ImportDocument.SourceLineID = AP_PurchaseOrderDetail.PODetailID
+
+	inner join INV_ITem on INV_ITem.ItemID = AP_PurchaseOrderDetail.ItemID
+	left join SET_UnitofMeasure on SET_UnitofMeasure.UOMID = AP_PurchaseOrderDetail.ItemUOMID
+
+	inner join INV_SET_Category on INV_SET_Category.CategoryID = INV_ITem.ItemTypeID
+
+	inner join SET_ItemCatalog on SET_ItemCatalog.ItemCatalogID = INV_ITem.ItemCatalogGroupID
+
+	left join INV_ItemDetails on INV_ItemDetails.ITemID = INV_ITem.ItemID
+	left join SET_Composition on SET_Composition.CompositionName = INV_ItemDetails.Composition
+	and SET_Composition.Status = 1
+
+where  AP_PurchaseOrderHeader.POHeaderID = @PoHeaderID
+and AP_PurchaseOrderHeader.CompanyID = @CompanyID
+and AP_PurchaseOrderHeader.PeriodID = @PeriodID</value>
+  </data>
+  <data name="Query_PurchaseOrderSummary" xml:space="preserve">
+    <value>Select AP_PurchaseOrderDetail.POHeaderID, AP_PurchaseOrderDetail.PODetailID, AP_PurchaseOrderDetail.Quantity, AP_PurchaseOrderDetail.UnitPrice, 
+    AP_PurchaseOrderHeader.DocumentDate, SET_DocumentType.DocumentType AS POType, AP_PurchaseOrderHeader.DocumentNumber, IsNull(AR_SET_Tax.TaxRate, 0) As TaxRate, 
+    AR_SET_Customer.CustomerName, '' as LogoImage, 
+    ISNULL((select LookupDetail.EnumeratedDescription from LookupDetail where LookUpDetailID = AP_PurchaseOrderHeader.StatusCode and LookupHeaderID = 5), '') as 
+        DocumentStatus,
+    (
+	    SELECT COUNT(INV_StockTransactionHeader.ChallanNo) FROM INV_StockTransactionDetail 
+		    INNER JOIN INV_StockTransactionHeader ON INV_StockTransactionDetail.StockTransactionID = INV_StockTransactionHeader.StockTransactionID 
+                AND INV_StockTransactionDetail.CompanyID = INV_StockTransactionHeader.CompanyID 
+                AND INV_StockTransactionDetail.PeriodID = INV_StockTransactionHeader.PeriodID AND INV_StockTransactionHeader.Status = 1 
+		    INNER JOIN SET_DocumentType ON INV_StockTransactionHeader.DocumentTypeID = SET_DocumentType.DocumentTypeID 
+                AND INV_StockTransactionHeader.CompanyID = SET_DocumentType.CompanyID AND INV_StockTransactionHeader.PeriodID = SET_DocumentType.PeriodID 
+                AND SET_DocumentType.MenuID = (SELECT MenuID from ApplicationMenu where menuPath like '%Stock_frm.aspx%') AND SET_DocumentType.Status = 1 
+		WHERE INV_StockTransactionDetail.CompanyID = AP_PurchaseOrderDetail.CompanyID  AND INV_StockTransactionDetail.PeriodID = AP_PurchaseOrderDetail.PeriodID 
+            AND INV_StockTransactionDetail.SourceCode = AP_PurchaseOrderDetail.POHeaderID AND INV_StockTransactionDetail.Status = 1 
+            AND INV_StockTransactionHeader.ChallanNo IS NOT NULL
+    ) AS GRNs, DocumentTypesGroup.GroupName  
+From AP_PurchaseOrderDetail 
+	Inner Join AP_PurchaseOrderHeader ON AP_PurchaseOrderHeader.CompanyID = AP_PurchaseOrderDetail.CompanyID 
+        And AP_PurchaseOrderHeader.PeriodID = AP_PurchaseOrderDetail.PeriodID And AP_PurchaseOrderHeader.POHeaderID = AP_PurchaseOrderDetail.POHeaderID 
+        And AP_PurchaseOrderHeader.Status = 1 And AP_PurchaseOrderHeader.IsActive = 1 
+	Inner Join INV_Item ON INV_Item.ItemID = AP_PurchaseOrderDetail.ItemID --INV_Item.CompanyID = AP_PurchaseOrderDetail.CompanyID And 
+    Inner Join INV_SET_Category On INV_SET_Category.CategoryID = INV_Item.ItemTypeID 
+    --  
+    INNER JOIN SET_DocumentType ON SET_DocumentType.CompanyID = AP_PurchaseOrderHeader.CompanyID AND SET_DocumentType.PeriodID = AP_PurchaseOrderHeader.PeriodID 
+		AND SET_DocumentType.DocumentTypeID = AP_PurchaseOrderHeader.TypeCode 
+     LEFT Join DocumentTypesGroup On DocumentTypesGroup.GroupID = Set_DocumentType.GroupID --DocumentTypesGroup.CompanyID = Set_DocumentType.CompanyID And  
+    Left Join SET_UnitOfMeasure ON AP_PurchaseOrderDetail.ItemUOMID = SET_UnitOfMeasure.UOMID 
+	Inner Join SET_Company ON SET_Company.CompanyId = AP_PurchaseOrderDetail.CompanyID 
+	Inner Join SET_OperatingUnit ON SET_OperatingUnit.OperatingUnitId = SET_Company.OperatingUnitId 
+	Inner Join SET_Business ON SET_Business.BusinessId = SET_Company.BusinessId 
+    Inner Join SET_Currency ON SET_Currency.CurrencyID = SET_OperatingUnit.BaseCurrencyID 
+	Left Join LookupDetail AS FOBLookup ON FOBLookup.LookupHeaderID = 7 And FOBLookup.LookupDetailID = AP_PurchaseOrderHeader.FOBCode 
+	Left Join LookupDetail AS ShipLookup ON ShipLookup.LookupHeaderID = 10 And ShipLookup.LookupDetailID = AP_PurchaseOrderHeader.ShipViaCode 
+	Left Join SET_Term ON SET_Term.TermID = AP_PurchaseOrderHeader.TermsID 
+	Left Join AR_SET_Tax ON AR_SET_Tax.PeriodID = AP_PurchaseOrderDetail.PeriodID --AR_SET_Tax.CompanyID = AP_PurchaseOrderDetail.CompanyID And 
+        And AR_SET_Tax.TaxID = AP_PurchaseOrderDetail.TaxID 
+	Left Join AR_SET_Customer ON AR_SET_Customer.PeriodID = AP_PurchaseOrderHeader.PeriodID  --and AR_SET_Customer.CompanyID = AP_PurchaseOrderHeader.CompanyID 
+        And AR_SET_Customer.CustomerID = AP_PurchaseOrderHeader.VendorID 
+	Left Join SET_City AS CitySupp ON CitySupp.CityID = AR_SET_Customer.CityID 
+	Left Join SET_City AS CityComp ON CityComp.CityID = SET_OperatingUnit.CityID 
+    left join PUR_QuotationHeader ON PUR_QuotationHeader.DocumentNo = AP_PurchaseOrderHeader.VendorQuoteNumber
+	and PUR_QuotationHeader.CompanyID = AP_PurchaseOrderHeader.CompanyID
+	and PUR_QuotationHeader.PeriodID = AP_PurchaseOrderHeader.PeriodID
+	and PUR_QuotationHeader.Status = 1
+
+Left Join PUR_EnquiryHeader ON PUR_EnquiryHeader.EnquiryID = PUR_QuotationHeader.EnquiryHeaderID
+	AND PUR_EnquiryHeader.CompanyID = PUR_QuotationHeader.CompanyID
+	AND  PUR_EnquiryHeader.PeriodID = PUR_QuotationHeader.PeriodID
+
+Left Join INV_StockTransactionHeader ON INV_StockTransactionHeader.StockTransactionID = PUR_EnquiryHeader.FK_Inv_StockTransactionID
+	AND INV_StockTransactionHeader.CompanyID = PUR_EnquiryHeader.CompanyID
+	AND  INV_StockTransactionHeader.PeriodID = PUR_EnquiryHeader.PeriodID
+	
+	inner join Set_PeriodCustom on AP_PurchaseOrderHeader.DocumentDate between Set_PeriodCustom.StartDate and Set_PeriodCustom.EndDate 
+and Set_PeriodCustom.Status = 1  and Set_PeriodCustom.FiscalID = @CurrentFiscalID
+
+where AP_PurchaseOrderDetail.CompanyID = @CompanyID And AP_PurchaseOrderDetail.PeriodID = @PeriodID And AP_PurchaseOrderDetail.Status = 1 
+    And AP_PurchaseOrderDetail.IsActive = 1 
+    --And AP_PurchaseOrderHeader.DocumentNumber Between @PONumberFrom And @PONumberTo</value>
+  </data>
+  <data name="Query_Purchase_OrderSKUImport" xml:space="preserve">
+    <value>select distinct AP_SaleContractDetail.SCDetailID,INV_Item.InventoryItemStatusCode, AP_SaleContractDetail.ItemDescription,AP_SaleContractDetail.SaleContractID
+,SET_UnitofMeasure.UOMName,AP_SaleContractDetail.Quantity, AP_SaleContractDetail.UnitPrice, AP_SaleContractDetail.NetAmount
+,SET_DocumentType.DocumentType AS POType, AP_SaleContractHeader.DocumentDate, AP_SaleContractHeader.Comments
+,AP_SaleContractHeader.AdvanceAmountPercentage, AP_SaleContractHeader.DocumentNumber, AP_SaleContractHeader.ContractNo
+,AP_SaleContractHeader.FreightAmount,AP_SaleContractHeader.OriginOfGoods, AP_SaleContractHeader.PaymentTerm
+,AP_SaleContractHeader.Agent, AP_SaleContractHeader.ShippingLine
+,Isnull(
+(
+Select top 1 (LocationName) from SET_Location inner join AP_PurchaseOrderHeader AS POHeader on POHeader.ShipToLocationID = SET_Location.LocationID 
+where POHeader.CompanyID = @CompanyID And POHeader.PeriodID = @PeriodID And POHeader.Status = 1 And POHeader.IsActive = 1 
+    And POHeader.DocumentNumber = AP_SaleContractHeader.DocumentNumber And POHeader.TypeCode = AP_SaleContractHeader.TypeCode
+), '') as ShipToLocation,
+	
+Isnull(
+(
+    Select top 1 LocationName from SET_Location inner join AP_PurchaseOrderHeader AS POHeader on POHeader.BillToLocationID = SET_Location.LocationID 
+	where POHeader.CompanyID = @CompanyID And POHeader.PeriodID = @PeriodID And POHeader.Status = 1 And POHeader.IsActive = 1 
+        And POHeader.DocumentNumber = AP_SaleContractHeader.DocumentNumber And POHeader.TypeCode = AP_SaleContractHeader.TypeCode
+), '') as BillToLocation 
+
+,ShipLookup.EnumeratedDescription AS ShipVia
+,AR_SET_Customer.CustomerName, AR_SET_Customer.AddressLine1 AS VendorAddress, 
+AR_SET_Customer.ZipCode AS VendorZipCode, CitySupp.CityName AS VendorCity, AR_SET_Customer.PhoneNumber AS VendorPhone, AR_SET_Customer.EmailAddress AS Email,
+AR_SET_Customer.ContactNumber as VenerContactNumber, AR_SET_Customer.NTNNumber as VenderNTNNumber, AR_SET_Customer.STRNNumber as VenderSalesTaxNumber, 
+SET_Business.BusinessName + ' - ' + SET_OperatingUnit.OperatingUnitName AS CompanyName, SET_OperatingUnit.AddressLine1 AS CompanyAddressLine1, 
+SET_OperatingUnit.AddressLine2 AS CompanyAddressLine2, SET_OperatingUnit.AddressLine3 AS CompanyAddressLine3, SET_OperatingUnit.ZipCode AS CompanyZipCode, 
+CityComp.CityName AS CompanyCity, SET_OperatingUnit.PhoneNumber AS CompanyPhone, SET_OperatingUnit.FaxNumber AS CompanyFax, 
+SET_OperatingUnit.Logoimage as LogoImage, isnull(SET_OperatingUnit.NTNNumber, SET_Business.NTNNumber) as CompanyNTNNumber,
+ISNULL((select LookupDetail.EnumeratedDescription from LookupDetail where LookUpDetailID = AP_SaleContractHeader.StatusCode and LookupHeaderID = 5), '') as DocumentStatus,
+SET_Currency.CurrencySign, SET_Currency.CurrencyName as CurrencySignature,
+isnull((AP_SaleContractHeader.UpdatedByValue),AP_SaleContractHeader.CreatedByValue) as PreparedBy
+	,Case when AP_SaleContractHeader.StatusCode = 1 then isnull((
+        select top 1 CreatedByValue from SET_DocumentApprove 
+        where Set_DocumentApprove.DocumentTypeID = AP_SaleContractHeader.TypeCode 
+    and Set_DocumentApprove.DocumentNo = AP_SaleContractHeader.DocumentNumber
+    and Set_DocumentApprove.FiscalID = AP_SaleContractHeader.FiscalID
+    order by DocumentApproveID desc
+        ),AP_SaleContractHeader.CreatedByValue) else '' end as ApprovedBy 
+,AP_SaleContractDetail.SerialNo , AP_SaleContractHeader.PODueDate , AP_SaleContractHeader.NoteToReceiver, Set_PeriodCustom.PeriodSetName
+,IsNull(AR_SET_Tax.TaxRate, 0) As TaxRate
+,isnull(SET_OperatingUnit.SalesTaxNumber, SET_Business.SalesTaxNumber) as CompanySalesTaxNumber
+,ISNULL(AP_SaleContractHeader.otherTax, 0) AS otherTax
+,AP_SaleContractHeader.CancelFlag,1 as ReportNo
+,AP_SaleContractHeader.DeliveryPeriod as DeliveryPeriod1
+from AP_SaleContractDetail
+
+Inner Join AP_SaleContractHeader On AP_SaleContractHeader.SaleContractID = AP_SaleContractDetail.SaleContractID
+and AP_SaleContractHeader.CompanyID = AP_SaleContractDetail.CompanyID
+and AP_SaleContractHeader.PeriodID = AP_SaleContractDetail.PeriodID
+and AP_SaleContractHeader.Status = 1
+and AP_SaleContractHeader.IsActive = 1
+
+Left Join SET_UnitofMeasure On AP_SaleContractDetail.ItemUOMID = SET_UnitofMeasure.UOMID 
+Inner Join INV_Item ON INV_Item.ItemID = AP_SaleContractDetail.ItemID 
+Inner Join INV_SET_Category On INV_SET_Category.CategoryID = INV_Item.ItemTypeID
+INNER JOIN SET_DocumentType ON SET_DocumentType.CompanyID = AP_SaleContractHeader.CompanyID AND SET_DocumentType.PeriodID = AP_SaleContractHeader.PeriodID 
+AND SET_DocumentType.DocumentTypeID = AP_SaleContractHeader.TypeCode AND isnull(SET_DocumentType.IsHide, 0) &lt;&gt; 1
+Left Join LookupDetail AS ShipLookup ON ShipLookup.LookupHeaderID = 10 And ShipLookup.LookupDetailID = AP_SaleContractHeader.ShipViaCode 
+Inner Join SET_Company ON SET_Company.CompanyId = AP_SaleContractDetail.CompanyID 
+Inner Join SET_OperatingUnit ON SET_OperatingUnit.OperatingUnitId = SET_Company.OperatingUnitId 
+Inner Join SET_Business ON SET_Business.BusinessId = SET_Company.BusinessId 
+Inner Join SET_Currency ON SET_Currency.CurrencyID = AP_SaleContractHeader.CurrencyID
+Left Join AR_SET_Customer ON AR_SET_Customer.PeriodID = AP_SaleContractHeader.PeriodID  
+And AR_SET_Customer.CustomerID = AP_SaleContractHeader.VendorID 
+Left Join SET_City AS CitySupp ON CitySupp.CityID = AR_SET_Customer.CityID 
+Left Join SET_City AS CityComp ON CityComp.CityID = SET_OperatingUnit.CityID
+inner join aspnet_Users on aspnet_Users.UserId = AP_SaleContractHeader.CreatedBy
+left join UsersDetail on UsersDetail.UserID = aspnet_Users.UserId
+left join SET_Designation on SET_Designation.DesignationID = UsersDetail.DesignationID
+inner join Set_PeriodCustom on AP_SaleContractHeader.DocumentDate between Set_PeriodCustom.StartDate and Set_PeriodCustom.EndDate
+and Set_PeriodCustom.Status = 1  and Set_PeriodCustom.FiscalID = @CurrentFiscalID        
+left Join SET_DocumentApprove on  SET_DocumentApprove.DocumentNo=AP_SaleContractHeader.DocumentNumber
+AND SET_DocumentApprove.DocumentTypeID=AP_SaleContractHeader.TypeCode
+AND SET_DocumentApprove.ApprovalStatus='Approved'
+Left Join AR_SET_Tax ON AR_SET_Tax.PeriodID = AP_SaleContractDetail.PeriodID
+        And AR_SET_Tax.TaxID = AP_SaleContractDetail.TaxID 
+
+where AP_SaleContractDetail.CompanyID = @CompanyID And AP_SaleContractDetail.PeriodID = @PeriodID And AP_SaleContractDetail.Status = 1 
+And AP_SaleContractDetail.IsActive = 1 And AP_SaleContractHeader.DocumentNumber Between @PONumberFrom And @PONumberTo
+{0}</value>
+  </data>
+  <data name="Query_Select_By_POHeaderID_CompanyId" xml:space="preserve">
+    <value>SELECT AP_PurchaseOrderDetail.PODetailID, AP_PurchaseOrderDetail.POHeaderID, Cast(Row_Number() over (Order By AP_PurchaseOrderDetail.POHeaderID) AS SmallInt) as RowUniqueID, 
+    AP_PurchaseOrderDetail.CompanyID, AP_PurchaseOrderDetail.PeriodID, AP_PurchaseOrderDetail.AllowPriceOverrideFlag, AP_PurchaseOrderDetail.BaseQuantity, 
+    AP_PurchaseOrderDetail.BaseUOMID, AP_PurchaseOrderDetail.CancelledDate, AP_PurchaseOrderDetail.CancelledFlag, AP_PurchaseOrderDetail.CancelledReason, 
+    AP_PurchaseOrderDetail.CancelledBy, AP_PurchaseOrderDetail.CapitalExpenseFlag, AP_PurchaseOrderDetail.CategoryID, AP_PurchaseOrderDetail.ClosedBy, 
+    AP_PurchaseOrderDetail.ClosedCode, AP_PurchaseOrderDetail.ClosedDate, AP_PurchaseOrderDetail.ClosedFlag, AP_PurchaseOrderDetail.ClosedReason, 
+    AP_PurchaseOrderDetail.CommittedAmount, AP_PurchaseOrderDetail.ContractNumber, AP_PurchaseOrderDetail.ExpirationDate, AP_PurchaseOrderDetail.FromHeaderID, 
+    AP_PurchaseOrderDetail.FromDetailID, AP_PurchaseOrderDetail.HazardClassID, AP_PurchaseOrderDetail.ItemDescription, AP_PurchaseOrderDetail.ItemID, 
+    AP_PurchaseOrderDetail.ItemRevision, AP_PurchaseOrderDetail.ItemUOMID, AP_PurchaseOrderDetail.ListPricePerUnit, AP_PurchaseOrderDetail.MarketPrice, 
+    AP_PurchaseOrderDetail.MaxOrderQuantity, AP_PurchaseOrderDetail.MinOrderQuantity, AP_PurchaseOrderDetail.MinReleaseAmount, 
+    AP_PurchaseOrderDetail.NegotiatedByPreparerFlag, AP_PurchaseOrderDetail.NotToExceedPrice, AP_PurchaseOrderDetail.NoteToVendor, 
+    AP_PurchaseOrderDetail.OverToleranceErrorFlag, AP_PurchaseOrderDetail.PriceTypeCode, AP_PurchaseOrderDetail.QtyRcvTolerance, AP_PurchaseOrderDetail.Quantity, 
+    AP_PurchaseOrderDetail.QuantityCommitted, AP_PurchaseOrderDetail.SecondaryQuantity, AP_PurchaseOrderDetail.SecondaryUOMID, AP_PurchaseOrderDetail.SerialNo, 
+    AP_PurchaseOrderDetail.TaxID, AP_PurchaseOrderDetail.TaxName, AP_PurchaseOrderDetail.TaxableFlag, AP_PurchaseOrderDetail.TransactionReasonCode, 
+    AP_PurchaseOrderDetail.UnitPrice AS UnitPrice, AP_PurchaseOrderDetail.ExciseDuty, AP_PurchaseOrderDetail.ExciseDutyAmount,
+AP_PurchaseOrderDetail.JobID,AP_PurchaseOrderDetail.JobCode,isnull(AP_PurchaseOrderDetail.DiscountPer,0) as DiscountPer,
+isNUll(AP_PurchaseOrderDetail.DiscountAmount,0) as DiscountAmount,
+    --round(AP_PurchaseOrderDetail.Quantity * AP_PurchaseOrderDetail.UnitPrice, 2) as GrossAmount, 
+
+    round((case when 
+		[AP_PurchaseOrderHeader].Rate IS NOT NULL
+     then 
+		[AP_PurchaseOrderDetail].[Quantity] * [AP_PurchaseOrderDetail].[UnitPrice] * [AP_PurchaseOrderHeader].Rate
+    else 
+		[AP_PurchaseOrderDetail].[Quantity] * [AP_PurchaseOrderDetail].[UnitPrice] 
+
+    end
+    ),2)as GrossAmount,
+    
+    AP_PurchaseOrderDetail.UnorderedFlag, AP_PurchaseOrderDetail.VendorProductNumber, AP_PurchaseOrderDetail.Status, AP_PurchaseOrderDetail.CreatedBy, 
+    AP_PurchaseOrderDetail.CreateDate, AP_PurchaseOrderDetail.CreatedByValue, AP_PurchaseOrderDetail.UpdatedBy, AP_PurchaseOrderDetail.UpdateDate, 
+    AP_PurchaseOrderDetail.UpdatedByValue, AP_PurchaseOrderDetail.IsActive, ISNULL(AP_PurchaseOrderDetail.NetAmount, 0) as NetAmount, INV_Item.Description, INV_Item.ShelfReference,
+    SET_UnitofMeasure.UOMName, INV_SET_Category.CategoryName, AR_SET_Tax.TaxName AS 'TaxNames', AP_PurchaseOrderDetail.TaxAmount, '' AS [Action] , 
+    isnull(AP_PurchaseOrderDetail.ForexValue,0) as [ForexValue]
+,AP_PurchaseOrderDetail.OtherTaxID,OtherTax.TaxName as OtherTaxNames,
+AP_PurchaseOrderDetail.OtherTaxableFlag,AP_PurchaseOrderDetail.OtherTaxAmount,
+SET_Rack.RackID,SET_Rack.RackName
+,isnull(AP_PurchaseOrderDetail.DiscountBeforeGST,0) as DiscountBeforeGST
+,Isnull(AP_PurchaseOrderRequisition.DocumentNo,0) as DocumentNo
+,INV_Item.InventoryItemStatusCode
+,(Select top 1 Specs from PUR_QuotationHeader 
+inner join PUR_QuotationDetail on PUR_QuotationDetail.QuotationHeaderID  = PUR_QuotationHeader.QuotationID
+		and PUR_QuotationDetail.CompanyID  = PUR_QuotationHeader.CompanyID
+		and PUR_QuotationDetail.PeriodID  = PUR_QuotationHeader.PeriodID
+		and PUR_QuotationDetail.FiscalID  = PUR_QuotationHeader.FiscalID
+
+		
+	inner join PUR_EnquiryDetail on PUR_EnquiryDetail.EnquiryDetailID =  PUR_QuotationDetail.EnquiryDetailID
+	and PUR_EnquiryDetail.EnquiryHeaderID =  PUR_QuotationDetail.EnquiryHeaderID
+	and PUR_EnquiryDetail.CompanyID =  PUR_QuotationDetail.CompanyID
+	and PUR_EnquiryDetail.PeriodID =  PUR_QuotationDetail.PeriodID
+	and PUR_EnquiryDetail.FiscalID =  PUR_QuotationDetail.FiscalID
+	and PUR_EnquiryDetail.ItemID = AP_PurchaseOrderDetail.ItemID
+
+		where PUR_QuotationHeader.CompanyID = [AP_PurchaseOrderHeader].CompanyID 
+        AND PUR_QuotationHeader.PeriodID = [AP_PurchaseOrderHeader].PeriodID 
+		AND PUR_QuotationHeader.DocumentNo = [AP_PurchaseOrderHeader].VendorQuoteNumber 
+		AND PUR_QuotationHeader.QuotationID = [AP_PurchaseOrderHeader].FromHeaderID
+		AND PUR_QuotationHeader.FiscalID = [AP_PurchaseOrderHeader].FiscalID 
+)Specs
+,INV_Item.ItemCatalogGroupID as ItemCatalogID
+,SET_ItemCatalog.Description as CatalogDescription
+FROM AP_PurchaseOrderDetail 
+    INNER JOIN INV_Item ON INV_Item.ItemID = AP_PurchaseOrderDetail.ItemID --AND INV_Item.CompanyID = AP_PurchaseOrderDetail.CompanyID 
+    LEFT JOIN SET_UnitofMeasure ON SET_UnitofMeasure.UOMID = AP_PurchaseOrderDetail.ItemUOMID 
+    LEFT JOIN INV_SET_Category ON INV_SET_Category.CategoryID = AP_PurchaseOrderDetail.CategoryID 
+--and INV_SET_Category.CompanyID = AP_PurchaseOrderDetail.CompanyID 
+    LEFT JOIN AR_SET_Tax ON AR_SET_Tax.TaxID = AP_PurchaseOrderDetail.TaxID --AND AR_SET_Tax.CompanyID = AP_PurchaseOrderDetail.CompanyID 
+        AND AR_SET_Tax.PeriodID = AP_PurchaseOrderDetail.PeriodID 
+
+    LEFT JOIN AR_SET_Tax as OtherTax ON OtherTax.TaxID = AP_PurchaseOrderDetail.OtherTaxID --AND AR_SET_Tax.CompanyID = AP_PurchaseOrderDetail.CompanyID 
+        AND OtherTax.PeriodID = AP_PurchaseOrderDetail.PeriodID 
+
+    LEFT join AP_PurchaseOrderHeader on AP_PurchaseOrderHeader.poheaderid = AP_PurchaseOrderdetail.poheaderid 
+and AP_PurchaseOrderHeader.companyid = AP_PurchaseOrderdetail.companyid
+	and AP_PurchaseOrderHeader.PeriodID  = AP_PurchaseOrderdetail.PeriodID 
+
+	left join Set_RackItems on Set_RackItems.ItemID = INV_Item.ItemID
+	left join SET_Rack on SET_Rack.RackID = Set_RackItems.RackID
+
+	left join AP_PurchaseOrderRequisition on AP_PurchaseOrderRequisition.POHeaderID = AP_PurchaseOrderDetail.POHeaderID
+	and AP_PurchaseOrderRequisition.PODetailID = AP_PurchaseOrderDetail.PODetailID
+	and AP_PurchaseOrderRequisition.CompanyID = AP_PurchaseOrderDetail.CompanyID
+	and AP_PurchaseOrderRequisition.PeriodID = AP_PurchaseOrderDetail.PeriodID
+	and AP_PurchaseOrderRequisition.FiscalID = AP_PurchaseOrderDetail.FiscalID
+    
+    left join SET_ItemCatalog on SET_ItemCatalog.ItemCatalogID = INV_Item.ItemCatalogGroupID
+
+  --  LEFT JOIN PUR_QuotationHeader ON PUR_QuotationHeader.CompanyID = [AP_PurchaseOrderHeader].CompanyID 
+  --      AND PUR_QuotationHeader.PeriodID = [AP_PurchaseOrderHeader].PeriodID 
+		--AND PUR_QuotationHeader.DocumentNo = [AP_PurchaseOrderHeader].VendorQuoteNumber 
+		--AND PUR_QuotationHeader.QuotationID = [AP_PurchaseOrderHeader].FromHeaderID
+		--AND PUR_QuotationHeader.FiscalID = [AP_PurchaseOrderHeader].FiscalID
+
+		--Left join PUR_QuotationDetail on PUR_QuotationDetail.QuotationHeaderID  = PUR_QuotationHeader.QuotationID
+		--and PUR_QuotationDetail.CompanyID  = PUR_QuotationHeader.CompanyID
+		--and PUR_QuotationDetail.PeriodID  = PUR_QuotationHeader.PeriodID
+		--and PUR_QuotationDetail.FiscalID  = PUR_QuotationHeader.FiscalID
+
+	--inner join PUR_EnquiryDetail on PUR_EnquiryDetail.EnquiryDetailID =  PUR_QuotationDetail.EnquiryDetailID
+	--and PUR_EnquiryDetail.EnquiryHeaderID =  PUR_QuotationDetail.EnquiryHeaderID
+	--and PUR_EnquiryDetail.CompanyID =  PUR_QuotationDetail.CompanyID
+	--and PUR_EnquiryDetail.PeriodID =  PUR_QuotationDetail.PeriodID
+	--and PUR_EnquiryDetail.FiscalID =  PUR_QuotationDetail.FiscalID
+	--and PUR_EnquiryDetail.ItemID = AP_PurchaseOrderDetail.ItemID
+
+where AP_PurchaseOrderDetail.POHeaderID = @POHeaderID 
+and AP_PurchaseOrderDetail.CompanyID = @CompanyID 
+and AP_PurchaseOrderDetail.PeriodID in (@PeriodID)
+    and AP_PurchaseOrderDetail.Status = @Status 
+order by AP_PurchaseOrderDetail.PODetailID asc</value>
+  </data>
+</root>

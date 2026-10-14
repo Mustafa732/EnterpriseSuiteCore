@@ -1,0 +1,216 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Paging" xml:space="preserve">
+    <value>WITH ResultSet AS({0})
+			SELECT * FROM ResultSet WHERE Row between (@PageIndex - 1) * @PageSize + 1 and @PageIndex * @PageSize;
+			SET @TotalRows = (SELECT COUNT(*) FROM({1}) as Query)</value>
+  </data>
+  <data name="Query_Delete_ByKey" xml:space="preserve">
+    <value> Update [Set_BankFacility] Set [Status] = @Status, [UpdatedBy] = @UpdatedBy, [UpdateDate] = @UpdateDate, [UpdatedByValue] = @UpdatedByValue WHERE [BankFacilityID] = @BankFacilityID and [CompanyID] = @CompanyID and [PeriodID] = @PeriodID </value>
+  </data>
+  <data name="Query_GetData_byKey" xml:space="preserve">
+    <value> SELECT * FROM [Set_BankFacility] WHERE [BankFacilityID] = @BankFacilityID and [CompanyID] = @CompanyID and [PeriodID] = @PeriodID </value>
+  </data>
+  <data name="Query_Get_MaxId" xml:space="preserve">
+    <value> SELECT IsNull(max(BankFacilityID), 0) + 1 as BankFacilityID FROM Set_BankFacility WHERE [CompanyID] = @CompanyID and [PeriodID] = @PeriodID </value>
+  </data>
+  <data name="Query_Insert" xml:space="preserve">
+    <value>INSERT INTO [Set_BankFacility] ([CompanyID], [PeriodID], [BankFacilityID], [BankFacilityName], [BankRefrence], [LimitID], [LimitName], [BankID], [BankName], [Amount], [StartDate], [EndDate], [Status], [IsActive], [CreatedBy], [CreateDate], [CreatedByValue], [AccountNo], [LoanTypeID], [LoanType], [Funded], [NonFunded], [MarkupID], [Markup], [PledgeQty], [PledgeAmount], [GracePeriod], [BusinessPartnerID], [BusinessPartnerName])
+		VALUES(@CompanyID, @PeriodID, @BankFacilityID, @BankFacilityName, @BankRefrence, @LimitID, @LimitName, @BankID, @BankName, @Amount, @StartDate, @EndDate, @Status, @IsActive, @CreatedBy, @CreateDate, @CreatedByValue, @AccountNo, @LoanTypeID, @LoanType, @Funded, @NonFunded, @MarkupID, @Markup, @PledgeQty, @PledgeAmount, @GracePeriod, @BusinessPartnerID, @BusinessPartnerName) </value>
+  </data>
+  <data name="Query_SelectAll" xml:space="preserve">
+    <value>SELECT * FROM [Set_BankFacility] WHERE [Status] = 1 AND ([IsActive] = @IsActive OR @IsActive is null) AND ([CompanyID] = @CompanyID OR @CompanyID is null) AND ([PeriodID] = @PeriodID OR @PeriodID is null) </value>
+  </data>
+  <data name="Query_SelectAll_WithoutPaging" xml:space="preserve">
+    <value>SELECT [CompanyID], [PeriodID], [BankFacilityID], [BankFacilityName], [BankRefrence], [LimitID], [LimitName], [BankID], [BankName], [Amount], [StartDate], [EndDate], [Status], [IsActive], [CreatedBy], [CreateDate], [CreatedByValue], [UpdatedBy], [UpdateDate], [UpdatedByValue], [AccountNo], [LoanTypeID], [LoanType], [Funded], [NonFunded], [MarkupID], [Markup], [PledgeQty], [PledgeAmount], [GracePeriod], [BusinessPartnerID], [BusinessPartnerName] FROM [Set_BankFacility] </value>
+  </data>
+  <data name="Query_SelectAll_WithPaging" xml:space="preserve">
+    <value>SELECT [CompanyID], [PeriodID], [BankFacilityID], [BankFacilityName], [BankRefrence], [LimitID], [LimitName], [BankID], [BankName], [Amount], [StartDate], [EndDate], [Status], [IsActive], [CreatedBy], [CreateDate], [CreatedByValue], [UpdatedBy], [UpdateDate], [UpdatedByValue], [AccountNo], [LoanTypeID], [LoanType], [Funded], [NonFunded], [MarkupID], [Markup], [PledgeQty], [PledgeAmount], [GracePeriod], [BusinessPartnerID], [BusinessPartnerName], ROW_NUMBER() Over (Order by BankFacilityID, CompanyID, PeriodID) as 'Row' FROM [Set_BankFacility] </value>
+  </data>
+  <data name="Query_Select_Field" xml:space="preserve">
+    <value>SELECT {0} [{1}] FROM [Set_BankFacility] WHERE [{2}] like '%' + @Value + '%'</value>
+  </data>
+  <data name="Query_Update_By_PrimaryKey" xml:space="preserve">
+    <value>UPDATE [Set_BankFacility] SET [BankFacilityName] = @BankFacilityName, [BankRefrence] = @BankRefrence, [LimitID] = @LimitID, [LimitName] = @LimitName, [BankID] = @BankID, [BankName] = @BankName, [Amount] = @Amount, [StartDate] = @StartDate, [EndDate] = @EndDate, [Status] = @Status, [IsActive] = @IsActive, [UpdatedBy] = @UpdatedBy, [UpdateDate] = @UpdateDate, [UpdatedByValue] = @UpdatedByValue, [AccountNo] = @AccountNo, [LoanTypeID] = @LoanTypeID, [LoanType] = @LoanType, [Funded] = @Funded, [NonFunded] = @NonFunded, [MarkupID] = @MarkupID, [Markup] = @Markup, [PledgeQty] = @PledgeQty, [PledgeAmount] = @PledgeAmount, [GracePeriod] = @GracePeriod, [BusinessPartnerID] = @BusinessPartnerID, [BusinessPartnerName] = @BusinessPartnerName
+		WHERE [BankFacilityID] = @BankFacilityID and [CompanyID] = @CompanyID and [PeriodID] = @PeriodID </value>
+  </data>
+  <data name="Query_GetBankFacilityDetail" xml:space="preserve">
+    <value>select Set_BankFacility.LimitName, Set_BankFacility.LoanType, Set_BankFacility.Amount as Limt, Markup
+,Set_BankFacilityDetail.InterestRate ,AR_SET_Bank.BankName
+,(SUM((Case when GL_TransactionDetail.TransactionType = 'Debit' then GL_TransactionDetail.Amount else 0 end)) - SUM((Case when GL_TransactionDetail.TransactionType = 'Credit' then GL_TransactionDetail.Amount else 0 end))) as POutstanding
+from Set_BankFacility
+left join Set_BankFacilityDetail on Set_BankFacilityDetail.BankFacilityHeaderID = Set_BankFacility.BankFacilityID
+and Set_BankFacilityDetail.CompanyID = Set_BankFacility.CompanyID
+and Set_BankFacilityDetail.PeriodID = Set_BankFacility.PeriodID
+and Set_BankFacilityDetail.Status = 1
+left join AR_SET_BankBranch on AR_SET_BankBranch.BankBranchID = Set_BankFacility.BankID and AR_SET_BankBranch.Status = 1
+left join AR_SET_Bank on AR_SET_Bank.BankID = AR_SET_BankBranch.BankID and AR_SET_Bank.Status = 1
+left join AR_SET_BankAccount on AR_SET_BankAccount.BankBranchID = AR_SET_BankBranch.BankBranchID
+and AR_SET_BankAccount.Status = 1
+left join GL_TransactionDetail on GL_TransactionDetail.CodeCombinationID = AR_SET_BankAccount.PaymentCCID 
+and GL_TransactionDetail.Status = 1 and GL_TransactionDetail.CompanyID = @CompanyID and GL_TransactionDetail.PeriodID = @PeriodID 
+and GL_TransactionDetail.FiscalID = @FiscalID
+left join GL_TransactionHeader on GL_TransactionHeader.TransactionID = GL_TransactionDetail.TransactionID
+and GL_TransactionHeader.Status = 1 
+ and GL_TransactionHeader.CompanyID = @CompanyID
+ and GL_TransactionHeader.PeriodID = @PeriodID
+ and GL_TransactionHeader.FiscalID = @FiscalID                                                                                                                           
+where Set_BankFacility.Status = 1 
+      and Set_BankFacility.CompanyID = @CompanyID 
+	  and Set_BankFacility.PeriodID  = @PeriodID
+
+      and isnull(Set_BankFacility.BusinessPartnerID,0) = 0 
+	  and Set_BankFacility.StartDate BETWEEN @FromDate AND @ToDate
+group by Set_BankFacility.LimitName,Set_BankFacility.LoanType,Set_BankFacility.Amount
+,Set_BankFacility.Markup,Set_BankFacilityDetail.InterestRate,AR_SET_Bank.BankName
+​
+union all
+​
+select Set_BankFacility.LimitName, Set_BankFacility.LoanType, Set_BankFacility.Amount as Limt, Markup
+,Set_BankFacilityDetail.InterestRate ,Set_BankFacility.BusinessPartnerName
+,(SUM((Case when GL_TransactionDetail.TransactionType = 'Debit' then GL_TransactionDetail.Amount else 0 end)) - SUM((Case when GL_TransactionDetail.TransactionType = 'Credit' then GL_TransactionDetail.Amount else 0 end))) as POutstanding
+from Set_BankFacility
+left join Set_BankFacilityDetail on Set_BankFacilityDetail.BankFacilityHeaderID = Set_BankFacility.BankFacilityID
+and Set_BankFacilityDetail.CompanyID = Set_BankFacility.CompanyID
+and Set_BankFacilityDetail.PeriodID = Set_BankFacility.PeriodID
+and Set_BankFacilityDetail.Status = 1
+​
+left join AR_SET_BankBranch on AR_SET_BankBranch.BankBranchID = Set_BankFacility.BankID and AR_SET_BankBranch.Status = 1
+left join AR_SET_Bank on AR_SET_Bank.BankID = AR_SET_BankBranch.BankID and AR_SET_Bank.Status = 1
+left join AR_SET_BankAccount on AR_SET_BankAccount.BankBranchID = AR_SET_BankBranch.BankBranchID
+and AR_SET_BankAccount.Status = 1
+left join GL_TransactionDetail on GL_TransactionDetail.CodeCombinationID = AR_SET_BankAccount.PaymentCCID 
+and GL_TransactionDetail.Status = 1 and GL_TransactionDetail.CompanyID = @CompanyID 
+and GL_TransactionDetail.PeriodID = @PeriodID 
+and GL_TransactionDetail.FiscalID = @FiscalID
+left join GL_TransactionHeader on GL_TransactionHeader.TransactionID = GL_TransactionDetail.TransactionID
+and GL_TransactionHeader.Status = 1 
+and GL_TransactionHeader.CompanyID = @CompanyID 
+and GL_TransactionHeader.PeriodID = @PeriodID
+ and GL_TransactionHeader.FiscalID = @FiscalID                                                                                                                                 
+where Set_BankFacility.Status = 1 
+    and Set_BankFacility.CompanyID = @CompanyID 
+	and Set_BankFacility.PeriodID = @PeriodID
+    and Set_BankFacility.BusinessPartnerID &gt; 0 
+	and Set_BankFacility.StartDate BETWEEN @FromDate AND @ToDate 
+group by Set_BankFacility.LimitName,Set_BankFacility.LoanType,Set_BankFacility.Amount
+,Set_BankFacility.Markup,Set_BankFacilityDetail.InterestRate,Set_BankFacility.BusinessPartnerName</value>
+  </data>
+</root>

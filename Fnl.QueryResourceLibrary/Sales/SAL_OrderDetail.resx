@@ -1,0 +1,1847 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Query_Advacne_Against_SO" xml:space="preserve">
+    <value>select SAL_ContractHeader.ContractID as OrderID, AR_SET_Customer.CustomerID,CustomerName,SAL_ContractHeader.ContractNo,SAL_ContractHeader.ContractDate,sum(SAL_ContractDetail.NetAmount) as SOAmount
+		,AR_ReceiptTransactionHeader.DocumentNo as PaymentDocNo,AR_ReceiptTransactionHeader.DocumentDate as PaymentDate,AR_ReceiptTransactionHeader.Amount as PaymentAmount
+		, Case AR_ReceiptTransactionHeader.StatusCode When 1 then 'Approved' When 5 then 'In Process' When 12 Then 'Released for Approve' When 13 Then 'Partially Approved' 
+            When 14 Then 'Discuss' When 15 Then 'Cancelled' When 16 Then 'Reversed' End As DocumentStatus
+
+		--,(select sum(AR_ReceiptTransactionHeaderinner.Amount)
+		--from AR_ReceiptTransactionHeader AR_ReceiptTransactionHeaderinner
+		-- Inner Join SET_DocumentType On SET_DocumentType.DocumentTypeID = AR_ReceiptTransactionHeaderinner.DocumentTypeID 
+  --      and SET_DocumentType.CompanyID = AR_ReceiptTransactionHeaderinner.CompanyID 
+		--and SET_DocumentType.PeriodID = AR_ReceiptTransactionHeaderinner.PeriodID 
+		--and SET_DocumentType.DocumentType like '%Advance Against SO%'
+		--inner join  SAL_OrderHeader SAL_OrderHeaderinner on SAL_OrderHeaderinner.OrderID = AR_ReceiptTransactionHeaderinner.SourceHeaderID
+		--and SAL_OrderHeaderinner.CompanyID = AR_ReceiptTransactionHeaderinner.CompanyID
+		--and SAL_OrderHeaderinner.PeriodID = AR_ReceiptTransactionHeaderinner.PeriodID
+		--and AR_ReceiptTransactionHeaderinner.Status = 1
+		--and AR_ReceiptTransactionHeaderinner.StatusCode = 1
+		--where SAL_OrderHeaderinner.OrderID = SAL_OrderHeader.OrderID
+		--) as PaymentAmount	
+						
+
+		from SAL_ContractHeader
+		inner join SAL_ContractDetail on SAL_ContractDetail.ContractID = SAL_ContractHeader.ContractID
+		and SAL_ContractDetail.CompanyID = SAL_ContractHeader.CompanyID
+		and SAL_ContractDetail.periodid = SAL_ContractHeader.periodid
+		and SAL_ContractDetail.status = 1
+
+		inner join  AR_ReceiptTransactionHeader on AR_ReceiptTransactionHeader.SourceHeaderID = SAL_ContractHeader.ContractID
+		and AR_ReceiptTransactionHeader.CompanyID = SAL_ContractHeader.CompanyID
+		and AR_ReceiptTransactionHeader.PeriodID = SAL_ContractHeader.PeriodID
+		and AR_ReceiptTransactionHeader.Status = 1
+		--and AR_ReceiptTransactionHeader.StatusCode = 1
+
+		Inner Join SET_DocumentType On SET_DocumentType.DocumentTypeID = AR_ReceiptTransactionHeader.DocumentTypeID 
+        and SET_DocumentType.CompanyID = AR_ReceiptTransactionHeader.CompanyID 
+		and SET_DocumentType.PeriodID = AR_ReceiptTransactionHeader.PeriodID 
+		and SET_DocumentType.DocumentType like '%Advance Against SO%'
+
+		inner join AR_SET_Customer on AR_SET_Customer.CustomerID =  SAL_ContractHeader.CustomerID
+		and AR_SET_Customer.Status = 1 
+
+		where SAL_ContractHeader.Status = 1 and SAL_ContractHeader.StatusCode = 1 
+		and SAL_ContractHeader.CompanyID = @CompanyID 
+		and SAL_ContractHeader.PeriodID = @PeriodID
+		and SAL_ContractHeader.FiscalID = @CurrentFiscalID
+		and SAL_ContractHeader.ContractDate between @ContractDateStart and @ContractDateEnd
+		{0}
+		group by SAL_ContractHeader.ContractID,AR_SET_Customer.CustomerID,CustomerName,SAL_ContractHeader.ContractNo,SAL_ContractHeader.ContractDate
+		,AR_ReceiptTransactionHeader.DocumentNo,AR_ReceiptTransactionHeader.DocumentDate,AR_ReceiptTransactionHeader.Amount,AR_ReceiptTransactionHeader.StatusCode</value>
+  </data>
+  <data name="Query_AllPendingSO_ALimdad" xml:space="preserve">
+    <value>select distinct SaleContractTypeID,SET_DocumentType.DocumentType ,ContractNo,SAL_OrderHeader.OrderID,ContractDate,TransactionQuantity,
+SAL_OrderDetail.Quantity from SAL_OrderHeader
+ inner join SAL_OrderDetail on  SAL_OrderDetail .OrderID = SAL_OrderHeader.OrderID
+ and SAL_OrderDetail .CompanyID = SAL_OrderHeader.CompanyID
+ and SAL_OrderDetail .PeriodID= SAL_OrderHeader.PeriodID
+ and SAL_OrderDetail .status = 1
+ INNER JOIN SET_DocumentType ON SET_DocumentType.DocumentTypeID = SAL_OrderHeader.SaleContractTypeID 
+        AND SET_DocumentType.PeriodID = SAL_OrderHeader.PeriodID AND SET_DocumentType.CompanyID = SAL_OrderHeader.CompanyID 
+ INNER join SAL_DeliveryOrderDetail   on SAL_DeliveryOrderDetail.SalesOrderHeaderID  = SAL_OrderHeader.OrderID
+ and SAL_DeliveryOrderDetail.CompanyID = SAL_OrderHeader.CompanyID
+ and SAL_DeliveryOrderDetail.PeriodID = SAL_OrderHeader.PeriodID
+ and SAL_DeliveryOrderDetail.status = 1
+   INNER join SAL_DeliveryOrderHeader   on SAL_DeliveryOrderHeader.DeliveryOrderID  = SAL_DeliveryOrderDetail.DOHeaderID
+ and SAL_DeliveryOrderHeader.CompanyID = SAL_DeliveryOrderDetail.CompanyID
+ and SAL_DeliveryOrderHeader.PeriodID = SAL_DeliveryOrderDetail.PeriodID 
+ AND SAL_DeliveryOrderHeader.Status=1
+ LEFT JOIN (select  SourceHeaderID,SourceLineID,SourceDocumentTypeID,SourceCode,abs(SUM(TransactionQuantity)) as TransactionQuantity from INV_StockTransactionDetail 
+  INNER join INV_StockTransactionHeader   on INV_StockTransactionHeader.StockTransactionID  = INV_StockTransactionDetail.StockTransactionID
+ and INV_StockTransactionHeader.CompanyID = INV_StockTransactionDetail.CompanyID
+ and INV_StockTransactionHeader.PeriodID = INV_StockTransactionDetail.PeriodID 
+ AND INV_StockTransactionHeader.Status=1
+ INNER join SAL_DispatchHeader   on SAL_DispatchHeader.DocumentTypeID  = INV_StockTransactionHeader.DocumentTypeID
+ AND SAL_DispatchHeader.DispatchNo  = INV_StockTransactionHeader.DocumentNo
+ and SAL_DispatchHeader.CompanyID = INV_StockTransactionHeader.CompanyID
+ and SAL_DispatchHeader.PeriodID = INV_StockTransactionHeader.PeriodID 
+ AND SAL_DispatchHeader.FiscalID=INV_StockTransactionHeader.FiscalID
+ AND INV_StockTransactionHeader.Status=1
+ group by  SourceHeaderID,SourceLineID,SourceDocumentTypeID,SourceCode
+ ) as DispatchDetail ON 
+ DispatchDetail.SourceHeaderID = SAL_DeliveryOrderDetail.DOHeaderID
+       and DispatchDetail.SourceLineID = SAL_DeliveryOrderDetail.DODetailID
+	   AND DispatchDetail.SourceDocumentTypeID=SAL_DeliveryOrderHeader.DocumentTypeID
+	   AND DispatchDetail.SourceCode=SAL_DeliveryOrderHeader.DeliveryOrderNo
+	  
+
+--inner join ApplicationMenu ap on ApplicationMenu.MenuID = SET_DocumentType.MenuID
+
+
+
+Where SAL_OrderDetail.Quantity &gt; ISNULL(TransactionQuantity,0)
+AND Sal_OrderHeader.CompanyID= @CompanyID
+AND Sal_OrderHeader.PeriodID= @PeriodID
+and Sal_OrderHeader.StatusCode = 1
+AND ( Sal_OrderHeader.customerID =@CustomerID OR @CustomerID is null)</value>
+  </data>
+  <data name="Query_Customer_Wise_Sale_OrderItem_Wise_Report" xml:space="preserve">
+    <value>Select Distinct  SAL_OH.OrderID, convert(int,SAL_OH.ContractNo) as ContractNo,SAL_OD.CompanyID, SAL_OD.PeriodID, SAL_OH.ContractDate,
+ SAL_OH.CustomerID, AR_Cst.CustomerName, 
+
+    --SAL_OD.Quantity, 
+
+    SUM(SAL_OD.Quantity) - SUM(isnull(SAL_OD.ReversedQuantity,0)) as Quantity,
+
+   -- SAL_OD.BaseAmount as Rate, ((SAL_OD.Quantity * SAL_OD.BaseAmount) + (SAL_OD.Quantity * SAL_OD.BaseAmount * isnull(SAL_OD.SalesTaxAmount, 0) / 100)) as NetAmount, 
+
+SUM(round(((SAL_OD.Quantity - isnull(SAL_OD.ReversedQuantity,0))
+    *
+    (case when SAL_OD.Inclusive = 0 then SAL_OD.Rate 
+		when (SAL_OD.BaseAmount is null or SAL_OD.BaseAmount = 0) then SAL_OD.Rate else SAL_OD.BaseAmount end))
+	+
+	(
+	  
+	  ISNULL(
+	  SAL_OD.FEDAmount * 
+	  ((SAL_OD.Quantity - isnull(SAL_OD.ReversedQuantity,0))
+      *
+     (case when SAL_OD.Inclusive = 0 then SAL_OD.Rate 
+	  when (SAL_OD.BaseAmount is null or SAL_OD.BaseAmount = 0) then SAL_OD.Rate else SAL_OD.BaseAmount end))
+	  /
+	  100,0)
+	),0))	as NetAmount,
+
+    
+    SAL_DOH.CustomerID, SAL_DOH.DeliveryOrderNo as DeliveryOrderID, SAL_DOH.DODate, SUM(SAL_InvoiceDetail.GrossAmount) as GrossAmount, 
+
+  --SAL_InvoiceDetail.UnitPrice,
+ SUM(INV_STD.Amount) as DispatchAmount,
+ABS(SUM(INV_STD.TransactionQuantity * SAL_OD.BaseAmount)) as DispatchedAmount, 
+    
+  -- SAL_DOD.Quantity as DC_Quantity, 
+    
+    SUM(SAL_DOD.Quantity - isnull(SAL_DOD.ReversedQty,0)) as DC_Quantity,
+ SAL_InvoiceHeader.InvoiceID, SAL_InvoiceHeader.InvoiceNumber, SAL_InvoiceHeader.InvoiceDate, SAL_InvoiceDetail.QuantityInvoiced, 
+  --SAL_InvoiceDetail.UnitPrice as INV_Rate
+ -- , 
+  SUM((SAL_InvoiceDetail.BaseAmount*SAL_InvoiceDetail.TaxAmount)/100 +SAL_InvoiceDetail.BaseAmount)  as INV_Amount
+  
+   , SAL_DH.DispatchID, SAL_DH.DispatchNo, 
+ INV_STH.DocumentNo, SAL_DH.TotalAmount, SAL_DH.DispatchDate, 
+
+  --SUM(SAL_OD.BaseAmount) as Actual, 
+
+    Sum( round(((SAL_OD.Quantity - isnull(SAL_OD.ReversedQuantity,0))
+    *
+    (case when SAL_OD.Inclusive = 0 then SAL_OD.Rate 
+		when (SAL_OD.BaseAmount is null or SAL_OD.BaseAmount = 0) then SAL_OD.Rate else SAL_OD.BaseAmount end))
+	+
+	(
+	  
+	  ISNULL(
+	  SAL_OD.FEDAmount * 
+	  ((SAL_OD.Quantity - isnull(SAL_OD.ReversedQuantity,0))
+      *
+  (case when SAL_OD.Inclusive = 0 then SAL_OD.Rate 
+	  when (SAL_OD.BaseAmount is null or SAL_OD.BaseAmount = 0) then SAL_OD.Rate else SAL_OD.BaseAmount end))
+	  /
+	  100,0)
+	),0))	as Actual,
+
+   ABS(SUM(INV_STD.TransactionQuantity)) DispatchQty, 
+    case when SAL_InvoiceHeader.ReversalID is not null then 'R' else '' end as INV_Reversal 
+    -- receipt
+    --,AR_ReceiptTransactionHeader.ReceiptTransactionID as ReceiptID  ,AR_ReceiptTransactionHeader.DocumentNo as ReceiptDocNo ,AR_ReceiptTransactionHeader.DocumentDate as ReceiptDate ,AR_ReceiptTransactionHeader.Amount as ReceiptAmount
+    -- Receipt adv
+    --,Adv_Receipt.ReceiptTransactionID  as receiptSoID ,Adv_Receipt.DocumentNo as receiptSoNO , Adv_Receipt.DocumentDate as receiptSoDate,Adv_Receipt.Amount as receiptSoAmount
+    ,(
+    select sum(AR_ReceiptTransactionHeader.Amount) from  AR_ReceiptInvoicesDetail 
+    left join AR_ReceiptTransactionHeader on AR_ReceiptTransactionHeader.ReceiptTransactionID = AR_ReceiptInvoicesDetail.ReceiptHeaderID
+    and AR_ReceiptInvoicesDetail.CompanyID = AR_ReceiptInvoicesDetail.CompanyID
+    and AR_ReceiptInvoicesDetail.PeriodID = AR_ReceiptInvoicesDetail.PeriodID
+    where AR_ReceiptInvoicesDetail.InvoiceHeaderID = SAL_InvoiceHeader.InvoiceID
+   -- and AR_ReceiptTransactionDetail.InvoiceDetailID = SAL_InvoiceDetail.InvoiceDetailID
+    and AR_ReceiptInvoicesDetail.CompanyID = SAL_InvoiceHeader.CompanyID
+    and AR_ReceiptInvoicesDetail.PeriodID = SAL_InvoiceHeader.PeriodID
+    ) as ReceiptAmount
+,(
+    select sum(Amount) from  AR_ReceiptTransactionHeader Adv_Receipt where Adv_Receipt.SourceHeaderID = SAL_OH.OrderID
+    and Adv_Receipt.CustomerID = SAL_OH.CustomerID
+    and Adv_Receipt.StatusCode = 1
+    and Adv_Receipt.ReversalDate is null
+    and Adv_Receipt.CompanyID = SAL_OH.CompanyID
+    and Adv_Receipt.PeriodID = SAL_OH.PeriodID
+    ) as receiptSoAmount
+    
+    ,(
+    select top 1 set_documentType.DocumentType from  AR_ReceiptTransactionHeader Adv_Receipt 
+    inner join set_documentType on set_documentType.DocumentTypeID = Adv_Receipt.DocumentTypeID
+    and set_documentType.CompanyID = Adv_Receipt.CompanyID
+    where Adv_Receipt.SourceHeaderID = SAL_OH.OrderID
+    and Adv_Receipt.CustomerID = SAL_OH.CustomerID
+    and Adv_Receipt.StatusCode = 1
+    and Adv_Receipt.ReversalDate is null
+    and Adv_Receipt.CompanyID = SAL_OH.CompanyID
+    and Adv_Receipt.PeriodID = SAL_OH.PeriodID
+    ) as ReceiptType,DocumentTypesGroup.GroupName
+
+From SAL_OrderDetail SAL_OD 
+    Inner Join SAL_OrderHeader SAL_OH ON SAL_OH.CompanyID = SAL_OD.CompanyID AND SAL_OH.PeriodID = SAL_OD.PeriodID AND SAL_OH.OrderID = SAL_OD.OrderID 
+        AND SAL_OH.Status = 1 
+  Left Join SAL_DeliveryOrderDetail SAL_DOD ON SAL_DOD.CompanyID = SAL_OD.CompanyID AND SAL_DOD.PeriodID = SAL_OD.PeriodID 
+        AND SAL_DOD.SalesOrderHeaderID = SAL_OD.OrderID 
+        AND SAL_DOD.SalesOrderDetailID=SAL_OD.OrderDetailID
+        AND SAL_DOD.Status = 1
+          AND (Select StatusCode from SAL_DeliveryOrderHeader 
+        where SAL_DeliveryOrderHeader.DeliveryOrderID =SAL_DOD.DOHeaderID
+        )=1
+ Left Join AR_SET_Customer AR_Cst ON AR_Cst.CompanyID = SAL_OD.CompanyID AND AR_Cst.PeriodID = SAL_OD.PeriodID AND AR_Cst.CustomerID = SAL_OH.CustomerID 
+    Left Join SAL_DeliveryOrderHeader SAL_DOH ON SAL_DOH.CompanyID = SAL_DOD.CompanyID AND SAL_DOH.PeriodID = SAL_DOD.PeriodID 
+        AND SAL_DOH.DeliveryOrderID = SAL_DOD.DOHeaderID 
+  Left Join INV_StockTransactionDetail INV_STD ON INV_STD.CompanyID = SAL_DOD.CompanyID AND INV_STD.PeriodID = SAL_DOD.PeriodID 
+       AND INV_STD.SourceCode = SAL_DOH.DeliveryOrderNo AND INV_STD.SourceHeaderID = SAL_DOD.DOHeaderID 
+       AND INV_STD.SourceLineID = SAL_DOD.DODetailID 
+ AND INV_STD.SourceDocumentTypeID = SAL_DOH.DocumentTypeID 
+      AND INV_STD.Status = 1
+   left join INV_StockTransactionHeader INV_STH on INV_STH.StockTransactionID = INV_STD.StockTransactionID 
+       and INV_STH.CompanyID = INV_STD.CompanyID 
+      and INV_STH.PeriodID = INV_STD.PeriodID 
+        and INV_STH.Status = 1
+  Left join SAL_DispatchHeader SAL_DH ON SAL_DH.CompanyID = INV_STH.CompanyID AND SAL_DH.PeriodID = INV_STH.PeriodID 
+     AND SAL_DH.DocumentTypeID = INV_STH.DocumentTypeID AND SAL_DH.DispatchNo = INV_STH.DocumentNo
+   
+         
+	left JOIN SAL_InvoiceDetail ON INV_STD.StockTransactionID = SAL_InvoiceDetail.StockHeaderID 
+	AND INV_STD.TransactionDetailID = SAL_InvoiceDetail.StockDetailID 
+        AND INV_STD.CompanyID = SAL_InvoiceDetail.CompanyID AND INV_STD.PeriodID = SAL_InvoiceDetail.PeriodID AND SAL_InvoiceDetail.Status = 1 
+   left JOIN SAL_InvoiceHeader ON SAL_InvoiceDetail.InvoiceHeaderID = SAL_InvoiceHeader.InvoiceID AND SAL_InvoiceDetail.CompanyID = SAL_InvoiceHeader.CompanyID 
+      AND SAL_InvoiceDetail.PeriodID = SAL_InvoiceHeader.PeriodID AND SAL_InvoiceHeader.Status = 1 
+
+  left join set_documenttype on set_documenttype.documenttypeid = SAL_OH.SaleContractTypeID
+   INNER Join DocumentTypesGroup On DocumentTypesGroup.GroupID = Set_DocumentType.GroupID 
+   --DocumentTypesGroup.CompanyID = Set_DocumentType.CompanyID And 
+ --   --left join AR_ReceiptTransactionDetail on AR_ReceiptTransactionDetail.InvoiceHeaderID = SAL_InvoiceDetail.InvoiceHeaderID
+ --   --and AR_ReceiptTransactionDetail.InvoiceDetailID = SAL_InvoiceDetail.InvoiceDetailID
+ --   --and AR_ReceiptTransactionDetail.CompanyID = SAL_InvoiceDetail.CompanyID
+ --   --and AR_ReceiptTransactionDetail.PeriodID = SAL_InvoiceDetail.PeriodID
+ --   --left join AR_ReceiptTransactionHeader on AR_ReceiptTransactionHeader.ReceiptTransactionID = AR_ReceiptTransactionDetail.ReceiptHeaderID
+ --   --and AR_ReceiptTransactionDetail.CompanyID = AR_ReceiptTransactionDetail.CompanyID
+ --   --and AR_ReceiptTransactionDetail.PeriodID = AR_ReceiptTransactionDetail.PeriodID
+ --   --left join AR_ReceiptTransactionHeader Adv_Receipt on Adv_Receipt.SourceHeaderID = SAL_OH.OrderID
+ --   --and Adv_Receipt.CustomerID = SAL_OH.CustomerID
+ --   --and Adv_Receipt.StatusCode = 1
+ --   --and Adv_Receipt.ReversalDate is null
+ --   --and Adv_Receipt.CompanyID = SAL_OH.CompanyID
+ --   --and Adv_Receipt.PeriodID = SAL_OH.PeriodID
+
+where SAL_OD.CompanyID = @CompanyID AND SAL_OD.PeriodID = @PeriodID AND SAL_OH.ContractDate between @ContractDateStart AND @ContractDateEnd 
+AND SAL_OD.Status=1
+{0}
+{1}
+GROUP BY SAL_OH.OrderID, SAL_OH.ContractNo,SAL_OD.CompanyID, SAL_OD.PeriodID, SAL_OH.ContractDate,
+ SAL_OH.CustomerID, AR_Cst.CustomerName,  SAL_DOH.CustomerID, SAL_DOH.DeliveryOrderNo, SAL_DOH.DODate,SAL_InvoiceHeader.InvoiceID
+ ,SAL_InvoiceHeader.InvoiceNumber,SAL_InvoiceHeader.InvoiceDate,SAL_InvoiceDetail.QuantityInvoiced, SAL_DH.DispatchID, SAL_DH.DispatchNo, 
+ INV_STH.DocumentNo, SAL_DH.TotalAmount, SAL_DH.DispatchDate,SAL_InvoiceHeader.ReversalID,SAL_InvoiceHeader.CompanyID
+ ,SAL_InvoiceHeader.PeriodID,SAL_OH.CompanyID,SAL_OH.PeriodID,DocumentTypesGroup.GroupName</value>
+  </data>
+  <data name="Query_Customer_Wise_Sale_Order_Report" xml:space="preserve">
+    <value>Select Distinct  SAL_OH.OrderID, convert(int,SAL_OH.ContractNo) as ContractNo,SAL_OD.CompanyID, SAL_OD.PeriodID, SAL_OH.ContractDate,
+ SAL_OH.CustomerID, AR_Cst.CustomerName, 
+
+    --SAL_OD.Quantity, 
+
+    SUM(SAL_OD.Quantity) - SUM(isnull(SAL_OD.ReversedQuantity,0)) as Quantity,
+
+   -- SAL_OD.BaseAmount as Rate, ((SAL_OD.Quantity * SAL_OD.BaseAmount) + (SAL_OD.Quantity * SAL_OD.BaseAmount * isnull(SAL_OD.SalesTaxAmount, 0) / 100)) as NetAmount, 
+
+SUM(round(((SAL_OD.Quantity - isnull(SAL_OD.ReversedQuantity,0))
+    *
+    (case when SAL_OD.Inclusive = 0 then SAL_OD.Rate 
+		when (SAL_OD.BaseAmount is null or SAL_OD.BaseAmount = 0) then SAL_OD.Rate else SAL_OD.BaseAmount end))
+	+
+	(
+	  
+	  ISNULL(
+	  SAL_OD.FEDAmount * 
+	  ((SAL_OD.Quantity - isnull(SAL_OD.ReversedQuantity,0))
+      *
+     (case when SAL_OD.Inclusive = 0 then SAL_OD.Rate 
+	  when (SAL_OD.BaseAmount is null or SAL_OD.BaseAmount = 0) then SAL_OD.Rate else SAL_OD.BaseAmount end))
+	  /
+	  100,0)
+	),0))	as NetAmount,
+
+    
+    SAL_DOH.CustomerID, SAL_DOH.DeliveryOrderNo as DeliveryOrderID, SAL_DOH.DODate, SUM(SAL_InvoiceDetail.GrossAmount) as GrossAmount, 
+
+  --SAL_InvoiceDetail.UnitPrice,
+ SUM(INV_STD.Amount) as DispatchAmount,
+ABS(SUM(INV_STD.TransactionQuantity * SAL_OD.BaseAmount)) as DispatchedAmount, 
+    
+  -- SAL_DOD.Quantity as DC_Quantity, 
+    
+    SUM(SAL_DOD.Quantity - isnull(SAL_DOD.ReversedQty,0)) as DC_Quantity,
+ SAL_InvoiceHeader.InvoiceID, SAL_InvoiceHeader.InvoiceNumber, SAL_InvoiceHeader.InvoiceDate, SUM(SAL_InvoiceDetail.QuantityInvoiced) as QuantityInvoiced, 
+  --SAL_InvoiceDetail.UnitPrice as INV_Rate
+ -- , 
+  SUM((SAL_InvoiceDetail.BaseAmount*SAL_InvoiceDetail.TaxAmount)/100 +SAL_InvoiceDetail.BaseAmount)  as INV_Amount
+  
+   , SAL_DH.DispatchID, SAL_DH.DispatchNo, 
+ INV_STH.DocumentNo, SAL_DH.TotalAmount, SAL_DH.DispatchDate, 
+
+  --SUM(SAL_OD.BaseAmount) as Actual, 
+
+    Sum( round(((SAL_OD.Quantity - isnull(SAL_OD.ReversedQuantity,0))
+    *
+    (case when SAL_OD.Inclusive = 0 then SAL_OD.Rate 
+		when (SAL_OD.BaseAmount is null or SAL_OD.BaseAmount = 0) then SAL_OD.Rate else SAL_OD.BaseAmount end))
+	+
+	(
+	  
+	  ISNULL(
+	  SAL_OD.FEDAmount * 
+	  ((SAL_OD.Quantity - isnull(SAL_OD.ReversedQuantity,0))
+      *
+  (case when SAL_OD.Inclusive = 0 then SAL_OD.Rate 
+	  when (SAL_OD.BaseAmount is null or SAL_OD.BaseAmount = 0) then SAL_OD.Rate else SAL_OD.BaseAmount end))
+	  /
+	  100,0)
+	),0))	as Actual,
+
+   ABS(SUM(INV_STD.TransactionQuantity)) DispatchQty, 
+    case when SAL_InvoiceHeader.ReversalID is not null then 'R' else '' end as INV_Reversal 
+    -- receipt
+    --,AR_ReceiptTransactionHeader.ReceiptTransactionID as ReceiptID  ,AR_ReceiptTransactionHeader.DocumentNo as ReceiptDocNo ,AR_ReceiptTransactionHeader.DocumentDate as ReceiptDate ,AR_ReceiptTransactionHeader.Amount as ReceiptAmount
+    -- Receipt adv
+    --,Adv_Receipt.ReceiptTransactionID  as receiptSoID ,Adv_Receipt.DocumentNo as receiptSoNO , Adv_Receipt.DocumentDate as receiptSoDate,Adv_Receipt.Amount as receiptSoAmount
+    ,(
+    select sum(AR_ReceiptTransactionHeader.Amount) from  AR_ReceiptInvoicesDetail 
+    left join AR_ReceiptTransactionHeader on AR_ReceiptTransactionHeader.ReceiptTransactionID = AR_ReceiptInvoicesDetail.ReceiptHeaderID
+    and AR_ReceiptInvoicesDetail.CompanyID = AR_ReceiptInvoicesDetail.CompanyID
+    and AR_ReceiptInvoicesDetail.PeriodID = AR_ReceiptInvoicesDetail.PeriodID
+    where AR_ReceiptInvoicesDetail.InvoiceHeaderID = SAL_InvoiceHeader.InvoiceID
+   -- and AR_ReceiptTransactionDetail.InvoiceDetailID = SAL_InvoiceDetail.InvoiceDetailID
+    and AR_ReceiptInvoicesDetail.CompanyID = SAL_InvoiceHeader.CompanyID
+    and AR_ReceiptInvoicesDetail.PeriodID = SAL_InvoiceHeader.PeriodID
+    ) as ReceiptAmount
+,(
+    select sum(Amount) from  AR_ReceiptTransactionHeader Adv_Receipt where Adv_Receipt.SourceHeaderID = SAL_OH.OrderID
+    and Adv_Receipt.CustomerID = SAL_OH.CustomerID
+    and Adv_Receipt.StatusCode = 1
+    and Adv_Receipt.ReversalDate is null
+    and Adv_Receipt.CompanyID = SAL_OH.CompanyID
+    and Adv_Receipt.PeriodID = SAL_OH.PeriodID
+    ) as receiptSoAmount
+    
+    ,(
+    select top 1 set_documentType.DocumentType from  AR_ReceiptTransactionHeader Adv_Receipt 
+    inner join set_documentType on set_documentType.DocumentTypeID = Adv_Receipt.DocumentTypeID
+    and set_documentType.CompanyID = Adv_Receipt.CompanyID
+    where Adv_Receipt.SourceHeaderID = SAL_OH.OrderID
+    and Adv_Receipt.CustomerID = SAL_OH.CustomerID
+    and Adv_Receipt.StatusCode = 1
+    and Adv_Receipt.ReversalDate is null
+    and Adv_Receipt.CompanyID = SAL_OH.CompanyID
+    and Adv_Receipt.PeriodID = SAL_OH.PeriodID
+    ) as ReceiptType,DocumentTypesGroup.GroupName
+
+From SAL_OrderDetail SAL_OD 
+    Inner Join SAL_OrderHeader SAL_OH ON SAL_OH.CompanyID = SAL_OD.CompanyID AND SAL_OH.PeriodID = SAL_OD.PeriodID AND SAL_OH.OrderID = SAL_OD.OrderID 
+        AND SAL_OH.Status = 1 
+  Left Join SAL_DeliveryOrderDetail SAL_DOD ON SAL_DOD.CompanyID = SAL_OD.CompanyID AND SAL_DOD.PeriodID = SAL_OD.PeriodID 
+        AND SAL_DOD.SalesOrderHeaderID = SAL_OD.OrderID 
+        AND SAL_DOD.SalesOrderDetailID=SAL_OD.OrderDetailID
+        AND SAL_DOD.Status = 1
+          AND (Select StatusCode from SAL_DeliveryOrderHeader 
+        where SAL_DeliveryOrderHeader.DeliveryOrderID =SAL_DOD.DOHeaderID
+		and SAL_DeliveryOrderHeader.CompanyID =SAL_DOD.CompanyID
+        )=1
+ Left Join AR_SET_Customer AR_Cst ON AR_Cst.CompanyID = SAL_OD.CompanyID AND AR_Cst.PeriodID = SAL_OD.PeriodID AND AR_Cst.CustomerID = SAL_OH.CustomerID 
+    Left Join SAL_DeliveryOrderHeader SAL_DOH ON SAL_DOH.CompanyID = SAL_DOD.CompanyID AND SAL_DOH.PeriodID = SAL_DOD.PeriodID 
+        AND SAL_DOH.DeliveryOrderID = SAL_DOD.DOHeaderID 
+  Left Join INV_StockTransactionDetail INV_STD ON INV_STD.CompanyID = SAL_DOD.CompanyID AND INV_STD.PeriodID = SAL_DOD.PeriodID 
+       AND INV_STD.SourceCode = SAL_DOH.DeliveryOrderNo AND INV_STD.SourceHeaderID = SAL_DOD.DOHeaderID 
+       AND INV_STD.SourceLineID = SAL_DOD.DODetailID 
+ AND INV_STD.SourceDocumentTypeID = SAL_DOH.DocumentTypeID 
+      AND INV_STD.Status = 1
+   left join INV_StockTransactionHeader INV_STH on INV_STH.StockTransactionID = INV_STD.StockTransactionID 
+       and INV_STH.CompanyID = INV_STD.CompanyID 
+      and INV_STH.PeriodID = INV_STD.PeriodID 
+        and INV_STH.Status = 1
+  Left join SAL_DispatchHeader SAL_DH ON SAL_DH.CompanyID = INV_STH.CompanyID AND SAL_DH.PeriodID = INV_STH.PeriodID 
+     AND SAL_DH.DocumentTypeID = INV_STH.DocumentTypeID AND SAL_DH.DispatchNo = INV_STH.DocumentNo
+   
+         
+	left JOIN SAL_InvoiceDetail ON INV_STD.StockTransactionID = SAL_InvoiceDetail.StockHeaderID 
+	AND INV_STD.TransactionDetailID = SAL_InvoiceDetail.StockDetailID 
+        AND INV_STD.CompanyID = SAL_InvoiceDetail.CompanyID AND INV_STD.PeriodID = SAL_InvoiceDetail.PeriodID AND SAL_InvoiceDetail.Status = 1 
+   left JOIN SAL_InvoiceHeader ON SAL_InvoiceDetail.InvoiceHeaderID = SAL_InvoiceHeader.InvoiceID AND SAL_InvoiceDetail.CompanyID = SAL_InvoiceHeader.CompanyID 
+      AND SAL_InvoiceDetail.PeriodID = SAL_InvoiceHeader.PeriodID AND SAL_InvoiceHeader.Status = 1 
+
+  left join set_documenttype on set_documenttype.documenttypeid = SAL_OH.SaleContractTypeID
+   INNER Join DocumentTypesGroup On DocumentTypesGroup.GroupID = Set_DocumentType.GroupID
+   --DocumentTypesGroup.CompanyID = Set_DocumentType.CompanyID And 
+   inner join Set_PeriodCustom on SAL_OH.ContractDate between Set_PeriodCustom.StartDate and Set_PeriodCustom.EndDate 
+and Set_PeriodCustom.Status = 1  and Set_PeriodCustom.FiscalID = @CurrentFiscalID
+   
+ --   --left join AR_ReceiptTransactionDetail on AR_ReceiptTransactionDetail.InvoiceHeaderID = SAL_InvoiceDetail.InvoiceHeaderID
+ --   --and AR_ReceiptTransactionDetail.InvoiceDetailID = SAL_InvoiceDetail.InvoiceDetailID
+ --   --and AR_ReceiptTransactionDetail.CompanyID = SAL_InvoiceDetail.CompanyID
+ --   --and AR_ReceiptTransactionDetail.PeriodID = SAL_InvoiceDetail.PeriodID
+ --   --left join AR_ReceiptTransactionHeader on AR_ReceiptTransactionHeader.ReceiptTransactionID = AR_ReceiptTransactionDetail.ReceiptHeaderID
+ --   --and AR_ReceiptTransactionDetail.CompanyID = AR_ReceiptTransactionDetail.CompanyID
+ --   --and AR_ReceiptTransactionDetail.PeriodID = AR_ReceiptTransactionDetail.PeriodID
+ --   --left join AR_ReceiptTransactionHeader Adv_Receipt on Adv_Receipt.SourceHeaderID = SAL_OH.OrderID
+ --   --and Adv_Receipt.CustomerID = SAL_OH.CustomerID
+ --   --and Adv_Receipt.StatusCode = 1
+ --   --and Adv_Receipt.ReversalDate is null
+ --   --and Adv_Receipt.CompanyID = SAL_OH.CompanyID
+ --   --and Adv_Receipt.PeriodID = SAL_OH.PeriodID
+
+where SAL_OD.CompanyID = @CompanyID AND SAL_OD.PeriodID = @PeriodID AND SAL_OH.ContractDate between @ContractDateStart AND @ContractDateEnd 
+AND SAL_OD.Status=1
+{0}
+{1}
+GROUP BY SAL_OH.OrderID, SAL_OH.ContractNo,SAL_OD.CompanyID, SAL_OD.PeriodID, SAL_OH.ContractDate,
+ SAL_OH.CustomerID, AR_Cst.CustomerName,  SAL_DOH.CustomerID, SAL_DOH.DeliveryOrderNo, SAL_DOH.DODate,SAL_InvoiceHeader.InvoiceID
+ ,SAL_InvoiceHeader.InvoiceNumber,SAL_InvoiceHeader.InvoiceDate,SAL_DH.DispatchID, SAL_DH.DispatchNo, 
+ INV_STH.DocumentNo, SAL_DH.TotalAmount, SAL_DH.DispatchDate,SAL_InvoiceHeader.ReversalID,SAL_InvoiceHeader.CompanyID
+ ,SAL_InvoiceHeader.PeriodID,SAL_OH.CompanyID,SAL_OH.PeriodID,DocumentTypesGroup.GroupName</value>
+  </data>
+  <data name="Query_GetDataAveragePriceReport" xml:space="preserve">
+    <value>Select 
+        ContractNo,
+        --Sal_OrderDetail.CreateDate 
+        Sal_OrderHeader.ContractDate as CreateDate,SAL_DeliveryOrderDetail.DOHeaderID as OrderID,AR_Set_Customer.CustomerName, 
+        Set_Batch.Description As BatchDescription, Inv_Item.Description as ItemDescription, Sal_OrderDetail.Rate,
+        Sal_OrderDetail.Quantity As UnitQuantity, Sal_OrderDetail.NetAmount / Sal_OrderDetail.Quantity As Quantity,
+        Sal_OrderDetail.NetAmount as Amount
+        From Sal_OrderHeader 
+	        Inner Join AR_Set_Customer On AR_Set_Customer.PeriodID = Sal_OrderHeader.PeriodID --AR_Set_Customer.CompanyID = Sal_OrderHeader.CompanyID AND 
+		        AND AR_Set_Customer.CustomerID = Sal_OrderHeader.CustomerID 
+	        Inner Join Set_Batch On Set_Batch.PeriodID = Sal_OrderHeader.PeriodID 
+		        AND Set_Batch.BatchID = Sal_OrderHeader.Season 
+	        Inner Join Sal_OrderDetail On Sal_OrderDetail.CompanyID = Sal_OrderHeader.CompanyID AND Sal_OrderDetail.PeriodID = Sal_OrderHeader.PeriodID 
+		        AND Sal_OrderDetail.OrderID = Sal_OrderHeader.OrderID AND Sal_OrderDetail.Status = 1 
+            left join SAL_DeliveryOrderDetail on SAL_DeliveryOrderDetail.CompanyID=Sal_OrderHeader.CompanyID AND SAL_DeliveryOrderDetail.PeriodID=Sal_OrderHeader.PeriodID
+                AND SAL_DeliveryOrderDetail.SalesOrderHeaderID = Sal_OrderDetail.OrderID AND SAL_DeliveryOrderDetail.SalesOrderDetailID = Sal_OrderDetail.OrderDetailID
+	        Inner Join Inv_Item On Inv_Item.ItemID = Sal_OrderDetail.ItemID 
+            AND Inv_Item.InvoiceableItemFlag = 1 {0}
+        Where Sal_OrderHeader.CompanyID = @CompanyID AND Sal_OrderHeader.PeriodID = @PeriodID AND Sal_OrderHeader.Status = 1
+        And ( Sal_OrderHeader.CreateDate Between @FromDate And @ToDate )
+        {1}</value>
+  </data>
+  <data name="Query_GetDataLiftingReport" xml:space="preserve">
+    <value>Select TAB.* from 
+(
+    Select ContractNo, AR_Set_Customer.CustomerName, Set_Batch.Description As BatchDescription, Inv_Item.Description as ItemDescription, 
+        --Sal_OrderDetail.Quantity As ContractQuantity, 
+    SAL_OrderDetail.Quantity - isnull(SAL_OrderDetail.ReversedQuantity,0) as ContractQuantity,
+	    (
+		    Select IsNull(Sum(Abs(TransactionQuantity)), 0)
+		    From Inv_StockTransactionDetail 
+			    Inner Join Inv_StockTransactionHeader On Inv_StockTransactionHeader.CompanyID = Inv_StockTransactionDetail.CompanyID 
+                    AND Inv_StockTransactionHeader.PeriodID = Inv_StockTransactionDetail.PeriodID 
+                    AND Inv_StockTransactionHeader.StockTransactionID = Inv_StockTransactionDetail.StockTransactionID AND Inv_StockTransactionHeader.Status = 1 
+                    And Inv_StockTransactionHeader.DocumentDate Between @FromDate And @ToDate 
+			    Inner Join Sal_DeliveryOrderDetail On Sal_DeliveryOrderDetail.CompanyID = Inv_StockTransactionDetail.CompanyID 
+                    AND Sal_DeliveryOrderDetail.PeriodID = Inv_StockTransactionDetail.PeriodID 
+                    AND Sal_DeliveryOrderDetail.DOHeaderID = Inv_StockTransactionDetail.SourceHeaderID 
+                    AND Sal_DeliveryOrderDetail.DODetailID = Inv_StockTransactionDetail.SourceLineID AND Sal_DeliveryOrderDetail.Status = 1 
+                Inner Join Sal_DeliveryOrderHeader On Sal_DeliveryOrderHeader.CompanyID = Inv_StockTransactionDetail.CompanyID 
+                    AND Sal_DeliveryOrderHeader.PeriodID = Inv_StockTransactionDetail.PeriodID 
+                    AND Sal_DeliveryOrderHeader.DeliveryOrderID = Inv_StockTransactionDetail.SourceHeaderID 
+                    AND Sal_DeliveryOrderHeader.DocumentTypeID = Inv_StockTransactionDetail.SourceDocumentTypeID 
+                    AND Sal_DeliveryOrderHeader.DeliveryOrderNo = Inv_StockTransactionDetail.SourceCode AND Sal_DeliveryOrderHeader.Status = 1 
+		    Where Sal_DeliveryOrderDetail.CompanyID = Sal_OrderDetail.CompanyID AND Sal_DeliveryOrderDetail.PeriodID = Sal_OrderDetail.PeriodID 
+			    AND Sal_DeliveryOrderDetail.SalesOrderHeaderID = Sal_OrderDetail.OrderID 
+			    AND Sal_DeliveryOrderDetail.SalesOrderDetailID = Sal_OrderDetail.OrderDetailID AND Inv_StockTransactionDetail.Status = 1
+	    ) As QuantityToDay, 
+	    (
+		    Select IsNull(Sum(Abs(TransactionQuantity)), 0)
+		    From Inv_StockTransactionDetail 
+			    Inner Join Inv_StockTransactionHeader On Inv_StockTransactionHeader.CompanyID = Inv_StockTransactionDetail.CompanyID 
+                    AND Inv_StockTransactionHeader.PeriodID = Inv_StockTransactionDetail.PeriodID 
+                    AND Inv_StockTransactionHeader.StockTransactionID = Inv_StockTransactionDetail.StockTransactionID AND Inv_StockTransactionHeader.Status = 1 
+                    And Inv_StockTransactionHeader.DocumentDate &lt;= @ToDate 
+			    Inner Join Sal_DeliveryOrderDetail On Sal_DeliveryOrderDetail.CompanyID = Inv_StockTransactionDetail.CompanyID 
+                    AND Sal_DeliveryOrderDetail.PeriodID = Inv_StockTransactionDetail.PeriodID 
+                    AND Sal_DeliveryOrderDetail.DOHeaderID = Inv_StockTransactionDetail.SourceHeaderID 
+                    AND Sal_DeliveryOrderDetail.DODetailID = Inv_StockTransactionDetail.SourceLineID 
+                    AND Sal_DeliveryOrderDetail.Status = 1 
+                inner join SAL_DispatchHeader on  SAL_DispatchHeader.DocumentTypeID =  Inv_StockTransactionHeader.DocumentTypeID
+				    and SAL_DispatchHeader.CompanyID = Inv_StockTransactionHeader.CompanyID  
+                    AND SAL_DispatchHeader.PeriodID = Inv_StockTransactionHeader.PeriodID
+                    and Inv_stockTransactionHeader.DocumentNo =SAL_DispatchHeader.DispatchNo
+                    and  SAL_DispatchHeader.Status =1 
+		    Where Sal_DeliveryOrderDetail.CompanyID = Sal_OrderDetail.CompanyID AND Sal_DeliveryOrderDetail.PeriodID = Sal_OrderDetail.PeriodID 
+			    AND Sal_DeliveryOrderDetail.SalesOrderHeaderID = Sal_OrderDetail.OrderID 
+			    AND Sal_DeliveryOrderDetail.SalesOrderDetailID = Sal_OrderDetail.OrderDetailID AND Inv_StockTransactionDetail.Status = 1
+	) As QuantityToDate, 
+	(
+		Select IsNull(Sum(Abs(TransactionQuantity)), 0)
+		From Inv_StockTransactionDetail 
+			Inner Join Inv_StockTransactionHeader On Inv_StockTransactionHeader.CompanyID = Inv_StockTransactionDetail.CompanyID 
+                AND Inv_StockTransactionHeader.PeriodID = Inv_StockTransactionDetail.PeriodID 
+                AND Inv_StockTransactionHeader.StockTransactionID = Inv_StockTransactionDetail.StockTransactionID AND Inv_StockTransactionHeader.Status = 1 
+                And Inv_StockTransactionHeader.DocumentDate &lt; @FromDate 
+			Inner Join Set_DocumentType On Set_DocumentType.CompanyID = Inv_StockTransactionHeader.CompanyID 
+                AND Set_DocumentType.PeriodID = Inv_StockTransactionHeader.PeriodID AND Set_DocumentType.DocumentTypeID = Inv_StockTransactionHeader.DocumentTypeID 
+                AND Set_DocumentType.Status = 1 
+			Inner Join ApplicationMenu On ApplicationMenu.MenuID = Set_DocumentType.MenuID And ApplicationMenu.MenuPath = @MenuPath 
+		Where Inv_StockTransactionDetail.CompanyID = Sal_OrderHeader.CompanyID AND Inv_StockTransactionDetail.PeriodID = Sal_OrderHeader.PeriodID 
+            AND Inv_StockTransactionDetail.Status = 1 AND Inv_StockTransactionHeader.BatchID = Sal_OrderHeader.Season 
+            AND Inv_StockTransactionDetail.ItemID = Sal_OrderDetail.ItemID 
+	) As PreviousProduction, 
+	(
+		Select IsNull(Sum(Abs(TransactionQuantity)), 0)
+		From Inv_StockTransactionDetail 
+			Inner Join Inv_StockTransactionHeader On Inv_StockTransactionHeader.CompanyID = Inv_StockTransactionDetail.CompanyID 
+                AND Inv_StockTransactionHeader.PeriodID = Inv_StockTransactionDetail.PeriodID 
+                AND Inv_StockTransactionHeader.StockTransactionID = Inv_StockTransactionDetail.StockTransactionID AND Inv_StockTransactionHeader.Status = 1 
+                And Inv_StockTransactionHeader.DocumentDate Between @FromDate And @ToDate 
+			Inner Join Set_DocumentType On Set_DocumentType.CompanyID = Inv_StockTransactionHeader.CompanyID 
+                AND Set_DocumentType.PeriodID = Inv_StockTransactionHeader.PeriodID AND Set_DocumentType.DocumentTypeID = Inv_StockTransactionHeader.DocumentTypeID 
+                AND Set_DocumentType.Status = 1 
+			Inner Join ApplicationMenu On ApplicationMenu.MenuID = Set_DocumentType.MenuID And ApplicationMenu.MenuPath = @MenuPath 
+		Where Inv_StockTransactionDetail.CompanyID = Sal_OrderHeader.CompanyID AND Inv_StockTransactionDetail.PeriodID = Sal_OrderHeader.PeriodID 
+            AND Inv_StockTransactionDetail.Status = 1 AND Inv_StockTransactionHeader.BatchID = Sal_OrderHeader.Season 
+            AND Inv_StockTransactionDetail.ItemID = Sal_OrderDetail.ItemID 
+	) As TodayProduction 
+From Sal_OrderHeader 
+	Inner Join AR_Set_Customer On AR_Set_Customer.PeriodID = Sal_OrderHeader.PeriodID --AR_Set_Customer.CompanyID = Sal_OrderHeader.CompanyID AND 
+		AND AR_Set_Customer.CustomerID = Sal_OrderHeader.CustomerID 
+	Inner Join Set_Batch On Set_Batch.PeriodID = Sal_OrderHeader.PeriodID 
+		AND Set_Batch.BatchID = Sal_OrderHeader.Season 
+	Inner Join Sal_OrderDetail On Sal_OrderDetail.CompanyID = Sal_OrderHeader.CompanyID AND Sal_OrderDetail.PeriodID = Sal_OrderHeader.PeriodID 
+		AND Sal_OrderDetail.OrderID = Sal_OrderHeader.OrderID AND Sal_OrderDetail.Status = 1 
+	Inner Join Inv_Item On Inv_Item.ItemID = Sal_OrderDetail.ItemID AND Inv_Item.InvoiceableItemFlag = 1 
+Where Sal_OrderHeader.CompanyID = @CompanyID AND Sal_OrderHeader.PeriodID = @PeriodID AND Sal_OrderHeader.Status = 1
+{0}
+) as TAB
+{1}
+
+--Godown Query--
+
+Select Isnull(Sum(Inv_StockTransactionDetail.TransactionQuantity), 0) Quantity, INV_Item.Description As ItemName, Inv_StockTransactionHeader.LocationID, 
+    Set_Location.LocationName, Set_Batch.Description As BatchDescription 
+From Inv_StockTransactionDetail 
+	Inner JOIN Inv_StockTransactionHeader on Inv_StockTransactionHeader.CompanyID = Inv_StockTransactionDetail.CompanyID 
+        AND Inv_StockTransactionHeader.PeriodID = Inv_StockTransactionDetail.PeriodID 
+        AND Inv_StockTransactionHeader.StockTransactionID = Inv_StockTransactionDetail.StockTransactionID AND Inv_StockTransactionHeader.Status = 1 
+	Inner JOIN INV_Item on INV_Item.ItemID = Inv_StockTransactionDetail.ItemID 
+        AND Inv_Item.InvoiceableItemFlag = 1 
+	Inner JOIN Set_Location on Set_Location.LocationID = INV_StockTransactionHeader.LocationID 
+	Inner Join Set_DocumentType On Set_DocumentType.CompanyID = Inv_StockTransactionHeader.CompanyID 
+        And Set_DocumentType.PeriodID = Inv_StockTransactionHeader.PeriodID And Set_DocumentType.DocumentTypeID = Inv_StockTransactionHeader.DocumentTypeID 
+        AND Set_DocumentType.Status = 1 AND Set_DocumentType.TransactionImpact &lt;&gt; 'No Impact' 
+    Inner Join Set_Batch On Set_Batch.PeriodID = Inv_StockTransactionHeader.PeriodID 
+        AND Set_Batch.BatchID = Inv_StockTransactionHeader.BatchID 
+Where Inv_StockTransactionDetail.CompanyID = @CompanyID AND Inv_StockTransactionDetail.PeriodID = @PeriodID 
+    AND (Inv_StockTransactionDetail.ItemID = @ItemID OR @ItemID Is NULL) 
+Group By INV_StockTransactionHeader.LocationID, Inv_StockTransactionDetail.ItemID, INV_StockTransactionHeader.BatchID, INV_Item.Description, 
+    Set_Location.LocationName, Set_Batch.Description</value>
+  </data>
+  <data name="Query_GetDataLiftingUnliftingReport" xml:space="preserve">
+    <value>select FINTAB.CustomerName, FINTAB.DONo, FINTAB.DODate, FINTAB.DocumentStatus, sum(FINTAB.ContractQuantity) as ContractQuantity, 
+    sum(FINTAB.QuantityToDate) as QuantityToDate 
+from 
+(
+	Select AR_Set_Customer.CustomerName, set_batch.Description,
+
+    --SAL_DeliveryOrderDetail.Quantity As ContractQuantity, 
+
+    SAL_DeliveryOrderDetail.Quantity - isnull(SAL_DeliveryOrderDetail.reversedqty,0) as ContractQuantity,
+
+
+    SAL_DeliveryOrderHeader.DeliveryOrderNo as DONo, 
+	 Set_Batch.Description as Batch,
+        SAL_DeliveryOrderHeader.DODate, 
+        Case SAL_DeliveryOrderHeader.StatusCode When 1 then 'Approved' When 5 then 'In Process' When 12 Then 'Released for Approve' When 13 Then 'Partially Approved' 
+            When 14 Then 'Discuss' When 15 Then 'Cancelled' When 16 Then 'Reversed' End As DocumentStatus, 
+		(
+			Select IsNull(Sum(Abs(TransactionQuantity)), 0) - isnull(sum(SAL_ReverseDetail.ReversedQuantity),0) From Inv_StockTransactionDetail 
+				Inner Join Inv_StockTransactionHeader On Inv_StockTransactionHeader.CompanyID = Inv_StockTransactionDetail.CompanyID 
+                    AND Inv_StockTransactionHeader.PeriodID = Inv_StockTransactionDetail.PeriodID 
+                    AND Inv_StockTransactionHeader.StockTransactionID = Inv_StockTransactionDetail.StockTransactionID AND Inv_StockTransactionHeader.Status = 1 
+                    And Inv_StockTransactionHeader.DocumentDate  &lt;= @ToDate
+				Inner Join Set_DocumentType On Set_DocumentType.CompanyID = Inv_StockTransactionHeader.CompanyID 
+                    AND Set_DocumentType.PeriodID = Inv_StockTransactionHeader.PeriodID 
+                    AND Inv_StockTransactionHeader.DocumentTypeID = Set_DocumentType.DocumentTypeID AND Set_DocumentType.Status = 1 
+				Inner Join ApplicationMenu On ApplicationMenu.MenuPath = @DispatchmenuPath AND Set_DocumentType.MenuID = ApplicationMenu.MenuID 
+
+				left join (
+                    select distinct SourceHeaderID,SourceDetailID,SAL_ReverseDetail.[CompanyID],SAL_ReverseDetail.[PeriodID]
+                    ,sum(ReversedQuantity) as ReversedQuantity
+                    from  SAL_ReverseDetail 
+                    group by SourceHeaderID,SourceDetailID,SAL_ReverseDetail.[CompanyID],SAL_ReverseDetail.[PeriodID]
+                    ) SAL_ReverseDetail on SAL_ReverseDetail.SourceHeaderID = [INV_StockTransactionDetail].StockTransactionID
+						and SAL_ReverseDetail .SourceDetailID = [INV_StockTransactionDetail].TransactionDetailID
+						and SAL_ReverseDetail .[CompanyID] = [INV_StockTransactionDetail].[CompanyID]
+						and SAL_ReverseDetail .[PeriodID] = [INV_StockTransactionDetail].[PeriodID]
+
+
+			Where Inv_StockTransactionDetail.CompanyID = Sal_DeliveryOrderDetail.CompanyID AND Inv_StockTransactionDetail.PeriodID = Sal_DeliveryOrderDetail.PeriodID 
+                AND Inv_StockTransactionDetail.SourceHeaderID = Sal_DeliveryOrderDetail.DOHeaderID 
+                AND Inv_StockTransactionDetail.SourceLineID = Sal_DeliveryOrderDetail.DODetailID 
+                AND Inv_StockTransactionDetail.SourceDocumentTypeID = SAL_DeliveryOrderHeader.DocumentTypeID 
+                AND Inv_StockTransactionDetail.SourceCode = SAL_DeliveryOrderHeader.DeliveryOrderNo AND Inv_StockTransactionDetail.Status = 1
+		) As QuantityToDate 
+	From SAL_DeliveryOrderHeader 
+		inner join SAL_DeliveryOrderDetail on SAL_DeliveryOrderHeader.DeliveryOrderID = SAL_DeliveryOrderDetail.DOHeaderID 
+            and SAL_DeliveryOrderDetail.CompanyID = SAL_DeliveryOrderHeader.CompanyID and SAL_DeliveryOrderDetail.PeriodID = SAL_DeliveryOrderHeader.PeriodID 
+            --And SAL_DeliveryOrderHeader.StatusCode = 1 
+            And SAL_DeliveryOrderDetail.Status = 1 
+			   Inner Join Sal_OrderHeader On Sal_OrderHeader.CompanyID = Sal_DeliveryOrderDetail.CompanyID And Sal_OrderHeader.PeriodID = Sal_DeliveryOrderDetail.PeriodID
+        And Sal_OrderHeader.OrderID = Sal_DeliveryOrderDetail.SalesOrderHeaderID
+		Inner Join AR_Set_Customer On AR_Set_Customer.PeriodID = SAL_DeliveryOrderHeader.PeriodID --AR_Set_Customer.CompanyID = SAL_DeliveryOrderHeader.CompanyID AND 
+            AND AR_Set_Customer.CustomerID = SAL_DeliveryOrderHeader.CustomerID 
+				 inner Join Set_Batch On Set_Batch.PeriodID = Sal_OrderHeader.PeriodID
+	         And Set_Batch.BatchID = Sal_OrderHeader.season
+			 And Set_Batch.Status = 1
+	Where SAL_DeliveryOrderHeader.CompanyID = @CompanyID 
+	AND SAL_DeliveryOrderHeader.PeriodID = @PeriodID 
+	And SAL_DeliveryOrderHeader.Status = 1
+	and (Set_Batch.BatchID = @BatchID or @BatchID is null)
+    and SAL_DeliveryOrderHeader.DODate between @FromDate and @ToDate 
+        {0}
+) FINTAB 
+group by FINTAB.CustomerName, FINTAB.DONo, FINTAB.DODate, FINTAB.DocumentStatus 
+    {1} 
+Order By FINTAB.DODate, Cast(FinTab.DONo As int)</value>
+  </data>
+  <data name="Query_GetDispatchSalesRecievedQuantity" xml:space="preserve">
+    <value>select Count(SAL_DispatchVehicleInformation.VehicleID) as Received,INV_SET_Category.CategoryName,INV_ITem.Description as Product, 'Received' As ColumnType,0 as ColumnOrder
+from SAL_DispatchVehicleInformation 
+
+	inner join INV_StockTransactionDetail on SAL_DispatchVehicleInformation.StockHeaderID = INV_StockTransactionDetail.StockTransactionID 
+		and SAL_DispatchVehicleInformation.CompanyID = INV_StockTransactionDetail.CompanyID 
+		and SAL_DispatchVehicleInformation.PeriodID = INV_StockTransactionDetail.PeriodID 
+		and SAL_DispatchVehicleInformation.StockDetailID = INV_StockTransactionDetail.TransactionDetailID 
+		And INV_StockTransactionDetail.Status = 1 
+	
+	inner join INV_StockTransactionHeader on INV_StockTransactionHeader.StockTransactionID = INV_StockTransactionDetail.StockTransactionID 
+		and INV_StockTransactionHeader.PeriodID = INV_StockTransactionDetail.PeriodID
+		and INV_StockTransactionHeader.CompanyID = INV_StockTransactionDetail.CompanyID And INV_StockTransactionHeader.StatusCode = 1 
+		And INV_StockTransactionHeader.Status = 1 
+	
+	inner join Set_DocumentType on Set_DocumentType.DocumentTypeID=INV_StockTransactionHeader.DocumentTypeID
+		and Set_DocumentType.PeriodID=INV_StockTransactionHeader.PeriodID
+		and Set_DocumentType.CompanyID=INV_StockTransactionHeader.CompanyID
+ 
+	inner join ApplicationMenu on ApplicationMenu.MenuID = Set_DocumentType.MenuID
+	 
+	inner JOIN INV_Item ON INV_ITem.ItemID = INV_StockTransactionDetail.ItemID --AND INV_Item.CompanyID = INV_StockTransactionDetail.CompanyID 
+
+    inner join INV_SET_Category on INV_SET_Category.CategoryID=INV_Item.ItemTypeID
+
+where applicationmenu.MenuPath in ('/Inventory/Transaction/Stock_frm.aspx','/Inventory/Transaction/FinishedGoods.aspx') 
+And Sal_DispatchVehicleInformation.CompanyID = @CompanyID And Sal_DispatchVehicleInformation.PeriodID = @PeriodID
+and SAL_DispatchVehicleInformation.createdate between @FromDate and @ToDate
+{0}
+      Group By INV_ITem.Description,INV_SET_Category.CategoryName
+
+Union All
+
+select Count(SAL_DispatchVehicleInformation.VehicleID) as Dispatched,INV_SET_Category.CategoryName,INV_ITem.Description as Product,'Dispatched' As ColumnType,1 as ColumnOrder
+      from Sal_DOVehicleInformation
+	Inner join Sal_DispatchVehicleInformation ON Sal_DOVehicleInformation.VehicleID = Sal_DispatchVehicleInformation.VehicleID
+		AND Sal_DispatchVehicleInformation.CompanyID = SAL_DOVehicleInformation.CompanyID
+		AND Sal_DispatchVehicleInformation.PeriodID = SAL_DOVehicleInformation.PeriodID 
+	
+	inner join SAL_DeliveryOrderDetail on SAL_DeliveryOrderDetail.DOHeaderID = Sal_DOVehicleInformation.DOHeaderID
+		and SAL_DeliveryOrderDetail.DODetailID = Sal_DOVehicleInformation.DODetailID
+		and SAL_DeliveryOrderDetail.CompanyID = Sal_DOVehicleInformation.CompanyID
+		and SAL_DeliveryOrderDetail.PeriodID = Sal_DOVehicleInformation.PeriodID And SAL_DeliveryOrderDetail.Status = 1 
+
+   inner join SAL_DeliveryOrderHeader on SAL_DeliveryOrderHeader.DeliveryOrderID = SAL_DeliveryOrderDetail.DOHeaderID
+		and SAL_DeliveryOrderDetail.CompanyID = SAL_DeliveryOrderHeader.CompanyID
+		and SAL_DeliveryOrderDetail.PeriodID = SAL_DeliveryOrderHeader.PeriodID And SAL_DeliveryOrderHeader.Status = 1 
+		And SAL_DeliveryOrderHeader.StatusCode = 1 
+	 
+		Inner JOIN INV_Item ON INV_ITem.ItemID = SAL_DOVehicleInformation.ItemID --AND INV_Item.CompanyID = SAL_DOVehicleInformation.CompanyID	
+	
+   inner join INV_SET_Category on INV_SET_Category.CategoryID=INV_Item.ItemTypeID
+
+	Inner join Set_DocumentType on Set_DocumentType.DocumentTypeID=Sal_DispatchVehicleInformation.DocumentTypeID
+		and Set_DocumentType.PeriodID=Sal_DispatchVehicleInformation.PeriodID
+		and Set_DocumentType.CompanyID=Sal_DispatchVehicleInformation.CompanyID
+ 
+where Sal_DOVehicleInformation.Status = 1 
+And Sal_DispatchVehicleInformation.CompanyID = @CompanyID And Sal_DispatchVehicleInformation.PeriodID = @PeriodID
+and SAL_DispatchVehicleInformation.createdate between @FromDate and @ToDate
+{0}
+Group By INV_ITem.Description,INV_SET_Category.CategoryName
+
+Union All
+
+
+select Count(SAL_InvoiceDetail.VehicleID) as Sale,INV_SET_Category.CategoryName, INV_ITem.Description as Product, 
+	'Sale' As ColumnType ,2 as ColumnOrder
+from Sal_DispatchVehicleInformation
+
+	inner join INV_StockTransactionDetail on SAL_DispatchVehicleInformation.StockHeaderID = INV_StockTransactionDetail.StockTransactionID 
+		and SAL_DispatchVehicleInformation.CompanyID = INV_StockTransactionDetail.CompanyID 
+		and SAL_DispatchVehicleInformation.PeriodID = INV_StockTransactionDetail.PeriodID 
+		and SAL_DispatchVehicleInformation.StockDetailID = INV_StockTransactionDetail.TransactionDetailID 
+		And INV_StockTransactionDetail.Status = 1 
+	
+	inner join INV_StockTransactionHeader on INV_StockTransactionHeader.StockTransactionID = INV_StockTransactionDetail.StockTransactionID 
+		and INV_StockTransactionHeader.PeriodID = INV_StockTransactionDetail.PeriodID
+		and INV_StockTransactionHeader.CompanyID = INV_StockTransactionDetail.CompanyID And INV_StockTransactionHeader.StatusCode = 1 
+		And INV_StockTransactionHeader.Status = 1 
+	
+	left join SAL_InvoiceDetail on SAL_InvoiceDetail.StockDetailID=SAL_DispatchVehicleInformation.StockDetailID
+	   and SAL_InvoiceDetail.StockHeaderID = SAL_DispatchVehicleInformation.StockHeaderID
+	   and SAL_InvoiceDetail.CompanyID = SAL_DispatchVehicleInformation.CompanyID
+	   and SAL_InvoiceDetail.PeriodID = SAL_DispatchVehicleInformation.PeriodID
+	   
+	inner join Set_DocumentType on Set_DocumentType.DocumentTypeID=INV_StockTransactionHeader.DocumentTypeID
+		and Set_DocumentType.PeriodID=INV_StockTransactionHeader.PeriodID
+		and Set_DocumentType.CompanyID=INV_StockTransactionHeader.CompanyID
+ 
+	inner join ApplicationMenu on ApplicationMenu.MenuID = Set_DocumentType.MenuID
+	 
+		Inner JOIN INV_Item ON INV_ITem.ItemID = INV_StockTransactionDetail.ItemID --AND INV_Item.CompanyID = INV_StockTransactionDetail.CompanyID 
+
+ inner join INV_SET_Category on INV_SET_Category.CategoryID=INV_Item.ItemTypeID
+
+where applicationmenu.MenuPath in ('/Sales/Dispatch_frm.aspx') 
+	And not exists (Select * from Sal_DOVehicleInformation Where Sal_DOVehicleInformation.CompanyID = Sal_DispatchVehicleInformation.CompanyID 
+		And Sal_DOVehicleInformation.PeriodID = Sal_DispatchVehicleInformation.PeriodID 
+		And Sal_DOVehicleInformation.VehicleID = Sal_DispatchVehicleInformation.VehicleID)
+	And Sal_DispatchVehicleInformation.CompanyID = @CompanyID And Sal_DispatchVehicleInformation.PeriodID = @PeriodID
+and SAL_DispatchVehicleInformation.createdate between @FromDate and @ToDate
+{0}
+Group By INV_ITem.Description,INV_SET_Category.CategoryName</value>
+  </data>
+  <data name="Query_GetInvoiceDataInvoicePostWithBuyerName" xml:space="preserve">
+    <value>SELECT 
+invoiceType,convert(VARCHAR(10),InvoiceDate,23) as InvoiceDate,sellerBusinessName	,sellerProvince	,sellerAddress	,buyerNTNCNIC	,buyerBusinessName	,buyerProvince	,buyerAddress	,buyerRegistrationType	,scenarioId	,hsCode	,productDescription	,rate	,uoM	,sum(quantity) as quantity	
+,(sum(totalValues) - sum(WithHoldingAmount)) as totalValues
+,(sum(totalValues)  - sum(WithHoldingAmount) - sum(SaleTaxAmount)) as valueSalesExcludingST,ROUND((sum(totalValues)  - sum(WithHoldingAmount) - sum(SaleTaxAmount)),0) / (SUM(quantity) / 1000) AS fixedNotifiedValueOrRetailPrice
+,(sum(totalValues)  - sum(WithHoldingAmount) - sum(SaleTaxAmount)) * taxAmount /100 as salesTaxApplicable
+
+,salesTaxWithheldAtSource,ROUND(SUM(WithHoldingAmount),0) AS extraTax ,sum(ExciseDutyActualAmount) as furtherTax ,sroScheduleNo
+,sum(FixFEDAmount)as fedPayable ,discount ,saleType ,sroItemSerialNo ,FiscalID,sellerNTNCNIC
+ 
+from (
+SELECT Distinct 
+Set_DocumentType.DocumentType as invoiceType ,SAL_invoiceHeader.InvoiceDate,set_business.BusinessName as sellerBusinessName,set_business.NTNNumber as sellerNTNCNIC
+,isnull(set_business.Province,'')  as sellerProvince,set_business.AddressLine1 as sellerAddress,isnull(SAL_DispatchHeader.BuyerCNIC , (isnull(CustomerParty.CNICNumber,CustomerParty.NTNNumber))) as buyerNTNCNIC,isnull(SAL_DispatchHeader.BuyerName, CustomerParty.CustomerName) as  buyerBusinessName
+,case SAL_DispatchHeader.BuyerProvinceID when 1 then 'Balochistan' when 2 then 'KPK'  when 3 then 'Punjab' when 4 then 'Sindh' else 'Other' end as buyerProvince,CustomerParty.AddressLine1 as  buyerAddress  ,case isnull(SAL_DispatchHeader.IsRegister,0) when 1 then 'Registered' else 'Unregistered' end buyerRegistrationType
+,isnull(SAL_DispatchHeader.SROID,'') as scenarioId
+--Detail Data
+,INV_Item.HsCode as hsCode ,INV_Item.Description as  productDescription ,convert(varchar,SAL_InvoiceDetail.taxAmount) + '%' as rate ,'KG' as uoM 
+,case 
+	when SET_UnitofMeasure.UOMName like '%ton%' 
+then
+	SAL_InvoiceDetail.QuantityInvoiced * 1000
+else
+	SAL_InvoiceDetail.QuantityInvoiced 
+end
+	
+	as quantity 
+,SAL_InvoiceDetail.NetAmount as totalValues ,0 as fixedNotifiedValueOrRetailPrice 
+
+,(SAL_InvoiceDetail.QuantityInvoiced  * SAL_InvoiceDetail.UnitPrice) * SAL_InvoiceDetail.TaxAmount / 100 as salesTaxApplicable 
+
+
+,0 as salesTaxWithheldAtSource ,0 as extraTax ,'' as sroScheduleNo ,0 as discount
+,isnull(SET_FBRScenario.ScenarioType,'') as saleType,'' as sroItemSerialNo
+, ([SAL_InvoiceDetail].QuantityInvoiced * SAL_OrderDetail.T_Rate / 100) * SAL_InvoiceDetail.ExciseDutyAmount as ExciseDutyActualAmount
+,SAL_InvoiceDetail.TaxAmount 
+* (case when ( 
+	SAL_ContractDetail.Rate &lt;= 
+	(case when 
+(select top 1 isnull(Inclusive,0) as Inclusive
+from SET_SalesTaxParameters
+where Status = 1
+and SET_SalesTaxParameters.PeriodID = SAL_ContractDetail.PeriodID
+and SET_SalesTaxParameters.Item = SAL_ContractDetail.ItemID
+and SAL_ContractHeader.ContractDate between FromDate and ToDate
+AND ISNULL(SET_SalesTaxParameters.IsRegistered,0) = isnull(AR_SET_Customer.IsRegistered,0)
+order by SET_SalesTaxParameters.SalesTaxParameterID) = 1
+	then
+		        (select top 1 TUnitPrice from SET_SalesTaxParameters pm where pm.Item = SAL_InvoiceDetail.itemid and SAL_InvoiceHeader.invoicedate between pm.FromDate and pm.ToDate and pm.Status = 1 and pm.IsActive = 1 AND ISNULL(pm.IsRegistered,0) = isnull(AR_SET_Customer.IsRegistered,0) order by CreateDate desc ) 
+	else
+		(        (select top 1 TUnitPrice from SET_SalesTaxParameters pm where pm.Item = SAL_InvoiceDetail.itemid and SAL_InvoiceHeader.invoicedate between pm.FromDate and pm.ToDate and pm.Status = 1 and pm.IsActive = 1  AND ISNULL(pm.IsRegistered,0) = isnull(AR_SET_Customer.IsRegistered,0) order by CreateDate desc )  - (        (select top 1 TUnitPrice from SET_SalesTaxParameters pm where pm.Item = SAL_InvoiceDetail.itemid and SAL_InvoiceHeader.invoicedate between pm.FromDate and pm.ToDate and pm.Status = 1 and pm.IsActive = 1 order by CreateDate desc )  * [SAL_InvoiceDetail].TaxAmount / (100 + [SAL_InvoiceDetail].TaxAmount ))) 
+	end ) 
+	 )
+
+   then 
+   
+   (case when SAL_ContractDetail.Inclusive = 1 then
+		--!st case Sugar 36 No
+		        (select top 1 TUnitPrice from SET_SalesTaxParameters pm where pm.Item = SAL_InvoiceDetail.itemid and SAL_InvoiceHeader.invoicedate between pm.FromDate and pm.ToDate and pm.Status = 1 and pm.IsActive = 1  AND ISNULL(pm.IsRegistered,0) = isnull(AR_SET_Customer.IsRegistered,0) order by CreateDate desc )  * [SAL_InvoiceDetail].TaxAmount / (100 + [SAL_InvoiceDetail].TaxAmount) * [SAL_InvoiceDetail].QuantityInvoiced
+   else 
+
+	   (case when SET_DocumentType.DocumentType like '%billet%' 
+	   then 
+			(        (select top 1 TUnitPrice from SET_SalesTaxParameters pm where pm.Item = SAL_InvoiceDetail.itemid and SAL_InvoiceHeader.invoicedate between pm.FromDate and pm.ToDate and pm.Status = 1 and pm.IsActive = 1  AND ISNULL(pm.IsRegistered,0) = isnull(AR_SET_Customer.IsRegistered,0) order by CreateDate desc )  * [SAL_InvoiceDetail].TaxAmount/ 100 ) * [SAL_InvoiceDetail].QuantityInvoiced
+		else
+		        (select top 1 TUnitPrice from SET_SalesTaxParameters pm where pm.Item = SAL_InvoiceDetail.itemid and SAL_InvoiceHeader.invoicedate between pm.FromDate and pm.ToDate and pm.Status = 1 and pm.IsActive = 1 AND ISNULL(pm.IsRegistered,0) = isnull(AR_SET_Customer.IsRegistered,0) order by CreateDate desc )  * [SAL_InvoiceDetail].TaxAmount / (100 + [SAL_InvoiceDetail].TaxAmount) 
+		end)
+
+   end)
+   else
+		--(([SAL_InvoiceDetail].[NetAmount] *  [SAL_ContractDetail].[SalesTaxAmount]) / (100+  [SAL_ContractDetail].[SalesTaxAmount] + isnull([SAL_ContractDetail].[ExciseDutyAmount],0) ) )
+	--	(([SAL_InvoiceDetail].[NetAmount] *  [SAL_InvoiceDetail].TaxAmount) / (100+  [SAL_InvoiceDetail].TaxAmount + isnull([SAL_ContractDetail].[ExciseDutyAmount],0) ) )
+    
+	( [SAL_InvoiceDetail].[NetAmount] -
+	  (([SAL_InvoiceDetail].QuantityInvoiced *  ( INV_Item.UnitWeight * (SAL_OrderDetail.PricePerKG + 
+	(Case When ([SAL_OrderHeader].ContractDate &lt; '2019-07-01' and Set_DocumentType.DocumentType like '%Sugar%' 
+				and AR_SET_Customer.IsRegistered = 0 )
+				then  3.60 
+				else
+				0 end))))
+	 * ( [SAL_InvoiceDetail].WithHolding )) / (100 + [SAL_InvoiceDetail].WithHolding) 
+	 )
+	 
+	-- / (100+  [SAL_InvoiceDetail].TaxAmount + isnull([SAL_ContractDetail].[ExciseDutyAmount],0) ) 
+
+ 
+   end )
+   
+   / (100 + SAL_InvoiceDetail.TaxAmount + isnull(Set_CustomerCategoryWiseTax.FurtherTax,0))
+
+
+	  as SaleTaxAmount
+
+
+, ([SAL_InvoiceDetail].QuantityInvoiced * [SAL_OrderDetail].T_Rate / 100) * SAL_InvoiceDetail.FEDAmount as FEDTaxAmount
+
+, (([SAL_InvoiceDetail].QuantityInvoiced *  ( INV_Item.UnitWeight * (SAL_OrderDetail.PricePerKG + 
+	(Case When ([SAL_OrderHeader].ContractDate &lt; '2019-07-01' and Set_DocumentType.DocumentType like '%Sugar%' 
+				and AR_SET_Customer.IsRegistered = 0 )
+				then  3.60 
+				else
+				0 end))))
+	 * ( [SAL_InvoiceDetail].WithHolding )) / (100 + [SAL_InvoiceDetail].WithHolding) as WithHoldingAmount
+	,
+	case when SAL_InvoiceDetail.Inclusive = 1 then
+	(([SAL_InvoiceDetail].QuantityInvoiced * (
+	INV_Item.UnitWeight *
+	 case when COnvert(decimal(18,6),ISNULL(SAL_COntractHeader.FreightDetail,0)) &gt; 0  
+	 then COnvert(decimal(18,6),ISNULL(SAL_COntractHeader.FreightDetail,0)) 
+	 else 
+	 ( (case when SAL_ContractHeader.ContractNo is null then SAL_OrderDetail.PricePerKG else 
+	 
+	 (sal_invoicedetail.unitprice / INV_Item.UnitWeight )
+	 end )
+	  + 
+	(Case When ([SAL_OrderHeader].ContractDate &lt; '2019-07-01' and Set_DocumentType.DocumentType like '%Sugar%' 
+				and AR_SET_Customer.IsRegistered = 0 )
+				then  3.60 
+				else
+				0 end))
+				end
+				)))
+				
+				else
+				
+				 (([SAL_InvoiceDetail].QuantityInvoiced * (
+	INV_Item.UnitWeight *
+	 case when COnvert(decimal(18,6),ISNULL(SAL_COntractHeader.FreightDetail,0)) &gt; 0  
+	 then COnvert(decimal(18,6),ISNULL(SAL_COntractHeader.FreightDetail,0)) 
+	 else 
+	 ( (case when SAL_ContractHeader.ContractNo is null then SAL_OrderDetail.PricePerKG else 
+	 
+	 (sal_invoicedetail.unitprice / INV_Item.UnitWeight )
+	 end )
+	  + 
+	(Case When ([SAL_OrderHeader].ContractDate &lt; '2019-07-01' and Set_DocumentType.DocumentType like '%Sugar%' 
+				and AR_SET_Customer.IsRegistered = 0 )
+				then  3.60 
+				else
+				0 end))
+				end
+				)))
+				+ (
+				
+				(([SAL_InvoiceDetail].QuantityInvoiced * (
+	INV_Item.UnitWeight *
+	 case when COnvert(decimal(18,6),ISNULL(SAL_COntractHeader.FreightDetail,0)) &gt; 0  
+	 then COnvert(decimal(18,6),ISNULL(SAL_COntractHeader.FreightDetail,0)) 
+	 else 
+	 ( (case when SAL_ContractHeader.ContractNo is null then SAL_OrderDetail.PricePerKG else 
+	 
+	 (sal_invoicedetail.unitprice / INV_Item.UnitWeight )
+	 end )
+	  + 
+	(Case When ([SAL_OrderHeader].ContractDate &lt; '2019-07-01' and Set_DocumentType.DocumentType like '%Sugar%' 
+				and AR_SET_Customer.IsRegistered = 0 )
+				then  3.60 
+				else
+				0 end))
+				end
+				))) * (isnull([SAL_InvoiceDetail].TaxAmount,0) + isnull([SAL_InvoiceDetail].ExciseDutyAmount,0)) / 100
+				)
+				 
+				  end 
+				 As AmountReceivable
+
+,isnull([SAL_InvoiceDetail].FEDFixRate,0) * [SAL_InvoiceDetail].QuantityInvoiced as FixFEDAmount
+,SAL_InvoiceHeader.FiscalID
+,isnull(SAL_InvoiceDetail.TaxAmount,0) as TaxAmount
+ FROM [SAL_InvoiceHeader]
+  INNER JOIN [SAL_InvoiceDetail] On [SAL_InvoiceDetail].InvoiceHeaderID =[SAL_InvoiceHeader].InvoiceID
+ AND [SAL_InvoiceDetail].CompanyID=[SAL_InvoiceHeader].CompanyID  AND [SAL_InvoiceDetail].PeriodID=[SAL_InvoiceHeader].PeriodID
+ and [SAL_InvoiceDetail].status = 1
+
+ INNER JOIN [INV_StockTransactionDetail] ON [INV_StockTransactionDetail].[TransactionDetailID] = [SAL_InvoiceDetail].[StockDetailID] 
+    AND [INV_StockTransactionDetail].[StockTransactionID] = [SAL_InvoiceDetail].[StockHeaderID] 
+    AND [INV_StockTransactionDetail].[CompanyID] = [SAL_InvoiceDetail].[CompanyID] AND [INV_StockTransactionDetail].[PeriodID] = [SAL_InvoiceDetail].[PeriodID] 
+    AND [INV_StockTransactionDetail].[Status] = 1 INNER JOIN [INV_StockTransactionHeader] ON [INV_StockTransactionHeader].[StockTransactionID] = [INV_StockTransactionDetail].[StockTransactionID] 
+        AND [INV_StockTransactionHeader].[CompanyID] = [INV_StockTransactionDetail].[CompanyID]
+        AND [INV_StockTransactionHeader].[PeriodID] = [INV_StockTransactionDetail].[PeriodID] AND [INV_StockTransactionHeader].[Status] = 1 
+    INNER JOIN [SAL_DispatchHeader] ON [SAL_DispatchHeader].[DocumentTypeID] = [INV_StockTransactionHeader].[DocumentTypeID] 
+        AND [SAL_DispatchHeader].[DispatchNo] = [INV_StockTransactionHeader].[DocumentNo] 
+        AND [SAL_DispatchHeader].FiscalID = [INV_StockTransactionHeader].FiscalID
+        AND [SAL_DispatchHeader].[CompanyID] = [INV_StockTransactionHeader].[CompanyID] AND [SAL_DispatchHeader].[PeriodID] = [INV_StockTransactionHeader].[PeriodID] 
+        AND [SAL_DispatchHeader].[Status] = 1 LEFT JOIN INV_Item ON INV_Item.ItemID=[INV_StockTransactionDetail].ItemID 
+ Left JOIN Sal_DeliveryOrderDetail on Sal_DeliveryOrderDetail.DOHeaderID = [INV_StockTransactionDetail].SourceHeaderID 
+AND Sal_DeliveryOrderDetail.DODetailID = [INV_StockTransactionDetail].SourceLineID 
+        AND Sal_DeliveryOrderDetail.CompanyID = [INV_StockTransactionDetail].CompanyID AND Sal_DeliveryOrderDetail.PeriodID = [INV_StockTransactionDetail].PeriodID 
+		left join SAL_DeliveryOrderHeader on SAL_DeliveryOrderHeader.DeliveryOrderID = Sal_DeliveryOrderDetail.DOHeaderID
+and SAL_DeliveryOrderHeader.CompanyID = Sal_DeliveryOrderDetail.CompanyID
+and SAL_DeliveryOrderHeader.PeriodID = Sal_DeliveryOrderDetail.PeriodID
+    left Join SAL_OrderHeader ON SAL_OrderHeader.OrderID = [SAL_DeliveryOrderDetail].SalesOrderHeaderID 
+        AND SAL_OrderHeader.[CompanyID] = [SAL_DeliveryOrderDetail].[CompanyID] AND SAL_OrderHeader.[PeriodID] = [SAL_DeliveryOrderDetail].[PeriodID] 
+        AND SAL_OrderHeader.[Status] = 1 
+				left join [SAL_OrderDetail] on [SAL_OrderDetail].OrderID =SAL_OrderHeader.OrderID 
+		        AND SAL_OrderHeader.[CompanyID] = [SAL_OrderDetail].[CompanyID]
+				 AND SAL_OrderHeader.[PeriodID] = [SAL_OrderDetail].[PeriodID] 
+                AND [SAL_OrderDetail].[Status] = 1 And SAL_OrderDetail.OrderDetailID= SAL_DeliveryOrderDetail.SalesOrderDetailID
+
+
+				left join SAL_ContractDetail on SAL_ContractDetail.ContractDetailID = SAL_OrderDetail.ContractDetailID
+		and  SAL_ContractDetail.ContractID = SAL_OrderDetail.ContractHeaderID
+		and SAL_ContractDetail.CompanyID =SAL_OrderDetail.CompanyID
+		and SAL_ContractDetail.PeriodID =SAL_OrderDetail.PeriodID
+		and SAL_ContractDetail.ItemID =SAL_OrderDetail.ItemID
+		and SAL_ContractDetail.Status = 1
+
+		left join SAL_ContractHeader on SAL_ContractHeader.ContractID = SAL_ContractDetail.ContractID
+		and SAL_ContractHeader.CompanyID = SAL_ContractDetail.CompanyID
+		and SAL_ContractHeader.PeriodID = SAL_ContractDetail.PeriodID
+
+    left JOIN INV_SET_Category On INV_SET_Category.CategoryID =INV_Item.ItemTypeID
+    
+ 
+ left JOIN AR_SET_Customer  ON AR_SET_Customer.CustomerID = [SAL_InvoiceHeader].CustomerID 
+   AND AR_SET_Customer.PeriodID = [SAL_InvoiceHeader].PeriodID 
+
+   left join ar_set_Customer CustomerParty on CustomerParty.CustomerID = SAL_DispatchHeader.CustomerPartyID 
+        and CustomerParty.PeriodID = SAL_DispatchHeader.PeriodID 
+
+   left JOIN AR_SET_Customer BC ON BC.CustomerID = [SAL_InvoiceHeader].billedtoid 
+   AND AR_SET_Customer.PeriodID = [SAL_InvoiceHeader].PeriodID 
+         left JOIN AR_SET_Customer Brokername ON Brokername.CustomerID = SAL_OrderHeader.BrokerID 
+  
+   AND AR_SET_Customer.PeriodID = SAL_OrderHeader.PeriodID 
+  Inner Join Set_CustomerCategoryWiseTax on Set_CustomerCategoryWiseTax.CustomerCategoryWiseTaxID = AR_SET_Customer.CustomerCategoryID
+  and Set_CustomerCategoryWiseTax.Status = 1
+ INNER JOIN SET_Company ON SET_Company.CompanyId=[SAL_InvoiceHeader].CompanyID
+ AND SET_Company.Status=1
+ INNER JOIN SET_OperatingUnit On SET_OperatingUnit.OperatingUnitId=SET_Company.OperatingUnitId AND SET_OperatingUnit.Status=1
+ INNER JOIN SET_Business On SET_Business.BusinessId=SET_Company.BusinessId and SET_Business.IsActive=1
+ INNER Join Set_DocumentType On Set_DocumentType.DocumentTypeID = SAL_InvoiceHeader.InvoiceType
+        And Set_DocumentType.CompanyID = SAL_InvoiceHeader.CompanyID And Set_DocumentType.PeriodID = SAL_InvoiceHeader.PeriodID 
+        AND Set_DocumentType.Status = 1 
+LEFT Join DocumentTypesGroup On DocumentTypesGroup.GroupID = Set_DocumentType.GroupID
+ 		 left JOin SET_UnitofMeasure on SET_UnitofMeasure.uomId=[SAL_InvoiceDetail].ItemUnitID
+		 And SET_UnitofMeasure.status=1
+		 left join Set_Batch on Set_Batch.BatchID = SAL_ContractHeader.Season
+left join SET_FBRScenario on SET_FBRScenario.ScenarioID = SAL_DispatchHeader.SROID
+ WHERE [SAL_InvoiceHeader].[Status] = 1 AND SAL_InvoiceHeader.CompanyID= @CompanyID
+ AND [SAL_InvoiceHeader].[PeriodID] = 1 
+ AND [SAL_InvoiceHeader].invoiceID = @InvoiceHeaderID
+ )as tab
+ group by invoiceType	,InvoiceDate	,sellerBusinessName	,sellerProvince	,sellerAddress	,buyerNTNCNIC	,buyerBusinessName	,buyerProvince	,buyerAddress	
+ ,buyerRegistrationType	,scenarioId	,hsCode	,productDescription	,rate	,uoM	,fixedNotifiedValueOrRetailPrice,salesTaxApplicable
+ ,salesTaxWithheldAtSource,extraTax,sroScheduleNo,discount,saleType,sroItemSerialNo ,FiscalID,sellerNTNCNIC,TaxAmount</value>
+  </data>
+  <data name="Query_GetPendingSODetailByKey" xml:space="preserve">
+    <value>SELECT -1  as OrderDetailID, -1 as OrderID, -1 as CompanyID , -1 as  PeriodID, -1 SerialNo, 
+    SAL_OrderDetail.ItemCategoryID, SAL_OrderDetail.ItemID, SAL_OrderDetail.ProductLine, SAL_OrderDetail.ItemUnitID, SAL_OrderDetail.ItemUnitQuantity, 
+    SAL_OrderDetail.ItemQuality, SAL_OrderDetail.Quantity, SAL_OrderDetail.ColorID, SAL_OrderDetail.BaseAmount, SAL_OrderDetail.Rate, SAL_OrderDetail.GrossAmount, 
+    SAL_OrderDetail.IsSalesTaxExempted, SAL_OrderDetail.SalesTaxAmount, SAL_OrderDetail.SalesTaxFixRate, SAL_OrderDetail.SalesTaxPercent, 
+    SAL_OrderDetail.IsExciseDutyExempted, SAL_OrderDetail.ExciseDutyAmount, SAL_OrderDetail.IsFEDExempted, SAL_OrderDetail.FEDAmount,SAL_OrderDetail.VATAmount, 
+    SAL_OrderDetail.GodownCharges, SAL_OrderDetail.NetAmount, SAL_OrderDetail.Status, SAL_OrderDetail.CreatedBy, SAL_OrderDetail.CreateDate, 
+    SAL_OrderDetail.CreatedByValue, SAL_OrderDetail.UpdatedBy, SAL_OrderDetail.UpdateDate, SAL_OrderDetail.UpdatedByValue, SAL_OrderDetail.Inclusive, 
+    INV_SET_Category.CategoryName, INV_Item.Description, SET_UnitofMeasure.UOMName, ISNULL(INV_Item.ListPricePerUnit, 0) AS ListPricePerUnit, 
+    SAL_OrderDetail.ReversedQuantity, ISNULL(SAL_OrderDetail.Quantity, 0) - ISNULL(
+    (
+        select SUM(SAL_DeliveryOrderDetail.Quantity) from SAL_DeliveryOrderDetail 
+        where SalesOrderHeaderID = @OrderID AND CompanyID = SAL_OrderDetail.CompanyID and PeriodID = SAL_OrderDetail.PeriodID 
+            AND SAL_DeliveryOrderDetail.SalesOrderDetailID = SAL_OrderDetail.OrderDetailID
+    ), 0) as RemainingQTY, 
+    ISNULL(SAL_OrderDetail.Rate * (SAL_OrderDetail.Quantity - 
+    (
+        select SUM(SAL_DeliveryOrderDetail.Quantity) as sumQuantity from SAL_DeliveryOrderDetail 
+        where SalesOrderHeaderID = @OrderID AND CompanyID = SAL_OrderDetail.CompanyID and PeriodID = SAL_OrderDetail.PeriodID
+    )), 0) AS TotalAmount,
+	  (
+        select IsNull(Sum(INV_StockTransactionDetail.TransactionQuantity), 0) 
+            As SumOfQuantityInStock 
+        from INV_StockTransactionDetail
+			Inner Join INV_StockTransactionHeader On INV_StockTransactionHeader.StockTransactionID = INV_StockTransactionDetail.StockTransactionID 
+                AND INV_StockTransactionHeader.CompanyID = INV_StockTransactionDetail.CompanyID 
+                And INV_StockTransactionDetail.PeriodID = INV_StockTransactionHeader.PeriodID
+			Inner Join SET_DocumentType On SET_DocumentType.DocumentTypeID = INV_StockTransactionHeader.DocumentTypeID 
+                And SET_DocumentType.CompanyID = INV_StockTransactionHeader.CompanyID And Set_DocumentType.PeriodID = INV_StockTransactionHeader.PeriodID 
+				LEFT JOIN SET_Location ON SET_Location.LocationID = INV_StockTransactionHeader.LocationID 
+			LEFT JOIN SET_Location SL ON SL.LocationID = [INV_StockTransactionDetail].LocationID 
+            where INV_StockTransactionDetail.ItemID = INV_Item.ItemID And INV_StockTransactionDetail.CompanyID = @CompanyID 
+                And INV_StockTransactionDetail.PeriodID = @PeriodID And INV_StockTransactionDetail.Status = 1 And SET_DocumentType.TransactionImpact &lt;&gt; 'No Impact' 
+				AND  (isnull(SET_Location.LocationID,SL.LocationID) =SAL_OrderHeader.LocationID)
+    )  As CurrentStock,  
+    '' As ColorName, 'Add' [Action] ,NoteToVendor, Set_Batch.[Description] as Batch, SAL_OrderDetail.BatchId ,case when [SAL_OrderDetail].[SalesTaxAmount] IS Not null then isnull([SAL_OrderDetail].[GrossAmount] * [SAL_OrderDetail].[SalesTaxAmount],1)/100  else 0 end as SalesTaxAmountA
+	,SAL_OrderDetail.QtyInCartons
+FROM SAL_OrderDetail 
+    INNER JOIN INV_SET_Category ON INV_SET_Category.CategoryID = SAL_OrderDetail.ItemCategoryID 
+    --AND INV_SET_Category.CompanyID = SAL_OrderDetail.CompanyID 
+        AND INV_SET_Category.Status = 1 
+		INNER JOIN SAL_OrderHeader  ON SAL_OrderHeader.OrderID = SAL_OrderDetail.OrderID AND SAL_OrderHeader.CompanyID = SAL_OrderDetail.CompanyID 
+ INNER join SAL_DeliveryOrderDetail   on SAL_DeliveryOrderDetail.SalesOrderHeaderID  = SAL_OrderHeader.OrderID
+ and SAL_DeliveryOrderDetail.CompanyID = SAL_OrderHeader.CompanyID
+ and SAL_DeliveryOrderDetail.PeriodID = SAL_OrderHeader.PeriodID
+ and SAL_DeliveryOrderDetail.status = 1
+   INNER join SAL_DeliveryOrderHeader   on SAL_DeliveryOrderHeader.DeliveryOrderID  = SAL_DeliveryOrderDetail.DOHeaderID
+ and SAL_DeliveryOrderHeader.CompanyID = SAL_DeliveryOrderDetail.CompanyID
+ and SAL_DeliveryOrderHeader.PeriodID = SAL_DeliveryOrderDetail.PeriodID 
+ AND SAL_DeliveryOrderHeader.Status=1
+
+LEFT JOIN (select  SourceHeaderID,SourceLineID,SourceDocumentTypeID,SourceCode,abs(SUM(TransactionQuantity)) as TransactionQuantity from INV_StockTransactionDetail 
+INNER join INV_StockTransactionHeader   on INV_StockTransactionHeader.StockTransactionID  = INV_StockTransactionDetail.StockTransactionID
+and INV_StockTransactionHeader.CompanyID = INV_StockTransactionDetail.CompanyID
+and INV_StockTransactionHeader.PeriodID = INV_StockTransactionDetail.PeriodID 
+AND INV_StockTransactionHeader.Status=1
+INNER join SAL_DispatchHeader   on SAL_DispatchHeader.DocumentTypeID  = INV_StockTransactionHeader.DocumentTypeID
+AND SAL_DispatchHeader.DispatchNo  = INV_StockTransactionHeader.DocumentNo
+and SAL_DispatchHeader.CompanyID = INV_StockTransactionHeader.CompanyID
+and SAL_DispatchHeader.PeriodID = INV_StockTransactionHeader.PeriodID 
+AND SAL_DispatchHeader.FiscalID=INV_StockTransactionHeader.FiscalID
+AND INV_StockTransactionHeader.Status=1
+group by  SourceHeaderID,SourceLineID,SourceDocumentTypeID,SourceCode
+) as DispatchDetail ON 
+DispatchDetail.SourceHeaderID = SAL_DeliveryOrderDetail.DOHeaderID
+and DispatchDetail.SourceLineID = SAL_DeliveryOrderDetail.DODetailID
+AND DispatchDetail.SourceDocumentTypeID=SAL_DeliveryOrderHeader.DocumentTypeID
+AND DispatchDetail.SourceCode=SAL_DeliveryOrderHeader.DeliveryOrderNo
+	  
+
+   
+   
+    INNER JOIN INV_Item ON INV_Item.ItemID = SAL_OrderDetail.ItemID AND INV_Item.Status = 1 
+    left JOIN SET_UnitofMeasure ON SET_UnitofMeasure.UOMID = SAL_OrderDetail.ItemUnitID AND SET_UnitofMeasure.Status = 1 
+LEFT JOIN Set_Batch ON Set_Batch.BatchID = SAL_OrderDetail.BatchId and Set_Batch.PeriodID = SAL_OrderDetail.PeriodID
+WHERE SAL_OrderDetail.OrderID = @OrderID and SAL_OrderDetail.CompanyID = @CompanyID and SAL_OrderDetail.PeriodID = @PeriodID and SAL_OrderDetail.Status = 1 
+AND  SAL_OrderDetail.Quantity &gt; ISNULL(DispatchDetail.TransactionQuantity,0)
+
+
+ORDER BY SAL_OrderDetail.SerialNo</value>
+  </data>
+  <data name="Query_LIFTINGDISPATCHReport" xml:space="preserve">
+    <value>select Sal_OrderHeader.ContractDate as SaleOrderDate,Sal_OrderHeader.ContractNo as SONumber,sal_deliveryOrderHeader.DeliveryOrderNo as DoNumber,AR_SET_Customer.CustomerName
+,sal_deliveryOrderDetail.Quantity ,Sal_OrderDetail.Rate as SalaRate,(sal_deliveryOrderDetail.Quantity * Sal_OrderDetail.Rate) as GrossVAlue
+
+,(sal_deliveryOrderDetail.Quantity * (Sal_OrderDetail.Rate * 0.925925925925926)) as Excl_ST_Value
+,((sal_deliveryOrderDetail.Quantity * (Sal_OrderDetail.Rate * 0.925925925925926)) * isnull(Sal_OrderDetail.FEDAmount,0) / 100) as SalesTax_FED
+,((sal_deliveryOrderDetail.Quantity * (Sal_OrderDetail.Rate * 0.925925925925926)) + ((sal_deliveryOrderDetail.Quantity * (Sal_OrderDetail.Rate * 0.925925925925926)) * isnull(Sal_OrderDetail.FEDAmount,0) / 100)) as Incl_ST_Value,(Sal_OrderDetail.Rate * 0.925925925925926) as ST_Rate
+,SAL_DispatchHeader.DispatchDate ,SAL_DispatchHeader.VehicleNo,SAL_DispatchHeader.GatePassNo,SAL_DispatchHeader.BiltyNo,Transporter.CustomerName as TransporterName
+
+from Sal_OrderHeader
+inner join Sal_OrderDetail on Sal_OrderDetail.OrderID = Sal_OrderHeader.OrderID
+and Sal_OrderDetail.CompanyID = Sal_OrderHeader.CompanyID
+and Sal_OrderDetail.periodID = Sal_OrderHeader.periodID
+inner join AR_SET_Customer on AR_SET_Customer.CustomerID = Sal_OrderHeader.CustomerID
+--and AR_SET_Customer.CompanyID = Sal_OrderHeader.CompanyID
+and AR_SET_Customer.periodID = Sal_OrderHeader.periodID
+
+inner join sal_deliveryOrderDetail on sal_deliveryOrderDetail.SalesOrderHeaderID = Sal_OrderDetail.OrderID
+and sal_deliveryOrderDetail.SalesOrderDetailID = Sal_OrderDetail.OrderDetailID
+and sal_deliveryOrderDetail.CompanyID = sal_deliveryOrderDetail.CompanyID
+and sal_deliveryOrderDetail.PeriodID = sal_deliveryOrderDetail.PeriodID
+inner join sal_deliveryOrderHeader on sal_deliveryOrderHeader.DeliveryOrderID = sal_deliveryOrderDetail.DOHeaderID
+and sal_deliveryOrderHeader.CompanyID = sal_deliveryOrderDetail.CompanyID
+and sal_deliveryOrderHeader.PeriodID = sal_deliveryOrderDetail.PeriodID
+
+Left Join INV_StockTransactionDetail INV_STD ON INV_STD.CompanyID = SAL_DeliveryOrderHeader.CompanyID AND INV_STD.PeriodID = SAL_DeliveryOrderHeader.PeriodID 
+        AND INV_STD.SourceCode = SAL_DeliveryOrderHeader.DeliveryOrderNo AND INV_STD.SourceHeaderID = SAL_DeliveryOrderHeader.DeliveryOrderID 
+        AND INV_STD.SourceDocumentTypeID = SAL_DeliveryOrderHeader.DocumentTypeID AND INV_STD.Status = 1
+    left join INV_StockTransactionHeader INV_STH on INV_STH.StockTransactionID = INV_STD.StockTransactionID and INV_STH.CompanyID = INV_STD.CompanyID 
+        and INV_STH.PeriodID = INV_STD.PeriodID 
+        and INV_STH.Status = 1
+    Left join SAL_DispatchHeader SAL_DispatchHeader ON SAL_DispatchHeader.CompanyID = SAL_OrderDetail.CompanyID AND SAL_DispatchHeader.PeriodID = SAL_OrderDetail.PeriodID 
+        AND SAL_DispatchHeader.DocumentTypeID = INV_STH.DocumentTypeID AND SAL_DispatchHeader.StatusCode = INV_STH.StatusCode AND SAL_DispatchHeader.DispatchNo = INV_STH.DocumentNo 
+inner join AR_SET_Customer Transporter on Transporter.CustomerID = SAL_DispatchHeader.TransporterID
+and Transporter.CompanyID = SAL_DispatchHeader.CompanyID
+and Transporter.periodID = SAL_DispatchHeader.periodID
+where Sal_OrderHeader.CompanyID = @CompanyID AND Sal_OrderHeader.PeriodID = @PeriodID 
+AND Sal_OrderHeader.ContractDate between @ContractDateStart AND @ContractDateEnd 
+{0}</value>
+  </data>
+  <data name="Query_ManufacturingCostingPerUni" xml:space="preserve">
+    <value>select INV_StockTransactionHeader.CompanyID,INV_StockTransactionHeader.PeriodID,INV_StockTransactionHeader.StockTransactionID,
+INV_StockTransactionHeader.DocumentTypeID,Set_DocumentType.DocumentType,INV_StockTransactionHeader.DocumentNo,
+INV_StockTransactionHeader.DocumentDate,GL_TransactionHeader.DocumentTypeID,GL_TransactionHeader.DocumentNo,
+Set_DocumentType2.DocumentType,TotalAmount,GL_TransactionHeader.ControlCredit as GL_Amount,
+(select StockTransactionID from 
+(
+select INV_StockTransactionDetail.TransactionDetailID,INV_StockTransactionDetail.CompanyID,INV_StockTransactionDetail.PeriodID,
+INV_StockTransactionDetail.StockTransactionID,SerialNo,INV_StockTransactionHeader.DocumentNo,INV_SET_Category.CategoryID,INV_SET_Category.CategoryName as ItemName,
+INV_StockTransactionDetail.ItemID as StockDetailItemID,Item.Description as Materials, Item.[ItemID],INV_Item.description as Item,
+INV_StockTransactionDetail.Status,SourceCode,SourceLineID,SourceHeaderID,EstimatedPOItemPrice,IsDone,SourceDocumentTypeID 
+from INV_StockTransactionHeader
+
+	INNER  join INV_StockTransactionDetail 
+		ON INV_StockTransactionDetail.CompanyID=INV_StockTransactionHeader.CompanyID
+		AND INV_StockTransactionDetail.PeriodID=INV_StockTransactionHeader.PeriodID
+		AND INV_StockTransactionDetail.StockTransactionId=INV_StockTransactionHeader.StockTransactionId
+		
+	inner join GL_TransactionHeader 
+	ON GL_TransactionHeader.CompanyID=INV_StockTransactionHeader.CompanyID
+	AND GL_TransactionHeader.PeriodID=INV_StockTransactionHeader.PeriodID
+	AND GL_TransactionHeader.DocumentNo=INV_StockTransactionHeader.DocumentNo
+		
+	INNER JOIN [INV_Item] Item 
+		ON Item.[ItemID] = [INV_StockTransactionDetail].[ItemID] 
+		--AND Item.[CompanyID] = [INV_StockTransactionDetail].[CompanyID] 
+
+	LEFT JOIN INV_SET_Category 
+        ON (Item.ItemTypeID = INV_SET_Category.CategoryID) 
+        --AND (Item.CompanyID = INV_SET_Category.CompanyID)
+        
+        INNER JOIN Set_DocumentType ON Set_DocumentType.DocumentTypeID = INV_StockTransactionHeader.DocumentTypeID 
+        AND Set_DocumentType.CompanyID = INV_StockTransactionHeader.CompanyID AND Set_DocumentType.PeriodID = INV_StockTransactionHeader.PeriodID 
+        AND Set_DocumentType.Status = 1 AND Set_DocumentType.DocumentTypeID=182
+    
+    LEFT JOIN SET_CostCenter 
+		ON SET_CostCenter.CostCenterID = INV_StockTransactionHeader.CostCenterID 
+
+    left join AS_RecipeHeader 
+		ON AS_RecipeHeader.RecipeID = INV_StockTransactionHeader.ProductRecipeID
+		AND AS_RecipeHeader.CompanyID = INV_StockTransactionHeader.CompanyID
+    
+    left join INV_Item  
+		ON INV_Item.ItemID = AS_RecipeHeader.ItemID
+		--AND INV_Item.companyID = INV_StockTransactionDetail.companyID    
+
+) as fintab
+where DocumentNo=@DocumentNo
+group by
+StockTransactionID,ItemName,Item,SourceDocumentTypeID,DocumentNo) as StockTransactionID, 
+(select ItemName from 
+(
+select INV_StockTransactionDetail.TransactionDetailID,INV_StockTransactionDetail.CompanyID,INV_StockTransactionDetail.PeriodID,
+INV_StockTransactionDetail.StockTransactionID,SerialNo,INV_StockTransactionHeader.DocumentNo,INV_SET_Category.CategoryID,INV_SET_Category.CategoryName as ItemName,
+INV_StockTransactionDetail.ItemID as StockDetailItemID,Item.Description as Materials, Item.[ItemID],INV_Item.description as Item,
+INV_StockTransactionDetail.Status,SourceCode,SourceLineID,SourceHeaderID,EstimatedPOItemPrice,IsDone,SourceDocumentTypeID 
+from INV_StockTransactionHeader
+
+	INNER  join INV_StockTransactionDetail 
+		ON INV_StockTransactionDetail.CompanyID=INV_StockTransactionHeader.CompanyID
+		AND INV_StockTransactionDetail.PeriodID=INV_StockTransactionHeader.PeriodID
+		AND INV_StockTransactionDetail.StockTransactionId=INV_StockTransactionHeader.StockTransactionId
+		
+	inner join GL_TransactionHeader 
+	ON GL_TransactionHeader.CompanyID=INV_StockTransactionHeader.CompanyID
+	AND GL_TransactionHeader.PeriodID=INV_StockTransactionHeader.PeriodID
+	AND GL_TransactionHeader.DocumentNo=INV_StockTransactionHeader.DocumentNo
+		
+	INNER JOIN [INV_Item] Item 
+		ON Item.[ItemID] = [INV_StockTransactionDetail].[ItemID] 
+		--AND Item.[CompanyID] = [INV_StockTransactionDetail].[CompanyID] 
+
+	LEFT JOIN INV_SET_Category 
+        ON (Item.ItemTypeID = INV_SET_Category.CategoryID) 
+        --AND (Item.CompanyID = INV_SET_Category.CompanyID)
+        
+        INNER JOIN Set_DocumentType ON Set_DocumentType.DocumentTypeID = INV_StockTransactionHeader.DocumentTypeID 
+        AND Set_DocumentType.CompanyID = INV_StockTransactionHeader.CompanyID AND Set_DocumentType.PeriodID = INV_StockTransactionHeader.PeriodID 
+        AND Set_DocumentType.Status = 1 AND Set_DocumentType.DocumentTypeID=182
+    
+    LEFT JOIN SET_CostCenter 
+		ON SET_CostCenter.CostCenterID = INV_StockTransactionHeader.CostCenterID 
+
+    left join AS_RecipeHeader 
+		ON AS_RecipeHeader.RecipeID = INV_StockTransactionHeader.ProductRecipeID
+		AND AS_RecipeHeader.CompanyID = INV_StockTransactionHeader.CompanyID
+    
+    left join INV_Item  
+		ON INV_Item.ItemID = AS_RecipeHeader.ItemID
+		--AND INV_Item.companyID = INV_StockTransactionDetail.companyID    
+
+) as fintab
+where DocumentNo=@DocumentNo
+group by
+StockTransactionID,ItemName,Item,SourceDocumentTypeID,DocumentNo) as ItemName, 
+(select Item from 
+(
+select INV_StockTransactionDetail.TransactionDetailID,INV_StockTransactionDetail.CompanyID,INV_StockTransactionDetail.PeriodID,
+INV_StockTransactionDetail.StockTransactionID,SerialNo,INV_StockTransactionHeader.DocumentNo,INV_SET_Category.CategoryID,INV_SET_Category.CategoryName as ItemName,
+INV_StockTransactionDetail.ItemID as StockDetailItemID,Item.Description as Materials, Item.[ItemID],INV_Item.description as Item,
+INV_StockTransactionDetail.Status,SourceCode,SourceLineID,SourceHeaderID,EstimatedPOItemPrice,IsDone,SourceDocumentTypeID 
+from INV_StockTransactionHeader
+
+	INNER  join INV_StockTransactionDetail 
+		ON INV_StockTransactionDetail.CompanyID=INV_StockTransactionHeader.CompanyID
+		AND INV_StockTransactionDetail.PeriodID=INV_StockTransactionHeader.PeriodID
+		AND INV_StockTransactionDetail.StockTransactionId=INV_StockTransactionHeader.StockTransactionId
+		
+	inner join GL_TransactionHeader 
+	ON GL_TransactionHeader.CompanyID=INV_StockTransactionHeader.CompanyID
+	AND GL_TransactionHeader.PeriodID=INV_StockTransactionHeader.PeriodID
+	AND GL_TransactionHeader.DocumentNo=INV_StockTransactionHeader.DocumentNo
+		
+	INNER JOIN [INV_Item] Item 
+		ON Item.[ItemID] = [INV_StockTransactionDetail].[ItemID] 
+		--AND Item.[CompanyID] = [INV_StockTransactionDetail].[CompanyID] 
+
+	LEFT JOIN INV_SET_Category 
+        ON (Item.ItemTypeID = INV_SET_Category.CategoryID) 
+        --AND (Item.CompanyID = INV_SET_Category.CompanyID)
+        
+        INNER JOIN Set_DocumentType ON Set_DocumentType.DocumentTypeID = INV_StockTransactionHeader.DocumentTypeID 
+        AND Set_DocumentType.CompanyID = INV_StockTransactionHeader.CompanyID AND Set_DocumentType.PeriodID = INV_StockTransactionHeader.PeriodID 
+        AND Set_DocumentType.Status = 1 AND Set_DocumentType.DocumentTypeID=182
+    
+    LEFT JOIN SET_CostCenter 
+		ON SET_CostCenter.CostCenterID = INV_StockTransactionHeader.CostCenterID 
+
+    left join AS_RecipeHeader 
+		ON AS_RecipeHeader.RecipeID = INV_StockTransactionHeader.ProductRecipeID
+		AND AS_RecipeHeader.CompanyID = INV_StockTransactionHeader.CompanyID
+    
+    left join INV_Item  
+		ON INV_Item.ItemID = AS_RecipeHeader.ItemID
+		--AND INV_Item.companyID = INV_StockTransactionDetail.companyID    
+
+) as fintab
+where DocumentNo=@DocumentNo
+group by
+StockTransactionID,ItemName,Item,SourceDocumentTypeID,DocumentNo) as Item,
+(select SourceDocumentTypeID from 
+(
+select INV_StockTransactionDetail.TransactionDetailID,INV_StockTransactionDetail.CompanyID,INV_StockTransactionDetail.PeriodID,
+INV_StockTransactionDetail.StockTransactionID,SerialNo,INV_StockTransactionHeader.DocumentNo,INV_SET_Category.CategoryID,INV_SET_Category.CategoryName as ItemName,
+INV_StockTransactionDetail.ItemID as StockDetailItemID,Item.Description as Materials, Item.[ItemID],INV_Item.description as Item,
+INV_StockTransactionDetail.Status,SourceCode,SourceLineID,SourceHeaderID,EstimatedPOItemPrice,IsDone,SourceDocumentTypeID 
+from INV_StockTransactionHeader
+
+	INNER  join INV_StockTransactionDetail 
+		ON INV_StockTransactionDetail.CompanyID=INV_StockTransactionHeader.CompanyID
+		AND INV_StockTransactionDetail.PeriodID=INV_StockTransactionHeader.PeriodID
+		AND INV_StockTransactionDetail.StockTransactionId=INV_StockTransactionHeader.StockTransactionId
+		
+	inner join GL_TransactionHeader 
+	ON GL_TransactionHeader.CompanyID=INV_StockTransactionHeader.CompanyID
+	AND GL_TransactionHeader.PeriodID=INV_StockTransactionHeader.PeriodID
+	AND GL_TransactionHeader.DocumentNo=INV_StockTransactionHeader.DocumentNo
+		
+	INNER JOIN [INV_Item] Item 
+		ON Item.[ItemID] = [INV_StockTransactionDetail].[ItemID] 
+		--AND Item.[CompanyID] = [INV_StockTransactionDetail].[CompanyID] 
+
+	LEFT JOIN INV_SET_Category 
+        ON (Item.ItemTypeID = INV_SET_Category.CategoryID) 
+        --AND (Item.CompanyID = INV_SET_Category.CompanyID)
+        
+        INNER JOIN Set_DocumentType ON Set_DocumentType.DocumentTypeID = INV_StockTransactionHeader.DocumentTypeID 
+        AND Set_DocumentType.CompanyID = INV_StockTransactionHeader.CompanyID AND Set_DocumentType.PeriodID = INV_StockTransactionHeader.PeriodID 
+        AND Set_DocumentType.Status = 1 AND Set_DocumentType.DocumentTypeID=182
+    
+    LEFT JOIN SET_CostCenter 
+		ON SET_CostCenter.CostCenterID = INV_StockTransactionHeader.CostCenterID 
+
+    left join AS_RecipeHeader 
+		ON AS_RecipeHeader.RecipeID = INV_StockTransactionHeader.ProductRecipeID
+		AND AS_RecipeHeader.CompanyID = INV_StockTransactionHeader.CompanyID
+    
+    left join INV_Item  
+		ON INV_Item.ItemID = AS_RecipeHeader.ItemID
+		--AND INV_Item.companyID = INV_StockTransactionDetail.companyID    
+
+) as fintab
+where DocumentNo=@DocumentNo 
+group by
+StockTransactionID,ItemName,Item,SourceDocumentTypeID) as SourceDocumentTypeID
+from INV_StockTransactionHeader 
+ INNER JOIN Set_DocumentType ON Set_DocumentType.DocumentTypeID = INV_StockTransactionHeader.DocumentTypeID 
+        AND Set_DocumentType.CompanyID = INV_StockTransactionHeader.CompanyID AND Set_DocumentType.PeriodID = INV_StockTransactionHeader.PeriodID 
+        AND Set_DocumentType.Status = 1 AND Set_DocumentType.DocumentTypeID=182
+ inner join GL_TransactionHeader 
+	ON GL_TransactionHeader.CompanyID=INV_StockTransactionHeader.CompanyID
+	AND GL_TransactionHeader.PeriodID=INV_StockTransactionHeader.PeriodID
+	AND GL_TransactionHeader.DocumentNo=INV_StockTransactionHeader.DocumentNo
+	
+INNER JOIN Set_DocumentType Set_DocumentType2 ON Set_DocumentType2.DocumentTypeID = GL_TransactionHeader.DocumentTypeID 
+        AND Set_DocumentType2.CompanyID = GL_TransactionHeader.CompanyID 
+        AND Set_DocumentType2.PeriodID = GL_TransactionHeader.PeriodID 
+        AND Set_DocumentType2.Status = 1 AND Set_DocumentType2.DocumentTypeID=8	       
+        
+where INV_StockTransactionHeader.DocumentNo=@DocumentNo AND INV_StockTransactionHeader.CompanyID=@CompanyID AND INV_StockTransactionHeader.PeriodID=@PeriodID</value>
+  </data>
+  <data name="Query_Select_By_OrderID_CompanyId_PeriodId" xml:space="preserve">
+    <value>SELECT SAL_OrderDetail.OrderDetailID, SAL_OrderDetail.OrderID, SAL_OrderDetail.CompanyID, SAL_OrderDetail.PeriodID, SAL_OrderDetail.SerialNo, 
+    SAL_OrderDetail.ItemCategoryID, SAL_OrderDetail.ItemID, SAL_OrderDetail.ProductLine, SAL_OrderDetail.ItemUnitID, SAL_OrderDetail.ItemUnitQuantity, 
+    SAL_OrderDetail.ItemQuality, SAL_OrderDetail.Quantity, SAL_OrderDetail.ColorID, SAL_OrderDetail.BaseAmount, SAL_OrderDetail.Rate, SAL_OrderDetail.GrossAmount, 
+    SAL_OrderDetail.IsSalesTaxExempted, SAL_OrderDetail.SalesTaxAmount, SAL_OrderDetail.SalesTaxFixRate, SAL_OrderDetail.SalesTaxPercent, 
+    SAL_OrderDetail.IsExciseDutyExempted, SAL_OrderDetail.ExciseDutyAmount, SAL_OrderDetail.IsFEDExempted, SAL_OrderDetail.FEDAmount, SAL_OrderDetail.VATAmount, 
+    SAL_OrderDetail.GodownCharges, SAL_OrderDetail.NetAmount, SAL_OrderDetail.Status, SAL_OrderDetail.CreatedBy, SAL_OrderDetail.CreateDate, 
+    SAL_OrderDetail.CreatedByValue, SAL_OrderDetail.UpdatedBy, SAL_OrderDetail.UpdateDate, SAL_OrderDetail.UpdatedByValue, SAL_OrderDetail.Inclusive, 
+    INV_SET_Category.CategoryName, INV_Item.Description, SET_UnitofMeasure.UOMName, inv_item.UnitWeight, ISNULL(INV_item.UnitVolume, 1) as UnitVolume, 
+    ISNULL(INV_Item.ListPricePerUnit, 0) AS ListPricePerUnit, VolumeCode.UOMName as VolumeCodeName, 
+    ISNULL(SAL_OrderDetail.Quantity, 0) - (ISNULL(SAL_OrderDetail.ReversedQuantity, 0)) - ISNULL(
+    (
+        select SUM(SAL_DeliveryOrderDetail.Quantity) - isnull(sum(SAL_DeliveryOrderDetail.ReversedQty), 0) from SAL_DeliveryOrderDetail 
+            inner join SAL_DeliveryOrderHeader DO_hdr on DO_hdr.DeliveryOrderID = SAL_DeliveryOrderDetail.DOHeaderID 
+                and DO_hdr.CompanyID = SAL_DeliveryOrderDetail.CompanyID and DO_hdr.PeriodID = SAL_DeliveryOrderDetail.PeriodID 
+				and DO_hdr.Status = 1
+        where SalesOrderHeaderID = @OrderID AND SAL_DeliveryOrderDetail.CompanyID = SAL_OrderDetail.CompanyID 
+            and SAL_DeliveryOrderDetail.PeriodID = SAL_OrderDetail.PeriodID AND SAL_DeliveryOrderDetail.SalesOrderDetailID = SAL_OrderDetail.OrderDetailID 
+            and DO_hdr.StatusCode &lt;&gt; 15 and SAL_DeliveryOrderDetail.status = 1
+    ), 0) as RemainingQTY, 
+    ISNULL(SAL_OrderDetail.Quantity, 0) - (ISNULL(SAL_OrderDetail.ReversedQuantity, 0)) - ISNULL(
+    (
+        select SUM(SAL_DeliveryOrderDetail.Quantity) - isnull(sum(SAL_DeliveryOrderDetail.ReversedQty), 0) from SAL_DeliveryOrderDetail 
+            inner join SAL_DeliveryOrderHeader DO_hdr on DO_hdr.DeliveryOrderID = SAL_DeliveryOrderDetail.DOHeaderID 
+                and DO_hdr.CompanyID = SAL_DeliveryOrderDetail.CompanyID and DO_hdr.PeriodID = SAL_DeliveryOrderDetail.PeriodID 
+				and DO_hdr.Status = 1
+        where SalesOrderHeaderID = @OrderID AND SAL_DeliveryOrderDetail.CompanyID = SAL_OrderDetail.CompanyID 
+            and SAL_DeliveryOrderDetail.PeriodID = SAL_OrderDetail.PeriodID AND SAL_DeliveryOrderDetail.SalesOrderDetailID = SAL_OrderDetail.OrderDetailID 
+            and DO_hdr.StatusCode &lt;&gt; 15 and SAL_DeliveryOrderDetail.status = 1
+    ), 0) as ValidateQuantity, 
+    ISNULL(SAL_OrderDetail.Quantity, 0) - (ISNULL(SAL_OrderDetail.ReversedQuantity, 0)) - ISNULL(
+    (
+        select SUM(SAL_DeliveryOrderDetail.Quantity) - isnull(sum(SAL_DeliveryOrderDetail.ReversedQty), 0) from SAL_DeliveryOrderDetail 
+            inner join SAL_DeliveryOrderHeader DO_hdr on DO_hdr.DeliveryOrderID = SAL_DeliveryOrderDetail.DOHeaderID 
+                and DO_hdr.CompanyID = SAL_DeliveryOrderDetail.CompanyID and DO_hdr.PeriodID = SAL_DeliveryOrderDetail.PeriodID 
+				and DO_hdr.Status = 1
+        where SalesOrderHeaderID = @OrderID AND SAL_DeliveryOrderDetail.CompanyID = SAL_OrderDetail.CompanyID 
+            and SAL_DeliveryOrderDetail.PeriodID = SAL_OrderDetail.PeriodID AND SAL_DeliveryOrderDetail.SalesOrderDetailID = SAL_OrderDetail.OrderDetailID 
+            and DO_hdr.StatusCode &lt;&gt; 15 and SAL_DeliveryOrderDetail.status = 1
+    ), 0) as DOQTY, 
+    ISNULL(SAL_OrderDetail.Rate, 0) * CAST((Case when SAL_OrderDetail.ItemUnitID = INV_Item.PrimaryUOMCode then 1 
+        when SAL_OrderDetail.ItemUnitID = INV_Item.VolumeUOMCode then (ISNULL(INV_Item.UnitVolume, 1)) 
+        when SAL_OrderDetail.ItemUnitID = INV_Item.WeightUOMCode then (ISNULL(INV_Item.UnitWeight, 1)) end) as decimal) * 
+    (ISNULL(SAL_OrderDetail.Quantity, 0) - (ISNULL(SAL_OrderDetail.ReversedQuantity, 0)) - ISNULL(
+    (
+        select SUM(SAL_DeliveryOrderDetail.Quantity) from SAL_DeliveryOrderDetail 
+            inner join SAL_DeliveryOrderHeader DO_hdr on DO_hdr.DeliveryOrderID = SAL_DeliveryOrderDetail.DOHeaderID 
+                and DO_hdr.CompanyID = SAL_DeliveryOrderDetail.CompanyID and DO_hdr.PeriodID = SAL_DeliveryOrderDetail.PeriodID 
+				and DO_hdr.Status = 1
+        where SalesOrderHeaderID = @OrderID AND SAL_DeliveryOrderDetail.CompanyID = [SAL_OrderDetail].[CompanyID] and SAL_DeliveryOrderDetail.PeriodID = [SAL_OrderDetail].[PeriodID] 
+            AND SAL_DeliveryOrderDetail.SalesOrderDetailID = SAL_OrderDetail.OrderDetailID
+            and DO_hdr.StatusCode &lt;&gt; 15 and SAL_DeliveryOrderDetail.status = 1
+    ), 0)) AS TotalAmount, 
+    '' [Action] 
+FROM [SAL_OrderDetail] 
+    INNER JOIN [INV_SET_Category] ON [INV_SET_Category].[CategoryID] = [SAL_OrderDetail].[ItemCategoryID] 
+        --AND [INV_SET_Category].[CompanyID] = [SAL_OrderDetail].[CompanyID] 
+        AND [INV_SET_Category].[Status] = 1 
+    INNER JOIN [INV_Item] ON [INV_Item].[ItemID] = [SAL_OrderDetail].[ItemID] 
+    --AND [INV_Item].[CompanyID] = [SAL_OrderDetail].[CompanyID] 
+    AND [INV_Item].[Status] = 1 
+    INNER JOIN [SET_UnitofMeasure] ON [SET_UnitofMeasure].[UOMID] = [SAL_OrderDetail].[ItemUnitID] AND [SET_UnitofMeasure].[Status] = 1 
+    LEFT join [SET_UnitofMeasure] as VolumeCode on [VolumeCode].[UOMID] = [inv_item].[VolumeUOMCode] 
+WHERE [SAL_OrderDetail].[OrderID] = @OrderID and [SAL_OrderDetail].[CompanyID] = @CompanyID and [SAL_OrderDetail].[PeriodID] = @PeriodID 
+    and [SAL_OrderDetail].[Status] = 1 
+       and (ISNULL(SAL_OrderDetail.Quantity, 0) - (ISNULL(SAL_OrderDetail.ReversedQuantity, 0)) - ISNULL(
+    (
+        select SUM(SAL_DeliveryOrderDetail.Quantity) - isnull(sum(SAL_DeliveryOrderDetail.ReversedQty), 0) from SAL_DeliveryOrderDetail 
+            inner join SAL_DeliveryOrderHeader DO_hdr on DO_hdr.DeliveryOrderID = SAL_DeliveryOrderDetail.DOHeaderID 
+                and DO_hdr.CompanyID = SAL_DeliveryOrderDetail.CompanyID and DO_hdr.PeriodID = SAL_DeliveryOrderDetail.PeriodID 
+				and DO_hdr.Status = 1
+        where SalesOrderHeaderID = @OrderID 
+        AND SAL_DeliveryOrderDetail.CompanyID = SAL_OrderDetail.CompanyID 
+            and SAL_DeliveryOrderDetail.PeriodID = SAL_OrderDetail.PeriodID 
+            AND SAL_DeliveryOrderDetail.SalesOrderDetailID = SAL_OrderDetail.OrderDetailID 
+            and DO_hdr.StatusCode &lt;&gt; 15 and SAL_DeliveryOrderDetail.status = 1
+    ), 0)&lt;&gt;0)
+ORDER BY [SAL_OrderDetail].[SerialNo]</value>
+  </data>
+  <data name="Query_Select_By_OrderID_CompanyId_PeriodIdSOS" xml:space="preserve">
+    <value>SELECT [SAL_OrderDetail].[OrderDetailID], 
+--[SET_Color].[ColorName], 
+[SAL_OrderDetail].[OrderID], 
+[SAL_OrderDetail].[CompanyID], 
+[SAL_OrderDetail].[PeriodID], 
+[SAL_OrderDetail].[SerialNo], 
+[SAL_OrderDetail].BatchId,
+Set_Batch.[Description],
+[SAL_OrderDetail].[ItemCategoryID], [SAL_OrderDetail].[ItemID],[SAL_OrderDetail].[ProductLine], [SAL_OrderDetail].[ItemUnitID], 
+    [SAL_OrderDetail].[ItemUnitQuantity], [SAL_OrderDetail].[ItemQuality], [SAL_OrderDetail].[Quantity], [SAL_OrderDetail].[ColorID], [SAL_OrderDetail].[BaseAmount], 
+    [SAL_OrderDetail].[Rate], [SAL_OrderDetail].[GrossAmount], [SAL_OrderDetail].[IsSalesTaxExempted], [SAL_OrderDetail].[SalesTaxAmount], 
+    [SAL_OrderDetail].[SalesTaxFixRate], [SAL_OrderDetail].[SalesTaxPercent], [SAL_OrderDetail].[IsExciseDutyExempted], [SAL_OrderDetail].[ExciseDutyAmount], 
+    [SAL_OrderDetail].[IsFEDExempted], [SAL_OrderDetail].[FEDAmount], [SAL_OrderDetail].[VATAmount], [SAL_OrderDetail].[GodownCharges], [SAL_OrderDetail].[NetAmount], 
+    [SAL_OrderDetail].[Status], [SAL_OrderDetail].[CreatedBy], [SAL_OrderDetail].[CreateDate], [SAL_OrderDetail].[CreatedByValue], [SAL_OrderDetail].[UpdatedBy],  
+    [SAL_OrderDetail].[UpdateDate], [SAL_OrderDetail].[UpdatedByValue], [SAL_OrderDetail].[Inclusive], [INV_SET_Category].[CategoryName], [INV_Item].[Description], 
+    [SET_UnitofMeasure].[UOMName], ISNULL(INV_Item.ListPricePerUnit, 0) AS ListPricePerUnit, 
+   
+ISNULL([SAL_OrderDetail].[Quantity], 0) - ISNULL(
+    (
+        select SUM([SAL_DeliveryOrderDetail].Quantity) from SAL_DeliveryOrderDetail 
+        where SalesOrderHeaderID = @OrderID AND CompanyID = [SAL_OrderDetail].[CompanyID] and PeriodID = [SAL_OrderDetail].[PeriodID] 
+            AND SAL_DeliveryOrderDetail.SalesOrderDetailID = SAL_OrderDetail.OrderDetailID
+    ), 0) as RemainingQTY,
+
+ISNULL([SAL_OrderDetail].[Quantity], 0) - ISNULL(
+    (
+        select SUM([SAL_DeliveryOrderDetail].Quantity) from SAL_DeliveryOrderDetail 
+        where SalesOrderHeaderID = @OrderID AND CompanyID = [SAL_OrderDetail].[CompanyID] and PeriodID = [SAL_OrderDetail].[PeriodID] 
+            AND SAL_DeliveryOrderDetail.SalesOrderDetailID = SAL_OrderDetail.OrderDetailID
+    ), 0) as ValidateQuantity,
+
+ISNULL([SAL_OrderDetail].[Quantity], 0) - ISNULL( 
+ (
+        select SUM([SAL_DeliveryOrderDetail].Quantity) from SAL_DeliveryOrderDetail 
+        where SalesOrderHeaderID = @OrderID AND CompanyID = [SAL_OrderDetail].[CompanyID] and PeriodID = [SAL_OrderDetail].[PeriodID] 
+            AND SAL_DeliveryOrderDetail.SalesOrderDetailID = SAL_OrderDetail.OrderDetailID
+    ), 0) as DOQTY,
+ ISNULL([SAL_OrderDetail].[Rate],0) * 
+ convert(decimal,isnull([INV_Item].[UnitWeight],0)) *
+    (ISNULL([SAL_OrderDetail].[Quantity], 0) - ISNULL(
+    (
+        select SUM([SAL_DeliveryOrderDetail].Quantity) from SAL_DeliveryOrderDetail 
+        where SalesOrderHeaderID = @OrderID AND CompanyID = [SAL_OrderDetail].[CompanyID] and PeriodID = [SAL_OrderDetail].[PeriodID] 
+            AND SAL_DeliveryOrderDetail.SalesOrderDetailID = SAL_OrderDetail.OrderDetailID
+    ), 0)) AS TotalAmount,
+    '' [Action], case when [SAL_OrderDetail].[SalesTaxAmount] IS Not null then isnull([SAL_OrderDetail].[GrossAmount] * [SAL_OrderDetail].[SalesTaxAmount],1)/100  else 0 end as SalesTaxAmountA
+FROM [SAL_OrderDetail] 
+    INNER JOIN [INV_SET_Category] ON [INV_SET_Category].[CategoryID] = [SAL_OrderDetail].[ItemCategoryID] 
+        --AND [INV_SET_Category].[CompanyID] = [SAL_OrderDetail].[CompanyID] 
+        AND [INV_SET_Category].[Status] = 1 
+    LEFT JOIN [INV_Item] ON [INV_Item].[ItemID] = [SAL_OrderDetail].[ItemID] 
+    --AND [INV_Item].[CompanyID] = [SAL_OrderDetail].[CompanyID] 
+    AND [INV_Item].[Status] = 1 
+    LEFT JOIN [SET_UnitofMeasure] ON [SET_UnitofMeasure].[UOMID] = [SAL_OrderDetail].[ItemUnitID] AND [SET_UnitofMeasure].[Status] = 1 
+left JOIN Set_Batch ON Set_Batch.BatchID = SAL_OrderDetail.BatchId 
+ AND Set_Batch.PeriodID = SAL_OrderDetail.PeriodID
+--INNER JOIN [SET_Color] ON [SET_Color].[ColorID] = [SAL_OrderDetail].[ColorID] AND [SET_Color].[Status] = 1
+WHERE [SAL_OrderDetail].[OrderID] = @OrderID and [SAL_OrderDetail].[CompanyID] = @CompanyID and [SAL_OrderDetail].[PeriodID] = @PeriodID 
+    and [SAL_OrderDetail].[Status] = 1 
+ORDER BY [SAL_OrderDetail].[SerialNo]</value>
+  </data>
+  <data name="Query_Select_By_OrderID_CompanyId_PeriodIdWithOutColorSOS" xml:space="preserve">
+    <value>SELECT [SAL_OrderDetail].[OrderDetailID], 
+[SAL_OrderDetail].[OrderID], [SAL_OrderDetail].[CompanyID], 
+[SAL_OrderDetail].[PeriodID], [SAL_OrderDetail].[SerialNo], 
+    [SAL_OrderDetail].[ItemCategoryID], [SAL_OrderDetail].[ItemID],[SAL_OrderDetail].[ProductLine],
+[SAL_OrderDetail].[ItemUnitID], [SAL_OrderDetail].[ItemUnitQuantity], 
+    [SAL_OrderDetail].[ItemQuality], [SAL_OrderDetail].[Quantity],
+[SAL_OrderDetail].[ColorID],
+[SAL_OrderDetail].[BaseAmount], 
+    [SAL_OrderDetail].[Rate], [SAL_OrderDetail].[GrossAmount], 
+[SAL_OrderDetail].[IsSalesTaxExempted], [SAL_OrderDetail].[SalesTaxAmount], 
+    [SAL_OrderDetail].[SalesTaxFixRate], [SAL_OrderDetail].[SalesTaxPercent], 
+[SAL_OrderDetail].[IsExciseDutyExempted], [SAL_OrderDetail].[ExciseDutyAmount], 
+    [SAL_OrderDetail].[IsFEDExempted], [SAL_OrderDetail].[FEDAmount],
+[SAL_OrderDetail].[VATAmount], [SAL_OrderDetail].[GodownCharges], [SAL_OrderDetail].[NetAmount], 
+    [SAL_OrderDetail].[Status], [SAL_OrderDetail].[CreatedBy], [SAL_OrderDetail].[CreateDate], [SAL_OrderDetail].[CreatedByValue], [SAL_OrderDetail].[UpdatedBy], 
+    [SAL_OrderDetail].[UpdateDate], [SAL_OrderDetail].[UpdatedByValue],
+[SAL_OrderDetail].[Inclusive], [INV_SET_Category].[CategoryName], [INV_Item].[Description], 
+    [SET_UnitofMeasure].[UOMName], ISNULL(INV_Item.ListPricePerUnit, 0) AS ListPricePerUnit, 
+    ISNULL([SAL_OrderDetail].[Quantity], 0) - ISNULL(
+    (
+        select SUM([SAL_DeliveryOrderDetail].Quantity) from SAL_DeliveryOrderDetail 
+        where SalesOrderHeaderID = @OrderID AND CompanyID = [SAL_OrderDetail].[CompanyID] and PeriodID = [SAL_OrderDetail].[PeriodID] 
+            AND SAL_DeliveryOrderDetail.SalesOrderDetailID = SAL_OrderDetail.OrderDetailID
+    ), 0) as RemainingQTY, 
+    ISNULL([SAL_OrderDetail].[Rate] * ([SAL_OrderDetail].[Quantity] - 
+    (select SUM([SAL_DeliveryOrderDetail].Quantity) as sumQuantity from SAL_DeliveryOrderDetail 
+        where SalesOrderHeaderID = @OrderID AND CompanyID = [SAL_OrderDetail].[CompanyID] and PeriodID = [SAL_OrderDetail].[PeriodID]
+    )), 0) AS TotalAmount, '' As ColorName,'' [Action],case when [SAL_OrderDetail].[SalesTaxAmount] IS Not null then isnull([SAL_OrderDetail].[GrossAmount] * [SAL_OrderDetail].[SalesTaxAmount],1)/100  else 0 end as SalesTaxAmountA
+FROM [SAL_OrderDetail] 
+    INNER JOIN [INV_SET_Category] ON [INV_SET_Category].[CategoryID] = [SAL_OrderDetail].[ItemCategoryID] 
+        --AND [INV_SET_Category].[CompanyID] = [SAL_OrderDetail].[CompanyID] 
+        AND [INV_SET_Category].[Status] = 1 
+    LEFT JOIN [INV_Item] ON [INV_Item].[ItemID] = [SAL_OrderDetail].[ItemID] 
+    --AND [INV_Item].[CompanyID] = [SAL_OrderDetail].[CompanyID] 
+    AND [INV_Item].[Status] = 1 
+    LEFT JOIN [SET_UnitofMeasure] ON [SET_UnitofMeasure].[UOMID] = [SAL_OrderDetail].[ItemUnitID] AND [SET_UnitofMeasure].[Status] = 1 
+WHERE [SAL_OrderDetail].[OrderID] = @OrderID and [SAL_OrderDetail].[CompanyID] = @CompanyID and [SAL_OrderDetail].[PeriodID] = @PeriodID 
+    and [SAL_OrderDetail].[Status] = 1 
+ORDER BY [SAL_OrderDetail].[SerialNo]</value>
+  </data>
+  <data name="Query_Select_By_OrderID_WithColor" xml:space="preserve">
+    <value>SELECT *, (TAB.RemainingQTY * TAB.Rate) AS TotalAmount FROM (
+SELECT Distinct [SAL_OrderDetail].[OrderDetailID], [SAL_OrderDetail].[OrderID], [SAL_OrderDetail].[CompanyID], [SAL_OrderDetail].[PeriodID], [SAL_OrderDetail].[SerialNo], 
+    [SAL_OrderDetail].[ItemCategoryID], [SAL_OrderDetail].[ItemID], [SAL_OrderDetail].[ItemUnitID], [SAL_OrderDetail].[ItemUnitQuantity], 
+    [SAL_OrderDetail].[ItemQuality], [SAL_OrderDetail].[Quantity], [SAL_OrderDetail].[ColorID], [Set_Color].[ColorName], [SAL_OrderDetail].[BaseAmount], 
+    [SAL_OrderDetail].[Rate], [SAL_OrderDetail].[GrossAmount], [SAL_OrderDetail].[IsSalesTaxExempted], [SAL_OrderDetail].[SalesTaxAmount], 
+    [SAL_OrderDetail].[SalesTaxFixRate], [SAL_OrderDetail].[SalesTaxPercent], [SAL_OrderDetail].[IsExciseDutyExempted], [SAL_OrderDetail].[ExciseDutyAmount], 
+    [SAL_OrderDetail].[IsFEDExempted], [SAL_OrderDetail].[FEDAmount], [SAL_OrderDetail].[VATAmount], [SAL_OrderDetail].[GodownCharges], [SAL_OrderDetail].[NetAmount], 
+    [SAL_OrderDetail].[Status], [SAL_OrderDetail].[CreatedBy], [SAL_OrderDetail].[CreateDate], [SAL_OrderDetail].[CreatedByValue], [SAL_OrderDetail].[UpdatedBy], 
+    [SAL_OrderDetail].[UpdateDate], [SAL_OrderDetail].[UpdatedByValue], [SAL_OrderDetail].[Inclusive], [INV_SET_Category].[CategoryID],[INV_SET_Category].[CategoryName], [INV_Item].[Description], 
+    [SET_UnitofMeasure].[UOMName], ISNULL([SAL_OrderDetail].[Rate], 0) AS ListPricePerUnit, 
+    
+ISNULL([SAL_OrderDetail].[Quantity], 0) - ( ISNULL([SAL_OrderDetail].[ReversedQuantity],0) ) - ISNULL(
+ 
+    (
+        select SUM([SAL_DeliveryOrderDetail].Quantity) from SAL_DeliveryOrderDetail 
+        where SalesOrderHeaderID = @OrderID AND CompanyID = [SAL_OrderDetail].[CompanyID] and PeriodID = [SAL_OrderDetail].[PeriodID] 
+            AND SAL_DeliveryOrderDetail.SalesOrderDetailID = SAL_OrderDetail.OrderDetailID AND SAL_DeliveryOrderDetail.Status = 1
+    ), 0) as RemainingQTY, 
+
+ISNULL([SAL_OrderDetail].[Quantity], 0) - ( ISNULL([SAL_OrderDetail].[ReversedQuantity],0) ) - ISNULL(
+    (
+        select SUM([SAL_DeliveryOrderDetail].Quantity) from SAL_DeliveryOrderDetail 
+        where SalesOrderHeaderID = @OrderID AND CompanyID = [SAL_OrderDetail].[CompanyID] and PeriodID = [SAL_OrderDetail].[PeriodID] 
+            AND SAL_DeliveryOrderDetail.SalesOrderDetailID = SAL_OrderDetail.OrderDetailID AND SAL_DeliveryOrderDetail.Status = 1
+    ), 0) as ValidateQuantity,
+    
+ISNULL([SAL_OrderDetail].[Quantity], 0) - ( ISNULL([SAL_OrderDetail].[ReversedQuantity],0) ) - ISNULL( 
+ (
+        select SUM([SAL_DeliveryOrderDetail].Quantity) from SAL_DeliveryOrderDetail 
+        where SalesOrderHeaderID = @OrderID AND CompanyID = [SAL_OrderDetail].[CompanyID] and PeriodID = [SAL_OrderDetail].[PeriodID] 
+            AND SAL_DeliveryOrderDetail.SalesOrderDetailID = SAL_OrderDetail.OrderDetailID AND SAL_DeliveryOrderDetail.Status = 1
+    ), 0) as DOQTY,
+
+ ISNULL([SAL_OrderDetail].[Rate],0) * 
+  CAST( (Case when SAL_OrderDetail.ItemUnitID = INV_Item.PrimaryUOMCode 
+then (1)
+
+			when SAL_OrderDetail.ItemUnitID = INV_Item.VolumeUOMCode then (ISNULL(INV_Item.UnitVolume,1))
+			when SAL_OrderDetail.ItemUnitID = INV_Item.WeightUOMCode then (ISNULL(INV_Item.UnitWeight,1))
+			end) as decimal) *
+    (ISNULL([SAL_OrderDetail].[Quantity], 0) - ( ISNULL([SAL_OrderDetail].[ReversedQuantity],0) ) - ISNULL(
+    (
+        select SUM([SAL_DeliveryOrderDetail].Quantity) from SAL_DeliveryOrderDetail 
+        where SalesOrderHeaderID = @OrderID AND CompanyID = [SAL_OrderDetail].[CompanyID] and PeriodID = [SAL_OrderDetail].[PeriodID] 
+            AND SAL_DeliveryOrderDetail.SalesOrderDetailID = SAL_OrderDetail.OrderDetailID
+    ), 0)) AS TotalAmount,
+
+--Set_Color.ColorID, Set_Color.ColorName,
+
+ 
+    '' [Action] 
+FROM [SAL_OrderDetail] 
+    INNER JOIN [INV_SET_Category] ON [INV_SET_Category].[CategoryID] = [SAL_OrderDetail].[ItemCategoryID] 
+        --AND [INV_SET_Category].[CompanyID] = [SAL_OrderDetail].[CompanyID] 
+        AND [INV_SET_Category].[Status] = 1 
+    INNER JOIN [INV_Item] ON [INV_Item].[ItemID] = [SAL_OrderDetail].[ItemID] 
+    --AND [INV_Item].[CompanyID] = [SAL_OrderDetail].[CompanyID] 
+    AND [INV_Item].[Status] = 1 
+    INNER JOIN [SET_UnitofMeasure] ON [SET_UnitofMeasure].[UOMID] = [SAL_OrderDetail].[ItemUnitID] AND [SET_UnitofMeasure].[Status] = 1 
+    left Join Set_Color ON Set_Color.ColorID = [SAL_OrderDetail].[ColorID] AND Set_Color.Isactive = 1 and Set_Color.Status = 1 
+    LEFT JOIN SAL_DeliveryOrderDetail ON SAL_DeliveryOrderDetail.SalesOrderHeaderID = SAL_OrderDetail.OrderID
+    AND SAL_DeliveryOrderDetail.SalesOrderDetailID = SAL_OrderDetail.OrderDetailID
+    AND SAL_DeliveryOrderDetail.CompanyID = SAL_OrderDetail.CompanyID
+    AND SAL_DeliveryOrderDetail.PeriodID = SAL_OrderDetail.PeriodID AND SAL_DeliveryOrderDetail.Status = 1
+WHERE [SAL_OrderDetail].[OrderID] = @OrderID and [SAL_OrderDetail].[CompanyID] = @CompanyID and [SAL_OrderDetail].[PeriodID] = @PeriodID 
+    and [SAL_OrderDetail].[Status] = 1 AND ISNULL(SAL_OrderDetail.Quantity,0) &lt;&gt; ISNULL(SAL_DeliveryOrderDetail.Quantity,0)
+) AS TAB Where TAB.RemainingQTY &lt;&gt; 0</value>
+  </data>
+  <data name="Query_Select_By_OrderID_WithColorForDelete" xml:space="preserve">
+    <value>SELECT Distinct *, (TAB.RemainingQTY * TAB.Rate) AS TotalAmount FROM (
+SELECT [SAL_OrderDetail].[OrderDetailID], [SAL_OrderDetail].[OrderID], [SAL_OrderDetail].[CompanyID], [SAL_OrderDetail].[PeriodID], [SAL_OrderDetail].[SerialNo], 
+    [SAL_OrderDetail].[ItemCategoryID], [SAL_OrderDetail].[ItemID], [SAL_OrderDetail].[ItemUnitID], [SAL_OrderDetail].[ItemUnitQuantity], 
+    [SAL_OrderDetail].[ItemQuality], [SAL_OrderDetail].[Quantity], [SAL_OrderDetail].[ColorID], [Set_Color].[ColorName], [SAL_OrderDetail].[BaseAmount], 
+    [SAL_OrderDetail].[Rate], [SAL_OrderDetail].[GrossAmount], [SAL_OrderDetail].[IsSalesTaxExempted], [SAL_OrderDetail].[SalesTaxAmount], 
+    [SAL_OrderDetail].[SalesTaxFixRate], [SAL_OrderDetail].[SalesTaxPercent], [SAL_OrderDetail].[IsExciseDutyExempted], [SAL_OrderDetail].[ExciseDutyAmount], 
+    [SAL_OrderDetail].[IsFEDExempted], [SAL_OrderDetail].[FEDAmount], [SAL_OrderDetail].[VATAmount], [SAL_OrderDetail].[GodownCharges], [SAL_OrderDetail].[NetAmount], 
+    [SAL_OrderDetail].[Status], [SAL_OrderDetail].[CreatedBy], [SAL_OrderDetail].[CreateDate], [SAL_OrderDetail].[CreatedByValue], [SAL_OrderDetail].[UpdatedBy], 
+    [SAL_OrderDetail].[UpdateDate], [SAL_OrderDetail].[UpdatedByValue], [SAL_OrderDetail].[Inclusive], [INV_SET_Category].[CategoryID],[INV_SET_Category].[CategoryName], [INV_Item].[Description], 
+    [SET_UnitofMeasure].[UOMName], ISNULL(INV_Item.ListPricePerUnit, 0) AS ListPricePerUnit, 
+    ISNULL([SAL_OrderDetail].[Quantity], 0) - ISNULL(
+    (
+        select SUM([SAL_DeliveryOrderDetail].Quantity) from SAL_DeliveryOrderDetail 
+        where SalesOrderHeaderID = @OrderID AND CompanyID = [SAL_OrderDetail].[CompanyID] and PeriodID = [SAL_OrderDetail].[PeriodID] 
+            AND SAL_DeliveryOrderDetail.SalesOrderDetailID = SAL_OrderDetail.OrderDetailID
+    ), 0) as RemainingQTY, 
+    --ISNULL([SAL_OrderDetail].[Rate] * ([SAL_OrderDetail].[Quantity] - 
+    --(
+    --    select SUM([SAL_DeliveryOrderDetail].Quantity) as sumQuantity from SAL_DeliveryOrderDetail 
+    --    where SalesOrderHeaderID = 290 AND CompanyID = [SAL_OrderDetail].[CompanyID] and PeriodID = [SAL_OrderDetail].[PeriodID]
+    --)), 0) AS TotalAmount,
+ROW_NUMBER() Over (Order by Cast([SAL_OrderDetail].[OrderDetailID] as int) desc) as 'RowUniqueID',
+    '' [Action] 
+FROM [SAL_OrderDetail] 
+    INNER JOIN [INV_SET_Category] ON [INV_SET_Category].[CategoryID] = [SAL_OrderDetail].[ItemCategoryID] 
+        --AND [INV_SET_Category].[CompanyID] = [SAL_OrderDetail].[CompanyID] 
+        AND [INV_SET_Category].[Status] = 1 
+    INNER JOIN [INV_Item] ON [INV_Item].[ItemID] = [SAL_OrderDetail].[ItemID] 
+    --AND [INV_Item].[CompanyID] = [SAL_OrderDetail].[CompanyID] 
+    AND [INV_Item].[Status] = 1 
+    INNER JOIN [SET_UnitofMeasure] ON [SET_UnitofMeasure].[UOMID] = [SAL_OrderDetail].[ItemUnitID] AND [SET_UnitofMeasure].[Status] = 1 
+    left Join Set_Color ON Set_Color.ColorID = [SAL_OrderDetail].[ColorID] AND Set_Color.Isactive = 1 and Set_Color.Status = 1 
+    LEFT JOIN SAL_DeliveryOrderDetail ON SAL_DeliveryOrderDetail.SalesOrderHeaderID = SAL_OrderDetail.OrderID
+    AND SAL_DeliveryOrderDetail.SalesOrderDetailID = SAL_OrderDetail.OrderDetailID
+    AND SAL_DeliveryOrderDetail.CompanyID = SAL_OrderDetail.CompanyID
+    AND SAL_DeliveryOrderDetail.PeriodID = SAL_OrderDetail.PeriodID
+WHERE [SAL_OrderDetail].[OrderID] = @OrderID and [SAL_OrderDetail].[CompanyID] = @CompanyID and [SAL_OrderDetail].[PeriodID] = @PeriodID 
+   -- and [SAL_OrderDetail].[Status] = 1 AND ISNULL(SAL_OrderDetail.Quantity,0) &lt;&gt; ISNULL(SAL_DeliveryOrderDetail.Quantity,0)
+    {0}
+    --and SAL_OrderDetail.OrderDetailID in (1,2)
+) AS TAB</value>
+  </data>
+  <data name="Query_Select_By_OrderID_WithColorSO" xml:space="preserve">
+    <value>SELECT [SAL_OrderDetail].[OrderDetailID], 
+[SET_Color].[ColorName], 
+[SAL_OrderDetail].[OrderID], 
+[SAL_OrderDetail].[CompanyID], 
+[SAL_OrderDetail].[PeriodID], 
+[SAL_OrderDetail].[SerialNo], 
+[SAL_OrderDetail].[ItemCategoryID], [SAL_OrderDetail].[ItemID],[SAL_OrderDetail].[ProductLine], [SAL_OrderDetail].[ItemUnitID], 
+    [SAL_OrderDetail].[ItemUnitQuantity], [SAL_OrderDetail].[ItemQuality], [SAL_OrderDetail].[Quantity], [SAL_OrderDetail].[ColorID], [SAL_OrderDetail].[BaseAmount], 
+    [SAL_OrderDetail].[Rate], [SAL_OrderDetail].[GrossAmount], [SAL_OrderDetail].[IsSalesTaxExempted], [SAL_OrderDetail].[SalesTaxAmount], 
+    [SAL_OrderDetail].[SalesTaxFixRate], [SAL_OrderDetail].[SalesTaxPercent], [SAL_OrderDetail].[IsExciseDutyExempted], [SAL_OrderDetail].[ExciseDutyAmount], 
+    [SAL_OrderDetail].[IsFEDExempted], [SAL_OrderDetail].[FEDAmount], [SAL_OrderDetail].[VATAmount], [SAL_OrderDetail].[GodownCharges], [SAL_OrderDetail].[NetAmount], 
+    [SAL_OrderDetail].[Status], [SAL_OrderDetail].[CreatedBy], [SAL_OrderDetail].[CreateDate], [SAL_OrderDetail].[CreatedByValue], [SAL_OrderDetail].[UpdatedBy],  
+    [SAL_OrderDetail].[UpdateDate], [SAL_OrderDetail].[UpdatedByValue], [SAL_OrderDetail].[Inclusive], [INV_SET_Category].[CategoryName], [INV_Item].[Description], 
+    [SET_UnitofMeasure].[UOMName], ISNULL(INV_Item.ListPricePerUnit, 0) AS ListPricePerUnit, 
+   
+ISNULL([SAL_OrderDetail].[Quantity], 0) - ISNULL(
+    (
+        select SUM([SAL_DeliveryOrderDetail].Quantity) from SAL_DeliveryOrderDetail 
+        where SalesOrderHeaderID = @OrderID AND CompanyID = [SAL_OrderDetail].[CompanyID] and PeriodID = [SAL_OrderDetail].[PeriodID] 
+            AND SAL_DeliveryOrderDetail.SalesOrderDetailID = SAL_OrderDetail.OrderDetailID
+    ), 0) as RemainingQTY,
+
+ISNULL([SAL_OrderDetail].[Quantity], 0) - ISNULL(
+    (
+        select SUM([SAL_DeliveryOrderDetail].Quantity) from SAL_DeliveryOrderDetail 
+        where SalesOrderHeaderID = @OrderID AND CompanyID = [SAL_OrderDetail].[CompanyID] and PeriodID = [SAL_OrderDetail].[PeriodID] 
+            AND SAL_DeliveryOrderDetail.SalesOrderDetailID = SAL_OrderDetail.OrderDetailID
+    ), 0) as ValidateQuantity,
+
+ISNULL([SAL_OrderDetail].[Quantity], 0) - ISNULL( 
+ (
+        select SUM([SAL_DeliveryOrderDetail].Quantity) from SAL_DeliveryOrderDetail 
+        where SalesOrderHeaderID = @OrderID AND CompanyID = [SAL_OrderDetail].[CompanyID] and PeriodID = [SAL_OrderDetail].[PeriodID] 
+            AND SAL_DeliveryOrderDetail.SalesOrderDetailID = SAL_OrderDetail.OrderDetailID
+    ), 0) as DOQTY,
+ ISNULL([SAL_OrderDetail].[Rate],0) * 
+ convert(decimal,isnull([INV_Item].[UnitWeight],0)) *
+    (ISNULL([SAL_OrderDetail].[Quantity], 0) - ISNULL(
+    (
+        select SUM([SAL_DeliveryOrderDetail].Quantity) from SAL_DeliveryOrderDetail 
+        where SalesOrderHeaderID = @OrderID AND CompanyID = [SAL_OrderDetail].[CompanyID] and PeriodID = [SAL_OrderDetail].[PeriodID] 
+            AND SAL_DeliveryOrderDetail.SalesOrderDetailID = SAL_OrderDetail.OrderDetailID
+    ), 0)) AS TotalAmount,
+    '' [Action],case when [SAL_OrderDetail].[SalesTaxAmount] IS Not null then isnull([SAL_OrderDetail].[GrossAmount] * [SAL_OrderDetail].[SalesTaxAmount],1)/100  else 0 end as SalesTaxAmountA,
+	[SAL_OrderDetail].[FEDFixRate], [SAL_OrderDetail].[FEDFixAmount]
+FROM [SAL_OrderDetail] 
+    INNER JOIN [INV_SET_Category] ON [INV_SET_Category].[CategoryID] = [SAL_OrderDetail].[ItemCategoryID] 
+        --AND [INV_SET_Category].[CompanyID] = [SAL_OrderDetail].[CompanyID] 
+        AND [INV_SET_Category].[Status] = 1 
+    INNER JOIN [INV_Item] ON [INV_Item].[ItemID] = [SAL_OrderDetail].[ItemID] 
+    --AND [INV_Item].[CompanyID] = [SAL_OrderDetail].[CompanyID] 
+    AND [INV_Item].[Status] = 1 
+    INNER JOIN [SET_UnitofMeasure] ON [SET_UnitofMeasure].[UOMID] = [SAL_OrderDetail].[ItemUnitID] AND [SET_UnitofMeasure].[Status] = 1 
+LEFT JOIN [SET_Color] ON [SET_Color].[ColorID] = [SAL_OrderDetail].[ColorID] AND [SET_Color].[Status] = 1
+WHERE [SAL_OrderDetail].[OrderID] = @OrderID and [SAL_OrderDetail].[CompanyID] = @CompanyID and [SAL_OrderDetail].[PeriodID] = @PeriodID 
+    and [SAL_OrderDetail].[Status] = 1 
+ORDER BY [SAL_OrderDetail].[SerialNo]</value>
+  </data>
+  <data name="Qurey_GetItemTrackingReport" xml:space="preserve">
+    <value>-----------------------WO----------------------------------            
+select WorkOrderCreation_Header.DocumentNo as WODocNo,WorkOrderCreation_Header.DocumentDate as WODocumentDate,INV_Item.Description,
+isnull(sum(WorkOrderCreation_Header.Quantity),0)+isnull(sum(WorkOrderCreation_Detail.Quantity),0) as WOQuantity
+,INV_Item.InventoryItemStatusCode,INV_Item.ItemID
+from WorkOrderCreation_Header
+
+inner join WorkOrderCreation_Detail on WorkOrderCreation_Detail.WOC_HeaderID = WorkOrderCreation_Header.WOC_HeaderID
+and WorkOrderCreation_Detail.CompanyID = WorkOrderCreation_Header.CompanyID
+and WorkOrderCreation_Detail.Status = 1
+
+inner join INV_Item on INV_Item.ItemID = WorkOrderCreation_Detail.ItemID
+and INV_Item.Status = 1
+{0}
+group by INV_Item.ItemID,INV_Item.Description,
+WorkOrderCreation_Header.DocumentNo,WorkOrderCreation_Header.DocumentDate,INV_Item.InventoryItemStatusCode
+
+-------------------------------FG-----------------------------
+
+select INV_StockTransactionHeader.DocumentNo as FGDocNo,INV_StockTransactionHeader.DocumentDate as FGDocDate,
+isnull(sum(INV_StockTransactionDetail.PrimaryQuantity),0) as FGQuantity,INV_StockTransactionDetail.ItemID,
+INV_Item.InventoryItemStatusCode,INV_Item.Description
+from INV_StockTransactionHeader
+
+INNER JOIN [SET_DocumentType] ON [SET_DocumentType].[DocumentTypeID] = [INV_StockTransactionHeader].[DocumentTypeID] 
+AND [SET_DocumentType].[PeriodID] = [INV_StockTransactionHeader].[PeriodID] 
+AND [SET_DocumentType].[CompanyID] = [INV_StockTransactionHeader].[CompanyID] 
+and [SET_DocumentType].DocumentType like '%Work Order%'
+AND [SET_DocumentType].[Status] = 1 
+
+INNER JOIN INV_StockTransactionDetail on INV_StockTransactionDetail.StockTransactionID = INV_StockTransactionHeader.StockTransactionID 
+AND INV_StockTransactionDetail.CompanyID = INV_StockTransactionHeader.CompanyID 
+AND INV_StockTransactionDetail.PeriodID = INV_StockTransactionHeader.PeriodID 
+and INV_StockTransactionDetail.Status= 1
+
+inner join INV_Item on INV_Item.ItemID = INV_StockTransactionDetail.ItemID
+and INV_Item.Status = 1
+{0}
+group by INV_StockTransactionHeader.DocumentNo,INV_StockTransactionHeader.DocumentDate,
+INV_StockTransactionDetail.ItemID,INV_Item.InventoryItemStatusCode,INV_Item.Description
+---------------------------------SO-----------------------------
+Select SAL_OrderHeader.ContractNo as SONo,
+Sal_DeliveryOrderHeader.DeliveryOrderNo,
+SAL_DispatchHeader.DispatchNo,
+INV_Item.Description, 	    
+SAL_DeliveryOrderDetail.Quantity as DOQuantity,
+SAL_OrderDetail.Quantity as SOQuantity,
+abs(INV_StockTransactionDetail.TransactionQuantity) As DispatchQuantity ,
+SAL_DispatchHeader.DispatchDate,Sal_DeliveryOrderHeader.DODate,    
+SAL_OrderHeader.ContractDate,INV_Item.InventoryItemStatusCode,INV_Item.ItemID
+
+FROM SAL_DispatchHeader 
+
+INNER JOIN INV_StockTransactionHeader StockHeader ON StockHeader.DocumentTypeID = SAL_DispatchHeader.DocumentTypeID 
+AND StockHeader.DocumentNo = SAL_DispatchHeader.DispatchNo AND StockHeader.CompanyID = SAL_DispatchHeader.CompanyID 
+AND StockHeader.PeriodID = SAL_DispatchHeader.PeriodID AND StockHeader.Status = 1 
+
+INNER JOIN INV_StockTransactionDetail ON INV_StockTransactionDetail.StockTransactionID = StockHeader.StockTransactionID 
+AND INV_StockTransactionDetail.CompanyID = StockHeader.CompanyID AND INV_StockTransactionDetail.PeriodID = StockHeader.PeriodID 
+AND INV_StockTransactionDetail.Status = 1 
+
+INNER JOIN Sal_DeliveryOrderDetail on Sal_DeliveryOrderDetail.DOHeaderID = INV_StockTransactionDetail.SourceHeaderID 
+And Sal_DeliveryOrderDetail.DODetailID = INV_StockTransactionDetail.SourceLineID 
+AND Sal_DeliveryOrderDetail.CompanyID = INV_StockTransactionDetail.CompanyID AND Sal_DeliveryOrderDetail.PeriodID = INV_StockTransactionDetail.PeriodID 
+
+INNER JOIN Sal_DeliveryOrderHeader On Sal_DeliveryOrderHeader.CompanyID = SAL_DeliveryOrderDetail.CompanyID And Sal_DeliveryOrderHeader.PeriodID = SAL_DeliveryOrderDetail.PeriodID 
+And Sal_DeliveryOrderHeader.DeliveryOrderID = SAL_DeliveryOrderDetail.DOHeaderID 
+
+INNER join SAL_OrderDetail On SAL_DeliveryOrderDetail.CompanyID = SAL_OrderDetail.CompanyID And SAL_DeliveryOrderDetail.PeriodID = SAL_OrderDetail.PeriodID 
+And SAL_DeliveryOrderDetail.SalesOrderHeaderID = SAL_OrderDetail.OrderID And SAL_DeliveryOrderDetail.SalesOrderDetailID = SAL_OrderDetail.OrderDetailID 
+
+INNER Join SAL_OrderHeader ON SAL_OrderHeader.OrderID = SAL_OrderDetail.OrderId AND SAL_OrderHeader.CompanyID = SAL_OrderDetail.CompanyID 
+AND SAL_OrderHeader.PeriodID = SAL_OrderDetail.PeriodID AND SAL_OrderHeader.Status = 1 
+
+INNER JOIN INV_Item ON INV_Item.ItemID = SAL_OrderDetail.ItemID 
+and INV_Item.Status = 1
+{0}</value>
+  </data>
+</root>

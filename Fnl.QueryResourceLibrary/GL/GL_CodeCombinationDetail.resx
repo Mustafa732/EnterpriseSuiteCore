@@ -1,0 +1,2989 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="QueryTrailbalanceNetOFF" xml:space="preserve">
+    <value>SELECT 
+    len(Tab_COA_Tran1.CodeCombinationID) SegmentLength,
+    (case when len(Tab_COA_Tran1.CodeCombinationID)=1 then 1
+    when len(Tab_COA_Tran1.CodeCombinationID)=4 then 2
+    when len(Tab_COA_Tran1.CodeCombinationID)=7 then 3
+    when len(Tab_COA_Tran1.CodeCombinationID)=10 then 4
+    when len(Tab_COA_Tran1.CodeCombinationID)=13 then 5
+    when len(Tab_COA_Tran1.CodeCombinationID)=18 then 6  end ) SegmentNo,
+    Tab_COA_Tran1.CodeCombinationID, GL_CodeCombinationDetail.HeadAccountCode, GL_CodeCombinationDetail.Description, 
+	GL_CodeCombinationDetail.SummaryFlag, case GL_CodeCombinationDetail.DetailPostingAllowedFlag when 1 
+		then 
+			case 
+				when (SUM(OpeningCredit) &gt; SUM(OpeningDebit) and SUM(OpeningCredit) &lt;&gt; SUM(OpeningDebit))
+				then SUM(OpeningCredit) -  SUM(OpeningDebit) 
+				else 0 end 
+		else SUM(OpeningCredit) 
+		end as OpeningCredit, 
+	case GL_CodeCombinationDetail.DetailPostingAllowedFlag when 1 
+		then 
+			case when (SUM(OpeningCredit) &gt; SUM(OpeningDebit) and SUM(OpeningCredit) &lt;&gt; SUM(OpeningDebit)) 
+				then 0 
+				else 
+					case when (SUM(OpeningCredit) &lt; SUM(OpeningDebit) and SUM(OpeningCredit) &lt;&gt; SUM(OpeningDebit)) 
+					then SUM(OpeningDebit) - SUM(OpeningCredit) 
+					else 0 end 
+			end
+		else SUM(OpeningDebit) 
+		end as OpeningDebit, 
+	case GL_CodeCombinationDetail.DetailPostingAllowedFlag when 1 
+		then 
+			case when ((sum(OpeningCredit) + SUM(Credit)) &gt; (sum(OpeningDebit) + SUM(Debit)) 
+					and (sum(OpeningCredit) + SUM(Credit)) &lt;&gt; (sum(OpeningDebit) + SUM(Debit))) 
+				then (sum(OpeningCredit) + SUM(Credit)) - (sum(OpeningDebit) + SUM(Debit)) 
+				else 0 end 
+		else sum(OpeningCredit) + SUM(Credit) 
+		end ClosingCredit, 
+	case GL_CodeCombinationDetail.DetailPostingAllowedFlag when 1 
+		then 
+			case when ((sum(OpeningCredit) + SUM(Credit)) &gt; (sum(OpeningDebit) + SUM(Debit)) 
+					and (sum(OpeningCredit) + SUM(Credit)) &lt;&gt; (sum(OpeningDebit) + SUM(Debit))) 
+				then 0 
+				else 
+					case when ((sum(OpeningCredit) + SUM(Credit)) &lt; (sum(OpeningDebit) + SUM(Debit)) 
+							and (sum(OpeningCredit) + SUM(Credit)) &lt;&gt; (sum(OpeningDebit) + SUM(Debit))) 
+						then (sum(OpeningDebit) + SUM(Debit)) - (sum(OpeningCredit) + SUM(Credit))  
+						else 0 end 
+				end 
+		else (sum(OpeningDebit) + SUM(Debit)) 
+		end as ClosingDebit, 
+		SUM(OpeningDebit) as _OpeningDebit, SUM(OpeningCredit) as _OpeningCredit, SUM(Debit) AS Debit, SUM(Credit) AS Credit, 
+		sum(OpeningDebit) + SUM(Debit) as _ClosingDebit, sum(OpeningCredit) + SUM(Credit) as _ClosingCredit, Tab_COA_Tran1.ChartOfAccountID, 
+		GL_CodeCombinationDetail.AccountTypeID, GL_CodeCombinationDetail.DetailPostingAllowedFlag 
+		
+FROM
+(
+    SELECT GL_CodeCombinationDetail.CompanyID, GL_CodeCombinationDetail.ChartOfAccountID, GL_CodeCombinationDetail.CodeCombinationID, 0 As OpeningDebit, 
+        0 As OpeningCredit, 0 AS Debit, 0 AS Credit 
+    FROM GL_CodeCombinationDetail 
+    WHERE GL_CodeCombinationDetail.ChartOfAccountID = @ChartofAccountID AND GL_CodeCombinationDetail.Status = 1 
+        AND GL_CodeCombinationDetail.IsActive = 1
+                
+    UNION ALL
+
+    SELECT GL_TransactionDetail.CompanyID, GL_TransactionDetail.ChartOfAccountID, GL_TransactionDetail.CodeCombinationID, 
+        (CASE WHEN GL_TransactionDetail.TransactionType = 'Debit' THEN GL_TransactionDetail.Amount ELSE 0 END) AS OpeningDebit, 
+        (CASE WHEN GL_TransactionDetail.TransactionType = 'Credit' THEN GL_TransactionDetail.Amount ELSE 0 END) AS OpeningCredit, 0 As Debit, 0 As Credit 
+    FROM GL_TransactionHeader 
+        INNER JOIN GL_TransactionDetail ON GL_TransactionHeader.CompanyID = GL_TransactionDetail.CompanyID 
+            AND GL_TransactionHeader.PeriodID = GL_TransactionDetail.PeriodID AND GL_TransactionHeader.TransactionID = GL_TransactionDetail.TransactionID 
+        INNER JOIN SET_DocumentType  ON GL_TransactionHeader.CompanyID = SET_DocumentType.CompanyID AND
+        GL_TransactionHeader.PeriodID = SET_DocumentType.PeriodID AND
+        GL_TransactionHeader.DocumentTypeID = SET_DocumentType.DocumentTypeID 
+		{2} 
+    WHERE GL_TransactionDetail.CompanyID in @CompanyID AND GL_TransactionDetail.ChartOfAccountID = @ChartofAccountID AND GL_TransactionDetail.PeriodID = @PeriodID 
+        AND GL_TransactionHeader.Status = 1 AND GL_TransactionDetail.Status = 1 AND convert(date, GL_TransactionHeader.DocumentDate) &lt; @FromDate 
+        AND GL_TransactionHeader.StatusCode = 1 And (GL_TransactionDetail.CostCenterID = @cc Or @cc is null) 
+        And (GL_TransactionDetail.DepartmentID = @did Or @did is null)
+        {1}
+        {WithoutClosing}
+    UNION ALL
+    
+    SELECT GL_TransactionDetail.CompanyID, GL_TransactionDetail.ChartOfAccountID, GL_TransactionDetail.CodeCombinationID, 0 As OpeningDebit, 0 As OpeningCredit, 
+        (CASE WHEN GL_TransactionDetail.TransactionType = 'Debit' THEN GL_TransactionDetail.Amount ELSE 0 END) AS Debit, 
+        (CASE WHEN GL_TransactionDetail.TransactionType = 'Credit' THEN GL_TransactionDetail.Amount ELSE 0 END) AS Credit 
+    FROM GL_TransactionHeader 
+        INNER JOIN GL_TransactionDetail ON GL_TransactionHeader.CompanyID = GL_TransactionDetail.CompanyID 
+            AND GL_TransactionHeader.PeriodID = GL_TransactionDetail.PeriodID AND GL_TransactionHeader.TransactionID = GL_TransactionDetail.TransactionID 
+        INNER JOIN SET_DocumentType  ON GL_TransactionHeader.CompanyID = SET_DocumentType.CompanyID AND
+        GL_TransactionHeader.PeriodID = SET_DocumentType.PeriodID AND
+        GL_TransactionHeader.DocumentTypeID = SET_DocumentType.DocumentTypeID 
+		{2} 
+    WHERE GL_TransactionDetail.CompanyID in @CompanyID AND GL_TransactionDetail.ChartOfAccountID = @ChartofAccountID AND GL_TransactionDetail.PeriodID = @PeriodID 
+        AND GL_TransactionHeader.Status = 1 AND GL_TransactionDetail.Status = 1 AND convert(date,GL_TransactionHeader.DocumentDate) between @FromDate  AND @ToDate 
+		AND GL_TransactionHeader.StatusCode = 1 And (GL_TransactionDetail.CostCenterID = @cc Or @cc is null) 
+        And (GL_TransactionDetail.DepartmentID = @did Or @did is null
+        )
+        {1}
+        {WithoutClosing}
+    --    Group By GL_TransactionHeader.DocumentNo, GL_TransactionDetail.CodeCombinationID, GL_TransactionHeader.DocumentDate, 
+    --GL_TransactionHeader.Narration, 
+    --GL_TransactionDetail.Amount, GL_TransactionDetail.TransactionType, SET_DocumentType.DocumentType, 
+    --GL_TransactionDetail.SerialNo,GL_TransactionDetail.Narration, GL_TransactionDetail.SerialNo ,GL_TransactionDetail.CompanyID
+    --,GL_TransactionDetail.ChartOfAccountID
+        
+) Tab_COA_Tran1 
+inner join SET_OperatingUnit on SET_OperatingUnit.OperatingUnitId = Tab_COA_Tran1.CompanyID
+    INNER JOIN GL_CodeCombinationDetail ON Tab_COA_Tran1.ChartOfAccountID = GL_CodeCombinationDetail.ChartOfAccountID 
+        AND Tab_COA_Tran1.CodeCombinationID = GL_CodeCombinationDetail.CodeCombinationID 
+where GL_CodeCombinationDetail.Status = 1 AND GL_CodeCombinationDetail.IsActive = 1 
+    AND (GL_CodeCombinationDetail.DetailPostingAllowedFlag = @DetailPostingAllowedFlag OR @DetailPostingAllowedFlag IS NULL) 
+	{AccountCodeFilter}
+GROUP BY GL_CodeCombinationDetail.Status,GL_CodeCombinationDetail.IsActive,Tab_COA_Tran1.ChartOfAccountID, GL_CodeCombinationDetail.HeadAccountCode, Tab_COA_Tran1.CodeCombinationID, 
+    GL_CodeCombinationDetail.SummaryFlag, GL_CodeCombinationDetail.Description, GL_CodeCombinationDetail.AccountTypeID, 
+    GL_CodeCombinationDetail.DetailPostingAllowedFlag</value>
+  </data>
+  <data name="QueryTrailbalanceNetOFF_HSM" xml:space="preserve">
+    <value>SELECT 
+    len(Tab_COA_Tran1.CodeCombinationID) SegmentLength,
+    (case when len(Tab_COA_Tran1.CodeCombinationID)=1 then 1
+    when len(Tab_COA_Tran1.CodeCombinationID)=4 then 2
+    when len(Tab_COA_Tran1.CodeCombinationID)=7 then 3
+    when len(Tab_COA_Tran1.CodeCombinationID)=10 then 4
+    when len(Tab_COA_Tran1.CodeCombinationID)=13 then 5
+    when len(Tab_COA_Tran1.CodeCombinationID)=18 then 6  end ) SegmentNo,
+    TRIM(Tab_COA_Tran1.CodeCombinationID) AS CodeCombinationID, TRIM(ISNULL(GL_CodeCombinationDetail.HeadAccountCode, '-')) AS HeadAccountCode, GL_CodeCombinationDetail.Description, 
+	GL_CodeCombinationDetail.SummaryFlag, CASE GL_CodeCombinationDetail.DetailPostingAllowedFlag 
+    WHEN 1 THEN 
+        CASE 
+            WHEN (SUM(OpeningCredit) &gt; SUM(OpeningDebit) AND SUM(OpeningCredit) &lt;&gt; SUM(OpeningDebit)) THEN 
+                CASE 
+                    WHEN ROUND(SUM(OpeningCredit) - SUM(OpeningDebit), 2) = 0 THEN 0
+                    ELSE SUM(OpeningCredit) - SUM(OpeningDebit)
+                END
+            ELSE 0 
+        END 
+    ELSE SUM(OpeningCredit) 
+END AS OpeningCredit,
+	CASE GL_CodeCombinationDetail.DetailPostingAllowedFlag 
+    WHEN 1 THEN 
+        CASE 
+            WHEN (SUM(OpeningCredit) &gt; SUM(OpeningDebit) AND SUM(OpeningCredit) &lt;&gt; SUM(OpeningDebit)) THEN 0 
+            ELSE 
+                CASE 
+                    WHEN (SUM(OpeningCredit) &lt; SUM(OpeningDebit) AND SUM(OpeningCredit) &lt;&gt; SUM(OpeningDebit)) THEN 
+                        CASE 
+                            WHEN ROUND(SUM(OpeningDebit) - SUM(OpeningCredit), 2) = 0 THEN 0 
+                            ELSE SUM(OpeningDebit) - SUM(OpeningCredit) 
+                        END
+                    ELSE 0 
+                END 
+        END 
+    ELSE SUM(OpeningDebit) 
+END AS OpeningDebit,
+	CASE GL_CodeCombinationDetail.DetailPostingAllowedFlag 
+    WHEN 1 THEN 
+        CASE 
+            WHEN ((SUM(OpeningCredit) + SUM(Credit)) &gt; (SUM(OpeningDebit) + SUM(Debit)) 
+                  AND (SUM(OpeningCredit) + SUM(Credit)) &lt;&gt; (SUM(OpeningDebit) + SUM(Debit))) 
+            THEN 
+                CASE 
+                    WHEN ROUND((SUM(OpeningCredit) + SUM(Credit)) - (SUM(OpeningDebit) + SUM(Debit)), 2) = 0 
+                    THEN 0 
+                    ELSE (SUM(OpeningCredit) + SUM(Credit)) - (SUM(OpeningDebit) + SUM(Debit)) 
+                END 
+            ELSE 0 
+        END 
+    ELSE SUM(OpeningCredit) + SUM(Credit) 
+END AS ClosingCredit,
+	CASE GL_CodeCombinationDetail.DetailPostingAllowedFlag 
+    WHEN 1 THEN 
+        CASE 
+            WHEN ((SUM(OpeningCredit) + SUM(Credit)) &gt; (SUM(OpeningDebit) + SUM(Debit)) 
+                  AND (SUM(OpeningCredit) + SUM(Credit)) &lt;&gt; (SUM(OpeningDebit) + SUM(Debit))) 
+            THEN 0 
+            ELSE 
+                CASE 
+                    WHEN ((SUM(OpeningCredit) + SUM(Credit)) &lt; (SUM(OpeningDebit) + SUM(Debit)) 
+                          AND (SUM(OpeningCredit) + SUM(Credit)) &lt;&gt; (SUM(OpeningDebit) + SUM(Debit))) 
+                    THEN 
+                        CASE 
+                            WHEN ROUND((SUM(OpeningDebit) + SUM(Debit)) - (SUM(OpeningCredit) + SUM(Credit)), 2) = 0 
+                            THEN 0 
+                            ELSE (SUM(OpeningDebit) + SUM(Debit)) - (SUM(OpeningCredit) + SUM(Credit)) 
+                        END
+                    ELSE 0 
+                END 
+        END 
+    ELSE (SUM(OpeningDebit) + SUM(Debit)) 
+END AS ClosingDebit,
+		SUM(OpeningDebit) as _OpeningDebit, SUM(OpeningCredit) as _OpeningCredit, SUM(Debit) AS Debit, SUM(Credit) AS Credit, 
+		sum(OpeningDebit) + SUM(Debit) as _ClosingDebit, sum(OpeningCredit) + SUM(Credit) as _ClosingCredit, Tab_COA_Tran1.ChartOfAccountID, 
+		GL_CodeCombinationDetail.AccountTypeID, GL_CodeCombinationDetail.DetailPostingAllowedFlag 
+		
+FROM
+(
+    SELECT GL_CodeCombinationDetail.CompanyID, GL_CodeCombinationDetail.ChartOfAccountID, GL_CodeCombinationDetail.CodeCombinationID, 0 As OpeningDebit, 
+        0 As OpeningCredit, 0 AS Debit, 0 AS Credit 
+    FROM GL_CodeCombinationDetail 
+    WHERE GL_CodeCombinationDetail.ChartOfAccountID = @ChartofAccountID AND GL_CodeCombinationDetail.Status = 1 
+        AND GL_CodeCombinationDetail.IsActive = 1
+                
+    UNION ALL
+
+    SELECT GL_TransactionDetail.CompanyID, GL_TransactionDetail.ChartOfAccountID, GL_TransactionDetail.CodeCombinationID, 
+        (CASE WHEN GL_TransactionDetail.TransactionType = 'Debit' THEN GL_TransactionDetail.Amount ELSE 0 END) AS OpeningDebit, 
+        (CASE WHEN GL_TransactionDetail.TransactionType = 'Credit' THEN GL_TransactionDetail.Amount ELSE 0 END) AS OpeningCredit, 0 As Debit, 0 As Credit 
+    FROM GL_TransactionHeader 
+        INNER JOIN GL_TransactionDetail ON GL_TransactionHeader.CompanyID = GL_TransactionDetail.CompanyID 
+            AND GL_TransactionHeader.PeriodID = GL_TransactionDetail.PeriodID AND GL_TransactionHeader.TransactionID = GL_TransactionDetail.TransactionID 
+        INNER JOIN SET_DocumentType  ON GL_TransactionHeader.CompanyID = SET_DocumentType.CompanyID AND
+        GL_TransactionHeader.PeriodID = SET_DocumentType.PeriodID AND
+        GL_TransactionHeader.DocumentTypeID = SET_DocumentType.DocumentTypeID 
+		{2} 
+    WHERE GL_TransactionDetail.CompanyID in @CompanyID AND GL_TransactionDetail.ChartOfAccountID = @ChartofAccountID AND GL_TransactionDetail.PeriodID = @PeriodID 
+        AND GL_TransactionHeader.Status = 1 AND GL_TransactionDetail.Status = 1 AND convert(date, GL_TransactionHeader.DocumentDate) &lt; @FromDate 
+        AND GL_TransactionHeader.StatusCode = 1 And (GL_TransactionDetail.CostCenterID = @cc Or @cc is null) 
+        And (GL_TransactionDetail.DepartmentID = @did Or @did is null)
+        {1}
+        {WithoutClosing}
+    UNION ALL
+    
+    SELECT GL_TransactionDetail.CompanyID, GL_TransactionDetail.ChartOfAccountID, GL_TransactionDetail.CodeCombinationID, 0 As OpeningDebit, 0 As OpeningCredit, 
+        (CASE WHEN GL_TransactionDetail.TransactionType = 'Debit' THEN GL_TransactionDetail.Amount ELSE 0 END) AS Debit, 
+        (CASE WHEN GL_TransactionDetail.TransactionType = 'Credit' THEN GL_TransactionDetail.Amount ELSE 0 END) AS Credit 
+    FROM GL_TransactionHeader 
+        INNER JOIN GL_TransactionDetail ON GL_TransactionHeader.CompanyID = GL_TransactionDetail.CompanyID 
+            AND GL_TransactionHeader.PeriodID = GL_TransactionDetail.PeriodID AND GL_TransactionHeader.TransactionID = GL_TransactionDetail.TransactionID 
+        INNER JOIN SET_DocumentType  ON GL_TransactionHeader.CompanyID = SET_DocumentType.CompanyID AND
+        GL_TransactionHeader.PeriodID = SET_DocumentType.PeriodID AND
+        GL_TransactionHeader.DocumentTypeID = SET_DocumentType.DocumentTypeID 
+		{2} 
+    WHERE GL_TransactionDetail.CompanyID in @CompanyID AND GL_TransactionDetail.ChartOfAccountID = @ChartofAccountID AND GL_TransactionDetail.PeriodID = @PeriodID 
+        AND GL_TransactionHeader.Status = 1 AND GL_TransactionDetail.Status = 1 AND convert(date,GL_TransactionHeader.DocumentDate) between @FromDate  AND @ToDate 
+		AND GL_TransactionHeader.StatusCode = 1 And (GL_TransactionDetail.CostCenterID = @cc Or @cc is null) 
+        And (GL_TransactionDetail.DepartmentID = @did Or @did is null
+        )
+        {1}
+        {WithoutClosing}
+    --    Group By GL_TransactionHeader.DocumentNo, GL_TransactionDetail.CodeCombinationID, GL_TransactionHeader.DocumentDate, 
+    --GL_TransactionHeader.Narration, 
+    --GL_TransactionDetail.Amount, GL_TransactionDetail.TransactionType, SET_DocumentType.DocumentType, 
+    --GL_TransactionDetail.SerialNo,GL_TransactionDetail.Narration, GL_TransactionDetail.SerialNo ,GL_TransactionDetail.CompanyID
+    --,GL_TransactionDetail.ChartOfAccountID
+        
+) Tab_COA_Tran1 
+inner join SET_OperatingUnit on SET_OperatingUnit.OperatingUnitId = Tab_COA_Tran1.CompanyID
+    INNER JOIN GL_CodeCombinationDetail ON Tab_COA_Tran1.ChartOfAccountID = GL_CodeCombinationDetail.ChartOfAccountID 
+        AND Tab_COA_Tran1.CodeCombinationID = GL_CodeCombinationDetail.CodeCombinationID 
+where GL_CodeCombinationDetail.Status = 1 AND GL_CodeCombinationDetail.IsActive = 1 
+    AND (GL_CodeCombinationDetail.DetailPostingAllowedFlag = @DetailPostingAllowedFlag OR @DetailPostingAllowedFlag IS NULL) 
+	{AccountCodeFilter}
+GROUP BY GL_CodeCombinationDetail.Status,GL_CodeCombinationDetail.IsActive,Tab_COA_Tran1.ChartOfAccountID, GL_CodeCombinationDetail.HeadAccountCode, Tab_COA_Tran1.CodeCombinationID, 
+    GL_CodeCombinationDetail.SummaryFlag, GL_CodeCombinationDetail.Description, GL_CodeCombinationDetail.AccountTypeID, 
+    GL_CodeCombinationDetail.DetailPostingAllowedFlag</value>
+  </data>
+  <data name="QueryTrailbalanceNetOFF_SegmentWise" xml:space="preserve">
+    <value>SELECT 
+    len(Tab_COA_Tran1.CodeCombinationID) SegmentLength,
+    (case when len(Tab_COA_Tran1.CodeCombinationID)=1 then 1
+    when len(Tab_COA_Tran1.CodeCombinationID)=4 then 2
+    when len(Tab_COA_Tran1.CodeCombinationID)=7 then 3
+    when len(Tab_COA_Tran1.CodeCombinationID)=10 then 4
+    when len(Tab_COA_Tran1.CodeCombinationID)=13 then 5
+    when len(Tab_COA_Tran1.CodeCombinationID)=18 then 6  end ) SegmentNo,
+    Tab_COA_Tran1.CodeCombinationID, GL_CodeCombinationDetail.HeadAccountCode, GL_CodeCombinationDetail.Description, 
+	GL_CodeCombinationDetail.SummaryFlag, case GL_CodeCombinationDetail.DetailPostingAllowedFlag when 1 
+		then 
+			case 
+				when (SUM(OpeningCredit) &gt; SUM(OpeningDebit) and SUM(OpeningCredit) &lt;&gt; SUM(OpeningDebit))
+				then SUM(OpeningCredit) -  SUM(OpeningDebit) 
+				else 0 end 
+		else SUM(OpeningCredit) 
+		end as OpeningCredit, 
+	case GL_CodeCombinationDetail.DetailPostingAllowedFlag when 1 
+		then 
+			case when (SUM(OpeningCredit) &gt; SUM(OpeningDebit) and SUM(OpeningCredit) &lt;&gt; SUM(OpeningDebit)) 
+				then 0 
+				else 
+					case when (SUM(OpeningCredit) &lt; SUM(OpeningDebit) and SUM(OpeningCredit) &lt;&gt; SUM(OpeningDebit)) 
+					then SUM(OpeningDebit) - SUM(OpeningCredit) 
+					else 0 end 
+			end
+		else SUM(OpeningDebit) 
+		end as OpeningDebit, 
+	case GL_CodeCombinationDetail.DetailPostingAllowedFlag when 1 
+		then 
+			case when ((sum(OpeningCredit) + SUM(Credit)) &gt; (sum(OpeningDebit) + SUM(Debit)) 
+					and (sum(OpeningCredit) + SUM(Credit)) &lt;&gt; (sum(OpeningDebit) + SUM(Debit))) 
+				then (sum(OpeningCredit) + SUM(Credit)) - (sum(OpeningDebit) + SUM(Debit)) 
+				else 0 end 
+		else sum(OpeningCredit) + SUM(Credit) 
+		end ClosingCredit, 
+	case GL_CodeCombinationDetail.DetailPostingAllowedFlag when 1 
+		then 
+			case when ((sum(OpeningCredit) + SUM(Credit)) &gt; (sum(OpeningDebit) + SUM(Debit)) 
+					and (sum(OpeningCredit) + SUM(Credit)) &lt;&gt; (sum(OpeningDebit) + SUM(Debit))) 
+				then 0 
+				else 
+					case when ((sum(OpeningCredit) + SUM(Credit)) &lt; (sum(OpeningDebit) + SUM(Debit)) 
+							and (sum(OpeningCredit) + SUM(Credit)) &lt;&gt; (sum(OpeningDebit) + SUM(Debit))) 
+						then (sum(OpeningDebit) + SUM(Debit)) - (sum(OpeningCredit) + SUM(Credit))  
+						else 0 end 
+				end 
+		else (sum(OpeningDebit) + SUM(Debit)) 
+		end as ClosingDebit, 
+		SUM(OpeningDebit) as _OpeningDebit, SUM(OpeningCredit) as _OpeningCredit, SUM(Debit) AS Debit, SUM(Credit) AS Credit, 
+		sum(OpeningDebit) + SUM(Debit) as _ClosingDebit, sum(OpeningCredit) + SUM(Credit) as _ClosingCredit, Tab_COA_Tran1.ChartOfAccountID, 
+		GL_CodeCombinationDetail.AccountTypeID, GL_CodeCombinationDetail.DetailPostingAllowedFlag 
+		,SET_OperatingUnit.OperatingUnitName,SET_OperatingUnit.OperatingUnitId
+		,case when (SET_AccountType.AccountTypeName like '%Assets%' or SET_AccountType.AccountTypeName like '%Liability%' or SET_AccountType.AccountTypeName like '%Capital%' )
+		then 0 else 1 end as GroupID
+
+		,(case GL_CodeCombinationDetail.DetailPostingAllowedFlag when 1 
+		then 
+			case when ((sum(OpeningCredit) + SUM(Credit)) &gt; (sum(OpeningDebit) + SUM(Debit)) 
+					and (sum(OpeningCredit) + SUM(Credit)) &lt;&gt; (sum(OpeningDebit) + SUM(Debit))) 
+				then 0 
+				else 
+					case when ((sum(OpeningCredit) + SUM(Credit)) &lt; (sum(OpeningDebit) + SUM(Debit)) 
+							and (sum(OpeningCredit) + SUM(Credit)) &lt;&gt; (sum(OpeningDebit) + SUM(Debit))) 
+						then (sum(OpeningDebit) + SUM(Debit)) - (sum(OpeningCredit) + SUM(Credit))  
+						else 0 end 
+				end 
+		else (sum(OpeningDebit) + SUM(Debit)) 
+		end)
+		-
+		(case GL_CodeCombinationDetail.DetailPostingAllowedFlag when 1 
+		then 
+			case when ((sum(OpeningCredit) + SUM(Credit)) &gt; (sum(OpeningDebit) + SUM(Debit)) 
+					and (sum(OpeningCredit) + SUM(Credit)) &lt;&gt; (sum(OpeningDebit) + SUM(Debit))) 
+				then (sum(OpeningCredit) + SUM(Credit)) - (sum(OpeningDebit) + SUM(Debit)) 
+				else 0 end 
+		else sum(OpeningCredit) + SUM(Credit) 
+		end) as ClosingBalance 
+FROM
+(
+    SELECT set_OperatingUnit.OperatingUnitId as CompanyID, GL_CodeCombinationDetail.ChartOfAccountID, GL_CodeCombinationDetail.CodeCombinationID, 0 As OpeningDebit, 
+        0 As OpeningCredit, 0 AS Debit, 0 AS Credit 
+    FROM GL_CodeCombinationDetail 
+	left join set_OperatingUnit on set_OperatingUnit.BusinessId = 1
+    WHERE GL_CodeCombinationDetail.ChartOfAccountID = @ChartofAccountID AND GL_CodeCombinationDetail.Status = 1 
+        AND GL_CodeCombinationDetail.IsActive = 1
+		and set_OperatingUnit.OperatingUnitId  in @CompanyID
+                
+    UNION ALL
+
+    SELECT GL_TransactionDetail.CompanyID, GL_TransactionDetail.ChartOfAccountID, GL_TransactionDetail.CodeCombinationID, 
+        (CASE WHEN GL_TransactionDetail.TransactionType = 'Debit' THEN GL_TransactionDetail.Amount ELSE 0 END) AS OpeningDebit, 
+        (CASE WHEN GL_TransactionDetail.TransactionType = 'Credit' THEN GL_TransactionDetail.Amount ELSE 0 END) AS OpeningCredit, 0 As Debit, 0 As Credit 
+    FROM GL_TransactionHeader 
+        INNER JOIN GL_TransactionDetail ON GL_TransactionHeader.CompanyID = GL_TransactionDetail.CompanyID 
+            AND GL_TransactionHeader.PeriodID = GL_TransactionDetail.PeriodID AND GL_TransactionHeader.TransactionID = GL_TransactionDetail.TransactionID 
+        INNER JOIN SET_DocumentType  ON GL_TransactionHeader.CompanyID = SET_DocumentType.CompanyID AND
+        GL_TransactionHeader.PeriodID = SET_DocumentType.PeriodID AND
+        GL_TransactionHeader.DocumentTypeID = SET_DocumentType.DocumentTypeID 
+	
+    WHERE GL_TransactionDetail.CompanyID in @CompanyID AND GL_TransactionDetail.ChartOfAccountID = @ChartofAccountID AND GL_TransactionDetail.PeriodID = @PeriodID 
+        AND GL_TransactionHeader.Status = 1 AND GL_TransactionDetail.Status = 1 AND convert(date, GL_TransactionHeader.DocumentDate) &lt; @FromDate 
+        AND GL_TransactionHeader.StatusCode = 1 And (GL_TransactionDetail.CostCenterID = @cc Or @cc is null) 
+        And (GL_TransactionDetail.DepartmentID = @did Or @did is null)
+        {0}
+    UNION ALL
+    
+    SELECT GL_TransactionDetail.CompanyID, GL_TransactionDetail.ChartOfAccountID, GL_TransactionDetail.CodeCombinationID, 0 As OpeningDebit, 0 As OpeningCredit, 
+        (CASE WHEN GL_TransactionDetail.TransactionType = 'Debit' THEN GL_TransactionDetail.Amount ELSE 0 END) AS Debit, 
+        (CASE WHEN GL_TransactionDetail.TransactionType = 'Credit' THEN GL_TransactionDetail.Amount ELSE 0 END) AS Credit 
+    FROM GL_TransactionHeader 
+        INNER JOIN GL_TransactionDetail ON GL_TransactionHeader.CompanyID = GL_TransactionDetail.CompanyID 
+            AND GL_TransactionHeader.PeriodID = GL_TransactionDetail.PeriodID AND GL_TransactionHeader.TransactionID = GL_TransactionDetail.TransactionID 
+        INNER JOIN SET_DocumentType  ON GL_TransactionHeader.CompanyID = SET_DocumentType.CompanyID AND
+        GL_TransactionHeader.PeriodID = SET_DocumentType.PeriodID AND
+        GL_TransactionHeader.DocumentTypeID = SET_DocumentType.DocumentTypeID 
+		
+    WHERE GL_TransactionDetail.CompanyID in @CompanyID AND GL_TransactionDetail.ChartOfAccountID = @ChartofAccountID AND GL_TransactionDetail.PeriodID = @PeriodID 
+        AND GL_TransactionHeader.Status = 1 AND GL_TransactionDetail.Status = 1 AND convert(date,GL_TransactionHeader.DocumentDate) between @FromDate  AND @ToDate 
+		AND GL_TransactionHeader.StatusCode = 1 And (GL_TransactionDetail.CostCenterID = @cc Or @cc is null) 
+        And (GL_TransactionDetail.DepartmentID = @did Or @did is null
+        )
+        {0}
+        
+    --    Group By GL_TransactionHeader.DocumentNo, GL_TransactionDetail.CodeCombinationID, GL_TransactionHeader.DocumentDate, 
+    --GL_TransactionHeader.Narration, 
+    --GL_TransactionDetail.Amount, GL_TransactionDetail.TransactionType, SET_DocumentType.DocumentType, 
+    --GL_TransactionDetail.SerialNo,GL_TransactionDetail.Narration, GL_TransactionDetail.SerialNo ,GL_TransactionDetail.CompanyID
+    --,GL_TransactionDetail.ChartOfAccountID
+        
+) Tab_COA_Tran1 
+inner join SET_OperatingUnit on SET_OperatingUnit.OperatingUnitId = Tab_COA_Tran1.CompanyID
+    INNER JOIN GL_CodeCombinationDetail ON Tab_COA_Tran1.ChartOfAccountID = GL_CodeCombinationDetail.ChartOfAccountID 
+        AND Tab_COA_Tran1.CodeCombinationID = GL_CodeCombinationDetail.CodeCombinationID 
+		inner join SET_AccountType on SET_AccountType.AccountTypeID = GL_CodeCombinationDetail.AccountTypeID
+where GL_CodeCombinationDetail.Status = 1 AND GL_CodeCombinationDetail.IsActive = 1 
+    AND (GL_CodeCombinationDetail.DetailPostingAllowedFlag = @DetailPostingAllowedFlag OR @DetailPostingAllowedFlag IS NULL)
+	{AccountCodeFilter}
+GROUP BY GL_CodeCombinationDetail.Status,GL_CodeCombinationDetail.IsActive,Tab_COA_Tran1.CompanyID, Tab_COA_Tran1.ChartOfAccountID, GL_CodeCombinationDetail.HeadAccountCode, Tab_COA_Tran1.CodeCombinationID, 
+    GL_CodeCombinationDetail.SummaryFlag, GL_CodeCombinationDetail.Description, GL_CodeCombinationDetail.AccountTypeID, 
+    GL_CodeCombinationDetail.DetailPostingAllowedFlag,SET_OperatingUnit.OperatingUnitName,SET_OperatingUnit.OperatingUnitId
+	,SET_AccountType.AccountTypeName</value>
+  </data>
+  <data name="QueryTrailbalanceNetOFF_UNitWise" xml:space="preserve">
+    <value>SELECT DISTINCT 
+    len(Tab_COA_Tran1.CodeCombinationID) SegmentLength,
+    (case when len(Tab_COA_Tran1.CodeCombinationID)=1 then 1
+    when len(Tab_COA_Tran1.CodeCombinationID)=4 then 2
+    when len(Tab_COA_Tran1.CodeCombinationID)=7 then 3
+    when len(Tab_COA_Tran1.CodeCombinationID)=10 then 4
+    when len(Tab_COA_Tran1.CodeCombinationID)=13 then 5
+    when len(Tab_COA_Tran1.CodeCombinationID)=18 then 6  end ) SegmentNo,
+    Tab_COA_Tran1.CodeCombinationID, GL_CodeCombinationDetail.HeadAccountCode, GL_CodeCombinationDetail.Description, 
+	GL_CodeCombinationDetail.SummaryFlag, case GL_CodeCombinationDetail.DetailPostingAllowedFlag when 1 
+		then 
+			case 
+				when (SUM(OpeningCredit) &gt; SUM(OpeningDebit) and SUM(OpeningCredit) &lt;&gt; SUM(OpeningDebit))
+				then SUM(OpeningCredit) -  SUM(OpeningDebit) 
+				else 0 end 
+		else SUM(OpeningCredit) 
+		end as OpeningCredit, 
+	case GL_CodeCombinationDetail.DetailPostingAllowedFlag when 1 
+		then 
+			case when (SUM(OpeningCredit) &gt; SUM(OpeningDebit) and SUM(OpeningCredit) &lt;&gt; SUM(OpeningDebit)) 
+				then 0 
+				else 
+					case when (SUM(OpeningCredit) &lt; SUM(OpeningDebit) and SUM(OpeningCredit) &lt;&gt; SUM(OpeningDebit)) 
+					then SUM(OpeningDebit) - SUM(OpeningCredit) 
+					else 0 end 
+			end
+		else SUM(OpeningDebit)
+		end as OpeningDebit, 
+	case GL_CodeCombinationDetail.DetailPostingAllowedFlag when 1 
+		then 
+			case when ((sum(OpeningCredit) + SUM(Credit)) &gt; (sum(OpeningDebit) + SUM(Debit)) 
+					and (sum(OpeningCredit) + SUM(Credit)) &lt;&gt; (sum(OpeningDebit) + SUM(Debit))) 
+				then (sum(OpeningCredit) + SUM(Credit)) - (sum(OpeningDebit) + SUM(Debit)) 
+				else 0 end 
+		else sum(OpeningCredit) + SUM(Credit) 
+		end ClosingCredit, 
+	case GL_CodeCombinationDetail.DetailPostingAllowedFlag when 1 
+		then 
+			case when ((sum(OpeningCredit) + SUM(Credit)) &gt; (sum(OpeningDebit) + SUM(Debit)) 
+					and (sum(OpeningCredit) + SUM(Credit)) &lt;&gt; (sum(OpeningDebit) + SUM(Debit))) 
+				then 0 
+				else 
+					case when ((sum(OpeningCredit) + SUM(Credit)) &lt; (sum(OpeningDebit) + SUM(Debit)) 
+							and (sum(OpeningCredit) + SUM(Credit)) &lt;&gt; (sum(OpeningDebit) + SUM(Debit))) 
+						then (sum(OpeningDebit) + SUM(Debit)) - (sum(OpeningCredit) + SUM(Credit))  
+						else 0 end 
+				end 
+		else (sum(OpeningDebit) + SUM(Debit)) 
+		end as ClosingDebit, 
+		SUM(OpeningDebit) as _OpeningDebit, SUM(OpeningCredit) as _OpeningCredit, SUM(Debit) AS Debit, SUM(Credit) AS Credit, 
+		sum(OpeningDebit) + SUM(Debit) as _ClosingDebit, sum(OpeningCredit) + SUM(Credit) as _ClosingCredit, Tab_COA_Tran1.ChartOfAccountID, 
+		GL_CodeCombinationDetail.AccountTypeID,
+		SET_AccountType.AccountTypeName,
+		case when (SET_AccountType.AccountTypeName like '%Assets%' or SET_AccountType.AccountTypeName like '%Liability%' or SET_AccountType.AccountTypeName like '%Capital%' )
+		then 0 else 1 end as GroupID,
+		 GL_CodeCombinationDetail.DetailPostingAllowedFlag 
+		,SET_OperatingUnit.OperatingUnitName,SET_OperatingUnit.OperatingUnitId
+FROM
+(
+    SELECT DISTINCT GL_CodeCombinationDetail.CompanyID, GL_CodeCombinationDetail.ChartOfAccountID, GL_CodeCombinationDetail.CodeCombinationID, 0 As OpeningDebit, 
+        0 As OpeningCredit, 0 AS Debit, 0 AS Credit 
+    FROM GL_CodeCombinationDetail 
+    WHERE 
+    --GL_CodeCombinationDetail.CompanyID = @CompanyID AND 
+    GL_CodeCombinationDetail.ChartOfAccountID = @ChartofAccountID AND GL_CodeCombinationDetail.Status = 1 
+        AND GL_CodeCombinationDetail.IsActive = 1
+    UNION ALL
+
+    SELECT GL_TransactionDetail.CompanyID, GL_TransactionDetail.ChartOfAccountID, GL_TransactionDetail.CodeCombinationID, 
+        (CASE WHEN GL_TransactionDetail.TransactionType = 'Debit' THEN GL_TransactionDetail.Amount ELSE 0 END) AS OpeningDebit, 
+        (CASE WHEN GL_TransactionDetail.TransactionType = 'Credit' THEN GL_TransactionDetail.Amount ELSE 0 END) AS OpeningCredit, 0 As Debit, 0 As Credit 
+    FROM GL_TransactionHeader 
+        INNER JOIN GL_TransactionDetail ON GL_TransactionHeader.CompanyID = GL_TransactionDetail.CompanyID 
+            AND GL_TransactionHeader.PeriodID = GL_TransactionDetail.PeriodID AND GL_TransactionHeader.TransactionID = GL_TransactionDetail.TransactionID 
+
+			INNER JOIN GL_CodeCombinationDetail ON  GL_TransactionDetail.ChartOfAccountID = GL_CodeCombinationDetail.ChartOfAccountID 
+        AND GL_TransactionDetail.CodeCombinationID = GL_CodeCombinationDetail.CodeCombinationID 
+
+        INNER JOIN SET_DocumentType  ON GL_TransactionHeader.CompanyID = SET_DocumentType.CompanyID AND
+        GL_TransactionHeader.PeriodID = SET_DocumentType.PeriodID AND
+        GL_TransactionHeader.DocumentTypeID = SET_DocumentType.DocumentTypeID 
+		{2} 
+    WHERE GL_TransactionDetail.CompanyID in @CompanyID AND GL_TransactionDetail.ChartOfAccountID = @ChartofAccountID AND GL_TransactionDetail.PeriodID = @PeriodID 
+	--AND GL_TransactionDetail.FiscalID = @FiscalID
+        AND GL_TransactionHeader.Status = 1 AND GL_TransactionDetail.Status = 1 AND convert(date,GL_TransactionHeader.DocumentDate) &lt; @FromDate 
+        AND GL_TransactionHeader.StatusCode = 1 And (GL_TransactionDetail.CostCenterID = @cc Or @cc is null) 
+        And (GL_TransactionDetail.DepartmentID = @did Or @did is null)
+        {1}
+
+    UNION ALL
+    
+    SELECT  GL_TransactionDetail.CompanyID, GL_TransactionDetail.ChartOfAccountID, GL_TransactionDetail.CodeCombinationID, 0 As OpeningDebit, 0 As OpeningCredit, 
+        (CASE WHEN GL_TransactionDetail.TransactionType = 'Debit' THEN GL_TransactionDetail.Amount ELSE 0 END) AS Debit, 
+        (CASE WHEN GL_TransactionDetail.TransactionType = 'Credit' THEN GL_TransactionDetail.Amount ELSE 0 END) AS Credit 
+    FROM GL_TransactionHeader 
+        INNER JOIN GL_TransactionDetail ON GL_TransactionHeader.CompanyID = GL_TransactionDetail.CompanyID 
+            AND GL_TransactionHeader.PeriodID = GL_TransactionDetail.PeriodID AND GL_TransactionHeader.TransactionID = GL_TransactionDetail.TransactionID 
+
+			INNER JOIN GL_CodeCombinationDetail ON  GL_TransactionDetail.ChartOfAccountID = GL_CodeCombinationDetail.ChartOfAccountID 
+        AND GL_TransactionDetail.CodeCombinationID = GL_CodeCombinationDetail.CodeCombinationID 
+
+        INNER JOIN SET_DocumentType  ON GL_TransactionHeader.CompanyID = SET_DocumentType.CompanyID AND
+        GL_TransactionHeader.PeriodID = SET_DocumentType.PeriodID AND
+        GL_TransactionHeader.DocumentTypeID = SET_DocumentType.DocumentTypeID 
+		{2} 
+    WHERE GL_TransactionDetail.CompanyID in @CompanyID AND GL_TransactionDetail.ChartOfAccountID = @ChartofAccountID AND GL_TransactionDetail.PeriodID = @PeriodID 
+		--AND GL_TransactionDetail.FiscalID = @FiscalID
+        AND GL_TransactionHeader.Status = 1 AND GL_TransactionDetail.Status = 1 AND convert(date,GL_TransactionHeader.DocumentDate) between @FromDate  AND @ToDate 
+--		AND GL_TransactionHeader.TransactionID  not in (
+--		 select GL_TransactionHeader.TransactionID from GL_TransactionHeader
+--INNER JOIN SET_DocumentType  ON GL_TransactionHeader.CompanyID = SET_DocumentType.CompanyID AND
+--        GL_TransactionHeader.PeriodID = SET_DocumentType.PeriodID AND
+--        GL_TransactionHeader.DocumentTypeID = SET_DocumentType.DocumentTypeID 
+--		where DocumentType LIKE 'GL-OPENING' + '%'
+--		--and fiscalid = @FiscalID
+--		 )
+		AND GL_TransactionHeader.StatusCode = 1 And (GL_TransactionDetail.CostCenterID = @cc Or @cc is null) 
+        And (GL_TransactionDetail.DepartmentID = @did Or @did is null
+        )
+        {1}
+        
+     Group By GL_TransactionHeader.DocumentNo, GL_TransactionDetail.CodeCombinationID, GL_TransactionHeader.DocumentDate, 
+    GL_TransactionHeader.Narration, 
+    GL_TransactionDetail.Amount, GL_TransactionDetail.TransactionType, SET_DocumentType.DocumentType, 
+    GL_TransactionDetail.SerialNo,GL_TransactionDetail.Narration, GL_TransactionDetail.SerialNo ,GL_TransactionDetail.CompanyID
+    ,GL_TransactionDetail.ChartOfAccountID
+        
+) Tab_COA_Tran1 
+inner join SET_OperatingUnit on SET_OperatingUnit.OperatingUnitId = Tab_COA_Tran1.CompanyID
+    INNER JOIN GL_CodeCombinationDetail ON 
+    Tab_COA_Tran1.ChartOfAccountID = GL_CodeCombinationDetail.ChartOfAccountID 
+        AND Tab_COA_Tran1.CodeCombinationID = GL_CodeCombinationDetail.CodeCombinationID 
+		inner join SET_AccountType on SET_AccountType.AccountTypeID = GL_CodeCombinationDetail.AccountTypeID
+where GL_CodeCombinationDetail.Status = 1 AND GL_CodeCombinationDetail.IsActive = 1 
+ --AND Tab_COA_Tran1.CompanyID in @CompanyID
+    AND (GL_CodeCombinationDetail.DetailPostingAllowedFlag = @DetailPostingAllowedFlag OR @DetailPostingAllowedFlag IS NULL) 
+					{AccountCodeFilter}
+GROUP BY GL_CodeCombinationDetail.Status,GL_CodeCombinationDetail.IsActive,Tab_COA_Tran1.ChartOfAccountID, GL_CodeCombinationDetail.HeadAccountCode, Tab_COA_Tran1.CodeCombinationID, 
+    GL_CodeCombinationDetail.SummaryFlag, GL_CodeCombinationDetail.Description, GL_CodeCombinationDetail.AccountTypeID, SET_AccountType.AccountTypeName,
+    GL_CodeCombinationDetail.DetailPostingAllowedFlag,SET_OperatingUnit.OperatingUnitName,SET_OperatingUnit.OperatingUnitId</value>
+  </data>
+  <data name="QueryTrailbalanceNetOFF_UNitWise_HSM" xml:space="preserve">
+    <value>SELECT DISTINCT 
+    len(Tab_COA_Tran1.CodeCombinationID) SegmentLength,
+    (case when len(Tab_COA_Tran1.CodeCombinationID)=1 then 1
+    when len(Tab_COA_Tran1.CodeCombinationID)=4 then 2
+    when len(Tab_COA_Tran1.CodeCombinationID)=7 then 3
+    when len(Tab_COA_Tran1.CodeCombinationID)=10 then 4
+    when len(Tab_COA_Tran1.CodeCombinationID)=13 then 5
+    when len(Tab_COA_Tran1.CodeCombinationID)=18 then 6  end ) SegmentNo,
+    Tab_COA_Tran1.CodeCombinationID, GL_CodeCombinationDetail.HeadAccountCode, GL_CodeCombinationDetail.Description, 
+	GL_CodeCombinationDetail.SummaryFlag, CASE GL_CodeCombinationDetail.DetailPostingAllowedFlag 
+    WHEN 1 THEN 
+        CASE 
+            WHEN (SUM(OpeningCredit) &gt; SUM(OpeningDebit) AND SUM(OpeningCredit) &lt;&gt; SUM(OpeningDebit)) THEN 
+                CASE 
+                    WHEN ROUND(SUM(OpeningCredit) - SUM(OpeningDebit), 2) = 0 THEN 0
+                    ELSE SUM(OpeningCredit) - SUM(OpeningDebit)
+                END
+            ELSE 0 
+        END 
+    ELSE SUM(OpeningCredit) 
+END AS OpeningCredit, 
+	CASE GL_CodeCombinationDetail.DetailPostingAllowedFlag 
+    WHEN 1 THEN 
+        CASE 
+            WHEN (SUM(OpeningCredit) &gt; SUM(OpeningDebit) AND SUM(OpeningCredit) &lt;&gt; SUM(OpeningDebit)) THEN 0 
+            ELSE 
+                CASE 
+                    WHEN (SUM(OpeningCredit) &lt; SUM(OpeningDebit) AND SUM(OpeningCredit) &lt;&gt; SUM(OpeningDebit)) THEN 
+                        CASE 
+                            WHEN ROUND(SUM(OpeningDebit) - SUM(OpeningCredit), 2) = 0 THEN 0 
+                            ELSE SUM(OpeningDebit) - SUM(OpeningCredit) 
+                        END
+                    ELSE 0 
+                END 
+        END 
+    ELSE SUM(OpeningDebit) 
+END AS OpeningDebit,
+	CASE GL_CodeCombinationDetail.DetailPostingAllowedFlag 
+    WHEN 1 THEN 
+        CASE 
+            WHEN ((SUM(OpeningCredit) + SUM(Credit)) &gt; (SUM(OpeningDebit) + SUM(Debit)) 
+                  AND (SUM(OpeningCredit) + SUM(Credit)) &lt;&gt; (SUM(OpeningDebit) + SUM(Debit))) 
+            THEN 
+                CASE 
+                    WHEN ROUND((SUM(OpeningCredit) + SUM(Credit)) - (SUM(OpeningDebit) + SUM(Debit)), 2) = 0 
+                    THEN 0 
+                    ELSE (SUM(OpeningCredit) + SUM(Credit)) - (SUM(OpeningDebit) + SUM(Debit)) 
+                END 
+            ELSE 0 
+        END 
+    ELSE SUM(OpeningCredit) + SUM(Credit) 
+END AS ClosingCredit,
+	CASE GL_CodeCombinationDetail.DetailPostingAllowedFlag 
+    WHEN 1 THEN 
+        CASE 
+            WHEN ((SUM(OpeningCredit) + SUM(Credit)) &gt; (SUM(OpeningDebit) + SUM(Debit)) 
+                  AND (SUM(OpeningCredit) + SUM(Credit)) &lt;&gt; (SUM(OpeningDebit) + SUM(Debit))) 
+            THEN 0 
+            ELSE 
+                CASE 
+                    WHEN ((SUM(OpeningCredit) + SUM(Credit)) &lt; (SUM(OpeningDebit) + SUM(Debit)) 
+                          AND (SUM(OpeningCredit) + SUM(Credit)) &lt;&gt; (SUM(OpeningDebit) + SUM(Debit))) 
+                    THEN 
+                        CASE 
+                            WHEN ROUND((SUM(OpeningDebit) + SUM(Debit)) - (SUM(OpeningCredit) + SUM(Credit)), 2) = 0 
+                            THEN 0 
+                            ELSE (SUM(OpeningDebit) + SUM(Debit)) - (SUM(OpeningCredit) + SUM(Credit)) 
+                        END
+                    ELSE 0 
+                END 
+        END 
+    ELSE (SUM(OpeningDebit) + SUM(Debit)) 
+END AS ClosingDebit,
+		SUM(OpeningDebit) as _OpeningDebit, SUM(OpeningCredit) as _OpeningCredit, SUM(Debit) AS Debit, SUM(Credit) AS Credit, 
+		sum(OpeningDebit) + SUM(Debit) as _ClosingDebit, sum(OpeningCredit) + SUM(Credit) as _ClosingCredit, Tab_COA_Tran1.ChartOfAccountID, 
+		GL_CodeCombinationDetail.AccountTypeID,
+		SET_AccountType.AccountTypeName,
+		case when (SET_AccountType.AccountTypeName like '%Assets%' or SET_AccountType.AccountTypeName like '%Liability%' or SET_AccountType.AccountTypeName like '%Capital%' )
+		then 0 else 1 end as GroupID,
+		 GL_CodeCombinationDetail.DetailPostingAllowedFlag 
+		,SET_OperatingUnit.OperatingUnitName,SET_OperatingUnit.OperatingUnitId
+FROM
+(
+    SELECT DISTINCT GL_CodeCombinationDetail.CompanyID, GL_CodeCombinationDetail.ChartOfAccountID, GL_CodeCombinationDetail.CodeCombinationID, 0 As OpeningDebit, 
+        0 As OpeningCredit, 0 AS Debit, 0 AS Credit 
+    FROM GL_CodeCombinationDetail 
+    WHERE 
+    --GL_CodeCombinationDetail.CompanyID = @CompanyID AND 
+    GL_CodeCombinationDetail.ChartOfAccountID = @ChartofAccountID AND GL_CodeCombinationDetail.Status = 1 
+        AND GL_CodeCombinationDetail.IsActive = 1
+    UNION ALL
+
+    SELECT GL_TransactionDetail.CompanyID, GL_TransactionDetail.ChartOfAccountID, GL_TransactionDetail.CodeCombinationID, 
+        (CASE WHEN GL_TransactionDetail.TransactionType = 'Debit' THEN GL_TransactionDetail.Amount ELSE 0 END) AS OpeningDebit, 
+        (CASE WHEN GL_TransactionDetail.TransactionType = 'Credit' THEN GL_TransactionDetail.Amount ELSE 0 END) AS OpeningCredit, 0 As Debit, 0 As Credit 
+    FROM GL_TransactionHeader 
+        INNER JOIN GL_TransactionDetail ON GL_TransactionHeader.CompanyID = GL_TransactionDetail.CompanyID 
+            AND GL_TransactionHeader.PeriodID = GL_TransactionDetail.PeriodID AND GL_TransactionHeader.TransactionID = GL_TransactionDetail.TransactionID 
+
+			INNER JOIN GL_CodeCombinationDetail ON  GL_TransactionDetail.ChartOfAccountID = GL_CodeCombinationDetail.ChartOfAccountID 
+        AND GL_TransactionDetail.CodeCombinationID = GL_CodeCombinationDetail.CodeCombinationID 
+
+        INNER JOIN SET_DocumentType  ON GL_TransactionHeader.CompanyID = SET_DocumentType.CompanyID AND
+        GL_TransactionHeader.PeriodID = SET_DocumentType.PeriodID AND
+        GL_TransactionHeader.DocumentTypeID = SET_DocumentType.DocumentTypeID 
+		{2} 
+    WHERE GL_TransactionDetail.CompanyID in @CompanyID AND GL_TransactionDetail.ChartOfAccountID = @ChartofAccountID AND GL_TransactionDetail.PeriodID = @PeriodID 
+	--AND GL_TransactionDetail.FiscalID = @FiscalID
+        AND GL_TransactionHeader.Status = 1 AND GL_TransactionDetail.Status = 1 AND convert(date,GL_TransactionHeader.DocumentDate) &lt; @FromDate 
+        AND GL_TransactionHeader.StatusCode = 1 And (GL_TransactionDetail.CostCenterID = @cc Or @cc is null) 
+        And (GL_TransactionDetail.DepartmentID = @did Or @did is null)
+        {1}
+
+    UNION ALL
+    
+    SELECT  GL_TransactionDetail.CompanyID, GL_TransactionDetail.ChartOfAccountID, GL_TransactionDetail.CodeCombinationID, 0 As OpeningDebit, 0 As OpeningCredit, 
+        (CASE WHEN GL_TransactionDetail.TransactionType = 'Debit' THEN GL_TransactionDetail.Amount ELSE 0 END) AS Debit, 
+        (CASE WHEN GL_TransactionDetail.TransactionType = 'Credit' THEN GL_TransactionDetail.Amount ELSE 0 END) AS Credit 
+    FROM GL_TransactionHeader 
+        INNER JOIN GL_TransactionDetail ON GL_TransactionHeader.CompanyID = GL_TransactionDetail.CompanyID 
+            AND GL_TransactionHeader.PeriodID = GL_TransactionDetail.PeriodID AND GL_TransactionHeader.TransactionID = GL_TransactionDetail.TransactionID 
+
+			INNER JOIN GL_CodeCombinationDetail ON  GL_TransactionDetail.ChartOfAccountID = GL_CodeCombinationDetail.ChartOfAccountID 
+        AND GL_TransactionDetail.CodeCombinationID = GL_CodeCombinationDetail.CodeCombinationID 
+
+        INNER JOIN SET_DocumentType  ON GL_TransactionHeader.CompanyID = SET_DocumentType.CompanyID AND
+        GL_TransactionHeader.PeriodID = SET_DocumentType.PeriodID AND
+        GL_TransactionHeader.DocumentTypeID = SET_DocumentType.DocumentTypeID 
+		{2} 
+    WHERE GL_TransactionDetail.CompanyID in @CompanyID AND GL_TransactionDetail.ChartOfAccountID = @ChartofAccountID AND GL_TransactionDetail.PeriodID = @PeriodID 
+		--AND GL_TransactionDetail.FiscalID = @FiscalID
+        AND GL_TransactionHeader.Status = 1 AND GL_TransactionDetail.Status = 1 AND convert(date,GL_TransactionHeader.DocumentDate) between @FromDate  AND @ToDate 
+--		AND GL_TransactionHeader.TransactionID  not in (
+--		 select GL_TransactionHeader.TransactionID from GL_TransactionHeader
+--INNER JOIN SET_DocumentType  ON GL_TransactionHeader.CompanyID = SET_DocumentType.CompanyID AND
+--        GL_TransactionHeader.PeriodID = SET_DocumentType.PeriodID AND
+--        GL_TransactionHeader.DocumentTypeID = SET_DocumentType.DocumentTypeID 
+--		where DocumentType LIKE 'GL-OPENING' + '%'
+--		--and fiscalid = @FiscalID
+--		 )
+		AND GL_TransactionHeader.StatusCode = 1 And (GL_TransactionDetail.CostCenterID = @cc Or @cc is null) 
+        And (GL_TransactionDetail.DepartmentID = @did Or @did is null
+        )
+        {1}
+        
+     Group By GL_TransactionHeader.DocumentNo, GL_TransactionDetail.CodeCombinationID, GL_TransactionHeader.DocumentDate, 
+    GL_TransactionHeader.Narration, 
+    GL_TransactionDetail.Amount, GL_TransactionDetail.TransactionType, SET_DocumentType.DocumentType, 
+    GL_TransactionDetail.SerialNo,GL_TransactionDetail.Narration, GL_TransactionDetail.SerialNo ,GL_TransactionDetail.CompanyID
+    ,GL_TransactionDetail.ChartOfAccountID
+        
+) Tab_COA_Tran1 
+inner join SET_OperatingUnit on SET_OperatingUnit.OperatingUnitId = Tab_COA_Tran1.CompanyID
+    INNER JOIN GL_CodeCombinationDetail ON 
+    Tab_COA_Tran1.ChartOfAccountID = GL_CodeCombinationDetail.ChartOfAccountID 
+        AND Tab_COA_Tran1.CodeCombinationID = GL_CodeCombinationDetail.CodeCombinationID 
+		inner join SET_AccountType on SET_AccountType.AccountTypeID = GL_CodeCombinationDetail.AccountTypeID
+where GL_CodeCombinationDetail.Status = 1 AND GL_CodeCombinationDetail.IsActive = 1 
+ --AND Tab_COA_Tran1.CompanyID in @CompanyID
+    AND (GL_CodeCombinationDetail.DetailPostingAllowedFlag = @DetailPostingAllowedFlag OR @DetailPostingAllowedFlag IS NULL) 
+					{AccountCodeFilter}
+GROUP BY GL_CodeCombinationDetail.Status,GL_CodeCombinationDetail.IsActive,Tab_COA_Tran1.ChartOfAccountID, GL_CodeCombinationDetail.HeadAccountCode, Tab_COA_Tran1.CodeCombinationID, 
+    GL_CodeCombinationDetail.SummaryFlag, GL_CodeCombinationDetail.Description, GL_CodeCombinationDetail.AccountTypeID, SET_AccountType.AccountTypeName,
+    GL_CodeCombinationDetail.DetailPostingAllowedFlag,SET_OperatingUnit.OperatingUnitName,SET_OperatingUnit.OperatingUnitId</value>
+  </data>
+  <data name="QueryTrialBalanceYearToDateReport" xml:space="preserve">
+    <value>SELECT Tab_COA_Tran1.CodeCombinationID, GL_CodeCombinationDetail.HeadAccountCode, GL_CodeCombinationDetail.Description, 
+	GL_CodeCombinationDetail.SummaryFlag, 
+	
+	case GL_CodeCombinationDetail.DetailPostingAllowedFlag when 1 
+		then 
+			case 
+				when (SUM(OpeningCredit) &gt; SUM(OpeningDebit) and SUM(OpeningCredit) &lt;&gt; SUM(OpeningDebit))
+				then SUM(OpeningCredit) -  SUM(OpeningDebit) 
+				else 0 end 
+		else SUM(OpeningCredit) 
+    end as OpeningCredit, 
+		
+	case GL_CodeCombinationDetail.DetailPostingAllowedFlag when 1 
+		then 
+			case when (SUM(OpeningCredit) &gt; SUM(OpeningDebit) and SUM(OpeningCredit) &lt;&gt; SUM(OpeningDebit)) 
+				then 0 
+				else 
+					case when (SUM(OpeningCredit) &lt; SUM(OpeningDebit) and SUM(OpeningCredit) &lt;&gt; SUM(OpeningDebit)) 
+					then SUM(OpeningDebit) - SUM(OpeningCredit) 
+					else 0 end 
+			end
+		else SUM(OpeningDebit) 
+		end as OpeningDebit, 
+		
+		case GL_CodeCombinationDetail.DetailPostingAllowedFlag when 1 
+		then 
+			case 
+			
+			when (SUM(OpeningCredit) &gt; SUM(OpeningDebit) and SUM(OpeningCredit) &lt;&gt; SUM(OpeningDebit)) 
+				then 
+				SUM(OpeningCredit*-1) +  SUM(OpeningDebit) 
+				
+				else 
+					case when (SUM(OpeningCredit) &lt; SUM(OpeningDebit) and SUM(OpeningCredit) &lt;&gt; SUM(OpeningDebit)) 
+					then SUM(OpeningDebit) + SUM(OpeningCredit*-1)
+					else 0 end 
+			end
+		else 
+			SUM(OpeningDebit) 
+		end as OpeningBalance, 
+		
+	case GL_CodeCombinationDetail.DetailPostingAllowedFlag when 1 
+		then 
+			case when ((sum(OpeningCredit) + SUM(YTDCredit)) &gt; (sum(OpeningDebit) + SUM(YTDDebit)) 
+					and (sum(OpeningCredit) + SUM(YTDCredit)) &lt;&gt; (sum(OpeningDebit) + SUM(YTDDebit))) 
+				then (sum(OpeningCredit) + SUM(YTDCredit)) - (sum(OpeningDebit) + SUM(YTDDebit)) 
+				else 0 end 
+		else sum(OpeningCredit) + SUM(YTDCredit) 
+		end ClosingCredit, 
+	case GL_CodeCombinationDetail.DetailPostingAllowedFlag when 1 
+		then 
+			case when ((sum(OpeningCredit) + SUM(YTDCredit)) &gt; (sum(OpeningDebit) + SUM(YTDDebit)) 
+					and (sum(OpeningCredit) + SUM(YTDCredit)) &lt;&gt; (sum(OpeningDebit) + SUM(YTDDebit))) 
+				then 0 
+				else 
+					case when ((sum(OpeningCredit) + SUM(YTDCredit)) &lt; (sum(OpeningDebit) + SUM(YTDDebit)) 
+							and (sum(OpeningCredit) + SUM(YTDCredit)) &lt;&gt; (sum(OpeningDebit) + SUM(YTDDebit))) 
+						then (sum(OpeningDebit) + SUM(YTDDebit)) - (sum(OpeningCredit) + SUM(YTDCredit))  
+						else 0 end 
+				end 
+		else (sum(OpeningDebit) + SUM(YTDDebit)) 
+		end as ClosingDebit, 
+		
+		case GL_CodeCombinationDetail.DetailPostingAllowedFlag when 1 
+		then 
+		
+			case when ((sum(OpeningCredit) + SUM(YTDCredit)) &gt; (sum(OpeningDebit) + SUM(YTDDebit)) 
+					and (sum(OpeningCredit) + SUM(YTDCredit)) &lt;&gt; (sum(OpeningDebit) + SUM(YTDDebit))) 
+				then 
+				
+				((sum(OpeningCredit) + SUM(YTDCredit)) - (sum(OpeningDebit) + SUM(YTDDebit)) )*-1
+				else 
+					case when ((sum(OpeningCredit) + SUM(YTDCredit)) &lt; (sum(OpeningDebit) + SUM(YTDDebit)) 
+							and (sum(OpeningCredit) + SUM(YTDCredit)) &lt;&gt; (sum(OpeningDebit) + SUM(YTDDebit))) 
+						then (sum(OpeningDebit) + SUM(YTDDebit)) - (sum(OpeningCredit) + SUM(YTDCredit))  
+						else 0 end 
+				end 
+		else (sum(OpeningDebit) + SUM(YTDDebit)) 
+		end as Balance,
+		
+		SUM(OpeningDebit) as _OpeningDebit, SUM(OpeningCredit) as _OpeningCredit, SUM(Debit) AS Debit, SUM(Credit) AS Credit,
+		(SUM(Debit) - SUM(Credit)) AS ActivityBalance,
+		sum(YTDDebit) as YTDDebit,sum(YTDCredit) as YTDCredit,
+		
+		(SUM(YTDDebit) - SUM(YTDCredit)) AS yearTodateBalance,
+		 
+		sum(OpeningDebit) + SUM(YTDDebit) as _ClosingDebit, sum(OpeningCredit) + SUM(YTDCredit) as _ClosingCredit, Tab_COA_Tran1.ChartOfAccountID, 
+		GL_CodeCombinationDetail.AccountTypeID, GL_CodeCombinationDetail.DetailPostingAllowedFlag 
+FROM
+(
+    SELECT GL_CodeCombinationDetail.CompanyID, GL_CodeCombinationDetail.ChartOfAccountID, GL_CodeCombinationDetail.CodeCombinationID, 
+        0 as YTDDebit,0 as YTDCredit,
+     0 As OpeningDebit, 0 As OpeningCredit, 0 AS Debit, 0 AS Credit 
+    FROM GL_CodeCombinationDetail 
+    WHERE 
+    --GL_CodeCombinationDetail.CompanyID = @CompanyID AND 
+    GL_CodeCombinationDetail.ChartOfAccountID = @ChartofAccountID AND GL_CodeCombinationDetail.Status = 1 
+        AND GL_CodeCombinationDetail.IsActive = 1
+                {3}
+    UNION ALL
+
+    SELECT GL_TransactionDetail.CompanyID, GL_TransactionDetail.ChartOfAccountID, GL_TransactionDetail.CodeCombinationID, 
+    0 as YTDDebit,0 as YTDCredit,
+        (CASE WHEN GL_TransactionDetail.TransactionType = 'Debit' THEN GL_TransactionDetail.Amount ELSE 0 END) AS OpeningDebit, 
+        (CASE WHEN GL_TransactionDetail.TransactionType = 'Credit' THEN GL_TransactionDetail.Amount ELSE 0 END) AS OpeningCredit, 0 As Debit, 0 As Credit 
+    FROM GL_TransactionHeader 
+        INNER JOIN GL_TransactionDetail ON GL_TransactionHeader.CompanyID = GL_TransactionDetail.CompanyID 
+            AND GL_TransactionHeader.PeriodID = GL_TransactionDetail.PeriodID AND GL_TransactionHeader.TransactionID = GL_TransactionDetail.TransactionID 
+        INNER JOIN SET_DocumentType  ON GL_TransactionHeader.CompanyID = SET_DocumentType.CompanyID AND
+        GL_TransactionHeader.PeriodID = SET_DocumentType.PeriodID AND
+        GL_TransactionHeader.DocumentTypeID = SET_DocumentType.DocumentTypeID 
+		{2} 
+    WHERE GL_TransactionDetail.CompanyID = @CompanyID AND GL_TransactionDetail.ChartOfAccountID = @ChartofAccountID AND GL_TransactionDetail.PeriodID = @PeriodID 
+        AND GL_TransactionHeader.Status = 1 AND GL_TransactionDetail.Status = 1 
+        --AND GL_TransactionHeader.DocumentDate &gt;=  @fiscalYearStarted  
+        and  GL_TransactionHeader.DocumentDate &lt; @fiscalYearStarted 
+        
+        AND GL_TransactionHeader.StatusCode = 1 And (GL_TransactionDetail.CostCenterID = @cc Or @cc is null) 
+        And (GL_TransactionDetail.DepartmentID = @did Or @did is null)
+        {1}
+    UNION ALL
+    
+    -- Current
+    SELECT GL_TransactionDetail.CompanyID, GL_TransactionDetail.ChartOfAccountID, GL_TransactionDetail.CodeCombinationID,
+    0 as YTDDebit,0 as YTDCredit,
+     0 As OpeningDebit, 0 As OpeningCredit, 
+        (CASE WHEN GL_TransactionDetail.TransactionType = 'Debit' THEN GL_TransactionDetail.Amount ELSE 0 END) AS Debit, 
+        (CASE WHEN GL_TransactionDetail.TransactionType = 'Credit' THEN GL_TransactionDetail.Amount ELSE 0 END) AS Credit 
+    FROM GL_TransactionHeader 
+        INNER JOIN GL_TransactionDetail ON GL_TransactionHeader.CompanyID = GL_TransactionDetail.CompanyID 
+            AND GL_TransactionHeader.PeriodID = GL_TransactionDetail.PeriodID AND GL_TransactionHeader.TransactionID = GL_TransactionDetail.TransactionID 
+        INNER JOIN SET_DocumentType  ON GL_TransactionHeader.CompanyID = SET_DocumentType.CompanyID AND
+        GL_TransactionHeader.PeriodID = SET_DocumentType.PeriodID AND
+        GL_TransactionHeader.DocumentTypeID = SET_DocumentType.DocumentTypeID 
+		{2} 
+    WHERE GL_TransactionDetail.CompanyID = @CompanyID AND GL_TransactionDetail.ChartOfAccountID = @ChartofAccountID AND GL_TransactionDetail.PeriodID = @PeriodID 
+        AND GL_TransactionHeader.Status = 1 AND GL_TransactionDetail.Status = 1
+         AND GL_TransactionHeader.DocumentDate &gt;= @FromDate AND GL_TransactionHeader.DocumentDate &lt;= @ToDate 
+         --AND month(GL_TransactionHeader.DocumentDate) = MONTH(@ToDate)
+         AND GL_TransactionHeader.StatusCode = 1 And (GL_TransactionDetail.CostCenterID = @cc Or @cc is null) 
+        And (GL_TransactionDetail.DepartmentID = @did Or @did is null
+        )
+        {1}
+        
+        
+        
+            UNION ALL
+    -- year To Date
+    SELECT GL_TransactionDetail.CompanyID, GL_TransactionDetail.ChartOfAccountID, GL_TransactionDetail.CodeCombinationID,
+    (CASE WHEN GL_TransactionDetail.TransactionType = 'Debit' THEN GL_TransactionDetail.Amount ELSE 0 END) as YTDDebit,
+    
+    (CASE WHEN GL_TransactionDetail.TransactionType = 'Credit' THEN GL_TransactionDetail.Amount ELSE 0 END) as YTDCredit,
+     0 As OpeningDebit, 0 As OpeningCredit, 
+        0 AS Debit, 
+        0 AS Credit 
+    FROM GL_TransactionHeader 
+        INNER JOIN GL_TransactionDetail ON GL_TransactionHeader.CompanyID = GL_TransactionDetail.CompanyID 
+            AND GL_TransactionHeader.PeriodID = GL_TransactionDetail.PeriodID AND GL_TransactionHeader.TransactionID = GL_TransactionDetail.TransactionID 
+        INNER JOIN SET_DocumentType  ON GL_TransactionHeader.CompanyID = SET_DocumentType.CompanyID AND
+        GL_TransactionHeader.PeriodID = SET_DocumentType.PeriodID AND
+        GL_TransactionHeader.DocumentTypeID = SET_DocumentType.DocumentTypeID 
+		{2} 
+    WHERE GL_TransactionDetail.CompanyID = @CompanyID AND GL_TransactionDetail.ChartOfAccountID = @ChartofAccountID AND GL_TransactionDetail.PeriodID = @PeriodID 
+        AND GL_TransactionHeader.Status = 1 AND GL_TransactionDetail.Status = 1 
+        
+         --AND GL_TransactionHeader.DocumentDate &gt;= @fiscalYearStarted AND GL_TransactionHeader.DocumentDate &lt;= @ToDate 
+         AND GL_TransactionHeader.DocumentDate &gt;= @fiscalYearStarted AND GL_TransactionHeader.DocumentDate &lt;= @ToDate
+        AND GL_TransactionHeader.StatusCode = 1 And (GL_TransactionDetail.CostCenterID = @cc Or @cc is null) 
+        And (GL_TransactionDetail.DepartmentID = @did Or @did is null
+        )
+        {1}
+        
+        
+) Tab_COA_Tran1 
+    INNER JOIN GL_CodeCombinationDetail ON 
+    --Tab_COA_Tran1.CompanyID = GL_CodeCombinationDetail.CompanyID     AND 
+    Tab_COA_Tran1.ChartOfAccountID = GL_CodeCombinationDetail.ChartOfAccountID 
+        AND Tab_COA_Tran1.CodeCombinationID = GL_CodeCombinationDetail.CodeCombinationID 
+where GL_CodeCombinationDetail.Status = 1 AND GL_CodeCombinationDetail.IsActive = 1 
+    AND (GL_CodeCombinationDetail.DetailPostingAllowedFlag = @DetailPostingAllowedFlag OR @DetailPostingAllowedFlag IS NULL) 
+GROUP BY GL_CodeCombinationDetail.Status,GL_CodeCombinationDetail.IsActive,Tab_COA_Tran1.CompanyID, Tab_COA_Tran1.ChartOfAccountID, GL_CodeCombinationDetail.HeadAccountCode, Tab_COA_Tran1.CodeCombinationID, 
+    GL_CodeCombinationDetail.SummaryFlag, GL_CodeCombinationDetail.Description, GL_CodeCombinationDetail.AccountTypeID, 
+    GL_CodeCombinationDetail.DetailPostingAllowedFlag</value>
+  </data>
+  <data name="Query_AccountCodeTrailbalanceNetOFF" xml:space="preserve">
+    <value>SELECT 
+    len(Tab_COA_Tran1.CodeCombinationID) SegmentLength,
+    (case when len(Tab_COA_Tran1.CodeCombinationID)=1 then 1
+    when len(Tab_COA_Tran1.CodeCombinationID)=4 then 2
+    when len(Tab_COA_Tran1.CodeCombinationID)=7 then 3
+    when len(Tab_COA_Tran1.CodeCombinationID)=10 then 4
+    when len(Tab_COA_Tran1.CodeCombinationID)=13 then 5
+    when len(Tab_COA_Tran1.CodeCombinationID)=18 then 6  end ) SegmentNo,
+    Tab_COA_Tran1.CodeCombinationID, GL_CodeCombinationDetail.HeadAccountCode, GL_CodeCombinationDetail.Description, 
+	GL_CodeCombinationDetail.SummaryFlag, case GL_CodeCombinationDetail.DetailPostingAllowedFlag when 1 
+		then 
+			case 
+				when (SUM(OpeningCredit) &gt; SUM(OpeningDebit) and SUM(OpeningCredit) &lt;&gt; SUM(OpeningDebit))
+				then SUM(OpeningCredit) -  SUM(OpeningDebit) 
+				else 0 end 
+		else SUM(OpeningCredit) 
+		end as OpeningCredit, 
+	case GL_CodeCombinationDetail.DetailPostingAllowedFlag when 1 
+		then 
+			case when (SUM(OpeningCredit) &gt; SUM(OpeningDebit) and SUM(OpeningCredit) &lt;&gt; SUM(OpeningDebit)) 
+				then 0 
+				else 
+					case when (SUM(OpeningCredit) &lt; SUM(OpeningDebit) and SUM(OpeningCredit) &lt;&gt; SUM(OpeningDebit)) 
+					then SUM(OpeningDebit) - SUM(OpeningCredit) 
+					else 0 end 
+			end
+		else SUM(OpeningDebit) 
+		end as OpeningDebit, 
+	case GL_CodeCombinationDetail.DetailPostingAllowedFlag when 1 
+		then 
+			case when ((sum(OpeningCredit) + SUM(Credit)) &gt; (sum(OpeningDebit) + SUM(Debit)) 
+					and (sum(OpeningCredit) + SUM(Credit)) &lt;&gt; (sum(OpeningDebit) + SUM(Debit))) 
+				then (sum(OpeningCredit) + SUM(Credit)) - (sum(OpeningDebit) + SUM(Debit)) 
+				else 0 end 
+		else sum(OpeningCredit) + SUM(Credit) 
+		end ClosingCredit, 
+	case GL_CodeCombinationDetail.DetailPostingAllowedFlag when 1 
+		then 
+			case when ((sum(OpeningCredit) + SUM(Credit)) &gt; (sum(OpeningDebit) + SUM(Debit)) 
+					and (sum(OpeningCredit) + SUM(Credit)) &lt;&gt; (sum(OpeningDebit) + SUM(Debit))) 
+				then 0 
+				else 
+					case when ((sum(OpeningCredit) + SUM(Credit)) &lt; (sum(OpeningDebit) + SUM(Debit)) 
+							and (sum(OpeningCredit) + SUM(Credit)) &lt;&gt; (sum(OpeningDebit) + SUM(Debit))) 
+						then (sum(OpeningDebit) + SUM(Debit)) - (sum(OpeningCredit) + SUM(Credit))  
+						else 0 end 
+				end 
+		else (sum(OpeningDebit) + SUM(Debit)) 
+		end as ClosingDebit, 
+		SUM(OpeningDebit) as _OpeningDebit, SUM(OpeningCredit) as _OpeningCredit, SUM(Debit) AS Debit, SUM(Credit) AS Credit, 
+		sum(OpeningDebit) + SUM(Debit) as _ClosingDebit, sum(OpeningCredit) + SUM(Credit) as _ClosingCredit, Tab_COA_Tran1.ChartOfAccountID, 
+		GL_CodeCombinationDetail.AccountTypeID, GL_CodeCombinationDetail.DetailPostingAllowedFlag 
+FROM
+(
+    SELECT  GL_CodeCombinationDetail.CompanyID, GL_CodeCombinationDetail.ChartOfAccountID, GL_CodeCombinationDetail.CodeCombinationID, 0 As OpeningDebit, 
+        0 As OpeningCredit, 0 AS Debit, 0 AS Credit 
+    FROM GL_CodeCombinationDetail 
+    WHERE 
+    --GL_CodeCombinationDetail.CompanyID = @CompanyID AND 
+    GL_CodeCombinationDetail.ChartOfAccountID = @ChartofAccountID AND GL_CodeCombinationDetail.Status = 1 
+        AND GL_CodeCombinationDetail.IsActive = 1
+                
+    UNION ALL
+
+    SELECT  GL_TransactionDetail.CompanyID, GL_TransactionDetail.ChartOfAccountID, GL_TransactionDetail.CodeCombinationID, 
+        (CASE WHEN GL_TransactionDetail.TransactionType = 'Debit' THEN GL_TransactionDetail.Amount ELSE 0 END) AS OpeningDebit, 
+        (CASE WHEN GL_TransactionDetail.TransactionType = 'Credit' THEN GL_TransactionDetail.Amount ELSE 0 END) AS OpeningCredit, 0 As Debit, 0 As Credit 
+    FROM GL_TransactionHeader 
+        INNER JOIN GL_TransactionDetail ON GL_TransactionHeader.CompanyID = GL_TransactionDetail.CompanyID 
+            AND GL_TransactionHeader.PeriodID = GL_TransactionDetail.PeriodID AND GL_TransactionHeader.TransactionID = GL_TransactionDetail.TransactionID 
+        INNER JOIN SET_DocumentType  ON GL_TransactionHeader.CompanyID = SET_DocumentType.CompanyID AND
+        GL_TransactionHeader.PeriodID = SET_DocumentType.PeriodID AND
+        GL_TransactionHeader.DocumentTypeID = SET_DocumentType.DocumentTypeID 
+		{2} 
+    WHERE GL_TransactionDetail.CompanyID = @CompanyID AND GL_TransactionDetail.ChartOfAccountID = @ChartofAccountID AND GL_TransactionDetail.PeriodID = @PeriodID 
+        AND GL_TransactionHeader.Status = 1 AND GL_TransactionDetail.Status = 1 AND GL_TransactionHeader.DocumentDate &lt; @FromDate 
+        AND GL_TransactionHeader.StatusCode = 1 And (GL_TransactionDetail.CostCenterID = @cc Or @cc is null) 
+        And (GL_TransactionDetail.DepartmentID = @did Or @did is null)
+        {1}
+    UNION ALL
+    
+    SELECT  GL_TransactionDetail.CompanyID, GL_TransactionDetail.ChartOfAccountID, GL_TransactionDetail.CodeCombinationID, 0 As OpeningDebit, 0 As OpeningCredit, 
+        (CASE WHEN GL_TransactionDetail.TransactionType = 'Debit' THEN GL_TransactionDetail.Amount ELSE 0 END) AS Debit, 
+        (CASE WHEN GL_TransactionDetail.TransactionType = 'Credit' THEN GL_TransactionDetail.Amount ELSE 0 END) AS Credit 
+    FROM GL_TransactionHeader 
+        INNER JOIN GL_TransactionDetail ON GL_TransactionHeader.CompanyID = GL_TransactionDetail.CompanyID 
+            AND GL_TransactionHeader.PeriodID = GL_TransactionDetail.PeriodID AND GL_TransactionHeader.TransactionID = GL_TransactionDetail.TransactionID 
+        INNER JOIN SET_DocumentType  ON GL_TransactionHeader.CompanyID = SET_DocumentType.CompanyID AND
+        GL_TransactionHeader.PeriodID = SET_DocumentType.PeriodID AND
+        GL_TransactionHeader.DocumentTypeID = SET_DocumentType.DocumentTypeID 
+		{2} 
+    WHERE GL_TransactionDetail.CompanyID = @CompanyID AND GL_TransactionDetail.ChartOfAccountID = @ChartofAccountID AND GL_TransactionDetail.PeriodID = @PeriodID 
+        AND GL_TransactionHeader.Status = 1 AND GL_TransactionDetail.Status = 1 AND GL_TransactionHeader.DocumentDate between @FromDate  AND @ToDate 
+		AND GL_TransactionHeader.StatusCode = 1 And (GL_TransactionDetail.CostCenterID = @cc Or @cc is null) 
+        And (GL_TransactionDetail.DepartmentID = @did Or @did is null
+        )
+        {1}
+        
+    --    Group By GL_TransactionHeader.DocumentNo, GL_TransactionDetail.CodeCombinationID, GL_TransactionHeader.DocumentDate, 
+    --GL_TransactionHeader.Narration, 
+    --GL_TransactionDetail.Amount, GL_TransactionDetail.TransactionType, SET_DocumentType.DocumentType, 
+    --GL_TransactionDetail.SerialNo,GL_TransactionDetail.Narration, GL_TransactionDetail.SerialNo ,GL_TransactionDetail.CompanyID
+    --,GL_TransactionDetail.ChartOfAccountID
+        
+) Tab_COA_Tran1 
+    INNER JOIN GL_CodeCombinationDetail ON 
+    --Tab_COA_Tran1.CompanyID = GL_CodeCombinationDetail.CompanyID   AND 
+    Tab_COA_Tran1.ChartOfAccountID = GL_CodeCombinationDetail.ChartOfAccountID 
+        AND Tab_COA_Tran1.CodeCombinationID = GL_CodeCombinationDetail.CodeCombinationID 
+		AND Tab_COA_Tran1.CompanyID = @CompanyID
+		{3}
+where GL_CodeCombinationDetail.Status = 1 AND GL_CodeCombinationDetail.IsActive = 1 
+    AND (GL_CodeCombinationDetail.DetailPostingAllowedFlag = @DetailPostingAllowedFlag OR @DetailPostingAllowedFlag IS NULL) 
+GROUP BY GL_CodeCombinationDetail.Status,GL_CodeCombinationDetail.IsActive,Tab_COA_Tran1.CompanyID, Tab_COA_Tran1.ChartOfAccountID, GL_CodeCombinationDetail.HeadAccountCode, Tab_COA_Tran1.CodeCombinationID, 
+    GL_CodeCombinationDetail.SummaryFlag, GL_CodeCombinationDetail.Description, GL_CodeCombinationDetail.AccountTypeID, 
+    GL_CodeCombinationDetail.DetailPostingAllowedFlag</value>
+  </data>
+  <data name="Query_AllowPostingAccountCodes" xml:space="preserve">
+    <value>SELECT 
+Tab_COA_Tran1.CodeCombinationID
+, GL_CodeCombinationDetail.HeadAccountCode
+, GL_CodeCombinationDetail.Description
+, GL_CodeCombinationDetail.SummaryFlag
+    -- (CASE WHEN (SUM(OpeningDebit) - SUM(OpeningCredit)) &gt; 0 THEN (SUM(OpeningDebit) - SUM(OpeningCredit)) ELSE 0 END) AS OpeningDebit, 
+    --(CASE WHEN (SUM(OpeningDebit) - SUM(OpeningCredit)) &lt; 0 THEN ABS(SUM(OpeningDebit) - SUM(OpeningCredit)) ELSE 0 END) AS OpeningCredit
+    --,
+
+    
+,case  GL_CodeCombinationDetail.DetailPostingAllowedFlag when 1 
+	then 
+		case 
+				when (SUM(OpeningCredit) &gt; SUM(OpeningDebit) and SUM(OpeningCredit) &lt;&gt; SUM(OpeningDebit))
+				then SUM(OpeningCredit) -  SUM(OpeningDebit) 
+				else  0 -- SUM(OpeningCredit)
+		 end
+	else 
+		SUM(OpeningCredit)
+		end 
+			
+			as OpeningCredit
+
+
+    
+,case  GL_CodeCombinationDetail.DetailPostingAllowedFlag when 1 
+ then 
+ 
+case  when (SUM(OpeningCredit) &gt; SUM(OpeningDebit) and SUM(OpeningCredit) &lt;&gt; SUM(OpeningDebit))
+
+	then 0 else 
+
+		--case when GL_CodeCombinationDetail.DetailPostingAllowedFlag  = 1 then 
+		case  when (SUM(OpeningCredit) &lt; SUM(OpeningDebit) and SUM(OpeningCredit) &lt;&gt; SUM(OpeningDebit))
+		then SUM(OpeningDebit) - SUM(OpeningCredit)  else SUM(OpeningDebit)  
+	--	end 
+	--	else SUM(OpeningDebit) 
+		end 
+end
+	else 
+
+	SUM(OpeningDebit)
+
+	end 
+as OpeningDebit
+
+
+
+
+    
+,case  GL_CodeCombinationDetail.DetailPostingAllowedFlag when 1 
+	then 
+		case 
+				when ((sum(OpeningCredit) + SUM(Credit)  ) &gt; (sum(OpeningDebit) + SUM(Debit)  ) and (sum(OpeningCredit) + SUM(Credit)  ) &lt;&gt; (sum(OpeningDebit) + SUM(Debit)  ))
+				then (sum(OpeningCredit) + SUM(Credit)  ) -  (sum(OpeningDebit) + SUM(Debit)  )
+				else  0 -- SUM(OpeningCredit)
+		 end
+	else 
+		sum(OpeningCredit) + SUM(Credit)  
+		end 
+			
+			ClosingCredit
+
+
+    
+,case  GL_CodeCombinationDetail.DetailPostingAllowedFlag when 1 
+ then 
+ 
+case  when ((sum(OpeningCredit) + SUM(Credit)  ) &gt; (sum(OpeningDebit) + SUM(Debit)  )and (sum(OpeningCredit) + SUM(Credit)  ) &lt;&gt; (sum(OpeningDebit) + SUM(Debit)  ))
+
+	then 0 else 
+
+		--case when GL_CodeCombinationDetail.DetailPostingAllowedFlag  = 1 then 
+		case  when ((sum(OpeningCredit) + SUM(Credit)  ) &lt; (sum(OpeningDebit) + SUM(Debit)  )and (sum(OpeningCredit) + SUM(Credit)  ) &lt;&gt; (sum(OpeningDebit) + SUM(Debit)  ))
+		then (sum(OpeningDebit) + SUM(Debit)  ) - (sum(OpeningCredit) + SUM(Credit)  )  
+		--else (sum(OpeningDebit) + SUM(Debit)  )
+		--else case GL_CodeCombinationDetail.SummaryFlag when 1 then (sum(OpeningDebit) + SUM(Debit)) else sum(OpeningDebit) end 
+		else 
+		
+		case GL_CodeCombinationDetail.SummaryFlag when 1 then (sum(OpeningDebit) + SUM(Debit)) 
+		else (sum(OpeningDebit) - sum(OpeningCredit)) + (SUM(Debit) - SUM(Credit))
+		
+		end 
+		
+	
+		end 
+end
+	else 
+
+	(sum(OpeningDebit) + SUM(Debit)  )
+
+	end 
+as ClosingDebit
+
+
+--,case when GL_CodeCombinationDetail.DetailPostingAllowedFlag  = 1 then 
+--case  when (SUM(OpeningCredit) &lt; SUM(OpeningDebit) and SUM(OpeningCredit) &lt;&gt; SUM(OpeningDebit))
+--then SUM(OpeningDebit) - SUM(OpeningCredit)  else SUM(OpeningDebit)  end 
+--else SUM(OpeningDebit) 
+--end OpeningDebit
+
+--,case when GL_CodeCombinationDetail.DetailPostingAllowedFlag  = 1 then 
+--case  when ((sum(OpeningCredit) + SUM(Credit)) &gt;  (sum(OpeningDebit) + SUM(Debit)  ) and (sum(OpeningCredit) + SUM(Credit)) &lt;&gt; (sum(OpeningDebit) + SUM(Debit)  ))
+--then (sum(OpeningCredit) + SUM(Credit)) -  (sum(OpeningDebit) + SUM(Debit)  ) else (sum(OpeningCredit) + SUM(Credit))  end 
+--else (sum(OpeningCredit) + SUM(Credit))  end 
+--ClosingCredit 
+
+--,
+--case when GL_CodeCombinationDetail.DetailPostingAllowedFlag  = 1 then 
+--case  when ((sum(OpeningCredit) + SUM(Credit)) &lt; (sum(OpeningDebit) + SUM(Debit)  ) and (sum(OpeningCredit) + SUM(Credit)) &lt;&gt; (sum(OpeningDebit) + SUM(Debit)  ))
+--then (sum(OpeningDebit) + SUM(Debit)  )  -(sum(OpeningCredit) + SUM(Credit))  else (sum(OpeningDebit) + SUM(Debit)  ) end 
+-- else (sum(OpeningDebit) + SUM(Debit)  ) end ClosingDebit 
+ 
+ 
+,SUM(OpeningDebit) as  _OpeningDebit
+,SUM(OpeningCredit) as  _OpeningCredit
+,SUM(Debit) AS Debit
+,SUM(Credit) AS Credit
+    --, (CASE WHEN ((SUM(OpeningDebit) + SUM(Debit)) - (SUM(OpeningCredit) + SUM(Credit))) &gt; 0 THEN ((SUM(OpeningDebit) + SUM(Debit)) - (SUM(OpeningCredit) + SUM(Credit))) ELSE 0 END) AS ClosingDebit
+    --,(CASE WHEN ((SUM(OpeningDebit) + SUM(Debit)) - (SUM(OpeningCredit) + SUM(Credit))) &lt; 0 THEN ABS((SUM(OpeningDebit) + SUM(Debit)) - (SUM(OpeningCredit) + SUM(Credit))) ELSE 0 END) AS ClosingCredit,
+,sum(OpeningDebit) + SUM(Debit)  as _ClosingDebit 
+   ,sum(OpeningCredit) + SUM(Credit)  as _ClosingCredit 
+
+,Tab_COA_Tran1.ChartOfAccountID, GL_CodeCombinationDetail.AccountTypeID, GL_CodeCombinationDetail.DetailPostingAllowedFlag 
+FROM
+(
+    SELECT GL_CodeCombinationDetail.CompanyID, GL_CodeCombinationDetail.ChartOfAccountID, GL_CodeCombinationDetail.CodeCombinationID, 0 As OpeningDebit, 
+        0 As OpeningCredit, 0 AS Debit, 0 AS Credit 
+    FROM GL_CodeCombinationDetail 
+    WHERE 
+    --GL_CodeCombinationDetail.CompanyID = @CompanyID AND 
+    GL_CodeCombinationDetail.ChartOfAccountID = @ChartofAccountID AND GL_CodeCombinationDetail.Status = 1 
+        AND GL_CodeCombinationDetail.IsActive = 1
+                
+    UNION ALL
+
+    SELECT GL_TransactionDetail.CompanyID, GL_TransactionDetail.ChartOfAccountID, GL_TransactionDetail.CodeCombinationID, 
+        (CASE WHEN GL_TransactionDetail.TransactionType = 'Debit' THEN GL_TransactionDetail.Amount ELSE 0 END) AS OpeningDebit, 
+        (CASE WHEN GL_TransactionDetail.TransactionType = 'Credit' THEN GL_TransactionDetail.Amount ELSE 0 END) AS OpeningCredit, 0 As Debit, 0 As Credit 
+    FROM GL_TransactionHeader 
+        INNER JOIN GL_TransactionDetail ON GL_TransactionHeader.CompanyID = GL_TransactionDetail.CompanyID 
+            AND GL_TransactionHeader.PeriodID = GL_TransactionDetail.PeriodID AND GL_TransactionHeader.TransactionID = GL_TransactionDetail.TransactionID 
+    WHERE GL_TransactionDetail.CompanyID = @CompanyID AND GL_TransactionDetail.ChartOfAccountID = @ChartofAccountID AND GL_TransactionDetail.PeriodID = @PeriodID 
+        AND GL_TransactionHeader.Status = 1 AND GL_TransactionDetail.Status = 1 AND GL_TransactionHeader.DocumentDate &lt; @FromDate 
+        AND GL_TransactionHeader.StatusCode = 1 And (GL_TransactionDetail.CostCenterID = @cc Or @cc is null) 
+        And (GL_TransactionDetail.DepartmentID = @did Or @did is null)
+        {1}
+    UNION ALL
+    
+    SELECT GL_TransactionDetail.CompanyID, GL_TransactionDetail.ChartOfAccountID, GL_TransactionDetail.CodeCombinationID, 0 As OpeningDebit, 0 As OpeningCredit, 
+        (CASE WHEN GL_TransactionDetail.TransactionType = 'Debit' THEN GL_TransactionDetail.Amount ELSE 0 END) AS Debit, 
+        (CASE WHEN GL_TransactionDetail.TransactionType = 'Credit' THEN GL_TransactionDetail.Amount ELSE 0 END) AS Credit 
+    FROM GL_TransactionHeader 
+        INNER JOIN GL_TransactionDetail ON GL_TransactionHeader.CompanyID = GL_TransactionDetail.CompanyID 
+            AND GL_TransactionHeader.PeriodID = GL_TransactionDetail.PeriodID AND GL_TransactionHeader.TransactionID = GL_TransactionDetail.TransactionID 
+    WHERE GL_TransactionDetail.CompanyID = @CompanyID AND GL_TransactionDetail.ChartOfAccountID = @ChartofAccountID AND GL_TransactionDetail.PeriodID = @PeriodID 
+        AND GL_TransactionHeader.Status = 1 AND GL_TransactionDetail.Status = 1 AND GL_TransactionHeader.DocumentDate &gt;= @FromDate 
+        AND GL_TransactionHeader.DocumentDate &lt;= @ToDate AND GL_TransactionHeader.StatusCode = 1 And (GL_TransactionDetail.CostCenterID = @cc Or @cc is null) 
+        And (GL_TransactionDetail.DepartmentID = @did Or @did is null
+        )
+        {1}
+) Tab_COA_Tran1 
+    INNER JOIN GL_CodeCombinationDetail ON 
+    --Tab_COA_Tran1.CompanyID = GL_CodeCombinationDetail.CompanyID         AND 
+    Tab_COA_Tran1.ChartOfAccountID = GL_CodeCombinationDetail.ChartOfAccountID 
+        AND Tab_COA_Tran1.CodeCombinationID = GL_CodeCombinationDetail.CodeCombinationID 
+where GL_CodeCombinationDetail.Status = 1 AND GL_CodeCombinationDetail.IsActive = 1 
+    AND (GL_CodeCombinationDetail.DetailPostingAllowedFlag = @DetailPostingAllowedFlag OR @DetailPostingAllowedFlag IS NULL) 
+GROUP BY GL_CodeCombinationDetail.Status,GL_CodeCombinationDetail.IsActive,Tab_COA_Tran1.CompanyID, Tab_COA_Tran1.ChartOfAccountID, GL_CodeCombinationDetail.HeadAccountCode, Tab_COA_Tran1.CodeCombinationID, 
+    GL_CodeCombinationDetail.SummaryFlag, GL_CodeCombinationDetail.Description, GL_CodeCombinationDetail.AccountTypeID, 
+    GL_CodeCombinationDetail.DetailPostingAllowedFlag</value>
+  </data>
+  <data name="Query_CashExpenseDetailReport" xml:space="preserve">
+    <value>select * from (
+--Payment Opening
+SELECT  
+		AR_SET_Bank.BankName,
+		AR_SET_BankBranch.BankBranchName,
+        'Opening' as CodeCombinationID ,
+        ''as Description ,
+        '' as CostCenterName ,
+		'' as DocumentNo,
+		''as DocumentType,
+        Abs(SUM(case GL_TransactionDetail.TransactionType when 'Debit' then GL_TransactionDetail.Amount  * (-1) else GL_TransactionDetail.Amount  end )) AS Amount
+		,case when SUM(case GL_TransactionDetail.TransactionType when 'Debit' then (GL_TransactionDetail.Amount  * (-1)) else GL_TransactionDetail.Amount  end )  &gt; 0 then 'Debit'
+		else 'Credit' end  as TransactionType
+		,null as DocumentDate,'' as InstrumentNo,'' as Narration
+FROM    GL_TransactionDetail
+        INNER JOIN GL_TransactionHeader ON GL_TransactionHeader.companyid = GL_TransactionDetail.companyid
+                   AND GL_TransactionHeader.TransactionID = GL_TransactionDetail.TransactionID
+				   AND GL_TransactionHeader.CompanyID = GL_TransactionDetail.CompanyID
+				   
+
+		inner join  AP_PaymentHeader on AP_PaymentHeader.DocumentNo = GL_TransactionHeader.DocumentNo
+		and AP_PaymentHeader.DocumentTypeID = GL_TransactionHeader.DocumentTypeID
+		and AP_PaymentHeader.CompanyID = GL_TransactionHeader.CompanyID
+		and AP_PaymentHeader.PeriodID = GL_TransactionHeader.PeriodID
+
+
+		inner join AP_PaymentBanksDetail on AP_PaymentBanksDetail.PaymentHeaderID = AP_PaymentHeader.PaymentID
+		and AP_PaymentBanksDetail.CompanyID = AP_PaymentHeader.CompanyID
+		and AP_PaymentBanksDetail.PeriodID = AP_PaymentHeader.PeriodID
+		and AP_PaymentBanksDetail.Status = 1
+		and AP_PaymentBanksDetail.PaymentBankID in (select top 1 PaymentBankID from AP_PaymentBanksDetail bnkDtl where bnkDtl.PaymentHeaderID = AP_PaymentBanksDetail.PaymentHeaderID and  bnkDtl.CompanyID = AP_PaymentBanksDetail.CompanyID and  bnkDtl.status = 1)
+
+		inner join  AR_SET_BankAccount on AR_SET_BankAccount.BankAccountID  = AP_PaymentBanksDetail.BankAccountID 
+				and AR_SET_BankAccount.BankBranchID = AP_PaymentBanksDetail.BankBranchID 
+
+				Inner Join AR_SET_BankBranch On AR_SET_BankBranch.BankBranchID = AR_SET_BankAccount.BankBranchID
+
+		INNER JOIN AR_SET_Bank ON AR_SET_Bank.BankID = AR_SET_BankBranch.BankID
+		AND AR_SET_Bank.Status = 1 
+
+        INNER JOIN GL_CodeCombinationDetail ON GL_CodeCombinationDetail.CodeCombinationID = GL_TransactionDetail.CodeCombinationID
+
+		inner join Set_DocumentType on Set_DocumentType.DOcumentTypeID = GL_TransactionHeader.DocumentTypeID
+		and Set_DocumentType.CompanyID = GL_TransactionHeader.CompanyID
+
+		 LEFT JOIN DocumentTypesGroup ON DocumentTypesGroup.GroupID = SET_DocumentType.GroupID
+		  AND SET_DocumentType.CompanyID = GL_TransactionHeader.CompanyID
+          AND SET_DocumentType.PeriodID = GL_TransactionHeader.PeriodID
+          AND SET_DocumentType.Status = 1
+
+        LEFT OUTER JOIN SET_CostCenter ON SET_CostCenter.CostCenterID = GL_TransactionDetail.CostCenterID
+
+		INNER JOIN Set_PeriodCustom ON GL_TransactionHeader.DocumentDate BETWEEN Set_PeriodCustom.StartDate
+                                                              AND
+                                                              Set_PeriodCustom.EndDate
+                                                   AND Set_PeriodCustom.Status = 1
+                                                    and Set_PeriodCustom.CompanyID = GL_TransactionHeader.CompanyID
+
+WHERE   
+GL_TransactionDetail.CompanyID in @CompanyID and GL_TransactionDetail.PeriodID = @PeriodID
+		and GL_TransactionHeader.Status = 1 and GL_TransactioNDetail.Status = 1
+		AND GL_TransactionHeader.DocumentDate &lt; @FromDate
+		{0}
+		{1}
+		{3}
+		and  GL_CodeCombinationDetail.CodeCombinationID not in (
+select distinct PaymentCCID from AR_SET_BankAccount  --where AR_SET_BankAccount.BankAccountID =  AP_PaymentBanksDetail.BankAccountID
+)
+
+
+
+GROUP BY  AR_SET_Bank.BankName,AR_SET_BankBranch.BankBranchName
+
+
+union all
+
+
+		--Receipt Opening 
+SELECT  
+		AR_SET_Bank.BankName,
+		AR_SET_BankBranch.BankBranchName,
+        'Opening' as CodeCombinationID ,
+        ''as Description ,
+        '' as CostCenterName ,
+		'' as DocumentNo,
+		''as DocumentType,
+        Abs(SUM(case GL_TransactionDetail.TransactionType when 'Debit' then GL_TransactionDetail.Amount  * (-1) else GL_TransactionDetail.Amount  end )) AS Amount
+		,case when SUM(case GL_TransactionDetail.TransactionType when 'Debit' then (GL_TransactionDetail.Amount  * (-1)) else GL_TransactionDetail.Amount  end )  &gt; 0 then 'Debit'
+		else 'Credit' end  as TransactionType
+		,null as DocumentDate,'' as InstrumentNo,'' as Narration
+FROM    GL_TransactionDetail
+        INNER JOIN GL_TransactionHeader ON GL_TransactionHeader.companyid = GL_TransactionDetail.companyid
+                   AND GL_TransactionHeader.TransactionID = GL_TransactionDetail.TransactionID
+				   AND GL_TransactionHeader.CompanyID = GL_TransactionDetail.CompanyID
+				   
+
+		inner join  AR_ReceiptTransactionHeader on AR_ReceiptTransactionHeader.DocumentNo = GL_TransactionHeader.DocumentNo
+		and AR_ReceiptTransactionHeader.DocumentTypeID = GL_TransactionHeader.DocumentTypeID
+		and AR_ReceiptTransactionHeader.CompanyID = GL_TransactionHeader.CompanyID
+		and AR_ReceiptTransactionHeader.PeriodID = GL_TransactionHeader.PeriodID
+
+
+		inner join AR_ReceiptBanksDetail on AR_ReceiptBanksDetail.ReceiptHeaderID = AR_ReceiptTransactionHeader.ReceiptTransactionID
+		and AR_ReceiptBanksDetail.CompanyID = AR_ReceiptTransactionHeader.CompanyID
+		and AR_ReceiptBanksDetail.PeriodID = AR_ReceiptTransactionHeader.PeriodID
+		and AR_ReceiptBanksDetail.Status = 1
+		and AR_ReceiptBanksDetail.ReceiptBankID in (select top 1 ReceiptBankID from AR_ReceiptBanksDetail bnkDtl where bnkDtl.ReceiptHeaderID = AR_ReceiptBanksDetail.ReceiptHeaderID and  bnkDtl.CompanyID = AR_ReceiptBanksDetail.CompanyID and  bnkDtl.status = 1)
+
+		inner join  AR_SET_BankAccount on AR_SET_BankAccount.BankAccountID  = AR_ReceiptBanksDetail.BankAccountID 
+				and AR_SET_BankAccount.BankBranchID = AR_ReceiptBanksDetail.BankBranchID 
+
+				Inner Join AR_SET_BankBranch On AR_SET_BankBranch.BankBranchID = AR_SET_BankAccount.BankBranchID
+
+		INNER JOIN AR_SET_Bank ON AR_SET_Bank.BankID = AR_SET_BankBranch.BankID
+		AND AR_SET_Bank.Status = 1 
+
+        INNER JOIN GL_CodeCombinationDetail ON GL_CodeCombinationDetail.CodeCombinationID = GL_TransactionDetail.CodeCombinationID
+
+		inner join Set_DocumentType on Set_DocumentType.DOcumentTypeID = GL_TransactionHeader.DocumentTypeID
+		and Set_DocumentType.CompanyID = GL_TransactionHeader.CompanyID
+
+		 LEFT JOIN DocumentTypesGroup ON DocumentTypesGroup.GroupID = SET_DocumentType.GroupID
+		  AND SET_DocumentType.CompanyID = GL_TransactionHeader.CompanyID
+          AND SET_DocumentType.PeriodID = GL_TransactionHeader.PeriodID
+          AND SET_DocumentType.Status = 1
+
+        LEFT OUTER JOIN SET_CostCenter ON SET_CostCenter.CostCenterID = GL_TransactionDetail.CostCenterID
+
+		INNER JOIN Set_PeriodCustom ON GL_TransactionHeader.DocumentDate BETWEEN Set_PeriodCustom.StartDate
+                                                              AND
+                                                              Set_PeriodCustom.EndDate
+                                                   AND Set_PeriodCustom.Status = 1
+                                                    and Set_PeriodCustom.CompanyID = GL_TransactionHeader.CompanyID
+
+WHERE   
+GL_TransactionDetail.CompanyID in @CompanyID and GL_TransactionDetail.PeriodID = @PeriodID
+		and GL_TransactionHeader.Status = 1 and GL_TransactioNDetail.Status = 1
+		AND GL_TransactionHeader.DocumentDate &lt; @FromDate
+		AND GL_TransactionHeader.DocumentNo = 74
+		{0}
+		{2}
+		{3}
+		and  GL_CodeCombinationDetail.CodeCombinationID not in (
+select distinct PaymentCCID from AR_SET_BankAccount  --where AR_SET_BankAccount.BankAccountID =  AR_ReceiptBanksDetail.BankAccountID
+)
+
+GROUP BY  AR_SET_Bank.BankName,AR_SET_BankBranch.BankBranchName
+)as OpeningTAB
+
+union all
+
+
+--Payment
+SELECT  AR_SET_Bank.BankName,AR_SET_BankBranch.BankBranchName,
+        GL_TransactionDetail.CodeCombinationID ,
+        GL_CodeCombinationDetail.Description ,
+        SET_CostCenter.CostCenterName ,
+		GL_TransactionHeader.DocumentNo,
+		SET_DocumentType.DocumentType,
+        SUM(case GL_TransactionDetail.TransactionType when 'Debit' then abs(GL_TransactionDetail.Amount  * (-1)) else GL_TransactionDetail.Amount  end ) AS Amount,
+		GL_TransactionDetail.TransactionType
+		,GL_TransactionHeader.DocumentDate,AP_PaymentBanksDetail.InstrumentNo ,GL_TransactionDetail.Narration
+FROM    GL_TransactionDetail
+        INNER JOIN GL_TransactionHeader ON GL_TransactionHeader.companyid = GL_TransactionDetail.companyid
+                   AND GL_TransactionHeader.TransactionID = GL_TransactionDetail.TransactionID
+				   AND GL_TransactionHeader.CompanyID = GL_TransactionDetail.CompanyID
+				   
+
+		inner join  AP_PaymentHeader on AP_PaymentHeader.DocumentNo = GL_TransactionHeader.DocumentNo
+		and AP_PaymentHeader.DocumentTypeID = GL_TransactionHeader.DocumentTypeID
+		and AP_PaymentHeader.CompanyID = GL_TransactionHeader.CompanyID
+		and AP_PaymentHeader.PeriodID = GL_TransactionHeader.PeriodID
+
+
+		inner join AP_PaymentBanksDetail on AP_PaymentBanksDetail.PaymentHeaderID = AP_PaymentHeader.PaymentID
+		and AP_PaymentBanksDetail.CompanyID = AP_PaymentHeader.CompanyID
+		and AP_PaymentBanksDetail.PeriodID = AP_PaymentHeader.PeriodID
+		and AP_PaymentBanksDetail.Status = 1
+		and AP_PaymentBanksDetail.PaymentBankID in (select top 1 PaymentBankID from AP_PaymentBanksDetail bnkDtl where bnkDtl.PaymentHeaderID = AP_PaymentBanksDetail.PaymentHeaderID and  bnkDtl.CompanyID = AP_PaymentBanksDetail.CompanyID and  bnkDtl.status = 1)
+
+		inner join  AR_SET_BankAccount on AR_SET_BankAccount.BankAccountID  = AP_PaymentBanksDetail.BankAccountID 
+				and AR_SET_BankAccount.BankBranchID = AP_PaymentBanksDetail.BankBranchID 
+
+				Inner Join AR_SET_BankBranch On AR_SET_BankBranch.BankBranchID = AR_SET_BankAccount.BankBranchID
+
+		INNER JOIN AR_SET_Bank ON AR_SET_Bank.BankID = AR_SET_BankBranch.BankID
+		AND AR_SET_Bank.Status = 1 
+
+        INNER JOIN GL_CodeCombinationDetail ON GL_CodeCombinationDetail.CodeCombinationID = GL_TransactionDetail.CodeCombinationID
+
+		inner join Set_DocumentType on Set_DocumentType.DOcumentTypeID = GL_TransactionHeader.DocumentTypeID
+		and Set_DocumentType.CompanyID = GL_TransactionHeader.CompanyID
+
+		 LEFT JOIN DocumentTypesGroup ON DocumentTypesGroup.GroupID = SET_DocumentType.GroupID
+		  AND SET_DocumentType.CompanyID = GL_TransactionHeader.CompanyID
+          AND SET_DocumentType.PeriodID = GL_TransactionHeader.PeriodID
+          AND SET_DocumentType.Status = 1
+
+        LEFT OUTER JOIN SET_CostCenter ON SET_CostCenter.CostCenterID = GL_TransactionDetail.CostCenterID
+
+		INNER JOIN Set_PeriodCustom ON GL_TransactionHeader.DocumentDate BETWEEN Set_PeriodCustom.StartDate
+                                                              AND
+                                                              Set_PeriodCustom.EndDate
+                                                   AND Set_PeriodCustom.Status = 1
+                                                    and Set_PeriodCustom.CompanyID = GL_TransactionHeader.CompanyID
+
+WHERE   
+GL_TransactionDetail.CompanyID in @CompanyID and GL_TransactionDetail.PeriodID = @PeriodID
+		and GL_TransactionHeader.Status = 1 and GL_TransactioNDetail.Status = 1
+		AND GL_TransactionHeader.DocumentDate BETWEEN @FromDate AND @ToDate
+		{0}
+		{1}
+		{3}
+		and  GL_CodeCombinationDetail.CodeCombinationID not in (
+select distinct PaymentCCID from AR_SET_BankAccount  --where AR_SET_BankAccount.BankAccountID =  AP_PaymentBanksDetail.BankAccountID
+)
+
+GROUP BY  GL_TransactionDetail.CodeCombinationID ,GL_CodeCombinationDetail.Description ,SET_CostCenter.CostCenterName ,GL_TransactionHeader.DocumentNo,SET_DocumentType.DocumentType,GL_TransactionDetail.TransactionType,AR_SET_Bank.BankName,GL_TransactionHeader.DocumentDate,AP_PaymentBanksDetail.InstrumentNo,GL_TransactionDetail.Narration,AR_SET_BankBranch.BankBranchName
+		--order by GL_TransactionHeader.DocumentNo,SET_DocumentType.DocumentType
+
+		union all
+
+
+		--Receipt
+SELECT  AR_SET_Bank.BankName,AR_SET_BankBranch.BankBranchName,
+        GL_TransactionDetail.CodeCombinationID ,
+        GL_CodeCombinationDetail.Description ,
+        SET_CostCenter.CostCenterName ,
+		GL_TransactionHeader.DocumentNo,
+		SET_DocumentType.DocumentType,
+        SUM(case GL_TransactionDetail.TransactionType when 'Debit' then abs(GL_TransactionDetail.Amount  * (-1)) else GL_TransactionDetail.Amount  end ) AS Amount,
+		GL_TransactionDetail.TransactionType
+		,GL_TransactionHeader.DocumentDate,AR_ReceiptBanksDetail.InstrumentNo,GL_TransactionDetail.Narration
+FROM    GL_TransactionDetail
+        INNER JOIN GL_TransactionHeader ON GL_TransactionHeader.companyid = GL_TransactionDetail.companyid
+                   AND GL_TransactionHeader.TransactionID = GL_TransactionDetail.TransactionID
+				   AND GL_TransactionHeader.CompanyID = GL_TransactionDetail.CompanyID
+				   
+
+		inner join  AR_ReceiptTransactionHeader on AR_ReceiptTransactionHeader.DocumentNo = GL_TransactionHeader.DocumentNo
+		and AR_ReceiptTransactionHeader.DocumentTypeID = GL_TransactionHeader.DocumentTypeID
+		and AR_ReceiptTransactionHeader.CompanyID = GL_TransactionHeader.CompanyID
+		and AR_ReceiptTransactionHeader.PeriodID = GL_TransactionHeader.PeriodID
+
+
+		inner join AR_ReceiptBanksDetail on AR_ReceiptBanksDetail.ReceiptHeaderID = AR_ReceiptTransactionHeader.ReceiptTransactionID
+		and AR_ReceiptBanksDetail.CompanyID = AR_ReceiptTransactionHeader.CompanyID
+		and AR_ReceiptBanksDetail.PeriodID = AR_ReceiptTransactionHeader.PeriodID
+		and AR_ReceiptBanksDetail.Status = 1
+		and AR_ReceiptBanksDetail.ReceiptBankID in (select top 1 ReceiptBankID from AR_ReceiptBanksDetail bnkDtl where bnkDtl.ReceiptHeaderID = AR_ReceiptBanksDetail.ReceiptHeaderID and  bnkDtl.CompanyID = AR_ReceiptBanksDetail.CompanyID and  bnkDtl.status = 1)
+
+		inner join  AR_SET_BankAccount on AR_SET_BankAccount.BankAccountID  = AR_ReceiptBanksDetail.BankAccountID 
+				and AR_SET_BankAccount.BankBranchID = AR_ReceiptBanksDetail.BankBranchID 
+
+				Inner Join AR_SET_BankBranch On AR_SET_BankBranch.BankBranchID = AR_SET_BankAccount.BankBranchID
+
+		INNER JOIN AR_SET_Bank ON AR_SET_Bank.BankID = AR_SET_BankBranch.BankID
+		AND AR_SET_Bank.Status = 1 
+
+        INNER JOIN GL_CodeCombinationDetail ON GL_CodeCombinationDetail.CodeCombinationID = GL_TransactionDetail.CodeCombinationID
+
+		inner join Set_DocumentType on Set_DocumentType.DOcumentTypeID = GL_TransactionHeader.DocumentTypeID
+		and Set_DocumentType.CompanyID = GL_TransactionHeader.CompanyID
+
+		 LEFT JOIN DocumentTypesGroup ON DocumentTypesGroup.GroupID = SET_DocumentType.GroupID
+		  AND SET_DocumentType.CompanyID = GL_TransactionHeader.CompanyID
+          AND SET_DocumentType.PeriodID = GL_TransactionHeader.PeriodID
+          AND SET_DocumentType.Status = 1
+
+        LEFT OUTER JOIN SET_CostCenter ON SET_CostCenter.CostCenterID = GL_TransactionDetail.CostCenterID
+
+		INNER JOIN Set_PeriodCustom ON GL_TransactionHeader.DocumentDate BETWEEN Set_PeriodCustom.StartDate
+                                                              AND
+                                                              Set_PeriodCustom.EndDate
+                                                   AND Set_PeriodCustom.Status = 1
+                                                    and Set_PeriodCustom.CompanyID = GL_TransactionHeader.CompanyID
+
+WHERE   
+GL_TransactionDetail.CompanyID in @CompanyID and GL_TransactionDetail.PeriodID = @PeriodID
+		and GL_TransactionHeader.Status = 1 and GL_TransactioNDetail.Status = 1
+		AND GL_TransactionHeader.DocumentDate BETWEEN @FromDate AND @ToDate
+		{0}
+		{2}
+		{3}
+		and  GL_CodeCombinationDetail.CodeCombinationID not in (
+select distinct PaymentCCID from AR_SET_BankAccount  --where AR_SET_BankAccount.BankAccountID =  AR_ReceiptBanksDetail.BankAccountID
+)
+
+GROUP BY GL_TransactionDetail.CodeCombinationID , GL_CodeCombinationDetail.Description ,SET_CostCenter.CostCenterName ,GL_TransactionHeader.DocumentNo,SET_DocumentType.DocumentType,GL_TransactionDetail.TransactionType,AR_SET_Bank.BankName,GL_TransactionHeader.DocumentDate,AR_ReceiptBanksDetail.InstrumentNo,GL_TransactionDetail.Narration,AR_SET_BankBranch.BankBranchName</value>
+  </data>
+  <data name="Query_CashExpenseLedgerHSM_Report" xml:space="preserve">
+    <value>SELECT  
+        'Opening Balance of Cash in Hand' as CodeCombinationID ,
+        ''as Description ,
+        '' as CostCenterName ,
+		'' as DocumentNo,
+		''as DocumentType,
+		null as DocumentDate,
+        Abs(SUM(case GL_TransactionDetail.TransactionType when 'Debit' then GL_TransactionDetail.Amount  * (-1) else GL_TransactionDetail.Amount  end )) AS Amount
+		,case when SUM(case GL_TransactionDetail.TransactionType when 'Debit' then (GL_TransactionDetail.Amount  * (-1)) else GL_TransactionDetail.Amount  end )  &gt; 0 then 'Debit'
+		else 'Credit' end  as TransactionType
+FROM    GL_TransactionDetail
+        INNER JOIN GL_TransactionHeader ON GL_TransactionHeader.companyid = GL_TransactionDetail.companyid
+                                           AND GL_TransactionHeader.TransactionID = GL_TransactionDetail.TransactionID
+        INNER JOIN GL_CodeCombinationDetail ON GL_CodeCombinationDetail.CodeCombinationID = GL_TransactionDetail.CodeCombinationID
+		inner join Set_DocumentType on Set_DocumentType.DOcumentTypeID = GL_TransactionHeader.DocumentTypeID
+		and Set_DocumentType.CompanyID = GL_TransactionHeader.CompanyID
+		 LEFT JOIN DocumentTypesGroup ON DocumentTypesGroup.GroupID = SET_DocumentType.GroupID
+		  AND SET_DocumentType.CompanyID = GL_TransactionHeader.CompanyID
+                                                   AND SET_DocumentType.PeriodID = GL_TransactionHeader.PeriodID
+                                                   AND SET_DocumentType.Status = 1
+
+        LEFT OUTER JOIN SET_CostCenter ON SET_CostCenter.CostCenterID = GL_TransactionDetail.CostCenterID
+
+		INNER JOIN Set_PeriodCustom ON GL_TransactionHeader.DocumentDate BETWEEN Set_PeriodCustom.StartDate
+                                                              AND
+                                                              Set_PeriodCustom.EndDate
+                                                   AND Set_PeriodCustom.Status = 1
+                                                   and Set_PeriodCustom.CompanyID = GL_TransactionHeader.CompanyID
+
+WHERE   
+
+        GL_TransactionDetail.CodeCombinationID IN ( select CodeCombinationID from GL_CodeCombinationDetail where description like '%CASH IN HAND%' )
+		and GL_TransactionDetail.CompanyID in @CompanyID and GL_TransactionDetail.PeriodID = @PeriodID
+		and GL_TransactionHeader.Status = 1 and GL_TransactioNDetail.Status = 1
+		AND GL_TransactionHeader.DocumentDate &lt; @FromDate
+
+		{0}
+
+union all
+
+
+SELECT  
+        GL_TransactionDetail.CodeCombinationID ,
+        GL_CodeCombinationDetail.Description ,
+        SET_CostCenter.CostCenterName ,
+		GL_TransactionHeader.DocumentNo,
+		SET_DocumentType.DocumentType,
+		GL_TransactionHeader.DocumentDate,
+        SUM(case GL_TransactionDetail.TransactionType when 'Debit' then abs(GL_TransactionDetail.Amount  * (-1)) else GL_TransactionDetail.Amount  end ) AS Amount,
+		GL_TransactionDetail.TransactionType
+FROM    GL_TransactionDetail
+        INNER JOIN GL_TransactionHeader ON GL_TransactionHeader.companyid = GL_TransactionDetail.companyid
+                                           AND GL_TransactionHeader.TransactionID = GL_TransactionDetail.TransactionID
+        INNER JOIN GL_CodeCombinationDetail ON GL_CodeCombinationDetail.CodeCombinationID = GL_TransactionDetail.CodeCombinationID
+		inner join Set_DocumentType on Set_DocumentType.DOcumentTypeID = GL_TransactionHeader.DocumentTypeID
+		and Set_DocumentType.CompanyID = GL_TransactionHeader.CompanyID
+		 LEFT JOIN DocumentTypesGroup ON DocumentTypesGroup.GroupID = SET_DocumentType.GroupID
+		  AND SET_DocumentType.CompanyID = GL_TransactionHeader.CompanyID
+                                                   AND SET_DocumentType.PeriodID = GL_TransactionHeader.PeriodID
+                                                   AND SET_DocumentType.Status = 1
+
+        LEFT OUTER JOIN SET_CostCenter ON SET_CostCenter.CostCenterID = GL_TransactionDetail.CostCenterID
+
+		INNER JOIN Set_PeriodCustom ON GL_TransactionHeader.DocumentDate BETWEEN Set_PeriodCustom.StartDate
+                                                              AND
+                                                              Set_PeriodCustom.EndDate
+                                                   AND Set_PeriodCustom.Status = 1
+                                                    and Set_PeriodCustom.CompanyID = GL_TransactionHeader.CompanyID
+
+WHERE   CAST(GL_TransactionDetail.companyid AS VARCHAR(10)) + '|'
+        + CAST(GL_TransactionDetail.transactionid AS VARCHAR(10)) IN (
+        SELECT  CAST(companyid AS VARCHAR(10)) + '|'
+                + CAST(transactionid AS VARCHAR(10))
+        FROM    GL_TransactionDetail
+      where  codecombinationid IN ( select CodeCombinationID from GL_CodeCombinationDetail where description like '%CASH IN HAND%' ) )
+        AND GL_TransactionDetail.CodeCombinationID NOT IN ( select CodeCombinationID from GL_CodeCombinationDetail where description like '%CASH IN HAND%' )
+		and GL_TransactionDetail.CompanyID in @CompanyID and GL_TransactionDetail.PeriodID = @PeriodID
+		and GL_TransactionHeader.Status = 1 and GL_TransactioNDetail.Status = 1
+		AND GL_TransactionHeader.DocumentDate BETWEEN @FromDate AND @ToDate
+		
+		{0}
+
+GROUP BY 
+        GL_TransactionDetail.CodeCombinationID ,
+        GL_CodeCombinationDetail.Description ,
+        SET_CostCenter.CostCenterName 
+		,GL_TransactionHeader.DocumentNo,SET_DocumentType.DocumentType,GL_TransactionDetail.TransactionType,GL_TransactionHeader.DocumentDate</value>
+  </data>
+  <data name="Query_CashExpenseReport" xml:space="preserve">
+    <value>SELECT  GL_TransactionDetail.CompanyID ,
+        GL_TransactionDetail.CodeCombinationID ,
+        GL_CodeCombinationDetail.Description ,
+        GL_TransactionDetail.CostCenterID ,
+        SET_CostCenter.CostCenterName ,
+        cast(YEAR(GL_TransactionHeader.documentdate) as varchar(10))
+		+ '-' + cast(Month(GL_TransactionHeader.documentdate) as varchar(10))
+		 AS VoucherMonthYear ,
+         SUM(case GL_TransactionDetail.TransactionType when 'Debit' then GL_TransactionDetail.Amount  else GL_TransactionDetail.Amount * -1 end ) AS Amount
+		,CONVERT(varchar(3), GL_TransactionHeader.documentdate, 100) +'-'+ RIGHT(YEAR(GL_TransactionHeader.documentdate), 2)  as Month
+FROM    GL_TransactionDetail
+        INNER JOIN GL_TransactionHeader ON GL_TransactionHeader.companyid = GL_TransactionDetail.companyid
+                                           AND GL_TransactionHeader.TransactionID = GL_TransactionDetail.TransactionID
+        INNER JOIN GL_CodeCombinationDetail ON GL_CodeCombinationDetail.CodeCombinationID = GL_TransactionDetail.CodeCombinationID
+		inner join Set_DocumentType on Set_DocumentType.DOcumentTypeID = GL_TransactionHeader.DocumentTypeID
+		and Set_DocumentType.CompanyID = GL_TransactionHeader.CompanyID
+		 LEFT JOIN DocumentTypesGroup ON DocumentTypesGroup.GroupID = SET_DocumentType.GroupID
+		  AND SET_DocumentType.CompanyID = GL_TransactionHeader.CompanyID
+                                                   AND SET_DocumentType.PeriodID = GL_TransactionHeader.PeriodID
+                                                   AND SET_DocumentType.Status = 1
+
+        LEFT OUTER JOIN SET_CostCenter ON SET_CostCenter.CostCenterID = GL_TransactionDetail.CostCenterID
+
+		INNER JOIN Set_PeriodCustom ON GL_TransactionHeader.DocumentDate BETWEEN Set_PeriodCustom.StartDate
+                                                              AND
+                                                              Set_PeriodCustom.EndDate
+                                                   AND Set_PeriodCustom.Status = 1
+                                                   and Set_PeriodCustom.CompanyID = GL_TransactionHeader.CompanyID
+
+WHERE   CAST(GL_TransactionDetail.companyid AS VARCHAR(10)) + '|'
+        + CAST(GL_TransactionDetail.transactionid AS VARCHAR(10)) IN (
+        SELECT  CAST(companyid AS VARCHAR(10)) + '|'
+                + CAST(transactionid AS VARCHAR(10))
+        FROM    GL_TransactionDetail
+      where  codecombinationid IN ( select CodeCombinationID from GL_CodeCombinationDetail where description like '%CASH IN HAND%' ) )
+        AND GL_TransactionDetail.CodeCombinationID NOT IN ( select CodeCombinationID from GL_CodeCombinationDetail where description like '%CASH IN HAND%' )
+		and GL_TransactionDetail.CompanyID in @CompanyID and GL_TransactionDetail.PeriodID = @PeriodID
+		and GL_TransactionHeader.Status = 1 and GL_TransactioNDetail.Status = 1
+		AND GL_TransactionHeader.DocumentDate BETWEEN @FromDate AND @ToDate 
+
+{0}
+
+
+GROUP BY GL_TransactionDetail.CompanyID ,
+        GL_TransactionDetail.CodeCombinationID ,
+        GL_CodeCombinationDetail.Description ,
+        GL_TransactionDetail.CostCenterID ,
+        SET_CostCenter.CostCenterName ,
+        YEAR(GL_TransactionHeader.documentdate) ,
+        MONTH(GL_TransactionHeader.documentdate) 
+		,CONVERT(varchar(3), GL_TransactionHeader.documentdate, 100)
+
+		order by Year(GL_TransactionHeader.documentdate) asc ,Month(GL_TransactionHeader.documentdate) asc</value>
+  </data>
+  <data name="Query_CheckAccountCode" xml:space="preserve">
+    <value>select  
+DetailPostingAllowedFlag 
+,gl_codecombinationdetail.CodeCombinationID
+,* from AR_SET_Customer inner join  AR_SET_BusinessPartnerTypes 
+on AR_SET_BusinessPartnerTypes.BusinessPartnerID = AR_SET_Customer.CustomerID
+--and AR_SET_BusinessPartnerTypes.CompanyID = AR_SET_Customer.CompanyID
+and AR_SET_BusinessPartnerTypes.PeriodID = AR_SET_Customer.PeriodID
+and AR_SET_Customer.Status = 1
+
+inner join gl_codecombinationdetail on gl_codecombinationdetail.CodeCombinationID = AR_SET_BusinessPartnerTypes.FK_CodeCombinationID
+--and gl_codecombinationdetail.CompanyID= AR_SET_BusinessPartnerTypes.CompanyID
+and gl_codecombinationdetail.Status = 1 
+
+where  DetailPostingAllowedFlag = 1 
+--and AR_SET_Customer.CompanyID = @CompanyID
+and AR_SET_Customer.PeriodID = @PeriodID
+and customerid = @CustomerID</value>
+  </data>
+  <data name="Query_ExpenseAccountDepartmentWise" xml:space="preserve">
+    <value>select  CodeCombinationID,Description,DepartmentName,sum(case when TransactionType = 'Debit' then Amount else Amount *-1 end ) as Amount from (
+
+select * from (
+--Payment Opening
+SELECT  
+		AR_SET_Bank.BankName,
+		AR_SET_BankBranch.BankBranchName,
+        'Opening' as CodeCombinationID ,
+        ''as Description ,
+        '' as CostCenterName ,
+		'' as DepartmentName,
+		'' as DocumentNo,
+		''as DocumentType,
+        Abs(SUM(case GL_TransactionDetail.TransactionType when 'Debit' then GL_TransactionDetail.Amount  * (-1) else GL_TransactionDetail.Amount  end )) AS Amount
+		,case when SUM(case GL_TransactionDetail.TransactionType when 'Debit' then (GL_TransactionDetail.Amount  * (-1)) else GL_TransactionDetail.Amount  end )  &gt; 0 then 'Debit'
+		else 'Credit' end  as TransactionType
+		,null as DocumentDate,'' as InstrumentNo,'' as Narration
+FROM    GL_TransactionDetail
+        INNER JOIN GL_TransactionHeader ON GL_TransactionHeader.companyid = GL_TransactionDetail.companyid
+                   AND GL_TransactionHeader.TransactionID = GL_TransactionDetail.TransactionID
+				   AND GL_TransactionHeader.CompanyID = GL_TransactionDetail.CompanyID
+				   
+
+		inner join  AP_PaymentHeader on AP_PaymentHeader.DocumentNo = GL_TransactionHeader.DocumentNo
+		and AP_PaymentHeader.DocumentTypeID = GL_TransactionHeader.DocumentTypeID
+		and AP_PaymentHeader.CompanyID = GL_TransactionHeader.CompanyID
+		and AP_PaymentHeader.PeriodID = GL_TransactionHeader.PeriodID
+		and AP_PaymentHeader.FiscalID = GL_TransactionHeader.FiscalID
+
+
+		inner join AP_PaymentBanksDetail on AP_PaymentBanksDetail.PaymentHeaderID = AP_PaymentHeader.PaymentID
+		and AP_PaymentBanksDetail.CompanyID = AP_PaymentHeader.CompanyID
+		and AP_PaymentBanksDetail.PeriodID = AP_PaymentHeader.PeriodID
+		and AP_PaymentBanksDetail.Status = 1
+		and AP_PaymentBanksDetail.PaymentBankID in (select top 1 PaymentBankID from AP_PaymentBanksDetail bnkDtl where bnkDtl.PaymentHeaderID = AP_PaymentBanksDetail.PaymentHeaderID and  bnkDtl.CompanyID = AP_PaymentBanksDetail.CompanyID and  bnkDtl.status = 1)
+
+		inner join  AR_SET_BankAccount on AR_SET_BankAccount.BankAccountID  = AP_PaymentBanksDetail.BankAccountID 
+				and AR_SET_BankAccount.BankBranchID = AP_PaymentBanksDetail.BankBranchID 
+
+				Inner Join AR_SET_BankBranch On AR_SET_BankBranch.BankBranchID = AR_SET_BankAccount.BankBranchID
+
+		INNER JOIN AR_SET_Bank ON AR_SET_Bank.BankID = AR_SET_BankBranch.BankID
+		AND AR_SET_Bank.Status = 1 
+
+        INNER JOIN GL_CodeCombinationDetail ON GL_CodeCombinationDetail.CodeCombinationID = GL_TransactionDetail.CodeCombinationID
+
+		inner join Set_DocumentType on Set_DocumentType.DOcumentTypeID = GL_TransactionHeader.DocumentTypeID
+		and Set_DocumentType.CompanyID = GL_TransactionHeader.CompanyID
+
+		 LEFT JOIN DocumentTypesGroup ON DocumentTypesGroup.GroupID = SET_DocumentType.GroupID
+		  AND SET_DocumentType.CompanyID = GL_TransactionHeader.CompanyID
+          AND SET_DocumentType.PeriodID = GL_TransactionHeader.PeriodID
+          AND SET_DocumentType.Status = 1
+
+        LEFT OUTER JOIN SET_CostCenter ON SET_CostCenter.CostCenterID = GL_TransactionDetail.CostCenterID
+
+		INNER JOIN Set_PeriodCustom ON GL_TransactionHeader.DocumentDate BETWEEN Set_PeriodCustom.StartDate
+                                                              AND
+                                                              Set_PeriodCustom.EndDate
+                                                   AND Set_PeriodCustom.Status = 1
+                                                    and Set_PeriodCustom.CompanyID = GL_TransactionHeader.CompanyID
+
+WHERE   
+GL_TransactionDetail.CompanyID in @CompanyID and GL_TransactionDetail.PeriodID = @PeriodID
+		and GL_TransactionHeader.Status = 1 and GL_TransactioNDetail.Status = 1
+		AND GL_TransactionHeader.DocumentDate &lt; @FromDate
+		{0}
+		{1}
+		and  GL_CodeCombinationDetail.CodeCombinationID not in (
+select distinct PaymentCCID from AR_SET_BankAccount  --where AR_SET_BankAccount.BankAccountID =  AP_PaymentBanksDetail.BankAccountID
+)
+
+
+
+GROUP BY  AR_SET_Bank.BankName,AR_SET_BankBranch.BankBranchName
+
+
+union all
+
+
+		--Receipt Opening 
+SELECT  
+		AR_SET_Bank.BankName,
+		AR_SET_BankBranch.BankBranchName,
+        'Opening' as CodeCombinationID ,
+        ''as Description ,
+        '' as CostCenterName ,
+		'' as DepartmentName,
+		'' as DocumentNo,
+		''as DocumentType,
+        Abs(SUM(case GL_TransactionDetail.TransactionType when 'Debit' then GL_TransactionDetail.Amount  * (-1) else GL_TransactionDetail.Amount  end )) AS Amount
+		,case when SUM(case GL_TransactionDetail.TransactionType when 'Debit' then (GL_TransactionDetail.Amount  * (-1)) else GL_TransactionDetail.Amount  end )  &gt; 0 then 'Debit'
+		else 'Credit' end  as TransactionType
+		,null as DocumentDate,'' as InstrumentNo,'' as Narration
+FROM    GL_TransactionDetail
+        INNER JOIN GL_TransactionHeader ON GL_TransactionHeader.companyid = GL_TransactionDetail.companyid
+                   AND GL_TransactionHeader.TransactionID = GL_TransactionDetail.TransactionID
+				   AND GL_TransactionHeader.CompanyID = GL_TransactionDetail.CompanyID
+				   
+
+		inner join  AR_ReceiptTransactionHeader on AR_ReceiptTransactionHeader.DocumentNo = GL_TransactionHeader.DocumentNo
+		and AR_ReceiptTransactionHeader.DocumentTypeID = GL_TransactionHeader.DocumentTypeID
+		and AR_ReceiptTransactionHeader.CompanyID = GL_TransactionHeader.CompanyID
+		and AR_ReceiptTransactionHeader.PeriodID = GL_TransactionHeader.PeriodID
+		and AR_ReceiptTransactionHeader.FiscalID = GL_TransactionHeader.FiscalID
+
+
+		inner join AR_ReceiptBanksDetail on AR_ReceiptBanksDetail.ReceiptHeaderID = AR_ReceiptTransactionHeader.ReceiptTransactionID
+		and AR_ReceiptBanksDetail.CompanyID = AR_ReceiptTransactionHeader.CompanyID
+		and AR_ReceiptBanksDetail.PeriodID = AR_ReceiptTransactionHeader.PeriodID
+		and AR_ReceiptBanksDetail.Status = 1
+		and AR_ReceiptBanksDetail.ReceiptBankID in (select top 1 ReceiptBankID from AR_ReceiptBanksDetail bnkDtl where bnkDtl.ReceiptHeaderID = AR_ReceiptBanksDetail.ReceiptHeaderID and  bnkDtl.CompanyID = AR_ReceiptBanksDetail.CompanyID and  bnkDtl.status = 1)
+
+		inner join  AR_SET_BankAccount on AR_SET_BankAccount.BankAccountID  = AR_ReceiptBanksDetail.BankAccountID 
+				and AR_SET_BankAccount.BankBranchID = AR_ReceiptBanksDetail.BankBranchID 
+
+				Inner Join AR_SET_BankBranch On AR_SET_BankBranch.BankBranchID = AR_SET_BankAccount.BankBranchID
+
+		INNER JOIN AR_SET_Bank ON AR_SET_Bank.BankID = AR_SET_BankBranch.BankID
+		AND AR_SET_Bank.Status = 1 
+
+        INNER JOIN GL_CodeCombinationDetail ON GL_CodeCombinationDetail.CodeCombinationID = GL_TransactionDetail.CodeCombinationID
+
+		inner join Set_DocumentType on Set_DocumentType.DOcumentTypeID = GL_TransactionHeader.DocumentTypeID
+		and Set_DocumentType.CompanyID = GL_TransactionHeader.CompanyID
+
+		 LEFT JOIN DocumentTypesGroup ON DocumentTypesGroup.GroupID = SET_DocumentType.GroupID
+		  AND SET_DocumentType.CompanyID = GL_TransactionHeader.CompanyID
+          AND SET_DocumentType.PeriodID = GL_TransactionHeader.PeriodID
+          AND SET_DocumentType.Status = 1
+
+        LEFT OUTER JOIN SET_CostCenter ON SET_CostCenter.CostCenterID = GL_TransactionDetail.CostCenterID
+
+		INNER JOIN Set_PeriodCustom ON GL_TransactionHeader.DocumentDate BETWEEN Set_PeriodCustom.StartDate
+                                                              AND
+                                                              Set_PeriodCustom.EndDate
+                                                   AND Set_PeriodCustom.Status = 1
+                                                    and Set_PeriodCustom.CompanyID = GL_TransactionHeader.CompanyID
+
+WHERE   
+GL_TransactionDetail.CompanyID in @CompanyID and GL_TransactionDetail.PeriodID = @PeriodID
+		and GL_TransactionHeader.Status = 1 and GL_TransactioNDetail.Status = 1
+		AND GL_TransactionHeader.DocumentDate &lt; @FromDate
+		--AND GL_TransactionHeader.DocumentNo = 74
+		{0}
+		{2}
+		and  GL_CodeCombinationDetail.CodeCombinationID not in (
+select distinct PaymentCCID from AR_SET_BankAccount  --where AR_SET_BankAccount.BankAccountID =  AR_ReceiptBanksDetail.BankAccountID
+)
+
+GROUP BY  AR_SET_Bank.BankName,AR_SET_BankBranch.BankBranchName
+
+
+union all
+
+
+		--Invoice Opening
+SELECT  '' as BankName,'' as BankBranchName,
+        GL_TransactionDetail.CodeCombinationID ,
+        GL_CodeCombinationDetail.Description ,
+        SET_CostCenter.CostCenterName ,
+		set_department.DepartmentName,
+		GL_TransactionHeader.DocumentNo,
+		SET_DocumentType.DocumentType,
+        SUM(case GL_TransactionDetail.TransactionType when 'Debit' then abs(GL_TransactionDetail.Amount  * (-1)) else GL_TransactionDetail.Amount  end ) AS Amount,
+		GL_TransactionDetail.TransactionType
+		,GL_TransactionHeader.DocumentDate,'' as InstrumentNo,GL_TransactionDetail.Narration
+FROM    GL_TransactionDetail
+        INNER JOIN GL_TransactionHeader ON GL_TransactionHeader.companyid = GL_TransactionDetail.companyid
+                   AND GL_TransactionHeader.TransactionID = GL_TransactionDetail.TransactionID
+				   AND GL_TransactionHeader.CompanyID = GL_TransactionDetail.CompanyID
+				   
+
+		inner join  AR_InvoiceHeader on AR_InvoiceHeader.InvoiceNumber = GL_TransactionHeader.DocumentNo
+		and AR_InvoiceHeader.InvoiceType = GL_TransactionHeader.DocumentTypeID
+		and AR_InvoiceHeader.CompanyID = GL_TransactionHeader.CompanyID
+		and AR_InvoiceHeader.PeriodID = GL_TransactionHeader.PeriodID
+			and AR_InvoiceHeader.FiscalID = GL_TransactionHeader.FiscalID
+
+
+
+        INNER JOIN GL_CodeCombinationDetail ON GL_CodeCombinationDetail.CodeCombinationID = GL_TransactionDetail.CodeCombinationID
+
+		inner join Set_DocumentType on Set_DocumentType.DOcumentTypeID = GL_TransactionHeader.DocumentTypeID
+		and Set_DocumentType.CompanyID = GL_TransactionHeader.CompanyID
+
+		 LEFT JOIN DocumentTypesGroup ON DocumentTypesGroup.GroupID = SET_DocumentType.GroupID
+		  AND SET_DocumentType.CompanyID = GL_TransactionHeader.CompanyID
+          AND SET_DocumentType.PeriodID = GL_TransactionHeader.PeriodID
+          AND SET_DocumentType.Status = 1
+
+        LEFT OUTER JOIN SET_CostCenter ON SET_CostCenter.CostCenterID = GL_TransactionDetail.CostCenterID
+	LEFT OUTER JOIN set_department ON set_department.departmentID = GL_TransactionDetail.departmentID
+
+		INNER JOIN Set_PeriodCustom ON GL_TransactionHeader.DocumentDate BETWEEN Set_PeriodCustom.StartDate
+                                                              AND
+                                                              Set_PeriodCustom.EndDate
+                                                   AND Set_PeriodCustom.Status = 1
+                                                    and Set_PeriodCustom.CompanyID = GL_TransactionHeader.CompanyID
+
+WHERE   
+GL_TransactionDetail.CompanyID in @CompanyID  and GL_TransactionDetail.PeriodID = @PeriodID
+		and GL_TransactionHeader.Status = 1 and GL_TransactioNDetail.Status = 1
+		AND GL_TransactionHeader.DocumentDate &lt; @FromDate 
+		{0}
+		and  GL_CodeCombinationDetail.CodeCombinationID not in (
+select distinct PaymentCCID from AR_SET_BankAccount  --where AR_SET_BankAccount.BankAccountID =  AR_ReceiptBanksDetail.BankAccountID
+)
+
+GROUP BY GL_TransactionDetail.CodeCombinationID , GL_CodeCombinationDetail.Description ,SET_CostCenter.CostCenterName ,set_department.DepartmentName,GL_TransactionHeader.DocumentNo,SET_DocumentType.DocumentType,GL_TransactionDetail.TransactionType,GL_TransactionHeader.DocumentDate,GL_TransactionDetail.Narration
+
+)as OpeningTAB
+
+union all
+
+
+--Payment
+SELECT  AR_SET_Bank.BankName,AR_SET_BankBranch.BankBranchName,
+        GL_TransactionDetail.CodeCombinationID ,
+        GL_CodeCombinationDetail.Description ,
+        SET_CostCenter.CostCenterName ,
+		set_department.DepartmentName ,
+		GL_TransactionHeader.DocumentNo,
+		SET_DocumentType.DocumentType,
+        SUM(case GL_TransactionDetail.TransactionType when 'Debit' then abs(GL_TransactionDetail.Amount  * (-1)) else GL_TransactionDetail.Amount  end ) AS Amount,
+		GL_TransactionDetail.TransactionType
+		,GL_TransactionHeader.DocumentDate,AP_PaymentBanksDetail.InstrumentNo ,GL_TransactionDetail.Narration
+FROM    GL_TransactionDetail
+        INNER JOIN GL_TransactionHeader ON GL_TransactionHeader.companyid = GL_TransactionDetail.companyid
+                   AND GL_TransactionHeader.TransactionID = GL_TransactionDetail.TransactionID
+				   AND GL_TransactionHeader.CompanyID = GL_TransactionDetail.CompanyID
+				   
+
+		inner join  AP_PaymentHeader on AP_PaymentHeader.DocumentNo = GL_TransactionHeader.DocumentNo
+		and AP_PaymentHeader.DocumentTypeID = GL_TransactionHeader.DocumentTypeID
+		and AP_PaymentHeader.CompanyID = GL_TransactionHeader.CompanyID
+		and AP_PaymentHeader.PeriodID = GL_TransactionHeader.PeriodID
+			and AP_PaymentHeader.FiscalID = GL_TransactionHeader.FiscalID
+
+
+		inner join AP_PaymentBanksDetail on AP_PaymentBanksDetail.PaymentHeaderID = AP_PaymentHeader.PaymentID
+		and AP_PaymentBanksDetail.CompanyID = AP_PaymentHeader.CompanyID
+		and AP_PaymentBanksDetail.PeriodID = AP_PaymentHeader.PeriodID
+		and AP_PaymentBanksDetail.Status = 1
+		and AP_PaymentBanksDetail.PaymentBankID in (select top 1 PaymentBankID from AP_PaymentBanksDetail bnkDtl where bnkDtl.PaymentHeaderID = AP_PaymentBanksDetail.PaymentHeaderID and  bnkDtl.CompanyID = AP_PaymentBanksDetail.CompanyID and  bnkDtl.status = 1)
+
+		inner join  AR_SET_BankAccount on AR_SET_BankAccount.BankAccountID  = AP_PaymentBanksDetail.BankAccountID 
+				and AR_SET_BankAccount.BankBranchID = AP_PaymentBanksDetail.BankBranchID 
+
+				Inner Join AR_SET_BankBranch On AR_SET_BankBranch.BankBranchID = AR_SET_BankAccount.BankBranchID
+
+		INNER JOIN AR_SET_Bank ON AR_SET_Bank.BankID = AR_SET_BankBranch.BankID
+		AND AR_SET_Bank.Status = 1 
+
+        INNER JOIN GL_CodeCombinationDetail ON GL_CodeCombinationDetail.CodeCombinationID = GL_TransactionDetail.CodeCombinationID
+
+		inner join Set_DocumentType on Set_DocumentType.DOcumentTypeID = GL_TransactionHeader.DocumentTypeID
+		and Set_DocumentType.CompanyID = GL_TransactionHeader.CompanyID
+
+		 LEFT JOIN DocumentTypesGroup ON DocumentTypesGroup.GroupID = SET_DocumentType.GroupID
+		  AND SET_DocumentType.CompanyID = GL_TransactionHeader.CompanyID
+          AND SET_DocumentType.PeriodID = GL_TransactionHeader.PeriodID
+          AND SET_DocumentType.Status = 1
+
+        LEFT OUTER JOIN SET_CostCenter ON SET_CostCenter.CostCenterID = GL_TransactionDetail.CostCenterID
+
+
+		LEFT OUTER JOIN set_department ON set_department.departmentID = GL_TransactionDetail.departmentID
+
+
+		INNER JOIN Set_PeriodCustom ON GL_TransactionHeader.DocumentDate BETWEEN Set_PeriodCustom.StartDate
+                                                              AND
+                                                              Set_PeriodCustom.EndDate
+                                                   AND Set_PeriodCustom.Status = 1
+                                                    and Set_PeriodCustom.CompanyID = GL_TransactionHeader.CompanyID
+
+WHERE   
+GL_TransactionDetail.CompanyID in @CompanyID and GL_TransactionDetail.PeriodID = @PeriodID
+		and GL_TransactionHeader.Status = 1 and GL_TransactioNDetail.Status = 1
+		AND GL_TransactionHeader.DocumentDate BETWEEN @FromDate AND @ToDate
+		{0}
+		{1}
+		and  GL_CodeCombinationDetail.CodeCombinationID not in (
+select distinct PaymentCCID from AR_SET_BankAccount  --where AR_SET_BankAccount.BankAccountID =  AP_PaymentBanksDetail.BankAccountID
+)
+
+GROUP BY  GL_TransactionDetail.CodeCombinationID ,GL_CodeCombinationDetail.Description ,SET_CostCenter.CostCenterName ,set_department.DepartmentName,GL_TransactionHeader.DocumentNo,SET_DocumentType.DocumentType,GL_TransactionDetail.TransactionType,AR_SET_Bank.BankName,GL_TransactionHeader.DocumentDate,AP_PaymentBanksDetail.InstrumentNo,GL_TransactionDetail.Narration,AR_SET_BankBranch.BankBranchName
+		--order by GL_TransactionHeader.DocumentNo,SET_DocumentType.DocumentType
+
+		union all
+
+
+		--Receipt
+SELECT  AR_SET_Bank.BankName,AR_SET_BankBranch.BankBranchName,
+        GL_TransactionDetail.CodeCombinationID ,
+        GL_CodeCombinationDetail.Description ,
+        SET_CostCenter.CostCenterName ,
+		set_department.DepartmentName,
+		GL_TransactionHeader.DocumentNo,
+		SET_DocumentType.DocumentType,
+        SUM(case GL_TransactionDetail.TransactionType when 'Debit' then abs(GL_TransactionDetail.Amount  * (-1)) else GL_TransactionDetail.Amount  end ) AS Amount,
+		GL_TransactionDetail.TransactionType
+		,GL_TransactionHeader.DocumentDate,AR_ReceiptBanksDetail.InstrumentNo,GL_TransactionDetail.Narration
+FROM    GL_TransactionDetail
+        INNER JOIN GL_TransactionHeader ON GL_TransactionHeader.companyid = GL_TransactionDetail.companyid
+                   AND GL_TransactionHeader.TransactionID = GL_TransactionDetail.TransactionID
+				   AND GL_TransactionHeader.CompanyID = GL_TransactionDetail.CompanyID
+				   
+
+		inner join  AR_ReceiptTransactionHeader on AR_ReceiptTransactionHeader.DocumentNo = GL_TransactionHeader.DocumentNo
+		and AR_ReceiptTransactionHeader.DocumentTypeID = GL_TransactionHeader.DocumentTypeID
+		and AR_ReceiptTransactionHeader.CompanyID = GL_TransactionHeader.CompanyID
+		and AR_ReceiptTransactionHeader.FiscalID = GL_TransactionHeader.FiscalID
+		and AR_ReceiptTransactionHeader.PeriodID = GL_TransactionHeader.PeriodID
+
+
+		inner join AR_ReceiptBanksDetail on AR_ReceiptBanksDetail.ReceiptHeaderID = AR_ReceiptTransactionHeader.ReceiptTransactionID
+		and AR_ReceiptBanksDetail.CompanyID = AR_ReceiptTransactionHeader.CompanyID
+		and AR_ReceiptBanksDetail.PeriodID = AR_ReceiptTransactionHeader.PeriodID
+		and AR_ReceiptBanksDetail.Status = 1
+		and AR_ReceiptBanksDetail.ReceiptBankID in (select top 1 ReceiptBankID from AR_ReceiptBanksDetail bnkDtl where bnkDtl.ReceiptHeaderID = AR_ReceiptBanksDetail.ReceiptHeaderID and  bnkDtl.CompanyID = AR_ReceiptBanksDetail.CompanyID and  bnkDtl.status = 1)
+
+		inner join  AR_SET_BankAccount on AR_SET_BankAccount.BankAccountID  = AR_ReceiptBanksDetail.BankAccountID 
+				and AR_SET_BankAccount.BankBranchID = AR_ReceiptBanksDetail.BankBranchID 
+
+				Inner Join AR_SET_BankBranch On AR_SET_BankBranch.BankBranchID = AR_SET_BankAccount.BankBranchID
+
+		INNER JOIN AR_SET_Bank ON AR_SET_Bank.BankID = AR_SET_BankBranch.BankID
+		AND AR_SET_Bank.Status = 1 
+
+        INNER JOIN GL_CodeCombinationDetail ON GL_CodeCombinationDetail.CodeCombinationID = GL_TransactionDetail.CodeCombinationID
+
+		inner join Set_DocumentType on Set_DocumentType.DOcumentTypeID = GL_TransactionHeader.DocumentTypeID
+		and Set_DocumentType.CompanyID = GL_TransactionHeader.CompanyID
+
+		 LEFT JOIN DocumentTypesGroup ON DocumentTypesGroup.GroupID = SET_DocumentType.GroupID
+		  AND SET_DocumentType.CompanyID = GL_TransactionHeader.CompanyID
+          AND SET_DocumentType.PeriodID = GL_TransactionHeader.PeriodID
+          AND SET_DocumentType.Status = 1
+
+        LEFT OUTER JOIN SET_CostCenter ON SET_CostCenter.CostCenterID = GL_TransactionDetail.CostCenterID
+	LEFT OUTER JOIN set_department ON set_department.departmentID = GL_TransactionDetail.departmentID
+
+		INNER JOIN Set_PeriodCustom ON GL_TransactionHeader.DocumentDate BETWEEN Set_PeriodCustom.StartDate
+                                                              AND
+                                                              Set_PeriodCustom.EndDate
+                                                   AND Set_PeriodCustom.Status = 1
+                                                    and Set_PeriodCustom.CompanyID = GL_TransactionHeader.CompanyID
+
+WHERE   
+GL_TransactionDetail.CompanyID in @CompanyID and GL_TransactionDetail.PeriodID = @PeriodID
+		and GL_TransactionHeader.Status = 1 and GL_TransactioNDetail.Status = 1
+		AND GL_TransactionHeader.DocumentDate BETWEEN @FromDate AND @ToDate
+		{0}
+		{2}
+		and  GL_CodeCombinationDetail.CodeCombinationID not in (
+select distinct PaymentCCID from AR_SET_BankAccount  --where AR_SET_BankAccount.BankAccountID =  AR_ReceiptBanksDetail.BankAccountID
+)
+
+GROUP BY GL_TransactionDetail.CodeCombinationID , GL_CodeCombinationDetail.Description ,SET_CostCenter.CostCenterName ,set_department.DepartmentName,GL_TransactionHeader.DocumentNo,SET_DocumentType.DocumentType,GL_TransactionDetail.TransactionType,AR_SET_Bank.BankName,GL_TransactionHeader.DocumentDate,AR_ReceiptBanksDetail.InstrumentNo,GL_TransactionDetail.Narration,AR_SET_BankBranch.BankBranchName
+
+
+union all
+
+
+		--Invoice
+SELECT  '' as BankName,'' as BankBranchName,
+        GL_TransactionDetail.CodeCombinationID ,
+        GL_CodeCombinationDetail.Description ,
+        SET_CostCenter.CostCenterName ,
+		set_department.DepartmentName,
+		GL_TransactionHeader.DocumentNo,
+		SET_DocumentType.DocumentType,
+        SUM(case GL_TransactionDetail.TransactionType when 'Debit' then abs(GL_TransactionDetail.Amount  * (-1)) else GL_TransactionDetail.Amount  end ) AS Amount,
+		GL_TransactionDetail.TransactionType
+		,GL_TransactionHeader.DocumentDate,'' as InstrumentNo,GL_TransactionDetail.Narration
+FROM    GL_TransactionDetail
+        INNER JOIN GL_TransactionHeader ON GL_TransactionHeader.companyid = GL_TransactionDetail.companyid
+                   AND GL_TransactionHeader.TransactionID = GL_TransactionDetail.TransactionID
+				   AND GL_TransactionHeader.CompanyID = GL_TransactionDetail.CompanyID
+				   
+
+		inner join  AR_InvoiceHeader on AR_InvoiceHeader.InvoiceNumber = GL_TransactionHeader.DocumentNo
+		and AR_InvoiceHeader.InvoiceType = GL_TransactionHeader.DocumentTypeID
+		and AR_InvoiceHeader.CompanyID = GL_TransactionHeader.CompanyID
+				and AR_InvoiceHeader.FiscalID = GL_TransactionHeader.FiscalID
+		and AR_InvoiceHeader.PeriodID = GL_TransactionHeader.PeriodID
+
+
+        INNER JOIN GL_CodeCombinationDetail ON GL_CodeCombinationDetail.CodeCombinationID = GL_TransactionDetail.CodeCombinationID
+
+		inner join Set_DocumentType on Set_DocumentType.DOcumentTypeID = GL_TransactionHeader.DocumentTypeID
+		and Set_DocumentType.CompanyID = GL_TransactionHeader.CompanyID
+
+		 LEFT JOIN DocumentTypesGroup ON DocumentTypesGroup.GroupID = SET_DocumentType.GroupID
+		  AND SET_DocumentType.CompanyID = GL_TransactionHeader.CompanyID
+          AND SET_DocumentType.PeriodID = GL_TransactionHeader.PeriodID
+          AND SET_DocumentType.Status = 1
+
+        LEFT OUTER JOIN SET_CostCenter ON SET_CostCenter.CostCenterID = GL_TransactionDetail.CostCenterID
+	LEFT OUTER JOIN set_department ON set_department.departmentID = GL_TransactionDetail.departmentID
+
+		INNER JOIN Set_PeriodCustom ON GL_TransactionHeader.DocumentDate BETWEEN Set_PeriodCustom.StartDate
+                                                              AND
+                                                              Set_PeriodCustom.EndDate
+                                                   AND Set_PeriodCustom.Status = 1
+                                                    and Set_PeriodCustom.CompanyID = GL_TransactionHeader.CompanyID
+
+WHERE   
+GL_TransactionDetail.CompanyID in @CompanyID  and GL_TransactionDetail.PeriodID = @PeriodID
+		and GL_TransactionHeader.Status = 1 and GL_TransactioNDetail.Status = 1
+		AND GL_TransactionHeader.DocumentDate BETWEEN @FromDate AND @ToDate
+		{0}
+		and  GL_CodeCombinationDetail.CodeCombinationID not in (
+select distinct PaymentCCID from AR_SET_BankAccount  --where AR_SET_BankAccount.BankAccountID =  AR_ReceiptBanksDetail.BankAccountID
+)
+
+GROUP BY GL_TransactionDetail.CodeCombinationID , GL_CodeCombinationDetail.Description ,SET_CostCenter.CostCenterName ,set_department.DepartmentName,GL_TransactionHeader.DocumentNo,SET_DocumentType.DocumentType,GL_TransactionDetail.TransactionType,GL_TransactionHeader.DocumentDate,GL_TransactionDetail.Narration
+
+
+) as tab 
+where DepartmentName is not null
+and CodeCombinationID in (select CodeCombinationID from GL_CodeCombinationDetail where GL_CodeCombinationDetail.accounttypeid in (select AccountTypeID from set_accounttype where AccountTypeName = 'Expenses') )
+group by CodeCombinationID,Description,DepartmentName</value>
+  </data>
+  <data name="Query_GetCOAReport" xml:space="preserve">
+    <value>SELECT dbo.GL_CodeCombinationDetail.ChartOfAccountID, dbo.GL_CodeCombinationDetail.CodeCombinationID, dbo.GL_CodeCombinationDetail.Description, 
+   dbo.GL_CodeCombinationDetail.SummaryFlag, dbo.GL_CodeCombinationDetail.HeadAccountCode, dbo.GL_CodeCombinationDetail.IsActive, 
+   dbo.GL_CodeCombinationDetail.Status, dbo.SET_AccountType.AccountTypeName, dbo.GL_CodeCombinationDetail.AccountTypeID ,
+   dbo.GL_CodeCombinationDetail.SaleTaxFlag, dbo.GL_CodeCombinationDetail .SaleWithHoldingTaxFlag ,
+   --dbo.GL_CodeCombinationDetail.IsTaxAccount as TaxAccount,
+   dbo.GL_CodeCombinationDetail.WithHoldingTaxFlag ,
+   dbo.GL_CodeCombinationDetail.ControlAccount , dbo.GL_CodeCombinationDetail.BankChargesAccount ,
+   dbo.GL_CodeCombinationDetail.BankProfitAccount ,dbo.GL_CodeCombinationDetail.DetailBudgetingAllowedFlag
+
+
+   FROM dbo.GL_CodeCombinationDetail 
+   
+   LEFT OUTER JOIN dbo.SET_AccountType ON dbo.GL_CodeCombinationDetail.AccountTypeID = dbo.SET_AccountType.AccountTypeID
+
+WHERE (dbo.GL_CodeCombinationDetail.Status = 1) 
+--AND (dbo.GL_CodeCombinationDetail.CompanyID = @CompanyID)
+
+And (dbo.GL_CodeCombinationDetail.AccountTypeID = @AccountType or @AccountType is null)
+And (dbo.GL_CodeCombinationDetail.SummaryFlag = @AccountSummary or @AccountSummary is null)
+And (dbo.GL_CodeCombinationDetail.IsActive = @AccountActive or @AccountActive is null)</value>
+  </data>
+  <data name="Query_GetCustomerStatusSummary" xml:space="preserve">
+    <value>SELECT 'Opening Balance' as Narration, 
+    ISNULL(SUM(CASE WHEN GL_TransactionDetail.TransactionType = 'Debit' THEN GL_TransactionDetail.Amount ELSE 0 END), 0) AS DebitAmount, 
+    ISNULL(SUM(CASE WHEN GL_TransactionDetail.TransactionType = 'Credit' THEN GL_TransactionDetail.Amount ELSE 0 END), 0) AS CreditAmount, 
+    GL_CodeCombinationDetail.Description , 10 as SerialNo , 1 as HeaderID,'Opening Balances' as HeaderName
+FROM GL_TransactionDetail 
+    INNER JOIN GL_TransactionHeader ON GL_TransactionHeader.CompanyID = GL_TransactionDetail.CompanyID 
+        AND GL_TransactionHeader.PeriodID = GL_TransactionDetail.PeriodID AND GL_TransactionHeader.TransactionID = GL_TransactionDetail.TransactionID 
+        AND GL_TransactionHeader.Status = 1 
+    INNER JOIN GL_CodeCombinationDetail ON 
+--GL_CodeCombinationDetail.CompanyID = GL_TransactionDetail.CompanyID AND
+GL_CodeCombinationDetail.ChartOfAccountID = GL_TransactionDetail.ChartOfAccountID 
+        AND GL_CodeCombinationDetail.CodeCombinationID = GL_TransactionDetail.CodeCombinationID 
+    INNER JOIN SET_DocumentType ON SET_DocumentType.CompanyID = GL_TransactionHeader.CompanyID AND SET_DocumentType.PeriodID = GL_TransactionHeader.PeriodID 
+        AND SET_DocumentType.DocumentTypeID = GL_TransactionHeader.DocumentTypeID 
+    LEFT JOIN Set_CostCenter ON Set_CostCenter.CostCenterID = GL_TransactionDetail.CostCenterID 
+     INNER JOIN UsersInDocumentType ON UsersInDocumentType.CompanyID = SET_DocumentType.CompanyID 
+AND UsersInDocumentType.DocumentTypeID = SET_DocumentType.DocumentTypeID 
+WHERE GL_TransactionDetail.CompanyID = @CompanyID AND GL_TransactionDetail.PeriodID = @PeriodID 
+    AND GL_TransactionDetail.Status = 1 AND GL_TransactionHeader.DocumentDate &lt; @FromDate 
+     --AND GL_TransactionDetail.CodeCombinationID BETWEEN @AccountCodeFrom AND @AccountCodeTo  
+	 and (GL_CodeCombinationDetail.Description like 'ADVANCES TO TRADE CREDITORS%' and DetailPostingAllowedFlag = 1
+or (GL_CodeCombinationDetail.Description like 'TRADE CREDITORS' and DetailPostingAllowedFlag = 1) or (GL_CodeCombinationDetail.Description like '%accrued%') 
+or (GL_CodeCombinationDetail.Description like '%Other pay%' and DetailPostingAllowedFlag = 1)
+or (GL_CodeCombinationDetail.Description like '%advance%salary%' and DetailPostingAllowedFlag = 1))
+    
+    And GL_TransactionHeader.StatusCode = 1 
+GROUP BY GL_CodeCombinationDetail.Description
+
+union all 
+
+SELECT distinct 'Fixed Assets',
+    ISNULL(SUM(CASE WHEN GL_TransactionDetail.TransactionType = 'Debit' THEN GL_TransactionDetail.Amount ELSE 0 END), 0) AS DebitAmount, 
+    ISNULL(SUM(CASE WHEN GL_TransactionDetail.TransactionType = 'Credit' THEN GL_TransactionDetail.Amount ELSE 0 END), 0) AS CreditAmount,  
+    GL_CodeCombinationDetail.Description, 20 as SerialNo,2 as HeaderID,'Add:Expenses for the Year' as HeaderName
+FROM GL_TransactionDetail 
+    INNER JOIN GL_TransactionHeader ON GL_TransactionHeader.CompanyID = GL_TransactionDetail.CompanyID 
+        AND GL_TransactionHeader.PeriodID = GL_TransactionDetail.PeriodID AND GL_TransactionHeader.TransactionID = GL_TransactionDetail.TransactionID 
+        AND GL_TransactionHeader.Status = 1 
+    INNER JOIN GL_CodeCombinationDetail ON 
+--GL_CodeCombinationDetail.CompanyID = GL_TransactionDetail.CompanyID  AND 
+GL_CodeCombinationDetail.ChartOfAccountID = GL_TransactionDetail.ChartOfAccountID 
+        AND GL_CodeCombinationDetail.CodeCombinationID = GL_TransactionDetail.CodeCombinationID 
+    INNER JOIN SET_DocumentType ON SET_DocumentType.CompanyID = GL_TransactionDetail.CompanyID AND SET_DocumentType.PeriodID = GL_TransactionDetail.PeriodID 
+        AND SET_DocumentType.DocumentTypeID = GL_TransactionHeader.DocumentTypeID 
+    LEFT JOIN Set_CostCenter ON Set_CostCenter.CostCenterID = GL_TransactionDetail.CostCenterID 
+     INNER JOIN UsersInDocumentType ON UsersInDocumentType.CompanyID = SET_DocumentType.CompanyID 
+AND UsersInDocumentType.DocumentTypeID = SET_DocumentType.DocumentTypeID 
+WHERE GL_TransactionDetail.CompanyID = @CompanyID AND GL_TransactionDetail.PeriodID = @PeriodID 
+    AND GL_TransactionDetail.Status = 1 AND GL_TransactionHeader.StatusCode = 1 AND GL_TransactionHeader.DocumentDate BETWEEN @FromDate AND @ToDate 
+     and (HeadAccountCode = '03-01-01-001' or GL_CodeCombinationDetail.Description like '%cwip%')
+    And GL_TransactionHeader.StatusCode = 1 
+GROUP BY  GL_CodeCombinationDetail.Description
+
+
+union all 
+
+SELECT distinct  'Cost of Goods Manufactured',
+    ISNULL(SUM(CASE WHEN GL_TransactionDetail.TransactionType = 'Debit' THEN GL_TransactionDetail.Amount ELSE 0 END), 0) AS DebitAmount, 
+    ISNULL(SUM(CASE WHEN GL_TransactionDetail.TransactionType = 'Credit' THEN GL_TransactionDetail.Amount ELSE 0 END), 0) AS CreditAmount,  
+    GL_CodeCombinationDetail.Description, 30 as SerialNo,2 as HeaderID,'Add:Expenses for the Year' as HeaderName
+FROM GL_TransactionDetail 
+    INNER JOIN GL_TransactionHeader ON GL_TransactionHeader.CompanyID = GL_TransactionDetail.CompanyID 
+        AND GL_TransactionHeader.PeriodID = GL_TransactionDetail.PeriodID AND GL_TransactionHeader.TransactionID = GL_TransactionDetail.TransactionID 
+        AND GL_TransactionHeader.Status = 1 
+    INNER JOIN GL_CodeCombinationDetail ON 
+--GL_CodeCombinationDetail.CompanyID = GL_TransactionDetail.CompanyID  AND 
+GL_CodeCombinationDetail.ChartOfAccountID = GL_TransactionDetail.ChartOfAccountID 
+        AND GL_CodeCombinationDetail.CodeCombinationID = GL_TransactionDetail.CodeCombinationID 
+    INNER JOIN SET_DocumentType ON SET_DocumentType.CompanyID = GL_TransactionDetail.CompanyID AND SET_DocumentType.PeriodID = GL_TransactionDetail.PeriodID 
+        AND SET_DocumentType.DocumentTypeID = GL_TransactionHeader.DocumentTypeID 
+    LEFT JOIN Set_CostCenter ON Set_CostCenter.CostCenterID = GL_TransactionDetail.CostCenterID 
+     INNER JOIN UsersInDocumentType ON UsersInDocumentType.CompanyID = SET_DocumentType.CompanyID 
+AND UsersInDocumentType.DocumentTypeID = SET_DocumentType.DocumentTypeID 
+WHERE GL_TransactionDetail.CompanyID = @CompanyID AND GL_TransactionDetail.PeriodID = @PeriodID 
+    AND GL_TransactionDetail.Status = 1 AND GL_TransactionHeader.StatusCode = 1 AND GL_TransactionHeader.DocumentDate BETWEEN @FromDate AND @ToDate 
+     and HeadAccountCode = '05-01'
+    And GL_TransactionHeader.StatusCode = 1 
+GROUP BY  GL_CodeCombinationDetail.Description
+
+
+union all 
+
+SELECT distinct  'Administrative Expenses',
+    ISNULL(SUM(CASE WHEN GL_TransactionDetail.TransactionType = 'Debit' THEN GL_TransactionDetail.Amount ELSE 0 END), 0) AS DebitAmount, 
+    ISNULL(SUM(CASE WHEN GL_TransactionDetail.TransactionType = 'Credit' THEN GL_TransactionDetail.Amount ELSE 0 END), 0) AS CreditAmount,  
+    GL_CodeCombinationDetail.Description, 40 as SerialNo,2 as HeaderID,'Add:Expenses for the Year' as HeaderName
+FROM GL_TransactionDetail 
+    INNER JOIN GL_TransactionHeader ON GL_TransactionHeader.CompanyID = GL_TransactionDetail.CompanyID 
+        AND GL_TransactionHeader.PeriodID = GL_TransactionDetail.PeriodID AND GL_TransactionHeader.TransactionID = GL_TransactionDetail.TransactionID 
+        AND GL_TransactionHeader.Status = 1 
+    INNER JOIN GL_CodeCombinationDetail ON 
+--GL_CodeCombinationDetail.CompanyID = GL_TransactionDetail.CompanyID  AND 
+GL_CodeCombinationDetail.ChartOfAccountID = GL_TransactionDetail.ChartOfAccountID 
+        AND GL_CodeCombinationDetail.CodeCombinationID = GL_TransactionDetail.CodeCombinationID 
+    INNER JOIN SET_DocumentType ON SET_DocumentType.CompanyID = GL_TransactionDetail.CompanyID AND SET_DocumentType.PeriodID = GL_TransactionDetail.PeriodID 
+        AND SET_DocumentType.DocumentTypeID = GL_TransactionHeader.DocumentTypeID 
+    LEFT JOIN Set_CostCenter ON Set_CostCenter.CostCenterID = GL_TransactionDetail.CostCenterID 
+     INNER JOIN UsersInDocumentType ON UsersInDocumentType.CompanyID = SET_DocumentType.CompanyID 
+AND UsersInDocumentType.DocumentTypeID = SET_DocumentType.DocumentTypeID 
+WHERE GL_TransactionDetail.CompanyID = @CompanyID AND GL_TransactionDetail.PeriodID = @PeriodID 
+    AND GL_TransactionDetail.Status = 1 AND GL_TransactionHeader.StatusCode = 1 AND GL_TransactionHeader.DocumentDate BETWEEN @FromDate AND @ToDate 
+     and HeadAccountCode = '07-01'
+    And GL_TransactionHeader.StatusCode = 1 
+GROUP BY  GL_CodeCombinationDetail.Description
+
+union all 
+
+SELECT distinct  'Other Operating Expense',
+    ISNULL(SUM(CASE WHEN GL_TransactionDetail.TransactionType = 'Debit' THEN GL_TransactionDetail.Amount ELSE 0 END), 0) AS DebitAmount, 
+    ISNULL(SUM(CASE WHEN GL_TransactionDetail.TransactionType = 'Credit' THEN GL_TransactionDetail.Amount ELSE 0 END), 0) AS CreditAmount,  
+    GL_CodeCombinationDetail.Description, 50 as SerialNo,2 as HeaderID,'Add:Expenses for the Year' as HeaderName
+FROM GL_TransactionDetail 
+    INNER JOIN GL_TransactionHeader ON GL_TransactionHeader.CompanyID = GL_TransactionDetail.CompanyID 
+        AND GL_TransactionHeader.PeriodID = GL_TransactionDetail.PeriodID AND GL_TransactionHeader.TransactionID = GL_TransactionDetail.TransactionID 
+        AND GL_TransactionHeader.Status = 1 
+    INNER JOIN GL_CodeCombinationDetail ON 
+--GL_CodeCombinationDetail.CompanyID = GL_TransactionDetail.CompanyID  AND 
+GL_CodeCombinationDetail.ChartOfAccountID = GL_TransactionDetail.ChartOfAccountID 
+        AND GL_CodeCombinationDetail.CodeCombinationID = GL_TransactionDetail.CodeCombinationID 
+    INNER JOIN SET_DocumentType ON SET_DocumentType.CompanyID = GL_TransactionDetail.CompanyID AND SET_DocumentType.PeriodID = GL_TransactionDetail.PeriodID 
+        AND SET_DocumentType.DocumentTypeID = GL_TransactionHeader.DocumentTypeID 
+    LEFT JOIN Set_CostCenter ON Set_CostCenter.CostCenterID = GL_TransactionDetail.CostCenterID 
+     INNER JOIN UsersInDocumentType ON UsersInDocumentType.CompanyID = SET_DocumentType.CompanyID 
+AND UsersInDocumentType.DocumentTypeID = SET_DocumentType.DocumentTypeID 
+WHERE GL_TransactionDetail.CompanyID = @CompanyID AND GL_TransactionDetail.PeriodID = @PeriodID 
+    AND GL_TransactionDetail.Status = 1 AND GL_TransactionHeader.StatusCode = 1 AND GL_TransactionHeader.DocumentDate BETWEEN @FromDate AND @ToDate 
+     and (HeadAccountCode = '08-01-03' or HeadAccountCode = '08-01-02')
+    And GL_TransactionHeader.StatusCode = 1 
+GROUP BY  GL_CodeCombinationDetail.Description
+
+	
+
+	union all
+
+	Select  'Closing Balance' Narration , SUM(DebitAmount)DebitAmount,SUM(CreditAmount)CreditAmount,Description, 60 as SerialNo,3 as HeaderID
+	,'Closing Balances' as HeaderName from
+	(
+	SELECT GL_TransactionDetail.CodeCombinationID, 'Closing Balance' as Narration, 
+    ISNULL(SUM(CASE WHEN GL_TransactionDetail.TransactionType = 'Debit' THEN GL_TransactionDetail.Amount ELSE 0 END), 0) AS DebitAmount, 
+    ISNULL(SUM(CASE WHEN GL_TransactionDetail.TransactionType = 'Credit' THEN GL_TransactionDetail.Amount ELSE 0 END), 0) AS CreditAmount, 
+    GL_CodeCombinationDetail.Description
+FROM GL_TransactionDetail 
+    INNER JOIN GL_TransactionHeader ON GL_TransactionHeader.CompanyID = GL_TransactionDetail.CompanyID 
+        AND GL_TransactionHeader.PeriodID = GL_TransactionDetail.PeriodID AND GL_TransactionHeader.TransactionID = GL_TransactionDetail.TransactionID 
+        AND GL_TransactionHeader.Status = 1 
+    INNER JOIN GL_CodeCombinationDetail ON 
+--GL_CodeCombinationDetail.CompanyID = GL_TransactionDetail.CompanyID AND
+GL_CodeCombinationDetail.ChartOfAccountID = GL_TransactionDetail.ChartOfAccountID 
+        AND GL_CodeCombinationDetail.CodeCombinationID = GL_TransactionDetail.CodeCombinationID 
+    INNER JOIN SET_DocumentType ON SET_DocumentType.CompanyID = GL_TransactionHeader.CompanyID AND SET_DocumentType.PeriodID = GL_TransactionHeader.PeriodID 
+        AND SET_DocumentType.DocumentTypeID = GL_TransactionHeader.DocumentTypeID 
+    LEFT JOIN Set_CostCenter ON Set_CostCenter.CostCenterID = GL_TransactionDetail.CostCenterID 
+     INNER JOIN UsersInDocumentType ON UsersInDocumentType.CompanyID = SET_DocumentType.CompanyID 
+AND UsersInDocumentType.DocumentTypeID = SET_DocumentType.DocumentTypeID 
+WHERE GL_TransactionDetail.CompanyID = @CompanyID AND GL_TransactionDetail.PeriodID = @PeriodID 
+    AND GL_TransactionDetail.Status = 1 AND GL_TransactionHeader.DocumentDate BETWEEN @FromDate AND @ToDate 
+     --AND GL_TransactionDetail.CodeCombinationID BETWEEN @AccountCodeFrom AND @AccountCodeTo  
+	 and (GL_CodeCombinationDetail.Description like 'ADVANCES TO TRADE CREDITORS%' and DetailPostingAllowedFlag = 1
+or (GL_CodeCombinationDetail.Description like 'TRADE CREDITORS' and DetailPostingAllowedFlag = 1) or (GL_CodeCombinationDetail.Description like '%accrued%') 
+or (GL_CodeCombinationDetail.Description like '%Other pay%' and DetailPostingAllowedFlag = 1)
+or (GL_CodeCombinationDetail.Description like '%advance%salary%' and DetailPostingAllowedFlag = 1))
+    
+    And GL_TransactionHeader.StatusCode = 1 
+GROUP BY GL_TransactionDetail.CodeCombinationID, GL_CodeCombinationDetail.Description
+
+union all
+
+SELECT GL_TransactionDetail.CodeCombinationID, 'Opening Balance' as Narration, 
+    ISNULL(SUM(CASE WHEN GL_TransactionDetail.TransactionType = 'Debit' THEN GL_TransactionDetail.Amount ELSE 0 END), 0) AS DebitAmount, 
+    ISNULL(SUM(CASE WHEN GL_TransactionDetail.TransactionType = 'Credit' THEN GL_TransactionDetail.Amount ELSE 0 END), 0) AS CreditAmount, 
+    GL_CodeCombinationDetail.Description
+FROM GL_TransactionDetail 
+    INNER JOIN GL_TransactionHeader ON GL_TransactionHeader.CompanyID = GL_TransactionDetail.CompanyID 
+        AND GL_TransactionHeader.PeriodID = GL_TransactionDetail.PeriodID AND GL_TransactionHeader.TransactionID = GL_TransactionDetail.TransactionID 
+        AND GL_TransactionHeader.Status = 1 
+    INNER JOIN GL_CodeCombinationDetail ON 
+--GL_CodeCombinationDetail.CompanyID = GL_TransactionDetail.CompanyID AND
+GL_CodeCombinationDetail.ChartOfAccountID = GL_TransactionDetail.ChartOfAccountID 
+        AND GL_CodeCombinationDetail.CodeCombinationID = GL_TransactionDetail.CodeCombinationID 
+    INNER JOIN SET_DocumentType ON SET_DocumentType.CompanyID = GL_TransactionHeader.CompanyID AND SET_DocumentType.PeriodID = GL_TransactionHeader.PeriodID 
+        AND SET_DocumentType.DocumentTypeID = GL_TransactionHeader.DocumentTypeID 
+    LEFT JOIN Set_CostCenter ON Set_CostCenter.CostCenterID = GL_TransactionDetail.CostCenterID 
+     INNER JOIN UsersInDocumentType ON UsersInDocumentType.CompanyID = SET_DocumentType.CompanyID 
+AND UsersInDocumentType.DocumentTypeID = SET_DocumentType.DocumentTypeID 
+WHERE GL_TransactionDetail.CompanyID = @CompanyID AND GL_TransactionDetail.PeriodID = @PeriodID 
+    AND GL_TransactionDetail.Status = 1 AND GL_TransactionHeader.DocumentDate &lt; @FromDate 
+     --AND GL_TransactionDetail.CodeCombinationID BETWEEN @AccountCodeFrom AND @AccountCodeTo  
+	 and (GL_CodeCombinationDetail.Description like 'ADVANCES TO TRADE CREDITORS%' and DetailPostingAllowedFlag = 1
+or (GL_CodeCombinationDetail.Description like 'TRADE CREDITORS' and DetailPostingAllowedFlag = 1) or (GL_CodeCombinationDetail.Description like '%accrued%') 
+or (GL_CodeCombinationDetail.Description like '%Other pay%' and DetailPostingAllowedFlag = 1)
+or (GL_CodeCombinationDetail.Description like '%advance%salary%' and DetailPostingAllowedFlag = 1))
+    
+    And GL_TransactionHeader.StatusCode = 1 
+GROUP BY GL_TransactionDetail.CodeCombinationID, GL_CodeCombinationDetail.Description
+
+) as tab
+
+group by CodeCombinationID , Description
+union all
+Select 'Taxable Payments Other Than Salary' , SUM(DebitAmount)DebitAmount,SUM(CreditAmount)CreditAmount,Description, 70 as SerialNo,4 as HeaderID
+,'' as HeaderName from
+(
+Select SupplierAccountCode
+,ISNULL((CASE WHEN AP_PaymentSupplierDetail.TransactionType = 'Debit' THEN AP_PaymentSupplierDetail.Amount ELSE 0 END), 0) AS DebitAmount, 
+ISNULL((CASE WHEN AP_PaymentSupplierDetail.TransactionType = 'Credit' THEN AP_PaymentSupplierDetail.Amount ELSE 0 END), 0) AS CreditAmount
+,case when AP_PaymentSupplierDetail.BusinessPartnerTypeID = 1 then 'Payments against Supply of Goods' 
+when AP_PaymentSupplierDetail.BusinessPartnerTypeID = 10 then 'Payments against Services' 
+when AP_PaymentSupplierDetail.BusinessPartnerTypeID = 3 then 'Payments against Contracts'
+end 
+Description
+,SaleWithHoldingTaxFlag
+,AP_PaymentSupplierDetail.BusinessPartnerTypeID
+	 from AP_PaymentHeader
+inner join AP_PaymentSupplierDetail on AP_PaymentSupplierDetail.PaymentHeaderID = AP_PaymentHeader.PaymentID
+and AP_PaymentSupplierDetail.CompanyID = AP_PaymentHeader.CompanyID
+and AP_PaymentSupplierDetail.PeriodID = AP_PaymentHeader.PeriodID
+inner join GL_CodeCombinationDetail on GL_CodeCombinationDetail.CodeCombinationID = AP_PaymentSupplierDetail.SupplierAccountCode
+
+where 
+AP_PaymentHeader.Status = 1
+and AP_PaymentHeader.StatusCode = 1
+and AP_PaymentSupplierDetail.Status = 1
+and AP_PaymentHeader.CompanyID = @CompanyID
+and Convert(Date,AP_PaymentHeader.DocumentDate) BETWEEN @FromDate AND @ToDate
+
+and (WithHoldingTaxFlag = 1 or SaleTaxFlag = 1 or SaleWithHoldingTaxFlag = 1)
+) as tab
+where Description is not null
+group by Description
+
+
+union all
+Select 'Salary Payments',SUM(NetAmount)NetAmount,0,Description, 80 as SerialNo,4 as HeaderID,'' as HeaderName from
+(
+Select distinct HRMS_SalaryHeader.NetAmount,'Taxable Salaries' Description from HRMS_SalaryHeader
+inner join HRMS_SalaryDetail on HRMS_SalaryDetail.SalaryHeaderID = HRMS_SalaryHeader.SalaryHeaderID
+inner join HRMS_PayrollType on HRMS_PayrollType.PayrollTypeID = HRMS_SalaryDetail.PayrollTypeID
+where HRMS_SalaryHeader.Status = 1
+and HRMS_SalaryDetail.Status = 1
+--and PersonID = 14
+and Description like '%income%' and HRMS_PayrollType.PayrollTypeCode = 2
+and HRMS_SalaryHeader.CompanyID = @CompanyID
+and Convert(Date,HRMS_SalaryHeader.SalaryDate) BETWEEN @FromDate AND @ToDate
+
+
+union all 
+Select HRMS_SalaryHeader.NetAmount,'BTL Salaries' from HRMS_SalaryHeader where SalaryHeaderID not in
+(
+Select distinct HRMS_SalaryHeader.SalaryHeaderID from HRMS_SalaryHeader
+inner join HRMS_SalaryDetail on HRMS_SalaryDetail.SalaryHeaderID = HRMS_SalaryHeader.SalaryHeaderID
+inner join HRMS_PayrollType on HRMS_PayrollType.PayrollTypeID = HRMS_SalaryDetail.PayrollTypeID
+where HRMS_SalaryHeader.Status = 1
+and HRMS_SalaryDetail.Status = 1
+and Description like '%income%' and HRMS_PayrollType.PayrollTypeCode = 2
+and HRMS_SalaryHeader.CompanyID = @CompanyID
+and Convert(Date,HRMS_SalaryHeader.SalaryDate) BETWEEN @FromDate AND @ToDate
+
+)
+and Status = 1
+
+) as tab
+
+group by Description
+
+
+union all
+Select 'BTL Payments' , SUM(DebitAmount)DebitAmount,SUM(CreditAmount)CreditAmount,Description, 90 as SerialNo,4 as HeaderID,'' as HeaderName from
+(
+Select SupplierAccountCode
+,ISNULL((CASE WHEN AP_PaymentSupplierDetail.TransactionType = 'Debit' THEN AP_PaymentSupplierDetail.Amount ELSE 0 END), 0) AS DebitAmount, 
+ISNULL((CASE WHEN AP_PaymentSupplierDetail.TransactionType = 'Credit' THEN AP_PaymentSupplierDetail.Amount ELSE 0 END), 0) AS CreditAmount
+,case when AP_PaymentSupplierDetail.BusinessPartnerTypeID = 1 then 'BTL Payments against Supply of Goods' 
+when AP_PaymentSupplierDetail.BusinessPartnerTypeID = 10 then 'BTL Payments against Services' 
+when AP_PaymentSupplierDetail.BusinessPartnerTypeID = 3 then 'BTL Payments against Contracts'
+end 
+Description
+,SaleWithHoldingTaxFlag
+,WithHoldingTaxFlag ,SaleTaxFlag
+	 from AP_PaymentHeader
+inner join AP_PaymentSupplierDetail on AP_PaymentSupplierDetail.PaymentHeaderID = AP_PaymentHeader.PaymentID
+and AP_PaymentSupplierDetail.CompanyID = AP_PaymentHeader.CompanyID
+and AP_PaymentSupplierDetail.PeriodID = AP_PaymentHeader.PeriodID
+inner join GL_CodeCombinationDetail on GL_CodeCombinationDetail.CodeCombinationID = AP_PaymentSupplierDetail.SupplierAccountCode
+
+where 
+AP_PaymentHeader.Status = 1
+and AP_PaymentHeader.StatusCode = 1
+and AP_PaymentSupplierDetail.Status = 1
+--and AP_PaymentSupplierDetail.BusinessPartnerTypeID = 1
+and ISNULL(WithHoldingTaxFlag,0) = 0 and  ISNULL(SaleTaxFlag,0) = 0 and ISNULL(SaleWithHoldingTaxFlag,0) = 0
+and AP_PaymentHeader.CompanyID = @CompanyID
+and Convert(Date,AP_PaymentHeader.DocumentDate) BETWEEN @FromDate AND @ToDate
+) as tab
+where Description is not null
+group by Description</value>
+  </data>
+  <data name="Query_Select_By_AccountCode" xml:space="preserve">
+    <value>Select CompanyID, ChartOfAccountID, CodeCombinationID, DetailBudgetingAllowedFlag, DetailPostingAllowedFlag,
+        SummaryFlag, Status, FormType
+        From (
+        Select GL_CodeCombinationDetail.CompanyID, GL_CodeCombinationDetail.ChartOfAccountID, 
+        GL_CodeCombinationDetail.CodeCombinationID, 
+        GL_CodeCombinationDetail.DetailBudgetingAllowedFlag, GL_CodeCombinationDetail.DetailPostingAllowedFlag,
+        GL_CodeCombinationDetail.SummaryFlag, GL_CodeCombinationDetail.Status,   
+        'COA' AS FormType  From  GL_CodeCombinationDetail 
+        WHERE 
+        --GL_CodeCombinationDetail.CompanyID = @CompanyID AND
+        GL_CodeCombinationDetail.ChartofAccountID = @ChartofAccountID AND GL_CodeCombinationDetail.Status = 1 
+        AND (GL_CodeCombinationDetail.IsActive = @IsActive OR @IsActive = -1) AND
+        SUBSTRING(GL_CodeCombinationDetail.CodeCombinationID, @StartLen,@EndLen) = @CodeCombinationID                  
+        UNION ALL
+        Select GL_TransactionDetail.CompanyID, GL_TransactionDetail.ChartOfAccountID, 
+        GL_TransactionDetail.CodeCombinationID, 
+        GL_CodeCombinationDetail.DetailBudgetingAllowedFlag, GL_CodeCombinationDetail.DetailPostingAllowedFlag,
+        GL_CodeCombinationDetail.SummaryFlag, GL_CodeCombinationDetail.Status, 'Trans' AS FormType
+        From  GL_TransactionDetail INNER JOIN
+        GL_CodeCombinationDetail ON (--GL_TransactionDetail.CompanyID = GL_CodeCombinationDetail.CompanyID AND
+							        GL_TransactionDetail.ChartOfAccountID = GL_CodeCombinationDetail.ChartOfAccountID AND
+							        GL_TransactionDetail.CodeCombinationID = GL_CodeCombinationDetail.CodeCombinationID)
+        WHERE GL_TransactionDetail.CompanyID = @CompanyID AND
+        GL_TransactionDetail.ChartofAccountID = @ChartofAccountID AND
+        GL_TransactionDetail.Status = 1 AND GL_CodeCombinationDetail.Status = 1 AND (GL_CodeCombinationDetail.IsActive = @IsActive OR @IsActive = -1) AND 
+        SUBSTRING(GL_TransactionDetail.CodeCombinationID, @StartLen,@EndLen) = @CodeCombinationID
+                  
+
+        UNION ALL
+        Select GL_BatchDetail.CompanyID, GL_BatchDetail.ChartOfAccountID, 
+        GL_BatchDetail.CodeCombinationID, 
+        GL_CodeCombinationDetail.DetailBudgetingAllowedFlag, GL_CodeCombinationDetail.DetailPostingAllowedFlag,
+        GL_CodeCombinationDetail.SummaryFlag, GL_CodeCombinationDetail.Status, 'Batch' AS FormType
+        From  GL_BatchDetail INNER JOIN
+        GL_CodeCombinationDetail ON (--GL_BatchDetail.CompanyID = GL_CodeCombinationDetail.CompanyID AND
+							        GL_BatchDetail.ChartOfAccountID = GL_CodeCombinationDetail.ChartOfAccountID AND
+							        GL_BatchDetail.CodeCombinationID = GL_CodeCombinationDetail.CodeCombinationID)
+        WHERE GL_BatchDetail.CompanyID = @CompanyID AND
+        GL_BatchDetail.ChartofAccountID = @ChartofAccountID AND
+        GL_BatchDetail.Status = 1 AND GL_CodeCombinationDetail.Status = 1 AND (GL_CodeCombinationDetail.IsActive = @IsActive OR @IsActive = -1) AND 
+        SUBSTRING(GL_BatchDetail.CodeCombinationID, @StartLen,@EndLen) = @CodeCombinationID
+
+        UNION ALL
+        Select GL_EncumbranceDetail.CompanyID, GL_EncumbranceDetail.ChartOfAccountID, 
+        GL_EncumbranceDetail.CodeCombinationID, 
+        GL_CodeCombinationDetail.DetailBudgetingAllowedFlag, GL_CodeCombinationDetail.DetailPostingAllowedFlag,
+        GL_CodeCombinationDetail.SummaryFlag, GL_CodeCombinationDetail.Status, 'Encumbrance' AS FormType
+        From  GL_EncumbranceDetail INNER JOIN
+        GL_CodeCombinationDetail ON (--GL_EncumbranceDetail.CompanyID = GL_CodeCombinationDetail.CompanyID AND
+							        GL_EncumbranceDetail.ChartOfAccountID = GL_CodeCombinationDetail.ChartOfAccountID AND
+							        GL_EncumbranceDetail.CodeCombinationID = GL_CodeCombinationDetail.CodeCombinationID)
+        WHERE GL_EncumbranceDetail.CompanyID = @CompanyID AND
+        GL_EncumbranceDetail.ChartofAccountID = @ChartofAccountID AND
+        GL_EncumbranceDetail.Status = 1 AND GL_CodeCombinationDetail.Status = 1 AND (GL_CodeCombinationDetail.IsActive = @IsActive OR @IsActive = -1) AND 
+        SUBSTRING(GL_EncumbranceDetail.CodeCombinationID, @StartLen,@EndLen) = @CodeCombinationID
+
+        UNION ALL
+        Select GL_Recurring.CompanyID, GL_Recurring.ChartOfAccountID, 
+        GL_Recurring.CodeCombinationID_CR, 
+        GL_CodeCombinationDetail.DetailBudgetingAllowedFlag, GL_CodeCombinationDetail.DetailPostingAllowedFlag,
+        GL_CodeCombinationDetail.SummaryFlag, GL_CodeCombinationDetail.Status, 'Recurring' AS FormType
+        From  GL_Recurring INNER JOIN
+        GL_CodeCombinationDetail ON (--GL_Recurring.CompanyID = GL_CodeCombinationDetail.CompanyID AND
+							        GL_Recurring.ChartOfAccountID = GL_CodeCombinationDetail.ChartOfAccountID AND
+							        GL_Recurring.CodeCombinationID_CR = GL_CodeCombinationDetail.CodeCombinationID)
+        WHERE GL_Recurring.CompanyID = @CompanyID AND
+        GL_Recurring.ChartofAccountID = @ChartofAccountID AND
+        GL_Recurring.Status = 1 AND GL_CodeCombinationDetail.Status = 1 AND (GL_CodeCombinationDetail.IsActive = @IsActive OR @IsActive = -1) AND 
+        SUBSTRING(GL_Recurring.CodeCombinationID_CR, @StartLen,@EndLen) = @CodeCombinationID
+
+        UNION ALL
+        Select GL_Recurring.CompanyID, GL_Recurring.ChartOfAccountID, 
+        GL_Recurring.CodeCombinationID_DB, 
+        GL_CodeCombinationDetail.DetailBudgetingAllowedFlag, GL_CodeCombinationDetail.DetailPostingAllowedFlag,
+        GL_CodeCombinationDetail.SummaryFlag, GL_CodeCombinationDetail.Status, 'Recurring' AS FormType
+        From  GL_Recurring INNER JOIN
+        GL_CodeCombinationDetail ON (--GL_Recurring.CompanyID = GL_CodeCombinationDetail.CompanyID AND
+							        GL_Recurring.ChartOfAccountID = GL_CodeCombinationDetail.ChartOfAccountID AND
+							        GL_Recurring.CodeCombinationID_DB = GL_CodeCombinationDetail.CodeCombinationID)
+        WHERE GL_Recurring.CompanyID = @CompanyID AND
+        GL_Recurring.ChartofAccountID = @ChartofAccountID AND
+        GL_Recurring.Status = 1 AND GL_CodeCombinationDetail.Status = 1 AND (GL_CodeCombinationDetail.IsActive = @IsActive OR @IsActive = -1) AND 
+        SUBSTRING(GL_Recurring.CodeCombinationID_DB, @StartLen,@EndLen) = @CodeCombinationID
+
+        UNION ALL
+        Select SET_DocumentType.CompanyID, SET_DocumentType.ChartOfAccountID, 
+        SET_DocumentType.DefaultAccountCode, 
+        GL_CodeCombinationDetail.DetailBudgetingAllowedFlag, GL_CodeCombinationDetail.DetailPostingAllowedFlag,
+        GL_CodeCombinationDetail.SummaryFlag, GL_CodeCombinationDetail.Status, 'DocumentType' AS FormType
+        From  SET_DocumentType INNER JOIN
+        GL_CodeCombinationDetail ON (--SET_DocumentType.CompanyID = GL_CodeCombinationDetail.CompanyID AND
+							        SET_DocumentType.ChartOfAccountID = GL_CodeCombinationDetail.ChartOfAccountID AND
+							        SET_DocumentType.DefaultAccountCode = GL_CodeCombinationDetail.CodeCombinationID)
+        WHERE SET_DocumentType.CompanyID = @CompanyID AND
+        SET_DocumentType.ChartofAccountID = @ChartofAccountID AND
+        SET_DocumentType.Status = 1 AND (SET_DocumentType.IsActive = @IsActive OR @IsActive = -1) AND 
+        GL_CodeCombinationDetail.Status = 1 AND (GL_CodeCombinationDetail.IsActive = @IsActive OR @IsActive = -1) AND 
+        SUBSTRING(SET_DocumentType.DefaultAccountCode, @StartLen,@EndLen) = @CodeCombinationID ) TAB_ChartofAccount
+        WHERE (FormType = @FormType OR @FormType = '-1')</value>
+  </data>
+  <data name="Query_TrailBalacnce_Monthly" xml:space="preserve">
+    <value>select code as CodeCombinationID,MonthNo,Month_Name, round(((sum(Debit) - sum(Credit)) / 1000000),2) as Amount,AccountTypeID
+,(select Description from GL_CodeCombinationDetail where CodeCombinationID = Code ) as Description
+ from (
+
+SELECT DISTINCT 
+	Code,
+    len(Tab_COA_Tran1.CodeCombinationID) SegmentLength,
+    (case when len(Tab_COA_Tran1.CodeCombinationID)=1 then 1
+    when len(Tab_COA_Tran1.CodeCombinationID)=4 then 2
+    when len(Tab_COA_Tran1.CodeCombinationID)=7 then 3
+    when len(Tab_COA_Tran1.CodeCombinationID)=10 then 4
+    when len(Tab_COA_Tran1.CodeCombinationID)=13 then 5
+    when len(Tab_COA_Tran1.CodeCombinationID)=18 then 6  end ) SegmentNo,
+    Tab_COA_Tran1.CodeCombinationID, GL_CodeCombinationDetail.HeadAccountCode, GL_CodeCombinationDetail.Description, 
+	GL_CodeCombinationDetail.SummaryFlag,
+		 SUM(Debit) AS Debit, SUM(Credit) AS Credit, Tab_COA_Tran1.ChartOfAccountID, 
+		GL_CodeCombinationDetail.AccountTypeID, GL_CodeCombinationDetail.DetailPostingAllowedFlag ,MonthNo,Month_Name
+FROM
+(
+ SELECT DISTINCT GL_CodeCombinationDetail.CompanyID, GL_CodeCombinationDetail.ChartOfAccountID, GL_CodeCombinationDetail.CodeCombinationID, 0 As OpeningDebit, 
+        0 As OpeningCredit, 0 AS Debit, 0 AS Credit 
+		,'' as Month_Name
+		,'' as MonthNo
+		,left(CodeCombinationID,5) as Code
+		
+    FROM GL_CodeCombinationDetail 
+    WHERE 
+    GL_CodeCombinationDetail.ChartOfAccountID = @ChartofAccountID AND GL_CodeCombinationDetail.Status = 1 
+        AND GL_CodeCombinationDetail.IsActive = 1
+    UNION ALL
+
+
+    SELECT  GL_TransactionDetail.CompanyID, GL_TransactionDetail.ChartOfAccountID, GL_TransactionDetail.CodeCombinationID, 0 As OpeningDebit, 0 As OpeningCredit, 
+        (CASE WHEN GL_TransactionDetail.TransactionType = 'Debit' THEN GL_TransactionDetail.Amount ELSE 0 END) AS Debit, 
+        (CASE WHEN GL_TransactionDetail.TransactionType = 'Credit' THEN GL_TransactionDetail.Amount ELSE 0 END) AS Credit 
+		,datename(month, GL_TransactionHeader.DocumentDate) as Month_Name
+		,month(GL_TransactionHeader.DocumentDate) as MonthNo
+		,left(CodeCombinationID,5) as Code
+		    FROM GL_TransactionHeader 
+        INNER JOIN GL_TransactionDetail ON GL_TransactionHeader.CompanyID = GL_TransactionDetail.CompanyID 
+            AND GL_TransactionHeader.PeriodID = GL_TransactionDetail.PeriodID AND GL_TransactionHeader.TransactionID = GL_TransactionDetail.TransactionID 
+        INNER JOIN SET_DocumentType  ON GL_TransactionHeader.CompanyID = SET_DocumentType.CompanyID AND
+        GL_TransactionHeader.PeriodID = SET_DocumentType.PeriodID AND
+        GL_TransactionHeader.DocumentTypeID = SET_DocumentType.DocumentTypeID 
+		 
+    WHERE GL_TransactionDetail.CompanyID in @CompanyID AND GL_TransactionDetail.ChartOfAccountID = @ChartofAccountID AND GL_TransactionDetail.PeriodID = @PeriodID 
+		
+        AND GL_TransactionHeader.Status = 1 AND GL_TransactionDetail.Status = 1 AND convert(date,GL_TransactionHeader.DocumentDate) between @FromDate  AND @ToDate 
+
+		AND GL_TransactionHeader.StatusCode = 1 
+        
+         AND IsNull(GL_TransactionHeader.IsReversed, 0) = 0 And GL_TransactionHeader.ReversalID is null 
+        
+     Group By GL_TransactionHeader.DocumentNo, GL_TransactionDetail.CodeCombinationID, GL_TransactionHeader.DocumentDate, 
+    GL_TransactionHeader.Narration, 
+    GL_TransactionDetail.Amount, GL_TransactionDetail.TransactionType, SET_DocumentType.DocumentType, 
+    GL_TransactionDetail.SerialNo,GL_TransactionDetail.Narration, GL_TransactionDetail.SerialNo ,GL_TransactionDetail.CompanyID
+    ,GL_TransactionDetail.ChartOfAccountID
+        
+) Tab_COA_Tran1 
+    INNER JOIN GL_CodeCombinationDetail ON 
+    Tab_COA_Tran1.ChartOfAccountID = GL_CodeCombinationDetail.ChartOfAccountID 
+        AND Tab_COA_Tran1.CodeCombinationID = GL_CodeCombinationDetail.CodeCombinationID 
+where GL_CodeCombinationDetail.Status = 1 AND GL_CodeCombinationDetail.IsActive = 1 
+    AND (GL_CodeCombinationDetail.DetailPostingAllowedFlag = null OR null IS NULL) 
+	
+					
+GROUP BY GL_CodeCombinationDetail.Status,GL_CodeCombinationDetail.IsActive,Tab_COA_Tran1.ChartOfAccountID, GL_CodeCombinationDetail.HeadAccountCode, Tab_COA_Tran1.CodeCombinationID, 
+    GL_CodeCombinationDetail.SummaryFlag, GL_CodeCombinationDetail.Description, GL_CodeCombinationDetail.AccountTypeID, 
+    GL_CodeCombinationDetail.DetailPostingAllowedFlag
+	,MonthNo,Month_Name,Code
+
+) as tab
+group by code,AccountTypeID ,MonthNo,Month_Name
+order by code,MonthNo</value>
+  </data>
+  <data name="Query_TrialBalanceDepartmentWise" xml:space="preserve">
+    <value>SELECT DISTINCT DepartmentID,DepartmentName,
+    len(Tab_COA_Tran1.CodeCombinationID) SegmentLength,
+    (case when len(Tab_COA_Tran1.CodeCombinationID)=1 then 1
+    when len(Tab_COA_Tran1.CodeCombinationID)=4 then 2
+    when len(Tab_COA_Tran1.CodeCombinationID)=7 then 3
+    when len(Tab_COA_Tran1.CodeCombinationID)=10 then 4
+    when len(Tab_COA_Tran1.CodeCombinationID)=13 then 5
+    when len(Tab_COA_Tran1.CodeCombinationID)=18 then 6  end ) SegmentNo,
+    Tab_COA_Tran1.CodeCombinationID, GL_CodeCombinationDetail.HeadAccountCode, GL_CodeCombinationDetail.Description, 
+	GL_CodeCombinationDetail.SummaryFlag, case GL_CodeCombinationDetail.DetailPostingAllowedFlag when 1 
+		then 
+			case 
+				when (SUM(OpeningCredit) &gt; SUM(OpeningDebit) and SUM(OpeningCredit) &lt;&gt; SUM(OpeningDebit))
+				then SUM(OpeningCredit) -  SUM(OpeningDebit) 
+				else 0 end 
+		else SUM(OpeningCredit) 
+		end as OpeningCredit, 
+	case GL_CodeCombinationDetail.DetailPostingAllowedFlag when 1 
+		then 
+			case when (SUM(OpeningCredit) &gt; SUM(OpeningDebit) and SUM(OpeningCredit) &lt;&gt; SUM(OpeningDebit)) 
+				then 0 
+				else 
+					case when (SUM(OpeningCredit) &lt; SUM(OpeningDebit) and SUM(OpeningCredit) &lt;&gt; SUM(OpeningDebit)) 
+					then SUM(OpeningDebit) - SUM(OpeningCredit) 
+					else 0 end 
+			end
+		else SUM(OpeningDebit) 
+		end as OpeningDebit, 
+	case GL_CodeCombinationDetail.DetailPostingAllowedFlag when 1 
+		then 
+			case when ((sum(OpeningCredit) + SUM(Credit)) &gt; (sum(OpeningDebit) + SUM(Debit)) 
+					and (sum(OpeningCredit) + SUM(Credit)) &lt;&gt; (sum(OpeningDebit) + SUM(Debit))) 
+				then (sum(OpeningCredit) + SUM(Credit)) - (sum(OpeningDebit) + SUM(Debit)) 
+				else 0 end 
+		else sum(OpeningCredit) + SUM(Credit) 
+		end ClosingCredit, 
+	case GL_CodeCombinationDetail.DetailPostingAllowedFlag when 1 
+		then 
+			case when ((sum(OpeningCredit) + SUM(Credit)) &gt; (sum(OpeningDebit) + SUM(Debit)) 
+					and (sum(OpeningCredit) + SUM(Credit)) &lt;&gt; (sum(OpeningDebit) + SUM(Debit))) 
+				then 0 
+				else 
+					case when ((sum(OpeningCredit) + SUM(Credit)) &lt; (sum(OpeningDebit) + SUM(Debit)) 
+							and (sum(OpeningCredit) + SUM(Credit)) &lt;&gt; (sum(OpeningDebit) + SUM(Debit))) 
+						then (sum(OpeningDebit) + SUM(Debit)) - (sum(OpeningCredit) + SUM(Credit))  
+						else 0 end 
+				end 
+		else (sum(OpeningDebit) + SUM(Debit)) 
+		end as ClosingDebit, 
+		SUM(OpeningDebit) as _OpeningDebit, SUM(OpeningCredit) as _OpeningCredit, SUM(Debit) AS Debit, SUM(Credit) AS Credit, 
+		sum(OpeningDebit) + SUM(Debit) as _ClosingDebit, sum(OpeningCredit) + SUM(Credit) as _ClosingCredit, Tab_COA_Tran1.ChartOfAccountID, 
+		GL_CodeCombinationDetail.AccountTypeID, GL_CodeCombinationDetail.DetailPostingAllowedFlag 
+		,SET_OperatingUnit.OperatingUnitName,SET_OperatingUnit.OperatingUnitId
+FROM
+(
+    --SELECT DISTINCT GL_CodeCombinationDetail.CompanyID, GL_CodeCombinationDetail.ChartOfAccountID, GL_CodeCombinationDetail.CodeCombinationID, 0 As OpeningDebit, 
+    --    0 As OpeningCredit, 0 AS Debit, 0 AS Credit ,9999 as DepartmentID,null as DepartmentName
+    --FROM GL_CodeCombinationDetail 
+    --WHERE 
+    ----GL_CodeCombinationDetail.CompanyID = @CompanyID AND 
+    --GL_CodeCombinationDetail.ChartOfAccountID = @ChartofAccountID AND GL_CodeCombinationDetail.Status = 1 
+    --    AND GL_CodeCombinationDetail.IsActive = 1
+    --UNION ALL
+
+    SELECT GL_TransactionDetail.CompanyID, GL_TransactionDetail.ChartOfAccountID, GL_TransactionDetail.CodeCombinationID, 
+        (CASE WHEN GL_TransactionDetail.TransactionType = 'Debit' THEN GL_TransactionDetail.Amount ELSE 0 END) AS OpeningDebit, 
+        (CASE WHEN GL_TransactionDetail.TransactionType = 'Credit' THEN GL_TransactionDetail.Amount ELSE 0 END) AS OpeningCredit, 0 As Debit, 0 As Credit 
+		,GL_TransactionDetail.DepartmentID,DepartmentName
+    FROM GL_TransactionHeader 
+        INNER JOIN GL_TransactionDetail ON GL_TransactionHeader.CompanyID = GL_TransactionDetail.CompanyID 
+            AND GL_TransactionHeader.PeriodID = GL_TransactionDetail.PeriodID AND GL_TransactionHeader.TransactionID = GL_TransactionDetail.TransactionID 
+
+			INNER JOIN GL_CodeCombinationDetail ON  GL_TransactionDetail.ChartOfAccountID = GL_CodeCombinationDetail.ChartOfAccountID 
+        AND GL_TransactionDetail.CodeCombinationID = GL_CodeCombinationDetail.CodeCombinationID 
+
+        INNER JOIN SET_DocumentType  ON GL_TransactionHeader.CompanyID = SET_DocumentType.CompanyID AND
+        GL_TransactionHeader.PeriodID = SET_DocumentType.PeriodID AND
+        GL_TransactionHeader.DocumentTypeID = SET_DocumentType.DocumentTypeID 
+		{2} 
+		left join SET_Department on SET_Department.DepartmentID = GL_TransactionDetail.DepartmentID
+    WHERE GL_TransactionDetail.CompanyID in @CompanyID AND GL_TransactionDetail.ChartOfAccountID = @ChartofAccountID AND GL_TransactionDetail.PeriodID = @PeriodID 
+	--AND GL_TransactionDetail.FiscalID = @FiscalID
+        AND GL_TransactionHeader.Status = 1 AND GL_TransactionDetail.Status = 1 AND convert(date,GL_TransactionHeader.DocumentDate) &lt; @FromDate 
+        AND GL_TransactionHeader.StatusCode = 1 And (GL_TransactionDetail.CostCenterID = @cc Or @cc is null) 
+        And (GL_TransactionDetail.DepartmentID = @did Or @did is null)
+        {1}
+
+    UNION ALL
+    
+    SELECT  GL_TransactionDetail.CompanyID, GL_TransactionDetail.ChartOfAccountID, GL_TransactionDetail.CodeCombinationID, 0 As OpeningDebit, 0 As OpeningCredit, 
+        (CASE WHEN GL_TransactionDetail.TransactionType = 'Debit' THEN GL_TransactionDetail.Amount ELSE 0 END) AS Debit, 
+        (CASE WHEN GL_TransactionDetail.TransactionType = 'Credit' THEN GL_TransactionDetail.Amount ELSE 0 END) AS Credit 
+		,GL_TransactionDetail.DepartmentID,DepartmentName
+    FROM GL_TransactionHeader 
+        INNER JOIN GL_TransactionDetail ON GL_TransactionHeader.CompanyID = GL_TransactionDetail.CompanyID 
+            AND GL_TransactionHeader.PeriodID = GL_TransactionDetail.PeriodID AND GL_TransactionHeader.TransactionID = GL_TransactionDetail.TransactionID 
+
+			INNER JOIN GL_CodeCombinationDetail ON  GL_TransactionDetail.ChartOfAccountID = GL_CodeCombinationDetail.ChartOfAccountID 
+        AND GL_TransactionDetail.CodeCombinationID = GL_CodeCombinationDetail.CodeCombinationID 
+
+        INNER JOIN SET_DocumentType  ON GL_TransactionHeader.CompanyID = SET_DocumentType.CompanyID AND
+        GL_TransactionHeader.PeriodID = SET_DocumentType.PeriodID AND
+        GL_TransactionHeader.DocumentTypeID = SET_DocumentType.DocumentTypeID 
+		{2} 
+
+		left join SET_Department on SET_Department.DepartmentID = GL_TransactionDetail.DepartmentID
+    WHERE GL_TransactionDetail.CompanyID in @CompanyID AND GL_TransactionDetail.ChartOfAccountID = @ChartofAccountID AND GL_TransactionDetail.PeriodID = @PeriodID 
+		--AND GL_TransactionDetail.FiscalID = @FiscalID
+        AND GL_TransactionHeader.Status = 1 AND GL_TransactionDetail.Status = 1 AND convert(date,GL_TransactionHeader.DocumentDate) between @FromDate  AND @ToDate 
+--		AND GL_TransactionHeader.TransactionID  not in (
+--		 select GL_TransactionHeader.TransactionID from GL_TransactionHeader
+--INNER JOIN SET_DocumentType  ON GL_TransactionHeader.CompanyID = SET_DocumentType.CompanyID AND
+--        GL_TransactionHeader.PeriodID = SET_DocumentType.PeriodID AND
+--        GL_TransactionHeader.DocumentTypeID = SET_DocumentType.DocumentTypeID 
+--		where DocumentType LIKE 'GL-OPENING' + '%'
+--		--and fiscalid = @FiscalID
+--		 )
+		AND GL_TransactionHeader.StatusCode = 1 And (GL_TransactionDetail.CostCenterID = @cc Or @cc is null) 
+        And (GL_TransactionDetail.DepartmentID = @did Or @did is null
+        )
+        {1}
+        
+     Group By GL_TransactionHeader.DocumentNo, GL_TransactionDetail.CodeCombinationID, GL_TransactionHeader.DocumentDate, 
+    GL_TransactionHeader.Narration, 
+    GL_TransactionDetail.Amount, GL_TransactionDetail.TransactionType, SET_DocumentType.DocumentType, 
+    GL_TransactionDetail.SerialNo,GL_TransactionDetail.Narration, GL_TransactionDetail.SerialNo ,GL_TransactionDetail.CompanyID
+    ,GL_TransactionDetail.ChartOfAccountID,GL_TransactionDetail.DepartmentID,DepartmentName
+        
+) Tab_COA_Tran1 
+inner join SET_OperatingUnit on SET_OperatingUnit.OperatingUnitId = Tab_COA_Tran1.CompanyID
+    INNER JOIN GL_CodeCombinationDetail ON 
+    Tab_COA_Tran1.ChartOfAccountID = GL_CodeCombinationDetail.ChartOfAccountID 
+        AND Tab_COA_Tran1.CodeCombinationID = GL_CodeCombinationDetail.CodeCombinationID 
+where GL_CodeCombinationDetail.Status = 1 AND GL_CodeCombinationDetail.IsActive = 1 
+ --AND Tab_COA_Tran1.CompanyID in @CompanyID
+    AND (GL_CodeCombinationDetail.DetailPostingAllowedFlag = @DetailPostingAllowedFlag OR @DetailPostingAllowedFlag IS NULL) 
+					{AccountCodeFilter}
+GROUP BY GL_CodeCombinationDetail.Status,GL_CodeCombinationDetail.IsActive,Tab_COA_Tran1.ChartOfAccountID, GL_CodeCombinationDetail.HeadAccountCode, Tab_COA_Tran1.CodeCombinationID, 
+    GL_CodeCombinationDetail.SummaryFlag, GL_CodeCombinationDetail.Description, GL_CodeCombinationDetail.AccountTypeID, 
+    GL_CodeCombinationDetail.DetailPostingAllowedFlag,DepartmentID,DepartmentName,SET_OperatingUnit.OperatingUnitName,SET_OperatingUnit.OperatingUnitId</value>
+  </data>
+  <data name="Query_TrialBalanceDepartmentWise_HSM" xml:space="preserve">
+    <value>SELECT DISTINCT DepartmentID,DepartmentName,
+    len(Tab_COA_Tran1.CodeCombinationID) SegmentLength,
+    (case when len(Tab_COA_Tran1.CodeCombinationID)=1 then 1
+    when len(Tab_COA_Tran1.CodeCombinationID)=4 then 2
+    when len(Tab_COA_Tran1.CodeCombinationID)=7 then 3
+    when len(Tab_COA_Tran1.CodeCombinationID)=10 then 4
+    when len(Tab_COA_Tran1.CodeCombinationID)=13 then 5
+    when len(Tab_COA_Tran1.CodeCombinationID)=18 then 6  end ) SegmentNo,
+    Tab_COA_Tran1.CodeCombinationID, GL_CodeCombinationDetail.HeadAccountCode, GL_CodeCombinationDetail.Description, 
+	GL_CodeCombinationDetail.SummaryFlag, CASE GL_CodeCombinationDetail.DetailPostingAllowedFlag 
+    WHEN 1 THEN 
+        CASE 
+            WHEN (SUM(OpeningCredit) &gt; SUM(OpeningDebit) AND SUM(OpeningCredit) &lt;&gt; SUM(OpeningDebit)) THEN 
+                CASE 
+                    WHEN ROUND(SUM(OpeningCredit) - SUM(OpeningDebit), 2) = 0 THEN 0
+                    ELSE SUM(OpeningCredit) - SUM(OpeningDebit)
+                END
+            ELSE 0 
+        END 
+    ELSE SUM(OpeningCredit) 
+END AS OpeningCredit,
+	CASE GL_CodeCombinationDetail.DetailPostingAllowedFlag 
+    WHEN 1 THEN 
+        CASE 
+            WHEN (SUM(OpeningCredit) &gt; SUM(OpeningDebit) AND SUM(OpeningCredit) &lt;&gt; SUM(OpeningDebit)) THEN 0 
+            ELSE 
+                CASE 
+                    WHEN (SUM(OpeningCredit) &lt; SUM(OpeningDebit) AND SUM(OpeningCredit) &lt;&gt; SUM(OpeningDebit)) THEN 
+                        CASE 
+                            WHEN ROUND(SUM(OpeningDebit) - SUM(OpeningCredit), 2) = 0 THEN 0 
+                            ELSE SUM(OpeningDebit) - SUM(OpeningCredit) 
+                        END
+                    ELSE 0 
+                END 
+        END 
+    ELSE SUM(OpeningDebit) 
+END AS OpeningDebit,
+	CASE GL_CodeCombinationDetail.DetailPostingAllowedFlag 
+    WHEN 1 THEN 
+        CASE 
+            WHEN ((SUM(OpeningCredit) + SUM(Credit)) &gt; (SUM(OpeningDebit) + SUM(Debit)) 
+                  AND (SUM(OpeningCredit) + SUM(Credit)) &lt;&gt; (SUM(OpeningDebit) + SUM(Debit))) 
+            THEN 
+                CASE 
+                    WHEN ROUND((SUM(OpeningCredit) + SUM(Credit)) - (SUM(OpeningDebit) + SUM(Debit)), 2) = 0 
+                    THEN 0 
+                    ELSE (SUM(OpeningCredit) + SUM(Credit)) - (SUM(OpeningDebit) + SUM(Debit)) 
+                END 
+            ELSE 0 
+        END 
+    ELSE SUM(OpeningCredit) + SUM(Credit) 
+END AS ClosingCredit,
+	CASE GL_CodeCombinationDetail.DetailPostingAllowedFlag 
+    WHEN 1 THEN 
+        CASE 
+            WHEN ((SUM(OpeningCredit) + SUM(Credit)) &gt; (SUM(OpeningDebit) + SUM(Debit)) 
+                  AND (SUM(OpeningCredit) + SUM(Credit)) &lt;&gt; (SUM(OpeningDebit) + SUM(Debit))) 
+            THEN 0 
+            ELSE 
+                CASE 
+                    WHEN ((SUM(OpeningCredit) + SUM(Credit)) &lt; (SUM(OpeningDebit) + SUM(Debit)) 
+                          AND (SUM(OpeningCredit) + SUM(Credit)) &lt;&gt; (SUM(OpeningDebit) + SUM(Debit))) 
+                    THEN 
+                        CASE 
+                            WHEN ROUND((SUM(OpeningDebit) + SUM(Debit)) - (SUM(OpeningCredit) + SUM(Credit)), 2) = 0 
+                            THEN 0 
+                            ELSE (SUM(OpeningDebit) + SUM(Debit)) - (SUM(OpeningCredit) + SUM(Credit)) 
+                        END
+                    ELSE 0 
+                END 
+        END 
+    ELSE (SUM(OpeningDebit) + SUM(Debit)) 
+END AS ClosingDebit,
+		SUM(OpeningDebit) as _OpeningDebit, SUM(OpeningCredit) as _OpeningCredit, SUM(Debit) AS Debit, SUM(Credit) AS Credit, 
+		sum(OpeningDebit) + SUM(Debit) as _ClosingDebit, sum(OpeningCredit) + SUM(Credit) as _ClosingCredit, Tab_COA_Tran1.ChartOfAccountID, 
+		GL_CodeCombinationDetail.AccountTypeID, GL_CodeCombinationDetail.DetailPostingAllowedFlag 
+		,SET_OperatingUnit.OperatingUnitName,SET_OperatingUnit.OperatingUnitId
+FROM
+(
+    --SELECT DISTINCT GL_CodeCombinationDetail.CompanyID, GL_CodeCombinationDetail.ChartOfAccountID, GL_CodeCombinationDetail.CodeCombinationID, 0 As OpeningDebit, 
+    --    0 As OpeningCredit, 0 AS Debit, 0 AS Credit ,9999 as DepartmentID,null as DepartmentName
+    --FROM GL_CodeCombinationDetail 
+    --WHERE 
+    ----GL_CodeCombinationDetail.CompanyID = @CompanyID AND 
+    --GL_CodeCombinationDetail.ChartOfAccountID = @ChartofAccountID AND GL_CodeCombinationDetail.Status = 1 
+    --    AND GL_CodeCombinationDetail.IsActive = 1
+    --UNION ALL
+
+    SELECT GL_TransactionDetail.CompanyID, GL_TransactionDetail.ChartOfAccountID, GL_TransactionDetail.CodeCombinationID, 
+        (CASE WHEN GL_TransactionDetail.TransactionType = 'Debit' THEN GL_TransactionDetail.Amount ELSE 0 END) AS OpeningDebit, 
+        (CASE WHEN GL_TransactionDetail.TransactionType = 'Credit' THEN GL_TransactionDetail.Amount ELSE 0 END) AS OpeningCredit, 0 As Debit, 0 As Credit 
+		,GL_TransactionDetail.DepartmentID,DepartmentName
+    FROM GL_TransactionHeader 
+        INNER JOIN GL_TransactionDetail ON GL_TransactionHeader.CompanyID = GL_TransactionDetail.CompanyID 
+            AND GL_TransactionHeader.PeriodID = GL_TransactionDetail.PeriodID AND GL_TransactionHeader.TransactionID = GL_TransactionDetail.TransactionID 
+
+			INNER JOIN GL_CodeCombinationDetail ON  GL_TransactionDetail.ChartOfAccountID = GL_CodeCombinationDetail.ChartOfAccountID 
+        AND GL_TransactionDetail.CodeCombinationID = GL_CodeCombinationDetail.CodeCombinationID 
+
+        INNER JOIN SET_DocumentType  ON GL_TransactionHeader.CompanyID = SET_DocumentType.CompanyID AND
+        GL_TransactionHeader.PeriodID = SET_DocumentType.PeriodID AND
+        GL_TransactionHeader.DocumentTypeID = SET_DocumentType.DocumentTypeID 
+		{2} 
+		left join SET_Department on SET_Department.DepartmentID = GL_TransactionDetail.DepartmentID
+    WHERE GL_TransactionDetail.CompanyID in @CompanyID AND GL_TransactionDetail.ChartOfAccountID = @ChartofAccountID AND GL_TransactionDetail.PeriodID = @PeriodID 
+	--AND GL_TransactionDetail.FiscalID = @FiscalID
+        AND GL_TransactionHeader.Status = 1 AND GL_TransactionDetail.Status = 1 AND convert(date,GL_TransactionHeader.DocumentDate) &lt; @FromDate 
+        AND GL_TransactionHeader.StatusCode = 1 And (GL_TransactionDetail.CostCenterID = @cc Or @cc is null) 
+        And (GL_TransactionDetail.DepartmentID = @did Or @did is null)
+        {1}
+
+    UNION ALL
+    
+    SELECT  GL_TransactionDetail.CompanyID, GL_TransactionDetail.ChartOfAccountID, GL_TransactionDetail.CodeCombinationID, 0 As OpeningDebit, 0 As OpeningCredit, 
+        (CASE WHEN GL_TransactionDetail.TransactionType = 'Debit' THEN GL_TransactionDetail.Amount ELSE 0 END) AS Debit, 
+        (CASE WHEN GL_TransactionDetail.TransactionType = 'Credit' THEN GL_TransactionDetail.Amount ELSE 0 END) AS Credit 
+		,GL_TransactionDetail.DepartmentID,DepartmentName
+    FROM GL_TransactionHeader 
+        INNER JOIN GL_TransactionDetail ON GL_TransactionHeader.CompanyID = GL_TransactionDetail.CompanyID 
+            AND GL_TransactionHeader.PeriodID = GL_TransactionDetail.PeriodID AND GL_TransactionHeader.TransactionID = GL_TransactionDetail.TransactionID 
+
+			INNER JOIN GL_CodeCombinationDetail ON  GL_TransactionDetail.ChartOfAccountID = GL_CodeCombinationDetail.ChartOfAccountID 
+        AND GL_TransactionDetail.CodeCombinationID = GL_CodeCombinationDetail.CodeCombinationID 
+
+        INNER JOIN SET_DocumentType  ON GL_TransactionHeader.CompanyID = SET_DocumentType.CompanyID AND
+        GL_TransactionHeader.PeriodID = SET_DocumentType.PeriodID AND
+        GL_TransactionHeader.DocumentTypeID = SET_DocumentType.DocumentTypeID 
+		{2} 
+
+		left join SET_Department on SET_Department.DepartmentID = GL_TransactionDetail.DepartmentID
+    WHERE GL_TransactionDetail.CompanyID in @CompanyID AND GL_TransactionDetail.ChartOfAccountID = @ChartofAccountID AND GL_TransactionDetail.PeriodID = @PeriodID 
+		--AND GL_TransactionDetail.FiscalID = @FiscalID
+        AND GL_TransactionHeader.Status = 1 AND GL_TransactionDetail.Status = 1 AND convert(date,GL_TransactionHeader.DocumentDate) between @FromDate  AND @ToDate 
+--		AND GL_TransactionHeader.TransactionID  not in (
+--		 select GL_TransactionHeader.TransactionID from GL_TransactionHeader
+--INNER JOIN SET_DocumentType  ON GL_TransactionHeader.CompanyID = SET_DocumentType.CompanyID AND
+--        GL_TransactionHeader.PeriodID = SET_DocumentType.PeriodID AND
+--        GL_TransactionHeader.DocumentTypeID = SET_DocumentType.DocumentTypeID 
+--		where DocumentType LIKE 'GL-OPENING' + '%'
+--		--and fiscalid = @FiscalID
+--		 )
+		AND GL_TransactionHeader.StatusCode = 1 And (GL_TransactionDetail.CostCenterID = @cc Or @cc is null) 
+        And (GL_TransactionDetail.DepartmentID = @did Or @did is null
+        )
+        {1}
+        
+     Group By GL_TransactionHeader.DocumentNo, GL_TransactionDetail.CodeCombinationID, GL_TransactionHeader.DocumentDate, 
+    GL_TransactionHeader.Narration, 
+    GL_TransactionDetail.Amount, GL_TransactionDetail.TransactionType, SET_DocumentType.DocumentType, 
+    GL_TransactionDetail.SerialNo,GL_TransactionDetail.Narration, GL_TransactionDetail.SerialNo ,GL_TransactionDetail.CompanyID
+    ,GL_TransactionDetail.ChartOfAccountID,GL_TransactionDetail.DepartmentID,DepartmentName
+        
+) Tab_COA_Tran1 
+inner join SET_OperatingUnit on SET_OperatingUnit.OperatingUnitId = Tab_COA_Tran1.CompanyID
+    INNER JOIN GL_CodeCombinationDetail ON 
+    Tab_COA_Tran1.ChartOfAccountID = GL_CodeCombinationDetail.ChartOfAccountID 
+        AND Tab_COA_Tran1.CodeCombinationID = GL_CodeCombinationDetail.CodeCombinationID 
+where GL_CodeCombinationDetail.Status = 1 AND GL_CodeCombinationDetail.IsActive = 1 
+ --AND Tab_COA_Tran1.CompanyID in @CompanyID
+    AND (GL_CodeCombinationDetail.DetailPostingAllowedFlag = @DetailPostingAllowedFlag OR @DetailPostingAllowedFlag IS NULL) 
+					{AccountCodeFilter}
+GROUP BY GL_CodeCombinationDetail.Status,GL_CodeCombinationDetail.IsActive,Tab_COA_Tran1.ChartOfAccountID, GL_CodeCombinationDetail.HeadAccountCode, Tab_COA_Tran1.CodeCombinationID, 
+    GL_CodeCombinationDetail.SummaryFlag, GL_CodeCombinationDetail.Description, GL_CodeCombinationDetail.AccountTypeID, 
+    GL_CodeCombinationDetail.DetailPostingAllowedFlag,DepartmentID,DepartmentName,SET_OperatingUnit.OperatingUnitName,SET_OperatingUnit.OperatingUnitId</value>
+  </data>
+</root>

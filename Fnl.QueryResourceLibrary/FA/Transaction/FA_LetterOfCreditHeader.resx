@@ -1,0 +1,486 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Query_getDataFromLetterOfCredit" xml:space="preserve">
+    <value>Select  FA_LetterOfCreditHeader.LCNo, FA_LetterOfCreditHeader.DocumentDate As LCDate,FA_LetterOfCreditHeader.RetirementDate, 
+ FA_LetterOfCreditHeader.TotalAmount as FCAmount,
+SET_Currency.CurrencyID ,SET_Currency.CurrencyName +'-'+ SET_Currency.CurrencySign as CurrencyName,
+FA_LetterOfCreditHeader.Rate As ConvertionRate,FA_LetterOfCreditHeader.BankName As BankBranchName, FA_LetterOfCreditHeader.AccountNo,
+FA_LetterOfCreditHeader.VendorID, AR_SET_Customer.CustomerName as VendorName,
+PONO as ContractNo,AP_PurchaseOrderHeader.DocumentDate as ContractDate,
+case When IMP_LCRetirement.LCOptionCode = 1 then 'Self' When IMP_LCRetirement.LCOptionCode = 2 then 'FATR'
+		When  IMP_LCRetirement.LCOptionCode = 3 then 'Usance' end as LCOption, IMP_LCRetirement.MaturityDate,
+		IMP_LCRetirement.NoOfDays
+ from FA_LetterOfCreditHeader
+Inner JOin 
+SET_Currency on SET_Currency.CurrencyID = FA_LetterOfCreditHeader.CurrencyID
+AND SET_Currency.Status = 1
+
+left JOin IMP_LCRetirement on IMP_LCRetirement.LCNo = FA_LetterOfCreditHeader.LCNo
+AND IMP_LCRetirement.LCHeaderID
+ = FA_LetterOfCreditHeader.LCHeaderID
+
+Inner Join AR_SET_Customer on AR_SET_Customer.CustomerID = FA_LetterOfCreditHeader.VendorID
+AND AR_SET_Customer.Status =1
+
+left Join AP_PurchaseOrderHeader on AP_PurchaseOrderHeader.POHeaderID = FA_LetterOfCreditHeader.POHeaderID
+AND AP_PurchaseOrderHeader.CompanyID = FA_LetterOfCreditHeader.CompanyID
+AND AP_PurchaseOrderHeader.PeriodID = FA_LetterOfCreditHeader.PeriodID
+AND AP_PurchaseOrderHeader.FiscalID = FA_LetterOfCreditHeader.FiscalID
+AND AP_PurchaseOrderHeader.Status =1
+
+Where FA_LetterOfCreditHeader.Status = 1 
+And FA_LetterOfCreditHeader.CompanyID = @CompanyID
+And FA_LetterOfCreditHeader.PeriodID = @PeriodID
+AND FA_LetterOfCreditHeader.DocumentDate Between @FromDate AND @ToDate
+--AND (FA_LetterOfCreditHeader.LCNo = @LCNO Or  @LCNO is null)</value>
+  </data>
+  <data name="Query_SelectAll_Searching_WithPaging_ForApprove" xml:space="preserve">
+    <value>SELECT *, ROW_NUMBER() OVER (ORDER BY FA_LetterOfCreditHeader.LCHeaderID desc) AS 'Row' FROM 
+(
+    SELECT DISTINCT poh_Outer.LCHeaderID, poh_Outer.CompanyID, poh_Outer.PeriodID, poh_Outer.Status, poh_Outer.TypeCode, SET_DocumentType.DocumentType, 
+        poh_Outer.DocumentNumber, poh_Outer.DocumentDate, ISNULL(poh_Outer.VendorID, '-1') as VendorID, AR_SET_Customer.CustomerName as SupplierName, 
+        poh_Outer.AcceptanceDueDate, poh_Outer.StatusCode, SET_DocumentApprove.ApprovalStatus, SET_DocumentApprove.CreatedByvalue, 
+        Set_documentPendingApprove.ApprovalOperator, Set_documentPendingApprove.ApprovalUserID as UserID
+		,SET_PeriodCustom.PeriodSetName,poh_Outer.LCNo
+    FROM FA_LetterOfCreditHeader poh_Outer 
+        INNER JOIN FA_LetterOfCreditDetail pod ON pod.LCHeaderID = poh_Outer.LCHeaderID And poh_Outer.status = 1 AND pod.Status = 1 
+            AND pod.CompanyID = poh_Outer.CompanyID AND pod.PeriodID = poh_Outer.PeriodID 
+        inner join Set_PeriodCustom on poh_Outer.DocumentDate between Set_PeriodCustom.StartDate and Set_PeriodCustom.EndDate 
+        and Set_PeriodCustom.Status = 1 and SET_PeriodCustom.FiscalID = @CurrentFiscalID
+        INNER JOIN SET_DocumentType ON SET_DocumentType.CompanyID = poh_Outer.CompanyID AND SET_DocumentType.Status = 1 
+            AND SET_DocumentType.PeriodID = poh_Outer.PeriodID AND SET_DocumentType.DocumentTypeID = poh_Outer.TypeCode 
+        LEFT JOIN AR_SET_Customer ON AR_SET_Customer.Customerid = poh_Outer.VendorID and AR_SET_Customer.Status = 1 
+            --AND AR_SET_Customer.CompanyID = poh_Outer.CompanyID 
+            AND AR_SET_Customer.PeriodID = poh_Outer.PeriodID 
+        INNER JOIN SET_DocumentApprove ON SET_DocumentApprove.CompanyID = poh_Outer.CompanyID AND SET_DocumentApprove.PeriodID = poh_Outer.PeriodID 
+            AND SET_DocumentApprove.Status = 1 AND SET_DocumentApprove.DocumentTypeID = poh_Outer.TypeCode 
+            AND SET_DocumentApprove.DocumentNo = poh_Outer.DocumentNumber 
+            AND SET_DocumentApprove.CreateDate = (SELECT MAX(CreateDate) FROM SET_DocumentApprove WHERE CompanyID = poh_Outer.CompanyID 
+                AND PeriodID = poh_Outer.PeriodID AND DocumentTypeID = poh_Outer.TypeCode AND DocumentNo = poh_Outer.DocumentNumber) 
+            
+            inner join Set_documentPendingApprove on Set_documentPendingApprove.DocumentApproveID = SET_DocumentApprove.DocumentApproveID
+            and Set_documentPendingApprove.companyID = SET_DocumentApprove.companyID
+            and Set_documentPendingApprove.PeriodID = SET_DocumentApprove.PeriodID  
+            
+        INNER JOIN SET_UserApprovalAmount ON SET_UserApprovalAmount.CompanyID = poh_Outer.CompanyID AND SET_UserApprovalAmount.PeriodID = poh_Outer.PeriodID 
+            AND SET_UserApprovalAmount.Status = 1 AND (SET_UserApprovalAmount.DocumentTypeID = poh_Outer.TypeCode OR SET_UserApprovalAmount.DocumentTypeID IS NULL) 
+            AND (1 = (CASE WHEN SET_UserApprovalAmount.EffectiveDateTo IS NULL 
+                    AND CAST(CONVERT(VARCHAR(10), GETDATE(), 110) AS DATETIME) &gt;= SET_UserApprovalAmount.EffectiveDateFrom THEN 1 
+                WHEN SET_UserApprovalAmount.EffectiveDateTo IS NOT NULL AND CAST(CONVERT(VARCHAR(10), GETDATE(), 110) AS DATETIME) 
+                    BETWEEN SET_UserApprovalAmount.EffectiveDateFrom AND SET_UserApprovalAmount.EffectiveDateTo THEN 1 ELSE 0 END)) 
+	        AND (1 = (CASE WHEN SET_UserApprovalAmount.AmountTo IS NULL AND (SELECT poh.TotalAmount FROM AP_PurchaseOrderHeader poh 
+											        WHERE poh.CompanyID = poh_Outer.CompanyID 
+												        AND poh.PeriodID = poh_Outer.PeriodID 
+												        AND poh.POHeaderID = poh_Outer.LCHeaderID) &gt;= SET_UserApprovalAmount.AmountFrom THEN 1
+				           WHEN SET_UserApprovalAmount.AmountTo IS NOT NULL AND (SELECT poh.TotalAmount FROM AP_PurchaseOrderHeader poh 
+													        WHERE poh.CompanyID = poh_Outer.CompanyID 
+														        AND poh.PeriodID = poh_Outer.PeriodID 
+														        AND poh.POHeaderID = poh_Outer.LCHeaderID) BETWEEN SET_UserApprovalAmount.AmountFrom 
+                                                                    AND SET_UserApprovalAmount.AmountTo THEN 1
+				           ELSE 0 END))
+--AND (SET_UserApprovalAmount.UserID = poh_Outer.CreatedBy OR SET_UserApprovalAmount.UserID IS NULL)
+
+LEFT join UsersInRoles on UsersInRoles.RoleId = SET_UserApprovalAmount.RoleId
+and UsersInRoles.CompanyID = SET_UserApprovalAmount.CompanyID				           
+AND (UsersInRoles.userID = poh_Outer.CreatedBy OR UsersInRoles.userID IS NULL)
+    ) AP_PurchaseOrderHeader</value>
+  </data>
+  <data name="Query_Select_By_PrimaryKey_WithOtherTables" xml:space="preserve">
+    <value>SELECT SET_DocumentType.DocumentType,FA_LetterOfCreditHeader.LCNo,[FA_LetterOfCreditHeader].POHeaderID,
+[FA_LetterOfCreditHeader].PONO,
+FA_LetterOfCreditHeader.RetirementDate, FA_LetterOfCreditHeader.LCHeaderID, 0 as RowUniqueID, FA_LetterOfCreditHeader.CompanyID, FA_LetterOfCreditHeader.PeriodID, 
+    FA_LetterOfCreditHeader.AcceptanceDueDate, FA_LetterOfCreditHeader.DeliveryPeriod, FA_LetterOfCreditHeader.AcceptanceRequiredFlag, 
+    FA_LetterOfCreditHeader.AmountLimit, FA_LetterOfCreditHeader.ApprovalRequiredFlag, FA_LetterOfCreditHeader.ApprovedDate, FA_LetterOfCreditHeader.ApprovedFlag, 
+    FA_LetterOfCreditHeader.AuthorizationStatusCode, FA_LetterOfCreditHeader.BillToLocationID, FA_LetterOfCreditHeader.BlanketTotalAmount, 
+    FA_LetterOfCreditHeader.CancelFlag, FA_LetterOfCreditHeader.ClosedCode, FA_LetterOfCreditHeader.ClosedDate, FA_LetterOfCreditHeader.Comments, 
+    FA_LetterOfCreditHeader.CurrencyID, FA_LetterOfCreditHeader.DocumentNumber, FA_LetterOfCreditHeader.EndDate, FA_LetterOfCreditHeader.FOBCode, 
+    FA_LetterOfCreditHeader.FreightTermsCode, FA_LetterOfCreditHeader.FromHeaderID, FA_LetterOfCreditHeader.FromTypeCode, FA_LetterOfCreditHeader.FrozenFlag, 
+    FA_LetterOfCreditHeader.MinReleaseAmount, FA_LetterOfCreditHeader.NoteToReceiver, FA_LetterOfCreditHeader.NoteToVendor, FA_LetterOfCreditHeader.PrintCount, 
+    FA_LetterOfCreditHeader.PrintedDate, FA_LetterOfCreditHeader.QuoteType, FA_LetterOfCreditHeader.Rate, FA_LetterOfCreditHeader.RateDate, 
+    FA_LetterOfCreditHeader.RateType, FA_LetterOfCreditHeader.ReplyDate, FA_LetterOfCreditHeader.ReplyMethod, FA_LetterOfCreditHeader.RevisedDate, 
+    FA_LetterOfCreditHeader.RevisionNumber, FA_LetterOfCreditHeader.RFQClosedDate, FA_LetterOfCreditHeader.ShipToLocationID, FA_LetterOfCreditHeader.ShipViaCode, 
+    FA_LetterOfCreditHeader.StartDate, FA_LetterOfCreditHeader.StatusCode, FA_LetterOfCreditHeader.TermsID, FA_LetterOfCreditHeader.TotalAmount, 
+    FA_LetterOfCreditHeader.TypeCode, FA_LetterOfCreditHeader.UserHoldFlag, isnull(FA_LetterOfCreditHeader.VendorID, '-1') as VendorID, 
+    FA_LetterOfCreditHeader.VendorQuoteNumber, FA_LetterOfCreditHeader.Status, FA_LetterOfCreditHeader.CreatedBy, FA_LetterOfCreditHeader.CreateDate, 
+FA_LetterOfCreditHeader.CreatedByValue, [FA_LetterOfCreditHeader].[UpdatedBy],FA_LetterOfCreditHeader.Charges, FA_LetterOfCreditHeader.BankID,FA_LetterOfCreditHeader.BankName,FA_LetterOfCreditHeader.AccountID,FA_LetterOfCreditHeader.AccountNo,
+    [FA_LetterOfCreditHeader].[UpdateDate], [FA_LetterOfCreditHeader].[UpdatedByValue], [FA_LetterOfCreditHeader].[IsActive], [FA_LetterOfCreditHeader].[DocumentDate], 
+    [SET_Location].[LocationName], [SET_Term].[Description] AS 'TermDescription', [SET_Currency].[CurrencyName], [AR_SET_Customer].[CustomerName], 
+    [FA_LetterOfCreditHeader].[PODueDate], FA_LetterOfCreditHeader.AdvanceAmountPercentage, [FA_LetterOfCreditHeader].[IsDirectPO],
+        PUR_EnquiryHeader.DocumentNo AS EnquiryNo, PUR_QuotationHeader.EnquiryHeaderID, [FA_LetterOfCreditHeader].[StockRequisitionID],
+        [INV_StockTransactionHeader].[StockTransactionID], [INV_StockTransactionHeader].[DocumentNo] ,isnull([FA_LetterOfCreditHeader].OtherTax,0) as OtherTax, isnull([FA_LetterOfCreditHeader].FreightAmount,0) as FreightAmount
+FROM [FA_LetterOfCreditHeader] 
+    LEFT JOIN PUR_QuotationHeader ON PUR_QuotationHeader.CompanyID = [FA_LetterOfCreditHeader].CompanyID 
+        AND PUR_QuotationHeader.PeriodID = [FA_LetterOfCreditHeader].PeriodID AND PUR_QuotationHeader.DocumentNo = [FA_LetterOfCreditHeader].VendorQuoteNumber 
+    LEFT JOIN PUR_EnquiryHeader ON PUR_EnquiryHeader.CompanyID = PUR_QuotationHeader.CompanyID AND PUR_EnquiryHeader.PeriodID = PUR_QuotationHeader.PeriodID 
+        AND PUR_EnquiryHeader.EnquiryID = PUR_QuotationHeader.EnquiryHeaderID 
+    LEFT JOIN [SET_Location] ON [SET_Location].[LocationID] = [FA_LetterOfCreditHeader].[ShipToLocationID] 
+    LEFT JOIN [SET_Location] AS BilledLocation ON BilledLocation.[LocationID] = [FA_LetterOfCreditHeader].[BillToLocationID] 
+    LEFT JOIN [SET_Term] ON [SET_Term].[TermID] = [FA_LetterOfCreditHeader].[TermsID] 
+    LEFT JOIN [SET_Currency] ON [SET_Currency].[CurrencyID] = [FA_LetterOfCreditHeader].[CurrencyID] 
+    LEFT JOIN [AR_SET_Customer] ON [AR_SET_Customer].[CustomerID] = [FA_LetterOfCreditHeader].[VendorID] 
+        --AND [AR_SET_Customer].[CompanyID] = [FA_LetterOfCreditHeader].[CompanyID] 
+        AND [AR_SET_Customer].[PeriodID] = [FA_LetterOfCreditHeader].[PeriodID] 
+    LEFT JOIN [INV_StockTransactionHeader] ON [INV_StockTransactionHeader].[StockTransactionID] = [FA_LetterOfCreditHeader].[StockRequisitionID]
+		AND [INV_StockTransactionHeader].[CompanyID] = [FA_LetterOfCreditHeader].[CompanyID]
+		AND [INV_StockTransactionHeader].[PeriodID] = [FA_LetterOfCreditHeader].[PeriodID]
+    INNER JOIN SET_DocumentType ON SET_DocumentType.CompanyID = [FA_LetterOfCreditHeader].CompanyID AND SET_DocumentType.PeriodID = [FA_LetterOfCreditHeader].PeriodID 
+        AND SET_DocumentType.DocumentTypeID = [FA_LetterOfCreditHeader].TypeCode 
+WHERE ([FA_LetterOfCreditHeader].[StatusCode] = @StatusCode OR @StatusCode IS NULL) AND ([FA_LetterOfCreditHeader].[VendorID] = @SupplierID OR @SupplierID IS NULL) 
+    AND ([FA_LetterOfCreditHeader].[LCHeaderID] = @LCHeaderID OR @LCHeaderID IS NULL) AND [FA_LetterOfCreditHeader].[PeriodID] in ( @PeriodID )
+    AND [FA_LetterOfCreditHeader].[CompanyID] = @CompanyID AND [FA_LetterOfCreditHeader].[Status] = 1</value>
+  </data>
+  <data name="Query_BankwiseLCDetail" xml:space="preserve">
+    <value>--Declare @CompanyID int = 2
+--Declare @PeriodID int = 1
+--Declare @FromDate datetime = '2019-10-01 00:00:00:000'
+--Declare @ToDate datetime = '2020-06-18 00:00:00:000'
+
+Select 
+ROW_NUMBER() OVER (ORDER BY FA_LetterOfCreditHeader.LCNo asc) AS 'Row'
+,FA_LetterOfCreditHeader.DocumentDate as LCDate
+,FA_LetterOfCreditHeader.BankName As BankBranchName
+--,FA_LetterOfCreditHeader.AccountNo
+,SUM(isnull(FA_LetterOfCreditDetail.Quantity,0)) as Quantity
+,SET_Currency.CurrencySign
+,FA_LetterOfCreditHeader.TotalAmount as FCAmount
+,Sum((isnull(FA_LetterOfCreditHeader.TotalAmount,0) * isnull(FA_LetterOfCreditHeader.Rate,0))) as AmountPKR
+,FA_LetterOfCreditHeader.LCNo 
+,FA_LetterOfCreditHeader.RetirementDate
+,(case When IMP_LCRetirement.LCOptionCode = 1 then IMP_LCRetirement.LCValue * 0 else 0 end) as SelfPKR --'Self (PKR)' 
+,(case When IMP_LCRetirement.LCOptionCode = 2 then IMP_LCRetirement.LCValue * 0 else 0 end) as FATRPKR --'FATR (PKR)'
+--,case When  IMP_LCRetirement.LCOptionCode = 3 then 'Usance (PKR)' end as LCOption
+,IMP_LCRetirement.MaturityDate
+,AP_SaleContractHeader.DocumentDate as ShipmentDate
+,Convert(decimal(18,2),Round(SUM(AP_SaleContractDetail.Quantity),2)) as ShipmentQuantity 
+,Convert(decimal(18,2),Round(Isnull(SUM(SET_WeightSubDetail.Quantity),0),2)) as RecievedQty 
+,Convert(decimal(18,2),Round(SUM(AP_SaleContractDetail.Quantity) - Isnull(SUM(SET_WeightSubDetail.Quantity),0),2)) as IntransitQty
+
+from FA_LetterOfCreditHeader
+
+left join FA_LetterOfCreditDetail on FA_LetterOfCreditDetail.LCHeaderID = FA_LetterOfCreditHeader.LCHeaderID
+and FA_LetterOfCreditDetail.CompanyID = FA_LetterOfCreditHeader.CompanyID
+and FA_LetterOfCreditDetail.PeriodID = FA_LetterOfCreditHeader.PeriodID
+and FA_LetterOfCreditDetail.Status = 1
+
+left JOin SET_Currency on SET_Currency.CurrencyID = FA_LetterOfCreditHeader.CurrencyID
+AND SET_Currency.Status = 1
+
+left JOin IMP_LCRetirement on IMP_LCRetirement.LCNo = FA_LetterOfCreditHeader.LCNo
+AND IMP_LCRetirement.LCHeaderID = FA_LetterOfCreditHeader.LCHeaderID
+AND IMP_LCRetirement.CompanyID = FA_LetterOfCreditHeader.CompanyID
+AND IMP_LCRetirement.PeriodID = FA_LetterOfCreditHeader.PeriodID
+and IMP_LCRetirement.Status = 1
+
+left join AP_SaleContractHeader on AP_SaleContractHeader.SaleContractID = FA_LetterOfCreditHeader.SaleContractID
+and AP_SaleContractHeader.CompanyID = FA_LetterOfCreditHeader.CompanyID
+and AP_SaleContractHeader.PeriodID = FA_LetterOfCreditHeader.PeriodID
+and AP_SaleContractHeader.Status = 1
+
+left join SET_DocumentType on SET_DocumentType.DocumentTypeID = AP_SaleContractHeader.TypeCode
+and SET_DocumentType.CompanyID = AP_SaleContractHeader.CompanyID
+and SET_DocumentType.Status = 1
+
+left join AP_SaleContractDetail on AP_SaleContractDetail.SaleContractID = AP_SaleContractHeader.SaleContractID
+and AP_SaleContractDetail.CompanyID = AP_SaleContractHeader.CompanyID
+and AP_SaleContractDetail.PeriodID = AP_SaleContractHeader.PeriodID
+and AP_SaleContractDetail.Status = 1
+
+left join AP_PurchaseOrderHeader on AP_PurchaseOrderHeader.SaleContractID = AP_SaleContractHeader.SaleContractID
+and AP_PurchaseOrderHeader.CompanyID = AP_SaleContractHeader.CompanyID
+and AP_PurchaseOrderHeader.PeriodID = AP_SaleContractHeader.PeriodID
+and AP_PurchaseOrderHeader.Status = AP_SaleContractHeader.Status
+
+left join SET_WeightAssessmentHeader on SET_WeightAssessmentHeader.BL = AP_PurchaseOrderHeader.BLNumber
+and SET_WeightAssessmentHeader.CompanyID = AP_PurchaseOrderHeader.CompanyID
+and SET_WeightAssessmentHeader.PeriodID = AP_PurchaseOrderHeader.PeriodID
+and SET_WeightAssessmentHeader.Status = 1
+
+left join SET_WeightSubDetail on SET_WeightSubDetail.WeightAssessmentID = SET_WeightAssessmentHeader.WeightAssessmentID
+and SET_WeightSubDetail.CompanyID = SET_WeightAssessmentHeader.CompanyID
+and SET_WeightSubDetail.Status = 1
+and SET_WeightSubDetail.ItemID = AP_SaleContractDetail.ItemID
+
+left join INV_StockTransactionHeader on INV_StockTransactionHeader.BLNo = AP_PurchaseOrderHeader.BLNumber
+and INV_StockTransactionHeader.CompanyID = AP_PurchaseOrderHeader.CompanyID
+and INV_StockTransactionHeader.PeriodID = AP_PurchaseOrderHeader.PeriodID
+and INV_StockTransactionHeader.Status = 1
+
+left join INV_StockTransactionDetail on INV_StockTransactionDetail.StockTransactionID = INV_StockTransactionHeader.StockTransactionID
+and INV_StockTransactionDetail.CompanyID = INV_StockTransactionHeader.CompanyID
+and INV_StockTransactionDetail.PeriodID = INV_StockTransactionHeader.PeriodID
+and INV_StockTransactionDetail.Status = 1
+and INV_StockTransactionDetail.ItemID = AP_SaleContractDetail.ItemID
+
+Where FA_LetterOfCreditHeader.Status = 1 
+And FA_LetterOfCreditHeader.CompanyID = @CompanyID
+And FA_LetterOfCreditHeader.PeriodID = @PeriodID
+AND FA_LetterOfCreditHeader.DocumentDate Between @FromDate AND @ToDate
+--and SET_DocumentType.DocumentType like 'Purchase Contract - Raw Material' 
+and AP_SaleContractHeader.Status = 1 
+and AP_SaleContractHeader.CompanyID = @CompanyID and AP_SaleContractHeader.PeriodID = @PeriodID
+
+Group By FA_LetterOfCreditHeader.LCNo, FA_LetterOfCreditHeader.TotalAmount,SET_Currency.CurrencySign,FA_LetterOfCreditHeader.RetirementDate
+,FA_LetterOfCreditHeader.BankName,IMP_LCRetirement.LCOptionCode,IMP_LCRetirement.LCValue,IMP_LCRetirement.MaturityDate,AP_SaleContractHeader.DocumentDate
+,FA_LetterOfCreditHeader.DocumentDate</value>
+  </data>
+  <data name="Query_Select_By_PrimaryKey_WithOtherTablesForConnect" xml:space="preserve">
+    <value>SELECT SET_DocumentType.DocumentType,FA_LetterOfCreditHeader.LCNo,[FA_LetterOfCreditHeader].POHeaderID,
+[FA_LetterOfCreditHeader].PONO, FA_LetterOfCreditHeader.DateOfShipment, FA_LetterOfCreditHeader.DateOfExpire, 
+FA_LetterOfCreditHeader.PortOfShipment, FA_LetterOfCreditHeader.PortOfDischarge, FA_LetterOfCreditHeader.PaymentMode, 
+FA_LetterOfCreditHeader.PartiallyPayment, FA_LetterOfCreditHeader.LCHoldAmount,
+FA_LetterOfCreditHeader.RetirementDate, FA_LetterOfCreditHeader.LCHeaderID, 0 as RowUniqueID, FA_LetterOfCreditHeader.CompanyID, FA_LetterOfCreditHeader.PeriodID, 
+    FA_LetterOfCreditHeader.AcceptanceDueDate, FA_LetterOfCreditHeader.DeliveryPeriod, FA_LetterOfCreditHeader.AcceptanceRequiredFlag, 
+    FA_LetterOfCreditHeader.AmountLimit, FA_LetterOfCreditHeader.ApprovalRequiredFlag, FA_LetterOfCreditHeader.ApprovedDate, FA_LetterOfCreditHeader.ApprovedFlag, 
+    FA_LetterOfCreditHeader.AuthorizationStatusCode, FA_LetterOfCreditHeader.BillToLocationID, FA_LetterOfCreditHeader.BlanketTotalAmount, 
+    FA_LetterOfCreditHeader.CancelFlag, FA_LetterOfCreditHeader.ClosedCode, FA_LetterOfCreditHeader.ClosedDate, FA_LetterOfCreditHeader.Comments, 
+    FA_LetterOfCreditHeader.CurrencyID, FA_LetterOfCreditHeader.DocumentNumber, FA_LetterOfCreditHeader.EndDate, FA_LetterOfCreditHeader.FOBCode, 
+    FA_LetterOfCreditHeader.FreightTermsCode, FA_LetterOfCreditHeader.FromHeaderID, FA_LetterOfCreditHeader.FromTypeCode, FA_LetterOfCreditHeader.FrozenFlag, 
+    FA_LetterOfCreditHeader.MinReleaseAmount, FA_LetterOfCreditHeader.NoteToReceiver, FA_LetterOfCreditHeader.NoteToVendor, FA_LetterOfCreditHeader.PrintCount, 
+    FA_LetterOfCreditHeader.PrintedDate, FA_LetterOfCreditHeader.QuoteType, FA_LetterOfCreditHeader.Rate, FA_LetterOfCreditHeader.RateDate, 
+    FA_LetterOfCreditHeader.RateType, FA_LetterOfCreditHeader.ReplyDate, FA_LetterOfCreditHeader.ReplyMethod, FA_LetterOfCreditHeader.RevisedDate, 
+    FA_LetterOfCreditHeader.RevisionNumber, FA_LetterOfCreditHeader.RFQClosedDate, FA_LetterOfCreditHeader.ShipToLocationID, FA_LetterOfCreditHeader.ShipViaCode, 
+    FA_LetterOfCreditHeader.StartDate, FA_LetterOfCreditHeader.StatusCode, FA_LetterOfCreditHeader.TermsID, FA_LetterOfCreditHeader.TotalAmount, 
+    FA_LetterOfCreditHeader.TypeCode, FA_LetterOfCreditHeader.UserHoldFlag, isnull(FA_LetterOfCreditHeader.VendorID, '-1') as VendorID, 
+    FA_LetterOfCreditHeader.VendorQuoteNumber, FA_LetterOfCreditHeader.Status, FA_LetterOfCreditHeader.CreatedBy, FA_LetterOfCreditHeader.CreateDate, 
+FA_LetterOfCreditHeader.CreatedByValue, [FA_LetterOfCreditHeader].[UpdatedBy],FA_LetterOfCreditHeader.Charges, FA_LetterOfCreditHeader.BankID,FA_LetterOfCreditHeader.BankName,FA_LetterOfCreditHeader.AccountID,FA_LetterOfCreditHeader.AccountNo,
+    [FA_LetterOfCreditHeader].[UpdateDate], [FA_LetterOfCreditHeader].[UpdatedByValue], [FA_LetterOfCreditHeader].[IsActive], [FA_LetterOfCreditHeader].[DocumentDate], 
+    [SET_Location].[LocationName], [SET_Term].[Description] AS 'TermDescription', [SET_Currency].[CurrencyName], [AR_SET_Customer].[CustomerName], 
+    [FA_LetterOfCreditHeader].[PODueDate], FA_LetterOfCreditHeader.AdvanceAmountPercentage, [FA_LetterOfCreditHeader].[IsDirectPO],
+        PUR_EnquiryHeader.DocumentNo AS EnquiryNo, PUR_QuotationHeader.EnquiryHeaderID, [FA_LetterOfCreditHeader].[StockRequisitionID],
+        [INV_StockTransactionHeader].[StockTransactionID], [INV_StockTransactionHeader].[DocumentNo] ,isnull([FA_LetterOfCreditHeader].OtherTax,0) as OtherTax, isnull([FA_LetterOfCreditHeader].FreightAmount,0) as FreightAmount
+     ,SET_DocumentType.DocumentTypeID
+FROM [FA_LetterOfCreditHeader] 
+    LEFT JOIN PUR_QuotationHeader ON PUR_QuotationHeader.CompanyID = [FA_LetterOfCreditHeader].CompanyID 
+        AND PUR_QuotationHeader.PeriodID = [FA_LetterOfCreditHeader].PeriodID AND PUR_QuotationHeader.DocumentNo = [FA_LetterOfCreditHeader].VendorQuoteNumber 
+    LEFT JOIN PUR_EnquiryHeader ON PUR_EnquiryHeader.CompanyID = PUR_QuotationHeader.CompanyID AND PUR_EnquiryHeader.PeriodID = PUR_QuotationHeader.PeriodID 
+        AND PUR_EnquiryHeader.EnquiryID = PUR_QuotationHeader.EnquiryHeaderID 
+    LEFT JOIN [SET_Location] ON [SET_Location].[LocationID] = [FA_LetterOfCreditHeader].[ShipToLocationID] 
+    LEFT JOIN [SET_Location] AS BilledLocation ON BilledLocation.[LocationID] = [FA_LetterOfCreditHeader].[BillToLocationID] 
+    LEFT JOIN [SET_Term] ON [SET_Term].[TermID] = [FA_LetterOfCreditHeader].[TermsID] 
+    LEFT JOIN [SET_Currency] ON [SET_Currency].[CurrencyID] = [FA_LetterOfCreditHeader].[CurrencyID] 
+    LEFT JOIN [AR_SET_Customer] ON [AR_SET_Customer].[CustomerID] = [FA_LetterOfCreditHeader].[VendorID] 
+        --AND [AR_SET_Customer].[CompanyID] = [FA_LetterOfCreditHeader].[CompanyID] 
+        AND [AR_SET_Customer].[PeriodID] = [FA_LetterOfCreditHeader].[PeriodID] 
+    LEFT JOIN [INV_StockTransactionHeader] ON [INV_StockTransactionHeader].[StockTransactionID] = [FA_LetterOfCreditHeader].[StockRequisitionID]
+		AND [INV_StockTransactionHeader].[CompanyID] = [FA_LetterOfCreditHeader].[CompanyID]
+		AND [INV_StockTransactionHeader].[PeriodID] = [FA_LetterOfCreditHeader].[PeriodID]
+    INNER JOIN SET_DocumentType ON SET_DocumentType.CompanyID = [FA_LetterOfCreditHeader].CompanyID AND SET_DocumentType.PeriodID = [FA_LetterOfCreditHeader].PeriodID 
+        AND SET_DocumentType.DocumentTypeID = [FA_LetterOfCreditHeader].TypeCode 
+WHERE ([FA_LetterOfCreditHeader].[StatusCode] = @StatusCode OR @StatusCode IS NULL) AND ([FA_LetterOfCreditHeader].[VendorID] = @SupplierID OR @SupplierID IS NULL) 
+    AND ([FA_LetterOfCreditHeader].[LCHeaderID] = @LCHeaderID OR @LCHeaderID IS NULL) AND [FA_LetterOfCreditHeader].[PeriodID] in ( @PeriodID )
+    AND [FA_LetterOfCreditHeader].[CompanyID] = @CompanyID AND [FA_LetterOfCreditHeader].[Status] = 1</value>
+  </data>
+  <data name="Query_LetterOfCredit_Import_Rport" xml:space="preserve">
+    <value>SELECT 
+	SET_DocumentType.DocumentType, FA_LetterOfCreditHeader.DocumentDate, FA_LetterOfCreditHeader.PONO,
+	FA_LetterOfCreditHeader.LCNo,[FA_LetterOfCreditHeader].POHeaderID,FA_LetterOfCreditHeader.RetirementDate,
+	AR_SET_Customer.CustomerName, SET_Location.LocationName, BilledLocation.LocationName as BilledLocationName,
+	FA_LetterOfCreditHeader.DateOfShipment, FA_LetterOfCreditHeader.DateOfExpire, FA_LetterOfCreditHeader.PortOfShipment,
+	FA_LetterOfCreditHeader.PortOfDischarge, [SET_Term].[Description] AS 'TermDescription', FA_LetterOfCreditHeader.ShipViaCode,
+	Case when FA_LetterOfCreditHeader.ShipViaCode = 1 then 'ByAir'
+	     when FA_LetterOfCreditHeader.ShipViaCode = 2 then 'ByRoad'
+		 when FA_LetterOfCreditHeader.ShipViaCode = 3 then 'BySea' else '' end as ShipVia,
+	FA_LetterOfCreditHeader.PaymentMode, 
+	Case when FA_LetterOfCreditHeader.PaymentMode = 1 then 'DA'
+	     when FA_LetterOfCreditHeader.PaymentMode = 2 then 'DP'
+		 when FA_LetterOfCreditHeader.PaymentMode = 3 then 'ADV' else '' end as PaymentModeName,
+	FA_LetterOfCreditHeader.FOBCode,
+	Case when FA_LetterOfCreditHeader.FOBCode = 1 then 'CNF'
+	     when FA_LetterOfCreditHeader.FOBCode = 2 then 'EX_Works'
+		 when FA_LetterOfCreditHeader.FOBCode = 3 then 'FOB' else '' end as FOBCodeName,
+	FA_LetterOfCreditHeader.PartiallyPayment, 
+	Case when FA_LetterOfCreditHeader.PartiallyPayment = 1 then 'Allowed'
+		 when FA_LetterOfCreditHeader.PartiallyPayment = 2 then 'Not_Allowed' else '' end as PartiallyPaymentName,
+	FA_LetterOfCreditHeader.FreightTermsCode,
+	Case when FA_LetterOfCreditHeader.FreightTermsCode = 1 then 'CNF'
+	     when FA_LetterOfCreditHeader.FreightTermsCode = 2 then 'EX_Works'
+		 when FA_LetterOfCreditHeader.FreightTermsCode = 3 then 'FOB' else '' end as FreightTermsCodeName,
+	SET_Currency.CurrencyName, FA_LetterOfCreditHeader.Rate as ExchangeRate, FA_LetterOfCreditHeader.RateType,
+	Case when FA_LetterOfCreditHeader.RateType = 1 then 'DemandDraft'
+	     when FA_LetterOfCreditHeader.RateType = 2 then 'Ready'
+		 when FA_LetterOfCreditHeader.RateType = 3 then 'TelegraphicTransfer'
+		 when FA_LetterOfCreditHeader.RateType = 4 then 'Cash' else '' end as RateTypeName,
+    FA_LetterOfCreditHeader.RateDate as CurrencyRateDate, FA_LetterOfCreditHeader.BankID,FA_LetterOfCreditHeader.BankName,
+	FA_LetterOfCreditHeader.AccountID,FA_LetterOfCreditHeader.AccountNo, FA_LetterOfCreditHeader.NoteToVendor,
+	FA_LetterOfCreditHeader.NoteToReceiver, FA_LetterOfCreditHeader.TotalAmount, FA_LetterOfCreditHeader.Comments,
+	FA_LetterOfCreditHeader.PODueDate, FA_LetterOfCreditHeader.AdvanceAmountPercentage, FA_LetterOfCreditHeader.DeliveryPeriod,
+    FA_LetterOfCreditHeader.LCHoldAmount, FA_LetterOfCreditHeader.Charges, FA_LetterOfCreditHeader.DocumentNumber,
+	isnull([FA_LetterOfCreditHeader].OtherTax,0) as OtherTax,
+	FA_LetterOfCreditDetail.LCDetailID, 
+	isnull([FA_LetterOfCreditHeader].FreightAmount,0) as FreightAmount, FA_LetterOfCreditDetail.CategoryID,
+	INV_SET_Category.CategoryName, FA_LetterOfCreditDetail.ItemDescription, INV_Item.Description, SET_UnitofMeasure.UOMName,
+	FA_LetterOfCreditDetail.HSCode, FA_LetterOfCreditDetail.JobCode, FA_LetterOfCreditDetail.BaseQuantity,
+	FA_LetterOfCreditDetail.Quantity, FA_LetterOfCreditDetail.UnitPrice, FA_LetterOfCreditDetail.NoteToVendor as OriginOfGoods,
+	FA_LetterOfCreditDetail.OverToleranceErrorFlag as RecordQty, FA_LetterOfCreditDetail.QtyRcvTolerance, 
+	FA_LetterOfCreditDetail.TaxableFlag,FA_LetterOfCreditDetail.TaxAmount, FA_LetterOfCreditDetail.ExciseDuty,
+	FA_LetterOfCreditDetail.ExciseDutyAmount, FA_LetterOfCreditDetail.CapitalExpenseFlag,
+	round((case when 
+		[AP_PurchaseOrderHeader].Rate IS NOT NULL
+     then 
+		[FA_LetterOfCreditDetail].[Quantity] * [FA_LetterOfCreditDetail].[UnitPrice] * [AP_PurchaseOrderHeader].Rate
+    else 
+		[FA_LetterOfCreditDetail].[Quantity] * [FA_LetterOfCreditDetail].[UnitPrice] 
+    end
+    ),2)as GrossAmount,
+    FA_LetterOfCreditDetail.ItemID, FA_LetterOfCreditDetail.ItemUOMID, 
+	FA_LetterOfCreditDetail.ListPricePerUnit, FA_LetterOfCreditDetail.MarketPrice, FA_LetterOfCreditDetail.SerialNo, 
+	ISNULL(FA_LetterOfCreditDetail.NetAmount, 0) as NetAmount,  isnull(FA_LetterOfCreditDetail.ForexValue,0) as ForexValue
+
+    --round(FA_LetterOfCreditDetail.Quantity * FA_LetterOfCreditDetail.UnitPrice, 2) as GrossAmount, 
+
+FROM [FA_LetterOfCreditHeader] 
+	Inner join FA_LetterOfCreditDetail on FA_LetterOfCreditDetail.LCHeaderID = FA_LetterOfCreditHeader.LCHeaderID
+		and FA_LetterOfCreditDetail.CompanyID = FA_LetterOfCreditHeader.CompanyID
+		and FA_LetterOfCreditDetail.PeriodID = FA_LetterOfCreditHeader.PeriodID
+		and FA_LetterOfCreditDetail.Status = 1
+		and FA_LetterOfCreditHeader.CompanyID = 1
+    LEFT JOIN PUR_QuotationHeader ON PUR_QuotationHeader.CompanyID = [FA_LetterOfCreditHeader].CompanyID 
+        AND PUR_QuotationHeader.PeriodID = [FA_LetterOfCreditHeader].PeriodID AND PUR_QuotationHeader.DocumentNo = [FA_LetterOfCreditHeader].VendorQuoteNumber 
+    LEFT JOIN PUR_EnquiryHeader ON PUR_EnquiryHeader.CompanyID = PUR_QuotationHeader.CompanyID AND PUR_EnquiryHeader.PeriodID = PUR_QuotationHeader.PeriodID 
+        AND PUR_EnquiryHeader.EnquiryID = PUR_QuotationHeader.EnquiryHeaderID 
+    LEFT JOIN [SET_Location] ON [SET_Location].[LocationID] = [FA_LetterOfCreditHeader].[ShipToLocationID] 
+    LEFT JOIN [SET_Location] AS BilledLocation ON BilledLocation.[LocationID] = [FA_LetterOfCreditHeader].[BillToLocationID] 
+    LEFT JOIN [SET_Term] ON [SET_Term].[TermID] = [FA_LetterOfCreditHeader].[TermsID] 
+    LEFT JOIN [SET_Currency] ON [SET_Currency].[CurrencyID] = [FA_LetterOfCreditHeader].[CurrencyID] 
+    LEFT JOIN [AR_SET_Customer] ON [AR_SET_Customer].[CustomerID] = [FA_LetterOfCreditHeader].[VendorID] 
+        --AND [AR_SET_Customer].[CompanyID] = [FA_LetterOfCreditHeader].[CompanyID] 
+        AND [AR_SET_Customer].[PeriodID] = [FA_LetterOfCreditHeader].[PeriodID] 
+    LEFT JOIN [INV_StockTransactionHeader] ON [INV_StockTransactionHeader].[StockTransactionID] = [FA_LetterOfCreditHeader].[StockRequisitionID]
+		AND [INV_StockTransactionHeader].[CompanyID] = [FA_LetterOfCreditHeader].[CompanyID]
+		AND [INV_StockTransactionHeader].[PeriodID] = [FA_LetterOfCreditHeader].[PeriodID]
+    INNER JOIN SET_DocumentType ON SET_DocumentType.CompanyID = [FA_LetterOfCreditHeader].CompanyID AND SET_DocumentType.PeriodID = [FA_LetterOfCreditHeader].PeriodID 
+        AND SET_DocumentType.DocumentTypeID = [FA_LetterOfCreditHeader].TypeCode 
+	INNER JOIN INV_Item ON INV_Item.ItemID = FA_LetterOfCreditDetail.ItemID --AND INV_Item.CompanyID = FA_LetterOfCreditDetail.CompanyID 
+	LEFT JOIN SET_UnitofMeasure ON SET_UnitofMeasure.UOMID = FA_LetterOfCreditDetail.ItemUOMID 
+	LEFT JOIN INV_SET_Category ON INV_SET_Category.CategoryID = FA_LetterOfCreditDetail.CategoryID 
+	LEFT JOIN AR_SET_Tax ON AR_SET_Tax.TaxID = FA_LetterOfCreditDetail.TaxID --AND AR_SET_Tax.CompanyID = FA_LetterOfCreditDetail.CompanyID 
+        AND AR_SET_Tax.PeriodID = FA_LetterOfCreditDetail.PeriodID 
+    LEFT join AP_PurchaseOrderHeader on AP_PurchaseOrderHeader.poheaderid = FA_LetterOfCreditDetail.LCHeaderID 
+    and AP_PurchaseOrderHeader.companyid = FA_LetterOfCreditDetail.companyid
+	and AP_PurchaseOrderHeader.PeriodID  = FA_LetterOfCreditDetail.PeriodID 
+
+WHERE FA_LetterOfCreditHeader.Status = 1 
+      And FA_LetterOfCreditHeader.CompanyID = @CompanyID  and FA_LetterOfCreditHeader.PeriodID = @PeriodID
+	  And SET_DocumentType.DocumentType like '%Import%'
+	  {0}
+
+ Order by FA_LetterOfCreditHeader.DocumentNumber</value>
+  </data>
+</root>
