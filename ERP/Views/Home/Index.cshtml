@@ -1,8 +1,107 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Dashboard";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<link href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.min.css" rel="stylesheet" />
+<style>
+    .kpi-row {
+        display: grid;
+        grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+        gap: 14px;
+        margin-bottom: 20px;
+    }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    .kpi {
+        background: var(--bit-surface);
+        border: 1px solid var(--bit-line);
+        border-radius: 16px;
+        padding: 18px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition: all .2s;
+    }
+
+        .kpi:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+        }
+
+        .kpi .lbl {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: #9CA3AF;
+        }
+
+        .kpi .val {
+            font-size: 26px;
+            font-weight: 700;
+            margin-top: 4px;
+            letter-spacing: -0.02em;
+        }
+
+        .kpi .icon {
+            width: 42px;
+            height: 42px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+        }
+
+    .chart-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        margin-bottom: 20px;
+    }
+
+    .chart-card {
+        background: #fff;
+        border: 1px solid var(--bit-line);
+        border-radius: 16px;
+        padding: 18px;
+    }
+
+        .chart-card h3 {
+            font-size: 14px;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 12px;
+        }
+
+    @@media(max-width:900px) {
+        .chart-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+
+<div class="kpi-row">
+    <div class="kpi"><div><div class="lbl">Total Sales</div><div class="val" style="color:#0E7A8A;">125,000</div></div><div class="icon" style="background:#E6F0F1; color:var(--bit-teal);"><i class="fa-solid fa-arrow-trend-up"></i></div></div>
+    <div class="kpi"><div><div class="lbl">Total Purchase</div><div class="val" style="color:#D97706;">85,000</div></div><div class="icon" style="background:#FEF3C7; color:#D97706;"><i class="fa-solid fa-cart-shopping"></i></div></div>
+    <div class="kpi"><div><div class="lbl">Inventory Items</div><div class="val" style="color:#2563EB;">1,250</div></div><div class="icon" style="background:#DBEAFE; color:#2563EB;"><i class="fa-solid fa-boxes-stacked"></i></div></div>
+    <div class="kpi"><div><div class="lbl">Profit</div><div class="val" style="color:#16A34A;">40,000</div></div><div class="icon" style="background:#DCFCE7; color:#16A34A;"><i class="fa-solid fa-sack-dollar"></i></div></div>
 </div>
+
+<div class="chart-grid">
+    <div class="chart-card"><h3>Sales vs Purchase</h3><canvas id="salesChart" height="260"></canvas></div>
+    <div class="chart-card"><h3>Inventory Status</h3><canvas id="pieChart" height="260"></canvas></div>
+</div>
+<div class="chart-grid">
+    <div class="chart-card"><h3>Stock Movement</h3><canvas id="lineChart" height="260"></canvas></div>
+    <div class="chart-card"><h3>Profit Growth</h3><canvas id="areaChart" height="260"></canvas></div>
+</div>
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <script>
+        new Chart(document.getElementById('salesChart'),{type:'bar',data:{labels:['Jan','Feb','Mar','Apr'],datasets:[{label:'Sales',data:[30,[STRIPPED]'#0E7A8A'},{label:'Purchase',data:[20,[STRIPPED]'#E8E6E1'}]},options:{plugins:{legend:{position:'bottom'}},responsive:true}});
+        new Chart(document.getElementById('pieChart'),{type:'doughnut',data:{labels:['Available','Low Stock','Out of Stock'],datasets:[{data:[60,[STRIPPED]'#0E7A8A','#F59E0B','#EF4444']}]},options:{plugins:{legend:{position:'bottom'}},cutout:'65%'}});
+        new Chart(document.getElementById('lineChart'),{type:'line',data:{labels:['W1','W2','W3','W4'],datasets:[{label:'Stock In',data:[40,[STRIPPED]'#0E7A8A',tension:.4},{label:'Stock Out',data:[20,[STRIPPED]'#9CA3AF',tension:.4}]},options:{plugins:{legend:{position:'bottom'}}}});
+        new Chart(document.getElementById('areaChart'),{type:'line',data:{labels:['Q1','Q2','Q3','Q4'],datasets:[{label:'Profit',data:[10,[STRIPPED]'#0E7A8A',backgroundColor:'rgba(14,122,138,0.15)',fill:true,tension:.4}]},options:{plugins:{legend:{position:'bottom'}}}});
+    </script>
+}

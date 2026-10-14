@@ -1,136 +1,100 @@
 @model ERP.Models.WelcomeViewModel
 @{
-    Layout = "~/Views/Shared/_GeneralLayout.cshtml";
-    ViewData["Title"] = "Welcome - BITWARE ERP";
+    Layout = "~/Views/Shared/_GeneralLayout.cshtml"; ViewData["Title"] = "Welcome";
 }
-
+@using System.Globalization
 <style>
-/* SAME CSS AS YOUR OLD Welcome.aspx */
-.coa-item {
-    display: flex;
-    background: #fff;
-    border-radius: 14px;
-    margin-bottom: 14px;
-    box-shadow: 0 3px 14px rgba(0,0,0,0.06);
-    overflow: hidden;
-    transition: 0.2s ease;
-}
-.coa-item:hover { transform: translateY(-3px); box-shadow: 0 10px 25px rgba(0,0,0,0.12); }
-.coa-accent { width: 6px; background: linear-gradient(180deg, #6366f1, #22c55e); }
-.coa-content { flex: 1; padding: 14px 16px; }
-.coa-top { display: flex; justify-content: space-between; align-items: flex-start; }
-.coa-title { font-size: 16px; font-weight: 700; color: #111827; }
-.year { font-weight: 400; color: #6b7280; }
-.coa-meta { margin-top: 4px; font-size: 12px; color: #6b7280; display: flex; gap: 12px; }
-.coa-tag { background: #eef2ff; color: #4f46e5; font-size: 11px; padding: 4px 10px; border-radius: 20px; font-weight: 600; }
-.coa-info { display: flex; gap: 30px; margin-top: 10px; font-size: 13px; }
-.coa-info .lbl { color: #9ca3af; margin-right: 5px; }
-.coa-info .val { font-weight: 500; color: #111827; }
-.coa-bottom { display: flex; justify-content: space-between; align-items: center; margin-top: 12px; }
-.coa-desc { font-size: 13px; color: #374151; }
-.coa-btn { background: linear-gradient(135deg, #34a3b7, #237988); color: #fff; padding: 6px 14px; border-radius: 10px; text-decoration: none; font-size: 13px; transition: 0.2s; display:inline-block; }
-.coa-btn:hover { transform: scale(1.05); opacity: 0.95; color:#fff; }
-.unit-card-container { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 12px; }
-.unit-card { background: #f3f4f6; border: 1px solid #ddd; border-radius: 10px; padding: 20px; text-align: center; transition: 0.2s; cursor:pointer; }
-.unit-card:hover { background: #45879396; color: #fff; }
-.unit-card.selected { background: #2c6e74; color: #fff; border-color: #2c6e74; }
-.card-link { display: block; width: 100%; text-decoration: none; color: inherit; font-weight:600; }
-.erp-welcome { text-align: center; margin-bottom: 30px; font-family: "Segoe UI", Arial, sans-serif; }
-.erp-welcome h1 { margin: 0 0 10px; font-size: 32px; font-weight: 700; color: #1e3a5f; }
-.erp-welcome p { margin: 0; font-size: 16px; color: #64748b; }
-.rs-businessType { display:flex; align-items:center; gap:12px; margin-bottom:20px; background:#fff; padding:12px 16px; border-radius:10px; box-shadow:0 2px 8px rgba(0,0,0,0.05); }
-.rs-businessType select { padding:8px 12px; border-radius:8px; border:1px solid #e5e7eb; min-width:250px; }
-</style>
+    .biz-card, .unit-card, .fiscal-card {
+        background: #fff;
+        border: 1px solid #E8E6E1;
+        border-radius: 14px;
+        transition: all .2s cubic-bezier(.16,1,.3,1);
+    }
 
-<div class="erp-welcome">
-    <h1>Welcome Back!</h1>
-    <p>Choose Your Company, Unit & Fiscal Year to Get Started</p>
-</div>
+        .biz-card:hover, .unit-card:hover, .fiscal-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0,0,0,.06);
+            border-color: #111;
+        }
 
-<!-- Business Dropdown - Same as old ddlBusiness -->
-<div class="rs-businessType">
-    <label style="font-weight:600;">Business:</label>
-    <form asp-action="ChangeBusiness" method="post" id="businessForm">
-        <select name="businessId" onchange="this.form.submit()" class="form-control">
-            @foreach (var b in Model.BusinessList)
-            {
-                if (b.BusinessId == Model.SelectedBusinessId)
-                {
-                    <option value="@b.BusinessId" selected>@b.BusinessName</option>
-                }
-                else
-                {
-                    <option value="@b.BusinessId">@b.BusinessName</option>
-                }
+        .unit-card.active {
+            background: #111318;
+            color: #fff;
+            border-color: #111318;
+        }
+
+            .unit-card.active small {
+                color: #9CA3AF !important;
             }
-        </select>
-    </form>
-</div>
 
-<!-- Operating Units - Cards (Old rpt_Units Repeater) -->
-@if (Model.Companies != null && Model.Companies.Any())
-{
-    <div class="unit-card-container" style="margin-bottom:30px;">
-        @foreach (var company in Model.Companies)
-        {
-            <div class="unit-card @(Model.SelectedCompanyId == company.CompanyID ? "selected" : "")">
+    .fiscal-card {
+        display: flex;
+        overflow: hidden;
+    }
+
+    .fiscal-accent {
+        width: 4px;
+        background: #E8E6E1;
+    }
+
+    .fiscal-card:hover .fiscal-accent {
+        background: var(--bit-teal);
+    }
+</style>
+<div style="max-width:960px;margin:0 auto;">
+    <div style="text-align:center;margin:20px 0 24px;">
+        <h1 style="font-size:26px;font-weight:700;letter-spacing:-0.02em;">Welcome back, @User.Identity?.Name</h1>
+        <p style="color:#5A5F6A;font-size:13px;">Select your company and fiscal year to continue to BITWARE ERP</p>
+    </div>
+
+    <div class="biz-card" style="padding:16px 18px;margin-bottom:14px;">
+        <div style="display:flex;justify-content:space-between;margin-bottom:8px;"><b style="font-size:11px;color:#6B7280;letter-spacing:.08em;">BUSINESS</b><span style="font-size:10px;color:#9CA3AF;">Step 1 of 3</span></div>
+        <form asp-action="ChangeBusiness" method="post">
+            <select name="businessId" onchange="this.form.submit()" style="width:100%;height:40px;border-radius:10px;border:1px solid #E8E6E1;padding:0 10px;background:#F8F7F4;">
+                @foreach (var b in Model.BusinessList)
+                {
+                    <option value="@b.BusinessId" selected="@(b.BusinessId == Model.SelectedBusinessId)">@b.BusinessName</option>
+                }
+            </select>
+        </form>
+    </div>
+
+    <div class="biz-card" style="padding:16px 18px;margin-bottom:14px;">
+        <div style="display:flex;justify-content:space-between;margin-bottom:12px;"><b style="font-size:11px;color:#6B7280;">OPERATING UNITS</b><span style="font-size:10px;color:#9CA3AF;">@Model.Companies.Count units</span></div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:10px;">
+            @foreach (var c in Model.Companies)
+            {
                 <form asp-action="SelectCompany" method="post">
-                    <input type="hidden" name="companyId" value="@company.CompanyID" />
-                    <button type="submit" class="card-link" style="background:none; border:none; cursor:pointer;">
-                        @company.CompanyName
+                    <input type="hidden" name="companyId" value="@c.CompanyID" />
+                    <button class="unit-card @(Model.SelectedCompanyId == c.CompanyID ? "active" : "")" style="width:100%;text-align:left;padding:10px 12px;display:flex;gap:10px;align-items:center;">
+                        <span style="width:30px;height:30px;background:#fff;border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--bit-teal);">@c.CompanyName.Substring(0, 1)</span>
+                        <span><b style="font-size:12px;display:block;">@c.CompanyName</b><small style="font-size:10px;color:#6B7280;">ID: @c.CompanyID • Active</small></span>
                     </button>
                 </form>
-            </div>
-        }
+            }
+        </div>
     </div>
-}
 
-<!-- Fiscal Periods - COA Items (Old rpt_ChartOfAccount Repeater) -->
-@if (Model.Periods != null && Model.Periods.Any())
-{
-    <div style="margin-top:20px;">
-        <h3 style="font-size:18px; font-weight:600; margin-bottom:15px; color:#1e293b;">Select Fiscal Year / Chart of Account</h3>
-        
-        @foreach (var period in Model.Periods)
-        {
-            <div class="coa-item">
-                <div class="coa-accent"></div>
-                <div class="coa-content">
-                    <div class="coa-top">
+    @if (Model.Periods.Any())
+    {
+        <div class="biz-card" style="padding:16px 18px;">
+            <div style="display:flex;justify-content:space-between;margin-bottom:12px;"><b style="font-size:11px;color:#6B7280;">FISCAL YEAR</b><span style="font-size:10px;color:#9CA3AF;">Select to proceed</span></div>
+            @foreach (var p in Model.Periods.OrderBy(x => x.StartDate))
+            {
+                <div class="fiscal-card" style="margin-bottom:10px;">
+                    <div class="fiscal-accent"></div>
+                    <div style="flex:1;padding:12px 14px;display:flex;justify-content:space-between;align-items:center;">
                         <div>
-                            <div class="coa-title">
-                                @period.PeriodSetName <span class="year">(@period.PeriodYear)</span>
-                            </div>
-                            <div class="coa-meta">
-                                <span>📅 @period.PeriodTypeName</span>
-                                <span>🔢 No: @period.PeriodNumber</span>
-                            </div>
+                            <div style="font-weight:700;font-size:13px;">@p.PeriodSetName <span style="font-weight:400;color:#6B7280;font-size:11px;">(@p.PeriodYear)</span></div>
+                            <div style="font-size:11px;color:#6B7280;margin-top:2px;">Start <b style="color:#111;">@p.StartDate.ToString("dd MMM yyyy", CultureInfo.InvariantCulture)</b> &nbsp; End <b style="color:#111;">@p.EndDate.ToString("dd MMM yyyy", CultureInfo.InvariantCulture)</b> &nbsp; 🧾 @p.COADescription</div>
                         </div>
-                        <div class="coa-tag">@period.Template</div>
-                    </div>
-                    <div class="coa-info">
-                        <div><span class="lbl">Start</span><span class="val">@period.StartDate.ToString("dd MMM yyyy")</span></div>
-                        <div><span class="lbl">End</span><span class="val">@period.EndDate.ToString("dd MMM yyyy")</span></div>
-                    </div>
-                    <div class="coa-bottom">
-                        <div class="coa-desc">🧾 @period.COADescription</div>
-                        <form asp-action="SelectPeriod" method="post" style="display:inline;">
-                            <input type="hidden" name="periodId" value="@period.PeriodID" />
-                            <input type="hidden" name="companyId" value="@period.CompanyID" />
-                            <input type="hidden" name="fiscalId" value="@period.FiscalID" />
-                            <input type="hidden" name="coaId" value="@period.ChartOfAccountID" />
-                            <input type="hidden" name="baseCurrencyId" value="@period.BaseCurrencyID" />
-                            <button type="submit" class="coa-btn">Proceed →</button>
+                        <form asp-action="SelectPeriod" method="post">
+                            <input type="hidden" name="periodId" value="@p.PeriodID" /><input type="hidden" name="companyId" value="@p.CompanyID" /><input type="hidden" name="fiscalId" value="@p.FiscalID" /><input type="hidden" name="coaId" value="@p.ChartOfAccountID" /><input type="hidden" name="baseCurrencyId" value="@p.BaseCurrencyID" />
+                            <button style="background:#111;color:#fff;border:none;border-radius:8px;padding:7px 14px;font-size:12px;font-weight:600;">Proceed →</button>
                         </form>
                     </div>
                 </div>
-            </div>
-        }
-    </div>
-}
-else if (Model.SelectedCompanyId > 0)
-{
-    <div style="text-align:center; padding:40px; color:#6b7280;">
-        No fiscal years found for selected company. Please contact Administrator.
-    </div>
-}
+            }
+        </div>
+    }
+</div>

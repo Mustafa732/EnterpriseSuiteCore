@@ -1,5 +1,8 @@
-using Microsoft.AspNetCore.Authentication.Cookies;
+﻿using Microsoft.AspNetCore.Authentication.Cookies;
 using System.Globalization;
+using FnI.Core.Web.HttpApplicationState;
+using Common.Globalization;
+using DAL.DataAccessLayer;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,7 +16,7 @@ builder.Services.AddHttpContextAccessor();
 builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages();
 
-// 4. Session
+// 4. Session - Old Session_Start / Session_End ka Core replacement
 builder.Services.AddSession(options =>
 {
     options.IdleTimeout = TimeSpan.FromMinutes(builder.Configuration.GetValue<int>("SessionSettings:TimeoutMinutes", 288000));
@@ -21,7 +24,7 @@ builder.Services.AddSession(options =>
     options.Cookie.IsEssential = true;
 });
 
-// 5. Auth
+// 5. Auth - Same as old FormsAuthentication
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
     .AddCookie(options =>
     {
@@ -35,11 +38,33 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
 
 builder.Services.AddAuthorization();
 
-var cultureInfo = new CultureInfo(builder.Configuration["AppSettings:Lanuguage-Country"] ?? "ur-PK");
-CultureInfo.DefaultThreadCurrentCulture = cultureInfo;
-CultureInfo.DefaultThreadCurrentUICulture = cultureInfo;
-
 var app = builder.Build();
+
+// AppSessions configure - UseSession ke baad hi hona chahiye
+var accessor = app.Services.GetRequiredService<IHttpContextAccessor>();
+FnI.Core.Web.AppSessions.Configure(accessor);
+FnI.Core.Helper.Notification.Configure(accessor);
+SqlHelper.Configure(app.Configuration);
+
+// ================== OLD Global.asax Application_Start ==================
+// Ye line miss thi - isi wajah se fiscal 2122 ki jagah 1819 repeat ho raha tha
+try
+{
+    AppParameters.SetApplicationVariables();
+    Console.WriteLine($"[Global.asax Fix] AppParameters Loaded - IsFiscalSystem: {AppParameters.IsFiscalSystem}, IsWelcomeScreen: {AppParameters.IsWelcomeScreen}, LicenseCheck: {AppParameters.LicenseCheck}");
+}
+catch (Exception ex)
+{
+    Console.WriteLine($"[Global.asax Fix] AppParameters load failed: {ex.Message}");
+    // App start hone do, lekin log me error rahega
+}
+
+// ================== Culture Fix - Old Application_BeginRequest ==================
+// Old me AppCulture.SetCurrentCulture() har request pe chalta tha
+// Tumne DefaultThreadCurrentCulture set kiya tha jo sahi hai, lekin per-request bhi chahiye
+var defaultCulture = new CultureInfo(builder.Configuration["AppSettings:Lanuguage-Country"] ?? "en-GB");
+CultureInfo.DefaultThreadCurrentCulture = defaultCulture;
+CultureInfo.DefaultThreadCurrentUICulture = defaultCulture;
 
 if (!app.Environment.IsDevelopment())
 {
@@ -59,13 +84,20 @@ app.UseSession();
 app.UseAuthentication();
 app.UseAuthorization();
 
-// AppSessions configure - UseSession ke baad
-var accessor = app.Services.GetRequiredService<IHttpContextAccessor>();
-FnI.Core.Web.AppSessions.Configure(accessor);
-FnI.Core.Helper.Notification.Configure(accessor);
-DAL.DataAccessLayer.SqlHelper.Configure(app.Configuration);
+// ================== OLD Global.asax Application_BeginRequest replacement ==================
+app.Use(async (context, next) =>
+{
+    try
+    {
+        // Old: AppCulture.SetCurrentCulture() - Date format 01 Oct 2021 vs ستمبر fix
+        AppCulture.SetCurrentCulture();
+    }
+    catch { }
 
-// Tumhara session tracking wala middleware AB sahi jagah pe - UseSession ke baad
+    await next();
+});
+
+// Tumhara session tracking middleware - UseSession ke baad sahi jagah pe
 app.Use(async (context, next) =>
 {
     try
@@ -82,7 +114,7 @@ app.Use(async (context, next) =>
                     ["SessionId"] = sessionId,
                     ["LoginTime"] = DateTime.Now
                 };
-                Common.Globalization.Sessions.TrackSession(sessionId, items);
+                Sessions.TrackSession(sessionId, items);
             }
         }
     }

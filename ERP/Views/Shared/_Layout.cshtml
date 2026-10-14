@@ -2,150 +2,390 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, user-scalable=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>@ViewData["Title"] - BITWARE ERP</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <style>
-        /* NEW _Layout.cshtml - Main ERP after Welcome - Bitware OldMoney + Odoo Style */
-        :root { --sidebar-width: 260px; --topnav-height: 56px; --teal: #2c6e74; --teal-light: #3f7f8a; }
-        body { background:#f1f5f9; margin:0; font-family:'Instrument Sans','Segoe UI',sans-serif; overflow-x:hidden; }
-        
-        /* Left Sidebar - Old Site.Master dvleft */
-        .left_col { 
-            position:fixed; top:0; left:0; bottom:0; width:var(--sidebar-width); 
-            background:#2A3F54; z-index:1000; transition:0.3s; overflow-y:auto;
+        :root {
+            --bit-teal: #0E7A8A;
+            --bit-teal-deep: #0A5F6B;
+            --bit-teal-soft: #E6F0F1;
+            --bit-paper: #F8F7F4;
+            --bit-surface: #FFFFFF;
+            --bit-ink: #1A1D23;
+            --bit-ink-soft: #5A5F6A;
+            --bit-line: #E8E6E1;
+            --bit-sidebar: #111318;
+            --bit-sidebar-2: #1C1F26;
         }
-        .left_col .nav_title { background:#2A3F54; padding:12px 16px; border-bottom:1px solid rgba(255,255,255,0.1); }
-        .left_col .site_title { color:#fff; font-weight:800; text-decoration:none; font-size:18px; }
-        .left_col .profile { padding:16px; color:#fff; }
-        .left_col .profile_info h2 { font-size:14px; margin:0; }
-        
-        /* Sidebar Menu */
-        .side-menu { list-style:none; padding:0; margin:0; }
-        .side-menu > li > a { display:block; padding:12px 16px; color:#E7E7E7; text-decoration:none; font-size:13px; border-bottom:1px solid rgba(255,255,255,0.05); }
-        .side-menu > li > a:hover { background:rgba(255,255,255,0.1); color:#fff; }
-        .side-menu > li > a i { margin-right:8px; }
-        .child_menu { list-style:none; padding-left:20px; background:#1e2f42; display:none; }
-        .child_menu li a { padding:8px 16px; font-size:12px; color:#b8c7ce; display:block; text-decoration:none; }
-        .child_menu li a:hover { color:#fff; background:rgba(255,255,255,0.05); }
-        
-        /* Top Nav */
-        .top_nav { position:fixed; top:0; left:var(--sidebar-width); right:0; height:var(--topnav-height); background:#fff; box-shadow:0 1px 4px rgba(0,0,0,0.1); z-index:999; display:flex; align-items:center; padding:0 20px; }
-        .top_nav .toggle { cursor:pointer; }
-        .top_nav .toggle i { font-size:20px; }
-        .navbar-right { margin-left:auto; display:flex; align-items:center; gap:16px; }
-        .user-profile { color:#2A3F54; text-decoration:none; font-weight:600; }
-        
-        /* Main Content - right_col */
-        .right_col { margin-left:var(--sidebar-width); margin-top:var(--topnav-height); padding:24px; min-height:100vh; }
-        .page-content { background:#fff; border-radius:12px; padding:24px; box-shadow:0 1px 3px rgba(0,0,0,0.05); }
-        
-        /* Responsive */
-        .nav-sm .left_col { width:70px; }
-        .nav-sm .right_col, .nav-sm .top_nav { margin-left:70px; }
-        .nav-sm .side-menu li span { display:none; }
-        
-        /* Mega menu top (when theme switched to top nav) - Old oldnavbarmenu */
-        .rs-GeneralMasterNav { background: linear-gradient(135deg, #2c6e74, #3f7f8a); }
-        .rs-oldnavbarmenu .nav-link { color:#fff !important; }
+
+        * {
+            font-family: 'Instrument Sans',system-ui,sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        body {
+            background: var(--bit-paper);
+            margin: 0;
+            color: var(--bit-ink);
+            overflow-x: hidden;
+        }
+
+        /* TOPBAR - Old dvtop + topnav */
+        .bit-topbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 64px;
+            background: var(--bit-surface);
+            border-bottom: 1px solid var(--bit-line);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+            z-index: 1050;
+        }
+
+        .bit-brand {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            text-decoration: none;
+        }
+
+            .bit-brand b {
+                font-size: 18px;
+                letter-spacing: -0.02em;
+                color: var(--bit-ink);
+            }
+
+                .bit-brand b span {
+                    color: var(--bit-teal);
+                }
+
+            .bit-brand small {
+                display: block;
+                font-size: 9px;
+                letter-spacing: 0.15em;
+                font-weight: 700;
+                color: var(--bit-ink-soft);
+            }
+
+        .bit-company {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-left: 1px solid var(--bit-line);
+            padding-left: 14px;
+            margin-left: 10px;
+            font-size: 12px;
+            color: var(--bit-ink-soft);
+        }
+
+            .bit-company .dot {
+                width: 7px;
+                height: 7px;
+                background: var(--bit-teal);
+                border-radius: 50%;
+                box-shadow: 0 0 0 4px var(--bit-teal-soft);
+            }
+
+        .bit-search {
+            position: relative;
+            display: flex;
+            align-items: center;
+            background: var(--bit-paper);
+            border: 1px solid var(--bit-line);
+            border-radius: 999px;
+            padding: 0 14px;
+            height: 40px;
+            width: 380px;
+            transition: all .25s;
+        }
+
+            .bit-search:focus-within {
+                border-color: var(--bit-ink);
+                background: var(--bit-surface);
+                box-shadow: 0 0 0 4px var(--bit-teal-soft);
+            }
+
+            .bit-search input {
+                border: none;
+                background: transparent;
+                outline: none;
+                width: 100%;
+                font-size: 13px;
+            }
+
+        .bit-actions {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .bit-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 1px solid var(--bit-line);
+            background: var(--bit-surface);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--bit-ink-soft);
+            cursor: pointer;
+        }
+
+        .bit-user {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding-left: 12px;
+            border-left: 1px solid var(--bit-line);
+        }
+
+        .bit-avatar {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: var(--bit-ink);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        /* LAYOUT */
+        .bit-layout {
+            display: flex;
+            padding-top: 64px;
+        }
+
+        .bit-sidebar {
+            width: 280px;
+            min-width: 280px;
+            background: var(--bit-sidebar);
+            min-height: calc(100vh - 64px);
+            position: sticky;
+            top: 64px;
+            padding: 18px 12px;
+            transition: transform .35s cubic-bezier(.16,1,.3,1);
+            overflow-y: auto;
+        }
+
+            .bit-sidebar .menu-label {
+                color: #6B7280;
+                font-size: 10px;
+                font-weight: 700;
+                letter-spacing: 0.12em;
+                text-transform: uppercase;
+                padding: 18px 12px 8px;
+            }
+
+        #navbar, #oldnavbarmenu {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+            #navbar > li > a {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                padding: 10px 12px;
+                border-radius: 10px;
+                color: #9CA3AF;
+                font-size: 13.5px;
+                font-weight: 500;
+                text-decoration: none;
+                transition: all .2s;
+                border: 1px solid transparent;
+            }
+
+                #navbar > li > a:hover {
+                    background: var(--bit-sidebar-2);
+                    color: #E5E7EB;
+                    border-color: #2A2E38;
+                }
+
+            #navbar > li.active > a {
+                background: var(--bit-surface);
+                color: var(--bit-ink);
+                font-weight: 600;
+            }
+
+            #navbar .child_menu {
+                list-style: none;
+                background: transparent;
+                border: none;
+                padding-left: 28px;
+                margin: 4px 0 8px;
+                display: none;
+            }
+
+                #navbar .child_menu li a {
+                    padding: 7px 12px;
+                    font-size: 12.5px;
+                    color: #6B7280;
+                    border-left: 1px solid #252932;
+                    border-radius: 0 8px 8px 0;
+                    margin-left: 8px;
+                    display: block;
+                    text-decoration: none;
+                }
+
+                    #navbar .child_menu li a:hover {
+                        color: #E5E7EB;
+                        border-left-color: var(--bit-teal);
+                        background: rgba(255,255,255,0.03);
+                    }
+
+            #navbar .fa-chevron-down {
+                margin-left: auto;
+                font-size: 10px;
+                opacity: 0.5;
+                transition: transform .2s;
+            }
+
+            #navbar li.active .fa-chevron-down {
+                transform: rotate(180deg);
+            }
+
+        .bit-main {
+            flex: 1;
+            min-width: 0;
+            padding: 24px;
+            background: var(--bit-paper);
+        }
+
+        .bit-pagehead {
+            background: var(--bit-surface);
+            border: 1px solid var(--bit-line);
+            border-radius: 16px;
+            padding: 18px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 18px;
+        }
+
+            .bit-pagehead h1 {
+                font-size: 15px;
+                font-weight: 600;
+                margin: 0;
+            }
+
+            .bit-pagehead p {
+                font-size: 12px;
+                color: var(--bit-ink-soft);
+                margin: 2px 0 0;
+            }
+
+        .bit-content {
+            background: var(--bit-surface);
+            border: 1px solid var(--bit-line);
+            border-radius: 16px;
+            padding: 20px;
+            box-shadow: 0 1px 0 rgba(0,0,0,0.03);
+            min-height: calc(100vh - 200px);
+        }
     </style>
-    @RenderSection("HeadContent", required:false)
+    @RenderSection("HeadContent", required: false)
 </head>
-<body class="nav-md">
-    <!-- Left Sidebar - Old dvleft -->
-    <div class="left_col" id="dvleft">
-        <div class="nav_title">
-            <a href="/Home/Index" class="site_title"><i class="fa fa-paw"></i> BITWARE ERP</a>
+<body>
+    <!-- TOPBAR - dvtop + topnav -->
+    <div class="bit-topbar" id="dvtop">
+        <div style="display:flex; align-items:center;">
+            <a href="javascript:;" id="menu_toggle" style="margin-right:14px; color:var(--bit-ink);"><i class="fa fa-bars"></i></a>
+            <a href="/Home/Index" class="bit-brand"><b><span>BIT</span>WARE ERP</b><small>ENTERPRISE OS • 2026</small></a>
+            <div class="bit-company"><span class="dot"></span><span>@Context.Session.GetString("CompanyName") ?? "Select Company" | @Context.Session.GetString("PeriodName") ?? "Period"</span></div>
         </div>
-        <div class="profile">
-            <div class="profile_info">
-                <span>Welcome,</span>
-                <h2>@User.Identity?.Name</h2>
-                <span style="font-size:11px; opacity:0.7;">@Context.Session.GetString("CompanyName")</span>
+        <div style="display:flex; align-items:center; gap:16px;">
+            <div class="bit-search"><i class="fa fa-search"></i><input type="text" id="txtMenuSearch" placeholder="Search menu... press /" /><i class="fa fa-times" id="btnClearSearch" style="display:none; cursor:pointer;"></i></div>
+            <div class="bit-actions">
+                <div class="bit-icon"><i class="fa-regular fa-bell"></i></div>
+                <div class="bit-user">
+                    <div class="bit-avatar">@(User.Identity?.Name?.Substring(0, 1).ToUpper() ?? "U")</div>
+                    <div style="line-height:1.1;"><div style="font-size:12px; font-weight:600;">@User.Identity?.Name</div><div style="font-size:10px; color:#6B7280;">@Context.Session.GetString("CurrentUserIP")</div></div>
+                </div>
+                <a href="/Account/Logout" class="bit-icon" title="Logout"><i class="fa-solid fa-right-from-bracket"></i></a>
             </div>
         </div>
-        <div style="padding:10px;">
-            <input class="form-control" placeholder="Search menu..." id="menusearch" onkeyup="filterMenu()" style="background:#1e2f42; border:none; color:#fff; font-size:12px;" />
-        </div>
-        <!-- Dynamic Sidebar Menu - Old CreateMenues() -->
-        <div id="sidebar-menu" class="main_menu_side">
+    </div>
+
+    <!-- Old topnav mega menu container -->
+    <div id="topnav" runat="server" style="display:none;">
+        <div id="oldnavbarmenu" class="rs-oldnavbarmenu"></div>
+    </div>
+
+    <div class="bit-layout">
+        <!-- SIDEBAR - dvleft -->
+        <div class="bit-sidebar" id="dvleft">
+            <div class="menu-label">Navigation</div>
+            <!-- DB MENUS - Same ID as old Site.Master -->
             <ul class="nav side-menu" id="navbar">
-                @if (ViewBag.SideMenus != null)
+                @if (ViewBag.SideMenus != null && ((List<dynamic>)ViewBag.SideMenus).Count > 0)
                 {
-                    @foreach (var m in ViewBag.SideMenus)
+                    foreach (var m in ViewBag.SideMenus)
                     {
                         <li>
-                            <a href="@(m.Path == "#" ? "javascript:;" : m.Path)"><i class="fa fa-desktop"></i> <span>@m.Name</span> @if(m.Children.Any()){<span class="fa fa-chevron-down" style="float:right;"></span>}</a>
-                            @if (m.Children.Any())
-                            {
-                                <ul class="nav child_menu">
-                                    @foreach (var c in m.Children)
-                                    {
-                                        <li><a href="@c.Path">@c.Name</a></li>
-                                    }
-                                </ul>
-                            }
-                        </li>
-                    }
-                }
-                else
-                {
-                    <!-- Fallback static menu if DB not connected -->
-                    <li><a href="/Home/Welcome"><i class="fa fa-home"></i> <span>Welcome</span></a></li>
-                    <li><a href="/Home/Index"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
-                    <li><a><i class="fa fa-lock"></i> <span>Security</span> <span class="fa fa-chevron-down" style="float:right;"></span></a>
-                        <ul class="nav child_menu"><li><a href="#">Users</a></li><li><a href="#">Roles</a></li></ul>
+                            <a href="@(m.Path == "#" ? "javascript:;" : m.Path)" class="@(m.Children.Count > 0 ? "parent" : "")"><i class="@(m.Icon ?? "fa fa-desktop")"></i><span class="searchlist">@m.Name</span>@if(m.Children.Count>0){
+                            <span class="fa fa-chevron-down"></span>
+                        }
+    </a>
+                        @if (m.Children.Count > 0)
+                        {
+                            <ul class="child_menu">
+                                @foreach (var c in m.Children)
+                                {
+                                    <li><a href="@(c.Path == "#" ? "javascript:;" : c.Path)"><span class="searchlist">@c.Name</span></a></li>
+                                }
+                            </ul>
+                        }
                     </li>
                 }
+                                }
+                                else
+                {
+                    <li><a href="/Home/Welcome"><i class="fa fa-home"></i><span class="searchlist">Welcome</span></a></li>
+                    <li><a href="/Home/Index"><i class="fa fa-dashboard"></i><span class="searchlist">Dashboard</span></a></li>
+                }
             </ul>
+            <div class="menu-label" style="margin-top:18px;">System</div>
+            <a href="/Home/Welcome" style="display:flex; gap:10px; padding:9px 10px; border-radius:10px; color:#6B7280; font-size:12.5px; text-decoration:none;"><i class="fa-solid fa-rotate" style="width:18px;"></i> Change Company</a>
+            <div style="margin-top:24px; padding:12px; background:var(--bit-sidebar-2); border-radius:12px; border:1px solid #252932;">
+                <div style="font-size:10px; color:#6B7280; font-weight:700;">BITWARE ERP v1.0</div>
+                <div style="font-size:11px; color:#9CA3AF; margin-top:4px; font-family:'JetBrains Mono',monospace;">© 2026 Bitware</div>
+            </div>
         </div>
-    </div>
 
-    <!-- Top Navigation - Old dvtop -->
-    <div class="top_nav" id="dvtop">
-        <div class="nav toggle"><a id="menu_toggle"><i class="fa fa-bars"></i></a></div>
-        <div class="navbar-right">
-            <span style="font-size:12px; color:#64748b;">Company: @Context.Session.GetString("CompanyName") | Period: @Context.Session.GetString("PeriodName")</span>
-            <a href="/Account/Logout" class="user-profile"><i class="fa fa-sign-out"></i> Logout</a>
-        </div>
-    </div>
-
-    <!-- Main Content - right_col -->
-    <div class="right_col" role="main">
-        <div class="page-content">
-            @RenderBody()
+        <!-- MAIN - dvmain -->
+        <div class="bit-main" id="dvmain">
+            <div class="bit-pagehead">
+                <div><h1>@ViewData["Title"]</h1><p>Enterprise Resource Planning • Real-time • Secure</p></div>
+                <div>@RenderSection("PageActions", required: false)</div>
+            </div>
+            <div class="bit-content" id="PageDisplay">
+                @RenderBody()
+            </div>
         </div>
     </div>
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        // Sidebar toggle - Same as old custom.min.js
-        document.getElementById('menu_toggle').addEventListener('click', function(){
-            document.body.classList.toggle('nav-sm');
-            document.body.classList.toggle('nav-md');
-        });
-        // Menu expand/collapse
-        document.querySelectorAll('.side-menu > li > a').forEach(a => {
-            a.addEventListener('click', function(e){
-                let next = this.nextElementSibling;
-                if(next && next.classList.contains('child_menu')){
-                    e.preventDefault();
-                    next.style.display = next.style.display === 'block' ? 'none' : 'block';
-                }
-            });
-        });
-        // Search filter
-        function filterMenu(){
-            let input = document.getElementById('menusearch').value.toUpperCase();
-            document.querySelectorAll('#navbar li').forEach(li => {
-                let txt = li.textContent.toUpperCase();
-                li.style.display = txt.indexOf(input) > -1 ? '' : 'none';
-            });
-        }
+        // Sidebar toggle + search - same as old Site.Master
+        document.getElementById('menu_toggle')?.addEventListener('click',()=>{document.getElementById('dvleft').classList.toggle('open');});
+        $("#navbar").on("click","li > a.parent",function(e){e.preventDefault(); var li=$(this).closest('li'); var child=li.children('ul.child_menu'); if(child.length){child.slideToggle(200); li.toggleClass('active');}});
+        $("#txtMenuSearch").on("keyup input",function(){var q=$(this).val().toLowerCase().trim(); var c=$("#btnClearSearch"); q.length>0?c.show():c.hide(); if(!q){$("#navbar > li").show(); $(".child_menu").hide(); $(".child_menu li").show(); $("#navbar li").removeClass('active'); return;} $("#navbar > li").each(function(){var root=$(this); var rootText=root.children('a').text().toLowerCase(); var hasChild=false; root.find('.child_menu li').each(function(){var txt=$(this).text().toLowerCase(); if(txt.indexOf(q)!==-1){$(this).show(); hasChild=true;}else{$(this).hide();}}); if(rootText.indexOf(q)!==-1||hasChild){root.show(); root.find('.child_menu').show(); root.addClass('active');}else{root.hide();}});});
+        $("#btnClearSearch").on("click",function(){ $("#txtMenuSearch").val(''); $(this).hide(); $("#navbar > li").show(); $(".child_menu").hide(); });
+        $(document).on('keydown',function(e){ if(e.key==='/' && !$(e.target).is('input,textarea')){ e.preventDefault(); $("#txtMenuSearch").focus(); } });
     </script>
-    @RenderSection("Scripts", required:false)
+    @RenderSection("Scripts", required: false)
 </body>
 </html>
