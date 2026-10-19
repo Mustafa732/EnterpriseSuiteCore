@@ -2,7 +2,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\DAL\DAL.csproj" />
-    <ProjectReference Include="..\Fnl.Core\Fnl.Core.csproj" />
     <ProjectReference Include="..\Fnl.QueryResourceLibrary\Fnl.QueryResourceLibrary.csproj" />
     <ProjectReference Include="..\Common\Common.csproj" />
   </ItemGroup>

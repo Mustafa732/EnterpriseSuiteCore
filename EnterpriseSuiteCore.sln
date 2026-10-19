@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.0.31903.59
+# Visual Studio Version 18
+VisualStudioVersion = 18.10.12210.168 stable
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{67B5FD2B-6656-4CC3-914A-64F63E6843EC}"
 EndProject
@@ -12,6 +12,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fnl.BusinessAccessLayer", "Fnl.BusinessAccessLayer\Fnl.BusinessAccessLayer.csproj", "{995B61F9-49F7-4C63-A44B-5079C68E2647}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fnl.Core", "Fnl.Core\Fnl.Core.csproj", "{AAB5E7FF-7D54-40EC-B348-34574E0250AF}"
+	ProjectSection(ProjectDependencies) = postProject
+		{995B61F9-49F7-4C63-A44B-5079C68E2647} = {995B61F9-49F7-4C63-A44B-5079C68E2647}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fnl.QueryResourceLibrary", "Fnl.QueryResourceLibrary\Fnl.QueryResourceLibrary.csproj", "{9266207E-98C0-42E0-ACAA-DFA94FB21A76}"
 EndProject

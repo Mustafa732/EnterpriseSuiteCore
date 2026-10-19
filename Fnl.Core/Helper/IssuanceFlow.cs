@@ -26,33 +26,19 @@ namespace FnI.Core.Helper
             return dt_StockAgainstItem;
         }
 
-        public static DataTable Get_AllDataAgainstItemFIFO(Telerik.Web.UI.RadComboBox ddl, SqlTransaction objTransaction = null)
+        public static DataTable Get_AllDataAgainstItemFIFOByLocation(int itemId, int locationId, SqlTransaction objTransaction = null)
         {
             string filter = "";
-
             if (FnI.Core.Web.HttpApplicationState.AppParameters.IssuanceFlow == "FIFO")
                 filter = "Order By INV_StockTransactionHeader.DocumentDate Asc";
             else if (FnI.Core.Web.HttpApplicationState.AppParameters.IssuanceFlow == "LIFO")
                 filter = "Order By INV_StockTransactionHeader.DocumentDate Desc";
-
-            DataTable dt_StockAgainstItem = INV_StockTransactionDetail.Get_AllDataAgainstItemFIFO(AppSessions.CurrentCompanyID, AppSessions.CurrentPeriodID, 
-                int.Parse(ddl.SelectedValue), filter);
-
-            return dt_StockAgainstItem;
-        }
-
-        public static DataTable Get_AllDataAgainstItemFIFOByLocation(Telerik.Web.UI.RadComboBox ddl, int _locationid, SqlTransaction objTransaction = null)
-        {
-            string filter = "";
-
-            if (FnI.Core.Web.HttpApplicationState.AppParameters.IssuanceFlow == "FIFO")
-                filter = "Order By INV_StockTransactionHeader.DocumentDate Asc";
-            else if (FnI.Core.Web.HttpApplicationState.AppParameters.IssuanceFlow == "LIFO")
-                filter = "Order By INV_StockTransactionHeader.DocumentDate Desc";
-
-            DataTable dt_StockAgainstItem = INV_StockTransactionDetail.Get_AllDataAgainstItemFIFOByLocation(AppSessions.CurrentCompanyID, AppSessions.CurrentPeriodID,
-                int.Parse(ddl.SelectedValue),_locationid, filter);
-
+            DataTable dt_StockAgainstItem = INV_StockTransactionDetail.Get_AllDataAgainstItemFIFOByLocation(
+                AppSessions.CurrentCompanyID,
+                AppSessions.CurrentPeriodID,
+                itemId,
+                locationId,
+                filter);
             return dt_StockAgainstItem;
         }
 
@@ -71,18 +57,19 @@ namespace FnI.Core.Helper
             return dt_StockAgainstItem;
         }
 
-        public static DataTable Get_FIFOStockSetting(Telerik.Web.UI.RadComboBox ddl, int _locationid, SqlTransaction objTransaction = null)
+        public static DataTable Get_FIFOStockSetting(int itemId, int locationId, SqlTransaction objTransaction = null)
         {
             string filter = "";
-
             if (FnI.Core.Web.HttpApplicationState.AppParameters.IssuanceFlow == "FIFO")
                 filter = "Order By INV_StockTransactionHeader.DocumentDate,INV_StockTransactionDetail.TransactionDetailID Asc";
             else if (FnI.Core.Web.HttpApplicationState.AppParameters.IssuanceFlow == "LIFO")
                 filter = "Order By INV_StockTransactionHeader.DocumentDate,INV_StockTransactionDetail.TransactionDetailID Desc";
-
-            DataTable dt_StockAgainstItem = INV_StockTransactionDetail.Get_AllForStockSetting(AppSessions.CurrentCompanyID, AppSessions.CurrentPeriodID,
-                int.Parse(ddl.SelectedValue), _locationid, filter);
-
+            DataTable dt_StockAgainstItem = INV_StockTransactionDetail.Get_AllForStockSetting(
+                AppSessions.CurrentCompanyID,
+                AppSessions.CurrentPeriodID,
+                itemId,
+                locationId,
+                filter);
             return dt_StockAgainstItem;
         }
 
