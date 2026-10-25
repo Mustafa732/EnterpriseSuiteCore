@@ -1,338 +1,570 @@
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    var routeController = (ViewContext.RouteData.Values["controller"]?.ToString() ?? "");
+    var routeAction = (ViewContext.RouteData.Values["action"]?.ToString() ?? "");
+    var onWelcome = routeController.Equals("Home", StringComparison.OrdinalIgnoreCase)
+                    && routeAction.Equals("Welcome", StringComparison.OrdinalIgnoreCase);
+    var userName = User.Identity?.Name ?? "Admin";
+    var initial = userName.Length > 0 ? userName.Substring(0, 1).ToUpper() : "A";
+}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>@ViewData["Title"] - BITWARE ERP</title>
-    <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
     <style>
         :root {
-            --bit-teal: #0E7A8A;
-            --bit-paper: #F8F7F4;
-            --bit-line: #E8E6E1;
-            --bit-sidebar: #111318;
-            --bit-sidebar-2: #1C1F26;
+            --primary: #0E7A8A;
+            --sidebar-bg: #111318;
+            --paper: #F8F7F4;
+            --line: #E8E6E1;
+            --radius: 14px;
+
+            --white: #FFFFFF;
+            --ink: #1B1D22;
+            --muted: #6B7280;
+            --sidebar-text: #AEB3BD;
+            --sidebar-hover: rgba(255, 255, 255, .07);
+            --sidebar-w: 270px;
+            --sidebar-w-collapsed: 70px;
+            --topbar-h: 64px;
+            --ease: cubic-bezier(.4, 0, .2, 1);
         }
 
-        * {
-            font-family: 'Instrument Sans',sans-serif;
-        }
+        * { box-sizing: border-box; }
+
+        html, body { margin: 0; padding: 0; }
 
         body {
-            background: var(--bit-paper);
-            margin: 0;
+            font-family: 'Instrument Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+            background: var(--paper);
+            color: var(--ink);
+            font-size: 14px;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
         }
 
+        a { text-decoration: none; }
+        ul { list-style: none; margin: 0; padding: 0; }
+
+        /* Topbar */
         .bit-topbar {
             position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 64px;
-            background: #fff;
-            border-bottom: 1px solid var(--bit-line);
+            top: 0; left: 0; right: 0;
+            height: var(--topbar-h);
+            background: var(--white);
+            border-bottom: 1px solid var(--line);
             display: flex;
             align-items: center;
             justify-content: space-between;
             padding: 0 20px;
-            z-index: 1050;
+            z-index: 1100;
         }
 
-        .bit-brand {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            text-decoration: none;
+        .bit-topbar-left, .bit-topbar-right { display: flex; align-items: center; gap: 14px; }
+
+        .bit-icon-btn {
+            width: 40px; height: 40px;
+            display: inline-flex; align-items: center; justify-content: center;
+            border: 0; background: transparent;
+            border-radius: 10px;
+            color: var(--ink);
+            font-size: 17px;
+            cursor: pointer;
+            transition: background .2s var(--ease), color .2s var(--ease);
         }
+
+        .bit-icon-btn:hover { background: var(--paper); color: var(--primary); }
+
+        .bit-brand { display: flex; align-items: center; gap: 10px; color: var(--ink); }
 
         .bit-logo {
-            width: 36px;
-            height: 36px;
-            background: var(--bit-sidebar);
+            width: 36px; height: 36px;
             border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            background: var(--primary);
             color: #fff;
-            font-weight: 800;
+            display: flex; align-items: center; justify-content: center;
+            font-weight: 700; font-size: 17px;
         }
 
-        .bit-brand b {
-            font-size: 16px;
-            color: #1A1D23;
-        }
-
-        .bit-brand small {
-            display: block;
-            font-size: 9px;
-            letter-spacing: .15em;
-            color: #6B7280;
-            font-weight: 700;
-        }
-
-        .bit-company {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            border-left: 1px solid var(--bit-line);
-            padding-left: 12px;
-            margin-left: 10px;
-            font-size: 12px;
-            color: #6B7280;
-        }
-
-        .dot {
-            width: 7px;
-            height: 7px;
-            background: var(--bit-teal);
-            border-radius: 50%;
-        }
+        .bit-brand-text b { display: block; font-size: 15px; font-weight: 700; letter-spacing: .3px; line-height: 1.1; }
+        .bit-brand-text small { display: block; font-size: 10.5px; color: var(--muted); letter-spacing: .08em; margin-top: 2px; }
 
         .bit-search {
-            display: flex;
-            align-items: center;
-            background: var(--bit-paper);
-            border: 1px solid var(--bit-line);
-            border-radius: 999px;
+            display: flex; align-items: center;
+            width: 300px;
+            height: 40px;
             padding: 0 14px;
-            height: 38px;
-            width: 360px;
+            background: var(--paper);
+            border: 1px solid var(--line);
+            border-radius: 10px;
+            transition: border-color .2s var(--ease), box-shadow .2s var(--ease), background .2s var(--ease);
         }
 
-            .bit-search input {
-                border: none;
-                background: transparent;
-                outline: none;
-                width: 100%;
-                font-size: 13px;
-            }
+        .bit-search i { color: var(--muted); margin-right: 10px; font-size: 13px; }
 
-        .bit-sidebar {
-            width: 270px;
-            min-width: 270px;
-            background: var(--bit-sidebar);
-            min-height: calc(100vh - 64px);
-            position: sticky;
-            top: 64px;
-            padding: 16px 10px;
-            overflow-y: auto;
+        .bit-search input {
+            flex: 1; min-width: 0;
+            border: 0; outline: 0; background: transparent;
+            font-family: inherit; font-size: 13px; color: var(--ink);
         }
 
-        .menu-label {
-            color: #6B7280;
-            font-size: 10px;
-            font-weight: 700;
-            letter-spacing: .12em;
-            text-transform: uppercase;
-            padding: 16px 10px 6px;
+        .bit-search:focus-within {
+            background: var(--white);
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px color-mix(in srgb, var(--primary) 15%, transparent);
         }
 
-        #navbar {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-            #navbar > li > a {
-                display: flex;
-                align-items: center;
-                gap: 10px;
-                padding: 9px 10px;
-                border-radius: 10px;
-                color: #9CA3AF;
-                font-size: 13px;
-                font-weight: 500;
-                text-decoration: none;
-                transition: all .2s;
-            }
-
-                #navbar > li > a:hover {
-                    background: var(--bit-sidebar-2);
-                    color: #E5E7EB;
-                    transform: translateX(2px);
-                }
-
-            #navbar > li.active > a {
-                background: #fff;
-                color: #111;
-            }
-
-            #navbar .child_menu {
-                list-style: none;
-                padding-left: 24px;
-                margin: 4px 0 6px;
-                display: none;
-            }
-
-                #navbar .child_menu li a {
-                    padding: 6px 10px;
-                    font-size: 12px;
-                    color: #6B7280;
-                    border-left: 1px solid #252932;
-                    display: block;
-                    text-decoration: none;
-                }
-
-                    #navbar .child_menu li a:hover {
-                        color: #E5E7EB;
-                        border-left-color: var(--bit-teal);
-                    }
-
-            #navbar .fa-chevron-down {
-                margin-left: auto;
-                font-size: 9px;
-                opacity: .5;
-                transition: .2s;
-            }
-
-            #navbar li.active .fa-chevron-down {
-                transform: rotate(180deg);
-            }
-
-        .bit-main {
-            flex: 1;
-            min-width: 0;
-            padding: 24px;
-        }
-
-        .bit-content {
-            animation: rise .35s;
-        }
-        @@keyframes
-
-        rise {
-            from
-
-        {
-            opacity: 0;
-            transform: translateY(6px);
-        }
-
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        }
-
-        .profile-dropdown {
-            position: relative;
-        }
-
-        .profile-menu {
-            position: absolute;
-            top: 44px;
-            right: 0;
-            background: #fff;
-            border: 1px solid #E8E6E1;
-            border-radius: 12px;
-            min-width: 200px;
-            box-shadow: 0 10px 30px rgba(0,0,0,.12);
-            display: none;
-            z-index: 2000;
-            padding: 6px;
-        }
-
-            .profile-menu a {
-                display: flex;
-                gap: 10px;
-                padding: 9px 12px;
-                border-radius: 8px;
-                color: #111;
-                font-size: 12px;
-                text-decoration: none;
-            }
-
-                .profile-menu a:hover {
-                    background: #F8F7F4;
-                }
+        /* Profile */
+        .bit-profile { position: relative; }
 
         .bit-avatar {
-            width: 32px;
-            height: 32px;
+            width: 40px; height: 40px;
+            border: 0;
             border-radius: 50%;
-            background: #111;
+            background: var(--primary);
             color: #fff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 12px;
-            font-weight: 600;
+            font-family: inherit; font-size: 14px; font-weight: 600;
             cursor: pointer;
+            display: flex; align-items: center; justify-content: center;
+            transition: transform .2s var(--ease), box-shadow .2s var(--ease);
+        }
+
+        .bit-avatar:hover { transform: scale(1.05); box-shadow: 0 0 0 4px color-mix(in srgb, var(--primary) 18%, transparent); }
+
+        .bit-profile-menu {
+            position: absolute;
+            top: 52px; right: 0;
+            min-width: 220px;
+            background: var(--white);
+            border: 1px solid var(--line);
+            border-radius: 12px;
+            box-shadow: 0 12px 32px rgba(17, 19, 24, .12);
+            padding: 6px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-6px);
+            transition: opacity .2s var(--ease), transform .2s var(--ease), visibility .2s;
+            z-index: 1200;
+        }
+
+        .bit-profile.open .bit-profile-menu { opacity: 1; visibility: visible; transform: translateY(0); }
+
+        .bit-profile-head { padding: 10px 12px; border-bottom: 1px solid var(--line); margin-bottom: 6px; }
+        .bit-profile-head strong { display: block; font-size: 13.5px; font-weight: 600; }
+        .bit-profile-head span { font-size: 11.5px; color: var(--muted); }
+
+        .bit-profile-menu a,
+        .bit-profile-menu button {
+            display: flex; align-items: center; gap: 10px;
+            width: 100%;
+            padding: 10px 12px;
+            border: 0; background: transparent;
+            border-radius: 8px;
+            font-family: inherit; font-size: 13px; color: var(--ink);
+            text-align: left;
+            cursor: pointer;
+            transition: background .15s var(--ease), color .15s var(--ease);
+        }
+
+        .bit-profile-menu a:hover { background: var(--paper); }
+        .bit-profile-menu button:hover { background: #FDECEC; color: #C0392B; }
+        .bit-profile-menu i { width: 16px; text-align: center; color: var(--muted); }
+        .bit-profile-menu button:hover i { color: #C0392B; }
+        .bit-profile-menu form { margin: 0; }
+
+        /* Sidebar */
+        .bit-sidebar {
+            position: fixed;
+            top: var(--topbar-h); left: 0; bottom: 0;
+            width: var(--sidebar-w);
+            background: var(--sidebar-bg);
+            padding: 16px 12px;
+            overflow-y: auto;
+            overflow-x: hidden;
+            z-index: 1000;
+            transition: width .3s var(--ease), transform .3s var(--ease);
+        }
+
+        .bit-sidebar::-webkit-scrollbar { width: 6px; }
+        .bit-sidebar::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, .15); border-radius: 6px; }
+
+        .menu-label {
+            color: #6C7280;
+            font-size: 10.5px; font-weight: 600;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            padding: 6px 12px 12px;
+            white-space: nowrap;
+        }
+
+        #navbar > li { margin-bottom: 6px; }
+
+        #navbar > li > a {
+            display: flex; align-items: center; gap: 12px;
+            padding: 10px 12px;
+            border-radius: 10px;
+            color: var(--sidebar-text);
+            font-size: 13.5px; font-weight: 500;
+            white-space: nowrap;
+            transition: background .2s var(--ease), color .2s var(--ease), transform .2s var(--ease);
+        }
+
+        #navbar > li > a > i:first-child { width: 20px; text-align: center; font-size: 15px; flex-shrink: 0; }
+        #navbar > li > a .label { flex: 1; overflow: hidden; text-overflow: ellipsis; }
+
+        #navbar > li > a .chev { font-size: 10px; transition: transform .25s var(--ease); }
+
+        #navbar > li > a:hover { background: var(--sidebar-hover); color: #fff; transform: translateX(3px); }
+
+        #navbar > li.open > a { color: #fff; }
+        #navbar > li.open > a .chev { transform: rotate(180deg); }
+
+        #navbar > li.active > a { background: var(--primary); color: #fff; font-weight: 600; }
+        #navbar > li.active > a:hover { background: var(--primary); }
+
+        .child_menu {
+            max-height: 0;
+            overflow: hidden;
+            margin-left: 21px;
+            padding-left: 12px;
+            border-left: 1px solid rgba(255, 255, 255, .1);
+            transition: max-height .3s var(--ease);
+        }
+
+        li.open > .child_menu { max-height: 800px; margin-top: 4px; }
+
+        .child_menu li { margin: 2px 0; }
+
+        .child_menu li a {
+            display: block;
+            padding: 8px 12px;
+            border-radius: 8px;
+            color: #8D93A0;
+            font-size: 13px;
+            transition: background .2s var(--ease), color .2s var(--ease), transform .2s var(--ease);
+        }
+
+        .child_menu li a:hover { background: var(--sidebar-hover); color: #fff; transform: translateX(3px); }
+
+        #navbar li.hide { display: none; }
+
+        /* Collapsed sidebar (desktop) */
+        body.sidebar-collapsed .bit-sidebar { width: var(--sidebar-w-collapsed); padding: 16px 10px; }
+        body.sidebar-collapsed .menu-label,
+        body.sidebar-collapsed #navbar .label,
+        body.sidebar-collapsed #navbar .chev { display: none; }
+        body.sidebar-collapsed .child_menu { display: none; }
+        body.sidebar-collapsed #navbar > li > a { justify-content: center; padding: 12px 0; }
+        body.sidebar-collapsed #navbar > li > a:hover { transform: none; }
+
+        /* Main */
+        .bit-main {
+            margin-left: var(--sidebar-w);
+            padding-top: var(--topbar-h);
+            min-height: 100vh;
+            transition: margin-left .3s var(--ease);
+        }
+
+        body.sidebar-collapsed .bit-main { margin-left: var(--sidebar-w-collapsed); }
+
+        .bit-content {
+            padding: 28px;
+            animation: rise .5s var(--ease) both;
+        }
+
+        .bit-content .card,
+        .bit-content [class*="card"] {
+            transition: transform .25s var(--ease), box-shadow .25s var(--ease), border-color .25s var(--ease);
+        }
+
+        .bit-content .card:hover,
+        .bit-content [class*="card"]:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 28px rgba(17, 19, 24, .08);
+            border-color: var(--primary);
+        }
+
+        @@keyframes rise {
+            from { opacity: 0; transform: translateY(14px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .bit-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(17, 19, 24, .5);
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity .3s var(--ease), visibility .3s;
+            z-index: 900;
+        }
+
+        /* Responsive */
+        @@media (max-width: 900px) {
+            .bit-sidebar { transform: translateX(-100%); width: var(--sidebar-w); box-shadow: none; }
+            body.sidebar-open .bit-sidebar { transform: translateX(0); box-shadow: 8px 0 32px rgba(0, 0, 0, .25); }
+            body.sidebar-open .bit-overlay { opacity: 1; visibility: visible; }
+
+            .bit-main,
+            body.sidebar-collapsed .bit-main { margin-left: 0; }
+
+            body.sidebar-collapsed .bit-sidebar { width: var(--sidebar-w); padding: 16px 12px; }
+            body.sidebar-collapsed .menu-label,
+            body.sidebar-collapsed #navbar .label,
+            body.sidebar-collapsed #navbar .chev { display: revert; }
+            body.sidebar-collapsed #navbar .label { display: block; }
+            body.sidebar-collapsed .child_menu { display: block; }
+            body.sidebar-collapsed #navbar > li > a { justify-content: flex-start; padding: 10px 12px; }
+
+            .bit-search { width: 180px; }
+            .bit-content { padding: 18px; }
+        }
+
+        @@media (max-width: 560px) {
+            .bit-brand-text small { display: none; }
+            .bit-search { display: none; }
         }
     </style>
     @RenderSection("HeadContent", required: false)
 </head>
 <body>
-    <div class="bit-topbar" id="dvtop">
-        <div style="display:flex;align-items:center;">
-            <a href="javascript:;" id="menu_toggle" style="margin-right:12px;color:#111;"><i class="fa fa-bars"></i></a>
-            <a href="/Home/Welcome" class="bit-brand"><div class="bit-logo">B</div><div><b>BITWARE ERP</b><small>ENTERPRISE OS • GENERAL</small></div></a>
-            <div class="bit-company"><span class="dot"></span>General Area</div>
+    <header class="bit-topbar">
+        <div class="bit-topbar-left">
+            <button type="button" id="menu_toggle" class="bit-icon-btn" aria-label="Toggle sidebar"><i class="fa-solid fa-bars"></i></button>
+            <a href="/Home/Welcome" class="bit-brand">
+                <div class="bit-logo">B</div>
+                <div class="bit-brand-text"><b>BITWARE ERP</b><small>ENTERPRISE OS</small></div>
+            </a>
         </div>
-        <div style="display:flex;align-items:center;gap:14px;">
-            <div class="bit-search"><i class="fa fa-search" style="color:#9CA3AF;margin-right:8px;"></i><input type="text" id="txtMenuSearch" placeholder="Search menu... press /" /></div>
-            <div class="profile-dropdown">
-                <div class="bit-avatar" id="profileBtn">@(User.Identity?.Name?.Substring(0, 1).ToUpper() ?? "A")</div>
-                <div class="profile-menu" id="profileMenu">
-                    <div style="padding:8px 12px;border-bottom:1px solid #F0F0F0;margin-bottom:4px;">
-                        <div style="font-size:13px;font-weight:600;">@User.Identity?.Name</div>
-                        <div style="font-size:11px;color:#6B7280;">General Access • admin</div>
+        <div class="bit-topbar-right">
+            <div class="bit-search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" id="txtMenuSearch" placeholder="Search menu... press /" autocomplete="off" />
+            </div>
+            <div class="bit-profile" id="profileWrap">
+                <button type="button" class="bit-avatar" id="profileBtn" aria-haspopup="true" aria-expanded="false">@initial</button>
+                <div class="bit-profile-menu" id="profileMenu">
+                    <div class="bit-profile-head">
+                        <strong>@userName</strong>
+                        <span>General Access</span>
                     </div>
-                    <a href="/Home/Welcome"><i class="fa fa-rotate" style="width:18px;"></i> Change Company</a>
-                    <a href="/Account/Logout"><i class="fa fa-right-from-bracket" style="width:18px;"></i> Logout</a>
+                    @if (!onWelcome)
+                    {
+                        <a href="/Home/Welcome"><i class="fa-solid fa-rotate"></i> Change Company</a>
+                    }
+                    <form asp-controller="Account" asp-action="Logout" method="post">
+                        <button type="submit"><i class="fa-solid fa-right-from-bracket"></i> Logout</button>
+                    </form>
                 </div>
             </div>
         </div>
-    </div>
-    <div id="topnav" style="display:none;"><div id="oldnavbarmenu"></div></div>
-    <div id="topdiv" style="display:none;"></div>
+    </header>
 
-    <div style="display:flex;padding-top:64px;">
-        <div class="bit-sidebar" id="dvleft">
-            <div class="menu-label">General Navigation</div>
-            <ul id="navbar">
-                @if (ViewBag.GeneralMenus != null)
+    <div class="bit-overlay" id="sidebarOverlay"></div>
+
+    <aside class="bit-sidebar" id="dvleft">
+        <div class="menu-label">General Navigation</div>
+        <ul id="navbar">
+            @if (ViewBag.GeneralMenus != null)
+            {
+                foreach (var m in (IEnumerable<dynamic>)ViewBag.GeneralMenus)
                 {
-                    foreach (var m in ViewBag.GeneralMenus)
-                    {
-                        <li class="@(m.Name == "Welcome" ? "active" : "")">
-                            <a href="@(m.Path == "#" ? "javascript:;" : m.Path)" class="@(m.Children.Count > 0 ? "parent" : "")">
-                                <i class="@m.Icon"></i><span class="searchlist">@m.Name</span>@if(m.Children.Count>0){
-                                <span class="fa fa-chevron-down"></span>
+                    bool hasChildren = m.Children != null && m.Children.Count > 0;
+                    string menuName = m.Name;
+                    string menuPath = m.Path;
+                    string menuIcon = string.IsNullOrWhiteSpace((string)m.Icon) ? "fa-solid fa-circle" : (string)m.Icon;
+                    string href = (string.IsNullOrEmpty(menuPath) || menuPath == "#") ? "javascript:;" : menuPath;
+                    <li class="@(menuName == "Welcome" ? "active" : "")">
+                        <a href="@href" class="@(hasChildren ? "parent" : "")" title="@menuName">
+                            <i class="@menuIcon"></i>
+                            <span class="label searchlist">@menuName</span>
+                            @if (hasChildren)
+                            {
+                                <i class="fa-solid fa-chevron-down chev"></i>
                             }
                         </a>
-                        @if (m.Children.Count > 0)
+                        @if (hasChildren)
                         {
-                            <ul class="child_menu">@foreach(var c in m.Children){
-                            <li><a href="@(c.Path == "#" ? "javascript:;" : c.Path)"><span class="searchlist">@c.Name</span></a></li>
+                            <ul class="child_menu">
+                                @foreach (var c in m.Children)
+                                {
+                                    string childName = c.Name;
+                                    string childPath = c.Path;
+                                    string childHref = (string.IsNullOrEmpty(childPath) || childPath == "#") ? "javascript:;" : childPath;
+                                    <li><a href="@childHref"><span class="searchlist">@childName</span></a></li>
+                                }
+                            </ul>
                         }
-    </ul>
-                    }
-                </li>
-                                }
-                                }
-                                else
-                {
-                    <li><a href="/Home/Welcome"><i class="fa fa-house"></i><span class="searchlist">Welcome</span></a></li>
+                    </li>
                 }
-            </ul>
+            }
+            else
+            {
+                <li class="active"><a href="/Home/Welcome" title="Welcome"><i class="fa-solid fa-house"></i><span class="label searchlist">Welcome</span></a></li>
+                <li>
+                    <a href="javascript:;" class="parent" title="Security"><i class="fa-solid fa-lock"></i><span class="label searchlist">Security</span><i class="fa-solid fa-chevron-down chev"></i></a>
+                    <ul class="child_menu"><li><a href="#"><span class="searchlist">Users</span></a></li></ul>
+                </li>
+                <li>
+                    <a href="javascript:;" class="parent" title="Setup Forms"><i class="fa-solid fa-sliders"></i><span class="label searchlist">Setup Forms</span><i class="fa-solid fa-chevron-down chev"></i></a>
+                    <ul class="child_menu"><li><a href="#"><span class="searchlist">Companies</span></a></li></ul>
+                </li>
+            }
+        </ul>
+    </aside>
+
+    <main class="bit-main" id="dvmain">
+        <div id="PageDisplay" class="bit-content">
+            @RenderBody()
         </div>
-        <div class="bit-main" id="dvmain">
-            <div id="div_message" class="alert alert-warning" style="display:none;"></div>
-            <div id="PageDisplay" class="bit-content">@RenderBody()</div>
-        </div>
-    </div>
+    </main>
+
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        function toggleBitMenu(el){var li=el.closest('li');var ch=li.querySelector('ul.child_menu');if(ch){ch.style.display=ch.style.display==='block'?'none':'block';li.classList.toggle('active');}}
-        $("#navbar").on("click","li > a.parent",function(e){e.preventDefault();toggleBitMenu(this);});
-        $("#txtMenuSearch").on("keyup input",function(){var q=$(this).val().toLowerCase().trim();if(!q){$("#navbar > li").show();$(".child_menu").hide();return;} $("#navbar > li").each(function(){var rt=$(this).children('a').text().toLowerCase();var has=false;$(this).find('.child_menu li').each(function(){var t=$(this).text().toLowerCase();if(t.indexOf(q)!==-1){$(this).show();has=true;}else{$(this).hide();}});if(rt.indexOf(q)!==-1||has){$(this).show();$(this).find('.child_menu').show();$(this).addClass('active');}else{$(this).hide();}});});
-        $("#profileBtn").on("click",function(e){e.stopPropagation();$("#profileMenu").toggle();}); $(document).on("click",function(){ $("#profileMenu").hide(); });
-        $(document).on('keydown',function(e){if(e.key==='/'&&!$(e.target).is('input,textarea')){e.preventDefault();$("#txtMenuSearch").focus();}});
+        (function () {
+            var body = document.body;
+            var navbar = document.getElementById('navbar');
+            var searchInput = document.getElementById('txtMenuSearch');
+            var toggleBtn = document.getElementById('menu_toggle');
+            var overlay = document.getElementById('sidebarOverlay');
+            var profileWrap = document.getElementById('profileWrap');
+            var profileBtn = document.getElementById('profileBtn');
+            var storeKey = 'bitSidebarCollapsed';
+
+            function isMobile() { return window.matchMedia('(max-width: 900px)').matches; }
+
+            // Sidebar toggle
+            try {
+                if (!isMobile() && localStorage.getItem(storeKey) === '1') {
+                    body.classList.add('sidebar-collapsed');
+                }
+            } catch (e) { }
+
+            function closeMobileSidebar() { body.classList.remove('sidebar-open'); }
+
+            toggleBtn.addEventListener('click', function (e) {
+                e.stopPropagation();
+                if (isMobile()) {
+                    body.classList.toggle('sidebar-open');
+                } else {
+                    var collapsed = body.classList.toggle('sidebar-collapsed');
+                    try { localStorage.setItem(storeKey, collapsed ? '1' : '0'); } catch (err) { }
+                }
+            });
+
+            overlay.addEventListener('click', closeMobileSidebar);
+
+            window.addEventListener('resize', function () {
+                if (!isMobile()) { closeMobileSidebar(); }
+            });
+
+            // Parent menu expand / collapse
+            navbar.addEventListener('click', function (e) {
+                var a = e.target.closest('a.parent');
+                if (!a) return;
+                e.preventDefault();
+
+                if (!isMobile() && body.classList.contains('sidebar-collapsed')) {
+                    body.classList.remove('sidebar-collapsed');
+                    try { localStorage.setItem(storeKey, '0'); } catch (err) { }
+                }
+
+                var li = a.parentElement;
+                li.classList.toggle('open');
+            });
+
+            // Search
+            function resetMenu() {
+                navbar.querySelectorAll('li').forEach(function (li) {
+                    li.classList.remove('hide');
+                    li.classList.remove('open');
+                });
+            }
+
+            function filterMenu(q) {
+                navbar.querySelectorAll(':scope > li').forEach(function (li) {
+                    var label = li.querySelector(':scope > a .searchlist');
+                    var parentMatch = label && label.textContent.toLowerCase().indexOf(q) !== -1;
+                    var children = li.querySelectorAll('.child_menu li');
+                    var childMatch = false;
+
+                    children.forEach(function (c) {
+                        var hit = c.textContent.toLowerCase().indexOf(q) !== -1;
+                        if (parentMatch) {
+                            c.classList.remove('hide');
+                        } else {
+                            c.classList.toggle('hide', !hit);
+                        }
+                        if (hit) childMatch = true;
+                    });
+
+                    if (parentMatch || childMatch) {
+                        li.classList.remove('hide');
+                        li.classList.toggle('open', children.length > 0 && (childMatch || parentMatch));
+                    } else {
+                        li.classList.add('hide');
+                        li.classList.remove('open');
+                    }
+                });
+            }
+
+            searchInput.addEventListener('input', function () {
+                var q = this.value.toLowerCase().trim();
+                if (!q) { resetMenu(); return; }
+                if (!isMobile() && body.classList.contains('sidebar-collapsed')) {
+                    body.classList.remove('sidebar-collapsed');
+                }
+                filterMenu(q);
+            });
+
+            searchInput.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape') {
+                    this.value = '';
+                    resetMenu();
+                    this.blur();
+                }
+            });
+
+            // Profile dropdown
+            profileBtn.addEventListener('click', function (e) {
+                e.stopPropagation();
+                var open = profileWrap.classList.toggle('open');
+                profileBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+            });
+
+            document.addEventListener('click', function (e) {
+                if (!profileWrap.contains(e.target)) {
+                    profileWrap.classList.remove('open');
+                    profileBtn.setAttribute('aria-expanded', 'false');
+                }
+            });
+
+            // Keyboard shortcuts
+            document.addEventListener('keydown', function (e) {
+                var el = document.activeElement;
+                var tag = el ? el.tagName : '';
+                var typing = tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT' || (el && el.isContentEditable);
+
+                if (e.key === '/' && !typing && !e.ctrlKey && !e.metaKey && !e.altKey) {
+                    e.preventDefault();
+                    if (isMobile()) { body.classList.add('sidebar-open'); }
+                    searchInput.focus();
+                }
+
+                if (e.key === 'Escape') {
+                    profileWrap.classList.remove('open');
+                    closeMobileSidebar();
+                }
+            });
+        })();
     </script>
     @RenderSection("Scripts", required: false)
 </body>

@@ -1,8 +1,9 @@
-﻿using Microsoft.AspNetCore.Authentication.Cookies;
-using System.Globalization;
-using FnI.Core.Web.HttpApplicationState;
-using Common.Globalization;
+﻿using Common.Globalization;
 using DAL.DataAccessLayer;
+using ERP.Filters;
+using FnI.Core.Web.HttpApplicationState;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using System.Globalization;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,7 +14,7 @@ builder.Services.AddDistributedMemoryCache();
 builder.Services.AddHttpContextAccessor();
 
 // 3. MVC
-builder.Services.AddControllersWithViews();
+builder.Services.AddControllersWithViews(o => o.Filters.Add<MainMenuFilter>());
 builder.Services.AddRazorPages();
 
 // 4. Session - Old Session_Start / Session_End ka Core replacement

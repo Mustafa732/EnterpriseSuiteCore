@@ -1,390 +1,1288 @@
+@using Microsoft.AspNetCore.Http
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    var pageTitle = ViewData["Title"]?.ToString() ?? "Dashboard";
+    var pageSubtitle = ViewData["Subtitle"]?.ToString();
+    var userName = User.Identity?.Name ?? "User";
+    var initial = userName.Length > 0 ? userName.Substring(0, 1).ToUpper() : "U";
+    var companyName = "Select Company";
+    var periodName = "";
+    var userIp = "";
+    try
+    {
+        companyName = Context.Session.GetString("CompanyName") ?? companyName;
+        periodName = Context.Session.GetString("PeriodName") ?? "";
+        userIp = Context.Session.GetString("CurrentUserIP") ?? "";
+    }
+    catch { }
+
+    var version = System.Reflection.Assembly.GetEntryAssembly()?.GetName().Version?.ToString(3) ?? "1.0.0";
+
+    var notes = new List<(string Title, string Time, string Url)>();
+    try
+    {
+        if (ViewBag.Notifications != null)
+        {
+            foreach (var n in (IEnumerable<dynamic>)ViewBag.Notifications)
+            {
+                notes.Add(((string)n.Title, (string)n.Time, (string)n.Url));
+            }
+        }
+    }
+    catch { }
+    int noteCount = notes.Count;
+    try { if (ViewBag.NotificationCount != null) { noteCount = (int)ViewBag.NotificationCount; } } catch { }
+
+    var menus = new List<MenuNode>();
+    try
+    {
+        object src = ViewBag.MainMenus;
+        if (src == null) { src = ViewBag.SideMenus; }
+        if (src is System.Collections.IEnumerable srcList && !(src is string))
+        {
+            foreach (var item in srcList)
+            {
+                var node = ToNode(item, 0);
+                if (node != null) { menus.Add(node); }
+            }
+        }
+    }
+    catch { }
+
+    var menuBuilder = new System.Text.StringBuilder();
+    foreach (var m in menus) { BuildMenu(menuBuilder, m, true); }
+    if (menuBuilder.Length == 0)
+    {
+        menuBuilder.Append("<li><a href=\"/Home/Index\" title=\"Dashboard\"><i class=\"fa-solid fa-gauge-high\"></i><span class=\"label searchlist\">Dashboard</span></a></li>");
+    }
+    var menuHtml = menuBuilder.ToString();
+}
+@functions {
+    class MenuNode
+    {
+        public string Name = "";
+        public string Path = "";
+        public string Icon = "";
+        public List<MenuNode> Children = new List<MenuNode>();
+    }
+
+    static object Prop(object o, string name)
+    {
+        try { return o?.GetType().GetProperty(name)?.GetValue(o); } catch { return null; }
+    }
+
+    static string E(string s) { return System.Net.WebUtility.HtmlEncode(s ?? ""); }
+
+    static MenuNode ToNode(object o, int depth)
+    {
+        if (o == null || depth > 8) return null;
+        var node = new MenuNode
+        {
+            Name = Prop(o, "Name")?.ToString() ?? "",
+            Path = Prop(o, "Path")?.ToString() ?? "",
+            Icon = Prop(o, "Icon")?.ToString() ?? ""
+        };
+        if (node.Name.Length == 0) return null;
+        var kids = Prop(o, "Children");
+        if (kids is System.Collections.IEnumerable kidList && !(kids is string))
+        {
+            foreach (var k in kidList)
+            {
+                var child = ToNode(k, depth + 1);
+                if (child != null) { node.Children.Add(child); }
+            }
+        }
+        return node;
+    }
+
+    static string IconFor(MenuNode n)
+    {
+        var icon = (n.Icon ?? "").Trim();
+        if (icon.Length > 0 && !icon.Contains("wpforms")) return icon;
+        var k = n.Name.ToLower();
+        if (k.Contains("dashboard")) return "fa-solid fa-gauge-high";
+        if (k.Contains("setup")) return "fa-solid fa-gears";
+        if (k.Contains("ledger") || k.Contains("ladger")) return "fa-solid fa-book";
+        if (k.Contains("inventory")) return "fa-solid fa-cubes";
+        if (k.Contains("report")) return "fa-solid fa-file-lines";
+        if (k.Contains("account")) return "fa-solid fa-calculator";
+        if (k.Contains("sale")) return "fa-solid fa-cart-shopping";
+        if (k.Contains("purchase")) return "fa-solid fa-bag-shopping";
+        if (k.Contains("hr") || k.Contains("payroll") || k.Contains("employee")) return "fa-solid fa-users";
+        return "fa-solid fa-folder";
+    }
+
+    static void BuildMenu(System.Text.StringBuilder sb, MenuNode n, bool top)
+    {
+        bool has = n.Children.Count > 0;
+        string href = (string.IsNullOrEmpty(n.Path) || n.Path == "#") ? "javascript:;" : n.Path;
+        sb.Append("<li><a href=\"").Append(E(href)).Append("\" class=\"").Append(has ? "parent" : "")
+          .Append("\" title=\"").Append(E(n.Name)).Append("\">");
+        if (top) { sb.Append("<i class=\"").Append(E(IconFor(n))).Append("\"></i>"); }
+        sb.Append("<span class=\"").Append(top ? "label searchlist" : "searchlist").Append("\">").Append(E(n.Name)).Append("</span>");
+        if (has) { sb.Append("<i class=\"fa-solid fa-chevron-down chev\"></i>"); }
+        sb.Append("</a>");
+        if (has)
+        {
+            sb.Append("<ul class=\"child_menu\">");
+            foreach (var c in n.Children) { BuildMenu(sb, c, false); }
+            sb.Append("</ul>");
+        }
+        sb.Append("</li>");
+    }
+}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>@ViewData["Title"] - BITWARE ERP</title>
-    <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+    <title>@pageTitle - BITWARE ERP</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <style>
-        :root {
-            --bit-teal: #0E7A8A;
-            --bit-teal-deep: #0A5F6B;
-            --bit-teal-soft: #E6F0F1;
-            --bit-paper: #F8F7F4;
-            --bit-surface: #FFFFFF;
-            --bit-ink: #1A1D23;
-            --bit-ink-soft: #5A5F6A;
-            --bit-line: #E8E6E1;
-            --bit-sidebar: #111318;
-            --bit-sidebar-2: #1C1F26;
-        }
 
-        * {
-            font-family: 'Instrument Sans',system-ui,sans-serif;
-            -webkit-font-smoothing: antialiased;
-        }
+    <script>
+        window.BitTheme = (function () {
+            var KEY = 'bitTheme';
+            var DEFAULT = { primary: '#0E7A8A', sidebar: '#111318', dark: false, preset: 'teal' };
+            var PRESETS = [
+                { id: 'teal', name: 'Default Teal', primary: '#0E7A8A', sidebar: '#111318', dark: false },
+                { id: 'purple', name: 'Odoo Purple', primary: '#714B67', sidebar: '#2B1A27', dark: false },
+                { id: 'blue', name: 'ERPNext Blue', primary: '#1677FF', sidebar: '#0F172A', dark: false },
+                { id: 'dark', name: 'Dark Mode', primary: '#2F81F7', sidebar: '#111318', dark: true },
+                { id: 'green', name: 'Green', primary: '#16A34A', sidebar: '#0F1F17', dark: false },
+                { id: 'orange', name: 'Orange', primary: '#EA580C', sidebar: '#1F140D', dark: false }
+            ];
 
-        body {
-            background: var(--bit-paper);
-            margin: 0;
-            color: var(--bit-ink);
-            overflow-x: hidden;
-        }
-
-        /* TOPBAR - Old dvtop + topnav */
-        .bit-topbar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 64px;
-            background: var(--bit-surface);
-            border-bottom: 1px solid var(--bit-line);
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0 20px;
-            z-index: 1050;
-        }
-
-        .bit-brand {
-            display: flex;
-            align-items: center;
-            gap: 14px;
-            text-decoration: none;
-        }
-
-            .bit-brand b {
-                font-size: 18px;
-                letter-spacing: -0.02em;
-                color: var(--bit-ink);
+            function rgb(hex) {
+                hex = hex.replace('#', '');
+                if (hex.length === 3) hex = hex.split('').map(function (c) { return c + c; }).join('');
+                var n = parseInt(hex, 16);
+                return [(n >> 16) & 255, (n >> 8) & 255, n & 255];
             }
 
-                .bit-brand b span {
-                    color: var(--bit-teal);
+            function luminance(hex) {
+                var c = rgb(hex).map(function (v) {
+                    v = v / 255;
+                    return v <= 0.03928 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4);
+                });
+                return 0.2126 * c[0] + 0.7152 * c[1] + 0.0722 * c[2];
+            }
+
+            function valid(h) { return /^#[0-9a-f]{6}$/i.test(h || ''); }
+
+            function apply(t) {
+                var root = document.documentElement;
+                root.style.setProperty('--primary', t.primary);
+                root.style.setProperty('--sidebar-bg', t.sidebar);
+                root.style.setProperty('--on-primary', luminance(t.primary) > 0.5 ? '#111318' : '#FFFFFF');
+
+                if (luminance(t.sidebar) > 0.45) {
+                    root.style.setProperty('--sb-text', '#4B5563');
+                    root.style.setProperty('--sb-strong', '#111318');
+                    root.style.setProperty('--sb-muted', '#9CA3AF');
+                    root.style.setProperty('--sb-hover', 'rgba(0,0,0,.05)');
+                    root.style.setProperty('--sb-line', 'rgba(0,0,0,.1)');
+                    root.style.setProperty('--sb-input', 'rgba(0,0,0,.05)');
+                } else {
+                    root.style.setProperty('--sb-text', '#B4B9C4');
+                    root.style.setProperty('--sb-strong', '#FFFFFF');
+                    root.style.setProperty('--sb-muted', '#6C7280');
+                    root.style.setProperty('--sb-hover', 'rgba(255,255,255,.07)');
+                    root.style.setProperty('--sb-line', 'rgba(255,255,255,.1)');
+                    root.style.setProperty('--sb-input', 'rgba(255,255,255,.07)');
                 }
 
-            .bit-brand small {
-                display: block;
-                font-size: 9px;
-                letter-spacing: 0.15em;
-                font-weight: 700;
-                color: var(--bit-ink-soft);
+                if (t.dark) { root.setAttribute('data-theme', 'dark'); } else { root.removeAttribute('data-theme'); }
             }
 
-        .bit-company {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            border-left: 1px solid var(--bit-line);
-            padding-left: 14px;
-            margin-left: 10px;
-            font-size: 12px;
-            color: var(--bit-ink-soft);
+            function load() {
+                try {
+                    var t = JSON.parse(localStorage.getItem(KEY) || 'null');
+                    if (t && valid(t.primary) && valid(t.sidebar)) {
+                        return { primary: t.primary, sidebar: t.sidebar, dark: !!t.dark, preset: t.preset || 'custom' };
+                    }
+                } catch (e) { }
+                return { primary: DEFAULT.primary, sidebar: DEFAULT.sidebar, dark: DEFAULT.dark, preset: DEFAULT.preset };
+            }
+
+            function save(t) {
+                try { localStorage.setItem(KEY, JSON.stringify(t)); } catch (e) { }
+            }
+
+            function reset() {
+                try { localStorage.removeItem(KEY); } catch (e) { }
+                var t = { primary: DEFAULT.primary, sidebar: DEFAULT.sidebar, dark: DEFAULT.dark, preset: DEFAULT.preset };
+                apply(t);
+                return t;
+            }
+
+            apply(load());
+
+            return { presets: PRESETS, load: load, save: save, apply: apply, reset: reset, valid: valid };
+        })();
+    </script>
+
+    <style>
+        :root {
+            --primary: #0E7A8A;
+            --sidebar-bg: #111318;
+            --paper: #F8F7F4;
+            --line: #E8E6E1;
+            --radius: 14px;
+
+            --surface: #FFFFFF;
+            --ink: #1B1D22;
+            --muted: #6B7280;
+            --on-primary: #FFFFFF;
+            --shadow: 0 1px 2px rgba(17, 19, 24, .04), 0 8px 24px rgba(17, 19, 24, .05);
+
+            --sb-text: #B4B9C4;
+            --sb-strong: #FFFFFF;
+            --sb-muted: #6C7280;
+            --sb-hover: rgba(255, 255, 255, .07);
+            --sb-line: rgba(255, 255, 255, .1);
+            --sb-input: rgba(255, 255, 255, .07);
+
+            --sidebar-w: 260px;
+            --sidebar-w-mini: 70px;
+            --topbar-h: 64px;
+            --ease: cubic-bezier(.4, 0, .2, 1);
         }
 
-            .bit-company .dot {
-                width: 7px;
-                height: 7px;
-                background: var(--bit-teal);
-                border-radius: 50%;
-                box-shadow: 0 0 0 4px var(--bit-teal-soft);
-            }
+        html[data-theme="dark"] {
+            --paper: #0E1014;
+            --surface: #171A20;
+            --line: #262B34;
+            --ink: #E8EAED;
+            --muted: #8B93A1;
+            --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 8px 24px rgba(0, 0, 0, .3);
+            color-scheme: dark;
+        }
 
-        .bit-search {
+        * { box-sizing: border-box; }
+
+        html, body { margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Instrument Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+            background: var(--paper);
+            color: var(--ink);
+            font-size: 14px;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+            transition: background .25s var(--ease), color .25s var(--ease);
+        }
+
+        a { text-decoration: none; color: var(--primary); }
+        ul { list-style: none; margin: 0; padding: 0; }
+
+        /* Topbar */
+        .bit-topbar {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            height: var(--topbar-h);
+            background: var(--surface);
+            border-bottom: 1px solid var(--line);
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 0 20px;
+            z-index: 1100;
+            transition: background .25s var(--ease), border-color .25s var(--ease);
+        }
+
+        .bit-left { display: flex; align-items: center; gap: 12px; min-width: 0; }
+        .bit-right { display: flex; align-items: center; gap: 6px; margin-left: auto; }
+
+        .bit-icon-btn {
             position: relative;
-            display: flex;
-            align-items: center;
-            background: var(--bit-paper);
-            border: 1px solid var(--bit-line);
-            border-radius: 999px;
+            width: 40px; height: 40px;
+            display: inline-flex; align-items: center; justify-content: center;
+            border: 0; background: transparent;
+            border-radius: 10px;
+            color: var(--ink);
+            font-size: 16px;
+            cursor: pointer;
+            transition: background .2s var(--ease), color .2s var(--ease);
+        }
+
+        .bit-icon-btn:hover,
+        .bit-pop.open > .bit-icon-btn { background: color-mix(in srgb, var(--primary) 12%, transparent); color: var(--primary); }
+
+        .bit-badge {
+            position: absolute;
+            top: 6px; right: 5px;
+            min-width: 17px; height: 17px;
+            padding: 0 4px;
+            border-radius: 9px;
+            background: #EF4444;
+            color: #fff;
+            font-size: 10px; font-weight: 700;
+            display: flex; align-items: center; justify-content: center;
+            border: 2px solid var(--surface);
+        }
+
+        .bit-brand { display: flex; align-items: center; gap: 10px; min-width: 0; }
+
+        .bit-logo {
+            width: 36px; height: 36px;
+            flex-shrink: 0;
+            border-radius: 10px;
+            background: var(--primary);
+            color: var(--on-primary);
+            display: flex; align-items: center; justify-content: center;
+            font-weight: 700; font-size: 17px;
+            transition: background .25s var(--ease);
+        }
+
+        .bit-company { min-width: 0; line-height: 1.2; }
+        .bit-company b { display: block; font-size: 14px; font-weight: 700; color: var(--ink); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 260px; }
+        .bit-company small { display: block; font-size: 11px; color: var(--muted); margin-top: 2px; }
+        .bit-company small i { color: var(--primary); margin-right: 4px; }
+
+        /* Global search */
+        .bit-gsearch { position: relative; flex: 1; max-width: 520px; margin: 0 auto; }
+
+        .bit-gsearch-box {
+            display: flex; align-items: center;
+            height: 40px;
             padding: 0 14px;
-            height: 40px;
-            width: 380px;
-            transition: all .25s;
+            background: var(--paper);
+            border: 1px solid var(--line);
+            border-radius: 12px;
+            transition: border-color .2s var(--ease), box-shadow .2s var(--ease), background .2s var(--ease);
         }
 
-            .bit-search:focus-within {
-                border-color: var(--bit-ink);
-                background: var(--bit-surface);
-                box-shadow: 0 0 0 4px var(--bit-teal-soft);
-            }
+        .bit-gsearch-box i { color: var(--muted); font-size: 13px; margin-right: 10px; }
 
-            .bit-search input {
-                border: none;
-                background: transparent;
-                outline: none;
-                width: 100%;
-                font-size: 13px;
-            }
-
-        .bit-actions {
-            display: flex;
-            align-items: center;
-            gap: 10px;
+        .bit-gsearch-box input {
+            flex: 1; min-width: 0;
+            border: 0; outline: 0; background: transparent;
+            font-family: inherit; font-size: 13px; color: var(--ink);
         }
 
-        .bit-icon {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            border: 1px solid var(--bit-line);
-            background: var(--bit-surface);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--bit-ink-soft);
+        .bit-gsearch-box kbd {
+            font-family: inherit; font-size: 11px; font-weight: 600;
+            color: var(--muted);
+            background: var(--surface);
+            border: 1px solid var(--line);
+            border-radius: 6px;
+            padding: 1px 7px;
+        }
+
+        .bit-gsearch-box:focus-within {
+            background: var(--surface);
+            border-color: var(--primary);
+            box-shadow: 0 0 0 4px color-mix(in srgb, var(--primary) 14%, transparent);
+        }
+
+        .bit-gsearch-box:focus-within kbd { display: none; }
+
+        .bit-results {
+            position: absolute;
+            top: 48px; left: 0; right: 0;
+            max-height: 380px;
+            overflow-y: auto;
+            background: var(--surface);
+            border: 1px solid var(--line);
+            border-radius: 12px;
+            box-shadow: 0 16px 40px rgba(17, 19, 24, .14);
+            padding: 6px;
+            display: none;
+        }
+
+        .bit-results.show { display: block; }
+
+        .bit-result {
+            display: flex; align-items: center; gap: 12px;
+            padding: 9px 10px;
+            border-radius: 8px;
+            color: var(--ink);
             cursor: pointer;
         }
 
-        .bit-user {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            padding-left: 12px;
-            border-left: 1px solid var(--bit-line);
+        .bit-result i { width: 30px; height: 30px; border-radius: 8px; display: flex; align-items: center; justify-content: center; background: color-mix(in srgb, var(--primary) 12%, transparent); color: var(--primary); font-size: 13px; flex-shrink: 0; }
+        .bit-result b { display: block; font-size: 13px; font-weight: 600; }
+        .bit-result small { display: block; font-size: 11.5px; color: var(--muted); }
+        .bit-result:hover, .bit-result.sel { background: var(--paper); color: var(--ink); }
+        .bit-empty { padding: 16px; text-align: center; color: var(--muted); font-size: 13px; }
+
+        /* Popovers */
+        .bit-pop { position: relative; }
+
+        .bit-panel {
+            position: fixed;
+            top: calc(var(--topbar-h) + 8px);
+            right: 16px;
+            width: min(340px, calc(100vw - 24px));
+            background: var(--surface);
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            box-shadow: 0 18px 48px rgba(17, 19, 24, .16);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-8px);
+            transition: opacity .2s var(--ease), transform .2s var(--ease), visibility .2s;
+            z-index: 1200;
         }
+
+        .bit-pop.open > .bit-panel { opacity: 1; visibility: visible; transform: translateY(0); }
+
+        .bit-panel-head { padding: 14px 16px; border-bottom: 1px solid var(--line); font-weight: 600; font-size: 14px; display: flex; align-items: center; justify-content: space-between; }
+        .bit-panel-head small { font-weight: 500; color: var(--muted); font-size: 12px; }
+        .bit-panel-body { padding: 14px 16px; }
+
+        /* Notifications */
+        .bit-note { display: block; padding: 11px 16px; border-bottom: 1px solid var(--line); color: var(--ink); transition: background .15s var(--ease); }
+        .bit-note:last-child { border-bottom: 0; }
+        .bit-note:hover { background: var(--paper); color: var(--ink); }
+        .bit-note b { display: block; font-size: 13px; font-weight: 600; }
+        .bit-note small { color: var(--muted); font-size: 11.5px; }
+        .bit-note-empty { padding: 28px 16px; text-align: center; color: var(--muted); }
+        .bit-note-empty i { display: block; font-size: 26px; margin-bottom: 8px; opacity: .5; }
+
+        /* Profile */
+        .bit-user { display: flex; align-items: center; gap: 10px; padding: 4px 6px 4px 4px; border: 0; background: transparent; border-radius: 12px; cursor: pointer; font-family: inherit; color: var(--ink); transition: background .2s var(--ease); }
+        .bit-user:hover, .bit-pop.open > .bit-user { background: color-mix(in srgb, var(--primary) 10%, transparent); }
 
         .bit-avatar {
-            width: 32px;
-            height: 32px;
+            width: 36px; height: 36px;
             border-radius: 50%;
-            background: var(--bit-ink);
-            color: #fff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 12px;
-            font-weight: 600;
+            background: var(--primary);
+            color: var(--on-primary);
+            display: flex; align-items: center; justify-content: center;
+            font-weight: 600; font-size: 14px;
         }
 
-        /* LAYOUT */
-        .bit-layout {
-            display: flex;
-            padding-top: 64px;
+        .bit-user-text { text-align: left; line-height: 1.15; }
+        .bit-user-text b { display: block; font-size: 12.5px; font-weight: 600; }
+        .bit-user-text small { display: block; font-size: 10.5px; color: var(--muted); }
+
+        .bit-menu-list { padding: 6px; }
+
+        .bit-menu-list a,
+        .bit-menu-list button {
+            display: flex; align-items: center; gap: 10px;
+            width: 100%;
+            padding: 10px 12px;
+            border: 0; background: transparent;
+            border-radius: 8px;
+            font-family: inherit; font-size: 13px; color: var(--ink);
+            text-align: left;
+            cursor: pointer;
+            transition: background .15s var(--ease), color .15s var(--ease);
         }
 
+        .bit-menu-list a:hover { background: var(--paper); color: var(--ink); }
+        .bit-menu-list button:hover { background: rgba(239, 68, 68, .1); color: #DC2626; }
+        .bit-menu-list i { width: 16px; text-align: center; color: var(--muted); }
+        .bit-menu-list button:hover i { color: #DC2626; }
+        .bit-menu-list form { margin: 0; }
+
+        /* Theme customizer */
+        .bit-label { font-size: 11px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin-bottom: 10px; }
+
+        .bit-presets { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 18px; }
+
+        .bit-preset {
+            display: flex; flex-direction: column; align-items: center; gap: 7px;
+            padding: 10px 4px;
+            border: 1.5px solid var(--line);
+            border-radius: 12px;
+            background: transparent;
+            color: var(--ink);
+            font-family: inherit; font-size: 11px; font-weight: 500;
+            cursor: pointer;
+            transition: transform .2s var(--ease), border-color .2s var(--ease), box-shadow .2s var(--ease);
+        }
+
+        .bit-preset:hover { transform: translateY(-2px); border-color: var(--primary); }
+        .bit-preset.active { border-color: var(--primary); box-shadow: 0 0 0 3px color-mix(in srgb, var(--primary) 18%, transparent); }
+        .bit-preset span { width: 34px; height: 34px; border-radius: 50%; border: 2px solid var(--surface); box-shadow: 0 0 0 1px var(--line); }
+
+        .bit-color-row { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+        .bit-color-row label { flex: 1; font-size: 13px; font-weight: 500; }
+        .bit-color-row input[type="color"] { width: 38px; height: 34px; padding: 2px; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); cursor: pointer; }
+        .bit-color-row input[type="text"] { width: 88px; height: 34px; padding: 0 8px; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); color: var(--ink); font-family: inherit; font-size: 12px; text-transform: uppercase; outline: 0; }
+        .bit-color-row input[type="text"]:focus { border-color: var(--primary); }
+
+        .bit-switch-row { display: flex; align-items: center; justify-content: space-between; padding: 12px 0 4px; font-size: 13px; font-weight: 500; }
+
+        .bit-switch { position: relative; width: 42px; height: 24px; }
+        .bit-switch input { display: none; }
+        .bit-switch span { position: absolute; inset: 0; border-radius: 12px; background: var(--line); cursor: pointer; transition: background .25s var(--ease); }
+        .bit-switch span::before { content: ""; position: absolute; width: 18px; height: 18px; left: 3px; top: 3px; border-radius: 50%; background: #fff; box-shadow: 0 1px 3px rgba(0, 0, 0, .3); transition: transform .25s var(--ease); }
+        .bit-switch input:checked + span { background: var(--primary); }
+        .bit-switch input:checked + span::before { transform: translateX(18px); }
+
+        .bit-reset { width: 100%; margin-top: 14px; padding: 10px; border: 1px solid var(--line); border-radius: 10px; background: transparent; color: var(--ink); font-family: inherit; font-size: 13px; font-weight: 500; cursor: pointer; transition: background .2s var(--ease), border-color .2s var(--ease); }
+        .bit-reset:hover { background: var(--paper); border-color: var(--primary); }
+
+        /* Sidebar */
         .bit-sidebar {
-            width: 280px;
-            min-width: 280px;
-            background: var(--bit-sidebar);
-            min-height: calc(100vh - 64px);
-            position: sticky;
-            top: 64px;
-            padding: 18px 12px;
-            transition: transform .35s cubic-bezier(.16,1,.3,1);
-            overflow-y: auto;
-        }
-
-            .bit-sidebar .menu-label {
-                color: #6B7280;
-                font-size: 10px;
-                font-weight: 700;
-                letter-spacing: 0.12em;
-                text-transform: uppercase;
-                padding: 18px 12px 8px;
-            }
-
-        #navbar, #oldnavbarmenu {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-            #navbar > li > a {
-                display: flex;
-                align-items: center;
-                gap: 12px;
-                padding: 10px 12px;
-                border-radius: 10px;
-                color: #9CA3AF;
-                font-size: 13.5px;
-                font-weight: 500;
-                text-decoration: none;
-                transition: all .2s;
-                border: 1px solid transparent;
-            }
-
-                #navbar > li > a:hover {
-                    background: var(--bit-sidebar-2);
-                    color: #E5E7EB;
-                    border-color: #2A2E38;
-                }
-
-            #navbar > li.active > a {
-                background: var(--bit-surface);
-                color: var(--bit-ink);
-                font-weight: 600;
-            }
-
-            #navbar .child_menu {
-                list-style: none;
-                background: transparent;
-                border: none;
-                padding-left: 28px;
-                margin: 4px 0 8px;
-                display: none;
-            }
-
-                #navbar .child_menu li a {
-                    padding: 7px 12px;
-                    font-size: 12.5px;
-                    color: #6B7280;
-                    border-left: 1px solid #252932;
-                    border-radius: 0 8px 8px 0;
-                    margin-left: 8px;
-                    display: block;
-                    text-decoration: none;
-                }
-
-                    #navbar .child_menu li a:hover {
-                        color: #E5E7EB;
-                        border-left-color: var(--bit-teal);
-                        background: rgba(255,255,255,0.03);
-                    }
-
-            #navbar .fa-chevron-down {
-                margin-left: auto;
-                font-size: 10px;
-                opacity: 0.5;
-                transition: transform .2s;
-            }
-
-            #navbar li.active .fa-chevron-down {
-                transform: rotate(180deg);
-            }
-
-        .bit-main {
-            flex: 1;
-            min-width: 0;
-            padding: 24px;
-            background: var(--bit-paper);
-        }
-
-        .bit-pagehead {
-            background: var(--bit-surface);
-            border: 1px solid var(--bit-line);
-            border-radius: 16px;
-            padding: 18px 20px;
+            position: fixed;
+            top: var(--topbar-h); left: 0; bottom: 0;
+            width: var(--sidebar-w);
+            background: var(--sidebar-bg);
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 18px;
+            flex-direction: column;
+            padding: 14px 12px;
+            overflow-y: auto;
+            overflow-x: hidden;
+            z-index: 1000;
+            transition: width .3s var(--ease), transform .3s var(--ease), background .25s var(--ease);
         }
 
-            .bit-pagehead h1 {
-                font-size: 15px;
-                font-weight: 600;
-                margin: 0;
-            }
+        .bit-sidebar::-webkit-scrollbar { width: 6px; }
+        .bit-sidebar::-webkit-scrollbar-thumb { background: var(--sb-line); border-radius: 6px; }
 
-            .bit-pagehead p {
-                font-size: 12px;
-                color: var(--bit-ink-soft);
-                margin: 2px 0 0;
-            }
+        .sb-search { position: relative; margin-bottom: 14px; flex-shrink: 0; }
+        .sb-search > i { position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: var(--sb-muted); font-size: 12px; pointer-events: none; }
 
-        .bit-content {
-            background: var(--bit-surface);
-            border: 1px solid var(--bit-line);
-            border-radius: 16px;
-            padding: 20px;
-            box-shadow: 0 1px 0 rgba(0,0,0,0.03);
-            min-height: calc(100vh - 200px);
+        .sb-search input {
+            width: 100%;
+            height: 38px;
+            padding: 0 32px 0 34px;
+            border: 1px solid transparent;
+            border-radius: 10px;
+            background: var(--sb-input);
+            color: var(--sb-strong);
+            font-family: inherit; font-size: 13px;
+            outline: 0;
+            transition: border-color .2s var(--ease), background .2s var(--ease);
+        }
+
+        .sb-search input::placeholder { color: var(--sb-muted); }
+        .sb-search input:focus { border-color: var(--primary); }
+
+        .sb-clear { position: absolute; right: 6px; top: 50%; transform: translateY(-50%); width: 24px; height: 24px; border: 0; border-radius: 6px; background: transparent; color: var(--sb-muted); cursor: pointer; display: none; font-size: 11px; }
+        .sb-clear:hover { color: var(--sb-strong); background: var(--sb-hover); }
+        .sb-clear.show { display: block; }
+
+        .menu-label { color: var(--sb-muted); font-size: 10.5px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; padding: 4px 12px 10px; white-space: nowrap; }
+
+        #navbar > li { margin-bottom: 6px; }
+
+        #navbar > li > a {
+            display: flex; align-items: center; gap: 12px;
+            padding: 10px 12px;
+            border-radius: 10px;
+            color: var(--sb-text);
+            font-size: 13.5px; font-weight: 500;
+            white-space: nowrap;
+            transition: background .2s var(--ease), color .2s var(--ease), transform .2s var(--ease);
+        }
+
+        #navbar > li > a > i:first-child { width: 20px; text-align: center; font-size: 15px; flex-shrink: 0; }
+        #navbar > li > a .label { flex: 1; overflow: hidden; text-overflow: ellipsis; }
+        #navbar > li > a .chev { font-size: 10px; transition: transform .25s var(--ease); }
+
+        #navbar > li > a:hover { background: var(--sb-hover); color: var(--sb-strong); transform: translateX(3px); }
+
+        #navbar > li.open > a { color: var(--sb-strong); }
+        #navbar > li.open > a .chev { transform: rotate(180deg); }
+        #navbar > li.active-parent > a { background: var(--sb-hover); color: var(--sb-strong); }
+
+        #navbar > li > a.active-link { background: var(--primary); color: var(--on-primary); font-weight: 600; }
+        #navbar > li > a.active-link:hover { background: var(--primary); color: var(--on-primary); }
+
+        .child_menu {
+            max-height: 0;
+            overflow: hidden;
+            margin-left: 21px;
+            padding-left: 10px;
+            border-left: 1px solid var(--sb-line);
+            transition: max-height .3s var(--ease);
+        }
+
+        li.open > .child_menu { max-height: 6000px; margin-top: 4px; }
+
+        .child_menu li { margin: 2px 0; }
+
+        .child_menu li a {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 8px;
+            padding: 8px 12px;
+            border-radius: 8px;
+            color: var(--sb-text);
+            font-size: 13px;
+            opacity: .85;
+            transition: background .2s var(--ease), color .2s var(--ease), transform .2s var(--ease), opacity .2s var(--ease);
+        }
+
+        .child_menu li a:hover { background: var(--sb-hover); color: var(--sb-strong); opacity: 1; transform: translateX(3px); }
+        .child_menu li a.active-link { background: color-mix(in srgb, var(--primary) 32%, transparent); color: var(--sb-strong); font-weight: 600; opacity: 1; }
+
+        .child_menu .child_menu { margin-left: 12px; }
+        .child_menu li a .chev { font-size: 9px; transition: transform .25s var(--ease); }
+        .child_menu li.open > a .chev { transform: rotate(180deg); }
+        .child_menu li.open > a,
+        .child_menu li.active-parent > a { color: var(--sb-strong); opacity: 1; }
+
+        #navbar li.hide { display: none; }
+        .sb-nomatch { display: none; padding: 14px 12px; color: var(--sb-muted); font-size: 13px; text-align: center; }
+        .sb-nomatch.show { display: block; }
+
+        .sb-bottom { margin-top: auto; padding-top: 12px; border-top: 1px solid var(--sb-line); flex-shrink: 0; }
+        .sb-bottom a { display: flex; align-items: center; gap: 12px; padding: 10px 12px; border-radius: 10px; color: var(--sb-text); font-size: 13px; white-space: nowrap; transition: background .2s var(--ease), color .2s var(--ease); }
+        .sb-bottom a:hover { background: var(--sb-hover); color: var(--sb-strong); }
+        .sb-bottom a i { width: 20px; text-align: center; }
+
+        /* Mini sidebar (desktop) */
+        body.sidebar-mini .bit-sidebar { width: var(--sidebar-w-mini); padding: 14px 10px; }
+        body.sidebar-mini .sb-search,
+        body.sidebar-mini .menu-label,
+        body.sidebar-mini #navbar .label,
+        body.sidebar-mini #navbar .chev,
+        body.sidebar-mini .sb-bottom .label,
+        body.sidebar-mini .child_menu,
+        body.sidebar-mini .sb-nomatch { display: none; }
+        body.sidebar-mini #navbar > li > a,
+        body.sidebar-mini .sb-bottom a { justify-content: center; padding: 12px 0; }
+        body.sidebar-mini #navbar > li > a:hover { transform: none; }
+
+        /* Main */
+        .bit-main {
+            margin-left: var(--sidebar-w);
+            padding-top: var(--topbar-h);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            transition: margin-left .3s var(--ease);
+        }
+
+        body.sidebar-mini .bit-main { margin-left: var(--sidebar-w-mini); }
+
+        .bit-page { flex: 1; padding: 22px 28px 8px; }
+
+        .bit-breadcrumb { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; font-size: 12.5px; color: var(--muted); margin-bottom: 10px; }
+        .bit-breadcrumb a { color: var(--muted); transition: color .2s var(--ease); }
+        .bit-breadcrumb a:hover { color: var(--primary); }
+        .bit-breadcrumb i { font-size: 8px; opacity: .6; }
+        .bit-breadcrumb span:last-child { color: var(--ink); font-weight: 600; }
+
+        .bit-pagehead { display: flex; align-items: flex-end; justify-content: space-between; flex-wrap: wrap; gap: 12px; margin-bottom: 18px; }
+        .bit-pagehead h1 { margin: 0; font-size: 24px; font-weight: 700; letter-spacing: -.01em; }
+        .bit-pagehead p { margin: 4px 0 0; color: var(--muted); font-size: 13px; }
+
+        .bit-card {
+            background: var(--surface);
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            padding: 24px;
+            animation: rise .5s var(--ease) both;
+            transition: background .25s var(--ease), border-color .25s var(--ease), box-shadow .25s var(--ease);
+        }
+
+        .bit-card:hover { box-shadow: 0 2px 4px rgba(17, 19, 24, .05), 0 14px 32px rgba(17, 19, 24, .07); }
+
+        .bit-footer { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; padding: 18px 28px 22px; color: var(--muted); font-size: 12px; }
+        .bit-footer b { color: var(--ink); font-weight: 600; }
+
+        @@keyframes rise {
+            from { opacity: 0; transform: translateY(14px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Form look inside content */
+        .bit-card .form-control,
+        .bit-card .form-select,
+        .bit-card textarea,
+        .bit-card select {
+            border: 1px solid var(--line);
+            border-radius: 10px;
+            background-color: var(--surface);
+            color: var(--ink);
+            transition: border-color .2s var(--ease), box-shadow .2s var(--ease), transform .2s var(--ease);
+        }
+
+        .bit-card .form-control:focus,
+        .bit-card .form-select:focus,
+        .bit-card textarea:focus,
+        .bit-card select:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 4px color-mix(in srgb, var(--primary) 14%, transparent);
+            transform: translateY(-1px);
+            outline: 0;
+        }
+
+        .bit-card .btn { border-radius: 10px; font-weight: 500; transition: transform .2s var(--ease), box-shadow .2s var(--ease), filter .2s var(--ease); }
+        .bit-card .btn:hover { transform: translateY(-1px); }
+        .btn-primary { background-color: var(--primary); border-color: var(--primary); color: var(--on-primary); }
+        .btn-primary:hover, .btn-primary:focus, .btn-primary:active { background-color: var(--primary) !important; border-color: var(--primary) !important; color: var(--on-primary) !important; filter: brightness(1.08); }
+        .bit-card .table { --bs-table-bg: transparent; --bs-table-color: var(--ink); --bs-table-border-color: var(--line); }
+
+        .bit-overlay { position: fixed; inset: 0; background: rgba(17, 19, 24, .5); opacity: 0; visibility: hidden; transition: opacity .3s var(--ease), visibility .3s; z-index: 900; }
+
+        /* Responsive */
+        @@media (max-width: 1100px) {
+            .bit-company b { max-width: 160px; }
+            .bit-user-text { display: none; }
+        }
+
+        @@media (max-width: 900px) {
+            .bit-sidebar { transform: translateX(-100%); width: var(--sidebar-w); }
+            body.sidebar-open .bit-sidebar { transform: translateX(0); box-shadow: 8px 0 32px rgba(0, 0, 0, .25); }
+            body.sidebar-open .bit-overlay { opacity: 1; visibility: visible; }
+
+            .bit-main,
+            body.sidebar-mini .bit-main { margin-left: 0; }
+
+            body.sidebar-mini .bit-sidebar { width: var(--sidebar-w); padding: 14px 12px; }
+            body.sidebar-mini .sb-search { display: block; }
+            body.sidebar-mini .menu-label { display: block; }
+            body.sidebar-mini #navbar .label,
+            body.sidebar-mini .sb-bottom .label { display: block; }
+            body.sidebar-mini #navbar .chev { display: inline; }
+            body.sidebar-mini .child_menu { display: block; }
+            body.sidebar-mini #navbar > li > a,
+            body.sidebar-mini .sb-bottom a { justify-content: flex-start; padding: 10px 12px; }
+
+            .bit-page { padding: 16px 16px 8px; }
+            .bit-footer { padding: 16px; }
+            .bit-card { padding: 16px; }
+        }
+
+        @@media (max-width: 700px) {
+            .bit-topbar { padding: 0 12px; gap: 8px; }
+            .bit-company { display: none; }
+            .bit-gsearch-box kbd { display: none; }
         }
     </style>
     @RenderSection("HeadContent", required: false)
 </head>
 <body>
-    <!-- TOPBAR - dvtop + topnav -->
-    <div class="bit-topbar" id="dvtop">
-        <div style="display:flex; align-items:center;">
-            <a href="javascript:;" id="menu_toggle" style="margin-right:14px; color:var(--bit-ink);"><i class="fa fa-bars"></i></a>
-            <a href="/Home/Index" class="bit-brand"><b><span>BIT</span>WARE ERP</b><small>ENTERPRISE OS • 2026</small></a>
-            <div class="bit-company"><span class="dot"></span><span>@Context.Session.GetString("CompanyName") ?? "Select Company" | @Context.Session.GetString("PeriodName") ?? "Period"</span></div>
-        </div>
-        <div style="display:flex; align-items:center; gap:16px;">
-            <div class="bit-search"><i class="fa fa-search"></i><input type="text" id="txtMenuSearch" placeholder="Search menu... press /" /><i class="fa fa-times" id="btnClearSearch" style="display:none; cursor:pointer;"></i></div>
-            <div class="bit-actions">
-                <div class="bit-icon"><i class="fa-regular fa-bell"></i></div>
-                <div class="bit-user">
-                    <div class="bit-avatar">@(User.Identity?.Name?.Substring(0, 1).ToUpper() ?? "U")</div>
-                    <div style="line-height:1.1;"><div style="font-size:12px; font-weight:600;">@User.Identity?.Name</div><div style="font-size:10px; color:#6B7280;">@Context.Session.GetString("CurrentUserIP")</div></div>
-                </div>
-                <a href="/Account/Logout" class="bit-icon" title="Logout"><i class="fa-solid fa-right-from-bracket"></i></a>
-            </div>
-        </div>
-    </div>
-
-    <!-- Old topnav mega menu container -->
-    <div id="topnav" runat="server" style="display:none;">
-        <div id="oldnavbarmenu" class="rs-oldnavbarmenu"></div>
-    </div>
-
-    <div class="bit-layout">
-        <!-- SIDEBAR - dvleft -->
-        <div class="bit-sidebar" id="dvleft">
-            <div class="menu-label">Navigation</div>
-            <!-- DB MENUS - Same ID as old Site.Master -->
-            <ul class="nav side-menu" id="navbar">
-                @if (ViewBag.SideMenus != null && ((List<dynamic>)ViewBag.SideMenus).Count > 0)
-                {
-                    foreach (var m in ViewBag.SideMenus)
+    <header class="bit-topbar" id="dvtop">
+        <div class="bit-left">
+            <button type="button" id="menu_toggle" class="bit-icon-btn" aria-label="Toggle sidebar"><i class="fa-solid fa-bars"></i></button>
+            <a href="/Home/Index" class="bit-brand">
+                <div class="bit-logo">B</div>
+                <div class="bit-company">
+                    <b title="@companyName">@companyName</b>
+                    @if (!string.IsNullOrWhiteSpace(periodName))
                     {
-                        <li>
-                            <a href="@(m.Path == "#" ? "javascript:;" : m.Path)" class="@(m.Children.Count > 0 ? "parent" : "")"><i class="@(m.Icon ?? "fa fa-desktop")"></i><span class="searchlist">@m.Name</span>@if(m.Children.Count>0){
-                            <span class="fa fa-chevron-down"></span>
-                        }
-    </a>
-                        @if (m.Children.Count > 0)
-                        {
-                            <ul class="child_menu">
-                                @foreach (var c in m.Children)
-                                {
-                                    <li><a href="@(c.Path == "#" ? "javascript:;" : c.Path)"><span class="searchlist">@c.Name</span></a></li>
-                                }
-                            </ul>
-                        }
-                    </li>
-                }
-                                }
-                                else
-                {
-                    <li><a href="/Home/Welcome"><i class="fa fa-home"></i><span class="searchlist">Welcome</span></a></li>
-                    <li><a href="/Home/Index"><i class="fa fa-dashboard"></i><span class="searchlist">Dashboard</span></a></li>
-                }
-            </ul>
-            <div class="menu-label" style="margin-top:18px;">System</div>
-            <a href="/Home/Welcome" style="display:flex; gap:10px; padding:9px 10px; border-radius:10px; color:#6B7280; font-size:12.5px; text-decoration:none;"><i class="fa-solid fa-rotate" style="width:18px;"></i> Change Company</a>
-            <div style="margin-top:24px; padding:12px; background:var(--bit-sidebar-2); border-radius:12px; border:1px solid #252932;">
-                <div style="font-size:10px; color:#6B7280; font-weight:700;">BITWARE ERP v1.0</div>
-                <div style="font-size:11px; color:#9CA3AF; margin-top:4px; font-family:'JetBrains Mono',monospace;">© 2026 Bitware</div>
-            </div>
+                        <small><i class="fa-regular fa-calendar"></i>@periodName</small>
+                    }
+                </div>
+            </a>
         </div>
 
-        <!-- MAIN - dvmain -->
-        <div class="bit-main" id="dvmain">
+        <div class="bit-gsearch" id="gsearchWrap">
+            <div class="bit-gsearch-box">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" id="globalSearch" placeholder="Search menus, forms, reports..." autocomplete="off" />
+                <kbd>/</kbd>
+            </div>
+            <div class="bit-results" id="globalResults"></div>
+        </div>
+
+        <div class="bit-right">
+            <div class="bit-pop" id="notifPop">
+                <button type="button" class="bit-icon-btn" id="notifBtn" aria-label="Notifications">
+                    <i class="fa-regular fa-bell"></i>
+                    @if (noteCount > 0)
+                    {
+                        <span class="bit-badge">@(noteCount > 99 ? "99+" : noteCount.ToString())</span>
+                    }
+                </button>
+                <div class="bit-panel">
+                    <div class="bit-panel-head">Notifications <small>@(noteCount > 0 ? noteCount + " new" : "All caught up")</small></div>
+                    @if (notes.Count > 0)
+                    {
+                        foreach (var n in notes)
+                        {
+                            <a class="bit-note" href="@(string.IsNullOrEmpty(n.Url) ? "javascript:;" : n.Url)">
+                                <b>@n.Title</b>
+                                @if (!string.IsNullOrEmpty(n.Time))
+                                {
+                                    <small>@n.Time</small>
+                                }
+                            </a>
+                        }
+                    }
+                    else
+                    {
+                        <div class="bit-note-empty"><i class="fa-regular fa-bell-slash"></i>No new notifications</div>
+                    }
+                </div>
+            </div>
+
+            <div class="bit-pop" id="themePop">
+                <button type="button" class="bit-icon-btn" id="themeBtn" aria-label="Settings and theme"><i class="fa-solid fa-gear"></i></button>
+                <div class="bit-panel">
+                    <div class="bit-panel-head">Theme Customizer <small>Saved on this device</small></div>
+                    <div class="bit-panel-body">
+                        <div class="bit-label">Color Themes</div>
+                        <div class="bit-presets" id="themePresets"></div>
+
+                        <div class="bit-label">Custom Colors</div>
+                        <div class="bit-color-row">
+                            <label for="primaryPicker">Primary Color</label>
+                            <input type="color" id="primaryPicker" value="#0E7A8A" />
+                            <input type="text" id="primaryHex" maxlength="7" value="#0E7A8A" />
+                        </div>
+                        <div class="bit-color-row">
+                            <label for="sidebarPicker">Sidebar Color</label>
+                            <input type="color" id="sidebarPicker" value="#111318" />
+                            <input type="text" id="sidebarHex" maxlength="7" value="#111318" />
+                        </div>
+
+                        <div class="bit-switch-row">
+                            <span>Dark surfaces</span>
+                            <label class="bit-switch"><input type="checkbox" id="darkToggle" /><span></span></label>
+                        </div>
+
+                        <button type="button" class="bit-reset" id="themeReset"><i class="fa-solid fa-rotate-left"></i> Reset to default</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bit-pop" id="profilePop">
+                <button type="button" class="bit-user" id="profileBtn" aria-haspopup="true">
+                    <div class="bit-avatar">@initial</div>
+                    <div class="bit-user-text">
+                        <b>@userName</b>
+                        @if (!string.IsNullOrWhiteSpace(userIp))
+                        {
+                            <small>@userIp</small>
+                        }
+                    </div>
+                </button>
+                <div class="bit-panel" style="width:min(240px, calc(100vw - 24px));">
+                    <div class="bit-panel-head" style="display:block;">
+                        <div>@userName</div>
+                        @if (!string.IsNullOrWhiteSpace(userIp))
+                        {
+                            <small>@userIp</small>
+                        }
+                    </div>
+                    <div class="bit-menu-list">
+                        <a href="/Home/Welcome"><i class="fa-solid fa-rotate"></i> Change Company</a>
+                        <form asp-controller="Account" asp-action="Logout" method="post">
+                            <button type="submit"><i class="fa-solid fa-right-from-bracket"></i> Logout</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="bit-overlay" id="sidebarOverlay"></div>
+
+    <aside class="bit-sidebar" id="dvleft">
+        <div class="sb-search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" id="txtMenuSearch" placeholder="Filter menu..." autocomplete="off" />
+            <button type="button" class="sb-clear" id="btnClearSearch" aria-label="Clear"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+
+        <div class="menu-label">Navigation</div>
+        <ul id="navbar">@Html.Raw(menuHtml)</ul>
+        <div class="sb-nomatch" id="sbNoMatch">No menu found</div>
+
+        <div class="sb-bottom">
+            <a href="/Home/Welcome" title="Change Company"><i class="fa-solid fa-rotate"></i><span class="label">Change Company</span></a>
+        </div>
+    </aside>
+
+    <main class="bit-main" id="dvmain">
+        <div class="bit-page">
+            <nav class="bit-breadcrumb" id="breadcrumb" aria-label="Breadcrumb" data-custom="@(IsSectionDefined("Breadcrumb") ? "1" : null)">
+                @if (IsSectionDefined("Breadcrumb"))
+                {
+                    @RenderSection("Breadcrumb", required: false)
+                }
+                else
+                {
+                    <a href="/Home/Index"><i class="fa-solid fa-house" style="font-size:11px;opacity:1;"></i> Home</a>
+                    <i class="fa-solid fa-chevron-right"></i>
+                    <span>@pageTitle</span>
+                }
+            </nav>
+
             <div class="bit-pagehead">
-                <div><h1>@ViewData["Title"]</h1><p>Enterprise Resource Planning • Real-time • Secure</p></div>
+                <div>
+                    <h1>@pageTitle</h1>
+                    @if (!string.IsNullOrWhiteSpace(pageSubtitle))
+                    {
+                        <p>@pageSubtitle</p>
+                    }
+                </div>
                 <div>@RenderSection("PageActions", required: false)</div>
             </div>
-            <div class="bit-content" id="PageDisplay">
+
+            <div class="bit-card" id="PageDisplay">
                 @RenderBody()
             </div>
         </div>
-    </div>
+
+        <footer class="bit-footer">
+            <span><b>BITWARE ERP</b> &middot; Version @version</span>
+            <span>&copy; @DateTime.Now.Year Bitware. All rights reserved.</span>
+        </footer>
+    </main>
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        // Sidebar toggle + search - same as old Site.Master
-        document.getElementById('menu_toggle')?.addEventListener('click',()=>{document.getElementById('dvleft').classList.toggle('open');});
-        $("#navbar").on("click","li > a.parent",function(e){e.preventDefault(); var li=$(this).closest('li'); var child=li.children('ul.child_menu'); if(child.length){child.slideToggle(200); li.toggleClass('active');}});
-        $("#txtMenuSearch").on("keyup input",function(){var q=$(this).val().toLowerCase().trim(); var c=$("#btnClearSearch"); q.length>0?c.show():c.hide(); if(!q){$("#navbar > li").show(); $(".child_menu").hide(); $(".child_menu li").show(); $("#navbar li").removeClass('active'); return;} $("#navbar > li").each(function(){var root=$(this); var rootText=root.children('a').text().toLowerCase(); var hasChild=false; root.find('.child_menu li').each(function(){var txt=$(this).text().toLowerCase(); if(txt.indexOf(q)!==-1){$(this).show(); hasChild=true;}else{$(this).hide();}}); if(rootText.indexOf(q)!==-1||hasChild){root.show(); root.find('.child_menu').show(); root.addClass('active');}else{root.hide();}});});
-        $("#btnClearSearch").on("click",function(){ $("#txtMenuSearch").val(''); $(this).hide(); $("#navbar > li").show(); $(".child_menu").hide(); });
-        $(document).on('keydown',function(e){ if(e.key==='/' && !$(e.target).is('input,textarea')){ e.preventDefault(); $("#txtMenuSearch").focus(); } });
+        (function () {
+            var body = document.body;
+            var navbar = document.getElementById('navbar');
+            var sideSearch = document.getElementById('txtMenuSearch');
+            var clearBtn = document.getElementById('btnClearSearch');
+            var noMatch = document.getElementById('sbNoMatch');
+            var globalSearch = document.getElementById('globalSearch');
+            var globalResults = document.getElementById('globalResults');
+            var overlay = document.getElementById('sidebarOverlay');
+            var MINI_KEY = 'bitSidebarMini';
+
+            function isMobile() { return window.matchMedia('(max-width: 900px)').matches; }
+
+            /* Sidebar toggle */
+            try {
+                if (!isMobile() && localStorage.getItem(MINI_KEY) === '1') body.classList.add('sidebar-mini');
+            } catch (e) { }
+
+            function setMini(on) {
+                body.classList.toggle('sidebar-mini', on);
+                try { localStorage.setItem(MINI_KEY, on ? '1' : '0'); } catch (e) { }
+            }
+
+            document.getElementById('menu_toggle').addEventListener('click', function () {
+                if (isMobile()) {
+                    body.classList.toggle('sidebar-open');
+                } else {
+                    setMini(!body.classList.contains('sidebar-mini'));
+                }
+            });
+
+            overlay.addEventListener('click', function () { body.classList.remove('sidebar-open'); });
+            window.addEventListener('resize', function () { if (!isMobile()) body.classList.remove('sidebar-open'); });
+
+            /* Active menu */
+            function norm(p) { return (p || '').split('?')[0].split('#')[0].replace(/\/+$/, '').toLowerCase(); }
+
+            function isRealLink(a) {
+                var h = a.getAttribute('href');
+                return h && h !== '#' && h.indexOf('javascript') !== 0 && !a.classList.contains('parent');
+            }
+
+            function chain(a) {
+                var names = [];
+                var li = a.closest('li');
+                var root = li;
+                while (li) {
+                    var l = li.querySelector(':scope > a .searchlist');
+                    if (l) names.unshift(l.textContent.trim());
+                    root = li;
+                    var up = li.parentElement ? li.parentElement.parentElement : null;
+                    li = (up && up.tagName === 'LI') ? up : null;
+                }
+                return { names: names, root: root };
+            }
+
+            var current = norm(window.location.pathname);
+            var currentSearch = window.location.search.toLowerCase();
+            var best = null, bestScore = 0;
+
+            navbar.querySelectorAll('a[href]').forEach(function (a) {
+                if (!isRealLink(a)) return;
+                var p = norm(a.pathname);
+                if (!p) return;
+                var s = (a.search || '').toLowerCase();
+                var score = 0;
+                if (s) {
+                    if (current === p && currentSearch === s) score = 1000 + p.length;
+                } else if (current === p || current.indexOf(p + '/') === 0) {
+                    score = p.length;
+                }
+                if (score > bestScore) { best = a; bestScore = score; }
+            });
+
+            if (best) {
+                best.classList.add('active-link');
+                var ul = best.closest('ul.child_menu');
+                while (ul) {
+                    var pli = ul.parentElement;
+                    pli.classList.add('active-parent');
+                    ul = pli.parentElement ? pli.parentElement.closest('ul.child_menu') : null;
+                }
+            }
+
+            function restoreMenu() {
+                navbar.querySelectorAll('li').forEach(function (li) { li.classList.remove('hide', 'open'); });
+                navbar.querySelectorAll('li.active-parent').forEach(function (li) { li.classList.add('open'); });
+                noMatch.classList.remove('show');
+            }
+
+            restoreMenu();
+
+            /* Breadcrumb from active menu */
+            var crumb = document.getElementById('breadcrumb');
+            if (best && crumb && !crumb.hasAttribute('data-custom')) {
+                var titleEl = document.querySelector('.bit-pagehead h1');
+                var names = chain(best).names.slice(0, -1);
+                names.push(titleEl ? titleEl.textContent.trim() : best.textContent.trim());
+
+                crumb.innerHTML = '';
+                var home = document.createElement('a');
+                home.href = '/Home/Index';
+                home.innerHTML = '<i class="fa-solid fa-house" style="font-size:11px;opacity:1;"></i> Home';
+                crumb.appendChild(home);
+                names.forEach(function (t) {
+                    var sep = document.createElement('i');
+                    sep.className = 'fa-solid fa-chevron-right';
+                    crumb.appendChild(sep);
+                    var s = document.createElement('span');
+                    s.textContent = t;
+                    crumb.appendChild(s);
+                });
+            }
+
+            /* Parent expand / collapse */
+            navbar.addEventListener('click', function (e) {
+                var a = e.target.closest('a.parent');
+                if (!a) return;
+                e.preventDefault();
+                if (!isMobile() && body.classList.contains('sidebar-mini')) setMini(false);
+                a.parentElement.classList.toggle('open');
+            });
+
+            /* Sidebar filter */
+            function filterLi(li, q, forced) {
+                var label = li.querySelector(':scope > a .searchlist');
+                var self = !!label && label.textContent.toLowerCase().indexOf(q) !== -1;
+                var sub = li.querySelector(':scope > ul.child_menu');
+                var any = false;
+
+                if (sub) {
+                    sub.querySelectorAll(':scope > li').forEach(function (c) {
+                        if (filterLi(c, q, forced || self)) any = true;
+                    });
+                }
+
+                var show = self || any || forced;
+                li.classList.toggle('hide', !show);
+                li.classList.toggle('open', !!sub && (self || any));
+                return self || any;
+            }
+
+            function filterMenu(q) {
+                var any = false;
+                navbar.querySelectorAll(':scope > li').forEach(function (li) {
+                    if (filterLi(li, q, false)) any = true;
+                });
+                noMatch.classList.toggle('show', !any);
+            }
+
+            function clearSideSearch() {
+                sideSearch.value = '';
+                clearBtn.classList.remove('show');
+                restoreMenu();
+            }
+
+            sideSearch.addEventListener('input', function () {
+                var q = this.value.toLowerCase().trim();
+                clearBtn.classList.toggle('show', this.value.length > 0);
+                if (!q) { restoreMenu(); return; }
+                filterMenu(q);
+            });
+
+            sideSearch.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape') { clearSideSearch(); this.blur(); }
+            });
+
+            clearBtn.addEventListener('click', function () { clearSideSearch(); sideSearch.focus(); });
+
+            /* Global search */
+            var index = [];
+            navbar.querySelectorAll('a[href]').forEach(function (a) {
+                if (!isRealLink(a)) return;
+                var c = chain(a);
+                var iconEl = c.root.querySelector(':scope > a > i:first-child');
+                index.push({
+                    name: a.textContent.trim(),
+                    path: c.names.join('  \u203A  '),
+                    href: a.getAttribute('href'),
+                    icon: iconEl ? iconEl.className : 'fa-solid fa-file'
+                });
+            });
+
+            var sel = -1;
+
+            function renderResults(q) {
+                globalResults.innerHTML = '';
+                sel = -1;
+                if (!q) { globalResults.classList.remove('show'); return; }
+
+                var hits = index.filter(function (i) { return i.path.toLowerCase().indexOf(q) !== -1; }).slice(0, 12);
+
+                if (!hits.length) {
+                    var empty = document.createElement('div');
+                    empty.className = 'bit-empty';
+                    empty.textContent = 'No results found';
+                    globalResults.appendChild(empty);
+                } else {
+                    hits.forEach(function (h) {
+                        var a = document.createElement('a');
+                        a.className = 'bit-result';
+                        a.href = h.href;
+                        var i = document.createElement('i');
+                        i.className = h.icon;
+                        var box = document.createElement('div');
+                        var b = document.createElement('b');
+                        b.textContent = h.name;
+                        var s = document.createElement('small');
+                        s.textContent = h.path;
+                        box.appendChild(b);
+                        box.appendChild(s);
+                        a.appendChild(i);
+                        a.appendChild(box);
+                        globalResults.appendChild(a);
+                    });
+                }
+                globalResults.classList.add('show');
+            }
+
+            function moveSel(dir) {
+                var items = globalResults.querySelectorAll('.bit-result');
+                if (!items.length) return;
+                if (sel >= 0) items[sel].classList.remove('sel');
+                sel = (sel + dir + items.length) % items.length;
+                items[sel].classList.add('sel');
+                items[sel].scrollIntoView({ block: 'nearest' });
+            }
+
+            globalSearch.addEventListener('input', function () { renderResults(this.value.toLowerCase().trim()); });
+            globalSearch.addEventListener('focus', function () { renderResults(this.value.toLowerCase().trim()); });
+
+            globalSearch.addEventListener('keydown', function (e) {
+                if (e.key === 'ArrowDown') { e.preventDefault(); moveSel(1); }
+                else if (e.key === 'ArrowUp') { e.preventDefault(); moveSel(-1); }
+                else if (e.key === 'Enter') {
+                    var items = globalResults.querySelectorAll('.bit-result');
+                    var target = sel >= 0 ? items[sel] : items[0];
+                    if (target) { e.preventDefault(); window.location.href = target.getAttribute('href'); }
+                } else if (e.key === 'Escape') {
+                    this.value = '';
+                    renderResults('');
+                    this.blur();
+                }
+            });
+
+            /* Popovers */
+            var pops = Array.prototype.slice.call(document.querySelectorAll('.bit-pop'));
+
+            pops.forEach(function (pop) {
+                var btn = pop.querySelector(':scope > button');
+                btn.addEventListener('click', function () {
+                    var willOpen = !pop.classList.contains('open');
+                    pops.forEach(function (p) { p.classList.remove('open'); });
+                    if (willOpen) pop.classList.add('open');
+                });
+            });
+
+            document.addEventListener('click', function (e) {
+                pops.forEach(function (p) { if (!p.contains(e.target)) p.classList.remove('open'); });
+                if (!document.getElementById('gsearchWrap').contains(e.target)) globalResults.classList.remove('show');
+            });
+
+            /* Keyboard */
+            document.addEventListener('keydown', function (e) {
+                var el = document.activeElement;
+                var tag = el ? el.tagName : '';
+                var typing = tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT' || (el && el.isContentEditable);
+
+                if (e.key === '/' && !typing && !e.ctrlKey && !e.metaKey && !e.altKey) {
+                    e.preventDefault();
+                    globalSearch.focus();
+                }
+                if (e.key === 'Escape') {
+                    pops.forEach(function (p) { p.classList.remove('open'); });
+                    body.classList.remove('sidebar-open');
+                }
+            });
+
+            /* Theme customizer */
+            var T = window.BitTheme;
+            var state = T.load();
+            var presetBox = document.getElementById('themePresets');
+            var primaryPicker = document.getElementById('primaryPicker');
+            var primaryHex = document.getElementById('primaryHex');
+            var sidebarPicker = document.getElementById('sidebarPicker');
+            var sidebarHex = document.getElementById('sidebarHex');
+            var darkToggle = document.getElementById('darkToggle');
+
+            T.presets.forEach(function (p) {
+                var b = document.createElement('button');
+                b.type = 'button';
+                b.className = 'bit-preset';
+                b.setAttribute('data-id', p.id);
+                var sw = document.createElement('span');
+                sw.style.background = 'linear-gradient(135deg,' + p.primary + ' 50%,' + p.sidebar + ' 50%)';
+                var lb = document.createElement('div');
+                lb.textContent = p.name;
+                b.appendChild(sw);
+                b.appendChild(lb);
+                b.addEventListener('click', function () {
+                    state = { primary: p.primary, sidebar: p.sidebar, dark: p.dark, preset: p.id };
+                    commit();
+                });
+                presetBox.appendChild(b);
+            });
+
+            function sync() {
+                primaryPicker.value = state.primary;
+                primaryHex.value = state.primary.toUpperCase();
+                sidebarPicker.value = state.sidebar;
+                sidebarHex.value = state.sidebar.toUpperCase();
+                darkToggle.checked = !!state.dark;
+                presetBox.querySelectorAll('.bit-preset').forEach(function (b) {
+                    b.classList.toggle('active', b.getAttribute('data-id') === state.preset);
+                });
+            }
+
+            function commit() {
+                T.apply(state);
+                T.save(state);
+                sync();
+            }
+
+            function custom(key, value) {
+                if (!T.valid(value)) return;
+                state[key] = value;
+                state.preset = 'custom';
+                commit();
+            }
+
+            primaryPicker.addEventListener('input', function () { custom('primary', this.value); });
+            sidebarPicker.addEventListener('input', function () { custom('sidebar', this.value); });
+            primaryHex.addEventListener('input', function () { var v = this.value.trim(); if (v.charAt(0) !== '#') v = '#' + v; custom('primary', v); });
+            sidebarHex.addEventListener('input', function () { var v = this.value.trim(); if (v.charAt(0) !== '#') v = '#' + v; custom('sidebar', v); });
+
+            primaryHex.addEventListener('blur', sync);
+            sidebarHex.addEventListener('blur', sync);
+
+            darkToggle.addEventListener('change', function () {
+                state.dark = this.checked;
+                state.preset = state.preset === 'dark' && !this.checked ? 'custom' : state.preset;
+                commit();
+            });
+
+            document.getElementById('themeReset').addEventListener('click', function () {
+                state = T.reset();
+                sync();
+            });
+
+            sync();
+        })();
     </script>
     @RenderSection("Scripts", required: false)
 </body>
